@@ -1,0 +1,769 @@
+{
+	"title": "Главная",
+	"hero": {
+		"image": {
+			"src": "tmp/hero-main/desk.jpg",
+			"alt": "image alt",
+			"fill": true,
+			"tab": {
+				"srcset": [
+					{
+						"scale": "1",
+						"src": "tmp/hero-main/tab.jpg"
+					}
+				]
+			},
+			"mob": {
+				"srcset": [
+					{
+						"scale": "1",
+						"src": "tmp/hero-main/mob.jpg"
+					}
+				]
+			}
+		},
+		"heading": {
+			"static": "Мобильные решения для оптимизации",
+			"from": "учета товаров",
+			"to": "some text"
+		},
+		"text": "Терминалы сбора данных и софт для&nbsp;вывода&nbsp;бизнеса&nbsp;на новый уровень",
+		"actions": [
+			{
+				"href": "javascript:void(0);",
+				"text": "Терминалы",
+				"title": "Терминалы",
+				"mobFit": true
+			},
+			{
+				"href": "javascript:void(0);",
+				"text": "Программное обеспечение",
+				"title": "Программное обеспечение",
+				"outline": true,
+				"mobFit": true
+			}
+		],
+		"items": [
+			{
+				"title": "Экономия времени",
+				"text": "Операции учета быстрее в 10 раз"
+			},
+			{
+				"title": "Экономия бюджета",
+				"text": "Один сотрудник вместо двух"
+			},
+			{
+				"title": "Сокращение ошибок",
+				"text": "На 99%"
+			},
+			{
+				"title": "Отсутствие простоев",
+				"text": "Бесперебойная работа"
+			}
+		]
+	},
+	"formula": {
+		"heading": "Мобильное рабочее&nbsp;место",
+		"lead": "Это мобильное рабочее место кладовщика, курьера, инкассатора, сотрудника магазина, склада или завода.",
+		"text": "Сотрудник может носить его с собой, как смартфон, чтобы считывать штрих-коды и коды маркировок, отправлять данные в систему товароучета, обновлять информацию о ценах, собирать заказы и проводить инвентаризацию.",
+		"items": [
+			{
+				"id": "card-formula-1",
+				"type": "1",
+				"pattern": {
+					"name": "patterns/pattern-1",
+					"size": "fit"
+				},
+				"background": {
+					"alt": "image alt",
+					"fill": true,
+					"tab": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/formula/background-1-tab.jpg"
+							}
+						]
+					},
+					"mob": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/formula/background-1-mob.jpg"
+							}
+						]
+					}
+				},
+				"images": [
+					{
+						"src": "tmp/formula/phone.png",
+						"alt": "alt image",
+						"fill": true
+					}
+				],
+				"title": "Терминал сбора данных",
+				"text": "Устройство, которое сотрудник носит с собой. Напоминает мобильный телефон или смартфон: оснащено кнопками или сенсорным экраном, камерой и сканером штрих-кодов.",
+				"attr": "data-attr"
+			},
+			{
+				"id": "card-formula-2",
+				"type": "2",
+				"pattern": {
+					"name": "patterns/pattern-2",
+					"size": "fit"
+				},
+				"background": {
+					"alt": "image alt",
+					"fill": true,
+					"tab": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/formula/background-2-tab.jpg"
+							}
+						]
+					},
+					"mob": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/formula/background-2-mob.jpg"
+							}
+						]
+					}
+				},
+				"images": [
+					{
+						"src": "tmp/formula/screen-1.png",
+						"alt": "alt image",
+						"fill": true
+					},
+					{
+						"src": "tmp/formula/screen-2.png",
+						"alt": "alt image",
+						"fill": true
+					}
+				],
+				"title": "Программное обеспечение",
+				"text": "Программа, которая определяет возможности мобильного терминала и сферу применения: от учета на складе до проверки билетов.",
+				"attr": "data-attr"
+			},
+			{
+				"id": "card-formula-3",
+				"type": "3",
+				"images": [
+					{
+						"src": "tmp/formula/plug.png",
+						"alt": "alt image",
+						"fill": true
+					},
+					{
+						"src": "tmp/formula/cable.png",
+						"alt": "alt image",
+						"fill": true
+					}
+				],
+				"background": {
+					"alt": "image alt",
+					"fill": true,
+					"tab": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/formula/background-3-tab.jpg"
+							}
+						]
+					},
+					"mob": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/formula/background-3-mob.jpg"
+							}
+						]
+					}
+				},
+				"pattern": {
+					"name": "patterns/pattern-3",
+					"size": "fit"
+				},
+				"title": "Аксессуары",
+				"text": "Программа, которая определяет возможности мобильного терминала и сферу применения: от учета на складе до проверки билетов.",
+				"attr": "data-attr"
+			}
+		]
+	},
+	"advantages": {
+		"heading": "Преимущества мобильных решений",
+		"slices": 8,
+		"slides": [
+			{
+				"active": true,
+				"image": {
+					"src": "tmp/slider-slice/slide-1.jpg",
+					"alt": "alt image",
+					"fill": true,
+					"tab": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/slider-slice/slide-1-tab.jpg"
+							}
+						]
+					},
+					"mob": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/slider-slice/slide-1-mob.jpg"
+							}
+						]
+					}
+				},
+				"title": "Мобильность",
+				"text": "Коробки и тяжелые товары не нужно подносить к стационарному сканеру штрих-кодов. К ним можно подойти с ТСД и быстро считать код. В магазине терминал тоже пригодится — можно проводить непрерывную инвентаризацию, сканируя коды прямо&nbsp;в&nbsp;торговом&nbsp;зале."
+			},
+			{
+				"image": {
+					"src": "tmp/slider-slice/slide-2.jpg",
+					"alt": "alt image",
+					"fill": true,
+					"tab": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/slider-slice/slide-2-tab.jpg"
+							}
+						]
+					},
+					"mob": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/slider-slice/slide-2-mob.jpg"
+							}
+						]
+					}
+				},
+				"title": "Большой опыт",
+				"text": "С 2001 года производим кассы и другое оборудование для бизнеса. Разбираемся в потребностях предпринимателей и требованиях законодательства",
+				"action": {
+					"href": "javascript:void(0);",
+					"title": "Подробнее о нас",
+					"text": "Подробнее о нас",
+					"theme": "white",
+					"mobFit": true
+				}
+			},
+			{
+				"image": {
+					"src": "tmp/slider-slice/slide-3.jpg",
+					"alt": "alt image",
+					"fill": true,
+					"tab": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/slider-slice/slide-3-tab.jpg"
+							}
+						]
+					},
+					"mob": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/slider-slice/slide-3-mob.jpg"
+							}
+						]
+					}
+				},
+				"title": "Собственное производство",
+				"text": "Практически все ТСД на рынке производят в Китае. Наши тоже — но у нас есть собственная выделенная линия производства, настроенная по нашим требованиям."
+			},
+			{
+				"image": {
+					"src": "tmp/slider-slice/slide-4.jpg",
+					"alt": "alt image",
+					"fill": true
+				},
+				"title": "Более 2000 сервисных центров в России",
+				"text": "Если у вас сломался терминал или вы хотите узнать, как его настроить, модернизировать или обновить — вы можете обратиться в один из наших сервисных центров",
+				"action": {
+					"href": "javascript:void(0);",
+					"title": "Подробнее о нас",
+					"text": "Подробнее о нас",
+					"theme": "white",
+					"mobFit": true
+				}
+			}
+		],
+		"logo": true
+	},
+	"products": {
+		"name": "slider-products",
+		"heading": "Терминалы сбора данных",
+		"slides": [
+			{
+				"id": "card-product-1",
+				"href": "javascript:void(0);",
+				"label": "терминал",
+				"title": "АТОЛ Smart.Slim",
+				"text": "Бюджетный, компактный, работает до&nbsp;10&nbsp;часов без подзарядки",
+				"compare": {
+					"icon": {
+						"name": "24/compare"
+					},
+					"size": "32",
+					"title": "Добавить к сравнению"
+				},
+				"badge": {
+					"text": "Новинка",
+					"theme": "green"
+				},
+				"image": {
+					"src": "tmp/card-product/image-1.png",
+					"alt": "alt image",
+					"fill": true,
+					"swiper_lazy": true
+				},
+				"price": "от 18 765 ₽",
+				"action": {
+					"title": "В корзину",
+					"text": "В корзину",
+					"size": "small",
+					"mobFit": true
+				},
+				"attr": "data-attr"
+			},
+			{
+				"id": "card-product-2",
+				"href": "javascript:void(0);",
+				"label": "терминал",
+				"title": "АТОЛ Smart.Slim Plus",
+				"text": "Мощный и компактный, с GMS-сертификатом и емким аккумулятором",
+				"compare": {
+					"icon": {
+						"name": "24/compare"
+					},
+					"size": "32",
+					"title": "Добавить к сравнению"
+				},
+				"image": {
+					"src": "tmp/card-product/image-2.png",
+					"alt": "alt image",
+					"fill": true,
+					"swiper_lazy": true
+				},
+				"price": "от 18 765 ₽",
+				"action": {
+					"title": "В корзину",
+					"text": "В корзину",
+					"size": "small",
+					"mobFit": true
+				},
+				"attr": "data-attr"
+			},
+			{
+				"id": "card-product-3",
+				"href": "javascript:void(0);",
+				"label": "терминал",
+				"title": "АТОЛ Smart.Lite",
+				"text": "Универсальный, с полноразмерной клавиатурой и более точным сканером",
+				"compare": {
+					"icon": {
+						"name": "24/compare"
+					},
+					"size": "32",
+					"title": "Добавить к сравнению"
+				},
+				"badge": {
+					"text": "лидер продаж",
+					"theme": "red"
+				},
+				"image": {
+					"src": "tmp/card-product/image-3.png",
+					"alt": "alt image",
+					"fill": true,
+					"swiper_lazy": true
+				},
+				"price": "от 18 765 ₽",
+				"action": {
+					"title": "В корзину",
+					"text": "В корзину",
+					"size": "small",
+					"mobFit": true
+				},
+				"attr": "data-attr"
+			},
+			{
+				"id": "card-product-4",
+				"href": "javascript:void(0);",
+				"label": "терминал",
+				"title": "АТОЛ Smart.Slim",
+				"text": "Бюджетный, компактный",
+				"compare": {
+					"icon": {
+						"name": "24/compare"
+					},
+					"size": "32",
+					"title": "Добавить к сравнению"
+				},
+				"badge": {
+					"text": "лидер продаж",
+					"theme": "red"
+				},
+				"image": {
+					"src": "tmp/card-product/image-1.png",
+					"alt": "alt image",
+					"fill": true,
+					"swiper_lazy": true
+				},
+				"price": "от 18 765 ₽",
+				"action": {
+					"title": "В корзину",
+					"text": "В корзину",
+					"size": "small",
+					"mobFit": true
+				},
+				"attr": "data-attr"
+			},
+			{
+				"id": "card-product-5",
+				"href": "javascript:void(0);",
+				"label": "терминал",
+				"title": "АТОЛ Smart.Slim Plus",
+				"text": "Мощный и компактный, с GMS-сертификатом и емким аккумулятором",
+				"compare": {
+					"icon": {
+						"name": "24/compare"
+					},
+					"size": "32",
+					"title": "Добавить к сравнению"
+				},
+				"image": {
+					"src": "tmp/card-product/image-2.png",
+					"alt": "alt image",
+					"fill": true,
+					"swiper_lazy": true
+				},
+				"price": "от 18 765 ₽",
+				"action": {
+					"title": "В корзину",
+					"text": "В корзину",
+					"size": "small",
+					"mobFit": true
+				},
+				"attr": "data-attr"
+			}
+		],
+		"action": {
+			"href": "javascript:void(0);",
+			"title": "В каталог",
+			"text": "В каталог",
+			"outline": true,
+			"mobFit": true
+		}
+	},
+	"promoCards": {
+		"cards": [
+			{
+				"id": "card-promo-1",
+				"href": "javascript:void(0);",
+				"title": "Программное обеспечение",
+				"text": "Софт и операционные системы для&nbsp;установки на терминалы.<br><br> Софт для управления парком мобильных решений с компьютера.",
+				"image": {
+					"src": "tmp/card-promo/image-1.png",
+					"alt": "alt image",
+					"fill": true
+				},
+				"pattern": {
+					"name": "patterns/pattern-4",
+					"size": "fit"
+				},
+				"action": {
+					"non_interactive": true,
+					"text": "Подробнее",
+					"theme": "white",
+					"size": "small",
+					"mobFit": true
+				},
+				"attr": "data-attr"
+			},
+			{
+				"id": "card-promo-2",
+				"href": "javascript:void(0);",
+				"theme": "white",
+				"title": "Аксессуары",
+				"text": "Подставки, ремешки, пистолетные рукоятки, и другие аксессуары.",
+				"image": {
+					"src": "tmp/card-promo/image-2.png",
+					"alt": "alt image",
+					"fill": true
+				},
+				"pattern": {
+					"name": "patterns/pattern-4",
+					"size": "fit"
+				},
+				"action": {
+					"non_interactive": true,
+					"text": "Подробнее",
+					"size": "small",
+					"mobFit": true
+				},
+				"attr": "data-attr"
+			}
+		]
+	},
+	"features": {
+		"heading": "Сферы применения",
+		"name": "slider-features",
+		"slides": [
+			{
+				"id": "card-feature-1",
+				"href": "javascript:void(0);",
+				"title": "На складе",
+				"text": "Принимать маркированные товары и проводить инвентаризацию",
+				"icon": {
+					"name": "72/boxes",
+					"size": "fit"
+				}
+			},
+			{
+				"id": "card-feature-2",
+				"href": "javascript:void(0);",
+				"title": "В доставке",
+				"text": "Принимать маркированные товары и проводить инвентаризацию",
+				"icon": {
+					"name": "72/logistics",
+					"size": "fit"
+				}
+			},
+			{
+				"id": "card-feature-3",
+				"href": "javascript:void(0);",
+				"title": "Для учета основных средств",
+				"text": "Принимать маркированные товары и проводить инвентаризацию",
+				"icon": {
+					"name": "72/check",
+					"size": "fit"
+				}
+			},
+			{
+				"id": "card-feature-4",
+				"href": "javascript:void(0);",
+				"title": "В доставке",
+				"text": "Принимать маркированные товары и проводить инвентаризацию",
+				"icon": {
+					"name": "72/protection",
+					"size": "fit"
+				}
+			},
+			{
+				"id": "card-feature-5",
+				"href": "javascript:void(0);",
+				"title": "Для учета основных средств",
+				"text": "Принимать маркированные товары и проводить инвентаризацию",
+				"icon": {
+					"name": "72/energy",
+					"size": "fit"
+				}
+			},
+			{
+				"id": "card-feature-6",
+				"href": "javascript:void(0);",
+				"title": "Для учета основных средств",
+				"text": "Принимать маркированные товары и проводить инвентаризацию",
+				"icon": {
+					"name": "72/qr",
+					"size": "fit"
+				}
+			}
+		]
+	},
+	"contact_us": {
+		"title": "Связаться с нами",
+		"text": "Заполните форму и&nbsp;мы&nbsp;свяжемся с вами",
+		"action": {
+			"href": "javascript:void(0);",
+			"text": "Заполнить форму",
+			"title": "Заполнить форму",
+			"attr": "data-attr",
+			"mobFit": true
+		},
+		"pattern": {
+			"name": "patterns/pattern-5",
+			"size": "fit"
+		}
+	},
+	"aboutCompany": {
+		"heading": "О компании",
+		"slices": 8,
+		"theme": "white",
+		"cardSize": "small",
+		"slides": [
+			{
+				"active": true,
+				"image": {
+					"src": "tmp/slider-slice/slide-2.jpg",
+					"alt": "alt image",
+					"fill": true,
+					"tab": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/slider-slice/slide-2-tab.jpg"
+							}
+						]
+					},
+					"mob": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/slider-slice/slide-2-mob.jpg"
+							}
+						]
+					}
+				},
+				"title": "Большой опыт",
+				"text": "С 2001 года производим кассы и другое оборудование для бизнеса. Разбираемся в потребностях предпринимателей и требованиях законодательства",
+				"action": {
+					"href": "javascript:void(0);",
+					"title": "Подробнее о нас",
+					"text": "Подробнее о нас",
+					"mobFit": true
+				}
+			},
+			{
+				"image": {
+					"src": "tmp/slider-slice/slide-3.jpg",
+					"alt": "alt image",
+					"fill": true,
+					"tab": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/slider-slice/slide-3-tab.jpg"
+							}
+						]
+					},
+					"mob": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/slider-slice/slide-3-mob.jpg"
+							}
+						]
+					}
+				},
+				"title": "Собственное производство",
+				"text": "Практически все ТСД на рынке производят в Китае. Наши тоже — но у нас есть собственная выделенная линия производства, настроенная по нашим требованиям."
+			},
+			{
+				"image": {
+					"src": "tmp/slider-slice/slide-4.jpg",
+					"alt": "alt image",
+					"fill": true
+				},
+				"title": "Более 2000 сервисных центров в России",
+				"text": "Если у вас сломался терминал или вы хотите узнать, как его настроить, модернизировать или обновить — вы можете обратиться в один из наших сервисных центров",
+				"action": {
+					"href": "javascript:void(0);",
+					"title": "Подробнее о нас",
+					"text": "Подробнее о нас",
+					"mobFit": true
+				}
+			}
+		],
+		"logo": true
+	},
+	"blog": {
+		"heading": "Блог",
+		"name": "slider-news",
+		"slides": [
+			{
+				"href": "javascript:void(0);",
+				"id": "card-news-1",
+				"image": {
+					"src": "tmp/card-news/image-1.jpg",
+					"alt": "alt image",
+					"fill": true,
+					"swiper_lazy": true
+				},
+				"badge": {
+					"href": "javascript:void(0);",
+					"text": "кейсы",
+					"theme": "red"
+				},
+				"date": "25 июня 2021",
+				"title": "Комплексная автоматизация товародвижения с использованием мобильных терминалов сбора данных в «Zolla»"
+			},
+			{
+				"href": "javascript:void(0);",
+				"id": "card-news-2",
+				"image": {
+					"src": "tmp/card-news/image-2.jpg",
+					"alt": "alt image",
+					"fill": true,
+					"swiper_lazy": true
+				},
+				"badge": {
+					"href": "javascript:void(0);",
+					"text": "кейсы",
+					"theme": "red"
+				},
+				"date": "25 июня 2021",
+				"title": "Комплексная автоматизация товародвижения"
+			},
+			{
+				"href": "javascript:void(0);",
+				"id": "card-news-3",
+				"image": {
+					"src": "tmp/card-news/image-1.jpg",
+					"alt": "alt image",
+					"fill": true,
+					"swiper_lazy": true
+				},
+				"badge": {
+					"href": "javascript:void(0);",
+					"text": "кейсы",
+					"theme": "red"
+				},
+				"date": "25 июня 2021",
+				"title": "Комплексная автоматизация товародвижения с использованием мобильных терминалов сбора данных в «Zolla»"
+			},
+			{
+				"href": "javascript:void(0);",
+				"id": "card-news-4",
+				"image": {
+					"src": "tmp/card-news/image-2.jpg",
+					"alt": "alt image",
+					"fill": true,
+					"swiper_lazy": true
+				},
+				"badge": {
+					"href": "javascript:void(0);",
+					"text": "кейсы",
+					"theme": "red"
+				},
+				"date": "25 июня 2021",
+				"title": "Комплексная автоматизация товародвижения с использованием"
+			}
+		],
+		"action": {
+			"href": "javascript:void(0);",
+			"text": "Перейти в блог",
+			"title": "Перейти в блог",
+			"outline": true,
+			"mobFit": true,
+			"attr": "data-attr"
+		}
+	},
+	"stickyButton": {
+		"href": "javascript:void(0);",
+		"title": "Связаться с нами",
+		"icon": {
+			"name": "32/email",
+			"size": "32"
+		}
+	}
+}

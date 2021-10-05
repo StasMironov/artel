@@ -1,0 +1,97 @@
+html {
+	font-family: $ff-base;
+	font-weight: 400;
+	font-style: normal;
+}
+
+body {
+	@include text-body;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	margin: 0;
+	font-weight: 600;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+h1, .h1 {
+	@include h1;
+}
+
+h2, .h2 {
+	@include h2;
+}
+
+h3, .h3 {
+	@include h3;
+}
+
+h4, .h4 {
+	@include h4;
+}
+
+h5, .h5 {
+	@include h4;
+}
+
+h6, .h6 {
+	@include h4;
+}
+
+.text-lead {
+	@include text-lead;
+}
+
+.text-body {
+	@include text-body;
+}
+
+.text-body-small {
+	@include text-body-small;
+}
+
+.text-label {
+	@include text-label;
+}
+
+.link {
+	color: $color-black;
+
+	@include defaultTransition(color);
+
+	@include touchLessHover {
+		color: $color-red;
+	}
+
+	&--white {
+		color: $color-white;
+
+		@include touchLessHover {
+			color: $color-black;
+		}
+	}
+
+	&--grey {
+		color: $color-text-grey;
+
+		@include touchLessHover {
+			color: $color-red;
+		}
+	}
+}
+
+.link-content {
+	color: $color-red;
+	@include line-animate-in($color-red);
+
+	&--white {
+		color: $color-white;
+		@include line-animate-in($color-white);
+	}
+}
+
