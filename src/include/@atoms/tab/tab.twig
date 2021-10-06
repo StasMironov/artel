@@ -1,0 +1,27 @@
+{% if tab.href %}
+	{% if tab.active %}
+		<span
+			class="tab tab--active{% if tab.theme %} tab--{{ tab.theme }}{% endif %}{{ tab.disabled ? ' tab--disabled' : '' }}"{% if tab.attr %} {{ tab.attr }}{% endif %}>
+			<span class="tab__text">{{ tab.text }}</span>
+		</span>
+	{% else %}
+		<a href="{{ tab.href }}"
+		   class="tab{% if tab.theme %} tab--{{ tab.theme }}{% endif %}{{ tab.disabled ? ' tab--disabled' : '' }}"{% if tab.attr %} {{ tab.attr }}{% endif %}>
+			<span class="tab__text">{{ tab.text }}</span>
+		</a>
+	{% endif %}
+{% else %}
+	{% if tab.active %}
+		<span
+			class="tab tab--active{% if tab.theme %} tab--{{ tab.theme }}{% endif %}{{ tab.disabled ? ' tab--disabled' : '' }}"
+			title="{{ tab.text }}"{% if tab.attr %} {{ tab.attr }}{% endif %}>
+			<span class="tab__text">{{ tab.text }}</span>
+		</span>
+	{% else %}
+		<button type="button"
+				class="tab{% if tab.theme %} tab--{{ tab.theme }}{% endif %}{{ tab.disabled ? ' tab--disabled' : '' }}"
+				title="{{ tab.text }}"{% if tab.attr %} {{ tab.attr }}{% endif %}{% if tab.disabled %} disabled{% endif %}>
+			<span class="tab__text">{{ tab.text }}</span>
+		</button>
+	{% endif %}
+{% endif %}

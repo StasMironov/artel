@@ -8,8 +8,99 @@
 		<div class="container">
 			<p class="h2 mb-24">Icons</p>
 
+			<div class="mb-24">
+				<p class="text-lead mb-16"><code>24px</code></p>
 
-			...
+				<div style="display: flex; flex-wrap: wrap;">
+					{% for icon in icons.24px %}
+						<div class="py-8 px-8">
+							{% view '@icon' with {
+								icon: icon
+							} %}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--</editor-fold>-->
+
+	<!--<editor-fold desc="Buttons">-->
+
+	<div class="py-24">
+		<div class="container">
+			<p class="h2 mb-24">Buttons</p>
+
+			{% for button in buttons %}
+				<div class="mb-24">
+					{% view '@button' with {
+						button: button
+					} %}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<!--</editor-fold>-->
+
+	<!--<editor-fold desc="Nav arrows">-->
+
+	<div class="py-24">
+		<div class="container">
+			<p class="h2 mb-24">Nav arrows</p>
+
+			<div class="mb-24">
+				{% view '@nav-arrows' %}
+			</div>
+
+			<div class="py-24 px-16 bg-black">
+				{% view '@nav-arrows' with {
+					nav_arrows: {
+						theme: "on-black"
+					}
+				} %}
+			</div>
+		</div>
+	</div>
+
+	<!--</editor-fold>-->
+
+	<!--<editor-fold desc="Tab">-->
+
+	<div class="py-24">
+		<div class="container">
+			<p class="h2 mb-24">Tabs</p>
+
+			<div class="mb-48">
+				{% for tab in tabs %}
+					<div class="mb-24">
+						{% view '@tab' with {
+							tab: tab
+						} %}
+					</div>
+				{% endfor %}
+			</div>
+
+			<div class="mb-48">
+				{% for tab in tabs2 %}
+					<div class="mb-24">
+						{% view '@tab' with {
+							tab: tab
+						} %}
+					</div>
+				{% endfor %}
+			</div>
+
+			<div class="mb-24">
+				{% for tab in tabs3 %}
+					<div class="mb-24">
+						{% view '@tab' with {
+							tab: tab
+						} %}
+					</div>
+				{% endfor %}
+			</div>
 		</div>
 	</div>
 

@@ -1,0 +1,41 @@
+.tab {
+	$root: &;
+
+	display: block;
+	border: 0;
+	padding: 0;
+	background-color: transparent;
+	cursor: pointer;
+	min-height: rem(22);
+	color: rgba($color-black, 0.4);
+	@include defaultTransition(color);
+
+	@include touchLessHover {
+		&:not(:disabled):not(#{$root}__tab--disabled) {
+			color: $color-black;
+		}
+	}
+
+	&--active {
+		position: relative;
+		color: $color-black;
+		cursor: default;
+
+		&:before {
+			position: absolute;
+			top: 3px;
+			left: rem(-32);
+			width: rem(16);
+			height: rem(16);
+			border-radius: 50%;
+			background-color: $color-green;
+			content: "";
+		}
+	}
+
+	&:disabled,
+	&--disabled {
+		color: rgba($color-black, 0.2);
+		cursor: not-allowed;
+	}
+}

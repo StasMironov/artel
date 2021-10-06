@@ -1,1 +1,74 @@
-.button {}
+.button {
+	$root: &;
+
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	min-width: rem(110);
+	height: rem(56);
+	padding: 0 rem(32);
+	font-size: 0;
+	line-height: rem(56);
+	background-color: $color-green;
+	color: $color-white;
+	border: 0;
+	border-radius: rem(32);
+	cursor: pointer;
+	text-align: center;
+	white-space: nowrap;
+	@include defaultTransition(background-color);
+
+	&--has-icon {
+		padding-right: rem(24);
+	}
+
+	@include touchLessHover {
+		&:not(#{$root}--non-interactive):not(:disabled):not(.button--disabled) {
+			background-color: darken($color-green, 5%);
+		}
+	}
+
+	&__text {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		width: 100%;
+		font-size: rem(15);
+		line-height: rem(18);
+		font-weight: 500;
+
+		@include media-breakpoint-up(md) {
+			font-size: rem(16);
+			line-height: rem(24);
+		}
+	}
+
+	&__icon {
+		display: block;
+		width: rem(24);
+		height: rem(24);
+		font-size: 0;
+		line-height: rem(24);
+		margin-left: rem(8);
+	}
+
+	&--non-interactive {
+		cursor: default;
+	}
+
+	&--fit {
+		width: 100%;
+	}
+
+	&--mob-fit {
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+		}
+	}
+
+	&:disabled,
+	&--disabled {
+		opacity: 0.4;
+		cursor: not-allowed;
+	}
+}

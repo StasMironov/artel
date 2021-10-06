@@ -1,3 +1,123 @@
 {
-	"title": "atoms"
+  "title": "atoms",
+  "icons": {
+    "24px": [
+      {
+        "name": "24/fb"
+      },
+      {
+        "name": "24/magnifier"
+      },
+      {
+        "name": "24/arrow-right"
+      },
+      {
+        "name": "24/arrow-left"
+      },
+      {
+        "name": "24/arrow-up-right"
+      },
+      {
+        "name": "24/minus"
+      },
+      {
+        "name": "24/plus"
+      },
+      {
+        "name": "24/arrow2-top"
+      },
+      {
+        "name": "24/dot"
+      }
+    ],
+    "64px": [
+      {
+        "name": "24/earth",
+        "size": "64"
+      },
+      {
+        "name": "24/heart",
+        "size": "64"
+      }
+    ]
+  },
+  "buttons": [
+    {
+      "title": "Подробнее",
+      "text": "Подробнее"
+    },
+    {
+      "title": "Подробнее",
+      "text": "Подробнее",
+      "icon": {
+        "name": "24/arrow-up-right"
+      }
+    },
+    {
+      "title": "Подробнее",
+      "text": "Подробнее",
+      "icon": {
+        "name": "24/arrow-up-right"
+      },
+      "disabled": true
+    },
+    {
+      "href": "javascript:void(0);",
+      "title": "Подробнее",
+      "text": "Подробнее",
+      "icon": {
+        "name": "24/arrow-up-right"
+      },
+      "disabled": true
+    }
+  ],
+  "tabs": [
+    {
+      "text": "Жизнь компании",
+      "title": "Жизнь компании"
+    },
+    {
+      "text": "Пресс-служба",
+      "title": "Пресс-служба"
+    },
+    {
+      "active": true,
+      "text": "Пресс-служба",
+      "title": "Пресс-служба"
+    }
+  ],
+  "tabs2": [
+    {
+      "href": "javascript:void(0);",
+      "text": "Жизнь компании",
+      "title": "Жизнь компании"
+    },
+    {
+      "href": "javascript:void(0);",
+      "text": "Пресс-служба",
+      "title": "Пресс-служба"
+    },
+    {
+      "active": true,
+      "href": "javascript:void(0);",
+      "text": "Пресс-служба",
+      "title": "Пресс-служба"
+    }
+  ],
+  "tabs3": [
+    {
+      "text": "Жизнь компании",
+      "title": "Жизнь компании",
+      "disabled": true
+    },
+    {
+      "text": "Пресс-служба",
+      "title": "Пресс-служба"
+    },
+    {
+      "active": true,
+      "text": "Пресс-служба",
+      "title": "Пресс-служба"
+    }
+  ]
 }

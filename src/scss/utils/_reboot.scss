@@ -238,9 +238,7 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-  &:not(:disabled) {
-    cursor: pointer;
-  }
+	cursor: pointer;
 }
 
 

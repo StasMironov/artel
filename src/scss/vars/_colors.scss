@@ -1,7 +1,13 @@
 $color-white: #fff;
 $color-black: #000;
+$color-green: #00D372;
+$color-gray: #F5F5F5;
+$color-purple: #CE00F8;
 
 $colors: (
 	"white": $color-white,
-	"black": $color-black
+	"black": $color-black,
+	"green": $color-green,
+	"gray": $color-gray,
+	"purple": $color-purple,
 );
