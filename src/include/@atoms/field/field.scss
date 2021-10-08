@@ -1,0 +1,19 @@
+.field {
+	$root: &;
+
+	display: block;
+	font-size: 0;
+	line-height: 1;
+
+	&--hidden {
+		@include visually-hidden;
+	}
+
+	&__label {
+		margin-bottom: rem(8);
+	}
+
+	&__control {
+		position: relative;
+	}
+}

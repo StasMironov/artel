@@ -11,6 +11,7 @@
 		"@csstools/normalize.css": "^10.1.0",
 		"countup.js": "^2.0.7",
 		"es7-object-polyfill": "^1.0.1",
+		"gsap": "^3.8.0",
 		"imask": "^6.1.0",
 		"intersection-observer": "^0.7.0",
 		"jquery": "^3.6.0",
