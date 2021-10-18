@@ -9,3 +9,7 @@
 .is-absolute {
   position: absolute;
 }
+
+.visually-hidden {
+	@include visually-hidden;
+}

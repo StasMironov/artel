@@ -1,0 +1,124 @@
+.main-hero {
+	$root: &;
+
+	position: relative;
+
+	&__inner {
+		position: relative;
+		min-height: rem(560);
+
+		@include media-breakpoint-up(lg) {
+			min-height: rem(800);
+			height: 100vh;
+		}
+		@include media-breakpoint-only(md) {
+			min-height: rem(1024);
+		}
+	}
+
+	&__slide {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		padding-top: rem(128);
+
+		@include media-breakpoint-up(lg) {
+			padding-top: rem(280);
+		}
+		@include media-breakpoint-only(md) {
+			padding-top: rem(222);
+		}
+
+
+		&:not(.is-active) {
+			display: none;
+		}
+	}
+
+	&__wrap {
+		overflow: hidden;
+	}
+
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+
+		#{$root}__slide.has-overlay & {
+			&:before {
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba($color-black, 0.4);
+				content: "";
+			}
+		}
+	}
+
+	&__title {
+		margin-bottom: rem(32);
+
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(48);
+		}
+	}
+
+	&__container {
+		#{$root}__inner & {
+			position: relative;
+			z-index: 1;
+		}
+
+		#{$root}__bottom & {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	&__content {
+		max-width: rem(800);
+	}
+
+	&__numbers {
+		display: flex;
+		align-items: center;
+	}
+
+	&__number {
+		display: block;
+		background-color: transparent;
+		border: 0;
+		padding: 0;
+		color: rgba($color-black, 0.4);
+		cursor: pointer;
+
+		&:not(:last-child) {
+			margin-right: rem(24);
+		}
+
+		&.is-active {
+			color: $color-black;
+			cursor: default;
+		}
+	}
+
+	&__bottom {
+		position: absolute;
+		left: 0;
+		bottom: rem(28);
+		width: 100%;
+
+		@include media-breakpoint-up(md) {
+			bottom: rem(64);
+		}
+	}
+}

@@ -7,6 +7,7 @@ import libs from './libs';
 import Header from './components/header';
 import Toggle from './components/lang-toggle';
 import InputSearch from './components/input-search';
+import Sliders from './components/sliders';
 
 import {devices} from './utils/breakpoints';
 
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	Header.init();
 	Toggle.init();
 	InputSearch.init();
+	Sliders.init();
 
 	document.body.classList.add('content-loaded');
 });

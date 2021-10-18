@@ -5,13 +5,18 @@
 	width: 100%;
 	height: rem(48);
 	border: 0;
-	padding: 0 rem(80) 0 0;
+	padding: 0 rem(80) rem(4) 0;
 	background-color: transparent;
 	color: $color-white;
 	border-bottom: 1px solid $color-white;
 	outline: none;
-	@include h3;
 	@include defaultTransition(border-color);
+	@include text-body;
+
+	@include media-breakpoint-up(md) {
+		padding: 0 rem(80) 0 0;
+		@include h3;
+	}
 
 	@include touchLessHover {
 		border-color: rgba($color-white, 0.4);

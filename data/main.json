@@ -1,3 +1,57 @@
 {
-	"title": "Главная"
+	"title": "Главная",
+	"pageHeading": "Some text",
+	"hero": {
+		"slides": [
+			{
+				"title": "Artel — ведущий производитель бытовой техники и электроники в Центральной Азии",
+				"action": {
+					"href": "javascript:void(0);",
+					"text": "Подробнее о группе",
+					"title": "Подробнее о группе",
+					"icon": {
+						"name": "24/arrow-up-right"
+					}
+				},
+				"image": {
+					"src": "tmp/main-hero/hero-desk.jpg",
+					"alt": "image alt",
+					"fill": true,
+					"tab": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/main-hero/hero-tab.jpg"
+							}
+						]
+					},
+					"mob": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/main-hero/hero-mob.jpg"
+							}
+						]
+					}
+				}
+			},
+			{
+				"title": "Компания Artel экспортировала продукцию на сумму более $80 млн за 2020 год",
+				"action": {
+					"href": "javascript:void(0);",
+					"text": "Подробнее о группе",
+					"title": "Подробнее о группе",
+					"icon": {
+						"name": "24/arrow-up-right"
+					}
+				},
+				"image": {
+					"src": "tmp/main-hero/hero-desk-2.jpg",
+					"alt": "image alt",
+					"fill": true
+				},
+				"overlay": true
+			}
+		]
+	}
 }
