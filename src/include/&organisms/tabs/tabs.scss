@@ -1,0 +1,36 @@
+.tabs {
+	&__item {
+		width: auto;
+
+		&:not(:last-child) {
+			@include media-breakpoint-down(md) {
+				margin-right: rem(4);
+			}
+
+			@include media-breakpoint-up(lg) {
+				margin-bottom: rem(24);
+			}
+		}
+	}
+
+	.tab {
+		@include media-breakpoint-up(lg) {
+			max-width: rem(216);
+		}
+	}
+
+	.swiper-container {
+		overflow: visible;
+		//@include media-breakpoint-down(sm) {
+		//	padding-left: rem(16);
+		//	padding-right: rem(32);
+		//}
+	}
+
+	.swiper-wrapper {
+		@include media-breakpoint-up(lg){
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
