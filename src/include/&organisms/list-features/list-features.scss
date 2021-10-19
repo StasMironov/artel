@@ -1,0 +1,34 @@
+.list-features {
+	$root: &;
+	&__title {
+		display: inline-block;
+		width: rem(250);
+		margin-bottom: rem(32);
+
+		@include media-breakpoint-up(md) {
+			width: rem(440);
+			margin-bottom: rem(48);
+		}
+	}
+
+	&__items {
+
+		@include media-breakpoint-up(lg) {
+			display: flex;
+			flex-wrap: wrap;
+			margin-right: rem(-8);
+		}
+	}
+
+	&__item {
+		@include media-breakpoint-down(md) {
+			+ #{$root}__item {
+				margin-top: rem(8);
+			}
+		}
+		@include media-breakpoint-up(lg) {
+			width: 33.33%;
+			padding-right: rem(8);
+		}
+	}
+}

@@ -1,0 +1,16 @@
+<div class="list-features">
+	{% if list.title %}
+		<h2 class="list-features__title" data-fade-in-up>{{ list.title }}</h2>
+	{% endif %}
+	<div class="list-features__items">
+		{% for item in list.items %}
+			<div class="list-features__item" data-fade-in-up data-delay="{{ (0.2 + loop.index0 / 5)|round(2, 'floor') }}">
+				{% view '^card-features' with {
+					card: item|merge({
+						delay: (0.2 + loop.index0 / 5)|round(2, 'floor')
+					})
+				} %}
+			</div>
+		{% endfor %}
+	</div>
+</div>
