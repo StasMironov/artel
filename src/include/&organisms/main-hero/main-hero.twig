@@ -1,30 +1,35 @@
-<div class="main-hero" data-main-hero>
-	<div class="main-hero__inner" data-slider>
+<div class="main-hero" data-main-hero{% if hero.autoplay %} data-autoplay="{{ hero.autoplay }}"{% endif %}>
+	<div class="main-hero__wrap" data-slider>
 		{% for slide in hero.slides %}
-			<div class="main-hero__slide{{ slide.overlay ? ' has-overlay' : '' }}{% if loop.index == 1 %} is-active{% endif %}"
+			<div
+				class="main-hero__slide{{ slide.overlay ? ' has-overlay' : '' }}{{ slide.dark ? ' is-dark' : '' }}{% if loop.index == 1 %} is-active{% endif %}"
 				data-slide>
-				<div class="main-hero__wrap">
-					<div class="main-hero__image">
-						{% if slide.image.tab or slide.image.mob %}
-							{% view '@image-adaptive' with {
-								image: slide.image
-							} %}
-						{% else %}
-							{% view '@image' with {
-								image: slide.image
-							} %}
-						{% endif %}
-					</div>
-					<div class="main-hero__container container">
-						<div class="main-hero__content">
-							<h2 class="main-hero__title h1">{{ slide.title }}</h2>
-							{% if slide.action %}
-								<div class="main-hero__action">
-									{% view '@button' with {
-										button: slide.action
+				<div class="main-hero__shell">
+					<div class="main-hero__inner">
+						<div class="main-hero__image-wrap" data-image-wrap>
+							<div class="main-hero__image" data-image>
+								{% if slide.image.tab or slide.image.mob %}
+									{% view '@image-adaptive' with {
+										image: slide.image
 									} %}
-								</div>
-							{% endif %}
+								{% else %}
+									{% view '@image' with {
+										image: slide.image
+									} %}
+								{% endif %}
+							</div>
+						</div>
+						<div class="main-hero__container container">
+							<div class="main-hero__content">
+								<h2 class="main-hero__title h1" data-title>{{ slide.title }}</h2>
+								{% if slide.action %}
+									<div class="main-hero__action" data-action>
+										{% view '@button' with {
+											button: slide.action
+										} %}
+									</div>
+								{% endif %}
+							</div>
 						</div>
 					</div>
 				</div>
@@ -36,12 +41,20 @@
 			<div class="main-hero__numbers">
 				{% for slide in hero.slides %}
 					<button type="button"
-							class="main-hero__number">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</button>
+							class="main-hero__number{% if loop.index == 1 %} is-active{% endif %}"
+							data-number="{{ loop.index0 }}">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</button>
 				{% endfor %}
 			</div>
+			{% if hero.autoplay %}
+				<div class="main-hero__progress">
+					<span data-progress></span>
+				</div>
+			{% endif %}
 			<div class="main-hero__arrows">
 				{% view '@nav-arrows' %}
 			</div>
 		</div>
 	</div>
 </div>
+
+
