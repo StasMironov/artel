@@ -8,6 +8,7 @@ import Header from './components/header';
 import Toggle from './components/lang-toggle';
 import InputSearch from './components/input-search';
 import Sliders from './components/sliders';
+import Animation from './components/animation';
 
 import {devices} from './utils/breakpoints';
 
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	libs.init();
 
 	// Components
+	Animation.init();
 	Header.init();
 	Toggle.init();
 	InputSearch.init();

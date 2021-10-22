@@ -18,7 +18,9 @@
 		"jquery": "^3.6.0",
 		"parsleyjs": "^2.9.2",
 		"promise-polyfill": "^8.2.0",
+		"sal.js": "^0.8.5",
 		"smoothscroll-polyfill": "^0.4.4",
+		"swiper": "^6.8.4",
 		"throttle-debounce": "^3.0.1",
 		"vanilla-lazyload": "^15.1.1"
 	},

@@ -3,23 +3,23 @@
 
 @each $colorName, $colorValue in $colors {
   .bg-#{$colorName} {
-    background-color: $colorValue;
+    background-color: $colorValue !important;
   }
   .bg-#{$colorName}-darken {
-    background-color: $colorValue;
+    background-color: $colorValue !important;
   }
   .bg-#{$colorName}-lighten {
-    background-color: $colorValue;
+    background-color: $colorValue !important;
   }
 
   .color-#{$colorName} {
-    color: $colorValue;
+    color: $colorValue !important;
   }
   .color-#{$colorName}-darken {
-    color: $colorValue;
+    color: $colorValue !important;
   }
   .color-#{$colorName}-lighten {
-    color: $colorValue;
+    color: $colorValue !important;
   }
 }
 

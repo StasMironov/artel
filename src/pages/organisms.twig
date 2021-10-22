@@ -1,5 +1,14 @@
 {% extends "layouts::_page.twig" %}
 
 {% block content %}
-
+	<div class="pt-128">
+		<div class="py-24 bg-gray">
+			<div class="my-56">
+				{% view '&list-features' %}
+			</div>
+			<div class="my-56">
+				{% view '&block-news' %}
+			</div>
+		</div>
+	</div>
 {% endblock %}

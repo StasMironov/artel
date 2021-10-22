@@ -1,0 +1,24 @@
+<div class="card-news">
+	{% if card.href %}
+		<a href="{{ card.href }}" class="card-news__link">{{ card.href }}</a>
+	{% endif %}
+	<div class="card-news__inner">
+		{% if card.date %}
+			<div class="card-news__date">{{ card.date }}</div>
+		{% endif %}
+		{% if card.title %}
+			<div class="card-news__title">{{ card.title }}</div>
+		{% endif %}
+		{% if card.image %}
+			<div class="card-news__image">
+				{% view '@image' with {
+					image: card.image|merge({
+						"fill": true,
+						"width": "440",
+						"height": "240"
+					})
+				}%}
+			</div>
+		{% endif %}
+	</div>
+</div>

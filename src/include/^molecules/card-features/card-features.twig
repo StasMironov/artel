@@ -1,0 +1,21 @@
+{% set delay = 0 %}
+{% if card.delay %}
+	{% set delay = card.delay %}
+{% endif %}
+<div class="card-features{% if card.theme %} bg-{{ card.theme }}{% endif %}">
+	{% if card.href %}
+		<a class="card-features__link" href="{{ card.href }}">{{ card.href }}</a>
+	{% endif %}
+	<div class="card-features__inner">
+		{% if card.title %}
+			<div class="card-features__title">{{ card.title }}</div>
+		{% endif %}
+		{% if card.text %}
+			<div class="card-features__text">{{ card.text }}</div>
+		{% endif %}
+	</div>
+	<div class="card-features__icon">
+		<span>{% svg '24/arrow-up-right' %}</span>
+	</div>
+	<div class="card-features__circle"{% if delay %} style="--delay: {{ delay }}"{% endif %}></div>
+</div>
