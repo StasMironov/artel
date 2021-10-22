@@ -1,8 +1,7 @@
 <div class="main-hero" data-main-hero{% if hero.autoplay %} data-autoplay="{{ hero.autoplay }}"{% endif %}>
 	<div class="main-hero__wrap" data-slider>
 		{% for slide in hero.slides %}
-			<div
-				class="main-hero__slide{{ slide.overlay ? ' has-overlay' : '' }}{{ slide.dark ? ' is-dark' : '' }}{% if loop.index == 1 %} is-active{% endif %}"
+			<div class="main-hero__slide{{ slide.overlay ? ' has-overlay' : '' }}{{ slide.dark ? ' is-dark' : '' }}{% if loop.index == 1 %} is-active{% endif %}"
 				data-slide>
 				<div class="main-hero__shell">
 					<div class="main-hero__inner">

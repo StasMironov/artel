@@ -11,18 +11,13 @@
 	border-bottom: 1px solid rgba($color-black, 0.1);
 	transition: transform 0.4s cubic-bezier(0.475, 0.425, 0, 0.995), background-color 0.3s ease, border-color 0.3s ease;
 
-	@at-root body.dark-slide-is-active & {
+	@at-root body.dark-slide-is-active &:not(.in-progress) {
 		background-color: transparent;
 		border-bottom: 1px solid rgba($color-white, 0.4);
 
 		.lang-toggle__action {
 			color: $color-white;
 		}
-	}
-
-	&--transparent {
-		background-color: transparent;
-		border-bottom: 1px solid rgba($color-white, 0.4);
 	}
 
 	&.is-hide {
@@ -36,7 +31,7 @@
 		color: $color-green;
 		@include defaultTransition(color);
 
-		@at-root body.dark-slide-is-active & {
+		@at-root body.dark-slide-is-active .header:not(.in-progress) & {
 			color: $color-white;
 		}
 
@@ -117,7 +112,7 @@
 			display: none;
 		}
 
-		#{$root}--transparent & {
+		@at-root body.dark-slide-is-active .header:not(.in-progress) & {
 			color: $color-white;
 		}
 	}
@@ -134,7 +129,7 @@
 			color: rgba($color-black, 0.4);
 		}
 
-		@at-root body.dark-slide-is-active & {
+		@at-root body.dark-slide-is-active .header:not(.in-progress) & {
 			color: $color-white;
 
 			&--active {

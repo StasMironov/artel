@@ -16,6 +16,12 @@ export default {
 					header.classList.add('is-hide');
 				} else {
 					header.classList.remove('is-hide');
+
+					if (self.progress !== 0) {
+						header.classList.add('in-progress');
+					} else {
+						header.classList.remove('in-progress');
+					}
 				}
 			}
 		});

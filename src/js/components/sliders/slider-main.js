@@ -206,7 +206,7 @@ export default class Slider {
 			"clip-path": "circle(0% at 50% 50%)",
 		}, {
 			"clip-path": "circle(100% at 50% 50%)",
-			duration: 1.25,
+			duration: 1.5,
 			clearProps: 'all',
 			ease: 'sine.out',
 			onStart: () => {
@@ -219,7 +219,7 @@ export default class Slider {
 				}
 			},
 		}, "-=1").fromTo(this.findNode(this.activeIndex, this.selectors.image), {
-			rotation: 20,
+			rotation: 15,
 		}, {
 			rotation: 0,
 			duration: 1.25,
