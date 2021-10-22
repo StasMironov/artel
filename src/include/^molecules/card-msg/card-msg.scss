@@ -1,0 +1,24 @@
+.card-msg {
+	height: 100%;
+	padding-top: rem(39);
+	padding-right: rem(40);
+	padding-left: rem(112);
+	background-color: white;
+
+	&__title {
+		margin-bottom: rem(24);
+		font-weight: 500;
+		font-size: rem(32);
+		line-height: rem(42);
+	}
+
+	&__icon {
+		width: rem(104);
+		margin-bottom: rem(42);
+
+		.icon {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

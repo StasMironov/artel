@@ -1,0 +1,12 @@
+.block-appeal {
+	&__left,
+	&__right {
+		width: 50%;
+	}
+
+	&__wrap {
+		display: flex;
+		margin-right: rem(-52);
+		margin-left: rem(-52);
+	}
+}
