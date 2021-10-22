@@ -8,6 +8,7 @@ import Header from './components/header';
 import Toggle from './components/lang-toggle';
 import InputSearch from './components/input-search';
 import Sliders from './components/sliders';
+import Submenu from './components/submenu';
 import Animation from './components/animation';
 
 import {devices} from './utils/breakpoints';
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	Toggle.init();
 	InputSearch.init();
 	Sliders.init();
+	Submenu.init();
 
 	document.body.classList.add('content-loaded');
 });

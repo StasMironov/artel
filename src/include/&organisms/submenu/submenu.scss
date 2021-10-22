@@ -1,0 +1,53 @@
+.submenu {
+	&__container {
+		display: flex;
+		align-items: flex-start;
+		padding-top: rem(166);
+		padding-bottom: rem(80);
+	}
+
+	&__info {
+		width: 25%;
+		padding-right: rem(40);
+		margin-right: 8.3333%;
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: rem(24);
+		}
+	}
+
+	&__text {
+		color: rgba($color-black, 0.4);
+	}
+
+	&__list {
+		columns: 2;
+		padding-top: rem(12);
+		column-gap: rem(148);
+	}
+
+	&__item {
+		max-width: rem(300);
+		margin-bottom: rem(16);
+	}
+
+	&__link {
+		color: $color-black;
+		@include defaultTransition(color);
+
+		@include touchLessHover {
+			color: rgba($color-black, 0.4);
+		}
+
+		&--active {
+			color: rgba($color-black, 0.4);
+		}
+	}
+
+	&[data-item] {
+		opacity: 0;
+		transform: translateY(#{rem(20)});
+	}
+}

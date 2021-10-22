@@ -29,7 +29,6 @@
 		"@babel/plugin-proposal-object-rest-spread": "^7.4.4",
 		"@babel/plugin-transform-object-assign": "^7.2.0",
 		"@babel/preset-env": "^7.12.10",
-		"@barba/core": "^2.9.7",
 		"autoprefixer": "^9.6.0",
 		"babel": "^6.23.0",
 		"babel-loader": "^8.2.2",
