@@ -1,9 +1,9 @@
 import gsap from 'gsap';
+import Hammer from 'hammerjs';
 
 export default class Slider {
 	constructor() {
 		this.sliderWrapNode = document.querySelector('[data-main-hero]');
-
 		this.selectors = {
 			imageWrap: '[data-image-wrap]',
 			slide: "[data-slide]",
@@ -30,6 +30,7 @@ export default class Slider {
 		this.activeIndex = 0;
 		this.prevIndex = 0;
 		this.slidesAmount = this.slides.length;
+		this.inTransition = false;
 
 		this.dark = this.slides[0].classList.contains('is-dark');
 
@@ -40,6 +41,7 @@ export default class Slider {
 			},
 			onComplete: () => {
 				this.sliderWrapNode.classList.remove('in-transition');
+				this.inTransition = false;
 			}
 		});
 
@@ -52,8 +54,7 @@ export default class Slider {
 
 		this.numbers.forEach((el, idx) => {
 			el.addEventListener('click', () => {
-
-				if (el.classList.contains('is-active')) return;
+				if (el.classList.contains('is-active') || this.inTransition) return;
 
 				this.slideChange([idx, this.activeIndex]);
 
@@ -74,6 +75,18 @@ export default class Slider {
 			paused: true,
 		});
 
+		this.manager = new Hammer.Manager(this.sliderWrapNode);
+		this.swipe = new Hammer.Swipe();
+		this.manager.add(this.swipe);
+
+		this.manager.on('swipeleft', () => {
+			this.slideChange(this.calcPrevNextIndex());
+		});
+
+		this.manager.on('swiperight', () => {
+			this.slideChange(this.calcPrevNextIndex('prev'));
+		});
+
 		if (this.autoplayInterval) { // автоматическая смена слайдов
 			this.progressLine = this.sliderWrapNode.querySelector(this.selectors.progressLine);
 
@@ -83,7 +96,8 @@ export default class Slider {
 				x: 0,
 				ease: "none",
 				duration: this.autoplayInterval / 1000,
-				delay: 1,
+				delay: 1.5, // ~ продолжительность анимации при смене слайдов
+				clearProps: 'all',
 				onComplete: () => {
 					this.slideChange(this.calcPrevNextIndex());
 				}
@@ -127,6 +141,9 @@ export default class Slider {
 	}
 
 	slideChange([nextIndex, prevIndex]) {
+		if (this.inTransition) return;
+
+		this.inTransition = true;
 		this.sliderWrapNode.classList.add('in-transition'); // для transition-delay при смене слайдов
 
 		this.classToggle(this.slides[this.activeIndex], true); // удаление класса is-active и добавление is-prev

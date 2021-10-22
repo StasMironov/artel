@@ -9,7 +9,16 @@
 	display: block;
 	background-color: $color-white;
 	border-bottom: 1px solid rgba($color-black, 0.1);
-	transition: transform 0.4s cubic-bezier(0.475, 0.425, 0, 0.995);
+	transition: transform 0.4s cubic-bezier(0.475, 0.425, 0, 0.995), background-color 0.3s ease, border-color 0.3s ease;
+
+	@at-root body.dark-slide-is-active & {
+		background-color: transparent;
+		border-bottom: 1px solid rgba($color-white, 0.4);
+
+		.lang-toggle__action {
+			color: $color-white;
+		}
+	}
 
 	&--transparent {
 		background-color: transparent;
@@ -22,12 +31,18 @@
 
 	&__logo {
 		display: block;
-		width: rem(104);
-		height: rem(44);
+		width: rem(80);
+		height: rem(30);
 		color: $color-green;
+		@include defaultTransition(color);
 
-		#{$root}--transparent & {
+		@at-root body.dark-slide-is-active & {
 			color: $color-white;
+		}
+
+		@include media-breakpoint-up(md) {
+			width: rem(104);
+			height: rem(44);
 		}
 	}
 
@@ -119,7 +134,7 @@
 			color: rgba($color-black, 0.4);
 		}
 
-		#{$root}--transparent & {
+		@at-root body.dark-slide-is-active & {
 			color: $color-white;
 
 			&--active {
