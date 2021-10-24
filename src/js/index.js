@@ -9,7 +9,9 @@ import Toggle from './components/lang-toggle';
 import SlideDown from './components/slidedown';
 import InputSearch from './components/input-search';
 import Sliders from './components/sliders';
+import Submenu from './components/submenu';
 import Animation from './components/animation';
+import Sticky from './components/sticky';
 
 import { devices } from './utils/breakpoints';
 
@@ -29,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	InputSearch.init();
 	SlideDown.init();
 	Sliders.init();
+	Submenu.init();
+	//Sticky.init();
 
 	document.body.classList.add('content-loaded');
 });

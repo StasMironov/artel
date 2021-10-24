@@ -1,0 +1,20 @@
+ <div class="read-more">
+    <div class="read-more__text">
+        {% if card.base %}
+            <div class="read-more__base">
+                {{ card.base }}
+            </div>
+        {% endif %}
+         {% if card.items %}
+            <div class="read-more__hidden" data-text-hidden>
+                {% for item in card.items %}
+                    <div class="read-more__item">
+                        {{ item }}
+                    </div>
+                {% endfor %}
+            </div>
+         {% endif %}
+        
+    </div>
+    <button class="read-more__btn" data-text-btn>Читать далее</button>
+</div>

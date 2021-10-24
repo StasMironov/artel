@@ -2,18 +2,36 @@
 	$root: &;
 
 	position: fixed;
+	z-index: 100;
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 100;
 	display: block;
 	background-color: $color-white;
-	border-bottom: 1px solid rgba($color-black, 0.1);
-	transition: transform 0.4s cubic-bezier(0.475, 0.425, 0, 0.995);
+	transition: transform 0.4s cubic-bezier(0.475, 0.425, 0, 0.995), background-color 0.3s ease;
 
-	&--transparent {
+	&:after {
+		position: absolute;
+		z-index: 10;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: rgba($color-black, 0.1);
+		content: "";
+		@include defaultTransition(background-color);
+	}
+
+	@at-root body.dark-slide-is-active &:not(.in-progress):not(.submenu-opened) {
 		background-color: transparent;
-		border-bottom: 1px solid rgba($color-white, 0.4);
+
+		.lang-toggle__action {
+			color: $color-white;
+		}
+
+		&:after {
+			background-color: rgba($color-white, 0.4);
+		}
 	}
 
 	&.is-hide {
@@ -21,17 +39,27 @@
 	}
 
 	&__logo {
+		position: relative;
+		z-index: 1;
 		display: block;
-		width: rem(104);
-		height: rem(44);
+		width: rem(80);
+		height: rem(30);
 		color: $color-green;
+		@include defaultTransition(color);
 
-		#{$root}--transparent & {
+		@at-root body.dark-slide-is-active .header:not(.in-progress):not(.submenu-opened) & {
 			color: $color-white;
+		}
+
+		@include media-breakpoint-up(md) {
+			width: rem(104);
+			height: rem(44);
 		}
 	}
 
 	&__container {
+		position: relative;
+		z-index: 10;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -61,8 +89,50 @@
 	}
 
 	&__item {
+		position: relative;
+
 		&:not(:last-child) {
 			margin-right: rem(24);
+		}
+
+		&[data-submenu-trigger]:after {
+			position: fixed;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: rem(492);
+			background-color: $color-white;
+			content: "";
+			transform: translateY(-100%);
+		}
+
+		@at-root .content-loaded &[data-submenu-trigger]:after {
+			transition: transform 0.4s cubic-bezier(0.475, 0.425, 0, 0.995) 0.3s;
+		}
+
+		#{$root}.submenu-opened &:after {
+			transform: none;
+			transition-delay: 0s;
+		}
+
+		&[data-submenu-trigger]:before {
+			position: absolute;
+			z-index: 1;
+			left: 0;
+			bottom: rem(-36);
+			width: 100%;
+			height: 1px;
+			background-color: transparent;
+			pointer-events: none;
+			content: "";
+			@include defaultTransition(background-color);
+		}
+
+		&.is-active {
+			&:before {
+				background-color: $color-black;
+			}
 		}
 	}
 
@@ -102,13 +172,19 @@
 			display: none;
 		}
 
-		#{$root}--transparent & {
+		@at-root body.dark-slide-is-active .header:not(.in-progress):not(.submenu-opened) & {
 			color: $color-white;
 		}
 	}
 
 	&__link {
+		position: relative;
+		z-index: 2;
+		display: block;
+		background-color: transparent;
+		padding: rem(4) 0;
 		color: $color-black;
+		border: 0;
 		@include defaultTransition(color);
 
 		@include touchLessHover {
@@ -119,7 +195,7 @@
 			color: rgba($color-black, 0.4);
 		}
 
-		#{$root}--transparent & {
+		@at-root body.dark-slide-is-active .header:not(.in-progress):not(.submenu-opened) & {
 			color: $color-white;
 
 			&--active {
@@ -129,6 +205,34 @@
 			@include touchLessHover {
 				color: rgba($color-white, 0.4);
 			}
+		}
+	}
+
+	&__sumenus {
+		position: relative;
+		z-index: 9;
+	}
+
+	&__pane {
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: $color-white;
+		width: 100%;
+		height: rem(492);
+		transform: translateY(-100%);
+	}
+
+	&__submenu {
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		display: none;
+		width: 100%;
+
+		#{$root}__item.is-active & {
+			display: block;
 		}
 	}
 }

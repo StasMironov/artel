@@ -1,9 +1,28 @@
 .card-user {
-    
-	position: relative;
-	height: rem(588);
-	padding-right: rem(40);
-	padding-left: rem(40);
+    position: sticky;
+    top: 0;
+
+    @include media-breakpoint-up(sm) {
+        height: rem(300);
+        padding-left: rem(16);
+        padding-right: rem(16);
+        padding-top: rem(30);
+        padding-bottom: rem(23);
+    }
+
+    @include media-breakpoint-up(md) {
+        padding-right: rem(56);
+	    padding-left: rem(56);
+        padding-top: rem(56);
+        padding-bottom: rem(54);
+        height: rem(588);
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-right: rem(40);
+	    padding-left: rem(40);
+        
+    }
 
 	&__bg {
 		position: absolute;
@@ -26,8 +45,15 @@
 			background-image: url('/tmp/card-user/unknown.png');
 			background-repeat: no-repeat;
 			background-position: center bottom;
-			background-size: rem(390) auto;
 			content: '';
+
+            @include media-breakpoint-up(sm) {
+                background-size: rem(176) auto;
+            }
+
+            @include media-breakpoint-up(md) {
+                background-size: rem(390) auto;
+            }
 		}
 
 		img {
@@ -47,13 +73,8 @@
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
-        padding-bottom: rem(54);
         z-index: 1;
         position: relative;
-
-        @include media-breakpoint-up(lg) {
-			padding-top: rem(56);
-		}
     }
 
     &-head {

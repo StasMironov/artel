@@ -10,17 +10,11 @@
         <div class="card-msg__title">
             {{ card.title }}
         </div>
+    {% endif %}  
+    
+    {% if block_appeal.msg.read_more %}
+        {% view '^read-more' with {
+            card: block_appeal.msg.read_more
+        }%}
     {% endif %}
-
-    <div class="read-more">
-        <div class="read-more__text">
-            <div class="read-more__base">
-                Artel Electronics была основана в 2011 году, и мы являемся одним из ведущих производителей на рынке бытовой электротехники и сохраняем хорошую репутацию в Узбекистане и во всем мире.
-            </div>
-            <div class="read-more__hidden" data-text-hidden>
-               Artel Electronics была основана в 2011 году, и мы являемся одним из ведущих производителей на рынке бытовой электротехники и сохраняем хорошую репутацию в Узбекистане и во всем мире.
-            </div>
-        </div>
-        <button class="link" data-text-btn>Читать далее</button>
-    </div>
 </div>

@@ -1,0 +1,42 @@
+import gsap from 'gsap';
+import {throttle} from 'throttle-debounce';
+
+export default {
+	init() {
+		const header = document.querySelector('header.header');
+		if (!header) return;
+
+		const triggers = header.querySelectorAll('[data-submenu-trigger]');
+		if (!triggers.length) return;
+
+		triggers.forEach((trigger) => {
+			const items = trigger.querySelectorAll('[data-item]');
+
+			const timeline = gsap.fromTo(items, {
+				translateY: 20,
+				opacity: 0,
+			}, {
+				stagger: 0.05,
+				translateY: 0,
+				opacity: 1,
+				duration: 0.12,
+				ease: 'power1.out',
+				paused: true,
+			});
+
+			trigger.addEventListener('mouseenter', throttle(100, () => {
+				header.classList.add('submenu-opened');
+				trigger.classList.add('is-active');
+
+				timeline.play().delay(0.3);
+			}));
+
+			trigger.addEventListener('mouseleave', throttle(100, () => {
+				header.classList.remove('submenu-opened');
+				trigger.classList.remove('is-active');
+
+				timeline.reverse().delay(0);
+			}));
+		});
+	}
+}
