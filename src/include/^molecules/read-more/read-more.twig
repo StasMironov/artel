@@ -16,5 +16,7 @@
          {% endif %}
         
     </div>
-    <button class="read-more__btn" data-text-btn>Читать далее</button>
+    {% if card.link %}
+        <button class="read-more__btn" data-show-more="Скрыть" data-text-btn>{{ card.link.text }}</button>
+    {% endif %}
 </div>

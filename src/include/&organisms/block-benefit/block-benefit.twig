@@ -1,0 +1,18 @@
+<div class="block-benefit">
+    <div class="block-benefit__container">
+        <div class="block-benefit__left">
+            {% if block_benefit.tabs %}
+                <div class="block-benefit-tabs">
+                        <div class="block-benefit-tabs__tab">
+                            {% view '&tabs' with {
+                                tabs: block_benefit.tabs
+                            }%}
+                        </div>
+                </div>
+            {% endif %}
+        </div>
+        <div class="block-benefit__right">
+        
+        </div>
+    </div>
+</div>
