@@ -33,4 +33,12 @@
 			flex-direction: column;
 		}
 	}
+
+	&--layout {
+		&-2 {
+			.swiper-wrapper {
+				transform: none !important;
+			}
+		}
+	}
 }

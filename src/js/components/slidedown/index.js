@@ -1,7 +1,9 @@
 export default {
 	init() {
 		const toggle = $('[data-text-hidden]');
-		let status = 0;
+		const txtBasic = $('[data-show-more]').text();
+		const txtMore = $('[data-show-more]').attr('data-show-more');
+		let state = 0;
 
 		if (!toggle) return;
 
@@ -9,14 +11,20 @@ export default {
 		if (!action) return;
 
 		action.on('click', function () {
-			if (status) {
-				toggle.slideUp();
-				$(this).text('Читать далее');
-				status--;
-			} else {
-				toggle.slideDown();
-				$(this).text('Скрыть');
-				status++;
+			if (txtBasic !== undefined && txtMore !== undefined) {
+				try {
+					if (state) {
+						toggle.slideUp();
+						$(this).text(txtBasic);
+						state--;
+					} else {
+						toggle.slideDown();
+						$(this).text(txtMore);
+						state++;
+					}
+				} catch (err) {
+					console.log(err);
+				}
 			}
 		});
 	},

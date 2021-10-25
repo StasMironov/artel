@@ -1,0 +1,14 @@
+<div class="card-benefit">
+    {% if card.icon %}
+        <div class="card-benefit__icon">
+            {% view '@icon' with {
+                icon: card.icon
+            } %}
+        </div>
+    {% endif %}
+    {% if card.text %}
+        <div class="card-benefit__text">
+            {{ card.text }}
+        </div>
+    {% endif %}
+</div>

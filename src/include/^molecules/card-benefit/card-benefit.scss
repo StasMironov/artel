@@ -1,0 +1,13 @@
+.card-benefit {
+	@include defaultTransition(background-color);
+	&:hover {
+		background-color: $color-green;
+	}
+	&__icon {
+		.icon {
+			path {
+				stroke: red;
+			}
+		}
+	}
+}
