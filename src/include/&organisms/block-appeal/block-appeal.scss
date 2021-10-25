@@ -22,12 +22,16 @@
 		}
 
 		@include media-breakpoint-up(md) {
-            margin-right: rem(-52);
+			margin-right: rem(-52);
 			margin-left: rem(-52);
 		}
 
 		@include media-breakpoint-up(lg) {
 			flex-direction: row;
 		}
+	}
+
+	&__user {
+		height: 100%;
 	}
 }

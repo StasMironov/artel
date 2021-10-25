@@ -1,7 +1,7 @@
 {% if delay is not defined %}
 	{% set delay = 0.2 %}
 {% endif %}
-<div class="tabs" data-tabs>
+<div class="tabs {% if tabs.layout %}tabs--layout-{{ tabs.layout }}{% endif %}" data-tabs>
 	<div class="tabs__content">
 		<div class="swiper-container" data-slider>
 			<div class="swiper-wrapper">
