@@ -1,18 +1,40 @@
-<div class="block-benefit">
-    <div class="block-benefit__container">
-        <div class="block-benefit__left">
-            {% if block_benefit.tabs %}
-                <div class="block-benefit-tabs">
-                        <div class="block-benefit-tabs__tab">
-                            {% view '&tabs' with {
-                                tabs: block_benefit.tabs
-                            }%}
-                        </div>
+<div class="block-benefit {% if block_benefit.bg %} bg-{{ block_benefit.bg }}{% else %} bg-white{% endif %}"" data-tabs-wrap>
+    <div class="block-benefit__container container">
+          <div class="block-benefit__wrapper">
+            <div class="block-benefit__left">
+                {% if block_benefit.tabs %}
+                    <div class="block-benefit-tabs">
+                            <div class="block-benefit-tabs__tab">
+                                {% view '&tabs' with {
+                                    tabs: block_benefit.tabs
+                                }%}
+                            </div>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="block-benefit__right">
+                <div class="block-benefit__contents">
+                    {% if block_benefit.tabs_content %}
+                            <div class="block-benefit__tabs-content">
+                                {% for item in block_benefit.tabs_content %}
+                                    <div class="block-benefit__pane{{ item.active ? ' is-active' }}" data-tab-pane="{{ loop.index }}" data-fade-in-up>
+                                        {% if item.cards %}
+                                            <div class="block-benefit__cards">
+                                                {% for card in item.cards %}
+                                                    <div class="block-benefit__card">
+                                                        {% view '^card-benefit' with {
+                                                            card: card
+                                                        }%}
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
                 </div>
-            {% endif %}
-        </div>
-        <div class="block-benefit__right">
-        
+            </div>
         </div>
     </div>
 </div>

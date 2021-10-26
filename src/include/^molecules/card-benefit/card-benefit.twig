@@ -1,14 +1,27 @@
 <div class="card-benefit">
-    {% if card.icon %}
-        <div class="card-benefit__icon">
-            {% view '@icon' with {
-                icon: card.icon
+    {% if card.quote %}
+        <div class="card-benefit__quote">
+            {{ card.quote }}
+        </div>
+    {% endif %}
+
+    {% if card.title %}
+        <h2 class="card-benefit__title h1">
+            {{ card.title }}
+        </h2>
+    {% endif %}
+
+    {% if card.image %}
+        <div class="card-benefit__image">
+            {% view '@image' with {
+                image: card.image
             } %}
         </div>
     {% endif %}
-    {% if card.text %}
-        <div class="card-benefit__text">
-            {{ card.text }}
+
+    {% if card.desc %}
+        <div class="card-benefit__desc">
+           {{ card.desc }}
         </div>
     {% endif %}
 </div>
