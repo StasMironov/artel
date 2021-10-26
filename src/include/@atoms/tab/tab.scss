@@ -44,6 +44,7 @@
 			width: rem(16);
 			height: rem(16);
 			transform: scale3d(1, 1, 1);
+
 			@include media-breakpoint-down(md) {
 				margin-right: rem(16);
 			}
@@ -62,27 +63,116 @@
 	}
 
 	&--big {
+		display: flex;
+		background-color: white;
 		@include defaultTransition(background-color);
+		
+		flex-direction: column;
+
+		@include media-breakpoint-up(sm) {
+			min-width: rem(240);
+			min-height: rem(194);
+			align-items: flex-start;
+			padding: 32px 41px;
+		}
+
+		@include media-breakpoint-up(md) {
+			min-width: rem(332);
+			min-height: rem(268);
+			padding: rem(40) rem(52);	
+		}
+
+		@include media-breakpoint-up(lg) {
+			border-radius: 0 rem(8) 0 0;
+			min-width: initial;
+		}
 		
 		&#{$root} {
 			&--active {
 				background-color: $color-green;
+
+				#{$root}__icon {
+					.icon {
+						path {
+							fill: white;
+						}
+
+						.svg-line {
+							fill:$color-black;
+						}
+					}
+				}
+
+				#{$root}__text {
+					color: white;
+				}
 			}
 			
 			&:hover {
 				background-color: $color-green;
+
+				#{$root}__icon {
+					.icon {
+						path {
+							fill: white;
+						}
+
+						.svg-line {
+							fill:$color-black;
+						}
+					}
+				}
+
+				#{$root}__text {
+					color: white;
+				}
 			}
 		}
 
 		#{$root} {
 			&__icon {
 				.icon {
-					width: rem(104);
-					height: rem(104);
+					@include media-breakpoint-up(sm) {
+						width: rem(72);
+						height: rem(72);
+					}
+			
+					@include media-breakpoint-up(md) {
+						width: rem(104);
+						height: rem(104);
+					}
 
 					path {
-						stroke: red;
+						fill: $color-green;
+						@include defaultTransition(fill);
 					}
+
+					.svg-line {
+						fill:$color-black;
+					}
+				}
+
+				@include media-breakpoint-up(md) {
+					margin-bottom: rem(40);
+				}
+		
+				@include media-breakpoint-up(lg) {
+					margin-bottom: rem(62);
+				}
+			}
+
+			&__text {
+				text-align: left;
+				color: rgba($color-black, 1);
+				margin-top: auto;
+
+
+				@include media-breakpoint-up(sm) {
+					max-width: rem(150);
+				}
+		
+				@include media-breakpoint-up(lg) {
+					max-width: initial;
 				}
 			}
 		}

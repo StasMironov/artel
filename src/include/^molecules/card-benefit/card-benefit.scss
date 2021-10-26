@@ -1,13 +1,50 @@
 .card-benefit {
-	@include defaultTransition(background-color);
-	&:hover {
-		background-color: $color-green;
-	}
-	&__icon {
-		.icon {
-			path {
-				stroke: red;
-			}
+	position: sticky;
+	top: 0;
+
+	&__quote {
+		color: rgba($color-black, 0.4);
+
+		@include media-breakpoint-up(sm) {
+			margin-bottom: rem(17);
 		}
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(14);
+		}
+	}
+
+	&__image {
+		overflow: hidden;
+		border-radius: rem(8);
+
+		@include media-breakpoint-up(sm) {
+			height: rem(164);
+			margin-bottom: rem(32);
+		}
+		@include media-breakpoint-up(md) {
+			height: rem(334);
+			margin-bottom: rem(48);
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			background-size: cover;
+		}
+	}
+
+	&__title {
+		@include media-breakpoint-up(sm) {
+			margin-bottom: rem(47);
+		}
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(64);
+		}
+	}
+
+	&__desc {
+		width: 100%;
+		max-width: rem(389);
 	}
 }
