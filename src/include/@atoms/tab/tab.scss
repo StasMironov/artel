@@ -93,9 +93,7 @@
 
 				#{$root}__icon {
 					.icon {
-						path {
-							fill: white;
-						}
+						color: white;
 
 						.svg-line {
 							fill:$color-black;
@@ -113,9 +111,7 @@
 
 				#{$root}__icon {
 					.icon {
-						path {
-							fill: white;
-						}
+						color: white;
 
 						.svg-line {
 							fill:$color-black;
@@ -143,9 +139,10 @@
 					}
 
 					path {
-						fill: $color-green;
 						@include defaultTransition(fill);
 					}
+
+					color: $color-green;
 
 					.svg-line {
 						fill:$color-black;

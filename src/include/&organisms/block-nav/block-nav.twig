@@ -17,6 +17,11 @@
                 {% endif %}
             </div>
             <div class="block-nav__right">
+                <div class="block-nav-decor">
+                    {% view '@icon' with {
+                        icon: block_nav.icon
+                    } %}
+                </div>
                 <div class="block-nav-info">
                     {% if block_nav.desc  %}
                         <div class="block-nav-info__desc h3" data-fade-in-up data-fade-in-up data-delay="0.5">

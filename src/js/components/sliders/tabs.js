@@ -1,5 +1,5 @@
 import Slider from './constructor';
-import {isDesktop} from '../../utils/breakpoints';
+import { isDesktop } from '../../utils/breakpoints';
 
 export default {
 	init() {
@@ -30,23 +30,29 @@ export default {
 						const tabsWrap = this.el.closest('[data-tabs-wrap]');
 						if (!tabsWrap) return;
 						const tabs = tabsWrap.querySelectorAll('[data-tab]');
-						const panes = tabsWrap.querySelectorAll('[data-tab-pane]');
+						const panes = tabsWrap.querySelectorAll(
+							'[data-tab-pane]'
+						);
 						if (!panes || !tabs) return;
-						tabs.forEach(tab => {
+						tabs.forEach((tab) => {
 							tab.addEventListener('click', (e) => {
 								e.preventDefault();
-								tabs.forEach(tab => {
+								tabs.forEach((tab) => {
 									tab.classList.remove('tab--active');
 								});
 								tab.classList.add('tab--active');
 								const id = tab.dataset.tab;
-								panes.forEach(pane => {
+								panes.forEach((pane) => {
 									pane.classList.remove('is-active');
 									const paneId = pane.dataset.tabPane;
 									if (paneId === id) {
 										pane.classList.add('is-active');
 									}
 								});
+								this.slideTo(
+									+tab.getAttribute('data-tab') - 1,
+									800
+								);
 							});
 						});
 					},
