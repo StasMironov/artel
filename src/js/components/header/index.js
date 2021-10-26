@@ -9,9 +9,9 @@ export default {
 		if (!header) return;
 
 		ScrollTrigger.create({
-			trigger: "body",
-			start: "top top",
-			onUpdate: self => {
+			trigger: 'body',
+			start: 'top top',
+			onUpdate: (self) => {
 				if (self.direction > 0) {
 					header.classList.add('is-hide');
 				} else {
@@ -23,7 +23,7 @@ export default {
 						header.classList.remove('in-progress');
 					}
 				}
-			}
+			},
 		});
-	}
-}
+	},
+};
