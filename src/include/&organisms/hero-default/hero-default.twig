@@ -1,0 +1,22 @@
+<div class="hero-default">
+    {% if hero_default.image %}
+        <div class="hero-default__bg">
+            {% if hero_default.image.tab or hero_default.image.mob %}
+                {% view '@image-adaptive' with {
+                        image: hero_default.image
+                } %}
+            {% else %}
+                {% view '@image' with {
+                    image: hero_default.image
+                } %}
+            {% endif %}
+        </div>
+    {% endif %}
+    <div class="hero-default__container container">
+        {% if hero_default.title %}
+            <h1 class="hero-default__title h1" data-fade-in-up>
+                {{ hero_default.title }}
+            </h1>
+        {% endif %}
+    </div>
+</div>

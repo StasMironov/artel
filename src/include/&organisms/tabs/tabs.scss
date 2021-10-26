@@ -40,7 +40,7 @@
 		&-2 {
 			.swiper-wrapper {
 				
-				@include media-breakpoint-up(md) {
+				@include media-breakpoint-up(lg) {
 					transform: none !important;
 				}
 			}

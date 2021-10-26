@@ -1,4 +1,4 @@
-<header class="header" role="banner">
+<header class="header {% if header.transparent %}header--transparent{% endif %}" role="banner">
 	<div class="header__container container">
 		{% if header.logo.href %}
 			<a class="header__logo" href="{{ header.logo.href }}">
