@@ -49,10 +49,10 @@ export default {
 										pane.classList.add('is-active');
 									}
 								});
-								this.slideTo(
-									+tab.getAttribute('data-tab') - 1,
-									800
-								);
+								// this.slideTo(
+								// 	+tab.getAttribute('data-tab') - 1,
+								// 	800
+								// );
 							});
 						});
 					},
