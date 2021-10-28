@@ -8,17 +8,34 @@
 				"year": "2011",
 				"text": "Начало производства телевизоров, промышленных и бытовых кондиционеров",
 				"image": {
-					"src": "tmp/main-hero/hero-desk.jpg",
+					"src": "tmp/slider-history/1.jpg",
 					"alt": "image alt",
-					"fill": true
+					"fill": true,
+					"tab": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/slider-history/1.jpg"
+							}
+						]
+					},
+					"mob": {
+						"srcset": [
+							{
+								"scale": "1",
+								"src": "tmp/slider-history/1.jpg"
+							}
+						]
+					}
 				},
-				"overlay": true
+				"overlay": true,
+				"dark": true
 			},
 			{
 				"title": "История Группы Artel 2",
-				"note": "Наши ключевые вехи за 105 лет",
+				"note": "Наши ключевые вехи за 500 лет",
 				"year": "2012",
-				"text": "Начало производства телевизоров, промышленных и бытовых кондиционеров",
+				"text": "Начало производства телевизоров",
 				"image": {
 					"src": "tmp/main-hero/hero-desk-2.jpg",
 					"alt": "image alt",
@@ -29,11 +46,11 @@
 			},
 			{
 				"title": "История Группы Artel 2",
-				"note": "Наши ключевые вехи за 10 лет",
+				"note": "Наши ключевые вехи за 100 лет",
 				"year": "2013",
-				"text": "Начало производства телевизоров, промышленных и бытовых кондиционеров",
+				"text": "Test 3",
 				"image": {
-					"src": "tmp/main-hero/hero-desk-2.jpg",
+					"src": "tmp/card-news/news3.jpg",
 					"alt": "image alt",
 					"fill": true
 				},
@@ -44,9 +61,9 @@
 				"title": "История Группы Artel 2",
 				"note": "Наши ключевые вехи за 10 лет",
 				"year": "2014",
-				"text": "Начало производства телевизоров, промышленных и бытовых кондиционеров",
+				"text": "Test 4",
 				"image": {
-					"src": "tmp/main-hero/hero-desk-2.jpg",
+					"src": "tmp/card-news/news2.jpg",
 					"alt": "image alt",
 					"fill": true
 				},
@@ -55,11 +72,11 @@
 			},
 			{
 				"title": "История Группы Artel 2",
-				"note": "Наши ключевые вехи за 10 лет",
+				"note": "Наши ключевые вехи за 15 лет",
 				"year": "2015",
-				"text": "Начало производства телевизоров, промышленных и бытовых кондиционеров",
+				"text": "Test 5",
 				"image": {
-					"src": "tmp/main-hero/hero-desk-2.jpg",
+					"src": "tmp/card-news/news3.jpg",
 					"alt": "image alt",
 					"fill": true
 				},
@@ -68,9 +85,9 @@
 			},
 			{
 				"title": "История Группы Artel 2",
-				"note": "Наши ключевые вехи за 10 лет",
+				"note": "Наши ключевые вехи за 16 лет",
 				"year": "2016",
-				"text": "Начало производства телевизоров, промышленных и бытовых кондиционеров",
+				"text": "Test 6",
 				"image": {
 					"src": "tmp/main-hero/hero-desk-2.jpg",
 					"alt": "image alt",
@@ -81,11 +98,11 @@
 			},
 			{
 				"title": "История Группы Artel 2",
-				"note": "Наши ключевые вехи за 10 лет",
+				"note": "Наши ключевые вехи за 17 лет",
 				"year": "2017",
-				"text": "Начало производства телевизоров, промышленных и бытовых кондиционеров",
+				"text": "Test 7",
 				"image": {
-					"src": "tmp/main-hero/hero-desk-2.jpg",
+					"src": "tmp/card-news/news2.jpg",
 					"alt": "image alt",
 					"fill": true
 				},
@@ -94,9 +111,9 @@
 			},
 			{
 				"title": "История Группы Artel 2",
-				"note": "Наши ключевые вехи за 10 лет",
+				"note": "Наши ключевые вехи за 18 лет",
 				"year": "2018",
-				"text": "Начало производства телевизоров, промышленных и бытовых кондиционеров",
+				"text": "Test 8",
 				"image": {
 					"src": "tmp/main-hero/hero-desk-2.jpg",
 					"alt": "image alt",
@@ -107,11 +124,11 @@
 			},
 			{
 				"title": "История Группы Artel 2",
-				"note": "Наши ключевые вехи за 10 лет",
+				"note": "Наши ключевые вехи за 19 лет",
 				"year": "2019",
-				"text": "Начало производства телевизоров, промышленных и бытовых кондиционеров",
+				"text": "Test 9",
 				"image": {
-					"src": "tmp/main-hero/hero-desk-2.jpg",
+					"src": "tmp/card-news/news3.jpg",
 					"alt": "image alt",
 					"fill": true
 				},
@@ -120,9 +137,9 @@
 			},
 			{
 				"title": "История Группы Artel 2",
-				"note": "Наши ключевые вехи за 10 лет",
+				"note": "Наши ключевые вехи за 20 лет",
 				"year": "2020",
-				"text": "Начало производства телевизоров, промышленных и бытовых кондиционеров",
+				"text": "Test 10",
 				"image": {
 					"src": "tmp/main-hero/hero-desk-2.jpg",
 					"alt": "image alt",
@@ -133,11 +150,11 @@
 			},
 			{
 				"title": "История Группы Artel 2",
-				"note": "Наши ключевые вехи за 10 лет",
+				"note": "Наши ключевые вехи за 40 лет",
 				"year": "2021",
-				"text": "Начало производства телевизоров, промышленных и бытовых кондиционеров",
+				"text": "Test 11",
 				"image": {
-					"src": "tmp/main-hero/hero-desk-2.jpg",
+					"src": "tmp/card-news/news3.jpg",
 					"alt": "image alt",
 					"fill": true
 				},
