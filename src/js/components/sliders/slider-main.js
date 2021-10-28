@@ -6,26 +6,28 @@ export default class Slider {
 		this.sliderWrapNode = document.querySelector('[data-main-hero]');
 		this.selectors = {
 			imageWrap: '[data-image-wrap]',
-			slide: "[data-slide]",
-			prev: "[data-nav-arrow-prev]",
-			next: "[data-nav-arrow-next]",
+			slide: '[data-slide]',
+			prev: '[data-nav-arrow-prev]',
+			next: '[data-nav-arrow-next]',
 			image: '[data-image]',
 			title: '[data-title]',
 			action: '[data-action]',
 			arrows: '.nav-arrows',
 			number: '[data-number]',
 			progressLine: '[data-progress]',
-		}
+		};
 
 		if (this.sliderWrapNode) this.render();
 	}
 
 	render() {
-		this.slides = this.sliderWrapNode.querySelectorAll(this.selectors.slide);
+		this.slides = this.sliderWrapNode.querySelectorAll(
+			this.selectors.slide
+		);
 
 		if (!this.slides.length) return;
 
-		this.body = document.body;
+		this.body = this.sliderWrapNode;
 
 		this.activeIndex = 0;
 		this.prevIndex = 0;
@@ -42,7 +44,7 @@ export default class Slider {
 			onComplete: () => {
 				this.sliderWrapNode.classList.remove('in-transition');
 				this.inTransition = false;
-			}
+			},
 		});
 
 		this.prev = this.sliderWrapNode.querySelector(this.selectors.prev);
@@ -50,11 +52,22 @@ export default class Slider {
 
 		this.arrows = this.sliderWrapNode.querySelector(this.selectors.arrows);
 
-		this.numbers = this.sliderWrapNode.querySelectorAll(this.selectors.number);
+		if (this.dark) {
+			this.body.classList.add('dark-slide-is-active');
+			this.arrows.classList.add('nav-arrows--on-black');
+		} else {
+			this.body.classList.remove('dark-slide-is-active');
+			this.arrows.classList.remove('nav-arrows--on-black');
+		}
+
+		this.numbers = this.sliderWrapNode.querySelectorAll(
+			this.selectors.number
+		);
 
 		this.numbers.forEach((el, idx) => {
 			el.addEventListener('click', () => {
-				if (el.classList.contains('is-active') || this.inTransition) return;
+				if (el.classList.contains('is-active') || this.inTransition)
+					return;
 
 				this.slideChange([idx, this.activeIndex]);
 
@@ -69,7 +82,8 @@ export default class Slider {
 			this.slideChange(this.calcPrevNextIndex()); // расчёт activeIndex, prevIndex, добавление/удаление класса is-active, вызов animation()
 		});
 
-		this.autoplayInterval = this.sliderWrapNode.getAttribute('data-autoplay') || null;
+		this.autoplayInterval =
+			this.sliderWrapNode.getAttribute('data-autoplay') || null;
 		this.progressLine = null;
 		this.timerTimeline = gsap.timeline({
 			paused: true,
@@ -87,21 +101,28 @@ export default class Slider {
 			this.slideChange(this.calcPrevNextIndex('prev'));
 		});
 
-		if (this.autoplayInterval) { // автоматическая смена слайдов
-			this.progressLine = this.sliderWrapNode.querySelector(this.selectors.progressLine);
+		if (this.autoplayInterval) {
+			// автоматическая смена слайдов
+			this.progressLine = this.sliderWrapNode.querySelector(
+				this.selectors.progressLine
+			);
 
-			this.timerTimeline.fromTo(this.progressLine, {
-				x: '-100%'
-			}, {
-				x: 0,
-				ease: "none",
-				duration: this.autoplayInterval / 1000,
-				delay: 1.5, // ~ продолжительность анимации при смене слайдов
-				clearProps: 'all',
-				onComplete: () => {
-					this.slideChange(this.calcPrevNextIndex());
+			this.timerTimeline.fromTo(
+				this.progressLine,
+				{
+					x: '-100%',
+				},
+				{
+					x: 0,
+					ease: 'none',
+					duration: this.autoplayInterval / 1000,
+					delay: 1.5, // ~ продолжительность анимации при смене слайдов
+					clearProps: 'all',
+					onComplete: () => {
+						this.slideChange(this.calcPrevNextIndex());
+					},
 				}
-			});
+			);
 
 			this.timerTimeline.play();
 		}
@@ -112,12 +133,14 @@ export default class Slider {
 		let prevIndex = 0;
 
 		if (direction === 'prev') {
-			if (this.activeIndex !== 0) { // расчёт activeIndex
+			if (this.activeIndex !== 0) {
+				// расчёт activeIndex
 				activeIndex = this.activeIndex - 1;
 			} else {
 				activeIndex = this.slidesAmount - 1;
 			}
-			if (activeIndex === this.slidesAmount - 1) { // расчёт prevIndex
+			if (activeIndex === this.slidesAmount - 1) {
+				// расчёт prevIndex
 				prevIndex = 0;
 			} else {
 				prevIndex = activeIndex + 1;
@@ -125,12 +148,14 @@ export default class Slider {
 		}
 
 		if (direction === 'next') {
-			if (this.activeIndex < this.slidesAmount - 1) { // расчёт activeIndex
+			if (this.activeIndex < this.slidesAmount - 1) {
+				// расчёт activeIndex
 				activeIndex = this.activeIndex + 1;
 			} else {
 				activeIndex = 0;
 			}
-			if (activeIndex !== 0) { // расчёт prevIndex
+			if (activeIndex !== 0) {
+				// расчёт prevIndex
 				prevIndex = activeIndex - 1;
 			} else {
 				prevIndex = this.slidesAmount - 1;
@@ -148,7 +173,8 @@ export default class Slider {
 
 		this.classToggle(this.slides[this.activeIndex], true); // удаление класса is-active и добавление is-prev
 
-		if (this.autoplayInterval) { // автоматическая смена слайдов
+		if (this.autoplayInterval) {
+			// автоматическая смена слайдов
 			this.timerTimeline.restart();
 		}
 
@@ -164,76 +190,118 @@ export default class Slider {
 		this.animation();
 	}
 
-	findNode(index, selector) { // поиск элемента в слайде
+	findNode(index, selector) {
+		// поиск элемента в слайде
 		return this.slides[index].querySelector(selector);
 	}
 
 	animation() {
-		this.timeline.fromTo(this.findNode(this.prevIndex, this.selectors.title), {
-			opacity: 1,
-			y: 0,
-		}, {
-			y: 20,
-			opacity: 0,
-			duration: 0.4,
-			ease: 'power1.out',
-		}).fromTo(this.findNode(this.prevIndex, this.selectors.action), {
-			opacity: 1,
-			y: 0,
-		}, {
-			y: 20,
-			opacity: 0,
-			duration: 0.4,
-			ease: 'power1.out',
-		}, "<+=0.2")
-			.fromTo(this.findNode(this.activeIndex, this.selectors.title), {
-				opacity: 0,
-				y: 20,
-			}, {
-				y: 0,
-				opacity: 1,
-				duration: 0.4,
-				ease: 'power1.out',
-			}, "+=0.4").fromTo(this.findNode(this.activeIndex, this.selectors.action), {
-			opacity: 0,
-			y: 20,
-		}, {
-			y: 0,
-			opacity: 1,
-			duration: 0.4,
-			ease: 'power1.out',
-		}, "<+=0.2").fromTo(this.findNode(this.activeIndex, this.selectors.imageWrap), {
-			"clip-path": "circle(0% at 50% 50%)",
-		}, {
-			"clip-path": "circle(100% at 50% 50%)",
-			duration: 1.5,
-			clearProps: 'all',
-			ease: 'sine.out',
-			onStart: () => {
-				if (this.dark) {
-					this.body.classList.add('dark-slide-is-active');
-					this.arrows.classList.add('nav-arrows--on-black');
-				} else {
-					this.body.classList.remove('dark-slide-is-active');
-					this.arrows.classList.remove('nav-arrows--on-black');
+		this.timeline
+			.fromTo(
+				this.findNode(this.prevIndex, this.selectors.title),
+				{
+					opacity: 1,
+					y: 0,
+				},
+				{
+					y: 20,
+					opacity: 0,
+					duration: 0.4,
+					ease: 'power1.out',
 				}
-			},
-		}, "-=1").fromTo(this.findNode(this.activeIndex, this.selectors.image), {
-			rotation: 15,
-		}, {
-			rotation: 0,
-			duration: 1.25,
-			clearProps: 'all',
-			ease: "circ.out",
-		}, "<")
-			.fromTo(this.findNode(this.activeIndex, this.selectors.image), {
-				scale: 1.2,
-			}, {
-				scale: 1,
-				duration: 1.3,
-				clearProps: 'all',
-				ease: 'power1.out',
-			}, "<");
+			)
+			.fromTo(
+				this.findNode(this.prevIndex, this.selectors.action),
+				{
+					opacity: 1,
+					y: 0,
+				},
+				{
+					y: 20,
+					opacity: 0,
+					duration: 0.4,
+					ease: 'power1.out',
+				},
+				'<+=0.2'
+			)
+			.fromTo(
+				this.findNode(this.activeIndex, this.selectors.title),
+				{
+					opacity: 0,
+					y: 20,
+				},
+				{
+					y: 0,
+					opacity: 1,
+					duration: 0.4,
+					ease: 'power1.out',
+				},
+				'+=0.4'
+			)
+			.fromTo(
+				this.findNode(this.activeIndex, this.selectors.action),
+				{
+					opacity: 0,
+					y: 20,
+				},
+				{
+					y: 0,
+					opacity: 1,
+					duration: 0.4,
+					ease: 'power1.out',
+				},
+				'<+=0.2'
+			)
+			.fromTo(
+				this.findNode(this.activeIndex, this.selectors.imageWrap),
+				{
+					'clip-path': 'circle(0% at 50% 50%)',
+				},
+				{
+					'clip-path': 'circle(100% at 50% 50%)',
+					duration: 1.5,
+					clearProps: 'all',
+					ease: 'sine.out',
+					onStart: () => {
+						if (this.dark) {
+							this.body.classList.add('dark-slide-is-active');
+							this.arrows.classList.add('nav-arrows--on-black');
+						} else {
+							this.body.classList.remove('dark-slide-is-active');
+							this.arrows.classList.remove(
+								'nav-arrows--on-black'
+							);
+						}
+					},
+				},
+				'-=1'
+			)
+			.fromTo(
+				this.findNode(this.activeIndex, this.selectors.image),
+				{
+					rotation: 15,
+				},
+				{
+					rotation: 0,
+					duration: 1.25,
+					clearProps: 'all',
+					ease: 'circ.out',
+				},
+				'<'
+			)
+			.fromTo(
+				this.findNode(this.activeIndex, this.selectors.image),
+				{
+					scale: 1.2,
+				},
+				{
+					scale: 1,
+					duration: 1.3,
+					clearProps: 'all',
+					ease: 'power1.out',
+				},
+				'<'
+			);
 
 		this.timeline.play();
 	}

@@ -174,7 +174,7 @@
 			cursor: default;
 		}
 
-		@at-root body.dark-slide-is-active & {
+		@at-root .dark-slide-is-active & {
 			color: rgba($color-white, 0.4);
 
 			&.is-active {
@@ -229,7 +229,7 @@
 			@include defaultTransition(background-color);
 		}
 
-		@at-root body.dark-slide-is-active & {
+		@at-root .dark-slide-is-active & {
 			background-color: rgba($color-white, 0.4);
 
 			span {

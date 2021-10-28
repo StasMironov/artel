@@ -19,6 +19,7 @@ export default class Slider {
 			arrows: '.nav-arrows',
 			number: '[data-number]',
 			progressLine: '[data-progress]',
+			pag: '',
 		};
 
 		if (this.sliderWrapNode) this.render();
@@ -31,7 +32,7 @@ export default class Slider {
 
 		if (!this.slides.length) return;
 
-		this.body = document.body;
+		this.body = this.sliderWrapNode;
 
 		this.activeIndex = 0;
 		this.prevIndex = 0;
@@ -55,6 +56,14 @@ export default class Slider {
 		this.next = this.sliderWrapNode.querySelector(this.selectors.next);
 
 		this.arrows = this.sliderWrapNode.querySelector(this.selectors.arrows);
+
+		if (this.dark) {
+			this.body.classList.add('dark-slide-is-active');
+			this.arrows.classList.add('nav-arrows--on-black');
+		} else {
+			this.body.classList.remove('dark-slide-is-active');
+			this.arrows.classList.remove('nav-arrows--on-black');
+		}
 
 		this.numbers = this.sliderWrapNode.querySelectorAll(
 			this.selectors.number
@@ -86,38 +95,39 @@ export default class Slider {
 					0: {
 						// при 0px и выше
 						direction: 'horizontal', // горизонтальная прокрутка
-						slidesPerView: 6,
+						slidesPerView: 'auto',
+						spaceBetween: 24,
 					},
-					769: {
+					990: {
 						// при 768px и выше
 						direction: 'vertical', // вертикальная прокрутка
 						slidesPerView: 5,
+						spaceBetween: 30,
 					},
 				},
 			},
 		});
 		sliderPag.swiper.init();
 
+		this.pag = sliderPag;
+
 		this.numbers.forEach((el, idx) => {
 			el.addEventListener('click', () => {
 				if (el.classList.contains('is-active') || this.inTransition)
 					return;
 
-				this.slideChange([idx, this.activeIndex]);
-
 				this.numbersClassToggle(idx); // смена активной кнопки
-				sliderPag.swiper.slideTo(idx, 800);
+				this.slideChange([idx, this.activeIndex]);
 			});
 		});
 
 		this.prev.addEventListener('click', () => {
 			this.slideChange(this.calcPrevNextIndex('prev')); // расчёт activeIndex, prevIndex, добавление/удаление класса is-active, вызов animation()
-			sliderPag.swiper.slideTo(this.calcPrevNextIndex()[1], 800);
+			this.numbersClassToggle(this.calcPrevNextIndex()[1]);
 		});
 		this.next.addEventListener('click', () => {
-			console.log(this.calcPrevNextIndex());
 			this.slideChange(this.calcPrevNextIndex()); // расчёт activeIndex, prevIndex, добавление/удаление класса is-active, вызов animation()
-			sliderPag.swiper.slideTo(this.calcPrevNextIndex()[1], 800);
+			this.numbersClassToggle(this.calcPrevNextIndex()[1]);
 		});
 
 		this.autoplayInterval =
@@ -158,6 +168,10 @@ export default class Slider {
 					clearProps: 'all',
 					onComplete: () => {
 						this.slideChange(this.calcPrevNextIndex());
+						sliderPag.swiper.slideTo(
+							this.calcPrevNextIndex()[1],
+							800
+						);
 					},
 				}
 			);
@@ -422,5 +436,9 @@ export default class Slider {
 		}
 
 		this.numbers[idx].classList.add('is-active');
+		setTimeout(() => {
+			this.pag.swiper.update();
+			this.pag.swiper.slideTo(idx, 800);
+		}, 300);
 	}
 }

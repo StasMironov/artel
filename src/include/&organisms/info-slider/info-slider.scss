@@ -16,11 +16,11 @@
 
 		@include media-breakpoint-up(md) {
 			min-height: rem(840);
-			//height: 100vh;
 		}
-		// @include media-breakpoint-only(md) {
-		// 	min-height: rem(1024);
-		// }
+
+        @include media-breakpoint-up(lg) {
+			height: 100vh;
+		}
 	}
 
 	&__slide {
@@ -200,7 +200,7 @@
             font-size: rem(20);
         }
 
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(md) {
             font-size: rem(24);
         }
 
@@ -250,19 +250,19 @@
 		align-items: center;
         margin-left: 0;
         height: rem(208);
-        margin-left: rem(-31);
         transform: translateY(#{rem(-68)});
 
         @include media-breakpoint-up(sm) {
-           width: 100%;
-           transform: translateY(#{rem(-217)});
+           width: 100vw;
+           transform: translateY(#{rem(-308)});
+           margin-left: 0;
+           margin-right: rem(-100);
+           height: auto;
 		}
         
         @include media-breakpoint-up(md) {
-			margin-right: rem(4);
+			margin-right: rem(-125);
             transform: translateY(#{rem(-236)});
-          
-            height: rem(23);
             padding-bottom: 0;
 		}
 
@@ -271,10 +271,24 @@
 			padding-bottom: rem(12);
             transform: translateY(#{rem(-68)});
             height: rem(208);
+            margin-left: rem(-66);
 		}
 	}
 
+    &__txt {
+        @include defaultTransition(padding);
+
+        @include media-breakpoint-up(sm) {
+            padding-left: 0;
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding-left: rem(30);
+        }
+    }
+
 	&__number {
+        $b: &;
         position: relative;
 		display: flex;
         align-items: center;
@@ -284,12 +298,13 @@
 		color: rgba($color-black, 0.4);
 		cursor: pointer;
 		@include defaultTransition(color);
+        
 
         &:before {
             display: block;
             position: absolute;
             top: 3px;
-            left: rem(-32);
+            left: 0;
             width: rem(0);
             height: rem(0);
             background-color: white;
@@ -301,7 +316,6 @@
             z-index: 100;
     
             @include media-breakpoint-down(md) {
-                position: static;
                 flex-shrink: 0;
             }
         }
@@ -326,14 +340,16 @@
                 width: rem(16);
                 height: rem(16);
                 transform: scale3d(1, 1, 1);
-    
-                @include media-breakpoint-down(md) {
-                    margin-right: rem(16);
-                }
             }
-		}
 
-		@at-root body.dark-slide-is-active & {
+            #{$root}__txt {
+                padding-left: rem(30);
+            }
+
+		}
+        
+
+		@at-root .dark-slide-is-active & {
 			color: rgba($color-white, 0.4);
 
 			&.is-active {
@@ -357,10 +373,13 @@
 
         @include media-breakpoint-up(sm) {
 			padding-left: 0;
+            width: auto;
+            height: max-content;
 		}
 
         @include media-breakpoint-up(lg) {
 			padding-left: rem(33);
+            width: 100%;
 		}
     }
 
@@ -372,7 +391,7 @@
 		width: 100%;
 
         @include media-breakpoint-up(sm) {
-			bottom: rem(-32);
+			bottom: rem(48);
 		}
 
         @include media-breakpoint-up(md) {
@@ -407,18 +426,17 @@
 		}
 
         @include media-breakpoint-up(sm) {
-            bottom: rem(377);
+            bottom: rem(296);
             right: 0;
-            left: 4.1%;
-            max-width: rem(323);
+            left: 0;
+            margin: auto;
+            max-width: calc(100% - #{rem(32)});
 		}
 
         @include media-breakpoint-up(md) {
             width: 100%;
             bottom: rem(205);
-            right: 0;
-            left: 6.4%;
-            max-width: rem(664);
+            max-width: calc(100% - #{rem(108)})
 		}
 
         @include media-breakpoint-up(lg) {
@@ -426,6 +444,8 @@
             right: 12%;
             left: 49.9%;
             width: 100%;
+            margin: initial;
+            max-width: rem(664);
         }
 
 		span {
@@ -439,7 +459,7 @@
 			@include defaultTransition(background-color);
 		}
 
-		@at-root body.dark-slide-is-active & {
+		@at-root .dark-slide-is-active & {
 			background-color: rgba($color-white, 0.4);
 
 			span {
