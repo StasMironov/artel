@@ -1,0 +1,12 @@
+<a href="mailto:{% if card.href %}{{ card.href }}{% endif %}" class="card-contact">
+    {% if card.title %}
+        <div class="card-contact__title">
+            {{ card.title }}
+        </div>
+    {% endif %}
+    {% if card.text %}
+        <div class="card-contact__text">
+            {{ card.text }}
+        </div>
+    {% endif %}
+</a>
