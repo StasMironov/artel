@@ -27,34 +27,75 @@ export default {
 				},
 				on: {
 					init() {
-						const tabsWrap = this.el.closest('[data-tabs-wrap]');
-						if (!tabsWrap) return;
-						const tabs = tabsWrap.querySelectorAll('[data-tab]');
-						const panes = tabsWrap.querySelectorAll(
-							'[data-tab-pane]'
+						const tabsContainer = this.el.closest(
+							'[data-tab-container]'
 						);
-						if (!panes || !tabs) return;
-						tabs.forEach((tab) => {
-							tab.addEventListener('click', (e) => {
-								e.preventDefault();
-								tabs.forEach((tab) => {
-									tab.classList.remove('tab--active');
+						if (!tabsContainer) return;
+
+						const tabsWrap = tabsContainer.querySelectorAll(
+							'[data-tabs-wrap]'
+						);
+						const tabs = tabsContainer.querySelectorAll(
+							'[data-tab]'
+						);
+
+						tabsWrap.forEach((elem, index) => {
+							let panes = elem.querySelectorAll(
+								'[data-tab-pane]'
+							);
+							if (!panes || !tabs) return;
+
+							tabs.forEach((tab) => {
+								tab.addEventListener('click', (e) => {
+									e.preventDefault();
+									tabs.forEach((tab) => {
+										tab.classList.remove('tab--active');
+									});
+									tab.classList.add('tab--active');
+									const id = tab.dataset.tab;
+									panes.forEach((pane) => {
+										pane.classList.remove('is-active');
+										const paneId = pane.dataset.tabPane;
+										if (paneId === id) {
+											pane.classList.add('is-active');
+										}
+									});
+									// this.slideTo(
+									// 	+tab.getAttribute('data-tab') - 1,
+									// 	800
+									// );
 								});
-								tab.classList.add('tab--active');
-								const id = tab.dataset.tab;
-								panes.forEach((pane) => {
-									pane.classList.remove('is-active');
-									const paneId = pane.dataset.tabPane;
-									if (paneId === id) {
-										pane.classList.add('is-active');
-									}
-								});
-								// this.slideTo(
-								// 	+tab.getAttribute('data-tab') - 1,
-								// 	800
-								// );
 							});
 						});
+
+						// const tabsWrap = this.el.closest('[data-tabs-wrap]');
+						// if (!tabsWrap) return;
+						// const tabs = tabsWrap.querySelectorAll('[data-tab]');
+						// const panes = tabsWrap.querySelectorAll(
+						// 	'[data-tab-pane]'
+						// );
+						// if (!panes || !tabs) return;
+						// tabs.forEach((tab) => {
+						// 	tab.addEventListener('click', (e) => {
+						// 		e.preventDefault();
+						// 		tabs.forEach((tab) => {
+						// 			tab.classList.remove('tab--active');
+						// 		});
+						// 		tab.classList.add('tab--active');
+						// 		const id = tab.dataset.tab;
+						// 		panes.forEach((pane) => {
+						// 			pane.classList.remove('is-active');
+						// 			const paneId = pane.dataset.tabPane;
+						// 			if (paneId === id) {
+						// 				pane.classList.add('is-active');
+						// 			}
+						// 		});
+						// 		// this.slideTo(
+						// 		// 	+tab.getAttribute('data-tab') - 1,
+						// 		// 	800
+						// 		// );
+						// 	});
+						// });
 					},
 					resize() {
 						if (isDesktop()) {
