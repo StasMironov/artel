@@ -4,9 +4,12 @@
 		justify-content: space-between;
 		margin-bottom: rem(80);
 
-		&--contacts {
-			justify-content: initial;
-			margin-bottom: 0;
+		@include media-breakpoint-up(sm) {
+			flex-direction: column;
+		}
+
+		@include media-breakpoint-up(lg) {
+			flex-direction: row;
 		}
 	}
 
@@ -27,11 +30,27 @@
 		flex-direction: column;
 		justify-content: center;
 		width: 8.333%;
-		padding-top: rem(26);
+
+		@include media-breakpoint-up(sm) {
+			width: 100%;
+		}
+
+		@include media-breakpoint-up(lg) {
+			width: 8.333%;
+			padding-top: rem(26);
+		}
 	}
 
 	&__right {
 		width: 75%;
+
+		@include media-breakpoint-up(sm) {
+			width: 100%;
+		}
+
+		@include media-breakpoint-up(lg) {
+			width: 75%;
+		}
 	}
 
 	&__pane {
@@ -55,6 +74,14 @@
 	&__container {
 		padding-top: rem(215);
 		padding-bottom: rem(124);
+
+		@include media-breakpoint-up(md) {
+			padding-top: rem(165);
+		}
+
+		@include media-breakpoint-up(lg) {
+			padding-top: rem(215);
+		}
 	}
 
 	&__breadcrumbs,
@@ -62,8 +89,26 @@
 		margin-bottom: auto;
 	}
 
+	&__breadcrumbs {
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(125);
+		}
+
+		@include media-breakpoint-up(lg) {
+			margin-bottom: auto;
+		}
+	}
+
 	&__tabs {
 		padding-top: rem(136);
+
+		@include media-breakpoint-up(md) {
+			padding-top: 0;
+		}
+
+		@include media-breakpoint-up(lg) {
+			padding-top: rem(136);
+		}
 
 		&-content {
 			width: 100%;
