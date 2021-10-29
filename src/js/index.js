@@ -11,11 +11,13 @@ import InputSearch from './components/input-search';
 import Sliders from './components/sliders';
 import Submenu from './components/submenu';
 import Animation from './components/animation';
+import Map from './components/map';
 import Sticky from './components/sticky';
 
-import { devices } from './utils/breakpoints';
+import {devices} from './utils/breakpoints';
 
 window.breakpoints = devices;
+__webpack_public_path__ = window.__webpack_public_path__ || '';
 
 window.$ = $;
 window.jQuery = $;
@@ -32,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	SlideDown.init();
 	Sliders.init();
 	Submenu.init();
+	new Map();
 	//Sticky.init();
 
 	document.body.classList.add('content-loaded');
