@@ -30,6 +30,16 @@
 		height: rem(64);
 	}
 
+	&--104 {
+		width: rem(72);
+		height: rem(72);
+
+		@include media-breakpoint-up(md) {
+			width: rem(104);
+			height: rem(104);
+		}
+	}
+
 	&--fit {
 		width: 100%;
 		height: 100%;

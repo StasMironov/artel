@@ -1,0 +1,38 @@
+<div class="map" data-map{% if map.url %} data-url="{{ map.url }}"{% endif %}>
+	{% if map.heading or map.tabs %}
+		<div class="map__top">
+			{% if map.heading %}
+				<p class="map__heading h2">{{ map.heading }}</p>
+			{% endif %}
+		</div>
+		{% if block_info.tabs %}
+			<div class="map__tabs">
+				{% view '&tabs' with {
+					tabs: block_info.tabs
+				} %}
+			</div>
+		{% endif %}
+	{% endif %}
+	<div class="map__box">
+		<div class="map__controls">
+			<button type="button" class="map__control" data-zoom-in>
+				{% view '@icon' with {
+					icon: {
+						name: "24/plus"
+					}
+				} %}
+			</button>
+			<button type="button" class="map__control" data-zoom-out>
+				{% view '@icon' with {
+					icon: {
+						name: "24/minus"
+					}
+				} %}
+			</button>
+		</div>
+		<div class="map__init" data-map-init></div>
+	</div>
+	<div class="map__card" data-card-wrap>
+		{% view '^card-map' %}
+	</div>
+</div>

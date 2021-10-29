@@ -1,4 +1,6 @@
 .block-benefit {
+	overflow: hidden;
+
 	&__container {
 		@include media-breakpoint-up(sm) {
 			padding-top: rem(65);
@@ -20,52 +22,35 @@
 		}
 		@include media-breakpoint-up(lg) {
 			flex-direction: row;
-			margin-right: rem(-60);
-			margin-left: rem(-60);
+			margin-right: rem(-52);
+			margin-left: rem(-52);
 		}
 	}
 
 	&__left {
-		width: 26%;
-
-		@include media-breakpoint-up(sm) {
-			width: initial;
-			margin-right: rem(-16);
-			margin-bottom: rem(63);
-			margin-left: rem(-16);
-		}
-
-		@include media-breakpoint-up(md) {
-			margin-right: rem(-52);
-			margin-bottom: rem(113);
-			margin-left: rem(-52);
-		}
 		@include media-breakpoint-up(lg) {
-			width: 26%;
-			margin-right: 7%;
-			margin-bottom: 0;
-			margin-left: 0;
-			padding-right: rem(8);
-			padding-left: rem(8);
+			width: rem(380);
+			margin-right: rem(120);
+		}
+		@include media-breakpoint-only(md) {
+			margin-left: rem(-52);
+			margin-bottom: rem(112);
+		}
+		@include media-breakpoint-down(sm) {
+			margin-left: rem(-16);
+			margin-bottom: rem(64);
 		}
 	}
 
 	&__right {
-		@include media-breakpoint-up(sm) {
-			width: initial;
-		}
 		@include media-breakpoint-up(lg) {
-			width: 47%;
-			padding-right: rem(8);
-			padding-left: rem(8);
+			width: rem(664);
 		}
 	}
 
 	&__pane {
-		display: none;
-
-		&.is-active {
-			display: block;
+		&:not(.is-active) {
+			display: none;
 		}
 	}
 

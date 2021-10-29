@@ -1,0 +1,74 @@
+.map {
+	position: relative;
+	overflow: hidden;
+
+	&__box {
+		position: relative;
+		height: rem(690);
+	}
+
+	&__init {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__controls {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		z-index: 1;
+		top: rem(24);
+		right: rem(16);
+
+		@include media-breakpoint-up(md) {
+			top: rem(64);
+			right: rem(52);
+		}
+	}
+
+	&__control {
+		display: block;
+		width: rem(48);
+		height: rem(48);
+		padding: 0;
+		font-size: 0;
+		line-height: rem(48);
+		text-align: center;
+		border: 0;
+		border-radius: 50%;
+		background-color: $color-white;
+		color: $color-black;
+		cursor: pointer;
+		@include defaultTransition(background-color, color);
+
+		@include touchLessHover {
+			background-color: $color-green;
+			color: $color-white;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: rem(8);
+		}
+	}
+
+	&__card {
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		bottom: 0;
+		width: rem(492);
+		height: rem(556);
+		transform: translateY(100%);
+
+		&.is-active {
+			transform: none;
+		}
+
+		@at-root .content-loaded & {
+			transition: transform 0.4s cubic-bezier(0.475, 0.425, 0, 0.995) 0.3s;
+		}
+	}
+}

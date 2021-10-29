@@ -1,0 +1,114 @@
+.card-map {
+	$root: &;
+
+	position: relative;
+	display: block;
+	height: 100%;
+	background-color: $color-white;
+	box-shadow: 0 0 rem(16) rgba(0, 0, 0, 0.1);
+
+	&:after {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: rem(8);
+		content: "";
+		background-color: $color-black;
+	}
+
+	// если понадобится прелоадер
+	&.is-loading {
+		&:before {
+			position: absolute;
+			z-index: 2;
+			display: block;
+			top: calc(50% - #{rem(45)});
+			left: calc(50% - #{rem(45)});
+			width: rem(90);
+			height: rem(90);
+			border: rem(8) solid $color-gray;
+			border-radius: 50%;
+			border-top: rem(8) solid $color-green;
+			animation: spin 1.25s linear infinite;
+			content: "";
+		}
+	}
+
+	&__content {
+		position: relative;
+		padding: rem(48) rem(56) rem(56) rem(52);
+		height: 100%;
+		overflow-y: auto;
+
+		.ps__rail-y {
+			right: rem(8) !important;
+
+			&:before {
+				top: rem(80);
+				bottom: rem(40);
+			}
+		}
+
+		.ps__thumb-y {
+			&:before {
+				top: rem(80);
+				bottom: rem(40);
+			}
+		}
+	}
+
+	&__cross {
+		position: absolute;
+		z-index: 1;
+		top: rem(46);
+		right: rem(32);
+		width: rem(40);
+		height: rem(40);
+		font-size: 0;
+		line-height: rem(40);
+		text-align: center;
+		background-color: transparent;
+		border: 0;
+		color: $color-black;
+		@include defaultTransition(color);
+
+		@include touchLessHover {
+			color: rgba($color-black, 0.4);
+		}
+	}
+
+	&__heading {
+		margin-bottom: rem(32);
+	}
+
+	&__caption {
+		color: rgba($color-black, 0.4);
+		margin-bottom: rem(8);
+	}
+
+	&__item {
+		&:not(:first-child) {
+			margin-top: rem(24);
+		}
+	}
+
+	&__link {
+		color: $color-black;
+		@include defaultTransition(color);
+
+		@include touchLessHover {
+			color: rgba($color-black, 0.4);
+		}
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

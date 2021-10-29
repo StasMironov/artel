@@ -401,5 +401,43 @@
 				"overlay": true
 			}
 		]
+	},
+	"map": {
+		"url": "ajax/map-companies.json",
+		"heading": "География компании",
+		"tabs": {
+			"horizontal": true,
+			"items": [
+				{
+					"id": "tab-1",
+					"text": "Узбекистан"
+				},
+				{
+					"id": "tab-2",
+					"text": "Россия",
+					"active": true
+				},
+				{
+					"id": "tab-3",
+					"text": "Украина"
+				},
+				{
+					"id": "tab-4",
+					"text": "Казахстан"
+				},
+				{
+					"id": "tab-5",
+					"text": "Кыргызстан"
+				},
+				{
+					"id": "tab-6",
+					"text": "Таджикистан"
+				},
+				{
+					"id": "tab-7",
+					"text": "Азербайджан"
+				}
+			]
+		}
 	}
 }
