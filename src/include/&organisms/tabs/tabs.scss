@@ -31,7 +31,7 @@
 				}
 
 				&:not(:last-child) {
-					border-bottom: 1px solid rgba($color-black, 0.1);
+					margin-bottom: 1px;
 				}
 			}
 			@include media-breakpoint-only(md) {
@@ -57,12 +57,6 @@
 			@include media-breakpoint-down(sm) {
 				width: rem(240);
 			}
-		}
-	}
-
-	.tab {
-		@include media-breakpoint-up(lg) {
-			max-width: rem(216);
 		}
 	}
 

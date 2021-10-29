@@ -1,6 +1,7 @@
 .tab {
 	$root: &;
 
+	position: relative;
 	display: inline-block;
 	min-height: rem(22);
 	padding: 0;
@@ -74,7 +75,6 @@
 
 	&__text {
 		#{$root}--big & {
-			text-align: left;
 			max-width: rem(216);
 		}
 	}
@@ -91,6 +91,19 @@
 		text-align: left;
 		@include defaultTransition(background-color, color);
 
+		@include touchLessHover {
+			background-color: $color-green;
+			color: $color-white;
+
+			&:before {
+				background-color: $color-green;
+			}
+
+			.icon {
+				color: $color-white;
+			}
+		}
+
 		@include media-breakpoint-up(lg) {
 			&:before {
 				position: absolute;
@@ -98,7 +111,7 @@
 				right: 100%;
 				left: auto;
 				width: 50vw;
-				height: calc(100% + 1px);
+				height: 100%;
 				background-color: $color-white;
 				transform: none;
 				border-radius: 0;
@@ -119,10 +132,6 @@
 		@include media-breakpoint-up(md) {
 			padding: rem(40) rem(52);
 			height: rem(268);
-		}
-
-		@at-root .tabs__item:not(:last-child) &:before {
-			border-bottom: 1px solid rgba($color-black, 0.1);
 		}
 	}
 

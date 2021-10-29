@@ -1,17 +1,27 @@
 <div class="map" data-map{% if map.url %} data-url="{{ map.url }}"{% endif %}>
 	{% if map.heading or map.tabs %}
 		<div class="map__top">
-			{% if map.heading %}
-				<p class="map__heading h2">{{ map.heading }}</p>
-			{% endif %}
-		</div>
-		{% if block_info.tabs %}
-			<div class="map__tabs">
-				{% view '&tabs' with {
-					tabs: block_info.tabs
-				} %}
+			<div class="map__container container">
+				{% if map.heading %}
+					<p class="map__heading h2">{{ map.heading }}</p>
+				{% endif %}
+				{% if map.tabs %}
+					<div class="map__tabs">
+						<div class="swiper-container" data-map-tabs>
+							<div class="swiper-wrapper">
+								{% for tab in  map.tabs.items %}
+									<div class="swiper-slide map__slide">
+										{% view '@tab' with {
+											tab: tab
+										} %}
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				{% endif %}
 			</div>
-		{% endif %}
+		</div>
 	{% endif %}
 	<div class="map__box">
 		<div class="map__controls">
@@ -34,5 +44,21 @@
 	</div>
 	<div class="map__card" data-card-wrap>
 		{% view '^card-map' %}
+	</div>
+	<div class="map__legend">
+		<div class="map__container container">
+			<div class="map__items">
+				{% for item in map.legend %}
+					<div class="map__item">
+						<div class="map__icon color-{% if item.theme %}{{ item.theme }}{% else %}black{% endif %}">
+							{% view '@icon' with {
+								icon: item.icon
+							} %}
+						</div>
+						<p class="map__text">{{ item.text }}</p>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
 	</div>
 </div>

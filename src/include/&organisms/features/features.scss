@@ -1,5 +1,6 @@
-.list-features {
+.features {
 	$root: &;
+
 	&__title {
 		display: inline-block;
 		width: rem(250);
@@ -12,7 +13,6 @@
 	}
 
 	&__items {
-
 		@include media-breakpoint-up(lg) {
 			display: flex;
 			flex-wrap: wrap;
