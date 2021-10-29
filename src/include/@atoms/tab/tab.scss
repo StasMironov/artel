@@ -1,7 +1,7 @@
 .tab {
 	$root: &;
 
-	display: block;
+	display: inline-block;
 	min-height: rem(22);
 	padding: 0;
 	color: rgba($color-black, 0.4);
@@ -62,124 +62,80 @@
 		cursor: not-allowed;
 	}
 
+	&__icon {
+		#{$root}--big & {
+
+		}
+
+		#{$root}--big#{$root}--active & {
+			color: $color-white;
+		}
+	}
+
+	&__text {
+		#{$root}--big & {
+			text-align: left;
+			max-width: rem(216);
+		}
+	}
+
 	&--big {
 		display: flex;
-		background-color: white;
-		@include defaultTransition(background-color);
-		
 		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		background-color: $color-white;
+		height: rem(194);
+		padding: rem(32) rem(40);
+		color: $color-black;
+		text-align: left;
+		@include defaultTransition(background-color, color);
 
-		@include media-breakpoint-up(sm) {
-			min-width: rem(240);
-			min-height: rem(194);
-			align-items: flex-start;
-			padding: 32px 41px;
+		@include media-breakpoint-up(lg) {
+			&:before {
+				position: absolute;
+				top: 0;
+				right: 100%;
+				left: auto;
+				width: 50vh;
+				height: calc(100% + 1px);
+				background-color: $color-white;
+				transform: none;
+				border-radius: 0;
+				@include defaultTransition(background-color);
+			}
+		}
+		@include media-breakpoint-down(md) {
+			&:before {
+				content: none;
+			}
+		}
+
+		.icon {
+			color: $color-green;
+			@include defaultTransition(color);
 		}
 
 		@include media-breakpoint-up(md) {
-			min-width: rem(332);
-			min-height: rem(268);
-			padding: rem(40) rem(52);	
+			padding: rem(40) rem(52);
+			height: rem(268);
 		}
 
-		@include media-breakpoint-up(lg) {
-			border-radius: 0 rem(8) 0 0;
-			min-width: initial;
+		@at-root .tabs__item:not(:last-child) &:before {
+			border-bottom: 1px solid rgba($color-black, 0.1);
 		}
-		
-		&#{$root} {
-			&--active {
-				background-color: $color-green;
+	}
 
-				#{$root}__icon {
-					.icon {
-						color: white;
+	&--big#{$root}--active {
+		background-color: $color-green;
+		color: $color-white;
 
-						.svg-line {
-							fill:$color-black;
-						}
-					}
-				}
-
-				#{$root}__text {
-					color: white;
-				}
-			}
-			
-			&:hover {
-				background-color: $color-green;
-
-				#{$root}__icon {
-					.icon {
-						color: white;
-
-						.svg-line {
-							fill:$color-black;
-						}
-					}
-				}
-
-				#{$root}__text {
-					color: white;
-				}
-			}
-		}
-
-		#{$root} {
-			&__icon {
-				.icon {
-					@include media-breakpoint-up(sm) {
-						width: rem(72);
-						height: rem(72);
-					}
-			
-					@include media-breakpoint-up(md) {
-						width: rem(104);
-						height: rem(104);
-					}
-
-					path {
-						@include defaultTransition(fill);
-					}
-
-					color: $color-green;
-
-					.svg-line {
-						fill:$color-black;
-					}
-				}
-
-				@include media-breakpoint-up(md) {
-					margin-bottom: rem(40);
-				}
-		
-				@include media-breakpoint-up(lg) {
-					margin-bottom: rem(62);
-				}
-			}
-
-			&__text {
-				text-align: left;
-				color: rgba($color-black, 1);
-				margin-top: auto;
-
-
-				@include media-breakpoint-up(sm) {
-					max-width: rem(150);
-				}
-		
-				@include media-breakpoint-up(lg) {
-					max-width: initial;
-				}
-			}
+		.icon {
+			color: $color-white;
 		}
 
 		&:before {
-			content: none;
-		}
-
-		span {
-			display: block;
+			background-color: $color-green;
 		}
 	}
 }

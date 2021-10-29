@@ -7,7 +7,7 @@
 	{% else %}
 		<a href="{{ tab.href }}"
 		   class="tab{% if tab.theme %} tab--{{ tab.theme }}{% endif %}{{ tab.disabled ? ' tab--disabled' : '' }}"{% if tab.attr %} {{ tab.attr }}{% endif %}>
-		   	{% if tab.icon %}
+			{% if tab.icon %}
 				<span class="tab__icon">
 					{% view '@icon' with {
 						icon: tab.icon
@@ -18,31 +18,16 @@
 		</a>
 	{% endif %}
 {% else %}
-	{% if tab.active %}
-		<span
-			class="tab tab--active{% if tab.theme %} tab--{{ tab.theme }}{% endif %}{{ tab.disabled ? ' tab--disabled' : '' }}"
-			title="{{ tab.text }}"{% if tab.attr %} {{ tab.attr }}{% endif %}>			
-			{% if tab.icon %}
-				<span class="tab__icon">
+	<button type="button"
+			class="tab{% if tab.theme %} tab--{{ tab.theme }}{% endif %}{{ tab.disabled ? ' tab--disabled' : '' }}{{ tab.active ? ' tab--active' : '' }}"
+			title="{{ tab.text }}"{% if tab.attr %} {{ tab.attr }}{% endif %}{% if tab.disabled %} disabled{% endif %}>
+		{% if tab.icon %}
+			<span class="tab__icon">
 					{% view '@icon' with {
 						icon: tab.icon
 					} %}
 				</span>
-			{% endif %}
-			<span class="tab__text">{{ tab.text }}</span>
-		</span>
-	{% else %}
-		<button type="button"
-				class="tab{% if tab.theme %} tab--{{ tab.theme }}{% endif %}{{ tab.disabled ? ' tab--disabled' : '' }}"
-				title="{{ tab.text }}"{% if tab.attr %} {{ tab.attr }}{% endif %}{% if tab.disabled %} disabled{% endif %}>
-			{% if tab.icon %}
-				<span class="tab__icon">
-					{% view '@icon' with {
-						icon: tab.icon
-					} %}
-				</span>
-			{% endif %}
-			<span class="tab__text">{{ tab.text }}</span>
-		</button>
-	{% endif %}
+		{% endif %}
+		<span class="tab__text">{{ tab.text }}</span>
+	</button>
 {% endif %}
