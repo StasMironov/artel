@@ -1,6 +1,4 @@
 .block-benefit {
-	overflow: hidden;
-
 	&__container {
 		@include media-breakpoint-up(sm) {
 			padding-top: rem(65);
@@ -33,12 +31,12 @@
 			margin-right: rem(120);
 		}
 		@include media-breakpoint-only(md) {
-			margin-left: rem(-52);
 			margin-bottom: rem(112);
+			margin-left: rem(-52);
 		}
 		@include media-breakpoint-down(sm) {
-			margin-left: rem(-16);
 			margin-bottom: rem(64);
+			margin-left: rem(-16);
 		}
 	}
 
