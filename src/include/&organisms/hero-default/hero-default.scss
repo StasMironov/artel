@@ -1,0 +1,54 @@
+.hero-default {
+	position: relative;
+
+	&__container {
+		@include media-breakpoint-up(sm) {
+			padding-top: rem(159);
+			padding-bottom: rem(87);
+		}
+		@include media-breakpoint-up(md) {
+			padding-top: rem(214);
+			padding-bottom: rem(117);
+		}
+	}
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		margin: auto;
+
+		&:before {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(
+				0deg,
+				rgba(0, 0, 0, 0.4),
+				rgba(0, 0, 0, 0.4)
+			);
+			transform: matrix(-1, 0, 0, 1, 0, 0);
+			content: '';
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			background-size: cover;
+		}
+	}
+
+	&__title {
+		color: white;
+		text-align: center;
+	}
+}

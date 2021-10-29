@@ -1,9 +1,10 @@
 import gsap from 'gsap';
 import Hammer from 'hammerjs';
+import SliderPag from './constructor';
 
 export default class Slider {
 	constructor() {
-		this.sliderWrapNode = document.querySelector('[data-main-hero]');
+		this.sliderWrapNode = document.querySelector('[data-info-slider]');
 		this.selectors = {
 			imageWrap: '[data-image-wrap]',
 			slide: '[data-slide]',
@@ -11,10 +12,14 @@ export default class Slider {
 			next: '[data-nav-arrow-next]',
 			image: '[data-image]',
 			title: '[data-title]',
+			note: '[data-note]',
+			text: '[data-text]',
+			year: '[data-year]',
 			action: '[data-action]',
 			arrows: '.nav-arrows',
 			number: '[data-number]',
 			progressLine: '[data-progress]',
+			pag: '',
 		};
 
 		if (this.sliderWrapNode) this.render();
@@ -64,22 +69,65 @@ export default class Slider {
 			this.selectors.number
 		);
 
+		const sliderPag = new SliderPag({
+			init: true,
+			wrap: '[data-pag]',
+			slider: '[data-pag-slider]',
+			options: {
+				speed: 400,
+				a11y: false,
+				freeMode: {
+					enabled: true,
+					sticky: false,
+				},
+				// simulateTouch: false,
+				resistance: true,
+				resistanceRatio: 0,
+				spaceBetween: 30,
+				observer: true,
+				observeParents: true,
+				[window.breakpoints.lg]: {
+					freeMode: false,
+					spaceBetween: 0,
+				},
+				breakpoints: {
+					// условия для разных размеров окна браузера
+					0: {
+						// при 0px и выше
+						direction: 'horizontal', // горизонтальная прокрутка
+						slidesPerView: 'auto',
+						spaceBetween: 24,
+					},
+					990: {
+						// при 768px и выше
+						direction: 'vertical', // вертикальная прокрутка
+						slidesPerView: 5,
+						spaceBetween: 30,
+					},
+				},
+			},
+		});
+		sliderPag.swiper.init();
+
+		this.pag = sliderPag;
+
 		this.numbers.forEach((el, idx) => {
 			el.addEventListener('click', () => {
 				if (el.classList.contains('is-active') || this.inTransition)
 					return;
 
-				this.slideChange([idx, this.activeIndex]);
-
 				this.numbersClassToggle(idx); // смена активной кнопки
+				this.slideChange([idx, this.activeIndex]);
 			});
 		});
 
 		this.prev.addEventListener('click', () => {
 			this.slideChange(this.calcPrevNextIndex('prev')); // расчёт activeIndex, prevIndex, добавление/удаление класса is-active, вызов animation()
+			this.numbersClassToggle(this.calcPrevNextIndex()[1]);
 		});
 		this.next.addEventListener('click', () => {
 			this.slideChange(this.calcPrevNextIndex()); // расчёт activeIndex, prevIndex, добавление/удаление класса is-active, вызов animation()
+			this.numbersClassToggle(this.calcPrevNextIndex()[1]);
 		});
 
 		this.autoplayInterval =
@@ -120,6 +168,10 @@ export default class Slider {
 					clearProps: 'all',
 					onComplete: () => {
 						this.slideChange(this.calcPrevNextIndex());
+						sliderPag.swiper.slideTo(
+							this.calcPrevNextIndex()[1],
+							800
+						);
 					},
 				}
 			);
@@ -211,7 +263,21 @@ export default class Slider {
 				}
 			)
 			.fromTo(
-				this.findNode(this.prevIndex, this.selectors.action),
+				this.findNode(this.prevIndex, this.selectors.note),
+				{
+					opacity: 1,
+					y: 0,
+				},
+				{
+					y: 20,
+					opacity: 0,
+					duration: 0.4,
+					ease: 'power1.out',
+				},
+				'-=0.4'
+			)
+			.fromTo(
+				this.findNode(this.prevIndex, this.selectors.year),
 				{
 					opacity: 1,
 					y: 0,
@@ -223,6 +289,20 @@ export default class Slider {
 					ease: 'power1.out',
 				},
 				'<+=0.2'
+			)
+			.fromTo(
+				this.findNode(this.prevIndex, this.selectors.text),
+				{
+					opacity: 1,
+					y: 0,
+				},
+				{
+					y: 20,
+					opacity: 0,
+					duration: 0.4,
+					ease: 'power1.out',
+				},
+				'<+=0.3'
 			)
 			.fromTo(
 				this.findNode(this.activeIndex, this.selectors.title),
@@ -239,7 +319,21 @@ export default class Slider {
 				'+=0.4'
 			)
 			.fromTo(
-				this.findNode(this.activeIndex, this.selectors.action),
+				this.findNode(this.activeIndex, this.selectors.note),
+				{
+					opacity: 0,
+					y: 20,
+				},
+				{
+					y: 0,
+					opacity: 1,
+					duration: 0.4,
+					ease: 'power1.out',
+				},
+				'-=0.4'
+			)
+			.fromTo(
+				this.findNode(this.activeIndex, this.selectors.text),
 				{
 					opacity: 0,
 					y: 20,
@@ -252,6 +346,21 @@ export default class Slider {
 				},
 				'<+=0.2'
 			)
+			.fromTo(
+				this.findNode(this.activeIndex, this.selectors.year),
+				{
+					opacity: 0,
+					y: 20,
+				},
+				{
+					y: 0,
+					opacity: 1,
+					duration: 0.4,
+					ease: 'power1.out',
+				},
+				'<+=0.3'
+			)
+
 			.fromTo(
 				this.findNode(this.activeIndex, this.selectors.imageWrap),
 				{
@@ -327,5 +436,9 @@ export default class Slider {
 		}
 
 		this.numbers[idx].classList.add('is-active');
+		setTimeout(() => {
+			this.pag.swiper.update();
+			this.pag.swiper.slideTo(idx, 800);
+		}, 300);
 	}
 }

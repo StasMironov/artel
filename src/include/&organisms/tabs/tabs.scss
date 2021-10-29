@@ -1,4 +1,6 @@
 .tabs {
+	$root: &;
+
 	&__item {
 		width: auto;
 
@@ -37,7 +39,48 @@
 	&--layout {
 		&-2 {
 			.swiper-wrapper {
-				transform: none !important;
+				
+				@include media-breakpoint-up(lg) {
+					transform: none !important;
+				}
+			}
+
+			#{$root}{
+				&__item {
+					margin-right: 0 !important;
+					margin-bottom: 0;
+
+					&:first-child {
+						.tab {
+							@include media-breakpoint-up(sm) {
+								border-radius: rem(8) 0 0 rem(8);
+							}
+							@include media-breakpoint-up(lg) {
+								border-radius: 0 rem(8) 0 0;
+							}
+						}
+					}
+			
+					&:last-child {
+						.tab {
+							@include media-breakpoint-up(sm) {
+								border-radius: 0 rem(8) rem(8) 0;
+							}
+							@include media-breakpoint-up(lg) {
+								border-radius: 0 rem(8) 0 0;
+							}
+						}
+					}
+
+					&:not(:first-child):not(:last-child) {
+						border-bottom: 1px solid rgba($color-black, 0.1);
+					}
+				}
+			}
+
+			.tab {
+				max-width: initial;
+				width: 100%;
 			}
 		}
 	}
