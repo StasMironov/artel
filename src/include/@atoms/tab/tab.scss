@@ -97,7 +97,7 @@
 				top: 0;
 				right: 100%;
 				left: auto;
-				width: 50vh;
+				width: 50vw;
 				height: calc(100% + 1px);
 				background-color: $color-white;
 				transform: none;
@@ -136,6 +136,16 @@
 
 		&:before {
 			background-color: $color-green;
+		}
+
+		@include touchLessHover {
+			&:not(:disabled):not(#{$root}__tab--disabled) {
+				color: $color-white;
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+			
 		}
 	}
 }
