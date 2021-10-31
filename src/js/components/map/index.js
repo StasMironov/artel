@@ -245,7 +245,9 @@ export default class Map {
 			}
 
 			tab.addEventListener('click', () => {
-				this.tabs.slideTo(idx, 400);
+				setTimeout(() => {
+					this.tabs.slideTo(idx, 800);
+				}, 50);
 
 				for (let i = 0; i < this.tabButtons.length; i++) {
 					if (idx === i) continue;

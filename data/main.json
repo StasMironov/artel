@@ -625,40 +625,40 @@
 			"horizontal": true,
 			"items": [
 				{
-					"id": "tab-1",
 					"text": "Узбекистан",
-					"attr": "data-region='uz'"
+					"attr": "data-region='uz'",
+					"shift": true
 				},
 				{
-					"id": "tab-2",
 					"text": "Россия",
 					"active": true,
-					"attr": "data-region='ru'"
+					"attr": "data-region='ru'",
+					"shift": true
 				},
 				{
-					"id": "tab-3",
 					"text": "Украина",
-					"attr": "data-region='ua'"
+					"attr": "data-region='ua'",
+					"shift": true
 				},
 				{
-					"id": "tab-4",
 					"text": "Казахстан",
-					"attr": "data-region='kz'"
+					"attr": "data-region='kz'",
+					"shift": true
 				},
 				{
-					"id": "tab-5",
 					"text": "Кыргызстан",
-					"attr": "data-region='kg'"
+					"attr": "data-region='kg'",
+					"shift": true
 				},
 				{
-					"id": "tab-6",
 					"text": "Таджикистан",
-					"attr": "data-region='tj'"
+					"attr": "data-region='tj'",
+					"shift": true
 				},
 				{
-					"id": "tab-7",
 					"text": "Азербайджан",
-					"attr": "data-region='az'"
+					"attr": "data-region='az'",
+					"shift": true
 				}
 			]
 		},

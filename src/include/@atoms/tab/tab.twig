@@ -19,7 +19,7 @@
 	{% endif %}
 {% else %}
 	<button type="button"
-			class="tab{% if tab.theme %} tab--{{ tab.theme }}{% endif %}{{ tab.disabled ? ' tab--disabled' : '' }}{{ tab.active ? ' tab--active' : '' }}"
+			class="tab{% if tab.theme %} tab--{{ tab.theme }}{% endif %}{{ tab.disabled ? ' tab--disabled' : '' }}{{ tab.active ? ' tab--active' : '' }}{{ tab.shift ? ' tab--shift' : '' }}"
 			title="{{ tab.text }}"{% if tab.attr %} {{ tab.attr }}{% endif %}{% if tab.disabled %} disabled{% endif %}>
 		{% if tab.icon %}
 			<span class="tab__icon">
