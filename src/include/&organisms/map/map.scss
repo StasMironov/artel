@@ -14,7 +14,14 @@
 
 	&__box {
 		position: relative;
-		height: rem(690);
+		height: rem(556);
+
+		@include media-breakpoint-up(lg) {
+			height: rem(690);
+		}
+		@include media-breakpoint-only(md) {
+			height: rem(890);
+		}
 	}
 
 	&__init {
@@ -62,6 +69,12 @@
 		&:not(:last-child) {
 			margin-bottom: rem(8);
 		}
+
+		@include media-breakpoint-up(md) {
+			width: rem(56);
+			height: rem(56);
+			line-height: rem(56);
+		}
 	}
 
 	&__card {
@@ -69,9 +82,14 @@
 		z-index: 1;
 		left: 0;
 		bottom: 0;
-		width: rem(492);
-		height: rem(556);
 		transform: translateY(100%);
+		width: 100%;
+		height: rem(500);
+
+		@include media-breakpoint-up(md) {
+			width: rem(492);
+			height: rem(556);
+		}
 
 		&.is-active {
 			transform: none;
@@ -111,6 +129,8 @@
 	&__tabs {
 		@include media-breakpoint-up(lg) {
 			width: 66.6666%;
+			padding-top: rem(14);
+			padding-left: rem(4);
 		}
 	}
 
@@ -147,7 +167,7 @@
 		@include media-breakpoint-up(md) {
 			display: flex;
 			align-items: center;
-			padding: rem(16) rem(40);
+			padding: rem(16) rem(44);
 		}
 		@include media-breakpoint-only(md) {
 			justify-content: center;
@@ -161,6 +181,11 @@
 		@include media-breakpoint-up(md) {
 			&:not(:last-child) {
 				margin-right: rem(40);
+			}
+		}
+		@include media-breakpoint-only(md) {
+			&:first-child {
+				margin-left: rem(-40);
 			}
 		}
 		@include media-breakpoint-down(sm) {
