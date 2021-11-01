@@ -2,7 +2,7 @@ $color-white: #fff;
 $color-black: #000;
 $color-green: #00d372;
 $color-gray: #f5f5f5;
-$color-gray-2: #e0e0e0;
+$color-gray-dark: #e0e0e0;
 $color-purple: #ce00f8;
 
 $colors: (
@@ -10,5 +10,6 @@ $colors: (
 	'black': $color-black,
 	'green': $color-green,
 	'gray': $color-gray,
+	'gray-dark': $color-gray-dark,
 	'purple': $color-purple,
 );

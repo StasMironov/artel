@@ -1,6 +1,7 @@
 .card-user {
     position: sticky;
     top: 0;
+    background-color: $color-gray-dark;
 
     @include media-breakpoint-up(sm) {
         height: rem(300);
@@ -20,8 +21,7 @@
 
     @include media-breakpoint-up(lg) {
         padding-right: rem(40);
-	    padding-left: rem(40);
-        
+	    padding-left: rem(40); 
     }
 
 	&__bg {
@@ -33,39 +33,31 @@
 		width: 100%;
 		height: 100%;
 
-		&:after {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			z-index: -1;
-			margin: auto;
-			background-color: $color-gray-2;
-			background-image: url('/tmp/card-user/unknown.png');
-			background-repeat: no-repeat;
-			background-position: center bottom;
-			content: '';
-
-            @include media-breakpoint-up(sm) {
-                background-size: rem(176) auto;
-            }
-
-            @include media-breakpoint-up(md) {
-                background-size: rem(390) auto;
-            }
-		}
-
 		img {
 			width: 100%;
-			width: 100%;
-			height: 100%;
 			height: 100%;
 			object-fit: cover;
-			object-fit: cover;
-			background-size: cover;
-			background-size: cover;
 		}
+
+        &.is-noImage {
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: auto;
+                object-fit: initial;
+                height: rem(448);
+                margin-top: auto;
+
+                @include media-breakpoint-up(sm) {
+                    height: rem(204);
+                }
+
+                @include media-breakpoint-up(md) {
+                    height: rem(448);
+                }
+            }
+        }
 	}
 
     &__content {
