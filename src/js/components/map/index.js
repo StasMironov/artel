@@ -1,5 +1,6 @@
 import {Loader} from 'google-maps';
 import PerfectScrollbar from "perfect-scrollbar";
+import Swiper from 'swiper/swiper-bundle';
 
 export default class Map {
 	constructor() {
@@ -18,7 +19,10 @@ export default class Map {
 		this.cardContent = this.card.querySelector('[data-map-card-content]');
 		if (!this.cardContent) return;
 
-		this.APIKEY = 'AIzaSyBKxxX68AJCEH2DX3_j0u1knkD6__xrYAk'; //TODO использовать только на этом проекте
+		this.tabsNode = this.mapNode.querySelector('[data-map-tabs]');
+		if (!this.tabsNode) return;
+
+		this.APIKEY = 'AIzaSyBKxxX68AJCEH2DX3_j0u1knkD6__xrYAk'; // TODO использовать только на этом проекте
 		this.initOptions = {
 			language: "RU"
 		};
@@ -58,7 +62,7 @@ export default class Map {
 					featureType: 'water',
 					elementType: 'geometry',
 					stylers: [
-						{color: '#e9e9e9'},
+						{color: '#E0E0E0'},
 						{lightness: 17}
 					],
 				},
@@ -68,7 +72,7 @@ export default class Map {
 					stylers: [
 						{lightness: 20},
 						{visibility: 'on'},
-						{color: '#dddddd'},
+						{color: '#ffffff'},
 					],
 				},
 				{
@@ -207,9 +211,8 @@ export default class Map {
 
 		this.cardClose.addEventListener('click', () => {
 			this.cardWrap.classList.remove('is-active');
-			this.toggleMarkers(true);
-
-			this.map.setZoom(4);
+			this.filterMarkers(); // показ всех меток текущего региона
+			this.map.fitBounds(this.bounds);
 		});
 
 		this.ps = new PerfectScrollbar(this.cardContent, {
@@ -218,13 +221,59 @@ export default class Map {
 			minScrollbarLength: 140, // исправляет бесконечную прокрутку и баг с большим количеством элементов
 		});
 
+		this.tabs = new Swiper(this.tabsNode, {
+			slidesPerView: 'auto',
+			speed: 400,
+			a11y: false,
+			freeMode: {
+				enabled: true,
+				sticky: false,
+			},
+			simulateTouch: true,
+			resistance: true,
+			resistanceRatio: 0,
+			observer: true,
+			observeParents: true,
+		});
+
+		this.currentRegion = null;
+
+		this.tabButtons = this.tabsNode.querySelectorAll('[data-region]');
+		this.tabButtons.forEach((tab, idx) => {
+			if (tab.classList.contains('tab--active')) {
+				this.currentRegion = tab.getAttribute('data-region'); // определение текущего региона, чтобы исключить остальные
+			}
+
+			tab.addEventListener('click', () => {
+				setTimeout(() => {
+					this.tabs.slideTo(idx, 800);
+				}, 50);
+
+				for (let i = 0; i < this.tabButtons.length; i++) {
+					if (idx === i) continue;
+					this.tabButtons[i].classList.remove('tab--active');
+				}
+
+				tab.classList.add('tab--active');
+				this.currentRegion = tab.getAttribute('data-region');
+				this.filterMarkers(false, true);
+
+				this.cardWrap.classList.remove('is-active'); // при переключении табов скрываем попап с данными ранее выбранной метки
+			});
+		});
+
+		this.bounds = null;
+
 		this.getPOI()
 			.then((data) => {
-				this.pointsArray = data;
-
 				data.data.forEach((markerData, idx) => {
 					this.addMarker(markerData, idx);
 				});
+
+				if (this.currentRegion) {
+					this.bounds = null;
+					this.filterMarkers(false, true);
+				}
 			});
 	}
 
@@ -234,18 +283,19 @@ export default class Map {
 			exist: !!markerData.exist,
 			position: new google.maps.LatLng(markerData.coords[0], markerData.coords[1]),
 			icon: this.setIcon(markerData),
+			region: markerData.region,
 		});
 
 		marker.setMap(this.map);
 		this.markers.push(marker);
 
 		marker.addListener('click', () => {
-			if (this.activeIndex !== index) {
-				this.showContent(markerData);
-				this.cardWrap.classList.add('is-active');
+			if (this.activeIndex !== index) { // заперт на повторный клик по активной метке
+				this.showContent(markerData); // передача данных метки
+				this.cardWrap.classList.add('is-active'); // показ попапа с данными метки
 
-				this.toggleMarkers(false, index);
 				this.activeIndex = index;
+				this.filterMarkers(true); // true - исключаем все метки, кроме текущей
 			}
 
 			this.map.setCenter(marker.getPosition());
@@ -300,7 +350,7 @@ export default class Map {
 		return await response.json()
 	}
 
-	showContent(markerData) {
+	showContent(markerData) { // контент попапа
 		this.cardContent.innerHTML = '';
 
 		let heading = null;
@@ -365,7 +415,7 @@ export default class Map {
 		}, 0);
 	}
 
-	createElement(data) {
+	createElement(data) { // разметка для элементов попапа
 		let caption = null;
 		let text = null;
 
@@ -391,11 +441,29 @@ export default class Map {
 		return item;
 	}
 
-	toggleMarkers(state = false, excludeIndex = undefined) { // отобразить/скрыть маркеры
-		for (let i = 0; i < this.markers.length; i++) {
-			if (excludeIndex !== undefined && i === excludeIndex) continue;
+	filterMarkers(exclude = false, fit = false) { // отображение / скрытие меток
+		this.bounds = new google.maps.LatLngBounds();
 
-			this.markers[i].setVisible(state);
+		for (let i = 0; i < this.markers.length; i++) {
+			if (this.markers[i].region !== this.currentRegion) {
+				this.markers[i].setVisible(false);
+			} else {
+				if (!exclude) { // если нужно исключить все метки, кроме выбранной
+					this.markers[i].setVisible(true);
+
+					this.bounds.extend(this.markers[i].position);
+				} else {
+					if (this.activeIndex === i) {
+						this.markers[i].setVisible(true);
+					} else {
+						this.markers[i].setVisible(false);
+					}
+				}
+			}
+		}
+
+		if (!exclude && fit) {
+			this.map.fitBounds(this.bounds);
 		}
 	}
 }

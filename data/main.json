@@ -402,6 +402,222 @@
 			}
 		]
 	},
+	"features": {
+		"title": "Годовые отчеты и стратегия для инвесторов",
+		"items": [
+			{
+				"theme": "green",
+				"href": "#",
+				"title": "Результаты и отчеты",
+				"text": "Стабильная производитель&shy;ность несмотря на некоторые ограничения COVID-19"
+			},
+			{
+				"theme": "black",
+				"href": "#!",
+				"title": "Инвесторам",
+				"text": "Мы строим доверительные отношения с заинтересован&shy;ными сторонами"
+			},
+			{
+				"href": "#!!",
+				"title": "ESG",
+				"text": "Высокие стандарты ESG — приоритет в нашей Группе"
+			}
+		]
+	},
+	"news": {
+		"title": "Последние новости",
+		"tabs": {
+			"items": [
+				{
+					"text": "Жизнь компании",
+					"title": "Жизнь компании",
+					"attr": "data-attr",
+					"active": "true"
+				},
+				{
+					"text": "Пресс-служба",
+					"title": "Пресс-служба",
+					"href": "javascript:void(0);",
+					"attr": "data-attr"
+				},
+				{
+					"text": "Истории успеха",
+					"title": "Истории успеха",
+					"href": "javascript:void(0);",
+					"attr": "data-attr"
+				},
+				{
+					"text": "Социальная ответственность",
+					"title": "Социальная ответственность",
+					"href": "javascript:void(0);",
+					"attr": "data-attr"
+				}
+			]
+		},
+		"tabs_content": [
+			{
+				"active": true,
+				"cards": [
+					{
+						"href": "#",
+						"date": "1 сен 2021",
+						"title": "Artel и Khan Academy Oʻzbek подписали меморандум",
+						"image": {
+							"src": "tmp/card-news/news1.jpg",
+							"alt": "alt"
+						}
+					},
+					{
+						"href": "#",
+						"date": "3 мая 2021",
+						"title": "Производственной мощности Artel достаточно для производства продукции",
+						"image": {
+							"src": "tmp/card-news/news2.jpg",
+							"alt": "alt"
+						}
+					},
+					{
+						"href": "#",
+						"date": "28 янв 2021",
+						"title": "Проводится обучение руководителей",
+						"image": {
+							"src": "tmp/card-news/news3.jpg",
+							"alt": "alt"
+						}
+					},
+					{
+						"href": "#",
+						"date": "3 мая 2021",
+						"title": "Компания Artel подарила стиральные машины детскому дому «Kichkintoy»",
+						"image": {
+							"src": "tmp/card-news/news4.jpg",
+							"alt": "alt"
+						}
+					}
+				]
+			},
+			{
+				"cards": [
+					{
+						"href": "#",
+						"date": "1 сен 2021",
+						"title": "Artel и Khan Academy Oʻzbek подписали меморандум",
+						"image": {
+							"src": "tmp/card-news/news1.jpg",
+							"alt": "alt"
+						}
+					},
+					{
+						"href": "#",
+						"date": "1 сен 2021",
+						"title": "Artel и Khan Academy Oʻzbek подписали меморандум",
+						"image": {
+							"src": "tmp/card-news/news3.jpg",
+							"alt": "alt"
+						}
+					},
+					{
+						"href": "#",
+						"date": "1 сен 2021",
+						"title": "Artel и Khan Academy Oʻzbek подписали меморандум",
+						"image": {
+							"src": "tmp/card-news/news2.jpg",
+							"alt": "alt"
+						}
+					},
+					{
+						"href": "#",
+						"date": "1 сен 2021",
+						"title": "Artel и Khan Academy Oʻzbek подписали меморандум",
+						"image": {
+							"src": "tmp/card-news/news4.jpg",
+							"alt": "alt"
+						}
+					}
+				]
+			},
+			{
+				"cards": [
+					{
+						"href": "#",
+						"date": "1 сен 2021",
+						"title": "Artel и Khan Academy Oʻzbek подписали меморандум",
+						"image": {
+							"src": "tmp/card-news/news4.jpg",
+							"alt": "alt"
+						}
+					},
+					{
+						"href": "#",
+						"date": "1 сен 2021",
+						"title": "Artel и Khan Academy Oʻzbek подписали меморандум",
+						"image": {
+							"src": "tmp/card-news/news2.jpg",
+							"alt": "alt"
+						}
+					},
+					{
+						"href": "#",
+						"date": "1 сен 2021",
+						"title": "Artel и Khan Academy Oʻzbek подписали меморандум",
+						"image": {
+							"src": "tmp/card-news/news3.jpg",
+							"alt": "alt"
+						}
+					},
+					{
+						"href": "#",
+						"date": "1 сен 2021",
+						"title": "Artel и Khan Academy Oʻzbek подписали меморандум",
+						"image": {
+							"src": "tmp/card-news/news1.jpg",
+							"alt": "alt"
+						}
+					}
+				]
+			},
+			{
+				"cards": [
+					{
+						"href": "#",
+						"date": "1 сен 2021",
+						"title": "Artel и Khan Academy Oʻzbek подписали меморандум",
+						"image": {
+							"src": "tmp/card-news/news1.jpg",
+							"alt": "alt"
+						}
+					},
+					{
+						"href": "#",
+						"date": "1 сен 2021",
+						"title": "Artel и Khan Academy Oʻzbek подписали меморандум",
+						"image": {
+							"src": "tmp/card-news/news3.jpg",
+							"alt": "alt"
+						}
+					},
+					{
+						"href": "#",
+						"date": "1 сен 2021",
+						"title": "Artel и Khan Academy Oʻzbek подписали меморандум",
+						"image": {
+							"src": "tmp/card-news/news4.jpg",
+							"alt": "alt"
+						}
+					},
+					{
+						"href": "#",
+						"date": "1 сен 2021",
+						"title": "Artel и Khan Academy Oʻzbek подписали меморандум",
+						"image": {
+							"src": "tmp/card-news/news2.jpg",
+							"alt": "alt"
+						}
+					}
+				]
+			}
+		]
+	},
 	"map": {
 		"url": "ajax/map-companies.json",
 		"heading": "География компании",
@@ -409,35 +625,68 @@
 			"horizontal": true,
 			"items": [
 				{
-					"id": "tab-1",
-					"text": "Узбекистан"
+					"text": "Узбекистан",
+					"attr": "data-region='uz'",
+					"shift": true
 				},
 				{
-					"id": "tab-2",
 					"text": "Россия",
-					"active": true
+					"active": true,
+					"attr": "data-region='ru'",
+					"shift": true
 				},
 				{
-					"id": "tab-3",
-					"text": "Украина"
+					"text": "Украина",
+					"attr": "data-region='ua'",
+					"shift": true
 				},
 				{
-					"id": "tab-4",
-					"text": "Казахстан"
+					"text": "Казахстан",
+					"attr": "data-region='kz'",
+					"shift": true
 				},
 				{
-					"id": "tab-5",
-					"text": "Кыргызстан"
+					"text": "Кыргызстан",
+					"attr": "data-region='kg'",
+					"shift": true
 				},
 				{
-					"id": "tab-6",
-					"text": "Таджикистан"
+					"text": "Таджикистан",
+					"attr": "data-region='tj'",
+					"shift": true
 				},
 				{
-					"id": "tab-7",
-					"text": "Азербайджан"
+					"text": "Азербайджан",
+					"attr": "data-region='az'",
+					"shift": true
 				}
 			]
-		}
+		},
+		"legend": [
+			{
+				"text": "Сервисные центры",
+				"icon": {
+					"name": "map-icons/map-pin",
+					"size": "fit"
+				},
+				"theme": "green"
+			},
+			{
+				"text": "Заводы",
+				"icon": {
+					"name": "map-icons/map-pin",
+					"size": "fit"
+				},
+				"theme": "black"
+			},
+			{
+				"text": "Экспорт",
+				"icon": {
+					"name": "map-icons/map-pin",
+					"size": "fit"
+				},
+				"theme": "purple"
+			}
+		]
 	}
 }

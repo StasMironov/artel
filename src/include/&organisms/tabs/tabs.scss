@@ -60,12 +60,6 @@
 		}
 	}
 
-	.tab {
-		@include media-breakpoint-up(lg) {
-			max-width: rem(216);
-		}
-	}
-
 	.swiper-container {
 		overflow: visible;
 		//@include media-breakpoint-down(sm) {

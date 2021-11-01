@@ -1,6 +1,7 @@
 .tab {
 	$root: &;
 
+	position: relative;
 	display: inline-block;
 	min-height: rem(22);
 	padding: 0;
@@ -76,6 +77,10 @@
 		#{$root}--big & {
 			max-width: rem(216);
 		}
+
+		#{$root}--shift#{$root}--active & {
+			padding-left: rem(32);
+		}
 	}
 
 	&--big {
@@ -150,6 +155,15 @@
 			&:not(:disabled):not(#{$root}__tab--disabled) {
 				color: $color-white;
 			}
+		}
+	}
+
+	// для табов расположенных по горизонтали
+	&--shift {
+		&:before {
+			position: absolute;
+			left: 0;
+			margin-right: 0;
 		}
 	}
 }
