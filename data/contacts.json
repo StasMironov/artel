@@ -131,5 +131,61 @@
 				}
 			]
 		}
+	},
+	"contacts_form": {
+		"id": "form-1",
+		"name": "form-1",
+		"method": "POST",
+		"action": "!#",
+		"attr": "data-ajax-form",
+		"title": "Связаться с нами",
+		"bg": "green",
+		"fields": [
+			{
+				"input": true,
+				"id": "form-1-input-1",
+				"name": "form-1-input-1",
+				"placeholder": "ФИО",
+				"theme": "white",
+				"required": true
+			},
+			{
+				"input": true,
+				"id": "form-1-input-2",
+				"name": "form-1-input-2",
+				"placeholder": "Компания",
+				"theme": "white",
+				"required": true
+			},
+			{
+				"input": true,
+				"id": "form-1-input-3",
+				"name": "form-1-input-3",
+				"placeholder": "+7 999 999 99 99",
+				"theme": "white",
+				"required": true
+			},
+			{
+				"textarea": true,
+				"id": "form-1-textarea-1",
+				"name": "form-1-textarea-1",
+				"placeholder": "Сообщение",
+				"theme": "white"
+			}
+		],
+		"agreement": {
+			"checkbox": true,
+			"id": "form-1-checkbox-1",
+			"name": "form-1-checkbox-1",
+			"text": "Я согласен/на с <a href='javascript:void(0);' class='link-content' target='_blank'>политикой конфиденциальности</a> и&nbsp;даю добро на обработку <a href='javascript:void(0);' class='link-content' target='_blank'>моих персональных данных</a>",
+			"required": true,
+			"theme": "white"
+		},
+		"submit": {
+			"type": "submit",
+			"text": "Отправить",
+			"title": "Отправить",
+			"mobFit": true
+		}
 	}
 }

@@ -1,0 +1,166 @@
+.form {
+	$root: &;
+
+	&--mob-layout {
+		.form {
+
+			&__container {
+				display: block;
+			}
+
+			&__info {
+				width: 100%;
+				margin-bottom: rem(24);
+			}
+
+			&__title,
+			&__text {
+				max-width: none;
+			}
+
+			&__content {
+				width: 100%;
+				padding-right: 0;
+			}
+
+			&__field {
+				width: 100%;
+			}
+		}
+	}
+
+	&__container {
+		@include media-breakpoint-up(lg) {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+            padding-top: rem(112);
+            padding-bottom: rem(120);
+		}
+	}
+
+	&__info {
+		width: 50%;
+		@include media-breakpoint-only(md) {
+			margin-bottom: rem(56);
+		}
+		@include media-breakpoint-down(sm) {
+			margin-bottom: rem(24);
+		}
+
+		#{$root}.is-sent & {
+			display: none;
+		}
+	}
+
+	&__title {
+        color: $color-white;
+
+		&:not(:last-child) {
+			margin-bottom: rem(16);
+		}
+
+		max-width: rem(414);
+	}
+
+	&__text {
+		color: rgba($color-black, 0.5);
+
+		@include media-breakpoint-up(md) {
+			max-width: rem(240);
+		}
+	}
+
+	&__content {
+		width: 50%;
+
+		#{$root}.is-sent & {
+			display: none;
+		}
+	}
+
+	&__fields {
+		@include media-breakpoint-up(lg) {
+			margin-left: rem(-20);
+			margin-right: rem(-20);
+		}
+		@include media-breakpoint-only(md) {
+			margin-left: rem(-4);
+			margin-right: rem(-4);
+		}
+	}
+
+	&__field {
+		@include media-breakpoint-up(lg) {
+			padding-left: rem(20);
+			padding-right: rem(20);
+		}
+		@include media-breakpoint-up(md) {
+			&:not(:last-child) {
+				margin-bottom: rem(32);
+			}
+		}
+		@include media-breakpoint-only(md) {
+			padding-left: rem(4);
+			padding-right: rem(4);
+		}
+		@include media-breakpoint-down(sm) {
+			&:not(:last-child) {
+				margin-bottom: rem(24);
+			}
+		}
+
+		&--fit {
+			width: 100%;
+		}
+	}
+
+	&__agreement {
+		margin-top: rem(41);
+
+		@include media-breakpoint-up(md) {
+			margin-top: rem(41);
+		}
+	}
+
+	&__submit {
+		margin-top: rem(32);
+
+		@include media-breakpoint-up(md) {
+			margin-top: rem(40);
+		}
+	}
+
+	&__answer {
+		display: none;
+		max-width: rem(400);
+		width: 100%;
+		margin-right: auto;
+
+		#{$root}.is-sent & {
+			display: block;
+		}
+
+		& > :last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__answer-title {
+		margin-bottom: rem(40);
+
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(56);
+		}
+	}
+
+	&__answer-message {
+		margin-bottom: rem(16);
+		max-width: rem(260);
+	}
+
+	&__answer-caption {
+		color: rgba($color-black, 0.5);
+		max-width: rem(240);
+	}
+}
