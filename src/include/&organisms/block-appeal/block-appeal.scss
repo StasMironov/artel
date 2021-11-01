@@ -12,6 +12,10 @@
 		}
 	}
 
+	&__left {
+		background-color: $color-gray-dark;
+	}
+
 	&__wrap {
 		display: flex;
 
