@@ -1,6 +1,7 @@
 .card-user {
     position: sticky;
     top: 0;
+    background-color: $color-gray-dark;
 
     @include media-breakpoint-up(sm) {
         height: rem(300);
