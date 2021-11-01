@@ -27,7 +27,7 @@ export default class Slider {
 
 		if (!this.slides.length) return;
 
-		this.body = this.sliderWrapNode;
+		this.body = document.querySelector('body');
 
 		this.activeIndex = 0;
 		this.prevIndex = 0;

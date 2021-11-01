@@ -1,8 +1,17 @@
 <div class="card-user" data-scroll-sticky>
-    <div class="card-user__bg">
-        {% view '@image' with {
-            image: card.image
-        } %}
+    <div class="card-user__bg  {% if not card.image is defined %} is-noImage {% endif %}">
+        {% if card.image %}
+            {% view '@image' with {
+                image: card.image
+            } %}
+        {% else %}
+             {% view '@image' with {
+                image: {
+                    "src": '/tmp/card-user/unknown.png',
+                    "alt": "user"
+                }
+            } %}
+        {% endif %}
     </div>
     <div class="card-user__content">
         <div class="card-user-head">
