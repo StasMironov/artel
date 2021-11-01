@@ -1,0 +1,27 @@
+<div class="card card--strategy">
+	<div class="card__info">
+		{% if card.suptitle %}
+			<p class="card__suptitle">{{ card.suptitle }}</p>
+		{% endif %}
+
+		{% if card.title %}
+			<h2 class="card__title">{{ card.title }}</h2>
+		{% endif %}
+
+		{% if card.factoid %}
+			<div class="card__factoid">
+				{% view '^factoid' with {
+					factoid: card.factoid
+				} %}
+			</div>
+		{% endif %}
+	</div>
+
+	{% if card.image %}
+		<div class="card__image">
+			{% view '@image-adaptive' with {
+				image: card.image
+			} %}
+		</div>
+	{% endif %}
+</div>
