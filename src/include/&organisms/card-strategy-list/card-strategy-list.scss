@@ -12,6 +12,9 @@
 	&__item {
 
 		@include media-breakpoint-up(lg) {
+
+			@include defaultTransition(top);
+
 			.card-strategy__factoid {
 				@include defaultTransition(opacity);
 			}
