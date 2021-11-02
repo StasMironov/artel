@@ -44,7 +44,7 @@
 		}
 
 		@include media-breakpoint-up(lg) {
-			padding-top: 0;
+			padding-top: rem(152);
 			padding-left: rem(112);
 		}
 	}
