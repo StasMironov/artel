@@ -134,27 +134,23 @@
 	.link-content {
 		position: relative;
 		color: rgba($color-white, 0.6);
-		@include defaultTransition(color);
-
-		&:after {
-			position: absolute;
-			content: "";
-			width: 100%;
-			height: 1px;
-			bottom: -1px;
-			right: 0;
-			left: 0;
-			margin: auto;
-			background-color: rgba($color-white, 0.6);
-			@include defaultTransition(background-color);
-		}
-
+		@include line-animate-in;
+		background-size: 100% 1px;
+		background-position: 100% 100%;
+		background-image: linear-gradient(rgba($color-white, 0.6), rgba($color-white, 0.6));
+		background-repeat: no-repeat;
+		text-decoration: none !important;
+	
+		transition-property: background-size, color;
+		transition-duration: $timing;
+		transition-timing-function: $easing;
+		will-change: background-size;
+	
 		@include touchLessHover {
-			color: rgba($color-white, 1);
-
-			&:after {
-				background-color:rgba($color-white, 1);
-			}
+			background-image: linear-gradient(rgba($color-white, 1), rgba($color-white, 1));
+			background-position: 0 100%;
+			background-size: 0 1px;
+			color: $color-white;
 		}
 	}
 }

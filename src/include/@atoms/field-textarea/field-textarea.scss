@@ -9,47 +9,6 @@
 
 	@include media-breakpoint-down(sm) {
 		min-height: rem(56);
-	}
-
-	&:not(:disabled) {
-		@include touchLessHover {
-			border-color: $color-black;
-		}
-	}
-
-	&:focus {
-		outline: none;
-	}
-
-	&::placeholder {
-		color: rgba($color-black, 0.4);
-		opacity: 1;
-	}
-
-	&:disabled {
-		color: rgba(black, 0.5);
-		background-color: rgba(128, 128, 128, 0);
-		cursor: not-allowed;
-	}
-
-	&--white {
-		color: rgba($color-white, 1);
-		border-color: rgba($color-white, 0.6);
-
-		&::placeholder {
-			color: rgba($color-white, 0.6);
-		}
-
-		&:disabled {
-			color: rgba($color-white, 0.2);
-			background-color: transparent;
-			border-color: rgba($color-white, 0.2);
-		}
-
-		&:not(:disabled) {
-			@include touchLessHover {
-				border-color: rgba($color-white, 1);
-			}
-		}
+		line-height: rem(35);
 	}
 }

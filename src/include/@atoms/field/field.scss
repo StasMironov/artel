@@ -78,4 +78,14 @@
 			opacity: 1;
 		}
 	}
+
+
+	&--white {
+		&:focus,
+		&.not-empty  {
+			& ~ .label{
+				color: rgba($color-white, 0.6);
+			}
+		}
+	}
 }

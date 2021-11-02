@@ -20,6 +20,14 @@ import Input from './components/input';
 
 import { devices } from './utils/breakpoints';
 
+// Api
+
+import server from '../api/mock';
+
+if (process.env.API) {
+	server.start();
+}
+
 window.breakpoints = devices;
 __webpack_public_path__ = window.__webpack_public_path__ || '';
 
