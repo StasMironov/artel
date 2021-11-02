@@ -6,16 +6,16 @@
 		background-color: $color-white;
 
 		@include media-breakpoint-up(md) {
-			display: grid;
-			grid-template-columns: repeat(12, 1fr);
+			display: flex;
+			flex-direction: column;
 			margin: 0 rem(-52);
 			padding: 0 rem(52);
 			@include column-gap;
 		}
 
 		@include media-breakpoint-up(lg) {
-			display: flex;
 			flex-direction: row-reverse;
+			margin: 0 calc((100vw - 100%) / -2);
 		}
 
 		.card {
@@ -24,8 +24,7 @@
 				padding: rem(48) 0;
 
 				@include media-breakpoint-up(md) {
-					padding: rem(80) 0 rem(85) 0;
-					grid-column: 2/12;
+					padding: rem(80) calc(100% / 12 + 8px) rem(85) calc(100% / 12 + 8px);
 				}
 
 				@include media-breakpoint-up(lg) {
@@ -71,18 +70,41 @@
 
 				@include media-breakpoint-up(md) {
 					margin: 0 rem(-52);
-					grid-column: 1/13;
+				}
+
+				@include media-breakpoint-only(sm) {
+					padding-top: 320 / 360 * 100%;
+				}
+
+				@include media-breakpoint-only(md) {
+					padding-top: 590 / 768 * 100%;
 				}
 
 				@include media-breakpoint-up(lg) {
-					margin: 0 rem(-8) 0 rem(-52);
-					width: calc(50% + 60px);
+					margin: 0 rem(-8) 0 calc((100vw - 100%) / -2);
+					width: calc(50% + (100vw - 100%) / 2 + 8px);
 				}
 
 				.image {
+					@include media-breakpoint-only(sm) {
+						position: absolute;
+						top: 0;
+						left: 50%;
+						transform: translateX(-50%);
+						width: auto;
+						height: 100%;
+					}
+
+					@include media-breakpoint-only(md) {
+						position: absolute;
+						top: 0;
+						left: 0;
+					}
+
 					@include media-breakpoint-up(lg) {
 						position: absolute;
-						left: 0;
+						left: 50%;
+						transform: translateX(-50%);
 						top: 0;
 						height: auto;
 						width: auto;
