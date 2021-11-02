@@ -13,8 +13,12 @@ import Submenu from './components/submenu';
 import Animation from './components/animation';
 import Map from './components/map';
 import Sticky from './components/sticky';
+import validation from './components/validation';
+import FormHandler from './components/form-handler';
+import ScrollTo from './components/scrollto';
+import Input from './components/input';
 
-import {devices} from './utils/breakpoints';
+import { devices } from './utils/breakpoints';
 
 window.breakpoints = devices;
 __webpack_public_path__ = window.__webpack_public_path__ || '';
@@ -22,6 +26,11 @@ __webpack_public_path__ = window.__webpack_public_path__ || '';
 window.$ = $;
 window.jQuery = $;
 window.breakpoints = devices;
+
+const inputs = new Input();
+window.addEventListener('init.input', () => {
+	inputs.render();
+});
 
 document.addEventListener('DOMContentLoaded', () => {
 	libs.init();
@@ -34,8 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	SlideDown.init();
 	Sliders.init();
 	Submenu.init();
+	ScrollTo.init();
+
 	new Map();
+	validation.init();
 	//Sticky.init();
+	new FormHandler();
 
 	document.body.classList.add('content-loaded');
 });
@@ -44,4 +57,5 @@ window.addEventListener('reinit', () => {
 	window.dispatchEvent(new CustomEvent('init.lazyload'));
 	window.dispatchEvent(new CustomEvent('init.validation'));
 	window.dispatchEvent(new CustomEvent('init.mask'));
+	window.dispatchEvent(new CustomEvent('init.input'));
 });

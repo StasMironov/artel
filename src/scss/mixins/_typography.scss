@@ -1,7 +1,7 @@
 @mixin h1 {
+	font-weight: 600;
 	font-size: rem(32);
 	line-height: rem(35);
-	font-weight: 600;
 
 	@include media-breakpoint-up(md) {
 		font-size: rem(48);
@@ -50,12 +50,17 @@
 }
 
 @mixin factor-text {
+	font-weight: 600;
 	font-size: rem(80);
 	line-height: rem(88);
-	font-weight: 600;
 
 	@include media-breakpoint-up(md) {
 		font-size: rem(104);
 		line-height: rem(114);
 	}
+}
+
+@mixin text-body-small {
+	font-size: rem(12);
+	line-height: rem(18);
 }

@@ -1,0 +1,17 @@
+.input {
+	@include base-input;
+  }
+  
+.input-shell {
+	position: relative;
+}
+
+.parsley-errors-list {
+	position: absolute;
+	top: 100% ;
+	left: auto;
+	right: 0;
+	color: $color-white;
+	@include text-body-small;
+}
+  

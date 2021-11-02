@@ -1,6 +1,7 @@
 {
 	"block_contacts": {
 		"bg": "gray",
+		"title_hidden": "Контакты",
 		"breadcrumbs": [
 			{
 				"href": "./",
@@ -54,7 +55,8 @@
 						"title": "Связаться с нами",
 						"icon": {
 							"name": "24/arrow-up-right"
-						}
+						},
+						"attr": "data-btn-handler"
 					}
 				}
 			},
@@ -79,7 +81,8 @@
 						"title": "Связаться с нами",
 						"icon": {
 							"name": "24/arrow-up-right"
-						}
+						},
+						"attr": "data-btn-handler"
 					}
 				}
 			},
@@ -104,7 +107,8 @@
 						"title": "Связаться с нами",
 						"icon": {
 							"name": "24/arrow-up-right"
-						}
+						},
+						"attr": "data-btn-handler"
 					}
 				}
 			},
@@ -129,7 +133,8 @@
 						"title": "Связаться с нами",
 						"icon": {
 							"name": "24/arrow-up-right"
-						}
+						},
+						"attr": "data-btn-handler"
 					}
 				}
 			}
