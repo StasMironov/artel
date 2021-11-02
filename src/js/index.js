@@ -13,8 +13,9 @@ import Submenu from './components/submenu';
 import Animation from './components/animation';
 import Map from './components/map';
 import Sticky from './components/sticky';
+import Strategy from './components/strategy';
 
-import {devices} from './utils/breakpoints';
+import { devices } from './utils/breakpoints';
 
 window.breakpoints = devices;
 __webpack_public_path__ = window.__webpack_public_path__ || '';
@@ -35,7 +36,21 @@ document.addEventListener('DOMContentLoaded', () => {
 	Sliders.init();
 	Submenu.init();
 	new Map();
-	//Sticky.init();
+	// Sticky.init();
+
+	const strategyContainers = document.querySelectorAll(
+		'[data-strategy-container]'
+	);
+	const strategyList = [];
+	if (strategyContainers.length) {
+		strategyContainers.forEach((strategyContainer) => {
+			strategyList.push(
+				new Strategy({
+					wrap: strategyContainer,
+				})
+			);
+		});
+	}
 
 	document.body.classList.add('content-loaded');
 });
