@@ -13,10 +13,14 @@ import Submenu from './components/submenu';
 import Animation from './components/animation';
 import Map from './components/map';
 import Sticky from './components/sticky';
+<<<<<<< HEAD
 import validation from './components/validation';
 import FormHandler from './components/form-handler';
 import ScrollTo from './components/scrollto';
 import Input from './components/input';
+=======
+import Strategy from './components/strategy';
+>>>>>>> ARTELDEV-90
 
 import { devices } from './utils/breakpoints';
 
@@ -49,6 +53,21 @@ document.addEventListener('DOMContentLoaded', () => {
 	validation.init();
 	//Sticky.init();
 	new FormHandler();
+	// Sticky.init();
+
+	const strategyContainers = document.querySelectorAll(
+		'[data-strategy-container]'
+	);
+	const strategyList = [];
+	if (strategyContainers.length) {
+		strategyContainers.forEach((strategyContainer) => {
+			strategyList.push(
+				new Strategy({
+					wrap: strategyContainer,
+				})
+			);
+		});
+	}
 
 	document.body.classList.add('content-loaded');
 });

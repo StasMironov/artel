@@ -20,11 +20,38 @@
 				"suptitle": "Стратегия взаимодействия",
 				"title": "Вносим вклад в общество <br> и ценим сотрудников",
 				"factoid": {
-					"text": "11,5",
+					"text": "8 271",
+					"label": "общее кол-во <br> сотрудников"
+				},
+				"image": {
+					"src": "tmp/card-strategy/strategy-2.png",
+					"alt": "image alt"
+				}
+			},
+			{
+				"suptitle": "Стратегия взаимодействия",
+				"title": "Вносим вклад в общество <br> и ценим сотрудников",
+				"factoid": {
+					"text": "1,5",
 					"after": {
 						"txt": "млн"
 					},
-					"label": "произведено техники <br> за 2020 г."
+					"label": "произведено автомобилей"
+				},
+				"image": {
+					"src": "tmp/card-strategy/strategy-1.png",
+					"alt": "image alt"
+				}
+			},
+			{
+				"suptitle": "Стратегия взаимодействия",
+				"title": "Вносим вклад в общество <br> и ценим сотрудников",
+				"factoid": {
+					"text": "21,5",
+					"after": {
+						"txt": "млн"
+					},
+					"label": "произведено станков"
 				},
 				"image": {
 					"src": "tmp/card-strategy/strategy-2.png",
