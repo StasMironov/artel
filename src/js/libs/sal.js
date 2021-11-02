@@ -7,7 +7,7 @@ export default {
 		const animation = sal({
 			threshold: 0.05,
 			once: true,
-			selector: '[data-animate], [data-counter]',
+			selector: '[data-animate], [data-counter], [data-animate-custom]',
 			animateClassName: 'animate',
 			disabledClassName: 'animate-disabled',
 			rootMargin: '50px',
