@@ -127,6 +127,7 @@
 
 		@include media-breakpoint-up(md) {
 			padding-top: rem(165);
+			padding-bottom: rem(123);
 		}
 
 		@include media-breakpoint-up(lg) {
