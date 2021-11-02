@@ -2,7 +2,6 @@
 	$root: &;
 
 	display: block;
-	font-size: 0;
 	line-height: 1;
 
 	&--hidden {
@@ -15,5 +14,68 @@
 
 	&__control {
 		position: relative;
+	}
+}
+
+// Базовый стиль поведения label
+.input,
+.textarea {
+	padding-top: rem(20);
+
+	@at-root .has-error & {
+		border-color: red !important;
+	}
+
+	& ~ .label {
+		position: absolute;
+		top: rem(18);
+		left: 0;
+		margin: 0;
+		transform-origin: top left;
+		pointer-events: none;
+		will-change: transform;
+		@include defaultTransition(transform);
+		font-size: rem(24);
+
+
+		@include media-breakpoint-down(sm) {
+			font-size: rem(20);
+		}
+		// @include text-default;
+	}
+
+	&::-webkit-input-placeholder,
+	&::-moz-placeholder,
+	&:-moz-placeholder,
+	&::-ms-input-placeholder,
+	&::placeholder {
+		opacity: 0;
+	}
+
+	&::-moz-placeholder {
+		opacity: 0;
+	}
+
+	&:-ms-input-placeholder {
+		color: rgba($color-black, 0);
+	}
+
+	&:focus,
+	&.not-empty {
+		~ .label {
+			transform: translateY(-50%) scale(0.58);
+		}
+
+		&::-webkit-input-placeholder,
+		&::-moz-placeholder,
+		&:-moz-placeholder,
+		&::-ms-input-placeholder,
+		&::placeholder {
+			opacity: 1;
+		}
+
+		&::-moz-placeholder {
+			opacity: 1;
+		}
 	}
 }

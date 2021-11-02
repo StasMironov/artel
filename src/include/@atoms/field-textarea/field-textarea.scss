@@ -3,22 +3,13 @@
 }
 
 .textarea {
-	display: block;
-	width: 100%;
-	height: rem(55);
-	min-height: rem(55);
-	max-height: rem(240);
-	padding: rem(12) 0;
-	color: rgba($color-black, 0.4);
-	font-size: rem(24);
-	background-color: transparent;
-	border: none;
-	border-bottom: 1px solid rgba($color-black, 0.2);
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	resize: vertical;
-	@include defaultTransition(border-color);
+	@include base-input;
+	min-height: rem(61);
+	line-height: rem(40);
+
+	@include media-breakpoint-down(sm) {
+		min-height: rem(56);
+	}
 
 	&:not(:disabled) {
 		@include touchLessHover {
@@ -42,7 +33,7 @@
 	}
 
 	&--white {
-		color: rgba($color-white, 0.6);
+		color: rgba($color-white, 1);
 		border-color: rgba($color-white, 0.6);
 
 		&::placeholder {

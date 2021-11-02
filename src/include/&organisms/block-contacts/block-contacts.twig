@@ -1,5 +1,8 @@
 <div class="block-contacts {% if block_contacts.bg %} bg-{{ block_contacts.bg }}{% else %} bg-white{% endif %}" data-tab-container>
     <div class="block-contacts__container container">
+        {% if block_contacts.title_hidden %}
+            <h1 class="visually-hidden">{{ block_contacts.title_hidden }}</h1>
+        {% endif %}
         <div class="block-contacts__wrapper" data-tabs-wrap>
             <div class="block-contacts__left">
                 {% if block_contacts.breadcrumbs %}

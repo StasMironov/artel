@@ -7,15 +7,15 @@
 	min-width: rem(110);
 	height: rem(56);
 	padding: 0 rem(32);
+	color: $color-white;
 	font-size: 0;
 	line-height: rem(56);
+	white-space: nowrap;
+	text-align: center;
 	background-color: $color-green;
-	color: $color-white;
 	border: 0;
 	border-radius: rem(32);
 	cursor: pointer;
-	text-align: center;
-	white-space: nowrap;
 	@include defaultTransition(background-color);
 
 	&--has-icon {
@@ -31,11 +31,11 @@
 	&__text {
 		position: relative;
 		display: inline-block;
-		vertical-align: middle;
 		width: 100%;
+		font-weight: 500;
 		font-size: rem(15);
 		line-height: rem(18);
-		font-weight: 500;
+		vertical-align: middle;
 
 		@include media-breakpoint-up(md) {
 			font-size: rem(16);
@@ -47,9 +47,9 @@
 		display: block;
 		width: rem(24);
 		height: rem(24);
+		margin-left: rem(8);
 		font-size: 0;
 		line-height: rem(24);
-		margin-left: rem(8);
 	}
 
 	&--non-interactive {
@@ -66,9 +66,14 @@
 		}
 	}
 
+	&--white {
+		color: $color-black;
+		background-color: $color-white;
+	}
+
 	&:disabled,
 	&--disabled {
-		opacity: 0.4;
 		cursor: not-allowed;
+		opacity: 0.4;
 	}
 }

@@ -1,4 +1,5 @@
 {
+	"title": "Контакты",
 	"header": {
 		"logo": {
 			"href": "./",
@@ -132,11 +133,251 @@
 			]
 		}
 	},
+	"block_contacts": {
+		"title_hidden": "Контакты",
+		"bg": "gray",
+		"breadcrumbs": [
+			{
+				"href": "./",
+				"text": "Главная"
+			}
+		],
+		"tabs": {
+			"items": [
+				{
+					"text": "Узбекистан",
+					"attr": "data-attr",
+					"active": "true"
+				},
+				{
+					"text": "Россия",
+					"href": "javascript:void(0);",
+					"attr": "data-attr"
+				},
+				{
+					"text": "Украина",
+					"href": "javascript:void(0);",
+					"attr": "data-attr"
+				},
+				{
+					"text": "Казахстан",
+					"href": "javascript:void(0);",
+					"attr": "data-attr"
+				}
+			]
+		},
+		"tabs_content": [
+			{
+				"active": true,
+				"card": {
+					"title": "Контакты",
+					"phone": {
+						"text": "+998 (71) 123-45-67",
+						"href": "tel:+998(71)123-45-67"
+					},
+					"email": {
+						"text": "info@artel.uz",
+						"href": "info@artel.uz"
+					},
+					"icon": {
+						"name": "logos/contacts/map",
+						"size": "fit"
+					},
+					"action": {
+						"href": "javascript:void(0);",
+						"text": "Связаться с нами",
+						"title": "Связаться с нами",
+						"icon": {
+							"name": "24/arrow-up-right"
+						},
+						"attr": "data-btn-handler"
+					}
+				}
+			},
+			{
+				"card": {
+					"title": "Контакты",
+					"phone": {
+						"text": "+998 (71) 123-00-07",
+						"href": "tel:+998(71)123-45-67"
+					},
+					"email": {
+						"text": "info@artel2.ru",
+						"href": "info@artel.uz"
+					},
+					"icon": {
+						"name": "logos/contacts/rus",
+						"size": "fit"
+					},
+					"action": {
+						"href": "javascript:void(0);",
+						"text": "Связаться с нами",
+						"title": "Связаться с нами",
+						"icon": {
+							"name": "24/arrow-up-right"
+						},
+						"attr": "data-btn-handler"
+					}
+				}
+			},
+			{
+				"card": {
+					"title": "Контакты",
+					"phone": {
+						"text": "+998 (77) 123-75-77",
+						"href": "tel:+998(71)123-45-67"
+					},
+					"email": {
+						"text": "info@artel.uk",
+						"href": "info@artel.uz"
+					},
+					"icon": {
+						"name": "logos/contacts/uk",
+						"size": "fit"
+					},
+					"action": {
+						"href": "javascript:void(0);",
+						"text": "Связаться с нами",
+						"title": "Связаться с нами",
+						"icon": {
+							"name": "24/arrow-up-right"
+						},
+						"attr": "data-btn-handler"
+					}
+				}
+			},
+			{
+				"card": {
+					"title": "Контакты",
+					"phone": {
+						"text": "+998 (55) 123-55-67",
+						"href": "tel:+998(71)123-45-67"
+					},
+					"email": {
+						"text": "info@artel.kaz",
+						"href": "info@artel.uz"
+					},
+					"icon": {
+						"name": "logos/contacts/kaz",
+						"size": "fit"
+					},
+					"action": {
+						"href": "javascript:void(0);",
+						"text": "Связаться с нами",
+						"title": "Связаться с нами",
+						"icon": {
+							"name": "24/arrow-up-right"
+						},
+						"attr": "data-btn-handler"
+					}
+				}
+			}
+		],
+		"tabs_content2": [
+			{
+				"active": true,
+				"cards": [
+					{
+						"title": "Отдел продаж",
+						"text": "sales@artel.uz",
+						"href": "sales@artel.uz"
+					},
+					{
+						"title": "Отдел кадров",
+						"text": "hr@artel.uz",
+						"href": "hr@artel.uz"
+					},
+					{
+						"title": "Отдел аналитики",
+						"text": "analytics@artel.uz",
+						"href": "analytics@artel.uz"
+					},
+					{
+						"title": "Отдел закупок",
+						"text": "purchasing@artel.uz",
+						"href": "purchasing@artel.uz"
+					}
+				]
+			},
+			{
+				"cards": [
+					{
+						"title": "Отдел продаж 2",
+						"text": "sales@artel.uz",
+						"href": "sales@artel.uz"
+					},
+					{
+						"title": "Отдел кадров 2",
+						"text": "hr@artel.uz",
+						"href": "hr@artel.uz"
+					},
+					{
+						"title": "Отдел аналитики 2",
+						"text": "analytics@artel.uz",
+						"href": "analytics@artel.uz"
+					},
+					{
+						"title": "Отдел закупок 2",
+						"text": "purchasing@artel.uz",
+						"href": "purchasing@artel.uz"
+					}
+				]
+			},
+			{
+				"cards": [
+					{
+						"title": "Отдел продаж 3",
+						"text": "sales@artel.uz",
+						"href": "sales@artel.uz"
+					},
+					{
+						"title": "Отдел кадров 3",
+						"text": "hr@artel.uz",
+						"href": "hr@artel.uz"
+					},
+					{
+						"title": "Отдел аналитики 3",
+						"text": "analytics@artel.uz",
+						"href": "analytics@artel.uz"
+					},
+					{
+						"title": "Отдел закупок 3",
+						"text": "purchasing@artel.uz",
+						"href": "purchasing@artel.uz"
+					}
+				]
+			},
+			{
+				"cards": [
+					{
+						"title": "Отдел продаж 4",
+						"text": "sales@artel.uz",
+						"href": "sales@artel.uz"
+					},
+					{
+						"title": "Отдел кадров 4",
+						"text": "hr@artel.uz",
+						"href": "hr@artel.uz"
+					},
+					{
+						"title": "Отдел аналитики 4",
+						"text": "analytics@artel.uz",
+						"href": "analytics@artel.uz"
+					},
+					{
+						"title": "Отдел закупок 4",
+						"text": "purchasing@artel.uz",
+						"href": "purchasing@artel.uz"
+					}
+				]
+			}
+		]
+	},
 	"contacts_form": {
 		"id": "form-1",
 		"name": "form-1",
 		"method": "POST",
-		"action": "!#",
+		"action": "/ajax/contacts/?repo=atol-education.frontend&status=success",
 		"attr": "data-ajax-form",
 		"title": "Связаться с нами",
 		"bg": "green",
@@ -147,7 +388,8 @@
 				"name": "form-1-input-1",
 				"placeholder": "ФИО",
 				"theme": "white",
-				"required": true
+				"required": true,
+				"label": "ФИО"
 			},
 			{
 				"input": true,
@@ -155,7 +397,8 @@
 				"name": "form-1-input-2",
 				"placeholder": "Компания",
 				"theme": "white",
-				"required": true
+				"required": true,
+				"label": "Компания"
 			},
 			{
 				"input": true,
@@ -163,14 +406,17 @@
 				"name": "form-1-input-3",
 				"placeholder": "+7 999 999 99 99",
 				"theme": "white",
-				"required": true
+				"required": true,
+				"type": "tel",
+				"label": "Телефон"
 			},
 			{
 				"textarea": true,
 				"id": "form-1-textarea-1",
 				"name": "form-1-textarea-1",
 				"placeholder": "Сообщение",
-				"theme": "white"
+				"theme": "white",
+				"label": "Сообщение"
 			}
 		],
 		"agreement": {
@@ -185,7 +431,10 @@
 			"type": "submit",
 			"text": "Отправить",
 			"title": "Отправить",
-			"mobFit": true
+			"theme": "white",
+			"icon": {
+				"name": "24/arrow-up-right"
+			}
 		}
 	}
 }

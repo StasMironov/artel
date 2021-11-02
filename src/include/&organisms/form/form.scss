@@ -30,6 +30,17 @@
 	}
 
 	&__container {
+		
+		@include media-breakpoint-up(sm) {
+			padding-top: rem(65);
+			padding-bottom: rem(65);
+		}
+
+		@include media-breakpoint-up(md) {
+			padding-top: rem(113);
+			padding-bottom: rem(120);
+		}
+
 		@include media-breakpoint-up(lg) {
 			display: flex;
 			align-items: flex-start;
@@ -41,11 +52,15 @@
 
 	&__info {
 		width: 50%;
+
+		@include media-breakpoint-down(md) {
+			width: 100%;
+		}
 		@include media-breakpoint-only(md) {
-			margin-bottom: rem(56);
+			margin-bottom: rem(65);
 		}
 		@include media-breakpoint-down(sm) {
-			margin-bottom: rem(24);
+			margin-bottom: rem(34);
 		}
 
 		#{$root}.is-sent & {
@@ -74,6 +89,10 @@
 	&__content {
 		width: 50%;
 
+		@include media-breakpoint-down(md) {
+			width: 100%;
+		}
+
 		#{$root}.is-sent & {
 			display: none;
 		}
@@ -97,7 +116,7 @@
 		}
 		@include media-breakpoint-up(md) {
 			&:not(:last-child) {
-				margin-bottom: rem(32);
+				margin-bottom: rem(28);
 			}
 		}
 		@include media-breakpoint-only(md) {
@@ -106,12 +125,17 @@
 		}
 		@include media-breakpoint-down(sm) {
 			&:not(:last-child) {
-				margin-bottom: rem(24);
+				margin-bottom: rem(26);
 			}
 		}
 
 		&--fit {
 			width: 100%;
+		}
+
+		.input {
+			-webkit-box-shadow: 0 0 0px 1000px $color-green inset;
+			-webkit-text-fill-color: $color-white;
 		}
 	}
 
@@ -124,10 +148,14 @@
 	}
 
 	&__submit {
-		margin-top: rem(32);
+		margin-top: rem(48);
+
+		@include media-breakpoint-up(sm) {
+			margin-top: rem(38);
+		}
 
 		@include media-breakpoint-up(md) {
-			margin-top: rem(40);
+			margin-top: rem(48);
 		}
 	}
 

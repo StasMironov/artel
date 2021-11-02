@@ -1,0 +1,91 @@
+// Базовые опции inputoв
+@mixin base-input {
+	display: block;
+	width: 100%;
+	height: rem(60);
+	padding: 0;
+	color: rgba($color-white, 0.6);
+	background-color:transparent;
+    border: none;
+	border-bottom: 1px solid $color-white;
+	border-radius: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+    font-size: rem(24);
+
+    @include media-breakpoint-down(sm) {
+        font-size: rem(20);
+        height: rem(55);
+    }
+
+	@include defaultTransition(border-color);
+
+	&:focus {
+		outline: none;
+	}
+
+	&:hover,
+	&:focus {
+		&:not(:disabled) {
+			border-color: rgba($color-white, 0.6);
+		}
+	}
+
+	&:disabled {
+		border-color: transparent;
+		cursor: not-allowed;
+		opacity: 0.65;
+	}
+
+	&::-webkit-input-placeholder,
+	&:-moz-placeholder,
+	&::-ms-input-placeholder,
+	&::placeholder {
+		color: rgba($color-white, 0.6);
+		opacity: 1;
+		@include defaultTransition(opacity);
+	}
+
+	// Отдельно для ie - иначе не будет применен placeholder
+	&:-ms-input-placeholder {
+		color: rgba($color-black, 0.35);
+		opacity: 1;
+		@include defaultTransition(opacity);
+	}
+
+	// Отдельно для mozilla
+	&::-moz-placeholder {
+		color: rgba($color-black, 0.35);
+		opacity: 1;
+		@include defaultTransition(opacity);
+	}
+
+	&::-ms-clear {
+		display: none;
+	}
+
+    &--white {
+		color: rgba($color-white, 1);
+		border-color: rgba($color-white, 0.6);
+		caret-color: $color-white;
+
+		&::placeholder {
+			color: rgba($color-white, 0.6);
+		}
+
+		&:disabled {
+			background-color: rgba(#292929, 0.5);
+		}
+
+		&:not(:disabled) {
+			@include touchLessHover {
+				border-color: rgba($color-white, 1);
+			}
+		}
+	}
+
+    &.parsley-error {
+        border-color: $color-red !important;
+	}
+}

@@ -1,89 +1,17 @@
+.input {
+	@include base-input;
+  }
+  
 .input-shell {
 	position: relative;
 }
 
 .parsley-errors-list {
 	position: absolute;
-	top: 100%;
-	left: 0;
-	color: red;
+	top: 100% ;
+	left: auto;
+	right: 0;
+	color: $color-white;
+	@include text-body-small;
 }
-
-.input {
-	display: block;
-	width: 100%;
-	height: rem(55);
-	padding: 0 0 rem(7);
-	color: rgba($color-black, 0.4);
-	font-size: rem(24);
-	background-color: transparent;
-	border: none;
-	border-bottom: 1px solid rgba($color-black, 0.2);
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	@include defaultTransition(border-color);
-
-	@include media-breakpoint-up(md) {
-		height: rem(55);
-	}
-
-	&:not(:disabled) {
-		@include touchLessHover {
-			border-color: $color-black;
-		}
-	}
-
-	&:focus {
-		outline: none;
-	}
-
-	&::placeholder {
-		color: rgba($color-black, 0.4);
-		opacity: 1;
-	}
-
-	&:disabled {
-		color: rgba($color-black, 0.1);
-		background-color: transparent;
-		cursor: not-allowed;
-	}
-
-	&::-ms-clear {
-		display: none;
-	}
-
-	&::-ms-reveal {
-		display: none;
-	}
-
-	&--white {
-		color: rgba($color-white, 0.6);
-		border-color: rgba($color-white, 0.6);
-
-		&::placeholder {
-			color: rgba($color-white, 0.6);
-		}
-
-		&:disabled {
-			background-color: rgba(#292929, 0.5);
-		}
-
-		&:not(:disabled) {
-			@include touchLessHover {
-				border-color: rgba($color-white, 1);
-			}
-		}
-	}
-
-	&.parsley-error {
-		border-color: red;
-	}
-
-	&::-webkit-search-decoration,
-	&::-webkit-search-cancel-button,
-	&::-webkit-search-results-button,
-	&::-webkit-search-results-decoration {
-		display: none;
-	}
-}
+  

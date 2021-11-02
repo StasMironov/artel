@@ -7,7 +7,7 @@
 	left: 0;
 	width: 100%;
 	display: block;
-	background-color: $color-white;
+	background-color: transparent;
 	transition: transform 0.4s cubic-bezier(0.475, 0.425, 0, 0.995), background-color 0.3s ease;
 
 	&:before {
@@ -21,6 +21,8 @@
 		content: "";
 		@include defaultTransition(background-color);
 	}
+
+	
 
 
 	&--transparent {
@@ -267,6 +269,8 @@
 		}
 	}
 
+
+
 	&__sumenus {
 		position: relative;
 		z-index: 9;
@@ -308,5 +312,10 @@
 				background-color: rgba($color-black, 0.1);
 			}
 		}
+	}
+
+
+	&.in-progress {
+		background-color: $color-white;
 	}
 }
