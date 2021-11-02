@@ -10,24 +10,8 @@
 			"label": "произведено техники <br> за 2020 г."
 		},
 		"image": {
-			"src": "tmp/card-strategy/strategy-1-tab.png",
-			"alt": "image alt",
-			"tab": {
-				"srcset": [
-					{
-						"scale": "1",
-						"src": "tmp/card-strategy/strategy-1-tab.png"
-					}
-				]
-			},
-			"mob": {
-				"srcset": [
-					{
-						"scale": "1",
-						"src": "tmp/card-strategy/strategy-1.png"
-					}
-				]
-			}
+			"src": "tmp/card-strategy/strategy-1.png",
+			"alt": "image alt"
 		}
 	}
 }

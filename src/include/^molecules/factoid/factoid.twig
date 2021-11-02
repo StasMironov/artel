@@ -12,7 +12,11 @@
             {% endif %}
 
             {% if  factoid.text %}
-                <p class="factoid__number" data-counter>{{ factoid.text }}</p>
+                <p class="factoid__number"
+					data-counter
+				>
+					{{ factoid.text }}
+				</p>
             {% endif %}
 
             {% if factoid.after %}

@@ -1,15 +1,28 @@
 <div class="card card--strategy">
 	<div class="card__info">
 		{% if card.suptitle %}
-			<p class="card__suptitle">{{ card.suptitle }}</p>
+			<p class="card__suptitle"
+				data-fade-in-up
+				data-delay="0.2"
+			>
+				{{ card.suptitle }}
+			</p>
 		{% endif %}
 
 		{% if card.title %}
-			<h2 class="card__title">{{ card.title }}</h2>
+			<h2 class="card__title"
+				data-fade-in-up
+				data-delay="0.4"
+			>
+				{{ card.title }}
+			</h2>
 		{% endif %}
 
 		{% if card.factoid %}
-			<div class="card__factoid">
+			<div class="card__factoid"
+				data-fade-in-up
+				data-delay="0.6"
+			>
 				{% view '^factoid' with {
 					factoid: card.factoid
 				} %}
@@ -18,10 +31,22 @@
 	</div>
 
 	{% if card.image %}
-		<div class="card__image">
-			{% view '@image-adaptive' with {
-				image: card.image
-			} %}
-		</div>
+		{% if card.image.mob or card.image.tab %}
+			<div class="card__image"
+				data-fade-in-up
+			>
+				{% view '@image-adaptive' with {
+					image: card.image
+				} %}
+			</div>
+		{% else %}
+			<div class="card__image"
+				data-fade-in-up
+			>
+				{% view '@image' with {
+					image: card.image
+				} %}
+			</div>
+		{% endif %}
 	{% endif %}
 </div>

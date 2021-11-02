@@ -8,7 +8,8 @@ export default {
 		for (let i = 0; i < elements.length; i++) {
 			const element = elements[i];
 
-			const initValue = element.getAttribute('data-counter') || element.innerHTML;
+			const initValue =
+				element.getAttribute('data-counter') || element.innerHTML;
 
 			let endValue = 0;
 			let decimal = '';
@@ -22,7 +23,10 @@ export default {
 			} else if (initValue.split(',').length > 1) {
 				decimal = ',';
 				decimalPlaces = initValue.split(',')[1].trim().length;
-				endValue = initValue.replace(/\,/g, '.').replace(/ +/g, '').trim();
+				endValue = initValue
+					.replace(/\,/g, '.')
+					.replace(/ +/g, '')
+					.trim();
 			} else if (initValue.split(' ').length > 1) {
 				decimal = ' ';
 				endValue = initValue.replace(/ +/g, '').trim();
@@ -57,8 +61,12 @@ export default {
 
 	setMinWidth(el) {
 		const width = el.scrollWidth;
-		const fz = parseInt(window.getComputedStyle(document.querySelector('html'), null)
-			.getPropertyValue('font-size'), 10);
+		const fz = parseInt(
+			window
+				.getComputedStyle(document.querySelector('html'), null)
+				.getPropertyValue('font-size'),
+			10
+		);
 
 		el.setAttribute('style', `min-width: ${(width / fz).toFixed(1)}rem`);
 	},
