@@ -10,7 +10,7 @@ export default {
 		const maskOptions = {
 			mask: [
 				{
-					mask: '+{7} 000 000-00-00',
+					mask: '+00{(000)}0000-000',
 					lazy: true,
 				},
 			],

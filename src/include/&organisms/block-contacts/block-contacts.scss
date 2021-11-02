@@ -171,14 +171,19 @@
 
 		.tab {
 			min-height: auto;
-		}
+			display: flex;
 
-		.tabs .swiper-container {
-			@include media-breakpoint-down(md) {
-				height: rem(24);
-				overflow: initial;
+			&__text {
+				display: block;
 			}
 		}
+
+		// .tabs .swiper-container {
+		// 	@include media-breakpoint-down(md) {
+		// 		height: rem(24);
+		// 		overflow: initial;
+		// 	}
+		// }
 	}
 
 	&__contents {
