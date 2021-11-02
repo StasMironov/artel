@@ -1,0 +1,10 @@
+{% set header = header|merge({
+	transparent: true
+}) %}
+{% extends 'layouts::_page.twig' %}
+
+{% block content %}
+	{% view '&hero-404' with {
+		hero: hero
+	} %}
+{% endblock %}
