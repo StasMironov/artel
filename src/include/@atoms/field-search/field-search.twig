@@ -1,7 +1,7 @@
 <div class="input-search-shell" data-search-input-wrap>
-	<input id="{{ field.id }}" type="search"
+	<input{% if field.id %} id="{{ field.id }}"{% endif %} type="search"
 		   class="input-search{% if field.class %} {{ field.class }}{% endif %}{% if field.theme %} input--{{ field.theme }}{% endif %}"{% if field.placeholder %} placeholder="{{ field.placeholder }}"{% endif %}
-		   name="{{ field.name }}"{% if field.attr %} {{ field.attr }}{% endif %}{% if field.autocomplete %} autocomplete="{{ field.autocomplete }}"{% endif %}{% if field.disabled %} disabled{% endif %}{% if field.value %} value="{{ field.value }}"{% endif %} data-input>
+		   {% if field.name %} name="{{ field.name }}"{% endif %}{% if field.attr %} {{ field.attr }}{% endif %}{% if field.autocomplete %} autocomplete="{{ field.autocomplete }}"{% endif %}{% if field.disabled %} disabled{% endif %}{% if field.value %} value="{{ field.value }}"{% endif %} data-input>
 	{% if field.icon %}
 		<div class="input-search__icon">
 			{% view '@icon' with {
