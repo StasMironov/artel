@@ -9,7 +9,7 @@ export default {
 		require('./jquery.inputmask-multi');
 
 		lazyload.init();
-		//mask.initMask();
+		mask.initMask();
 		sal.init();
 		counter.init();
 	},

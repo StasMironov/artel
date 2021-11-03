@@ -12,18 +12,13 @@ export default {
 		// вместо этого можно использовать input[type=text] и data-parsley-type="email"
 		let $tel = $('.js-mask-tel, [data-mask-tel], [mask-tel]');
 
-		let path = '/ajax/phone-codes.json';
-
-		if (window.templateSource) {
-			path = window.templateSource + path;
-		}
-
-		let listCountries = $.masksSort(
-			$.masksLoad(path),
-			['#'],
-			/[0-9]|#/,
-			'mask'
-		);
+		const dataArray = $tel.data('mask').split(',');
+		let listArray = [];
+		dataArray.forEach((element) => {
+			let objesctData = {};
+			objesctData.mask = element;
+			listArray.push(objesctData);
+		});
 		const maskOpts = {
 			inputmask: {
 				definitions: {
@@ -36,7 +31,7 @@ export default {
 				autoUnmask: true,
 				clearMaskOnLostFocus: true,
 			},
-			list: listCountries,
+			list: listArray,
 			match: /[0-9]/,
 			replace: '#',
 			listKey: 'mask',
@@ -45,6 +40,11 @@ export default {
 					$tel.blur(function () {
 						$(this).parsley().validate();
 					});
+					if ($(this).val()) {
+						$(this).addClass('not-empty');
+					} else {
+						$(this).removeClass('not-empty');
+					}
 				} else {
 					if ($(this).val()) {
 						$(this).addClass('not-empty');
@@ -67,11 +67,5 @@ export default {
 			removeInputMask($this);
 			applyInputMasks($this, maskOpts);
 		});
-
-		$tel.attr('data-parsley-excluded', false);
-		let $form = $tel.closest('.js-validate-form');
-		if ($form.length > 0) {
-			$form.parsley().refresh();
-		}
-	},
+	}
 };
