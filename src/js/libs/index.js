@@ -5,8 +5,11 @@ import counter from './counter';
 
 export default {
 	init() {
+		require('./jquery.inputmask.bundle');
+		require('./jquery.inputmask-multi');
+
 		lazyload.init();
-		mask.init();
+		mask.initMask();
 		sal.init();
 		counter.init();
 	},
