@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	validation.init();
 	// Sticky.init();
 	new FormHandler();
-	// Sticky.init();
 
 	const strategyContainers = document.querySelectorAll(
 		'[data-strategy-container]'

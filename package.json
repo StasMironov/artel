@@ -16,6 +16,7 @@
 		"gsap": "file:gsap-bonus.tgz",
 		"hammerjs": "^2.0.8",
 		"imask": "^6.1.0",
+		"inputmask": "^5.0.6",
 		"intersection-observer": "^0.7.0",
 		"jquery": "^3.6.0",
 		"miragejs": "^0.1.42",
