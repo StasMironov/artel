@@ -21,6 +21,43 @@
 					{% endfor %}
 				</div>
 			</div>
+
+			<div class="mb-24">
+				<p class="text-lead mb-16"><code>104px</code></p>
+
+				<div style="display: flex; flex-wrap: wrap;">
+					{% for icon in icons.104px %}
+						<div class="py-8 px-8">
+							{% view '@icon' with {
+								icon: icon
+							} %}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--</editor-fold>-->
+
+	<!--<editor-fold desc="Icon-text">-->
+
+	<div class="py-24">
+		<div class="container">
+			<p class="h2 mb-24">Icon-text</p>
+
+			<div class="mb-24">
+
+				<div style="display: flex; flex-wrap: wrap;">
+					{% for icon in icon_text %}
+						<div class="py-8 px-8">
+							{% view '@icon-text' with {
+								icon: icon
+							} %}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
 		</div>
 	</div>
 
