@@ -27,7 +27,9 @@
 	{% block content %}{% endblock %}
 </main>
 
-{% view '&footer' %}
+{% if footer %}
+	{% view '&footer' %}
+{% endif %}
 
 {% if block('endPage') is defined %}
 	{{ block('endPage') }}

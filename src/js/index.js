@@ -21,6 +21,14 @@ import Strategy from './components/strategy';
 
 import { devices } from './utils/breakpoints';
 
+// Api
+
+import server from '../api/mock';
+
+if (process.env.API) {
+	server.start();
+}
+
 window.breakpoints = devices;
 __webpack_public_path__ = window.__webpack_public_path__ || '';
 
@@ -50,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	validation.init();
 	// Sticky.init();
 	new FormHandler();
-	// Sticky.init();
 
 	const strategyContainers = document.querySelectorAll(
 		'[data-strategy-container]'
