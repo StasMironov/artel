@@ -63,6 +63,7 @@
             margin-left: rem(-16);
             margin-right: rem(-16);
             padding: 0 rem(16);
+            padding-bottom: rem(20);
 		}
 
         @include media-breakpoint-up(md) {
@@ -178,7 +179,7 @@
 	&__left {
         @include media-breakpoint-up(sm) {
 			width: initial;
-            margin-bottom: rem(65);
+            margin-bottom: rem(45);
 		}
         @include media-breakpoint-up(md) {
 			width: 29%;

@@ -7,6 +7,7 @@ export default {
 	init() {
 		const header = document.querySelector('header.header');
 		if (!header) return;
+		let classesToAdd = ['in-progress', 'show-header'];
 
 		ScrollTrigger.create({
 			trigger: 'body',
@@ -18,9 +19,9 @@ export default {
 					header.classList.remove('is-hide');
 
 					if (self.progress !== 0) {
-						header.classList.add('in-progress');
+						header.classList.add(...classesToAdd);
 					} else {
-						header.classList.remove('in-progress');
+						header.classList.remove(...classesToAdd);
 					}
 				}
 			},
