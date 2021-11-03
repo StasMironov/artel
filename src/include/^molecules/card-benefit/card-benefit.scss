@@ -1,6 +1,9 @@
 .card-benefit {
 	position: sticky;
-	top: 0;
+
+	@include media-breakpoint-up(md) {
+		top: rem(115);
+	}
 
 	&__quote {
 		color: rgba($color-black, 0.4);

@@ -13,7 +13,7 @@
 		"countup.js": "^2.0.7",
 		"es7-object-polyfill": "^1.0.1",
 		"google-maps": "^4.3.3",
-		"gsap": "^3.8.0",
+		"gsap": "file:gsap-bonus.tgz",
 		"hammerjs": "^2.0.8",
 		"imask": "^6.1.0",
 		"intersection-observer": "^0.7.0",
