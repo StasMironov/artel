@@ -28,9 +28,14 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		overflow: hidden;
 
 		@include media-breakpoint-down(sm) {
 			display: none;
+		}
+
+		@include media-breakpoint-only(md) {
+			padding-bottom: rem(56);
 		}
 	}
 
@@ -52,6 +57,9 @@
 		&:first-child {
 			right: auto;
 			left: 0;
+			@include media-breakpoint-up(lg) {
+				width: rem(1110);
+			}
 		}
 
 		@at-root .animate & {
@@ -71,6 +79,12 @@
 		}
 	}
 
+	&__content {
+		@include media-breakpoint-up(lg) {
+			margin-right: rem(16);
+		}
+	}
+
 	&__number {
 		font-weight: 600;
 		font-size: rem(140);
@@ -79,9 +93,11 @@
 		@include media-breakpoint-up(md) {
 			font-size: rem(170);
 			transition-delay: 1s !important;
+			margin-left: rem(-8);
 		}
 		@include media-breakpoint-up(lg) {
 			font-size: rem(236);
+			margin-left: rem(-12);
 		}
 	}
 
@@ -92,6 +108,9 @@
 		}
 		@include media-breakpoint-only(md) {
 			max-width: rem(330);
+		}
+		@include media-breakpoint-only(sm) {
+			margin-top: rem(12);
 		}
   }
 
