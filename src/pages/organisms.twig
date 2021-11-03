@@ -2,6 +2,13 @@
 
 {% block content %}
 	<div class="mb-112"></div>
+
+	<div class="my-56 bg-black" data-fade-in-up>
+		<div class="container">
+			{% view '&strategy' %}
+		</div>
+	</div>
+
 	<div class="my-56" data-fade-in-up>
 		{% view '^card-features' with {
 			"card": {
