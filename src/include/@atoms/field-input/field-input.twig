@@ -2,7 +2,7 @@
 	<input id="{{ field.id }}" type="{{ field.type?: 'text' }}"
 		   class="input{% if field.class %} {{ field.class }}{% endif %}{% if field.theme %} input--{{ field.theme }}{% endif %}"{% if field.placeholder %} placeholder="{{ field.placeholder }}"{% endif %}
 		   name="{{ field.name }}"{% if field.pattern %} pattern="{{ field.pattern }}"{% endif %}{% if field.type == 'tel' %} data-mask-tel {% endif %}{% if field.type == 'email' %} data-parsley-pattern="/^([\w.*-]+@([\w-]+\.)+[\w-]{2,4})?$/" {% endif %}{% if field.attr %} {{ field.attr }}{% endif %}{% if field.autocomplete %} autocomplete="{{ field.autocomplete }}"{% endif %}{% if field.disabled %} disabled{% endif %}{% if field.required %} required{% endif %}{% if field.value %} value="{{ field.value }}"{% endif %}{% if field.readonly %} readonly{% endif %}
-		   data-parsley-trigger="change">
+		   data-parsley-trigger="change" spellcheck="false">
 
 	{% if field.label %}
         {% view '@field-label' with {

@@ -119,6 +119,7 @@
 	&__container {
 		padding-top: rem(215);
 		padding-bottom: rem(124);
+		overflow: hidden;
 
 		@include media-breakpoint-up(sm) {
 			padding-top: rem(120);
