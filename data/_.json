@@ -1,8 +1,5 @@
 {
-	"colors": [
-		"white",
-		"black"
-	],
+	"colors": ["white", "black"],
 	"breakpoints": {
 		"md": 640,
 		"lg": 990
@@ -154,8 +151,10 @@
 			"action": "/",
 			"name": "footer-form-name",
 			"search": {
+				"id": "form-1-search-1",
 				"search": true,
 				"placeholder": "Поиск по сайту",
+				"name": "form-1-search-1",
 				"action": {
 					"type": "submit",
 					"icon": {
