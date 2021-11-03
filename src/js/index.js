@@ -17,8 +17,17 @@ import validation from './components/validation';
 import FormHandler from './components/form-handler';
 import ScrollTo from './components/scrollto';
 import Input from './components/input';
+import Strategy from './components/strategy';
 
 import { devices } from './utils/breakpoints';
+
+// Api
+
+import server from '../api/mock';
+
+if (process.env.API) {
+	server.start();
+}
 
 window.breakpoints = devices;
 __webpack_public_path__ = window.__webpack_public_path__ || '';
@@ -47,8 +56,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	new Map();
 	validation.init();
-	//Sticky.init();
+	// Sticky.init();
 	new FormHandler();
+	// Sticky.init();
+
+	const strategyContainers = document.querySelectorAll(
+		'[data-strategy-container]'
+	);
+	const strategyList = [];
+	if (strategyContainers.length) {
+		strategyContainers.forEach((strategyContainer) => {
+			strategyList.push(
+				new Strategy({
+					wrap: strategyContainer,
+				})
+			);
+		});
+	}
 
 	document.body.classList.add('content-loaded');
 });

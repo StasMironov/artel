@@ -134,7 +134,7 @@
 		}
 	},
 	"block_contacts": {
-		"title_hidden": "Контакты",
+		"title": "Контакты",
 		"bg": "gray",
 		"breadcrumbs": [
 			{
@@ -170,7 +170,6 @@
 			{
 				"active": true,
 				"card": {
-					"title": "Контакты",
 					"phone": {
 						"text": "+998 (71) 123-45-67",
 						"href": "tel:+998(71)123-45-67"
@@ -196,7 +195,6 @@
 			},
 			{
 				"card": {
-					"title": "Контакты",
 					"phone": {
 						"text": "+998 (71) 123-00-07",
 						"href": "tel:+998(71)123-45-67"
@@ -222,7 +220,6 @@
 			},
 			{
 				"card": {
-					"title": "Контакты",
 					"phone": {
 						"text": "+998 (77) 123-75-77",
 						"href": "tel:+998(71)123-45-67"
@@ -248,7 +245,6 @@
 			},
 			{
 				"card": {
-					"title": "Контакты",
 					"phone": {
 						"text": "+998 (55) 123-55-67",
 						"href": "tel:+998(71)123-45-67"
@@ -377,7 +373,7 @@
 		"id": "form-1",
 		"name": "form-1",
 		"method": "POST",
-		"action": "/ajax/contacts/?repo=atol-education.frontend&status=success",
+		"action": "/ajax/contacts/?repo=artel.frontend&status=success",
 		"attr": "data-ajax-form",
 		"title": "Связаться с нами",
 		"bg": "green",
@@ -386,7 +382,6 @@
 				"input": true,
 				"id": "form-1-input-1",
 				"name": "form-1-input-1",
-				"placeholder": "ФИО",
 				"theme": "white",
 				"required": true,
 				"label": "ФИО"
@@ -395,7 +390,6 @@
 				"input": true,
 				"id": "form-1-input-2",
 				"name": "form-1-input-2",
-				"placeholder": "Компания",
 				"theme": "white",
 				"required": true,
 				"label": "Компания"
@@ -404,7 +398,6 @@
 				"input": true,
 				"id": "form-1-input-3",
 				"name": "form-1-input-3",
-				"placeholder": "+7 999 999 99 99",
 				"theme": "white",
 				"required": true,
 				"type": "tel",
@@ -414,7 +407,6 @@
 				"textarea": true,
 				"id": "form-1-textarea-1",
 				"name": "form-1-textarea-1",
-				"placeholder": "Сообщение",
 				"theme": "white",
 				"label": "Сообщение"
 			}
