@@ -1,0 +1,25 @@
+<div class="strategy">
+	{% if strategy.lead %}
+		<h2 class="h1 strategy__lead">
+			{% if strategy.colored %} <span class="strategy__colored">{{ strategy.colored }}</span> {% endif %}
+			{{ strategy.lead }}
+		</h2>
+	{% endif %}
+
+	{% if strategy.icon or strategy.text %}
+		<div class="strategy__bottom">
+			{% if strategy.icon %}
+				<div class="strategy__icon">
+					{% view '@icon-text' with {
+						icon: strategy.icon
+					} %}
+				</div>
+			{% endif %}
+
+			{% if strategy.text %}
+				<p class="strategy__text">{{ strategy.text }}</p>
+			{% endif %}
+		</div>
+	{% endif %}
+
+</div>

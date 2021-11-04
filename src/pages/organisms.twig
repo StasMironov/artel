@@ -1,6 +1,14 @@
 {% extends "layouts::_page.twig" %}
 
 {% block content %}
+	<div class="mb-112"></div>
+
+	<div class="my-56 bg-black" data-fade-in-up>
+		<div class="container">
+			{% view '&strategy' %}
+		</div>
+	</div>
+
 	<div class="mb-112">
 		{% view '&card-strategy-list' %}
 	</div>

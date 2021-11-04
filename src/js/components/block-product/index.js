@@ -1,5 +1,4 @@
 import gsap from 'gsap';
-import { throttle } from 'throttle-debounce';
 
 export default class blockProduct {
 	constructor() {
