@@ -18,6 +18,7 @@ import FormHandler from './components/form-handler';
 import ScrollTo from './components/scrollto';
 import Input from './components/input';
 import Strategy from './components/strategy';
+import BlockProduct from './components/block-product';
 
 import { devices } from './utils/breakpoints';
 
@@ -72,6 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			);
 		});
 	}
+
+	new BlockProduct();
 
 	document.body.classList.add('content-loaded');
 });

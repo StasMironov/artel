@@ -1,47 +1,11 @@
 {% extends "layouts::_page.twig" %}
 
 {% block content %}
-	<div class="mb-112"></div>
-	<div class="my-56" data-fade-in-up>
-		{% view '^card-features' with {
-			"card": {
-				"theme": "black",
-				"href": "#!",
-				"title": "Инвесторам",
-				"text": "Мы строим доверительные отношения с заинтересован&shy;ными сторонами"
-			}
-		}%}
-	</div>
-	<div class="my-56" data-fade-in-up>
-		{% view '^card-features' with {
-			"card": {
-				"href": "#!!",
-				"title": "ESG",
-				"text": "Высокие стандарты ESG — приоритет в нашей Группе"
-			}
-		}%}
-	</div>
 	<div class="mb-112">
 		{% view '&card-strategy-list' %}
 	</div>
 
-	<div class="my-56" data-fade-in-up>
-		{% view '^card-features' with {
-			"card": {
-				"theme": "black",
-				"href": "#!",
-				"title": "Инвесторам",
-				"text": "Мы строим доверительные отношения с заинтересован&shy;ными сторонами"
-			}
-		}%}
-	</div>
-	<div class="my-56" data-fade-in-up>
-		{% view '^card-features' with {
-			"card": {
-				"href": "#!!",
-				"title": "ESG",
-				"text": "Высокие стандарты ESG — приоритет в нашей Группе"
-			}
-		}%}
+	<div class="mb-112">
+		{% view '&block-product' %}
 	</div>
 {% endblock %}

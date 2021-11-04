@@ -30,7 +30,6 @@ export default class Input {
 
 	handler(e) {
 		const { value } = e.target;
-
 		if (value === '') {
 			this.setEmpty(e.target);
 		} else {
