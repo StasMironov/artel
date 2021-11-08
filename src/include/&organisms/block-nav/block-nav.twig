@@ -1,11 +1,11 @@
-<div class="block-nav {% if block_nav.bg %} bg-{{ block_nav.bg }}{% else %} bg-white{% endif %}" data-fade-in-up data-delay="0.3">
+<div class="block-nav{% if block_nav.slim %} block-nav--slim{% endif %}{% if block_nav.bg %} bg-{{ block_nav.bg }}{% else %} bg-white{% endif %}" data-nav-wrap>
     <div class="block-nav__container container">
         <div class="block-nav__wrap">
             <div class="block-nav__left">
                 {% if block_nav.links  %}
-                    <ul class="block-nav-list">
+                    <ul class="block-nav-list" data-nav-list>
                         {% for item in block_nav.links %}
-                            <li class="block-nav-list__item" data-fade-in-up data-delay="{{ (0.2 + loop.index0 / 5)|round(2, 'floor') }}">
+                            <li class="block-nav-list__item{% if item.active %} is-active{% endif %}" data-fade-in-up data-delay="{{ (0.2 + loop.index0 / 5)|round(2, 'floor') }}" data-nav-item>
                                 <a class="block-nav-list__link {% if item.active %}block-nav-list__link--active{% endif %}" href="{% if item.href %}{{item.href}}{% endif %}">
                                     {% if item.text %}
                                         {{ item.text }}

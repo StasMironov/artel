@@ -1,5 +1,6 @@
 .hero-default {
 	position: relative;
+	$root: &;
 
 	&__container {
 		@include media-breakpoint-up(sm) {
@@ -44,6 +45,12 @@
 			height: 100%;
 			object-fit: cover;
 			background-size: cover;
+		}
+
+		#{$root}--no-overlay & {
+			&::before {
+				display: none;
+			}
 		}
 	}
 

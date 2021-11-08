@@ -6,6 +6,7 @@ import libs from './libs';
 
 import Header from './components/header';
 import Toggle from './components/lang-toggle';
+import Nav from './components/nav';
 import SlideDown from './components/slidedown';
 import InputSearch from './components/input-search';
 import Sliders from './components/sliders';
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	Animation.init();
 	Header.init();
 	Toggle.init();
+	Nav.init();
 	InputSearch.init();
 	SlideDown.init();
 	Sliders.init();

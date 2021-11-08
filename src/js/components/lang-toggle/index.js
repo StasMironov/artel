@@ -15,5 +15,5 @@ export default {
 				toggle.classList.remove('is-active');
 			}
 		});
-	}
-}
+	},
+};
