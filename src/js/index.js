@@ -19,6 +19,7 @@ import ScrollTo from './components/scrollto';
 import Input from './components/input';
 import Strategy from './components/strategy';
 import BlockProduct from './components/block-product';
+import Svg from './components/svg';
 
 import { devices } from './utils/breakpoints';
 
@@ -54,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	Sliders.init();
 	Submenu.init();
 	ScrollTo.init();
+	Svg.init();
 
 	new Map();
 	validation.init();

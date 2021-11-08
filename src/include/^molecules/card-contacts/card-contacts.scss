@@ -99,6 +99,7 @@
 
 	&__box {
 		display: grid;
+		grid-column-gap: rem(25);
 		grid-template-columns: 1fr 1fr;
 		align-items: center;
 		width: 100%;
