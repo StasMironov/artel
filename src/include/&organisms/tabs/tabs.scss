@@ -58,6 +58,29 @@
 				width: rem(240);
 			}
 		}
+
+		#{$root}--layout-3 & {
+			margin-right: 0 !important;
+
+			&:not(:last-child) {
+				@include media-breakpoint-down(sm) {
+					margin-right: rem(24) !important;
+				}
+				@include media-breakpoint-up(md) {
+					margin-bottom: rem(24);
+				}
+			}
+
+			.tab {
+				&::before {
+					position: absolute;
+					@include media-breakpoint-down(sm) {
+						position: static;
+						flex-shrink: 0;
+					}
+				}
+			}
+		}
 	}
 
 	.swiper-container {
@@ -85,6 +108,15 @@
 		.tab {
 			max-width: none;
 			width: 100%;
+		}
+	}
+
+	&--layout-3 {
+		.swiper-wrapper {
+			@include media-breakpoint-up(md) {
+				display: flex;
+				flex-direction: column;
+			}
 		}
 	}
 }

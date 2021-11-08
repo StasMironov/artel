@@ -171,6 +171,35 @@
 			margin-right: 0;
 		}
 	}
+
+	&--white {
+		color: rgba(white, 0.6);
+
+		@include touchLessHover {
+			&:not(:disabled):not(#{$root}__tab--disabled) {
+				color: rgba(white, 1);
+			}
+		}
+
+		&:before {
+			background-color: $color-white;
+		}
+	}
+
+	&--white#{$root}--active {
+		cursor: default;
+		color: rgba(white, 1);
+
+		&::before {
+			width: rem(16);
+			height: rem(16);
+			transform: scale3d(1, 1, 1);
+
+			@include media-breakpoint-down(md) {
+				margin-right: rem(16);
+			}
+		}
+	}
 }
 
 
