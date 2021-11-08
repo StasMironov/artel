@@ -90,7 +90,7 @@ export default class Slider {
 		});
 
 		this.manager = new Hammer.Manager(this.sliderWrapNode);
-		this.swipe = new Hammer.Swipe();
+		this.swipe = new Hammer.Swipe({direction: Hammer.DIRECTION_HORIZONTAL});
 		this.manager.add(this.swipe);
 
 		this.manager.on('swipeleft', () => {
@@ -287,7 +287,7 @@ export default class Slider {
 					clearProps: 'all',
 					ease: 'circ.out',
 				},
-				'<'
+				'-=1.5'
 			)
 			.fromTo(
 				this.findNode(this.activeIndex, this.selectors.image),
@@ -300,7 +300,7 @@ export default class Slider {
 					clearProps: 'all',
 					ease: 'power1.out',
 				},
-				'<'
+				'-=1.5'
 			);
 
 		this.timeline.play();
