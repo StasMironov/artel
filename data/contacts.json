@@ -374,7 +374,7 @@
 		"name": "form-1",
 		"method": "POST",
 		"action": "/ajax/contacts/?repo=artel.frontend&status=success",
-		"attr": "data-ajax-form",
+		"attr": "data-ajax-form data-scroll-target data-scroll-contacts",
 		"title": "Связаться с нами",
 		"bg": "green",
 		"fields": [
