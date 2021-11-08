@@ -5,7 +5,7 @@
                 {% if block_nav.links  %}
                     <ul class="block-nav-list" data-nav-list>
                         {% for item in block_nav.links %}
-                            <li class="block-nav-list__item{% if item.active %} is-active{% endif %}" data-fade-in-up data-delay="{{ (0.2 + loop.index0 / 5)|round(2, 'floor') }}" data-nav-item>
+                            <li class="block-nav-list__item{% if item.active %} is-active{% endif %}" data-fade-in-up data-delay="" data-nav-item>
                                 <a class="block-nav-list__link {% if item.active %}block-nav-list__link--active{% endif %}" href="{% if item.href %}{{item.href}}{% endif %}">
                                     {% if item.text %}
                                         {{ item.text }}
