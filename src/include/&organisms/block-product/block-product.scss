@@ -16,6 +16,10 @@
 
 		@include media-breakpoint-up(lg) {
 			padding-bottom: rem(120);
+
+			@media (hover: none) and (pointer: coarse) {
+				padding-top: rem(112);
+			}
 		}
 	}
 
@@ -56,6 +60,10 @@
 		@include media-breakpoint-down(md) {
 			display: none;
 		}
+
+		@media (hover: none) and (pointer: coarse) {
+			display: none;
+		}
 	}
 
 	&__content {
@@ -72,12 +80,18 @@
 		}
 		@media (hover: none) and (pointer: coarse) {
 			@include media-breakpoint-up(lg) {
-				margin-top: rem(96);
+				&:not(:first-child) {
+					margin-top: rem(96);
+				}
 			}
 		}
 		&__top {
 			@include media-breakpoint-up(lg) {
 				padding-top: rem(150);
+
+				@media (hover: none) and (pointer: coarse) {
+					padding-top: 0;
+				}
 			}
 		}
 		&__title {
@@ -91,7 +105,11 @@
 			}
 
 			@include media-breakpoint-up(lg) {
+				position: relative;
 				left: 33.33%;
+				@media (hover: none) and (pointer: coarse) {
+					position: absolute;
+				}
 			}
 		}
 
@@ -106,9 +124,13 @@
 			}
 
 			@include media-breakpoint-up(lg) {
-				position: relative;
+				position: absolute;
 				margin-left: 33.33%;
 				z-index: 1;
+
+				@media (hover: none) and (pointer: coarse) {
+					position: relative;
+				}
 			}
 		}
 
@@ -116,7 +138,9 @@
 			margin-top: rem(48);
 			@include media-breakpoint-up(lg) {
 				display: flex;
-				margin-top: rem(24);
+				@media (hover: none) and (pointer: coarse) {
+					margin-top: rem(24);
+				}
 			}
 		}
 

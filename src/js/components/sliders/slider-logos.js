@@ -1,4 +1,4 @@
-import {isDesktop} from '../../utils/breakpoints';
+import { isDesktop } from '../../utils/breakpoints';
 import Slider from './constructor';
 
 const sliderLogos = new Slider({
@@ -15,6 +15,12 @@ const sliderLogos = new Slider({
 		lazy: {
 			loadPrevNext: true,
 			elementClass: 'swiper-lazy',
+		},
+		autoHeight: true,
+		breakpoints: {
+			768: {
+				autoHeight: false,
+			},
 		},
 		on: {
 			init() {
@@ -37,9 +43,6 @@ const sliderLogos = new Slider({
 					this.wrapperEl
 						.closest('[data-slider-logos-wrap]')
 						.classList.add('nav-hidden');
-					if (isDesktop()) {
-						this.wrapperEl.style = '';
-					}
 				} else {
 					this.wrapperEl
 						.closest('[data-slider-logos-wrap]')

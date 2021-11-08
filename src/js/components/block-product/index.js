@@ -23,6 +23,7 @@ export default class blockProduct {
 			const image = elem.querySelectorAll('[data-pin-image]');
 			const bottom = elem.querySelectorAll('[data-pin-bottom]');
 			const titlePercent = index === 0 ? 200 : 130;
+			const imagePercent = index === 0 ? -150 : -180;
 
 			const tl = gsap
 				.timeline({
@@ -31,7 +32,7 @@ export default class blockProduct {
 						pin: elem,
 						scrub: true,
 						start: `top top`,
-						end: '+=200%',
+						end: '+=150%',
 						onEnter() {
 							topNode.style.position = 'fixed';
 						},
@@ -50,7 +51,7 @@ export default class blockProduct {
 						},
 						onUpdate(self) {
 							progress.style.width = `${Math.ceil(
-								self.progress * 100
+								self.progress * 100,
 							)}%`;
 						},
 					},
@@ -64,23 +65,25 @@ export default class blockProduct {
 					},
 					0,
 				)
-				.from(
+				.fromTo(
 					image,
 					{
 						yPercent: 200,
-						duration: 0.6,
+						duration: 1.1,
 						ease: 'power4.out',
+					},{
+						yPercent: imagePercent,
 					},
 					0,
 				)
 				.from(
 					bottom,
 					{
-						yPercent: 210,
+						yPercent: 300,
 						duration: 0.5,
 						ease: 'power4.out',
 					},
-					0.4,
+					0.2,
 				);
 		});
 		// для корректного отображения data-pin-top при первой загрузке страницы
