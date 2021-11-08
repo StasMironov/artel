@@ -16,7 +16,7 @@
 	border: 0;
 	border-radius: rem(32);
 	cursor: pointer;
-	@include defaultTransition(background-color);
+	@include defaultTransition(background-color, color);
 
 	&--has-icon {
 		padding-right: rem(24);
@@ -25,6 +25,7 @@
 	@include touchLessHover {
 		&:not(#{$root}--non-interactive):not(:disabled):not(.button--disabled) {
 			background-color: darken($color-green, 5%);
+			color: $color-white;
 		}
 	}
 
