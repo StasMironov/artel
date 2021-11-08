@@ -17,10 +17,13 @@
 
 	&__item {
 		position: relative;
-		height: auto;
-		align-self: stretch;
 		display: flex;
 		align-items: center;
+
+		@include media-breakpoint-up(md) {
+			height: auto;
+			align-self: stretch;
+		}
 		a {
 			position: absolute;
 			top: 0;

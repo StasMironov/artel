@@ -1,8 +1,7 @@
 import SliderMain from './slider-main';
 import SliderInfo from './slider-info';
 import Tabs from './tabs';
-
-require('./slider-logos');
+import './slider-logos';
 
 export default {
 	init() {
