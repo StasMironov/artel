@@ -1,4 +1,7 @@
 import axios from 'axios';
+import gsap from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+gsap.registerPlugin(ScrollToPlugin);
 
 export default class FormHandler {
 	constructor() {
@@ -62,7 +65,7 @@ export default class FormHandler {
 
 		if (data.title) {
 			const title = document.createElement('p');
-			title.classList.add('h2');
+			title.classList.add('h1');
 			title.classList.add('form__answer-title');
 			title.innerText = data.title;
 
@@ -78,18 +81,28 @@ export default class FormHandler {
 			answerContainer.appendChild(message);
 		}
 
-		if (data.caption) {
-			const caption = document.createElement('p');
-			caption.classList.add('text-body');
-			caption.classList.add('form__answer-caption');
-			caption.innerText = data.caption;
+		// if (data.caption) {
+		// 	const caption = document.createElement('p');
+		// 	caption.classList.add('text-body');
+		// 	caption.classList.add('form__answer-caption');
+		// 	caption.innerText = data.caption;
 
-			answerContainer.appendChild(caption);
-		}
+		// 	answerContainer.appendChild(caption);
+		// }
 
 		this.form.classList.add('is-sent');
 
 		window.dispatchEvent(new CustomEvent('form:sent'));
+
+		if (document.querySelector('[data-scroll-contacts]').length > 0) {
+			const scrollTarget = document.querySelector(
+				'[data-scroll-contacts]'
+			);
+			gsap.to(window, {
+				duration: 0.8,
+				scrollTo: { y: scrollTarget, offsetY: 80 },
+			});
+		}
 	}
 
 	showLoader() {

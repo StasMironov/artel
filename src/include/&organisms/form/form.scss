@@ -159,6 +159,7 @@
 		max-width: rem(400);
 		width: 100%;
 		margin-right: auto;
+		color: $color-white;
 
 		#{$root}.is-sent & {
 			display: block;
@@ -170,16 +171,16 @@
 	}
 
 	&__answer-title {
-		margin-bottom: rem(40);
+		margin-bottom: rem(45);
 
 		@include media-breakpoint-up(md) {
-			margin-bottom: rem(56);
+			margin-bottom: rem(45);
 		}
 	}
 
 	&__answer-message {
 		margin-bottom: rem(16);
-		max-width: rem(260);
+		max-width: rem(220);
 	}
 
 	&__answer-caption {

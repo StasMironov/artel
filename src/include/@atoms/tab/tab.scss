@@ -64,10 +64,6 @@
 	}
 
 	&__icon {
-		#{$root}--big & {
-
-		}
-
 		#{$root}--big#{$root}--active & {
 			color: $color-white;
 		}
