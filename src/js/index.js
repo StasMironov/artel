@@ -13,14 +13,12 @@ import Sliders from './components/sliders';
 import Submenu from './components/submenu';
 import Animation from './components/animation';
 import Map from './components/map';
-import Sticky from './components/sticky';
 import validation from './components/validation';
 import FormHandler from './components/form-handler';
 import ScrollTo from './components/scrollto';
 import Input from './components/input';
 import Strategy from './components/strategy';
 import BlockProduct from './components/block-product';
-import Svg from './components/svg';
 
 import { devices } from './utils/breakpoints';
 
@@ -57,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	Sliders.init();
 	Submenu.init();
 	ScrollTo.init();
-	Svg.init();
 
 	new Map();
 	validation.init();

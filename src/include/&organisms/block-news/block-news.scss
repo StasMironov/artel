@@ -1,5 +1,6 @@
 .block-news {
 	$root: &;
+	overflow: hidden;
 
 	&__container {
 		padding-top: rem(64);
