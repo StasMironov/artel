@@ -8,7 +8,7 @@
 			<div class="swiper-wrapper">
 				{% for tab in tabs.items %}
 					<div class="tabs__item swiper-slide" data-fade-in-up
-						 data-delay="{{ (delay + loop.index0 / 20)|round(2, 'floor') }}">
+						 data-delay="{{ (loop.index0 / 28)|round(2, 'floor') }}">
 						{% view '@tab' with {
 							tab: tab|merge({
 								attr: attr~"data-tab="~loop.index
