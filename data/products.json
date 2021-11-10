@@ -1,7 +1,7 @@
 {
 	"title": "Наши продукты",
 	"hero": {
-		"title": "Миссия компании",
+		"title": "Наши продукты",
 		"no_overlay": true,
 		"image": {
 			"src": "tmp/default-hero/hero-products.jpg",
@@ -33,33 +33,48 @@
 			"name": "logos/decor",
 			"size": "fit"
 		},
-		"links": [
-			{
-				"href": "javascript:void(0);",
-				"text": "Стратегия"
-			},
-			{
-				"href": "javascript:void(0);",
-				"text": "Миссия компании"
-			},
-			{
-				"href": "javascript:void(0);",
-				"text": "История группы"
-			},
-			{
-				"href": "javascript:void(0);",
-				"text": "Партнеры"
-			},
-			{
-				"active": true,
-				"href": "javascript:void(0);",
-				"text": "Наши продукты"
-			},
-			{
-				"href": "javascript:void(0);",
-				"text": "Предприятия"
-			}
-		]
+		"tabs": {
+			"layout": "3",
+			"items": [
+				{
+					"href": "!#",
+					"text": "Стратегия",
+					"title": "Стратегия",
+					"active": "true",
+					"theme": "white"
+				},
+				{
+					"href": "!#",
+					"text": "Миссия компании",
+					"title": "Миссия компании",
+					"theme": "white"
+				},
+				{
+					"href": "!#",
+					"text": "История группы",
+					"title": "История группы",
+					"theme": "white"
+				},
+				{
+					"href": "!#",
+					"text": "Партнеры",
+					"title": "Партнеры",
+					"theme": "white"
+				},
+				{
+					"href": "!#",
+					"text": "Наши продукты",
+					"title": "Наши продукты",
+					"theme": "white"
+				},
+				{
+					"href": "!#",
+					"text": "Предприятия",
+					"title": "Предприятия",
+					"theme": "white"
+				}
+			]
+		}
 	},
 	"block_benefit": {
 		"bg": "gray",

@@ -335,5 +335,189 @@
 				"size": "fit"
 			}
 		}
-	}
+	},
+	"modals": [
+		{
+			"id": "modal-media",
+			"component": "&modal-media",
+			"ajax": true,
+			"data": {
+				"modal": {
+					"reference": {
+						"rows": [
+							{
+								"bold": true,
+								"label": "Итого: ",
+								"text": "12 480 ₽"
+							}
+						],
+						"buttons": [
+							{
+								"type": "button",
+								"text": "Перейти в корзину",
+								"title": "Подсказка при наведении на кнопку",
+								"color": "red"
+							}
+						]
+					},
+					"card_list": {
+						"items": [
+							{
+								"image": {
+									"src": "tmp/card-basket-small/1.png",
+									"mob": {
+										"srcset": [
+											{
+												"src": "tmp/card-basket-small/1-mob.png",
+												"scale": "1"
+											}
+										]
+									},
+									"alt": "image alt"
+								},
+								"actions": [
+									{
+										"type": "button",
+										"title": "Удалить из корзины",
+										"icon": {
+											"name": "24/close"
+										},
+										"href": "#delete",
+										"active": false
+									}
+								],
+								"title": {
+									"href": "!#",
+									"text": "Бокал Spiegelau Grand Palais Exquisit для бренди"
+								},
+								"price": "2 500 ₽",
+								"amount_changer": {
+									"size": "small",
+									"name": "INPUT_AMOUNT835631",
+									"value": "1",
+									"min": "0",
+									"max": "",
+									"step": "1"
+								}
+							},
+							{
+								"image": {
+									"src": "tmp/card-basket-small/2.png",
+									"mob": {
+										"srcset": [
+											{
+												"src": "tmp/card-basket-small/2-mob.png",
+												"scale": "1"
+											}
+										]
+									},
+									"alt": "image alt"
+								},
+								"actions": [
+									{
+										"type": "button",
+										"title": "Удалить из корзины",
+										"icon": {
+											"name": "24/close"
+										},
+										"href": "#delete",
+										"active": false
+									}
+								],
+								"title": {
+									"href": "!#",
+									"text": "Бокал Spiegelau Grand Palais Exquisit для бренди"
+								},
+								"price": "2 500 ₽",
+								"amount_changer": {
+									"size": "small",
+									"name": "INPUT_AMOUNT835631",
+									"value": "1",
+									"min": "0",
+									"max": "",
+									"step": "1"
+								}
+							},
+							{
+								"image": {
+									"src": "tmp/card-basket-small/3.png",
+									"mob": {
+										"srcset": [
+											{
+												"src": "tmp/card-basket-small/1-mob.png",
+												"scale": "1"
+											}
+										]
+									},
+									"alt": "image alt"
+								},
+								"actions": [
+									{
+										"type": "button",
+										"title": "Удалить из корзины",
+										"icon": {
+											"name": "24/close"
+										},
+										"href": "#delete",
+										"active": false
+									}
+								],
+								"title": {
+									"href": "!#",
+									"text": "Бокал Spiegelau Grand Palais Exquisit для бренди"
+								},
+								"price": "2 500 ₽",
+								"amount_changer": {
+									"size": "small",
+									"name": "INPUT_AMOUNT835631",
+									"value": "1",
+									"min": "0",
+									"max": "",
+									"step": "1"
+								}
+							},
+							{
+								"image": {
+									"src": "tmp/card-basket-small/1.png",
+									"mob": {
+										"srcset": [
+											{
+												"src": "tmp/card-basket-small/1-mob.png",
+												"scale": "1"
+											}
+										]
+									},
+									"alt": "image alt"
+								},
+								"actions": [
+									{
+										"type": "button",
+										"title": "Удалить из корзины",
+										"icon": {
+											"name": "24/close"
+										},
+										"href": "#delete",
+										"active": false
+									}
+								],
+								"title": {
+									"href": "!#",
+									"text": "Бокал Spiegelau Grand Palais Exquisit для бренди"
+								},
+								"price": "2 500 ₽",
+								"amount_changer": {
+									"size": "small",
+									"name": "INPUT_AMOUNT835631",
+									"value": "1",
+									"min": "0",
+									"max": "",
+									"step": "1"
+								}
+							}
+						]
+					}
+				}
+			}
+		}
+	]
 }

@@ -111,6 +111,10 @@
 			.icon {
 				color: $color-white;
 			}
+
+			#{$root}__text {
+				color: $color-white;
+			}
 		}
 
 		@include media-breakpoint-up(lg) {

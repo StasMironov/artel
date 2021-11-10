@@ -1,0 +1,229 @@
+.modal {
+	$b: #{&};
+	display: none;
+	position: relative;
+
+	&.is-open {
+		display: block;
+	}
+
+	&__overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		//z-index: $z-header + 1;
+		background-color: rgba($color-black, 0.2);
+
+		#{$b}--adress & {
+			overflow-y: auto;
+			align-items: flex-start;
+		}
+
+		#{$b}--location &,
+		#{$b}--basket & {
+			background-color: transparent;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&__inner {
+		width: 100%;
+	}
+
+	&__container {
+		position: relative;
+		background-color: $color-white;
+		box-sizing: border-box;
+		border-radius: rem(24);
+		width: rem(600);
+
+		@include media-breakpoint-down(md) {
+			width: rem(576);
+		}
+
+		@include media-breakpoint-down(sm) {
+			width: rem(328);
+		}
+
+		#{$b}--location &,
+		#{$b}--basket & {
+			width: rem(480);
+			margin-top: rem(56);
+			margin-bottom: auto;
+			box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+
+			@include media-breakpoint-up(md) {
+				margin-top: rem(70);
+				margin-left: auto;
+				margin-right: rem(24);
+			}
+
+			@include media-breakpoint-up(lg) {
+				margin-right: rem(60);
+			}
+
+			@include media-breakpoint-down(sm) {
+				width: rem(328);
+			}
+		}
+
+		#{$b}--description & {
+			width: 100%;
+			height: 100%;
+			border-radius: 0;
+
+			@include media-breakpoint-up(md) {
+				max-height: rem(832);
+			}
+
+			@include media-breakpoint-up(lg) {
+				max-height: rem(832);
+				max-height: rem(604);
+			}
+		}
+
+		#{$b}--adress & {
+			margin-bottom: rem(32);
+			border-radius: 0;
+			width: calc(100% - #{rem(32)});
+
+			@include media-breakpoint-up(md) {
+				width: calc(100% - #{rem(64)});
+				margin-top: rem(72);
+				margin-bottom: rem(72);
+			}
+
+			@include media-breakpoint-up(lg) {
+				width: 100%;
+			}
+		}
+	}
+
+	&__inner {
+		max-height: 100%;
+
+		#{$b}--description & {
+			overflow-y: auto;
+		}
+	}
+
+	&__close {
+	//	@include button-reset;
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: rem(24);
+		height: rem(24);
+		z-index: 1;
+		top: rem(24);
+		right: rem(24);
+		@include defaultTransition(background-color, color);
+
+		&:hover {
+			//color: $color-red-velvet;
+		}
+
+		@include media-breakpoint-down(sm) {
+			top: rem(16);
+			right: rem(16);
+		}
+
+		#{$b}--basket & {
+			@include media-breakpoint-up(md) {
+				display: none;
+			}
+		}
+
+		#{$b}--form & {
+			top: rem(48);
+			right: rem(40);
+
+			@include media-breakpoint-down(md) {
+				top: rem(24);
+				right: rem(24);
+			}
+		}
+
+		#{$b}--description & {
+			width: rem(40);
+			height: rem(40);
+			border-radius: 50%;
+			//background-color: $color-grey;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			top: rem(32);
+			right: rem(16);
+
+			@include media-breakpoint-up(md) {
+				top: rem(24);
+				right: rem(32);
+			}
+
+			@include media-breakpoint-up(lg) {
+				top: rem(24);
+				right: rem(20);
+			}
+
+			&:hover {
+				//background-color: $color-red-velvet;
+				color: $color-white;
+			}
+
+		}
+	}
+}
+
+/**************************\
+  Demo Animation Style
+\**************************/
+@keyframes mmfadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes mmfadeOut {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+
+@keyframes mmslideIn {
+	from { transform: translateY(15%); }
+	to { transform: translateY(0); }
+}
+
+@keyframes mmslideOut {
+	from { transform: translateY(0); }
+	to { transform: translateY(-10%); }
+}
+
+
+.modal[aria-hidden="false"] .modal__overlay {
+	animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.modal[aria-hidden="false"] .modal__container {
+	animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.modal[aria-hidden="true"] .modal__overlay {
+	animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.modal[aria-hidden="true"] .modal__container {
+	animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.modal .modal__container,
+.modal .modal__overlay {
+	will-change: transform;
+}
