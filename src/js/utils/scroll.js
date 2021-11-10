@@ -2,7 +2,7 @@ import smoothscroll from 'smoothscroll-polyfill';
 
 smoothscroll.polyfill();
 
-export const disableScroll = () => {
+window._disableScroll = () => {
 	const scrollY = window.pageYOffset;
 	const { body } = document;
 	body.classList.add('js-locked');
@@ -11,7 +11,7 @@ export const disableScroll = () => {
 	body.style.width = '100%';
 };
 
-export const enableScroll = () => {
+window._enableScroll = () => {
 	const { body } = document;
 	const scrollY = body.style.top;
 	body.style.position = '';

@@ -33,6 +33,7 @@ export default class blockProduct {
 						scrub: true,
 						start: `top top`,
 						end: '+=150%',
+						markers: true,
 						onEnter() {
 							topNode.style.position = 'fixed';
 						},
@@ -51,7 +52,7 @@ export default class blockProduct {
 						},
 						onUpdate(self) {
 							progress.style.width = `${Math.ceil(
-								self.progress * 100,
+								self.progress * 100
 							)}%`;
 						},
 					},
@@ -63,7 +64,7 @@ export default class blockProduct {
 						duration: 0.6,
 						ease: 'power4.out',
 					},
-					0,
+					0
 				)
 				.fromTo(
 					image,
@@ -71,10 +72,11 @@ export default class blockProduct {
 						yPercent: 200,
 						duration: 1.1,
 						ease: 'power4.out',
-					},{
+					},
+					{
 						yPercent: imagePercent,
 					},
-					0,
+					0
 				)
 				.from(
 					bottom,
@@ -83,7 +85,7 @@ export default class blockProduct {
 						duration: 0.5,
 						ease: 'power4.out',
 					},
-					0.2,
+					0.2
 				);
 		});
 		// для корректного отображения data-pin-top при первой загрузке страницы

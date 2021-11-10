@@ -1,4 +1,5 @@
-<div class="hero-default{% if hero_default.no_overlay %} hero-default--no-overlay{% endif %}">
+<div class="hero-default{% if hero_default.no_overlay %} hero-default--no-overlay{% endif %}
+{% if hero_default.no_title %}hero-default--no-title{% endif %}">
     {% if hero_default.image %}
         <div class="hero-default__bg">
             {% if hero_default.image.tab or hero_default.image.mob %}
@@ -19,4 +20,7 @@
             </h1>
         {% endif %}
     </div>
+    {% if hero_default.btn_play %}
+        {% view '@button-play' %}
+    {% endif %}
 </div>

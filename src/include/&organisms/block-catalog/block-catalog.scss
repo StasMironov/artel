@@ -19,6 +19,35 @@
 		}
 	}
 
+	&__hover {
+		position: absolute;
+		right: rem(-168);
+		bottom: rem(-272);
+		width: rem(600);
+		height: rem(600);
+		border-radius: 50%;
+		background-color: rgba($color-white, .1);
+		transition-duration: 1s;
+		transition-delay: .3s;
+		transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+		transition-property: transform;
+		transform: scale3d(0, 0, 0);
+		pointer-events: none;
+
+		@include media-breakpoint-down(md) {
+			right: rem(-58);
+			bottom: rem(-263);
+		}
+	
+		@media (hover: none) and (pointer: coarse) {
+			transform: scale3d(1, 1, 1);
+		}
+	
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
+	}
+
 	&__info {
 		position: relative;
 		background-color: $color-green;
@@ -30,12 +59,12 @@
 		@include media-breakpoint-up(md) {
 			height: rem(512);
 			padding-top: rem(80);
-			padding-bottom: rem(88);
+			padding-bottom: rem(80);
 		}
 
 		@include media-breakpoint-up(lg) {
 			height: rem(588);
-			padding: rem(112) rem(112) rem(112) 0;
+			padding: rem(112) rem(112) rem(120) 0;
 			width: 50%;
 
 			#{$root}.has-slider & {
@@ -51,31 +80,6 @@
 				display: flex;
 				flex-direction: column;
 				height: 100%;
-			}
-		}
-
-		&::after {
-			content: '';
-			position: absolute;
-			right: rem(-64);
-			bottom: rem(-160);
-			width: rem(600);
-			height: rem(600);
-			border-radius: 50%;
-			background-color: rgba($color-white, .1);
-			transition-duration: 1s;
-			transition-delay: .3s;
-			transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-			transition-property: transform;
-			transform: scale3d(0, 0, 0);
-			pointer-events: none;
-
-			@media (hover: none) and (pointer: coarse) {
-				transform: scale3d(1, 1, 1);
-			}
-
-			@include media-breakpoint-down(sm) {
-				display: none;
 			}
 		}
 
@@ -117,12 +121,23 @@
 
 	&__action {
 		pointer-events: auto;
+
+		@include media-breakpoint-up(lg) {
+			margin-left: rem(37);
+		}
+
 		@include media-breakpoint-up(md) {
-			margin-left: rem(32);
+			margin-left: rem(93);
 		}
 
 		@include media-breakpoint-only(sm) {
 			margin-top: rem(24);
+		}
+
+		@include touchLessHover {
+			& + #{$root}__hover {
+				transform: scale3d(1, 1, 1);
+			}
 		}
 	}
 

@@ -1,8 +1,8 @@
 .block-nav {
 	display: flex;
 	$root: &;
-
 	min-height: rem(422);
+	overflow: hidden;
 
 	@include media-breakpoint-up(md) {
 		min-height: rem(428);
@@ -58,14 +58,10 @@
 		}
 	}
 
-	&-info {
-		$b: &;
-
-		#{$b}__desc {
-			width: 100%;
-			max-width: rem(552);
-			color: white;
-		}
+	&__desc {
+		width: 100%;
+		max-width: rem(552);
+		color: white;
 	}
 
 	&-list {
@@ -171,7 +167,7 @@
 		}
 	}
 
-	&-decor {
+	&__decor {
 		position: absolute;
 		position: absolute;
 		left: 0;
@@ -187,6 +183,10 @@
 
 		@include media-breakpoint-up(lg) {
 			bottom: rem(-23);
+		}
+
+		.icon {
+			color: $color-white;
 		}
 	}
 
@@ -223,7 +223,63 @@
 
 		@include media-breakpoint-up(lg) {
 			width: calc(66.6% + #{rem(31)});
-			padding-left: rem(31);
+			padding-left: rem(72);
+		}
+	}
+
+	
+
+	&--layout {
+		&-2 #{$root} {
+			&__right {
+				@include media-breakpoint-down(md) {
+					display: flex;
+					align-items: center;
+				}
+
+				@include media-breakpoint-down(sm) {
+					align-items: normal;
+				}
+			}
+
+			&__title {
+				max-width: rem(655);
+
+				@include media-breakpoint-up(sm) {
+					font-size: rem(20);
+					letter-spacing: rem(-0.2);
+					line-height: rem(26);
+				}
+		
+				@include media-breakpoint-up(md) {
+					@include h3;
+					padding-bottom: rem(34);
+					letter-spacing: normal;
+				}
+		
+				@include media-breakpoint-up(lg) {
+					@include h1;
+					padding-bottom: 0;
+				}
+			}
+
+			&__container {
+				@include media-breakpoint-down(sm) {
+					padding-top: rem(119);
+				}
+			}
+		}
+	}
+
+	&--white {
+		#{$root}__desc {
+			color: $color-black;
+		}
+
+		#{$root}__decor {
+			.icon {
+				color: $color-black;
+			}
 		}
 	}
 }

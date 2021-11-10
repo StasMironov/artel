@@ -1,6 +1,7 @@
 .block-product {
-	background-color: $color-black;
+	overflow: hidden;
 	color: $color-white;
+	background-color: $color-black;
 
 	&__inner {
 		position: relative;
@@ -26,9 +27,9 @@
 	&__top {
 		@include media-breakpoint-up(lg) {
 			position: absolute;
-			width: 100%;
 			top: rem(112);
 			left: 0;
+			width: 100%;
 			.container {
 				display: flex;
 				align-items: flex-start;
@@ -46,14 +47,14 @@
 		position: relative;
 		width: 66.66%;
 		height: 1px;
-		background-color: rgba($color-white, .3);
+		background-color: rgba($color-white, 0.3);
 
 		span {
 			position: absolute;
 			top: 0;
 			left: 0;
-			height: 100%;
 			width: 0;
+			height: 100%;
 			background-color: $color-white;
 		}
 
@@ -96,10 +97,10 @@
 		}
 		&__title {
 			position: absolute;
+			z-index: 2;
 			max-width: rem(600);
 			font-size: rem(44);
 			line-height: 1.1;
-			z-index: 2;
 			@include media-breakpoint-up(md) {
 				font-size: rem(88);
 			}
@@ -125,8 +126,8 @@
 
 			@include media-breakpoint-up(lg) {
 				position: absolute;
-				margin-left: 33.33%;
 				z-index: 1;
+				margin-left: 33.33%;
 
 				@media (hover: none) and (pointer: coarse) {
 					position: relative;
@@ -136,8 +137,14 @@
 
 		&__content {
 			margin-top: rem(48);
+
+			@include media-breakpoint-up(md) {
+				max-width: rem(450);
+			}
+
 			@include media-breakpoint-up(lg) {
 				display: flex;
+				max-width: initial;
 				@media (hover: none) and (pointer: coarse) {
 					margin-top: rem(24);
 				}
@@ -145,7 +152,6 @@
 		}
 
 		&__text {
-
 			@include media-breakpoint-up(lg) {
 				width: 33.33%;
 			}
@@ -160,13 +166,13 @@
 			}
 			@include media-breakpoint-up(lg) {
 				width: 66.66%;
-				padding-left: rem(270);
+				padding-left: rem(340);
 			}
 
 			.user-text {
 				p {
-					opacity: .4;
 					margin-bottom: rem(24);
+					opacity: 0.4;
 				}
 				ul li {
 					position: relative;
@@ -176,14 +182,14 @@
 					}
 
 					&::before {
-						content: '';
 						position: absolute;
 						top: rem(8);
 						left: rem(-24);
 						width: rem(8);
 						height: rem(8);
-						border-radius: 50%;
 						background-color: $color-white;
+						border-radius: 50%;
+						content: '';
 
 						@include media-breakpoint-only(sm) {
 							left: 0;
@@ -198,8 +204,8 @@
 		}
 
 		&__features-title {
-			opacity: .4;
 			margin-bottom: rem(24);
+			opacity: 0.4;
 		}
 
 		&__features-list {
@@ -215,15 +221,19 @@
 				padding-left: rem(24);
 			}
 
+			@include media-breakpoint-up(md) {
+				max-width: rem(450);
+			}
+
 			&::before {
-				content: '';
 				position: absolute;
 				top: rem(8);
 				left: rem(-24);
 				width: rem(8);
 				height: rem(8);
-				border-radius: 50%;
 				background-color: $color-white;
+				border-radius: 50%;
+				content: '';
 
 				@include media-breakpoint-only(sm) {
 					left: 0;
@@ -231,7 +241,7 @@
 			}
 
 			+ .section__features-item {
-				margin-top: rem(24);
+				margin-top: rem(16);
 			}
 		}
 	}

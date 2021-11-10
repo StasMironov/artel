@@ -12,6 +12,7 @@ const sliderLogos = new Slider({
 		allowTouchMove: true,
 		speed: 300,
 		watchSlidesVisibility: true,
+		loop: true,
 		lazy: {
 			loadPrevNext: true,
 			elementClass: 'swiper-lazy',

@@ -19,6 +19,7 @@ import ScrollTo from './components/scrollto';
 import Input from './components/input';
 import Strategy from './components/strategy';
 import BlockProduct from './components/block-product';
+import Modal from './components/modal';
 
 import { devices } from './utils/breakpoints';
 
@@ -44,7 +45,6 @@ window.addEventListener('init.input', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 	libs.init();
-
 	// Components
 	Animation.init();
 	Header.init();
@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	Sliders.init();
 	Submenu.init();
 	ScrollTo.init();
+	Modal.init();
 
 	new Map();
 	validation.init();
@@ -85,4 +86,5 @@ window.addEventListener('reinit', () => {
 	window.dispatchEvent(new CustomEvent('init.validation'));
 	window.dispatchEvent(new CustomEvent('init.mask'));
 	window.dispatchEvent(new CustomEvent('init.input'));
+	Modal.init();
 });
