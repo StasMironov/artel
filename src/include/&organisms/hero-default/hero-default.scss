@@ -56,7 +56,16 @@
 
 	&__title {
 		color: $color-white;
-		text-align: center;
+		width: 33.333%;
+		margin-left: 33.33%;
+		margin-right: 33.333%;
+		text-align: initial;
+
+		@include media-breakpoint-down(md) {
+			width: initial;
+			margin: initial;
+			text-align: center;
+		}
 	}
 
 	&--no-title {
