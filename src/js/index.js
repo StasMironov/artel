@@ -19,7 +19,7 @@ import ScrollTo from './components/scrollto';
 import Input from './components/input';
 import Strategy from './components/strategy';
 import BlockProduct from './components/block-product';
-import Modal from './components/modal';
+import Modals from './components/modal';
 
 import { devices } from './utils/breakpoints';
 
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	Sliders.init();
 	Submenu.init();
 	ScrollTo.init();
-	Modal.init();
+	Modals.init();
 
 	new Map();
 	validation.init();

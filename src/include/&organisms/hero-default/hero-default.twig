@@ -21,6 +21,10 @@
         {% endif %}
     </div>
     {% if hero_default.btn_play %}
-        {% view '@button-play' %}
+        {% view '@button-play' with {
+            button: {
+                "attr": 'data-modal-video="modal-video-1"'
+            }
+        } %}
     {% endif %}
 </div>

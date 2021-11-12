@@ -436,7 +436,7 @@
         @include media-breakpoint-up(md) {
             width: 100%;
             bottom: rem(205);
-            max-width: calc(100% - #{rem(108)})
+            max-width: calc(100% - #{rem(108)});
 		}
 
         @include media-breakpoint-up(lg) {

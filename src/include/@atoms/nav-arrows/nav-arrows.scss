@@ -43,7 +43,7 @@
 			}
 		}
 
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(sm) {
 			width: rem(56);
 			height: rem(56);
 			line-height: rem(54);

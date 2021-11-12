@@ -8,14 +8,9 @@
 	 id="{{ modal.id }}"
 	 aria-hidden="true">
 	<div class="modal__overlay" tabindex="-1" data-modal-close>
+		<button class="modal__close" aria-label='Close modal' data-modal-close>
+		</button>
 		<div class="modal__container" role="dialog" aria-modal="true">
-			<button class="modal__close" aria-label='Close modal' data-modal-close>
-				{% view '@icon' with {
-					icon: {
-					name: "24/close"
-				}
-					} %}
-			</button>
 			<div class='modal__inner' {% if modal.ajax %}data-modal-ajax-container{% endif %}>
 				{% if modal.component and modal.data %}
 					{% view modal.component with modal.data %}

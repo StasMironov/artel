@@ -6,6 +6,7 @@
 	height: rem(193);
 	background-color: transparent;
 	border: none;
+	cursor: pointer;
 
     @include media-breakpoint-down(md) {
         width: rem(200);
@@ -38,7 +39,7 @@
 		clip-path: circle(50% at 50% 50%);
 
 		&--back {
-			clip-path: circle(50% at 50% 26%);
+			clip-path: inset(0 0 51% 0 round 0 0 0 0 );
 			.circle {
                 color: white;
 			}
