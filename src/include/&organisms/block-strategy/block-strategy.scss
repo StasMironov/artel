@@ -36,6 +36,7 @@
     &__note {
         max-width: rem(400);
         width: 100%;
+        color: rgba($color-black, 0.4);
     }
 
     &__img {
@@ -100,18 +101,20 @@
     &__wrap {
         position: relative;
         display: flex;
-        min-height: rem(850);
+      
 
 
         @include media-breakpoint-up(sm) {
             height: 100vh;
+            min-height: rem(792);
+        }
+
+        @include media-breakpoint-up(md) {
+            min-height: rem(960);
         }
 
         @include media-breakpoint-up(lg) {
             min-height: rem(800);
-        }
-        @include media-breakpoint-only(md) {
-            min-height: rem(1024);
         }
     }
 
@@ -177,34 +180,38 @@
         #{$root}__inner & {
             position: relative;
             z-index: 1;
-            padding-top: rem(112);
+            padding-top: rem(40);
 
-           
-            
             @include media-breakpoint-down(lg) {
-                padding-top: rem(112);
+                padding-top: rem(40);
                 padding-bottom: rem(91);
             }
 
             @include media-breakpoint-down(md) {
-                padding-top: rem(64);
+                padding-top: rem(48);
+                padding-bottom: rem(64);
+            }
+
+            @include media-breakpoint-down(sm) {
+                padding-top: rem(8);
                 padding-bottom: rem(64);
             }
         }
 
         #{$root}__bottom & {
             display: flex;
-            align-items: center;
+            padding-top: rem(44);
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: rem(160);
 
             @include media-breakpoint-down(md) {
-                padding-top: rem(300);
-                flex-direction: column;
-                justify-content: space-between;
-                padding-bottom: rem(64);
+                padding-top: rem(285);
+                padding-bottom: rem(67);
             }
 
             @include media-breakpoint-down(sm) {
-                padding-top: rem(272);
+                padding-top: rem(223);
                 padding-bottom: rem(30);
             }
             
@@ -278,14 +285,11 @@
         position: absolute;
         z-index: 2;
         left: 0;
-        bottom: rem(92);
         width: 100%;
-
-        @include media-breakpoint-down(md) {
-            height: 100%;
-            bottom: 0;
-            top: 0;
-        }
+        height: 100%;
+        bottom: 0;
+        top: 0;
+        
     }
 
     &__progress {
@@ -326,10 +330,9 @@
     }
 
     &__box {
-        position: absolute;
-        right: 27%;
-        left: 50.3%;
-        bottom: calc(100vh - #{rem(533)});
+        left: 0;
+        position: relative;
+        margin-left: 50.5%;
         width: rem(327);
         height: rem(327);
         pointer-events: none;
@@ -338,7 +341,7 @@
             bottom: 0;
             left: 0;
             margin-right: auto;
-            position: relative;
+            margin-left: 0;
         }
 
         @include media-breakpoint-down(sm) {

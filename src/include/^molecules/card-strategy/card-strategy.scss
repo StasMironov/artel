@@ -31,7 +31,7 @@
 
 	&__suptitle {
 		margin-bottom: rem(16);
-		opacity: 0.4;
+		color: rgba($color-black, 0.4);
 	}
 
 	&__top {
@@ -72,11 +72,11 @@
 		}
 
 		@include media-breakpoint-only(sm) {
-			padding-top: 320 / 360 * 100%;
+			padding-top: 290 / 360 * 100%;
 		}
 
 		@include media-breakpoint-only(md) {
-			padding-top: 590 / 768 * 100%;
+			padding-top: 512 / 768 * 100%;
 		}
 
 		@include media-breakpoint-up(lg) {
