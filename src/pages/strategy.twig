@@ -2,7 +2,14 @@
 
 {% block content %}
 
-    {% view '&hero-default' %}
+    {% view '&hero-default' with {
+        hero_default: hero_default
+    } %}
     {% view '&block-nav' %}
+    {% view '&block-strategy' with {
+        strategy: strategy
+    } %}
+    {% view '&card-strategy-list' %}
+    
 
 {% endblock %}

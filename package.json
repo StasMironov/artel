@@ -23,6 +23,7 @@
 		"miragejs": "^0.1.42",
 		"parsleyjs": "^2.9.2",
 		"perfect-scrollbar": "^1.5.3",
+		"plyr": "^3.6.9",
 		"promise-polyfill": "^8.2.0",
 		"sal.js": "^0.8.5",
 		"smoothscroll-polyfill": "^0.4.4",

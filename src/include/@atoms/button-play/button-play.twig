@@ -1,4 +1,4 @@
-<button class="button-play" data-fade-in-up data-delay="0.5"  data-modal="modal-media">
+<button class="button-play" data-fade-in-up data-delay="0.5" {% if button.attr %} {{ button.attr }}{% endif %}>
     <span class="button-play__icon">
         {% view '@icon' with {
             "icon": {
