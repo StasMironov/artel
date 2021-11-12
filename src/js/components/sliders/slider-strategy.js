@@ -5,6 +5,8 @@ import DrawSVGPlugin from 'gsap/DrawSVGPlugin';
 export default class Slider {
 	constructor() {
 		this.sliderWrapNode = document.querySelector('[data-strategy-slider]');
+		if (!this.sliderWrapNode) return;
+
 		this.selectors = {
 			imageWrap: '[data-image-wrap]',
 			slide: '[data-slide]',
