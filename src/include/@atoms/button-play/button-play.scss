@@ -36,7 +36,7 @@
 		left: 0;
 		margin: auto;
 		cursor: pointer;
-		clip-path: circle(50% at 50% 50%);
+		clip-path: inset(51% 0 0 0 round 0 0 0 0);
 
 		&--back {
 			clip-path: inset(0 0 51% 0 round 0 0 0 0 );

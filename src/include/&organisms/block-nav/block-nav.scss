@@ -230,7 +230,20 @@
 	
 
 	&--layout {
+		&-2 {
+			min-height: rem(488);
+
+			@include media-breakpoint-down(md) {
+				min-height: rem(400);
+			}
+
+			@include media-breakpoint-down(sm) {
+				min-height: rem(416);
+			}
+		}
 		&-2 #{$root} {
+			
+
 			&__right {
 				@include media-breakpoint-down(md) {
 					display: flex;
@@ -245,25 +258,31 @@
 			&__title {
 				max-width: rem(655);
 
-				@include media-breakpoint-up(sm) {
-					font-size: rem(20);
-					letter-spacing: rem(-0.2);
-					line-height: rem(26);
+				@include media-breakpoint-down(lg) {
+					@include h1;
+					padding-bottom: 0;
 				}
-		
-				@include media-breakpoint-up(md) {
+
+				@include media-breakpoint-down(md) {
 					@include h3;
 					padding-bottom: rem(34);
 					letter-spacing: normal;
 				}
-		
-				@include media-breakpoint-up(lg) {
-					@include h1;
-					padding-bottom: 0;
-				}
+
+				@include media-breakpoint-down(sm) {
+					font-size: rem(20);
+					letter-spacing: rem(-0.2);
+					line-height: rem(26);
+				}				
 			}
 
 			&__container {
+				padding-bottom: rem(72);
+
+				@include media-breakpoint-down(md) {
+					padding-bottom: rem(48);
+				}
+
 				@include media-breakpoint-down(sm) {
 					padding-top: rem(119);
 				}
