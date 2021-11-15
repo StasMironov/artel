@@ -52,9 +52,11 @@
                     } %}
                 </div>
             </div>
-            <div class="block-strategy__arrows">
-				{% view '@nav-arrows' %}
-			</div>
+            {% if strategy_slider.slides|length > 1 %}
+                <div class="block-strategy__arrows">
+                    {% view '@nav-arrows' %}
+                </div>
+            {% endif %}
 		</div>
 	</div>
 </div>

@@ -55,3 +55,31 @@
 		}
 	}
 }
+
+@mixin title-offset {
+	&:nth-child(1) {
+		padding-left: 50.3%;
+		padding-right: 8%;
+
+		@include media-breakpoint-down(md) {
+			padding-left: 0;
+		}
+
+		// @include media-breakpoint-down(sm) {
+		// 	padding-left: 0;
+		// }
+	}
+
+	&:nth-child(2) {
+		padding-right: 6%;
+
+		@include media-breakpoint-down(md) {
+			//padding-left: calc(#{rem(100)} * 2);
+			padding: 0;
+		}
+
+		// @include media-breakpoint-down(sm) {
+		// 	padding-left: 0;
+		// }
+	}
+}

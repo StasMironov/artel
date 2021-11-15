@@ -85,22 +85,18 @@ export default class Slider {
 		this.prev = this.sliderWrapNode.querySelector(this.selectors.prev);
 		this.next = this.sliderWrapNode.querySelector(this.selectors.next);
 
-		this.arrows = this.sliderWrapNode.querySelector(this.selectors.arrows);
+		if (this.prev || this.next) {
+			this.arrows = this.sliderWrapNode.querySelector(
+				this.selectors.arrows
+			);
 
-		if (this.dark) {
-			this.body.classList.add('dark-slide-is-active');
-			this.arrows.classList.add('nav-arrows--on-black');
-		} else {
-			this.body.classList.remove('dark-slide-is-active');
-			this.arrows.classList.remove('nav-arrows--on-black');
+			this.prev.addEventListener('click', () => {
+				this.slideChange(this.calcPrevNextIndex('prev')); // расчёт activeIndex, prevIndex, добавление/удаление класса is-active, вызов animation()
+			});
+			this.next.addEventListener('click', () => {
+				this.slideChange(this.calcPrevNextIndex()); // расчёт activeIndex, prevIndex, добавление/удаление класса is-active, вызов animation()
+			});
 		}
-
-		this.prev.addEventListener('click', () => {
-			this.slideChange(this.calcPrevNextIndex('prev')); // расчёт activeIndex, prevIndex, добавление/удаление класса is-active, вызов animation()
-		});
-		this.next.addEventListener('click', () => {
-			this.slideChange(this.calcPrevNextIndex()); // расчёт activeIndex, prevIndex, добавление/удаление класса is-active, вызов animation()
-		});
 
 		this.autoplayInterval =
 			this.sliderWrapNode.getAttribute('data-autoplay') || null;
