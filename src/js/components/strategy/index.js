@@ -29,8 +29,9 @@ class Strategy {
 				trigger: this.wrap,
 				start: 'center center',
 				end: 'bottom top',
-				scrub: true,
+				scrub: 3,
 				pin: true,
+				ease: 'power2.out',
 			},
 		});
 		if (this.cards.length) {

@@ -64,6 +64,12 @@
         
         #{$root}__slide.is-active & {
             opacity: 1;
+
+            path {
+				stroke-dasharray: 280;
+				stroke-dashoffset: 280;
+				animation: dash 2.5s ease 1s forwards;
+			}
         }
 
         .icon {
@@ -86,15 +92,18 @@
     &__left {
         width: 33.333%;
         margin-right: 16%;
+        min-height: rem(176);
 
         @include media-breakpoint-down(md) {
 			width: 58%;
             margin-right: auto;
             margin-bottom: rem(60);
+            min-height: rem(176);
 		}
 
         @include media-breakpoint-down(sm) {
 			width: 100%;
+            min-height: rem(150);
 		}
     }
 
@@ -111,11 +120,8 @@
     &__wrap {
         position: relative;
         display: flex;
-      
-
 
         @include media-breakpoint-up(sm) {
-            height: 100vh;
             min-height: rem(792);
         }
 
@@ -145,6 +151,16 @@
             z-index: 2;
             order: 1;
         }
+
+
+        &.is-active & {
+            // background-color: red;
+			// path {
+			// 	stroke-dasharray: 280;
+			// 	stroke-dashoffset: 280;
+			// 	animation: dash 2.5s ease .5s forwards;
+			// }
+		}
     }
 
     &__shell {
@@ -378,5 +394,11 @@
         opacity: 0.2;
     }
 
+}
+
+@keyframes dash {
+	to {
+	  stroke-dashoffset: 0;
+	}
 }
     

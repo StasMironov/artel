@@ -1,4 +1,11 @@
 .icon-text {
+	$root: &;
+
+	&--white {
+		& {
+			color: $color-white;
+		}
+	}
 
 	&__icon {
 		margin-bottom: rem(16);

@@ -1,4 +1,4 @@
-<div class="icon-text">
+<div class="icon-text {% if icon.theme %}icon-text--{{icon.theme}}{% endif %}">
 	{% if icon %}
 		<div class="icon-text__icon">
 			{% view '@icon' with {
