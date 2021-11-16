@@ -20,9 +20,9 @@
 						</div>
 						<div class="main-hero__container container">
 							<div class="main-hero__content">
-								<h2 class="main-hero__title h1" data-title>{{ slide.title }}</h2>
+								<h2 class="main-hero__title h1" data-title data-fade-in-up>{{ slide.title }}</h2>
 								{% if slide.action %}
-									<div class="main-hero__action" data-action>
+									<div class="main-hero__action" data-action data-fade-in-up>
 										{% view '@button' with {
 											button: slide.action
 										} %}
