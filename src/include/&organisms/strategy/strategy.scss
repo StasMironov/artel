@@ -9,6 +9,7 @@
 	}
 
 	&__colored {
+		display: block;
 		color: $color-green;
 	}
 
@@ -25,7 +26,6 @@
 	}
 
 	&__bottom {
-
 		@include media-breakpoint-up(md) {
 			display: flex;
 		}
@@ -35,9 +35,9 @@
 		margin-bottom: rem(32);
 
 		@include media-breakpoint-up(md) {
+			flex-shrink: 0;
 			width: calc((100% + 8px) / 12 * 3);
 			margin-right: calc((100% + 8px) / 12 * 2);
-			flex-shrink: 0;
 			margin-bottom: 0;
 		}
 
@@ -45,10 +45,17 @@
 			width: calc((100% + 8px) / 12 * 2);
 			margin-right: calc((100% + 8px) / 12 * 4);
 		}
+
+		&.animate {
+			path {
+				animation: dash 2.5s ease 0.5s forwards;
+				stroke-dasharray: 280;
+				stroke-dashoffset: 280;
+			}
+		}
 	}
 
 	&__text {
-
 		@include media-breakpoint-up(md) {
 			margin-top: rem(8);
 		}
@@ -57,5 +64,11 @@
 			width: calc((100% + 8px) / 12 * 5);
 			margin-top: rem(50);
 		}
+	}
+}
+
+@keyframes dash {
+	to {
+		stroke-dashoffset: 0;
 	}
 }

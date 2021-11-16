@@ -71,6 +71,7 @@
 		height: rem(30);
 		color: $color-green;
 		@include defaultTransition(color);
+		z-index: 22;
 
 		#{$root}--transparent & {
 			color: $color-white;
