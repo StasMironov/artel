@@ -3,14 +3,15 @@
 		<div class="map__top">
 			<div class="map__container container">
 				{% if map.heading %}
-					<p class="map__heading h2">{{ map.heading }}</p>
+					<p class="map__heading h2" data-fade-in-up>{{ map.heading }}</p>
 				{% endif %}
 				{% if map.tabs %}
 					<div class="map__tabs">
 						<div class="swiper-container" data-map-tabs>
 							<div class="swiper-wrapper">
 								{% for tab in  map.tabs.items %}
-									<div class="swiper-slide map__slide">
+									<div class="swiper-slide map__slide" data-fade-in-up
+						 			data-delay="{{ (loop.index0 / 16)|round(2, 'floor') }}">
 										{% view '@tab' with {
 											tab: tab
 										} %}

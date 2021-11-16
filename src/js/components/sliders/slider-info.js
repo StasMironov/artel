@@ -116,18 +116,16 @@ export default class Slider {
 				if (el.classList.contains('is-active') || this.inTransition)
 					return;
 
-				this.numbersClassToggle(idx); // смена активной кнопки
 				this.slideChange([idx, this.activeIndex]);
+				this.numbersClassToggle(idx); // смена активной кнопки
 			});
 		});
 
 		this.prev.addEventListener('click', () => {
 			this.slideChange(this.calcPrevNextIndex('prev')); // расчёт activeIndex, prevIndex, добавление/удаление класса is-active, вызов animation()
-			this.numbersClassToggle(this.calcPrevNextIndex()[1]);
 		});
 		this.next.addEventListener('click', () => {
 			this.slideChange(this.calcPrevNextIndex()); // расчёт activeIndex, prevIndex, добавление/удаление класса is-active, вызов animation()
-			this.numbersClassToggle(this.calcPrevNextIndex()[1]);
 		});
 
 		this.autoplayInterval =
@@ -138,7 +136,9 @@ export default class Slider {
 		});
 
 		this.manager = new Hammer.Manager(this.sliderWrapNode);
-		this.swipe = new Hammer.Swipe();
+		this.swipe = new Hammer.Swipe({
+			direction: Hammer.DIRECTION_HORIZONTAL,
+		});
 		this.manager.add(this.swipe);
 
 		this.manager.on('swipeleft', () => {
@@ -168,10 +168,6 @@ export default class Slider {
 					clearProps: 'all',
 					onComplete: () => {
 						this.slideChange(this.calcPrevNextIndex());
-						sliderPag.swiper.slideTo(
-							this.calcPrevNextIndex()[1],
-							800
-						);
 					},
 				}
 			);
@@ -396,7 +392,7 @@ export default class Slider {
 					clearProps: 'all',
 					ease: 'circ.out',
 				},
-				'<'
+				'-=1.5'
 			)
 			.fromTo(
 				this.findNode(this.activeIndex, this.selectors.image),
@@ -409,7 +405,7 @@ export default class Slider {
 					clearProps: 'all',
 					ease: 'power1.out',
 				},
-				'<'
+				'-=1.5'
 			);
 
 		this.timeline.play();
@@ -436,9 +432,5 @@ export default class Slider {
 		}
 
 		this.numbers[idx].classList.add('is-active');
-		setTimeout(() => {
-			this.pag.swiper.update();
-			this.pag.swiper.slideTo(idx, 800);
-		}, 300);
 	}
 }
