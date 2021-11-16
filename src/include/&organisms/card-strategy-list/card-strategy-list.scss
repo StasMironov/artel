@@ -18,6 +18,8 @@
 			.card-strategy__image {
 				position: relative;
 				z-index: 1;
+				opacity: 1 !important;
+				transform: none !important;
 			}
 			&:first-child {
 				position: relative;
