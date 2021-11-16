@@ -21,6 +21,7 @@
 		"jquery": "^3.6.0",
 		"micromodal": "^0.4.6",
 		"miragejs": "^0.1.42",
+		"modernizr": "^3.11.8",
 		"parsleyjs": "^2.9.2",
 		"perfect-scrollbar": "^1.5.3",
 		"plyr": "^3.6.9",
