@@ -75,6 +75,11 @@ class BrowserDetect {
 	}
 }
 
+const isTouch = () => 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
 window.browserDetect = new BrowserDetect();
 
 document.documentElement.classList.add(`is-${window.browserDetect.browser}`);
+document.documentElement.classList.add(
+	`is-${isTouch() ? 'touch' : 'no-touch'}`
+);

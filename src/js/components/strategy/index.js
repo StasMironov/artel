@@ -4,6 +4,7 @@ import { isDesktop } from '../../utils/breakpoints';
 class Strategy {
 	constructor(props) {
 		if (!(props.wrap instanceof HTMLElement) || !isDesktop()) return;
+
 		this.wrap = props.wrap;
 		this.forward = true;
 		this.lastTime = 0;
@@ -29,7 +30,7 @@ class Strategy {
 				trigger: this.wrap,
 				start: 'center center',
 				end: 'bottom top',
-				scrub: 3,
+				scrub: 5,
 				pin: true,
 				ease: 'power2.out',
 			},
