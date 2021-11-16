@@ -2,13 +2,13 @@
 	<div class="footer__container container">
 		<div class="footer__base">
 			{% if header.logo.href %}
-				<a class="footer__logo" href="{{ header.logo.href }}">
+				<a class="footer__logo" href="{{ header.logo.href }}" data-fade-in-up>
 					{% view '@icon' with {
 						icon: header.logo
 					} %}
 				</a>
 			{% else %}
-				<div class="footer__logo footer__logo--active">
+				<div class="footer__logo footer__logo--active" data-fade-in-up>
 					{% view '@icon' with {
 						icon: header.logo
 					} %}
@@ -16,7 +16,7 @@
 			{% endif %}
 			{% if footer.form %}
 				<form{% if footer.form.id %} id="{{ footer.form.id }}"{% endif %}{% if footer.form.method %} method="{{ footer.form.method }}"{% endif %}{% if footer.form.action %} action="{{ footer.form.action }}"{% endif %}{% if footer.form.name %} name="{{ footer.form.name }}"{% endif %}
-					class="footer__form"{% if footer.form.attr %} {{ footer.form.attr }}{% endif %}>
+					class="footer__form"{% if footer.form.attr %} {{ footer.form.attr }}{% endif %} data-fade-in-up>
 					<div class="footer__search">
 						{% view '@field' with {
 							field: footer.form.search
@@ -29,15 +29,16 @@
 					<div class="footer__group">
 						{% if group.headLink %}
 							{% if group.headLink.active %}
-								<span class="footer__head-link h3 is-active">{{ group.headLink.text }}</span>
+								<span class="footer__head-link h3 is-active" data-fade-in-up>{{ group.headLink.text }}</span>
 							{% else %}
 								<a href="{{ group.headLink.href }}"
-								   class="footer__head-link h3"{% if group.headLink.external %} target="_blank"{% endif %}>{{ group.headLink.text }}</a>
+								   class="footer__head-link h3"{% if group.headLink.external %} target="_blank"{% endif %} data-fade-in-up>{{ group.headLink.text }}</a>
 							{% endif %}
 						{% endif %}
 						<ul class="footer__list">
 							{% for item in group.items %}
-								<li class="footer__item">
+								<li class="footer__item" data-fade-in-up
+						 data-delay="{{ (loop.index0 / 10)|round(2, 'floor') }}">
 									{% if item.active %}
 										<span class="footer__link is-active">{{ item.text }}</span>
 									{% else %}
@@ -51,7 +52,7 @@
 				{% endfor %}
 			</div>
 			{% if footer.contacts %}
-				<div class="footer__contacts">
+				<div class="footer__contacts" data-fade-in-up>
 					{% if footer.contacts.title %}
 						<p class="footer__title">{{ footer.contacts.title }}</p>
 					{% endif %}
@@ -68,7 +69,8 @@
 			{% endif %}
 			<ul class="footer__links">
 				{% for item in footer.links %}
-					<li class="footer__item">
+					<li class="footer__item" data-fade-in-up
+						 data-delay="{{ (loop.index0 / 10)|round(2, 'floor') }}">
 						{% if item.active %}
 							<span class="footer__link is-active">{{ item.text }}</span>
 						{% else %}
@@ -81,7 +83,8 @@
 			{% if footer.socials %}
 				<ul class="footer__socials">
 					{% for item in footer.socials %}
-						<li class="footer__item">
+						<li class="footer__item" data-fade-in-up
+						 data-delay="{{ (loop.index0 / 10)|round(2, 'floor') }}">
 							<a href="{{ item.href }}" class="footer__link" target="_blank"
 							   rel="nofollow"{% if item.title %} title="{{ item.title }}"{% endif %}>
 								{% view '@icon' with {
