@@ -5,10 +5,19 @@
 	overflow: hidden;
 
 	&__top {
-		margin-bottom: rem(32);
+		margin-bottom: rem(24);
+
+
+		@include media-breakpoint-up(sm) {
+			margin-bottom: rem(0);
+		}
 
 		@include media-breakpoint-up(md) {
-			margin-bottom: rem(48);
+			margin-bottom: rem(19);
+		}
+
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(24);
 		}
 	}
 
@@ -133,6 +142,10 @@
 			padding-top: rem(14);
 			padding-left: rem(4);
 		}
+
+		.swiper-container {
+			padding-bottom: rem(30);
+		}
 	}
 
 	&__slide {
@@ -148,12 +161,19 @@
 		right: 0;
 		bottom: 0;
 		width: 100%;
+		
 
 		@include media-breakpoint-up(lg) {
 			background: linear-gradient(to left, #fff 50%, transparent 50%);
 		}
 		@include media-breakpoint-down(md) {
 			background-color: $color-white;
+			box-shadow: 0px 0px rem(16) rgba(0, 0, 0, 0.1);
+			z-index: 1;
+		}
+
+		@include media-breakpoint-down(sm) {
+			z-index: 0;
 		}
 	}
 
