@@ -45,6 +45,14 @@
 			width: calc((100% + 8px) / 12 * 2);
 			margin-right: calc((100% + 8px) / 12 * 4);
 		}
+
+		&.animate {
+			path {
+				animation: dash 2.5s ease 0.5s forwards;
+				stroke-dasharray: 280;
+				stroke-dashoffset: 280;
+			}
+		}
 	}
 
 	&__text {
@@ -56,5 +64,11 @@
 			width: calc((100% + 8px) / 12 * 5);
 			margin-top: rem(50);
 		}
+	}
+}
+
+@keyframes dash {
+	to {
+		stroke-dashoffset: 0;
 	}
 }
