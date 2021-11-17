@@ -37,7 +37,7 @@
 				}
 			},
 			{
-				"title": "Компания Artel экспортировала продукцию на сумму более $80 млн за 2020 год",
+				"title": "Компания Artel",
 				"action": {
 					"href": "javascript:void(0);",
 					"text": "Подробнее о группе",
@@ -46,10 +46,9 @@
 						"name": "24/arrow-up-right"
 					}
 				},
-				"image": {
-					"src": "tmp/main-hero/hero-desk-2.jpg",
-					"alt": "image alt",
-					"fill": true
+				"video": {
+					"attr": "video-main",
+					"src": "tmp/video/video-1.mp4"
 				},
 				"dark": true,
 				"overlay": true

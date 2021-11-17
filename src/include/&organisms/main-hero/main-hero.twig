@@ -5,19 +5,30 @@
 				data-slide>
 				<div class="main-hero__shell">
 					<div class="main-hero__inner">
-						<div class="main-hero__image-wrap" data-image-wrap>
-							<div class="main-hero__image" data-image>
-								{% if slide.image.tab or slide.image.mob %}
-									{% view '@image-adaptive' with {
-										image: slide.image
+						{% if slide.video %}
+							<div class="main-hero__frame-wrap" data-image-wrap>
+								<div class="main-hero__frame" data-image>
+									{% view '^video-box' with {
+										video: slide.video
 									} %}
-								{% else %}
-									{% view '@image' with {
-										image: slide.image
-									} %}
-								{% endif %}
+								</div>
 							</div>
-						</div>
+						{% endif %}
+						{% if slide.image %}
+							<div class="main-hero__image-wrap" data-image-wrap>
+								<div class="main-hero__image" data-image>
+									{% if slide.image.tab or slide.image.mob %}
+										{% view '@image-adaptive' with {
+											image: slide.image
+										} %}
+									{% else %}
+										{% view '@image' with {
+											image: slide.image
+										} %}
+									{% endif %}
+								</div>
+							</div>
+						{% endif %}
 						<div class="main-hero__container container">
 							<div class="main-hero__content"  data-fade-in-up>
 								<h2 class="main-hero__title h1" data-title>{{ slide.title }}</h2>

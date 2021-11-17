@@ -254,7 +254,7 @@
 
         @include media-breakpoint-up(sm) {
            width: 100vw;
-           transform: translateY(#{rem(-308)});
+           transform: translateY(#{rem(-298)});
            margin-left: 0;
            margin-right: rem(-100);
            height: auto;
@@ -263,7 +263,7 @@
         
         @include media-breakpoint-up(md) {
 			margin-right: rem(-125);
-            transform: translateY(#{rem(-236)});
+            transform: translateY(#{rem(-228)});
 		}
 
 		@include media-breakpoint-up(lg) {
