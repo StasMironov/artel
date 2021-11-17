@@ -187,6 +187,7 @@ export default class Map {
 			this.cardWrap.classList.remove('is-active');
 			this.filterMarkers(); // показ всех меток текущего региона
 			this.map.fitBounds(this.bounds);
+			this.activeIndex = null;
 		});
 
 		this.ps = new PerfectScrollbar(this.cardContent, {
