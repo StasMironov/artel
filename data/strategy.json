@@ -208,7 +208,7 @@
 		}
 	},
 	"video": {
-		"id": "video-strategy",
+		"id": "video-main",
 		"src": "tmp/istockphoto-504807370-640_adpp_is.mp4"
 	},
 	"strategy_slider": {

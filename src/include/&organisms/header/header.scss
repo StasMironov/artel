@@ -138,7 +138,7 @@
 			height: rem(492);
 			background-color: $color-white;
 			content: "";
-			transform: translateY(-100%);
+			transform: translateY(-101%);
 		}
 
 		@at-root .content-loaded &[data-submenu-trigger]:after {

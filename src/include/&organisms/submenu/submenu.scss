@@ -37,12 +37,20 @@
 		color: $color-black;
 		@include defaultTransition(color);
 
-		@include touchLessHover {
-			color: rgba($color-black, 0.4);
-		}
+		// @include touchLessHover {
+		// 	color: rgba($color-black, 0.4);
+		// }
 
 		&--active {
 			color: rgba($color-black, 0.4);
+		}
+
+		&.no-hover {
+			color: rgba($color-black, 0.4);
+		}
+
+		&.is-hover {
+			color: rgba($color-black,1);
 		}
 	}
 
