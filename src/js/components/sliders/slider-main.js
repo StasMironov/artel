@@ -15,6 +15,7 @@ export default class Slider {
 			arrows: '.nav-arrows',
 			number: '[data-number]',
 			progressLine: '[data-progress]',
+			videoNode: '[video-main]',
 		};
 
 		if (this.sliderWrapNode) this.render();
@@ -128,6 +129,14 @@ export default class Slider {
 
 			this.timerTimeline.play();
 		}
+
+		const activeVideoNode = this.slides[this.activeIndex].querySelector(
+			this.selectors.videoNode
+		);
+
+		if (activeVideoNode) {
+			this.videoCheck(activeVideoNode);
+		}
 	}
 
 	calcPrevNextIndex(direction = 'next') {
@@ -175,9 +184,7 @@ export default class Slider {
 
 		this.classToggle(this.slides[this.activeIndex], true); // удаление класса is-active и добавление is-prev
 		// if (this.slides[this.activeIndex].querySelector('[video-main]')) {
-		// 	this.slides[this.activeIndex]
-		// 		.querySelector('[video-main]')[0]
-		// 		.pause();
+		// 	this.slides[this.activeIndex].querySelector('[video-main]').pause();
 		// }
 
 		if (this.autoplayInterval) {
@@ -191,15 +198,6 @@ export default class Slider {
 		this.numbersClassToggle(this.activeIndex); // смена активной кнопки
 
 		this.classToggle(this.slides[this.activeIndex], false); // добавление класса is-active
-		// if (this.slides[this.activeIndex].querySelector('[video-main]')) {
-		// 	// this.slides[this.activeIndex]
-		// 	// 	.querySelector('[video-main]')[0]
-		// 	// 	.play();
-
-		// 	console.log(
-		// 		this.slides[this.activeIndex].querySelector('[video-main]')
-		// 	);
-		// }
 
 		this.dark = this.slides[this.activeIndex].classList.contains('is-dark'); // если активный слайд - is-dark
 
@@ -330,8 +328,21 @@ export default class Slider {
 			}
 			slide.classList.add('is-prev');
 			slide.classList.remove('is-active');
+
+			const prevVideoNode = slide.querySelector(this.selectors.videoNode);
+
+			if (prevVideoNode) {
+				this.videoCheck(prevVideoNode, true);
+			}
 		} else {
 			slide.classList.add('is-active');
+			const activeVideoNode = this.slides[this.activeIndex].querySelector(
+				this.selectors.videoNode
+			);
+
+			if (activeVideoNode) {
+				this.videoCheck(activeVideoNode);
+			}
 		}
 	}
 
@@ -343,5 +354,24 @@ export default class Slider {
 		}
 
 		this.numbers[idx].classList.add('is-active');
+	}
+
+	videoCheck(node, hidden = false) {
+		if (hidden) {
+			const video = node;
+
+			if (video) {
+				video.pause();
+				video.currentTime = 0;
+			}
+		} else {
+			const video = node;
+
+			if (video) {
+				video.currentTime = 0;
+				console.log(video);
+				video.play();
+			}
+		}
 	}
 }
