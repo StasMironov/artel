@@ -6,7 +6,12 @@ import { isDesktop } from '../../utils/breakpoints';
 
 class Strategy {
 	constructor(props) {
-		if (!(props.wrap instanceof HTMLElement)) return;
+		if (
+			!(props.wrap instanceof HTMLElement) ||
+			!isDesktop() ||
+			document.documentElement.classList.contains('is-touch')
+		)
+			return;
 		this.wrap = props.wrap;
 
 		this.cards = this.wrap.querySelectorAll('[data-card]');
