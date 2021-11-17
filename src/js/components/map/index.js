@@ -116,7 +116,7 @@ export default class Map {
 					stylers: [{ color: '#dedede' }, { lightness: 21 }],
 				},
 				{
-					featureType: 'null',
+					featureType: 'landscape',
 					elementType: 'labels.text.stroke',
 					stylers: [
 						{ visibility: 'on' },
@@ -125,7 +125,6 @@ export default class Map {
 					],
 				},
 				{
-					featureType: 'null',
 					elementType: 'labels.icon',
 					stylers: [{ visibility: 'off' }],
 				},

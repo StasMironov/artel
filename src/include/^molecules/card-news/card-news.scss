@@ -34,8 +34,7 @@
 
 	&__title {
 		max-width: rem(270);
-		transition: transform 1.2s ease calc(var(--delay) * 1s),
-		color .3s ease;
+		transition: color .5s ease;
 		
 		@include media-breakpoint-only(md) {
 			@include line-clamp(16, 1.4, 3);

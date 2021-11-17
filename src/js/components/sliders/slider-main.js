@@ -15,7 +15,7 @@ export default class Slider {
 			arrows: '.nav-arrows',
 			number: '[data-number]',
 			progressLine: '[data-progress]',
-			videoNode: '[video-main]',
+			videoNode: '[data-video-main]',
 		};
 
 		if (this.sliderWrapNode) this.render();
@@ -355,14 +355,14 @@ export default class Slider {
 
 	videoCheck(node, hidden = false) {
 		if (hidden) {
-			const video = node;
+			const video = node.querySelector('video');
 
 			if (video) {
 				video.pause();
 				video.currentTime = 0;
 			}
 		} else {
-			const video = node;
+			const video = node.querySelector('video');
 
 			if (video) {
 				video.currentTime = 0;
