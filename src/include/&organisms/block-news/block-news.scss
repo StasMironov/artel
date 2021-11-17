@@ -71,8 +71,8 @@
 		height: 1px;
 		background-color: rgba($color-black, .1);
 		transform-origin: left;
-		transition: transform 1.2s ease calc(var(--delay) * 1s),
-		color .3s ease;
+		transition: transform 1s ease .5s,
+		background .5s ease;
 		transform: scaleX(0);
 
 		.animate + & {

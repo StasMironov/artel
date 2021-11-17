@@ -63,6 +63,11 @@
 		// 	left: -18%;
 		// 	width: 160%;
 		// }
+
+		@media screen and (min-device-width: 1024px) and (max-device-width: 1024px) {
+			left: 2%;
+			width: 190%;
+		}
 	}
 
 	&__image, &__frame{
@@ -73,14 +78,17 @@
 		height: 69%;
 		pointer-events: none;
 
-		@media(max-width: 1024px){
-			left: -33%;
-			width: 85%;
-		}
+
+		
 
 		@include media-breakpoint-down(md) {
 			left: -17%;
 			width: 69%;
+		}
+
+		@media screen and (min-device-width: 1024px) and (max-device-width: 1024px) {
+			left: -33%;
+			width: 85%;
 		}
 	
 

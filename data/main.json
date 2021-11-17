@@ -47,8 +47,9 @@
 					}
 				},
 				"video": {
-					"attr": "video-main",
-					"src": "tmp/video/video-1.mp4"
+					"attr": "data-video-main",
+					"src": "tmp/video/video-1.mp4",
+					"type": "video/mp4"
 				},
 				"dark": true,
 				"overlay": true
