@@ -112,6 +112,7 @@
 
 	&__heading {
 		margin-bottom: rem(32);
+		opacity: 0;
 	}
 
 	&__caption {
@@ -120,6 +121,8 @@
 	}
 
 	&__item {
+		opacity: 0;
+
 		&:not(:first-child) {
 			margin-top: rem(24);
 		}
