@@ -1,6 +1,7 @@
 import { Loader } from 'google-maps';
 import PerfectScrollbar from 'perfect-scrollbar';
 import Swiper from 'swiper/swiper-bundle';
+import gsap from 'gsap';
 
 export default class Map {
 	constructor() {
@@ -322,6 +323,7 @@ export default class Map {
 		if (markerData.heading) {
 			heading = document.createElement('p');
 			heading.classList.add('card-map__heading', 'h2');
+			heading.setAttribute('data-item', '');
 
 			heading.innerText = markerData.heading;
 			this.cardContent.appendChild(heading);
@@ -338,6 +340,7 @@ export default class Map {
 
 			const item = document.createElement('div');
 			item.classList.add('card-map__item');
+			item.setAttribute('data-item', '');
 
 			if (markerData.phone.caption) {
 				caption = document.createElement('p');
@@ -378,8 +381,26 @@ export default class Map {
 			);
 		}
 
+		const items = this.cardContent.querySelectorAll('[data-item]');
+
+		if (!items.length > 0) return;
+
+		const timeline = gsap.timeline({
+			paused: true,
+		});
+
+		timeline.staggerFromTo(
+			items,
+			0.5,
+			{ opacity: 0, yPercent: 100 },
+			{ opacity: 1, yPercent: 0 },
+			0.2,
+			'+=0.4'
+		);
+
 		setTimeout(() => {
 			this.ps.update();
+			timeline.play();
 		}, 0);
 	}
 
@@ -390,6 +411,7 @@ export default class Map {
 
 		const item = document.createElement('div');
 		item.classList.add('card-map__item');
+		item.setAttribute('data-item', '');
 
 		if (data.caption) {
 			caption = document.createElement('p');

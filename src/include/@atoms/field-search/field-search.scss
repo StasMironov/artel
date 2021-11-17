@@ -8,10 +8,11 @@
 	padding: 0 rem(80) rem(4) 0;
 	background-color: transparent;
 	color: $color-white;
-	border-bottom: 1px solid $color-white;
+	// border-bottom: 1px solid $color-white;
 	outline: none;
 	@include defaultTransition(border-color);
 	@include text-body;
+
 
 	@include media-breakpoint-up(md) {
 		padding: 0 rem(80) 0 0;
@@ -116,4 +117,31 @@
 
 .input-search-shell {
 	position: relative;
+
+	&:after {
+		position: absolute;
+		content: "";
+		width: 0%;
+		height: 1px;
+		background-color: rgba($color-white, 0.4);
+		left: 0;
+		bottom: rem(-7);
+		transition: width 1.2s ease calc(0.2 * 0.5s), background-color .3s;
+
+		@include media-breakpoint-down(md) {
+			bottom: rem(-1);
+		}
+	}
+
+	@at-root .animate & {
+		&:after {
+			width: 100%;
+		}
+	}
+
+	@include touchLessHover {
+		&:after {
+			background-color: rgba($color-white, 1);
+		}
+	}
 }
