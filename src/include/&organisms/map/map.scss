@@ -110,7 +110,6 @@
 	}
 
 	&__container {
-		pointer-events: none; 
 		#{$root}__top & {
 			@include media-breakpoint-up(lg) {
 				display: flex;
@@ -118,9 +117,7 @@
 			}
 		}
 
-		#{$root}__legend & {
-
-		}
+		
 	}
 
 	&__heading {
@@ -164,16 +161,32 @@
 		
 
 		@include media-breakpoint-up(lg) {
-			background: linear-gradient(to left, #fff 50%, transparent 50%);
+			// background: linear-gradient(to left, #fff 50%, transparent 50%);
 		}
 		@include media-breakpoint-down(md) {
 			background-color: $color-white;
-			box-shadow: 0px 0px rem(16) rgba(0, 0, 0, 0.1);
+		//	box-shadow: 0px 0px rem(16) rgba(0, 0, 0, 0.1);
 			z-index: 1;
 		}
 
 		@include media-breakpoint-down(sm) {
 			z-index: 0;
+		}
+
+		&:after {
+			position: absolute;
+			content: "";
+			width: 50%;
+			height: 100%;
+			right: 0;
+			box-shadow: 0px 0px rem(16) rgba(0, 0, 0, 0.1);
+			bottom: 0;
+			background-color: $color-white;
+
+			@include media-breakpoint-down(md) {
+				width: 100%;
+			}
+	
 		}
 	}
 
@@ -181,6 +194,8 @@
 		width: 100%;
 		padding: rem(24) 0;
 		pointer-events: auto;
+		position: relative;
+    	z-index: 1;
 
 		@include media-breakpoint-up(lg) {
 			width: 50%;
