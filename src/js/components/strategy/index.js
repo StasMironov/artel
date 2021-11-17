@@ -1,5 +1,6 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { Power0 } from 'gsap/all';
 import { debounce } from 'throttle-debounce';
 import { isDesktop } from '../../utils/breakpoints';
 
@@ -49,10 +50,10 @@ class Strategy {
 				id: this.scrollTriggerId,
 				trigger: this.wrap,
 				start: 'center center',
-				end: 'bottom top',
-				scrub: 5,
+				end: `+=${this.cards.length - 1}00%`,
+				scrub: true,
 				pin: true,
-				ease: 'power2.out',
+				ease: Power0.easeInOut,
 			},
 		});
 		this.cards.forEach((card, index, arr) => {
