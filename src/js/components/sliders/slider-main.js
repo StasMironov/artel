@@ -183,9 +183,6 @@ export default class Slider {
 		this.sliderWrapNode.classList.add('in-transition'); // для transition-delay при смене слайдов
 
 		this.classToggle(this.slides[this.activeIndex], true); // удаление класса is-active и добавление is-prev
-		// if (this.slides[this.activeIndex].querySelector('[video-main]')) {
-		// 	this.slides[this.activeIndex].querySelector('[video-main]').pause();
-		// }
 
 		if (this.autoplayInterval) {
 			// автоматическая смена слайдов
@@ -369,7 +366,6 @@ export default class Slider {
 
 			if (video) {
 				video.currentTime = 0;
-				console.log(video);
 				video.play();
 			}
 		}
