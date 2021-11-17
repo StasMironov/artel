@@ -52,7 +52,7 @@
 		overflow: hidden;
 	}
 
-	&__image-wrap {
+	&__image-wrap, &__frame-wrap {
 		position: absolute;
 		top: -25%;
 		left: 25%;
@@ -65,7 +65,7 @@
 		// }
 	}
 
-	&__image {
+	&__image, &__frame{
 		position: absolute;
 		top: 16%;
 		left: -17%;
@@ -82,9 +82,6 @@
 			left: -17%;
 			width: 69%;
 		}
-			
-		
-
 	
 
 		#{$root}__slide.has-overlay & {

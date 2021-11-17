@@ -95,6 +95,7 @@
 		@include media-breakpoint-up(lg) {
 			display: flex;
 			flex-direction: column;
+			transform: none !important;
 		}
 	}
 

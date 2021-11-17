@@ -90,7 +90,9 @@ export default class Slider {
 		});
 
 		this.manager = new Hammer.Manager(this.sliderWrapNode);
-		this.swipe = new Hammer.Swipe({direction: Hammer.DIRECTION_HORIZONTAL});
+		this.swipe = new Hammer.Swipe({
+			direction: Hammer.DIRECTION_HORIZONTAL,
+		});
 		this.manager.add(this.swipe);
 
 		this.manager.on('swipeleft', () => {
@@ -172,6 +174,11 @@ export default class Slider {
 		this.sliderWrapNode.classList.add('in-transition'); // для transition-delay при смене слайдов
 
 		this.classToggle(this.slides[this.activeIndex], true); // удаление класса is-active и добавление is-prev
+		// if (this.slides[this.activeIndex].querySelector('[video-main]')) {
+		// 	this.slides[this.activeIndex]
+		// 		.querySelector('[video-main]')[0]
+		// 		.pause();
+		// }
 
 		if (this.autoplayInterval) {
 			// автоматическая смена слайдов
@@ -184,6 +191,15 @@ export default class Slider {
 		this.numbersClassToggle(this.activeIndex); // смена активной кнопки
 
 		this.classToggle(this.slides[this.activeIndex], false); // добавление класса is-active
+		// if (this.slides[this.activeIndex].querySelector('[video-main]')) {
+		// 	// this.slides[this.activeIndex]
+		// 	// 	.querySelector('[video-main]')[0]
+		// 	// 	.play();
+
+		// 	console.log(
+		// 		this.slides[this.activeIndex].querySelector('[video-main]')
+		// 	);
+		// }
 
 		this.dark = this.slides[this.activeIndex].classList.contains('is-dark'); // если активный слайд - is-dark
 
