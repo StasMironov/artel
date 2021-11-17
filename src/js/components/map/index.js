@@ -1,5 +1,5 @@
-import {Loader} from 'google-maps';
-import PerfectScrollbar from "perfect-scrollbar";
+import { Loader } from 'google-maps';
+import PerfectScrollbar from 'perfect-scrollbar';
 import Swiper from 'swiper/swiper-bundle';
 
 export default class Map {
@@ -24,7 +24,7 @@ export default class Map {
 
 		this.APIKEY = 'AIzaSyBKxxX68AJCEH2DX3_j0u1knkD6__xrYAk'; // TODO использовать только на этом проекте
 		this.initOptions = {
-			language: "RU"
+			language: 'RU',
 		};
 
 		this.ps = null;
@@ -35,15 +35,14 @@ export default class Map {
 	}
 
 	load() {
-		this.loader.load()
-			.then((google) => {
-				this.render(google);
-			});
+		this.loader.load().then((google) => {
+			this.render(google);
+		});
 	}
 
 	render(google) {
 		this.mapOptions = {
-			center: {lat: 55.02147974086529, lng: 82.92257557883947},
+			center: { lat: 55.02147974086529, lng: 82.92257557883947 },
 			zoom: 4,
 			disableDefaultUI: true,
 			scrollwheel: false,
@@ -61,121 +60,95 @@ export default class Map {
 				{
 					featureType: 'water',
 					elementType: 'geometry',
-					stylers: [
-						{color: '#E0E0E0'},
-						{lightness: 17}
-					],
+					stylers: [{ color: '#E0E0E0' }, { lightness: 17 }],
 				},
 				{
 					featureType: 'landscape',
 					elementType: 'all',
 					stylers: [
-						{lightness: 20},
-						{visibility: 'on'},
-						{color: '#ffffff'},
+						{ lightness: 20 },
+						{ visibility: 'on' },
+						{ color: '#ffffff' },
 					],
 				},
 				{
 					featureType: 'landscape.man_made',
 					elementType: 'geometry.stroke',
 					stylers: [
-						{visibility: 'on'},
-						{color: '#dddddd'},
-						{lightness: -30}
+						{ visibility: 'on' },
+						{ color: '#dddddd' },
+						{ lightness: -30 },
 					],
 				},
 				{
 					featureType: 'road.highway',
 					elementType: 'geometry.fill',
-					stylers: [
-						{color: '#ffffff'},
-						{lightness: 17}
-					],
+					stylers: [{ color: '#ffffff' }, { lightness: 17 }],
 				},
 				{
 					featureType: 'road.highway',
 					elementType: 'geometry.stroke',
 					stylers: [
-						{color: '#ffffff'},
-						{lightness: 29},
-						{weight: 0.2}
+						{ color: '#ffffff' },
+						{ lightness: 29 },
+						{ weight: 0.2 },
 					],
 				},
 				{
 					featureType: 'road.arterial',
 					elementType: 'geometry',
-					stylers: [
-						{color: '#ffffff'},
-						{lightness: 18}
-					],
+					stylers: [{ color: '#ffffff' }, { lightness: 18 }],
 				},
 				{
 					featureType: 'road.local',
 					elementType: 'geometry',
-					stylers: [
-						{color: '#ffffff'},
-						{lightness: 16}
-					],
+					stylers: [{ color: '#ffffff' }, { lightness: 16 }],
 				},
 				{
 					featureType: 'poi',
 					elementType: 'geometry',
-					stylers: [
-						{color: '#f5f5f5'},
-						{lightness: 21}
-					],
+					stylers: [{ color: '#f5f5f5' }, { lightness: 21 }],
 				},
 				{
 					featureType: 'poi.park',
 					elementType: 'geometry',
-					stylers: [
-						{color: '#dedede'},
-						{lightness: 21}
-					],
+					stylers: [{ color: '#dedede' }, { lightness: 21 }],
 				},
 				{
 					featureType: 'null',
 					elementType: 'labels.text.stroke',
 					stylers: [
-						{visibility: 'on'},
-						{color: '#ffffff'},
-						{lightness: 16}
+						{ visibility: 'on' },
+						{ color: '#ffffff' },
+						{ lightness: 16 },
 					],
 				},
 				{
 					featureType: 'null',
 					elementType: 'labels.icon',
-					stylers: [
-						{visibility: 'off'}
-					],
+					stylers: [{ visibility: 'off' }],
 				},
 				{
 					featureType: 'transit',
 					elementType: 'geometry',
-					stylers: [
-						{color: '#f2f2f2'},
-						{lightness: 19}
-					],
+					stylers: [{ color: '#f2f2f2' }, { lightness: 19 }],
 				},
 				{
 					featureType: 'administrative',
 					elementType: 'geometry.fill',
-					stylers: [
-						{color: '#bbbbbb'},
-						{lightness: 20}
-					],
+					stylers: [{ color: '#bbbbbb' }, { lightness: 20 }],
 				},
 				{
 					featureType: 'administrative',
 					elementType: 'geometry.stroke',
 					stylers: [
-						{color: '#aaaaaa'},
-						{lightness: 17},
-						{weight: 1.2}
+						{ color: '#aaaaaa' },
+						{ lightness: 17 },
+						{ weight: 1.2 },
 					],
 				},
 			],
-		}
+		};
 
 		this.map = new google.maps.Map(this.mapInitNode, this.mapOptions);
 
@@ -264,24 +237,26 @@ export default class Map {
 
 		this.bounds = null;
 
-		this.getPOI()
-			.then((data) => {
-				data.data.forEach((markerData, idx) => {
-					this.addMarker(markerData, idx);
-				});
-
-				if (this.currentRegion) {
-					this.bounds = null;
-					this.filterMarkers(false, true);
-				}
+		this.getPOI().then((data) => {
+			data.data.forEach((markerData, idx) => {
+				this.addMarker(markerData, idx);
 			});
+
+			if (this.currentRegion) {
+				this.bounds = null;
+				this.filterMarkers(false, true);
+			}
+		});
 	}
 
 	addMarker(markerData, index) {
 		const marker = new google.maps.Marker({
 			id: markerData.id,
 			exist: !!markerData.exist,
-			position: new google.maps.LatLng(markerData.coords[0], markerData.coords[1]),
+			position: new google.maps.LatLng(
+				markerData.coords[0],
+				markerData.coords[1]
+			),
 			icon: this.setIcon(markerData),
 			region: markerData.region,
 		});
@@ -290,7 +265,8 @@ export default class Map {
 		this.markers.push(marker);
 
 		marker.addListener('click', () => {
-			if (this.activeIndex !== index) { // заперт на повторный клик по активной метке
+			if (this.activeIndex !== index) {
+				// заперт на повторный клик по активной метке
 				this.showContent(markerData); // передача данных метки
 				this.cardWrap.classList.add('is-active'); // показ попапа с данными метки
 
@@ -303,54 +279,42 @@ export default class Map {
 		});
 	}
 
-	setIcon({type}) {
+	setIcon({ type }) {
+		let fillColor = '#000000';
+		if (type.trim() === 'service') {
+			fillColor = '#00D372';
+		} else if (type.trim() === 'factories') {
+			fillColor = '#000000';
+		} else {
+			fillColor = '#CE00F8';
+		}
+		const svg = `<svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27.4362 13.0009C27.2265 10.8039 26.491 8.68979 25.292 6.83705C24.0929 4.98431 22.4655 3.44742 20.5472 2.35627C18.6289 1.26511 16.4762 0.651746 14.2709 0.568008C12.0656 0.48427 9.87252 0.932617 7.87703 1.87516C5.88153 2.81771 4.14225 4.22676 2.80615 5.98323C1.47004 7.73971 0.576387 9.792 0.200694 11.9667C-0.174999 14.1414 -0.0216884 16.3745 0.64767 18.4775C1.31703 20.5804 2.48277 22.4913 4.04637 24.0487L12.6194 32.6379C12.7698 32.7895 12.9487 32.9099 13.1458 32.992C13.3429 33.0741 13.5543 33.1164 13.7679 33.1164C13.9814 33.1164 14.1928 33.0741 14.3899 32.992C14.587 32.9099 14.7659 32.7895 14.9163 32.6379L23.457 24.0487C24.8986 22.6179 26.0036 20.8842 26.6918 18.9733C27.3801 17.0624 27.6343 15.0222 27.4362 13.0009Z" fill="${fillColor}"/>		<path fill-rule="evenodd" clip-rule="evenodd" d="M20.7507 20.5581H13.7371C9.88303 20.5581 6.75073 17.3986 6.75073 13.5581C6.75073 9.70402 9.89665 6.55811 13.7507 6.55811C17.6048 6.55811 20.7507 9.70402 20.7507 13.5581V20.5581ZM18.204 13.5581V18.0114H13.7507C11.2994 18.0114 9.29743 15.9958 9.29743 13.5581C9.29743 11.1204 11.2994 9.1048 13.7507 9.1048C16.2021 9.1048 18.204 11.1204 18.204 13.5581Z" fill="white"/></svg>`;
 		const icon = {
-			path: "M31.292 10.2789C32.491 12.1317 33.2265 14.2458 33.4362 16.4427C33.6343" +
-				" 18.4641 33.3801 20.5043 32.6918 22.4152C32.0036 24.3261 30.8986 26.0598" +
-				" 29.457 27.4906L20.9163 36.0798C20.7659 36.2314 20.587 36.3518 20.3899" +
-				" 36.4339C20.1928 36.516 19.9814 36.5583 19.7679 36.5583C19.5543 36.5583" +
-				" 19.3429 36.516 19.1458 36.4339C18.9487 36.3518 18.7698 36.2314 18.6194" +
-				" 36.0798L10.0464 27.4906C8.48277 25.9332 7.31703 24.0223 6.64767 21.9194C5.97831" +
-				" 19.8164 5.825 17.5833 6.20069 15.4086C6.57639 13.2339 7.47004 11.1816 8.80615" +
-				" 9.42513C10.1422 7.66865 11.8815 6.2596 13.877 5.31706C15.8725 4.37451 18.0656" +
-				" 3.92616 20.2709 4.0099C22.4762 4.09364 24.6289 4.707 26.5472 5.79816C28.4655" +
-				" 6.88932 30.0929 8.4262 31.292 10.2789ZM19.7371 24H26.7507V17C26.7507 13.1459" +
-				" 23.6048 10 19.7507 10C15.8966 10 12.7507 13.1459 12.7507 17C12.7507 20.8405" +
-				" 15.883 24 19.7371 24ZM24.204 21.4533V17C24.204 14.5623 22.2021 12.5467 19.7507" +
-				" 12.5467C17.2994 12.5467 15.2974 14.5623 15.2974 17C15.2974 19.4377 17.2994" +
-				" 21.4533 19.7507 21.4533H24.204Z",
-			strokeOpacity: 0,
-			fillOpacity: 1.0,
-			scale: 1,
+			url: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg),
 			anchor: new google.maps.Point(20, 20),
 			labelOrigin: new google.maps.Point(20, 40),
 			origin: new google.maps.Point(-20, -20),
-			size: new google.maps.Size(40, 40),
-		}
+			size: new google.maps.Size(60, 60),
+		};
 
 		// цвет иконки в зависимости от типа метки
-		if (type.trim() === 'service') {
-			icon.fillColor = '#00D372';
-		} else if (type.trim() === 'factories') {
-			icon.fillColor = '#000000';
-		} else {
-			icon.fillColor = '#CE00F8';
-		}
 
 		return icon;
 	}
 
-	async getPOI() { // получение данных меток
+	async getPOI() {
+		// получение данных меток
 		const response = await fetch(this.urlData);
 
 		if (!response.ok) {
 			throw new Error(`There is some error by ${this.urlData}`);
 		}
 
-		return await response.json()
+		return await response.json();
 	}
 
-	showContent(markerData) { // контент попапа
+	showContent(markerData) {
+		// контент попапа
 		this.cardContent.innerHTML = '';
 
 		let heading = null;
@@ -364,7 +328,9 @@ export default class Map {
 		}
 
 		if (markerData.address) {
-			this.cardContent.appendChild(this.createElement(markerData.address));
+			this.cardContent.appendChild(
+				this.createElement(markerData.address)
+			);
 		}
 
 		if (markerData.phone) {
@@ -390,7 +356,7 @@ export default class Map {
 				for (let i = 0; i < markerData.phone.links.length; i++) {
 					links += `<li class='card-map__link-item'>
 								<a href='${markerData.phone.links[i].href}' class="card-map__link h3">${markerData.phone.links[i].text}</a>
-								</li>`
+								</li>`;
 				}
 
 				links += '</ul>';
@@ -407,7 +373,9 @@ export default class Map {
 		}
 
 		if (markerData.production) {
-			this.cardContent.appendChild(this.createElement(markerData.production));
+			this.cardContent.appendChild(
+				this.createElement(markerData.production)
+			);
 		}
 
 		setTimeout(() => {
@@ -415,7 +383,8 @@ export default class Map {
 		}, 0);
 	}
 
-	createElement(data) { // разметка для элементов попапа
+	createElement(data) {
+		// разметка для элементов попапа
 		let caption = null;
 		let text = null;
 
@@ -441,14 +410,16 @@ export default class Map {
 		return item;
 	}
 
-	filterMarkers(exclude = false, fit = false) { // отображение / скрытие меток
+	filterMarkers(exclude = false, fit = false) {
+		// отображение / скрытие меток
 		this.bounds = new google.maps.LatLngBounds();
 
 		for (let i = 0; i < this.markers.length; i++) {
 			if (this.markers[i].region !== this.currentRegion) {
 				this.markers[i].setVisible(false);
 			} else {
-				if (!exclude) { // если нужно исключить все метки, кроме выбранной
+				if (!exclude) {
+					// если нужно исключить все метки, кроме выбранной
 					this.markers[i].setVisible(true);
 
 					this.bounds.extend(this.markers[i].position);

@@ -10,14 +10,14 @@
 				{% endif %}
 			</div>
 			{% if submenu.links %}
-				<ul class="submenu__list">
+				<ul class="submenu__list" data-items>
 					{% for link in submenu.links %}
 						<li class="submenu__item" data-item>
 							{% if link.active %}
-								<span class="submenu__link submenu__link--active">{{ link.text }}</span>
+								<span class="submenu__link submenu__link--active" data-link>{{ link.text }}</span>
 							{% else %}
 								<a href="{{ link.href }}"
-								   class="submenu__link"{% if link.external %} target="_blank" rel="nofollow"{% endif %}>{{ link.text }}</a>
+								   class="submenu__link"{% if link.external %} target="_blank" rel="nofollow"{% endif %} data-link>{{ link.text }}</a>
 							{% endif %}
 						</li>
 					{% endfor %}

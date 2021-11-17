@@ -2,7 +2,7 @@
 	$root: &;
 
 	position: relative;
-	display: inline-block;
+	display: flex;
 	min-height: rem(22);
 	padding: 0;
 	color: rgba($color-black, 0.4);

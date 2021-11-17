@@ -7,7 +7,7 @@
 			<div class="card-news__date">{{ card.date }}</div>
 		{% endif %}
 		{% if card.title %}
-			<div class="card-news__title">{{ card.title }}</div>
+			<div class="card-news__title" style="--delay: {{ (0.2 + loop.index0 / 5)|round(2, 'floor') }}">{{ card.title }}</div>
 		{% endif %}
 		{% if card.image %}
 			<div class="card-news__image">
