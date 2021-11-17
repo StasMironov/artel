@@ -161,7 +161,7 @@
 		}
 
 		@include touchLessHover {
-			color: rgba($color-white, 0.4);
+			color: $color-green;
 		}
 
 		#{$root}__group & {
