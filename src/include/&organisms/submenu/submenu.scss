@@ -24,13 +24,13 @@
 
 	&__list {
 		columns: 2;
-		padding-top: rem(12);
+		padding-top: rem(4);
 		column-gap: rem(148);
 	}
 
 	&__item {
 		max-width: rem(300);
-		margin-bottom: rem(16);
+		padding: rem(8) 0;
 	}
 
 	&__link {
