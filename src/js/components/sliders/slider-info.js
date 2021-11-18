@@ -21,6 +21,7 @@ export default class Slider {
 			progressLine: '[data-progress]',
 			pag: '',
 		};
+		this.parallaxImage = null;
 
 		if (this.sliderWrapNode) this.render();
 	}
@@ -49,6 +50,9 @@ export default class Slider {
 			onComplete: () => {
 				this.sliderWrapNode.classList.remove('in-transition');
 				this.inTransition = false;
+				if (this.parallaxImage) {
+					this.initParallaxImage();
+				}
 			},
 		});
 
@@ -173,6 +177,11 @@ export default class Slider {
 			);
 
 			this.timerTimeline.play();
+		}
+
+		this.parallaxImage = this.sliderWrapNode.querySelectorAll('img');
+		if (this.parallaxImage) {
+			this.initParallaxImage();
 		}
 	}
 
@@ -432,5 +441,31 @@ export default class Slider {
 		}
 
 		this.numbers[idx].classList.add('is-active');
+	}
+
+	initParallaxImage() {
+		this.slides[this.activeIndex].addEventListener('mousemove', (e) => {
+			this.parallaxMove(this.parallaxImage, e, 0.013);
+		});
+
+		this.slides[this.activeIndex].addEventListener('mouseleave', (e) => {
+			this.parallaxEnd(this.parallaxImage);
+		});
+	}
+
+	parallaxMove(el, e, strafeAmount) {
+		gsap.to(el, {
+			x: -e.pageX * strafeAmount,
+			y: -e.pageY * strafeAmount,
+			duration: 1,
+		});
+	}
+
+	parallaxEnd(el) {
+		gsap.to(el, {
+			x: 0,
+			y: 0,
+			duration: 1,
+		});
 	}
 }
