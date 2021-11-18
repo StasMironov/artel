@@ -138,7 +138,47 @@
 			]
 		}
 	},
-	"menu": {},
+	"menu": {
+		"navigation": [
+			{
+				"text": "Решения",
+				"sublist": [
+					{
+						"text": "Терминалы сбора данных"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Программное обеспечение"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Готовое решение"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Аксессуары"
+					}
+				]
+			},
+			{
+				"text": "О компании"
+			},
+			{
+				"href": "javascript:void(0);",
+				"text": "База знаний",
+				"external": true
+			},
+			{
+				"href": "javascript:void(0);",
+				"text": "Блог",
+				"active": true
+			},
+			{
+				"href": "javascript:void(0);",
+				"text": "Контакты"
+			}
+		]
+	},
 	"footer": {
 		"logo": {
 			"href": "./",
