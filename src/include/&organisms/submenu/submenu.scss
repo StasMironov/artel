@@ -31,6 +31,7 @@
 	&__item {
 		max-width: rem(300);
 		padding: rem(8) 0;
+		break-inside: avoid;
 	}
 
 	&__link {
