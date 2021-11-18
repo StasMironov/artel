@@ -179,7 +179,7 @@ export default class Slider {
 			this.timerTimeline.play();
 		}
 
-		this.parallaxImage = this.sliderWrapNode.querySelectorAll('img');
+		this.parallaxImage = this.slides[this.activeIndex].querySelector('img');
 		if (this.parallaxImage) {
 			this.initParallaxImage();
 		}
@@ -245,6 +245,12 @@ export default class Slider {
 		this.dark = this.slides[this.activeIndex].classList.contains('is-dark'); // если активный слайд - is-dark
 
 		this.animation();
+		this.parallaxImage = this.slides[this.activeIndex].querySelector('img');
+
+		console.log(this.parallaxImage);
+		if (this.parallaxImage) {
+			this.initParallaxImage();
+		}
 	}
 
 	findNode(index, selector) {
@@ -444,11 +450,11 @@ export default class Slider {
 	}
 
 	initParallaxImage() {
-		this.slides[this.activeIndex].addEventListener('mousemove', (e) => {
+		this.sliderWrapNode.addEventListener('mousemove', (e) => {
 			this.parallaxMove(this.parallaxImage, e, 0.013);
 		});
 
-		this.slides[this.activeIndex].addEventListener('mouseleave', (e) => {
+		this.sliderWrapNode.addEventListener('mouseleave', (e) => {
 			this.parallaxEnd(this.parallaxImage);
 		});
 	}
@@ -457,7 +463,7 @@ export default class Slider {
 		gsap.to(el, {
 			x: -e.pageX * strafeAmount,
 			y: -e.pageY * strafeAmount,
-			duration: 1,
+			duration: 1.5,
 		});
 	}
 
@@ -465,7 +471,7 @@ export default class Slider {
 		gsap.to(el, {
 			x: 0,
 			y: 0,
-			duration: 1,
+			duration: 2,
 		});
 	}
 }
