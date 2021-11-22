@@ -1,6 +1,8 @@
 import gsap from 'gsap';
 import { throttle } from 'throttle-debounce';
 import PerfectScrollbar from 'perfect-scrollbar';
+import { debounce } from 'throttle-debounce';
+import { isDesktop } from '../../utils/breakpoints';
 
 export default {
 	init() {
@@ -32,6 +34,7 @@ export default {
 		});
 
 		let state = false;
+		let psSub;
 
 		const timelineTrigger = gsap.fromTo(
 			triggers,
@@ -39,7 +42,10 @@ export default {
 				opacity: 0,
 			},
 			{
-				stagger: 0.05,
+				stagger: {
+					each: 0.05,
+				},
+				className: '+=menu__item active',
 				opacity: 1,
 				duration: 0.12,
 				ease: 'power1.out',
@@ -53,6 +59,7 @@ export default {
 				burger.classList.add('active');
 				burger.classList.remove('not-active');
 				menuNode.classList.toggle('is-active');
+				state = false;
 
 				if (menuNode.classList.contains('is-active')) {
 					window._disableScroll();
@@ -85,7 +92,7 @@ export default {
 								'[data-sub-wrap]'
 							);
 
-							const psSub = new PerfectScrollbar(wrapSubNode, {
+							psSub = new PerfectScrollbar(wrapSubNode, {
 								suppressScrollX: true,
 								wheelPropagation: false,
 								minScrollbarLength: 140, // исправляет бесконечную прокрутку и баг с большим количеством элементов
@@ -126,6 +133,7 @@ export default {
 								tlSubItems.seek(100);
 							}
 							state = true;
+							psSub.update();
 						}
 					});
 				})
@@ -142,5 +150,31 @@ export default {
 				wrapNode.scrollTop = 0;
 			});
 		});
+
+		function resetState() {
+			menuNode.classList.remove('is-active');
+			burger.classList.remove('active');
+			burger.classList.add('not-active');
+			submenu.forEach((subMenu, idx) => {
+				subMenu.classList.remove('is-active');
+			});
+			timelineTrigger.reverse().delay(0);
+		}
+
+		window.addEventListener(
+			'resize',
+			debounce(100, () => {
+				if (psSub) {
+					psSub.update();
+				}
+				if (isDesktop()) {
+					parentNode.classList.remove('is-open');
+					window._enableScroll();
+				} else if (!isDesktop()) {
+					resetState();
+					parentNode.classList.remove('is-open');
+				}
+			})
+		);
 	},
 };
