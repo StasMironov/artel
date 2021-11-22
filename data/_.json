@@ -141,37 +141,214 @@
 	"menu": {
 		"navigation": [
 			{
-				"text": "Решения",
+				"text": "О группе",
+				"back": {
+					"icon": {
+						"name": "24/arrow-next-right",
+						"size": "24"
+					}
+				},
 				"sublist": [
 					{
-						"text": "Терминалы сбора данных"
+						"href": "mission.html",
+						"text": "Общая информация для инвесторов"
 					},
 					{
 						"href": "javascript:void(0);",
-						"text": "Программное обеспечение"
+						"text": "Презентации"
 					},
 					{
 						"href": "javascript:void(0);",
-						"text": "Готовое решение"
+						"text": "Соблюдение требований корпоративного управления"
 					},
 					{
 						"href": "javascript:void(0);",
-						"text": "Аксессуары"
+						"text": "Структура компании"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Совет директоров"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Руководство"
 					}
 				]
 			},
 			{
-				"text": "О компании"
+				"text": "Инвесторам",
+				"back": {
+					"icon": {
+						"name": "24/arrow-next-right",
+						"size": "24"
+					}
+				},
+				"sublist": [
+					{
+						"href": "javascript:void(0);",
+						"text": "Общая информация для инвесторов"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Презентации"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Соблюдение требований корпоративного управления"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Структура компании"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Совет директоров"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Руководство"
+					}
+				]
 			},
 			{
-				"href": "javascript:void(0);",
-				"text": "База знаний",
-				"external": true
+				"text": "Партнерам",
+				"back": {
+					"icon": {
+						"name": "24/arrow-next-right",
+						"size": "24"
+					}
+				},
+				"sublist": [
+					{
+						"href": "javascript:void(0);",
+						"text": "Общая информация для инвесторов"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Презентации"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Соблюдение требований корпоративного управления"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Структура компании"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Совет директоров"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Руководство"
+					}
+				]
 			},
 			{
-				"href": "javascript:void(0);",
-				"text": "Блог",
-				"active": true
+				"text": "Устойчивое развитие",
+				"back": {
+					"icon": {
+						"name": "24/arrow-next-right",
+						"size": "24"
+					}
+				},
+				"sublist": [
+					{
+						"href": "javascript:void(0);",
+						"text": "Общая информация для инвесторов"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Презентации"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Соблюдение требований корпоративного управления"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Структура компании"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Совет директоров"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Руководство"
+					}
+				]
+			},
+			{
+				"text": "Пресс-центр",
+				"back": {
+					"icon": {
+						"name": "24/arrow-next-right",
+						"size": "24"
+					}
+				},
+				"sublist": [
+					{
+						"href": "javascript:void(0);",
+						"text": "Общая информация для инвесторов"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Презентации"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Соблюдение требований корпоративного управления"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Структура компании"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Совет директоров"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Руководство"
+					}
+				]
+			},
+			{
+				"text": "Карьера",
+				"back": {
+					"icon": {
+						"name": "24/arrow-next-right",
+						"size": "24"
+					}
+				},
+				"sublist": [
+					{
+						"href": "javascript:void(0);",
+						"text": "Общая информация для инвесторов"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Презентации"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Соблюдение требований корпоративного управления"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Структура компании"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Совет директоров"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Руководство"
+					}
+				]
 			},
 			{
 				"href": "javascript:void(0);",

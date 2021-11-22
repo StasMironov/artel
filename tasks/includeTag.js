@@ -111,7 +111,6 @@ module.exports =  function includeTag(Twig, params) {
                             }
                         );
                     } catch (error) {
-                        console.log(error);
                         if (ignoreMissing) {
                             return '';
                         }
