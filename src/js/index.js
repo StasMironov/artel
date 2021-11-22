@@ -20,6 +20,7 @@ import Input from './components/input';
 import Strategy from './components/strategy';
 import BlockProduct from './components/block-product';
 import Modals from './components/modal';
+import Menu from './components/menu';
 
 import { devices } from './utils/breakpoints';
 
@@ -56,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	Submenu.init();
 	ScrollTo.init();
 	Modals.init();
+	Menu.init();
 
 	new Map();
 	validation.init();

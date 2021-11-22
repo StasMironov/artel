@@ -247,7 +247,6 @@ export default class Slider {
 		this.animation();
 		this.parallaxImage = this.slides[this.activeIndex].querySelector('img');
 
-		console.log(this.parallaxImage);
 		if (this.parallaxImage) {
 			this.initParallaxImage();
 		}
