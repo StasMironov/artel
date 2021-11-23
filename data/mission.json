@@ -135,7 +135,7 @@
 		}
 	},
 	"hero_default": {
-		"title": "",
+		"title": "Миссия компании",
 		"image": {
 			"src": "tmp/default-hero/hero-1.jpg",
 			"alt": "image alt",

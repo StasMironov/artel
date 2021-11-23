@@ -21,6 +21,7 @@
 .input,
 .textarea {
 	padding-top: rem(20);
+	-webkit-appearance: none;
 
 	@at-root .has-error & {
 		border-color: red !important;
@@ -88,4 +89,5 @@
 			}
 		}
 	}
+	
 }

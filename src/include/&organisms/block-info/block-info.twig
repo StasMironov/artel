@@ -21,7 +21,7 @@
                     {% if block_info.tabs_content %}
                         <div class="block-info__tabs-content">
                             {% for item in block_info.tabs_content %}
-                                <div class="block-info__pane{{ item.active ? ' is-active' }}" data-tab-pane="{{ loop.index }}" data-fade-in-up>
+                                <div class="block-info__pane{{ item.active ? ' is-active' }}" data-tab-pane="{{ loop.index }}" data-fade-in-up-repeat>
                                     {% if item.cards %}
                                         <div class="block-info__cards">
                                             {% for card in item.cards %}

@@ -294,8 +294,8 @@ export default class Map {
 			url: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg),
 			strokeOpacity: 0,
 			fillOpacity: 1.0,
-			anchor: new google.maps.Point(14, 17),
-			size: new google.maps.Size(40, 40),
+			anchor: google.maps.Point(10000, 10000),
+			size: new google.maps.Size(80, 80),
 		};
 
 		// цвет иконки в зависимости от типа метки

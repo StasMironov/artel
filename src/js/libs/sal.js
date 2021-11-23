@@ -13,9 +13,18 @@ export default {
 			rootMargin: '50px',
 		});
 
+		let fadeInUpRepeat = sal({
+			threshold: 0.05,
+			animateClassName: 'animate',
+			once: false,
+			selector: '[data-fade-in-up-repeat]',
+			rootMargin: '0px',
+		});
+
 		let fadeInUp = sal({
 			threshold: 0.05,
 			once: true,
+			animateClassName: 'animate',
 			selector: '[data-fade-in-up]',
 			rootMargin: '0px',
 		});

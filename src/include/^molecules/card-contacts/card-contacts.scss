@@ -134,10 +134,12 @@
 		@include media-breakpoint-up(sm) {
 			display: block;
 			margin-bottom: rem(52);
+			font-size: rem(20);
 		}
 		@include media-breakpoint-up(md) {
 			display: block;
 			margin-bottom: 0;
+			font-size: rem(24);
 		}
 
 		@include touchLessHover {
