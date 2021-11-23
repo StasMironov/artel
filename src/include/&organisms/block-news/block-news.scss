@@ -51,6 +51,18 @@
 		&.is-active {
 			display: block;
 		}
+
+		opacity: 0;
+
+		&:first-child {
+			opacity: 1;
+		}
+
+		&.animate {
+			#{$root}__card-border {
+				transform: scaleX(1);
+			}
+		}
 	}
 
 	&__cards {
@@ -71,13 +83,11 @@
 		height: 1px;
 		background-color: rgba($color-black, .1);
 		transform-origin: left;
-		transition: transform 1s ease .5s,
+		transition: transform 1s ease 5s,
 		background .5s ease;
 		transform: scaleX(0);
 
-		.animate + & {
-			transform: scaleX(1);
-		}
+		
 	}
 
 	&__card {

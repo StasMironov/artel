@@ -14,12 +14,12 @@
 			{% if block.tabs_content %}
 				<div class="block-news__tabs-content">
 					{% for item in block.tabs_content %}
-						<div class="block-news__pane{{ item.active ? ' is-active' }}" data-tab-pane="{{ loop.index }}" data-fade-in-up>
+						<div class="block-news__pane{{ item.active ? ' is-active' }}" data-tab-pane="{{ loop.index }}">
 							{% if item.cards %}
 								<div class="block-news__cards">
 									{% for card in item.cards %}
 										<div class="block-news__card">
-											<div data-fade-in-up data-delay="{{ (0.2 + loop.index0 / 5)|round(2, 'floor') }}">
+											<div data-fadein-up>
 												{% view '^card-news' with {
 													card: card
 												}%}

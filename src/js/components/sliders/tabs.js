@@ -1,3 +1,4 @@
+import gsap from 'gsap';
 import Slider from './constructor';
 import { isDesktop } from '../../utils/breakpoints';
 
@@ -27,6 +28,13 @@ export default {
 				},
 				on: {
 					init() {
+						const timeline = gsap.timeline({
+							paused: true,
+						});
+						const timelineItem = gsap.timeline({
+							paused: true,
+						});
+
 						const tabsContainer = this.el.closest(
 							'[data-tab-container]'
 						);
@@ -45,6 +53,19 @@ export default {
 							);
 							if (!panes || !tabs) return;
 
+							gsap.fromTo(
+								panes[0],
+								0.5,
+								{
+									opacity: 0,
+									y: 40,
+								},
+								{
+									opacity: 1,
+									yPercent: 0,
+								}
+							);
+
 							tabs.forEach((tab) => {
 								tab.addEventListener('click', (e) => {
 									e.preventDefault();
@@ -53,11 +74,50 @@ export default {
 									});
 									tab.classList.add('tab--active');
 									const id = tab.dataset.tab;
-									panes.forEach((pane) => {
+									panes.forEach((pane, index) => {
 										pane.classList.remove('is-active');
+										pane.classList.remove('animate');
 										const paneId = pane.dataset.tabPane;
+
 										if (paneId === id) {
 											pane.classList.add('is-active');
+											pane.classList.add('animate');
+
+											const items = pane.querySelectorAll(
+												'[data-fadein-up]'
+											);
+
+											timeline.fromTo(
+												pane,
+												0.5,
+												{
+													opacity: 0,
+													y: 40,
+												},
+												{
+													opacity: 1,
+													y: 0,
+												}
+											);
+
+											timeline.play();
+
+											if (items.length > 0) {
+												timelineItem.fromTo(
+													items,
+													{
+														opacity: 0,
+														y: 40,
+													},
+													{
+														stagger: 0.2,
+														duration: 0.8,
+														opacity: 1,
+														y: 0,
+													}
+												);
+												timelineItem.play();
+											}
 										}
 									});
 									// this.slideTo(
