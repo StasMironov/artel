@@ -32,7 +32,7 @@ export default class blockProduct {
 						pin: elem,
 						scrub: true,
 						start: `top top`,
-						end: '+=100%',
+						end: '+=200%',
 						onEnter() {
 							topNode.style.position = 'fixed';
 						},
