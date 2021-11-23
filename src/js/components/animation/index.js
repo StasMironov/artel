@@ -2,7 +2,6 @@ import gsap from 'gsap';
 import { isDesktop, isTablet } from '../../utils/breakpoints';
 
 const Animate = {
-
 	fadeInUp() {
 		const items = document.querySelectorAll('[data-fade-in-up]');
 		if (!items.length) return;

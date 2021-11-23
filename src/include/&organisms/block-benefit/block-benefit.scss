@@ -50,8 +50,13 @@
 	}
 
 	&__pane {
+		opacity: 0;
 		&:not(.is-active) {
 			display: none;
+		}
+
+		&:first-child {
+			opacity: 1;
 		}
 	}
 
