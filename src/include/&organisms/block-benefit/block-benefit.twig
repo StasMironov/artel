@@ -17,7 +17,7 @@
                     {% if block_benefit.tabs_content %}
                             <div class="block-benefit__tabs-content">
                                 {% for item in block_benefit.tabs_content %}
-                                    <div class="block-benefit__pane{{ item.active ? ' is-active' }}" data-tab-pane="{{ loop.index }}" data-fade-in-up-repeat>
+                                    <div class="block-benefit__pane{{ item.active ? ' is-active' }}" data-tab-pane="{{ loop.index }}">
                                         {% if item.cards %}
                                             <div class="block-benefit__cards">
                                                 {% for card in item.cards %}

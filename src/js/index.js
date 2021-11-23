@@ -12,7 +12,6 @@ import InputSearch from './components/input-search';
 import Sliders from './components/sliders';
 import Submenu from './components/submenu';
 import Animation from './components/animation';
-import AnimateRepeat from './components/animation-repeat';
 import Map from './components/map';
 import validation from './components/validation';
 import FormHandler from './components/form-handler';
@@ -48,7 +47,6 @@ window.addEventListener('init.input', () => {
 document.addEventListener('DOMContentLoaded', () => {
 	libs.init();
 	// Components
-	AnimateRepeat.init();
 	Animation.init();
 	Header.init();
 	Toggle.init();

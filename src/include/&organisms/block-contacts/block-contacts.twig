@@ -29,7 +29,7 @@
                     {% if block_contacts.tabs_content %}
                         <div class="block-contacts__tabs-content">
                             {% for item in block_contacts.tabs_content %}
-                               <div class="block-contacts__pane{{ item.active ? ' is-active' }}" data-tab-pane="{{ loop.index }}" data-fade-in-up>
+                               <div class="block-contacts__pane{{ item.active ? ' is-active' }}" data-tab-pane="{{ loop.index }}">
                                     {% if item.card %}
                                          <div class="block-contacts__card">  
                                                 {% view '^card-contacts' with {
@@ -48,7 +48,7 @@
              {% if block_contacts.tabs_content2 %}
                 <div class="block-contacts__tabs-content">
                     {% for item in block_contacts.tabs_content2 %}
-                        <div class="block-contacts__pane{{ item.active ? ' is-active' }}" data-tab-pane="{{ loop.index }}" data-fade-in-up>
+                        <div class="block-contacts__pane{{ item.active ? ' is-active' }}" data-tab-pane="{{ loop.index }}">
                             <div class="block-contacts__items">
                                 {% if item.cards %}
                                     {% for card in  item.cards %}
