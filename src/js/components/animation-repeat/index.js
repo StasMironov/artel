@@ -1,10 +1,9 @@
 import gsap from 'gsap';
 import { isDesktop, isTablet } from '../../utils/breakpoints';
 
-const Animate = {
-
+const AnimateRepeat = {
 	fadeInUp() {
-		const items = document.querySelectorAll('[data-fade-in-up]');
+		const items = document.querySelectorAll('[data-fade-in-up-repeat]');
 		if (!items.length) return;
 
 		for (let i = 0; i < items.length; i++) {
@@ -43,7 +42,7 @@ const Animate = {
 			);
 
 			item.addEventListener('sal:in', () => {
-				timeline.play();
+				timeline.restart();
 			});
 		}
 	},
@@ -54,7 +53,7 @@ const Animate = {
 };
 
 window.addEventListener('animate:fade', () => {
-	Animate.fadeInUp();
+	AnimateRepeat.fadeInUp();
 });
 
-export default Animate;
+export default AnimateRepeat;

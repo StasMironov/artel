@@ -28,7 +28,7 @@
 		border-radius: 50%;
 		background-color: rgba($color-white, .1);
 		transition-duration: 1s;
-		transition-delay: .3s;
+		transition-delay: calc(0.2 * 1s);
 		transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 		transition-property: transform;
 		transform: scale3d(0, 0, 0);
@@ -44,7 +44,15 @@
 		}
 	
 		@include media-breakpoint-down(sm) {
-			display: none;
+			width: rem(260);
+			height: rem(260);
+			right: auto;
+			left: rem(-38);
+			bottom: rem(-120);
+		}
+
+		.animate & {
+			transform: scale3d(1, 1, 1);
 		}
 	}
 
@@ -122,12 +130,13 @@
 	&__action {
 		pointer-events: auto;
 
-		@include media-breakpoint-up(lg) {
-			margin-left: rem(37);
-		}
 
 		@include media-breakpoint-up(md) {
 			margin-left: rem(93);
+		}
+
+		@include media-breakpoint-up(lg) {
+			margin-left: rem(37);
 		}
 
 		@include media-breakpoint-only(sm) {
@@ -136,7 +145,7 @@
 
 		@include touchLessHover {
 			& + #{$root}__hover {
-				transform: scale3d(1, 1, 1);
+				transform: scale3d(1.35, 1.35, 1.35);
 			}
 		}
 	}
