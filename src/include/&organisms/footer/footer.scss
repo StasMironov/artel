@@ -160,9 +160,9 @@
 			color: rgba($color-white, 0.4);
 		}
 
-		@include touchLessHover {
-			color: $color-green;
-		}
+		// @include touchLessHover {
+		// 	color: $color-green;
+		// }
 
 		#{$root}__group & {
 			color: rgba($color-white, 0.4);
@@ -185,6 +185,11 @@
 			background-color: rgba($color-white, 0.1);
 			text-align: center;
 			border-radius: 50%;
+			@include defaultTransition(background);
+
+			@include touchLessHover {
+				background-color: rgba($color-white, 0.2);
+			}
 
 			@include media-breakpoint-up(md) {
 				width: rem(56);
