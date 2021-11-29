@@ -3,6 +3,9 @@ import Slider from './constructor';
 import { isDesktop } from '../../utils/breakpoints';
 
 export default {
+	data: {
+		state: 0,
+	},
 	init() {
 		const slider = new Slider({
 			init: true,
