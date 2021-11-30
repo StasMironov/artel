@@ -12,7 +12,7 @@ export default class blockProduct {
 	}
 
 	render(node) {
-		if (this.supportsTouch) return;
+		//if (this.supportsTouch) return;
 
 		const topNode = node.querySelector('[data-pin-top]');
 		const progress = topNode.querySelector('[data-pin-progress]');

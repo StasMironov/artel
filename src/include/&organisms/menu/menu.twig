@@ -3,7 +3,7 @@
         <div class="menu__content" data-content>
             <ul class="menu__list">
                 {% for item in menu.navigation %}
-                    <li class="menu__item"{% if item.sublist %} data-trigger="{{loop.index0}}" {% endif %}>
+                    <li class="menu__item" data-trigger="{{loop.index0}}">
                         {% if item.href %}
 							<a href="{{ item.href }}"
 							   class="menu__link h2"{% if item.external %} target="_blank"{% endif %}>{{ item.text }}</a>
