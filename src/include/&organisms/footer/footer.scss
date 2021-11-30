@@ -69,6 +69,12 @@
 		@include media-breakpoint-up(md) {
 			margin-bottom: rem(90);
 		}
+
+		.footer__link {
+			@include touchLessHover {
+				color: $color-green;
+			}
+		}
 	}
 
 	&__groups {
@@ -103,6 +109,14 @@
 		}
 		@include media-breakpoint-down(sm) {
 			display: none;
+		}
+
+		&--aside {
+			.footer__link {
+				@include touchLessHover {
+					color: $color-green;
+				}
+			}
 		}
 	}
 

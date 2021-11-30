@@ -44,6 +44,22 @@
 		@include media-breakpoint-down(sm) {
 			padding: 0 rem(16) rem(8);
 		}
+
+		.ps__rail-y:before {
+			background: transparent;
+			top: rem(16);
+			bottom: rem(16);
+		}
+
+		.ps__thumb-y {
+			right: rem(7);
+			transform: translateY(rem(77));
+
+			&:before {
+				top: rem(16);
+				bottom: rem(112);
+			}
+		}
 	}
 
 	&__links {
@@ -147,6 +163,10 @@
 			left: 0;
 			@include defaultTransition(width);
 		}
+
+		&.h2 {
+			font-weight: 500;
+		}
 	}
 
 	&__roll {
@@ -173,6 +193,8 @@
 
 	&__wrapper {
 		padding: rem(111) rem(48) rem(51);
+		padding-right: rem(5);
+		height: 100%;
 
 		@include media-breakpoint-down(sm) {
 			padding: rem(32) rem(16) rem(32);
@@ -236,6 +258,11 @@
 
 		@include media-breakpoint-down(sm) {
 			padding: rem(16) rem(16) rem(16) rem(56);
+			height: 100%;
+		}
+
+		.ps__rail-y:before{
+			background-color: transparent;
 		}
 	}
 

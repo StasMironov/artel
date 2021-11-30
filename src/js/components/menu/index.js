@@ -2,9 +2,11 @@ import gsap from 'gsap';
 import { throttle } from 'throttle-debounce';
 import PerfectScrollbar from 'perfect-scrollbar';
 import { debounce } from 'throttle-debounce';
-import { isDesktop } from '../../utils/breakpoints';
+import { isDesktop, isMob } from '../../utils/breakpoints';
 
 export default {
+	psSub: '',
+	ps: '',
 	init() {
 		const menuNode = document.querySelector('[data-menu]');
 		if (!menuNode) return;
@@ -27,14 +29,17 @@ export default {
 		const wrapNode = document.querySelector('[data-content]');
 		if (!wrapNode) return;
 
-		const ps = new PerfectScrollbar(wrapNode, {
+		this.ps = new PerfectScrollbar(wrapNode, {
 			suppressScrollX: true,
 			wheelPropagation: false,
-			minScrollbarLength: 140, // исправляет бесконечную прокрутку и баг с большим количеством элементов
+			minScrollbarLength: 200, // исправляет бесконечную прокрутку и баг с большим количеством элементов
+		});
+
+		wrapNode.addEventListener('scroll', () => {
+			this.ps.update();
 		});
 
 		let state = false;
-		let psSub;
 
 		const timelineTrigger = gsap.fromTo(
 			triggers,
@@ -92,10 +97,14 @@ export default {
 								'[data-sub-wrap]'
 							);
 
-							psSub = new PerfectScrollbar(wrapSubNode, {
-								suppressScrollX: true,
-								wheelPropagation: false,
-								minScrollbarLength: 140, // исправляет бесконечную прокрутку и баг с большим количеством элементов
+							this.psSub = new PerfectScrollbar(wrapSubNode, {
+								wheelSpeed: 2,
+								wheelPropagation: true,
+								minScrollbarLength: 20,
+							});
+
+							wrapSubNode.addEventListener('scroll', () => {
+								this.psSub.update();
 							});
 
 							wrapSubNode.scrollTop = 0;
@@ -133,7 +142,7 @@ export default {
 								tlSubItems.seek(100);
 							}
 							state = true;
-							psSub.update();
+							this.psSub.update();
 						}
 					});
 				})
@@ -164,8 +173,8 @@ export default {
 		window.addEventListener(
 			'resize',
 			debounce(100, () => {
-				if (psSub) {
-					psSub.update();
+				if (this.psSub) {
+					this.psSub.update();
 				}
 				if (isDesktop()) {
 					parentNode.classList.remove('is-open');
@@ -173,6 +182,22 @@ export default {
 				} else if (!isDesktop()) {
 					resetState();
 					parentNode.classList.remove('is-open');
+				}
+
+				if (isMob()) {
+					this.ps.destroy();
+					this.psSub.destroy();
+				}
+			})
+		);
+
+		window.addEventListener(
+			'load',
+			debounce(100, () => {
+				if (isMob()) {
+					this.ps.destroy();
+					console.log(psSub);
+					this.psSub.destroy();
 				}
 			})
 		);
