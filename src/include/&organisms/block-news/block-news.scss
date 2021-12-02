@@ -67,10 +67,11 @@
 
 	&__cards {
 
+		margin: 0 rem(-8);
+	
 		@include media-breakpoint-up(md) {
 			display: flex;
 			flex-wrap: wrap;
-			margin-right: rem(-8);
 		}
 	}
 
@@ -86,13 +87,12 @@
 		transition: transform 1s ease 5s,
 		background .5s ease;
 		transform: scaleX(1);
-
-		
 	}
 
 	&__card {
 		position: relative;
 		padding-right: rem(8);
+		padding-left: rem(8);
 		padding-top: rem(32);
 		margin-bottom: rem(32);
 		@include last-row(1) {
@@ -150,11 +150,17 @@
 
 				@include media-breakpoint-down(sm) {
 					width: 100%;
+					margin-bottom: rem(32);
 				}
 			}
 
 			#{$root}__content {
 				grid-template-columns: 1fr;
+				margin-bottom: rem(48);
+
+				@include media-breakpoint-down(sm) {
+					margin-bottom: rem(80);
+				}
 			}
 
 			#{$root}__container {
@@ -206,18 +212,26 @@
 				&__wrapper {
 					display: flex;
 					align-items: center;
-					margin-bottom: rem(40);
+					margin-bottom: rem(80);
 
 					@include media-breakpoint-down(md) {
 						flex-wrap: wrap;
 						align-items: normal;
-						margin-bottom: rem(8);
+						margin-bottom: rem(48);
 					}
 
 					@include media-breakpoint-down(sm) {
-						margin-bottom: rem(-10);
+						margin-bottom: rem(32);
 					}
 					
+				}
+
+				&__pane {
+					transform: translateY(0) !important;
+				}
+
+				&__cards {
+					margin-bottom: rem(-48);
 				}
 			}
 		}

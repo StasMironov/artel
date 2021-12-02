@@ -24,6 +24,21 @@
 			color: rgba($color-black, 0.4) !important;
 		}
 	}
+
+	.select2-selection__arrow b {
+		display: block;
+		width: rem(24);
+		height: inherit;
+		background-image: url('/img/24/arrow-right.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		transform: rotate(90deg);
+	}
+
+	.select2-selection__arrow {
+		right: rem(3);
+	}
 }
 
 .select2-container {
@@ -64,4 +79,16 @@
 			background-color: $color-green;
 		}
 	}
+}
+
+.select2-results__options .ps__rail-y {
+	right: rem(5) !important;
+
+	&:before {
+		background: transparent;
+	}
+}
+
+.select2-dropdown {
+	box-shadow: rgba(31, 31, 31, 0.1) 0 5px 15px;
 }
