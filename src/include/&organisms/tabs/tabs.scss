@@ -112,12 +112,24 @@
 		}
 	}
 
-	&--layout-3 {
+	&--layout-3 &{
 		.swiper-wrapper {
 			@include media-breakpoint-up(md) {
 				display: flex;
 				flex-direction: column;
 			}
+		}
+	}
+
+	&--layout-4 &{
+		&__item:not(:last-child){
+			margin-bottom: 0;
+		}
+	}
+
+	&--horizontal {
+		.swiper-wrapper {
+			flex-direction: row;
 		}
 	}
 }

@@ -1,13 +1,14 @@
 .card-news {
 	position: relative;
 	$root: &;
-	@include media-breakpoint-up(md) {
-		height: rem(312);
-	}
+	height: 100%;
+	// @include media-breakpoint-up(md) {
+	// 	height: rem(312);
+	// }
 
-	@include media-breakpoint-up(lg) {
-		height: rem(350);
-	}
+	// @include media-breakpoint-up(lg) {
+	// 	height: rem(350);
+	// }
 
 	&__inner {
 		@include media-breakpoint-up(md) {
@@ -35,6 +36,7 @@
 	&__title {
 		max-width: rem(270);
 		transition: color .5s ease;
+		margin-bottom: rem(30);
 		
 		@include media-breakpoint-only(md) {
 			@include line-clamp(16, 1.4, 3);
@@ -43,6 +45,14 @@
 		@include media-breakpoint-up(lg) {
 			@include line-clamp(16, 1.4, 2);
 			max-width: rem(330);
+		}
+
+		@include media-breakpoint-down(md) {
+			max-width: initial;
+			margin-bottom: rem(54);
+		}
+		@include media-breakpoint-down(sm) {
+			margin-bottom: rem(0);
 		}
 	}
 
@@ -53,13 +63,17 @@
 		border-radius: 8px;
 		overflow: hidden;
 
+		height: 0;
+		padding-top: 56.25%;
+		overflow: hidden;
+
 		@include media-breakpoint-up(md) {
 			margin-top: auto;
 		}
 
-		@include media-breakpoint-up(lg) {
-			height: rem(240);
-		}
+		// @include media-breakpoint-up(lg) {
+		// 	height: rem(240);
+		// }
 	}
 
 	&__image .image {

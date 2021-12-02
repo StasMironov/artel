@@ -84,4 +84,16 @@
 			}
 		}
 	}
+
+	&--gray {
+		color: $color-black;
+		background-color: $color-gray;
+
+		@include touchLessHover {
+			&:not(#{$root}--non-interactive):not(:disabled):not(.button--disabled) {
+				color: $color-black;
+				background-color: $color-gray-light;
+			}
+		}
+	}
 }

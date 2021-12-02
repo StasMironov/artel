@@ -103,6 +103,7 @@
 		columns: 2;
 		column-gap: rem(8);
 		margin-bottom: rem(40);
+		
 
 		@include media-breakpoint-only(md) {
 			width: rem(440);

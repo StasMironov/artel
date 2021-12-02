@@ -12,6 +12,10 @@
 			{% view '@field-textarea' with {
 				field: field
 			} %}
+		{% elseif field.select %}
+			{% view '@field-select' with {
+				field: field
+			} %}
 		{% elseif field.checkbox or field.radio %}
 			{% view '@field-checkbox' with {
 				field: field

@@ -1,0 +1,46 @@
+.block-comm {
+	&__container {
+		padding-top: rem(112);
+		padding-bottom: rem(32);
+
+		@include media-breakpoint-down(sm) {
+			padding-top: rem(64);
+		}
+	}
+
+	&__title {
+		margin-bottom: rem(64);
+
+		@include media-breakpoint-down(sm) {
+			margin-bottom: rem(40);
+		}
+	}
+
+	&__wrap {
+		display: flex;
+		margin-right: rem(-4);
+		margin-left: rem(-4);
+
+		@include media-breakpoint-down(md) {
+			flex-direction: column;
+		}
+	}
+
+	&__el {
+		width: 50%;
+		margin-right: rem(4);
+		margin-left: rem(4);
+
+		@include media-breakpoint-down(md) {
+			width: 100%;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: rem(66);
+
+			@include media-breakpoint-down(sm) {
+				margin-bottom: rem(40);
+			}
+		}
+	}
+}

@@ -1,0 +1,452 @@
+//@import "~select2/dist/css/select2.css";
+
+.select2-hidden-accessible {
+	@include visually-hidden;
+}
+
+.select2-container {
+	$root: &;
+
+	position: relative;
+	display: inline-block;
+	min-width: rem(192);
+	width: 100%;
+	@include text-body;
+}
+
+.select2-selection {
+	$root: &;
+
+	display: flex;
+	align-items: center;
+	height: rem(48);
+	padding: 0 rem(56) 0 rem(16);
+	color: $color-black;
+	border: 1px solid $color-black;
+	border-radius: rem(8);
+	background-color: transparent;
+	cursor: pointer;
+	user-select: none;
+	@include defaultTransition(border-color);
+
+	@include touchLessHover {
+		border-color: $color-red;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	@at-root select.parsley-error ~ .select2 & {
+		// parsley-error styles
+	}
+
+	@at-root select.select--outline-none ~ .select2 & {
+		border: 0;
+	}
+
+	@at-root .select2-container.select2-container--disabled & {
+		background: rgba(#DCDCDC, 0.7);
+		cursor: default;
+		border-color: rgba($color-black, 0.7);
+	}
+
+	@at-root .select2-container:not(.select2-container--disabled) & {
+		@include touchLessHover {
+			#{$root}__placeholder {
+				color: $color-black;
+			}
+
+			#{$root}__rendered {
+				color: $color-black;
+			}
+		}
+	}
+
+	// theme black
+	@at-root .select2-container.select2-container--black & {
+		background-color: transparent;
+		border-color: $color-white;
+		color: rgba($color-white, 0.7);
+
+		@include touchLessHover {
+			color: $color-white;
+			border-color: $color-red;
+		}
+	}
+
+	@at-root .select2-container.select2-container--black.select2-container--disabled & {
+		background: rgba(#414141, 0.7);
+		border-color: rgba($color-white, 0.7);
+		color: rgba($color-white, 0.7);
+	}
+
+	@at-root .select2-container:not(.select2-container--disabled).select2-container--black & {
+		@include touchLessHover {
+			#{$root}__placeholder {
+				color: $color-white;
+			}
+
+			#{$root}__rendered {
+				color: $color-white;
+			}
+		}
+	}
+
+	// theme on-red
+	@at-root .select2-container.select2-container--on-red & {
+		border-color: $color-white;
+		color: rgba($color-white, 0.7);
+
+		@include touchLessHover {
+			color: $color-white;
+			border-color: $color-black;
+		}
+	}
+
+	@at-root .select2-container.select2-container--on-red.select2-container--disabled & {
+		background: rgba(#FF6F7D, 0.7);
+		border-color: rgba($color-white, 0.7);
+		color: rgba($color-white, 0.7);
+	}
+
+	@at-root .select2-container:not(.select2-container--disabled).select2-container--on-red & {
+		@include touchLessHover {
+			#{$root}__placeholder {
+				color: $color-white;
+			}
+
+			#{$root}__rendered {
+				color: $color-white;
+			}
+		}
+	}
+
+	&__rendered {
+		display: inline-block;
+		align-items: center;
+		width: 100%;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		color: $color-black;
+		@include text-body;
+		@include defaultTransition(color);
+
+		.select2-prefix {
+			color: rgba($color-black, 0.7);
+		}
+
+		@at-root .select2-container.select2-container--black & {
+			color: $color-white;
+
+			.select2-prefix {
+				color: rgba($color-white, 0.7);
+			}
+		}
+
+		@at-root .select2-container.select2-container--on-red & {
+			color: $color-white;
+
+			.select2-prefix {
+				color: rgba($color-white, 0.7);
+			}
+		}
+
+		@at-root select.select.something-selected ~ .select2-container & {
+			color: $color-black;
+		}
+
+		@at-root select.select.something-selected ~ .select2-container.select2-container--black & {
+			color: $color-white;
+		}
+
+		@at-root select.select.something-selected ~ .select2-container.select2-container--on-red & {
+			color: $color-white;
+		}
+	}
+
+	&__placeholder {
+		color: rgba($color-black, 0.7);
+		@include defaultTransition(color);
+
+		@at-root .select2-container.select2-container--black & {
+			color: rgba($color-white, 0.7);
+		}
+
+		@at-root .select2-container.select2-container--on-red & {
+			color: rgba($color-white, 0.7);
+		}
+	}
+
+	&__arrow {
+		position: absolute;
+		top: calc(50% - #{rem(12)});
+		right: rem(16);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: rem(24);
+		height: rem(24);
+		//background-image: $icon-select-arrow;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		@include defaultTransition(transform);
+
+		b {
+			display: none;
+		}
+
+		@at-root .select2-container--open & {
+			transform: rotate(180deg);
+		}
+
+		// theme black
+		@at-root .select2-container.select2-container--black & {
+		//	background-image: $icon-select-arrow-white;
+		}
+
+		// theme on-red
+		@at-root .select2-container.select2-container--on-red & {
+		//	background-image: $icon-select-arrow-white;
+		}
+	}
+}
+
+.select2-dropdown {
+	$root: &;
+
+	position: absolute;
+	z-index: 1000;
+	display: block;
+	width: 100%;
+	border: 0;
+	margin-top: rem(8);
+	background-color: $color-white;
+	border-radius: rem(8);
+	box-shadow: rem(4) rem(4) rem(25) rgba(0, 0, 0, 0.1);
+}
+
+.select2-search--dropdown.select2-search--hide {
+	display: none;
+}
+
+.select2-results {
+	position: relative;
+	display: block;
+	overflow: hidden;
+
+	&__options {
+		display: block;
+		position: relative;
+		max-height: rem(264);
+		padding-bottom: rem(12);
+
+		.ps__rail-y {
+			right: rem(16) !important;
+			bottom: 0 !important;
+
+			&:before {
+				top: rem(24);
+				bottom: rem(24);
+			}
+		}
+
+		.ps__thumb-y {
+			&:before {
+				top: rem(24);
+				bottom: rem(24);
+			}
+		}
+	}
+
+	&__option {
+		position: relative;
+		display: flex;
+		align-items: center;
+		padding: rem(12) rem(16);
+		width: 100%;
+		min-height: rem(48);
+		cursor: pointer;
+		background-color: transparent;
+		word-break: break-word;
+		@include defaultTransition(background-color, color);
+
+		&--highlighted {
+			background-color: $color-red;
+			color: $color-white;
+		}
+
+		&--disabled {
+			display: none;
+		}
+
+		@at-root .select2-container--on-red & {
+			&--highlighted {
+				//background-color: $color-grey;
+				color: $color-black;
+			}
+		}
+
+		&.multiselect-option {
+			padding-left: rem(56);
+
+			&:before {
+				position: absolute;
+				display: block;
+				top: rem(13);
+				left: rem(16);
+				width: rem(24);
+				height: rem(24);
+				border-radius: rem(4);
+				border: 2px solid $color-black;
+				content: "";
+				@include defaultTransition(border-color);
+			}
+
+			&:after {
+				position: absolute;
+				top: rem(20);
+				left: rem(22);
+				width: rem(12);
+				height: rem(6);
+				transform: rotate(-45deg);
+				content: "";
+				border-style: solid;
+				border-color: $color-red;
+				border-width: 0 0 2px 2px;
+				opacity: 0;
+				@include defaultTransition(border-color, opacity);
+			}
+		}
+
+		&.multiselect-option.select2-results__option--highlighted {
+			color: $color-black;
+			background-color: $color-white;
+
+			&:before {
+				border-color: $color-red;
+			}
+		}
+
+		&.multiselect-option.select2-results__option--selected {
+			&:before {
+				border-color: $color-red;
+			}
+
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__btn {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: rem(48);
+		line-height: rem(48);
+		font-size: rem(14);
+		border: 0;
+		padding: 0 rem(16) 0 rem(56);
+		background-color: transparent;
+		cursor: pointer;
+		text-align: left;
+		@include defaultTransition(background-color, color);
+
+		&:before {
+			position: absolute;
+			display: block;
+			top: rem(12);
+			left: rem(16);
+			width: rem(24);
+			height: rem(24);
+			border-radius: rem(4);
+			border: 2px solid $color-black;
+			content: "";
+			@include defaultTransition(border-color);
+		}
+
+		&:after {
+			position: absolute;
+			top: rem(20);
+			left: rem(22);
+			width: rem(12);
+			height: rem(6);
+			transform: rotate(-45deg);
+			content: "";
+			border-style: solid;
+			border-color: $color-red;
+			border-width: 0 0 2px 2px;
+			opacity: 0;
+			@include defaultTransition(border-color, opacity);
+		}
+
+		&.is-selected {
+			&:before {
+				border-color: $color-red;
+			}
+
+			&:after {
+				opacity: 1;
+			}
+		}
+
+		@include touchLessHover {
+			&:before {
+				border-color: $color-red;
+			}
+		}
+
+		@include media-breakpoint-up(md) {
+			font-size: rem(16);
+		}
+	}
+
+	&__message {
+		cursor: default;
+	}
+}
+
+.select2-search {
+	display: none;
+}
+
+.select2-container {
+	&--has-search {
+		.select2-search {
+			position: absolute;
+			top: rem(-44);
+			left: 0;
+			display: block;
+			width: 100%;
+		}
+
+		.select2-search__field {
+			border: 0;
+			padding: 0 rem(16);
+			margin-left: 1px;
+			width: calc(100% - #{rem(48)});
+
+			&::-ms-clear {
+				display: none;
+			}
+
+			&::-ms-reveal {
+				display: none;
+			}
+
+			&::-webkit-search-decoration,
+			&::-webkit-search-cancel-button,
+			&::-webkit-search-results-button,
+			&::-webkit-search-results-decoration {
+				-webkit-appearance: none;
+			}
+
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+}

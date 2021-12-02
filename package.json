@@ -27,6 +27,7 @@
 		"plyr": "^3.6.9",
 		"promise-polyfill": "^8.2.0",
 		"sal.js": "^0.8.5",
+		"select2": "^4.1.0-rc.0",
 		"smoothscroll-polyfill": "^0.4.4",
 		"sticksy": "^0.2.0",
 		"swiper": "^6.8.4",

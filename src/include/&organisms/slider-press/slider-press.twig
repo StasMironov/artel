@@ -1,28 +1,62 @@
-<div class="slider-press" data-slider-logos-wrap>
-	<div class="slider-logos__inner">
+<div class="slider-press {% if slider.bg %} bg-{{ slider.bg }}{% else %} bg-white{% endif %}" data-slider-press-wrap>
+	<div class="slider-press__inner">
 		{% if slider.title %}
-			<h3 class="slider-logos__title" data-fade-in-up>
+			<h3 class="slider-press__title h2 container" data-fade-in-up>
 				{{ slider.title }}
 			</h3>
 		{% endif %}
-		<div class="swiper-container" data-slider-logos data-fade-in-up>
+		<div class="swiper-container" data-slider-press data-fade-in-up>
 			<div class="swiper-wrapper">
 				{% for slide in slider.items %}
-					<div class="slider-logos__item swiper-slide">
-						{% if slide.href %}
-							<a href="{{ slide.href }}">{{ slide.href }}</a>
-						{% endif %}
-						{% view '@image' with {
-							image: slide.icon|merge({
-								disable_lazy: true
-							})
-						} %}
+					<div class="swiper-slide">
+						<div class="slider-press__item slider-press__inner container">
+							<div class="slider-press__left">
+								{% if slide.article %}
+									<div class="slider-press__article h2">
+										{{ slide.article }}
+									</div>
+									<div class="slider-press__box">
+										{% if slide.icon %}
+											<div class="slider-press__icon">
+												{% view '@icon' with {
+													icon: slide.icon
+												} %}
+											</div>
+										{% endif %}
+										{% if slide.qty %}
+											<span class="slider-press__qty">
+												{{slide.qty}} фото
+											</span>
+										{% endif %}
+									</div>
+								{% endif %}
+							</div>
+							<div class="slider-press__right">
+								<div class="slider-press__img">
+									{% view '@image' with {
+										image: slide.img
+									} %}
+								</div>
+							</div>
+						</div>
+						
+						
 					</div>
 				{% endfor %}
 			</div>
 		</div>
-		<div class="slider-logos__nav" data-fade-in-up>
-			{% view '@nav-arrows' %}
-		</div>
+		<div class="slider-press__cover container">
+			<div class="slider-press__navigation">
+				<div class="slider-press__pag" data-pag data-fade-in-up>
+				</div>
+				<div class="slider-press__nav" data-fade-in-up>
+					{% view '@nav-arrows' with {
+						nav_arrows: {
+							theme: "on-white"
+						}
+					} %}
+				</div>
+			</div>
+		</div>		
 	</div>
 </div>

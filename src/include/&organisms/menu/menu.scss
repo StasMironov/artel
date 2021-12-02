@@ -196,9 +196,20 @@
 		padding-right: rem(5);
 		height: 100%;
 
+
+		@include media-breakpoint-down(md) {
+			// @media screen and (orientation:landscape) {
+			// 	padding: rem(16);
+			// }
+
+			@media all and (orientation:landscape) {
+				padding: rem(40) rem(16) rem(32);
+			}
+		}
+
 		@include media-breakpoint-down(sm) {
 			padding: rem(32) rem(16) rem(32);
-		}
+		}	
 	}
 
 	&__txt {

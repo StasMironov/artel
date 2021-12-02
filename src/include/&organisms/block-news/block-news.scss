@@ -85,7 +85,7 @@
 		transform-origin: left;
 		transition: transform 1s ease 5s,
 		background .5s ease;
-		transform: scaleX(0);
+		transform: scaleX(1);
 
 		
 	}
@@ -110,6 +110,115 @@
 		@include touchLessHover {
 			#{$root}__card-border {
 				background-color: $color-green;
+			}
+		}
+	}
+
+	&__wrap {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&--layout {
+		&-2 {
+			#{$root}__card {
+				&:nth-child(-n+2){
+					width: 50%;
+
+					@include media-breakpoint-down(md) {
+						width: 100%;
+					}
+				}
+
+				width: 33.333%;
+				margin-bottom: rem(48);
+
+				@include last-row(1) {
+					margin-bottom: rem(48);
+				}
+		
+				@include media-breakpoint-up(md) {
+					margin-bottom: rem(48);
+					@include last-row(2) {
+						margin-bottom: rem(48)
+					}
+				}
+
+				@include media-breakpoint-down(md) {
+					width: 50%;
+				}
+
+				@include media-breakpoint-down(sm) {
+					width: 100%;
+				}
+			}
+
+			#{$root}__content {
+				grid-template-columns: 1fr;
+			}
+
+			#{$root}__container {
+				padding-bottom: rem(48);
+				padding-top: rem(73);
+
+				@include media-breakpoint-down(md) {
+					padding-top: rem(80);
+				}
+
+				@include media-breakpoint-down(sm) {
+					padding-top: rem(64);
+				}
+			}
+
+			#{$root}{
+				&__title {
+					position: relative;
+					width: 16.6%;
+					margin-right: 14.4%;
+
+					@include media-breakpoint-down(md) {
+						width: 25%;
+						margin-right: 25%;
+					}
+
+					@include media-breakpoint-down(sm) {
+						width: 100%;
+						margin-right: 0;
+						margin-bottom: rem(22);
+					}
+				}
+
+				&__tabs {
+					margin-right: 7%;
+					width: auto;
+
+					@include media-breakpoint-down(md) {
+						order: 1;
+						margin-top: rem(60);
+						margin-bottom: 0;
+					}
+
+					@include media-breakpoint-down(sm) {
+						margin-top: rem(48);
+					}
+				}
+
+				&__wrapper {
+					display: flex;
+					align-items: center;
+					margin-bottom: rem(40);
+
+					@include media-breakpoint-down(md) {
+						flex-wrap: wrap;
+						align-items: normal;
+						margin-bottom: rem(8);
+					}
+
+					@include media-breakpoint-down(sm) {
+						margin-bottom: rem(-10);
+					}
+					
+				}
 			}
 		}
 	}
