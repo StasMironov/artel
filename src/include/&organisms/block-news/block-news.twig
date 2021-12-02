@@ -1,38 +1,88 @@
-<div class="block-news{% if block.bg %} bg-{{ block.bg }}{% else %} bg-white{% endif %}" data-tab-container>
-	<div class="block-news__container container" data-tabs-wrap>
-		{% if block.title %}
-			<h2 class="block-news__title" data-fade-in-up>{{ block.title }}</h2>
-		{% endif %}
-		<div class="block-news__content">
-			{% if block.tabs %}
-				<div class="block-news__tabs">
-					{% view '&tabs' with {
-						tabs: block.tabs
-					}%}
-				</div>
+<div class="block-news {% if block.layout %}block-news--layout-{{ block.layout }}{% endif %}{% if block.bg %} bg-{{ block.bg }}{% else %} bg-white{% endif %}" {% if block.tabs %} data-tab-container {% endif %}>
+	<div class="block-news__container container" {% if block.tabs %} data-tabs-wrap {% endif %}>
+		{% if not block.layout %}
+			{% if block.title %}
+				<h2 class="block-news__title" data-fade-in-up>{{ block.title }}</h2>
 			{% endif %}
-			{% if block.tabs_content %}
-				<div class="block-news__tabs-content">
-					{% for item in block.tabs_content %}
-						<div class="block-news__pane{{ item.active ? ' is-active' }}" data-tab-pane="{{ loop.index }}">
-							{% if item.cards %}
-								<div class="block-news__cards">
-									{% for card in item.cards %}
-										<div class="block-news__card">
-											<div data-fadein-up>
-												{% view '^card-news' with {
-													card: card
-												}%}
-											</div>
-											<div class="block-news__card-border"></div>
-										</div>
-									{% endfor %}
-								</div>
+		{% endif %}
+		{% if block.tabs %}
+			<div class="block-news__content">
+				{% if block.tabs %}
+					{% if block.layout %}
+					<div class="block-news__wrapper">
+						{% if block.layout %}
+							{% if block.title %}
+								<h2 class="block-news__title" data-fade-in-up>{{ block.title }}</h2>
 							{% endif %}
+						{% endif %}
+						<div class="block-news__tabs">
+							{% view '&tabs' with {
+								tabs: block.tabs
+							}%}
+						</div>
+						
+
+
+					{% if block.fields %}
+						<div class="filter-select">
+							{% for field in block.fields %}
+								<div class="filter-select__field">
+									{% view '@field' with {
+										field: field
+									} %}
+								</div>
+							{% endfor %}
+						</div>
+					{% endif %}
+
+					</div>
+					{% else %}
+					<div class="block-news__tabs">
+						{% view '&tabs' with {
+							tabs: block.tabs
+						}%}
+					</div>
+					{% endif %}
+				{% endif %}
+				{% if block.tabs_content %}
+					<div class="block-news__tabs-content">
+						{% for item in block.tabs_content %}
+							<div class="block-news__pane{{ item.active ? ' is-active' }}" data-tab-pane="{{ loop.index }}">
+								{% if item.cards %}
+									<div class="block-news__cards">
+										{% for card in item.cards %}
+											<div class="block-news__card">
+													{% view '^card-news' with {
+														card: card
+													}%}
+												<div class="block-news__card-border"></div>
+											</div>
+										{% endfor %}
+									</div>
+								{% endif %}
+							</div>
+						{% endfor %}
+					</div>
+				{% endif %}
+			</div>
+		{% else %}
+			{# <div class="block-news__wrap">
+				{% if block.cards %}
+					{% for card in block.cards %}
+						<div class="block-news__card {% if block.layout %}block-news__card--layout-{{block.layout}}{% endif %}" >
+							{% view '^card-news' with {
+								card: card
+							}%}
+							<div class="block-news__card-border"></div>
 						</div>
 					{% endfor %}
-				</div>
-			{% endif %}
-		</div>
+				{% endif %}
+			</div>
+			{% if block.action %}
+				{% view '@button' with {
+					button: block.action
+				} %}
+			{% endif %} #}
+		{% endif %}
 	</div>
 </div>

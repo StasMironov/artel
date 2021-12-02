@@ -1,0 +1,67 @@
+.select-shell {
+	.select2-selection {
+		height: rem(62);
+		padding-left: 0;
+		border: none;
+		border-bottom: 1px solid $color-black;
+		border-radius: 0;
+
+		&:hover {
+			color: rgba($color-black, 0.4);
+		}
+	}
+
+	.select2-selection__rendered {
+		color: rgba($color-black, 0.4);
+		font-weight: 500;
+		font-size: rem(24);
+
+		@include media-breakpoint-down(sm) {
+			font-size: rem(20);
+		}
+
+		&:hover {
+			color: rgba($color-black, 0.4) !important;
+		}
+	}
+}
+
+.select2-container {
+	&:hover {
+		.select2-selection__rendered {
+			color: rgba($color-black, 0.4) !important;
+		}
+	}
+}
+
+.select2-results {
+	border-radius: rem(5);
+}
+
+.select2-results__option {
+	position: relative;
+	padding: rem(12) rem(24) rem(12);
+	color: rgba($color-black, 0.4);
+
+	&:before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: rem(10);
+		width: rem(6);
+		height: rem(6);
+		margin: auto;
+		background-color: transparent;
+		border-radius: 50%;
+		content: '';
+	}
+
+	&--highlighted {
+		color: $color-black;
+		background: $color-white;
+
+		&:before {
+			background-color: $color-green;
+		}
+	}
+}

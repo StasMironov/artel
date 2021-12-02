@@ -1,5 +1,5 @@
 <div class="hero-default{% if hero_default.no_overlay %} hero-default--no-overlay{% endif %}
-{% if hero_default.no_title %} hero-default--no-title{% endif %}">
+{% if hero_default.no_title %} hero-default--no-title{% endif %}{% if hero_default.layout %}hero-default--layout-{{hero_default.layout}}{% endif %}">
     {% if hero_default.image %}
         <div class="hero-default__bg">
             {% if hero_default.image.tab or hero_default.image.mob %}
@@ -14,10 +14,20 @@
         </div>
     {% endif %}
     <div class="hero-default__container container">
+        {% if hero_default.link %}
+            <a class="hero-default__link" href="{{hero_default.link.href}}" data-fade-in-up>
+                {{ hero_default.link.text }}
+            </a>
+        {% endif %}
         {% if hero_default.title %}
             <h1 class="hero-default__title h1" data-fade-in-up>
                 {{ hero_default.title }}
             </h1>
+        {% endif %}
+        {% if hero_default.desc %}
+            <div class="hero-default__desc" data-fade-in-up>
+                {{ hero_default.desc }}
+            </div>
         {% endif %}
     </div>
     {% if hero_default.btn_play %}

@@ -1,0 +1,31 @@
+<div class="card-comm">
+    <div class="card-comm__person">
+        {% if card.img %}
+            <div class="card-comm__avatar">
+                {% view '@image' with {
+                    image: card.img
+                } %}
+            </div>
+            <div class="card-comm__box">
+                {% if card.name %}
+                    <div class="card-comm__name">
+                        {{card.name}}
+                    </div>
+                {% endif %}
+                {% if card.position %}
+                    <div class="card-comm__position">
+                        {{card.position}}
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+    {% if card.email %}
+        <div class="card-comm__comm">
+            <div class="card-comm__title">
+                {{card.email.title}}
+            </div>
+            <a class="card-comm__email h3" href="{{card.email.href}}">{{card.email.text}}</a>
+        </div>
+    {% endif %}
+</div>

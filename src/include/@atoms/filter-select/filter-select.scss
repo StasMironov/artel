@@ -1,0 +1,12 @@
+.filter-select {
+	width: 24%;
+
+	@include media-breakpoint-down(md) {
+		width: 50%;
+		transform: translateY(#{rem(-7)});
+	}
+
+	@include media-breakpoint-down(sm) {
+		width: 100%;
+	}
+}

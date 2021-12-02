@@ -103,6 +103,10 @@ export default {
 								minScrollbarLength: 20,
 							});
 
+							if (isMob()) {
+								this.psSub.destroy();
+							}
+
 							wrapSubNode.addEventListener('scroll', () => {
 								this.psSub.update();
 							});
@@ -196,8 +200,8 @@ export default {
 			debounce(100, () => {
 				if (isMob()) {
 					this.ps.destroy();
-					console.log(psSub);
-					this.psSub.destroy();
+
+					//this.psSub.destroy();
 				}
 			})
 		);
