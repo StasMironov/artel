@@ -20,11 +20,8 @@
 								tabs: block.tabs
 							}%}
 						</div>
-						
-
-
 					{% if block.fields %}
-						<div class="filter-select">
+						<div class="filter-select" data-fade-in-up>
 							{% for field in block.fields %}
 								<div class="filter-select__field">
 									{% view '@field' with {
@@ -65,24 +62,11 @@
 					</div>
 				{% endif %}
 			</div>
-		{% else %}
-			{# <div class="block-news__wrap">
-				{% if block.cards %}
-					{% for card in block.cards %}
-						<div class="block-news__card {% if block.layout %}block-news__card--layout-{{block.layout}}{% endif %}" >
-							{% view '^card-news' with {
-								card: card
-							}%}
-							<div class="block-news__card-border"></div>
-						</div>
-					{% endfor %}
-				{% endif %}
-			</div>
 			{% if block.action %}
 				{% view '@button' with {
 					button: block.action
 				} %}
-			{% endif %} #}
+			{% endif %}
 		{% endif %}
 	</div>
 </div>

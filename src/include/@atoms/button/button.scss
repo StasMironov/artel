@@ -91,8 +91,8 @@
 
 		@include touchLessHover {
 			&:not(#{$root}--non-interactive):not(:disabled):not(.button--disabled) {
-				color: $color-black;
-				background-color: $color-gray-light;
+				color: $color-white;
+				background-color: $color-black;
 			}
 		}
 	}
