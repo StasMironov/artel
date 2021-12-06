@@ -1,0 +1,32 @@
+.news-detail {
+	&__content {
+		width: 75%;
+		margin-left: 26%;
+		padding-right: 16.6%;
+		padding-left: 7.6%;
+
+		@include media-breakpoint-down(md) {
+			width: 100%;
+			margin-left: 0;
+			padding-right: 9%;
+			padding-left: 0;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-right: 0;
+		}
+	}
+
+	&__container {
+		padding-top: rem(110);
+		padding-bottom: rem(112);
+
+		@include media-breakpoint-down(md) {
+			padding-top: rem(64);
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-bottom: rem(80);
+		}
+	}
+}

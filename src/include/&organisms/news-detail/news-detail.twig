@@ -1,0 +1,19 @@
+<div class="news-detail">
+    <div class="news-detail__container container">
+        {% view '&block-intro' %}
+        <div class="news-detail__content user-text">
+            {% if news_detail.before %}
+                {{ news_detail.before }}
+            {% endif %}
+            {% if news_detail.table %}
+                {% view '^table' %}
+            {% endif %}
+            {% if news_detail.slider %}
+                {% view '&slider-photo' %}
+            {% endif %}
+            {% if news_detail.after %}
+                {{ news_detail.after }}
+            {% endif %}
+        </div>
+    </div>
+</div>

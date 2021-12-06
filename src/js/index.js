@@ -16,6 +16,7 @@ import Map from './components/map';
 import validation from './components/validation';
 import FormHandler from './components/form-handler';
 import ScrollTo from './components/scrollto';
+import Table from './components/table';
 import Input from './components/input';
 import Strategy from './components/strategy';
 import BlockProduct from './components/block-product';
@@ -57,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	Sliders.init();
 	Submenu.init();
 	ScrollTo.init();
+	Table.init();
 	Modals.init();
 	Menu.init();
 	select.init();
@@ -92,4 +94,5 @@ window.addEventListener('reinit', () => {
 	window.dispatchEvent(new CustomEvent('init.input'));
 	Modal.init();
 	select.init();
+	Table.init();
 });
