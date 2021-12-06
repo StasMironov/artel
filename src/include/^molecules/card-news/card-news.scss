@@ -89,4 +89,18 @@
 			transform: scale3d(1.1, 1.1, 1.1);
 		}
 	}
+
+	&--layout {
+		&-2 {
+			#{$root}{
+				&__title {
+					min-height: rem(44);
+
+					@include media-breakpoint-down(md) {
+						@include line-clamp(1rem, 1.4, 2);
+					}
+				}
+			}
+		}
+	}
 }

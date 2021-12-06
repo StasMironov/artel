@@ -1,0 +1,98 @@
+.example {
+	width: 600px;
+	margin: 0 auto;
+	border: 5px solid #d6d6d6;
+}
+.table {
+	width: 100%;
+	width: 148%;
+	height: auto;
+	margin-top: rem(80);
+	margin-left: -16.6%;
+	padding: 0 rem(1);
+	overflow: hidden;
+	cursor: move;
+
+	@include media-breakpoint-down(md) {
+		width: 100vw;
+		margin-left: -8.6%;
+	}
+
+	@include media-breakpoint-down(sm) {
+		margin-top: rem(48);
+	}
+
+	table {
+		position: relative;
+		border-collapse: separate;
+		border-spacing: 0;
+		transform: translate(0px, 0px);
+
+		th {
+			position: sticky;
+			top: 0;
+			width: 6%;
+			min-width: rem(200);
+			padding: rem(21) 0;
+			color: $color-white;
+			background-color: $color-green;
+
+			@include media-breakpoint-down(md) {
+				min-width: rem(160);
+			}
+
+			@include media-breakpoint-down(sm) {
+				min-width: rem(117);
+			}
+
+			&:first-of-type {
+				position: sticky;
+				left: 0;
+				z-index: 5;
+				width: 25%;
+				min-width: rem(100);
+				padding-left: 11.3%;
+
+				@include media-breakpoint-down(md) {
+					width: 32%;
+					padding-left: 7%;
+				}
+
+				@include media-breakpoint-down(sm) {
+					min-width: rem(176);
+					padding-left: rem(26);
+				}
+			}
+		}
+
+		td {
+			padding: rem(21) 0;
+			border-bottom: 1px solid rgba($color-black, $alpha: 0.1);
+
+			&:first-of-type {
+				position: sticky;
+				left: 0;
+				z-index: 3;
+				padding-left: 11.3%;
+				color: rgba($color-black, $alpha: 0.4);
+				background-color: $color-white;
+
+				@include media-breakpoint-down(md) {
+					padding-left: 7%;
+				}
+
+				@include media-breakpoint-down(sm) {
+					padding-left: rem(26);
+				}
+			}
+
+			&:last-of-type {
+				border-right: none;
+			}
+		}
+
+		tr {
+			background-color: $color-white;
+		}
+	}
+}

@@ -1,4 +1,4 @@
-<div class="card-news" data-fadein-up>
+<div class="card-news {% if card.layout %}card-news--layout-{{card.layout}}{% endif %}" data-fadein-up>
 	{% if card.href %}
 		<a href="{{ card.href }}" class="card-news__link">{{ card.href }}</a>
 	{% endif %}
