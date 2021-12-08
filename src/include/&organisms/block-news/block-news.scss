@@ -67,7 +67,7 @@
 
 	&__cards {
 
-		margin: 0 rem(-8);
+		margin: 0 rem(-4);
 	
 		@include media-breakpoint-up(md) {
 			display: flex;
@@ -91,8 +91,8 @@
 
 	&__card {
 		position: relative;
-		padding-right: rem(8);
-		padding-left: rem(8);
+		margin-right: rem(4);
+		margin-left: rem(4);
 		padding-top: rem(32);
 		margin-bottom: rem(32);
 		@include last-row(1) {
@@ -101,7 +101,7 @@
 
 		@include media-breakpoint-up(md) {
 			margin-bottom: rem(48);
-			width: 50%;
+			width: calc(50% - #{rem(8)});
 			@include last-row(2) {
 				margin-bottom: 0;
 			}
@@ -123,15 +123,34 @@
 		&-2 {
 			#{$root}__card {
 				&:nth-child(-n+2){
-					width: 50%;
+					width: calc(50% - #{rem(8)});
 
+					.card-news__title {
+						max-width: rem(446);
+
+						@include media-breakpoint-down(sm) {
+							max-width: rem(271);
+						}
+					}
 					@include media-breakpoint-down(md) {
 						width: 100%;
 					}
 				}
 
-				width: 33.333%;
+				width: calc(33.333% - #{rem(8)});
 				margin-bottom: rem(48);
+
+				.card-news__title {
+					max-width: rem(328);
+
+					@include media-breakpoint-down(md) {
+						max-width: rem(256);
+					}
+
+					@include media-breakpoint-down(sm) {
+						max-width: rem(271);
+					}
+				}
 
 				@include last-row(1) {
 					margin-bottom: rem(48);
@@ -145,7 +164,7 @@
 				}
 
 				@include media-breakpoint-down(md) {
-					width: 50%;
+					width: calc(50% - #{rem(8)});
 				}
 
 				@include media-breakpoint-down(sm) {
@@ -165,7 +184,7 @@
 
 			#{$root}__container {
 				padding-bottom: rem(48);
-				padding-top: rem(73);
+				padding-top: rem(69);
 
 				@include media-breakpoint-down(md) {
 					padding-top: rem(80);
@@ -197,15 +216,20 @@
 				&__tabs {
 					margin-right: 7%;
 					width: auto;
+					padding-top: rem(10);
 
 					@include media-breakpoint-down(md) {
 						order: 1;
 						margin-top: rem(60);
 						margin-bottom: 0;
+						padding-top: 0;
+						width: 100%;
+						margin-right: 0;
 					}
 
 					@include media-breakpoint-down(sm) {
-						margin-top: rem(48);
+						margin-top: rem(54);
+						padding: 0 rem(7);
 					}
 				}
 
@@ -222,6 +246,15 @@
 
 					@include media-breakpoint-down(sm) {
 						margin-bottom: rem(32);
+					}
+
+					.filter-select {
+						padding-top: rem(4);
+
+						@include media-breakpoint-down(md) {
+							padding-top: 0;
+							margin-top: rem(-8);
+						}
 					}
 					
 				}

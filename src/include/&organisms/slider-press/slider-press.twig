@@ -12,9 +12,9 @@
 						<div class="slider-press__item slider-press__inner container">
 							<div class="slider-press__left">
 								{% if slide.article %}
-									<div class="slider-press__article h2">
+									<a {% if slide.href %}href="{{slide.href}}" {% endif %} class="slider-press__article h2">
 										{{ slide.article }}
-									</div>
+									</a>
 									<div class="slider-press__box">
 										{% if slide.icon %}
 											<div class="slider-press__icon">
@@ -48,6 +48,17 @@
 		<div class="slider-press__cover container">
 			<div class="slider-press__navigation">
 				<div class="slider-press__pag" data-pag data-fade-in-up>
+					<div class="swiper-wrapper" data-wrap>
+						{% for slide in slider.items %}
+							<div class="swiper-slide">
+								{% if loop.index < 10 %}
+									0{{ loop.index }}
+								{% else %}
+									{{ loop.index }}
+								{% endif %}
+							</div>
+						{% endfor %}
+					</div>
 				</div>
 				<div class="slider-press__nav" data-fade-in-up>
 					{% view '@nav-arrows' with {

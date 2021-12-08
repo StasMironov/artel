@@ -48,7 +48,6 @@
 		}
 
 		@include media-breakpoint-down(md) {
-			max-width: initial;
 			margin-bottom: rem(32);
 		}
 		@include media-breakpoint-down(sm) {
@@ -99,6 +98,14 @@
 					@include media-breakpoint-down(md) {
 						@include line-clamp(1rem, 1.4, 2);
 					}
+				}
+			}
+		}
+
+		&-3 {
+			#{$root}{
+				&__title {
+					max-width: rem(416);
 				}
 			}
 		}

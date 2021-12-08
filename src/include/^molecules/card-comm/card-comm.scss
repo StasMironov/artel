@@ -88,4 +88,10 @@
 			padding-top: rem(10);
 		}
 	}
+
+	&__comm {
+		&:not(:last-child) {
+			margin-bottom: rem(32);
+		}
+	}
 }

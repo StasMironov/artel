@@ -3,6 +3,7 @@
 
 	@include media-breakpoint-down(md) {
 		padding-top: rem(64);
+		overflow: hidden;
 	}
 
 	@include media-breakpoint-down(sm) {
@@ -68,9 +69,17 @@
 	}
 
 	&__article {
+		display: block;
 		width: 100%;
 		max-width: rem(500);
 		margin-bottom: rem(14);
+		margin-bottom: rem(16);
+		color: $color-white;
+		@include defaultTransition(color);
+
+		@include touchLessHover {
+			color: rgba($color-white, 0.6);
+		}
 
 		@include media-breakpoint-down(sm) {
 			margin-bottom: rem(16);
@@ -125,7 +134,7 @@
 		align-items: flex-end;
 		width: 100%;
 		margin: auto;
-		padding-bottom: rem(124);
+		padding-bottom: rem(120);
 
 		@include media-breakpoint-down(md) {
 			top: rem(483);
@@ -143,22 +152,47 @@
 	}
 
 	&__pag {
-		.swiper-pagination-bullet {
+		max-width: rem(200);
+		overflow: hidden;
+
+		@include media-breakpoint-down(sm) {
+			max-width: rem(105);
+		}
+
+		.swiper-slide {
+			width: 100px;
 			color: rgba($color-white, 0.6);
 			cursor: pointer;
 			@include defaultTransition(color);
-
-			&:not(:last-child) {
-				margin-right: rem(24);
-			}
 
 			@include touchLessHover {
 				color: rgba($color-white, 1);
 			}
 		}
 
-		.swiper-pagination-bullet-active {
+		.swiper-slide-thumb-active {
 			color: rgba($color-white, 1);
+			cursor: initial;
+		}
+
+		&.overlay {
+			&:after {
+				position: absolute;
+				top: 0;
+				right: rem(-6);
+				bottom: 0;
+				z-index: 1;
+				width: rem(16);
+				height: rem(40);
+				margin: auto;
+				background: linear-gradient(
+					84deg,
+					rgba(0, 211, 114, 0) 0%,
+					rgba(0, 211, 114, 0.8) 50%,
+					rgba(0, 211, 114, 1) 100%
+				);
+				content: '';
+			}
 		}
 	}
 
@@ -185,6 +219,10 @@
 		}
 	}
 
+	&__qty {
+		color: rgba($color-white, 0.6);
+	}
+
 	.swiper-container {
 		position: relative;
 		padding-top: 40px;
@@ -202,12 +240,13 @@
 			width: 100%;
 			height: 40px;
 			margin: auto;
-			background-color: $color-gray;
+			background-color: transparent;
 			content: '';
-
-			@include media-breakpoint-down(md) {
-				background-color: transparent;
-			}
 		}
+	}
+
+	.swiper-slide-active {
+		z-index: 100;
+		opacity: 1 !important;
 	}
 }

@@ -6,10 +6,17 @@
 		},
 		"name": "Камола Сабирова",
 		"position": "Руководитель Пресс-службы",
-		"email": {
-			"title": "E-mail",
-			"text": "kamola.sobirova@artelelectronics.com",
-			"href": "kamola.sobirova@artelelectronics.com"
-		}
+		"comm": [
+			{
+				"title": "E-mail",
+				"text": "kamola.sobirova@artelelectronics.com",
+				"href": "kamola.sobirova@artelelectronics.com"
+			},
+			{
+				"title": "E-mail",
+				"text": "kamola.sobirova@artelelectronics.com",
+				"href": "kamola.sobirova@artelelectronics.com"
+			}
+		]
 	}
 }
