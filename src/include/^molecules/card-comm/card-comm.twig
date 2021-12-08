@@ -20,12 +20,16 @@
             </div>
         {% endif %}
     </div>
-    {% if card.email %}
-        <div class="card-comm__comm">
-            <div class="card-comm__title">
-                {{card.email.title}}
-            </div>
-            <a class="card-comm__email h3" href="{{card.email.href}}">{{card.email.text}}</a>
+    {% if card.comm %}
+        <div class="card-comm__wrp">
+            {% for item in card.comm %}
+                <div class="card-comm__comm">
+                    <div class="card-comm__title">
+                        {{item.title}}
+                    </div>
+                    <a class="card-comm__email h3" href="{{item.href}}">{{item.text}}</a>
+                </div>
+            {% endfor %}
         </div>
     {% endif %}
 </div>

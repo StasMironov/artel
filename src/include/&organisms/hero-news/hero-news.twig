@@ -1,4 +1,5 @@
-<div class="hero-news{% if hero_news.no_overlay %} hero_news--no-overlay{% endif %}">
+<div class="hero-news{% if hero_news.no_overlay %} hero_news--no-overlay{% endif %}{% if hero_news.bg %}hero_news--{% endif %}">
+
     {% if hero_news.image %}
         <div class="hero-news__bg">
             {% if hero_news.image.tab or hero_news.image.mob %}

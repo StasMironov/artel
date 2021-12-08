@@ -140,7 +140,7 @@
 			"text": "На главную",
 			"href": "main.html"
 		},
-		"desc": "Artel осуществляет взаимодействие с прессой и прочими СМИ на протяжении долгих лет",
+		"desc": "Artel осуществляет взаимодействие с&nbsp;прессой и прочими СМИ на протяжении долгих лет",
 		"title": "Пресс-центр",
 		"image": {
 			"src": "tmp/default-hero/hero-press.jpg",
@@ -203,16 +203,18 @@
 						"image": {
 							"src": "tmp/card-news/news1.jpg",
 							"alt": "alt"
-						}
+						},
+						"layout": "3"
 					},
 					{
 						"href": "#",
 						"date": "3 мая 2021",
-						"title": "Производственной мощности Artel достаточно для производства продукции",
+						"title": "Производственной мощности Artel достаточно для&nbsp;производства продукции",
 						"image": {
 							"src": "tmp/card-news/news2.jpg",
 							"alt": "alt"
-						}
+						},
+						"layout": "3"
 					},
 					{
 						"href": "#",
@@ -221,7 +223,8 @@
 						"image": {
 							"src": "tmp/card-news/news3.jpg",
 							"alt": "alt"
-						}
+						},
+						"layout": "3"
 					},
 					{
 						"href": "#",
@@ -230,7 +233,8 @@
 						"image": {
 							"src": "tmp/card-news/news4.jpg",
 							"alt": "alt"
-						}
+						},
+						"layout": "3"
 					},
 					{
 						"href": "#",
@@ -239,7 +243,8 @@
 						"image": {
 							"src": "tmp/card-news/news1.jpg",
 							"alt": "alt"
-						}
+						},
+						"layout": "3"
 					}
 				]
 			},
@@ -252,7 +257,8 @@
 						"image": {
 							"src": "tmp/card-news/news1.jpg",
 							"alt": "alt"
-						}
+						},
+						"layout": "3"
 					},
 					{
 						"href": "#",
@@ -261,7 +267,8 @@
 						"image": {
 							"src": "tmp/card-news/news3.jpg",
 							"alt": "alt"
-						}
+						},
+						"layout": "3"
 					},
 					{
 						"href": "#",
@@ -270,7 +277,8 @@
 						"image": {
 							"src": "tmp/card-news/news2.jpg",
 							"alt": "alt"
-						}
+						},
+						"layout": "3"
 					},
 					{
 						"href": "#",
@@ -279,7 +287,8 @@
 						"image": {
 							"src": "tmp/card-news/news4.jpg",
 							"alt": "alt"
-						}
+						},
+						"layout": "3"
 					}
 				]
 			},
@@ -292,7 +301,8 @@
 						"image": {
 							"src": "tmp/card-news/news4.jpg",
 							"alt": "alt"
-						}
+						},
+						"layout": "3"
 					},
 					{
 						"href": "#",
@@ -301,7 +311,8 @@
 						"image": {
 							"src": "tmp/card-news/news2.jpg",
 							"alt": "alt"
-						}
+						},
+						"layout": "3"
 					},
 					{
 						"href": "#",
@@ -310,7 +321,8 @@
 						"image": {
 							"src": "tmp/card-news/news3.jpg",
 							"alt": "alt"
-						}
+						},
+						"layout": "3"
 					},
 					{
 						"href": "#",
@@ -319,7 +331,8 @@
 						"image": {
 							"src": "tmp/card-news/news1.jpg",
 							"alt": "alt"
-						}
+						},
+						"layout": "3"
 					}
 				]
 			}
@@ -370,7 +383,7 @@
 		"items": [
 			{
 				"article": "Заключение партнерских отношений с «Baku Electronics» в&nbsp;Азербайджане",
-				"href": "#",
+				"href": "test.html",
 				"img": {
 					"src": "tmp/press/img1.jpg",
 					"alt": "img"
@@ -381,8 +394,8 @@
 				"qty": "33"
 			},
 			{
-				"article": "Test",
-				"href": "#",
+				"article": "2",
+				"href": "test2.html",
 				"img": {
 					"src": "tmp/card-news/news2.jpg",
 					"alt": "img"
@@ -391,12 +404,48 @@
 					"name": "24/pic"
 				},
 				"qty": "30"
+			},
+			{
+				"article": "3",
+				"href": "test.html",
+				"img": {
+					"src": "tmp/press/img1.jpg",
+					"alt": "img"
+				},
+				"icon": {
+					"name": "24/pic"
+				},
+				"qty": "33"
+			},
+			{
+				"article": "4",
+				"href": "test2.html",
+				"img": {
+					"src": "tmp/card-news/news2.jpg",
+					"alt": "img"
+				},
+				"icon": {
+					"name": "24/pic"
+				},
+				"qty": "30"
+			},
+			{
+				"article": "5",
+				"href": "test.html",
+				"img": {
+					"src": "tmp/press/img1.jpg",
+					"alt": "img"
+				},
+				"icon": {
+					"name": "24/pic"
+				},
+				"qty": "33"
 			}
 		]
 	},
 	"block_comm": {
 		"bg": "gray",
-		"title": "Контакты для прессы2",
+		"title": "Контакты для прессы",
 		"items": [
 			{
 				"img": {
@@ -405,11 +454,18 @@
 				},
 				"name": "Камола Сабирова",
 				"position": "Руководитель<br/>Пресс-службы",
-				"email": {
-					"title": "E-mail",
-					"text": "kamola.sobirova@artelelectronics.com",
-					"href": "kamola.sobirova@artelelectronics.com"
-				}
+				"comm": [
+					{
+						"title": "E-mail",
+						"text": "kamola.sobirova@artelelectronics.com",
+						"href": "mailto:kamola.sobirova@artelelectronics.com"
+					},
+					{
+						"title": "Телефон",
+						"text": "+998 (71) 123-45-67",
+						"href": "tel:+998(71)123-45-67"
+					}
+				]
 			},
 			{
 				"img": {
@@ -417,12 +473,19 @@
 					"alt": "img"
 				},
 				"name": "Элеанор Крамерс",
-				"position": "Руководитель по международным коммуникациям",
-				"email": {
-					"title": "E-mail",
-					"text": "eleanor.kramers@artelelectronics.com",
-					"href": "eleanor.kramers@artelelectronics.com"
-				}
+				"position": "Руководитель по международным<br/>коммуникациям",
+				"comm": [
+					{
+						"title": "E-mail",
+						"text": "eleanor.kramers@artelelectronics.com",
+						"href": "mailto:eleanor.kramers@artelelectronics.com"
+					},
+					{
+						"title": "Телефон",
+						"text": "+998 (71) 123-45-67",
+						"href": "tel:+998(71)123-45-67"
+					}
+				]
 			}
 		]
 	},
