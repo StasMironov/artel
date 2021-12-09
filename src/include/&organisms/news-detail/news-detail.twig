@@ -1,6 +1,8 @@
-<div class="news-detail">
+<div class="news-detail {% if news_detail.layout %}news-detail--layout-{{news_detail.layout}}{% endif %}">
     <div class="news-detail__container container">
-        {% view '&block-intro' %}
+        {% if news_detail.intro %}
+            {% view '&block-intro' %}
+        {% endif %}
         <div class="news-detail__content user-text">
             {% if news_detail.before %}
                 {{ news_detail.before }}
@@ -9,7 +11,9 @@
                 {% view '^table' %}
             {% endif %}
             {% if news_detail.slider %}
-                {% view '&slider-photo' %}
+                {% view '&slider-photo' with {
+                    slider: news_detail.slider
+                } %}
             {% endif %}
             {% if news_detail.after %}
                 {{ news_detail.after }}
