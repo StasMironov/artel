@@ -237,7 +237,7 @@
 			left: rem(-168);
 			width: rem(104);
 			height: rem(104);
-			background-image: url('/tmp/icon/quote.svg');
+			background-image: $icon-slider-quote;
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: contain;
@@ -320,6 +320,21 @@
 			width: 100%;
 			margin-top: rem(38);
 			margin-bottom: rem(64);
+		}
+	}
+
+	.table {
+		@include media-breakpoint-down(md) {
+			right: 50%;
+			left: 50%;
+			width: 102vw;
+			margin-right: -50vw;
+			margin-left: -8vw;
+		}
+
+		@include media-breakpoint-down(sm) {
+			width: 102vw;
+			margin-left: -5vw;
 		}
 	}
 }
