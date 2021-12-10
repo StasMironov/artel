@@ -3,7 +3,7 @@
 		height: rem(62);
 		padding-left: 0;
 		border: none;
-		border-bottom: 1px solid $color-black;
+		border-bottom: 1px solid rgba($color-black, 0.4);
 		border-radius: 0;
 
 		&:hover {
@@ -29,7 +29,7 @@
 		display: block;
 		width: rem(24);
 		height: inherit;
-		background-image: url('/img/24/arrow-right.svg');
+		background-image: $icon-arrow;
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: contain;
@@ -38,6 +38,10 @@
 
 	.select2-selection__arrow {
 		right: rem(3);
+	}
+
+	.select2-container--focus {
+		border-bottom: 1px solid rgba($color-black, 1);
 	}
 }
 
