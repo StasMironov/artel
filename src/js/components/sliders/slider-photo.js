@@ -48,7 +48,7 @@ if (document.querySelector('[data-slider-photo-wrap]')) {
 				allowTouchMove: true,
 				speed: 1300,
 				watchSlidesVisibility: true,
-				//loop: true,
+				loop: true,
 				fadeEffect: { crossFade: true },
 				effect: 'fade',
 				lazy: {

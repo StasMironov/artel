@@ -12,6 +12,7 @@ const sliderSimilar = new Slider({
 		allowTouchMove: true,
 		spaceBetween: 10,
 		speed: 1300,
+		loop: true,
 		watchSlidesVisibility: true,
 		lazy: {
 			loadPrevNext: true,
