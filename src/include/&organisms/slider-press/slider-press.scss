@@ -52,8 +52,9 @@
 		&::before {
 			position: absolute;
 			top: 0;
-			right: 100%;
+			right: 99%;
 			left: auto;
+			z-index: -1;
 			width: 50vw;
 			height: 100%;
 			background-color: $color-green;
@@ -179,10 +180,10 @@
 			&:after {
 				position: absolute;
 				top: 0;
-				right: rem(-6);
+				right: rem(0);
 				bottom: 0;
 				z-index: 1;
-				width: rem(16);
+				width: rem(20);
 				height: rem(40);
 				margin: auto;
 				background: linear-gradient(

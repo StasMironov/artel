@@ -12,8 +12,7 @@
 	margin-top: rem(75);
 	margin-left: -16.6%;
 	overflow: hidden;
-	background: #e4e4e4;
-	border: 1px solid #eee;
+	background-color: transparent;
 
 	@include media-breakpoint-down(md) {
 		width: 100vw;
