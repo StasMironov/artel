@@ -16,7 +16,7 @@
     <div class="hero-news__container container">
         <div class="hero-news__wrapper">
             {% if hero_news.breadcrumbs %}
-                <div class="hero_news__breadcrumbs">
+                <div class="hero-news__breadcrumbs">
                     {% view '^breadcrumbs' with {
                         breadcrumbs: hero_news.breadcrumbs
                     } %}

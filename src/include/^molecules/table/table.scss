@@ -93,6 +93,12 @@
 
 		tr {
 			background-color: $color-white;
+
+			&:last-child {
+				td {
+					border-bottom: none;
+				}
+			}
 		}
 	}
 }

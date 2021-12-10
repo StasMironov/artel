@@ -1,13 +1,15 @@
 {
-	"breadcrumbs": [
-		{
-			"href": "./",
-			"text": "Главная"
-		},
-		{
-			"href": "./",
-			"current": true,
-			"text": "Результаты поиска"
-		}
-	]
+	"breadcrumbs": {
+		"items": [
+			{
+				"href": "./",
+				"text": "Главная"
+			},
+			{
+				"href": "./",
+				"current": true,
+				"text": "Результаты поиска"
+			}
+		]
+	}
 }
