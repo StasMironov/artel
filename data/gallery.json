@@ -1,15 +1,17 @@
 {
 	"title": "Галерея",
-	"breadcrumbs": [
-		{
-			"href": "./",
-			"text": "Главная"
-		},
-		{
-			"current": true,
-			"text": "Пресс-центр"
-		}
-	],
+	"breadcrumbs": {
+		"items": [
+			{
+				"href": "./",
+				"text": "Главная"
+			},
+			{
+				"current": true,
+				"text": "Результаты поиска"
+			}
+		]
+	},
 	"news_detail": {
 		"layout": "2",
 		"before": "<h2>Заключение партнерских отношений с&nbsp;«Baku Electronics» в Азербайджане</h2><p>Artel заключил партнерское соглашение с&nbsp;Baku&nbsp;Electronics в Азербайджане.</p><p>Компания Artel и Baku Electronics подписали соглашение на поставку продукции в Азербайджан с&nbsp;ожидаемым объемом экспорта к концу года $500 000</p>",

@@ -21,15 +21,12 @@
 		@include media-breakpoint-down(md) {
 			width: 100%;
 			margin-bottom: rem(64);
-			padding-right: 9%;
-		}
-
-		@include media-breakpoint-down(md) {
-			padding-right: 0;
+			padding-right: rem(72);
 		}
 
 		@include media-breakpoint-down(sm) {
 			margin-bottom: rem(32);
+			padding-right: 0;
 		}
 	}
 

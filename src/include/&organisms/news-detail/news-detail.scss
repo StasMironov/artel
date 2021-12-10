@@ -1,5 +1,6 @@
 .news-detail {
 	$root: &;
+	overflow: hidden;
 
 	&__content {
 		width: 75%;
@@ -23,11 +24,8 @@
 		padding-top: rem(110);
 		padding-bottom: rem(112);
 
-		@include media-breakpoint-down(md) {
-			padding-top: rem(64);
-		}
-
 		@include media-breakpoint-down(sm) {
+			padding-top: rem(64);
 			padding-bottom: rem(80);
 		}
 	}
