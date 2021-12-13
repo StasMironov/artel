@@ -50,6 +50,10 @@
 				#{$b}--light & {
 					background-color: rgba($color-white, 0.4);
 				}
+
+				#{$b}--white & {
+					background-color: rgba($color-white, 1.0);
+				}
 			}
 		}
 	}
@@ -67,6 +71,10 @@
 		#{$b}--light & {
 			color: rgba($color-white, 0.4);
 		}
+
+		#{$b}--white & {
+			color: rgba($color-white, 1);
+		}
 	}
 
 	&__link {
@@ -76,6 +84,10 @@
 
 			#{$b}--light & {
 				color: rgba($color-white, 1);
+			}
+
+			#{$b}--white & {
+				color: rgba($color-white, 0.4);
 			}
 		}
 

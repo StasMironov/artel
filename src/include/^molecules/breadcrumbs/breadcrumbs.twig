@@ -1,4 +1,4 @@
-<nav class="breadcrumbs {% if breadcrumbs.light %}breadcrumbs--light{% endif %}" aria-label="breadcrumb" data-animate>
+<nav class="breadcrumbs {% if breadcrumbs.theme %}breadcrumbs--{{breadcrumbs.theme}}{% endif %}" aria-label="breadcrumb" data-animate>
 	<ul class="breadcrumbs__list"
 		itemscope itemtype="https://schema.org/BreadcrumbList">
 		{% for crumb in breadcrumbs.items %}

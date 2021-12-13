@@ -294,7 +294,7 @@ export default class Map {
 			url: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg),
 			strokeOpacity: 0,
 			fillOpacity: 1.0,
-			anchor: google.maps.Point(10000, 10000),
+			anchor: google.maps.Point(14, 17),
 			size: new google.maps.Size(80, 80),
 		};
 
@@ -455,8 +455,24 @@ export default class Map {
 			}
 		}
 
-		if (!exclude && fit) {
-			this.map.fitBounds(this.bounds);
+		const dataZoom = document.querySelector('[data-zoom]');
+
+		if (dataZoom) {
+			if (!exclude && fit) {
+				this.map.fitBounds(this.bounds);
+				var listener = google.maps.event.addListener(
+					this.map,
+					'idle',
+					function () {
+						if (this.getZoom() > 16) this.setZoom(6);
+						google.maps.event.removeListener(listener);
+					}
+				);
+			}
+		} else {
+			if (!exclude && fit) {
+				this.map.fitBounds(this.bounds);
+			}
 		}
 	}
 }

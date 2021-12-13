@@ -158,7 +158,7 @@
 			}
 		},
 		"breadcrumbs": {
-			"light": true,
+			"theme": "light",
 			"items": [
 				{
 					"href": "./",

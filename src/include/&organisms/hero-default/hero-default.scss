@@ -133,7 +133,7 @@
 
 				}
 
-				&__link {
+				&__breadcrumbs {
 					position: relative;
 					width: auto;
 					color: $color-white;
@@ -141,17 +141,17 @@
 					bottom: rem(7);
 					@include defaultTransition(color, width);
 
-					&:after {
-						position: absolute;
-						content: "";
-						width: 0;
-						left: 0;
-						right: auto;
-						height: 1px;
-						background-color: $color-gray;
-						@include defaultTransition(background-color, width);
-						bottom: 1px;
-					}
+					// &:after {
+					// 	position: absolute;
+					// 	content: "";
+					// 	width: 0;
+					// 	left: 0;
+					// 	right: auto;
+					// 	height: 1px;
+					// 	background-color: $color-gray;
+					// 	@include defaultTransition(background-color, width);
+					// 	bottom: 1px;
+					// }
 
 					@include media-breakpoint-down(md) {
 						padding-bottom: 0;
@@ -169,7 +169,7 @@
 					}
 
 					@include touchLessHover {
-						color: $color-gray;
+						color: rgba($color-white, 0.4);
 
 						&:after {
 							width: 100%;
@@ -211,6 +211,54 @@
 						padding-top: rem(120);
 						padding-bottom: rem(48);
 					}					
+				}
+			}
+		}
+		&-3 {
+			#{$root} {
+				&__title {
+					width: 46.6%;	
+					margin-left: 20.54%;
+					margin-right: 0;
+					margin-right: auto;
+
+					@include media-breakpoint-down(md) {
+						text-align: left;
+						margin-left: 16.6%;
+					}
+
+					@include media-breakpoint-down(sm) {
+						margin-left: 18%;
+					}
+				}
+
+				&__breadcrumbs {
+					padding-bottom: rem(16);
+
+					@include media-breakpoint-down(md) {
+						padding-bottom: 0;
+    					margin-bottom: rem(25);
+						margin-left: 16.6%;
+					}		
+					
+					@include media-breakpoint-down(sm) {
+						margin-bottom: rem(18);
+						margin-left: 18%;
+					}
+				}
+
+				&__container {
+					@include media-breakpoint-down(md) {
+						flex-direction: column;
+						align-items: normal;
+						padding-top: rem(169);
+						padding-bottom: rem(80);
+					}
+
+					@include media-breakpoint-down(sm) {
+						padding-top: rem(124);
+						padding-bottom: rem(44);
+					}
 				}
 			}
 		}

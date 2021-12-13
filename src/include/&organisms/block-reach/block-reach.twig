@@ -1,0 +1,18 @@
+<div class="block-reach">
+    <div class="block-reach__container container">
+        {% if block_reach %}
+            <div class="block-reach__wrapper">
+                <div class="block-reach__border"></div>
+                <div class="block-reach__items">
+                    {% for item in block_reach.factoids %}
+                        <div class="block-reach__item">
+                            {% view '^factoid' with {
+                                factoid: item
+                            } %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
