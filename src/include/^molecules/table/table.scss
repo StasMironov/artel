@@ -103,8 +103,14 @@
 	}
 
 	&-left {
+		position: relative;
+		left: 1px;
 		z-index: 1;
 		width: rem(315);
+
+		@include media-breakpoint-down(sm) {
+			left: initial;
+		}
 
 		@include media-breakpoint-down(md) {
 			width: rem(265);
