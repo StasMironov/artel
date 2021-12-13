@@ -175,27 +175,6 @@
 			color: rgba($color-white, 1);
 			cursor: initial;
 		}
-
-		&.overlay {
-			&:after {
-				position: absolute;
-				top: 0;
-				right: rem(0);
-				bottom: 0;
-				z-index: 1;
-				width: rem(20);
-				height: rem(40);
-				margin: auto;
-				background: linear-gradient(
-					84deg,
-					rgba(0, 211, 114, 0) 0%,
-					rgba(0, 211, 114, 0.8) 50%,
-					rgba(0, 211, 114, 1) 100%
-				);
-				content: '';
-				pointer-events: none;
-			}
-		}
 	}
 
 	&__title {
@@ -250,5 +229,19 @@
 	.swiper-slide-active {
 		z-index: 100;
 		opacity: 1 !important;
+	}
+
+	.nav-pag {
+		&.overlay {
+			&:after {
+				background: linear-gradient(
+					84deg,
+					rgba(0, 211, 114, 0) 0%,
+					rgba(0, 211, 114, 0.8) 50%,
+					rgba(0, 211, 114, 1) 100%
+				);
+				
+			}
+		}
 	}
 }

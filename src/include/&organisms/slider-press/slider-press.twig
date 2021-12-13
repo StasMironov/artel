@@ -47,18 +47,8 @@
 		</div>
 		<div class="slider-press__cover container">
 			<div class="slider-press__navigation">
-				<div class="slider-press__pag" data-pag data-fade-in-up>
-					<div class="swiper-wrapper" data-wrap>
-						{% for slide in slider.items %}
-							<div class="swiper-slide">
-								{% if loop.index < 10 %}
-									0{{ loop.index }}
-								{% else %}
-									{{ loop.index }}
-								{% endif %}
-							</div>
-						{% endfor %}
-					</div>
+				<div class="slider-press__pag">
+					{% view '@nav-pag' %}
 				</div>
 				<div class="slider-press__nav" data-fade-in-up>
 					{% view '@nav-arrows' with {
