@@ -193,12 +193,13 @@
 					rgba(0, 211, 114, 1) 100%
 				);
 				content: '';
+				pointer-events: none;
 			}
 		}
 	}
 
 	&__title {
-		margin-bottom: rem(24);
+		margin-bottom: rem(64);
 		padding-left: rem(52);
 
 		@include media-breakpoint-down(sm) {
@@ -226,8 +227,8 @@
 
 	.swiper-container {
 		position: relative;
-		padding-top: 40px;
 		overflow: initial;
+		background-color: #00d372;
 
 		@include media-breakpoint-down(sm) {
 			padding-top: 0;
