@@ -3,11 +3,20 @@
 		height: rem(62);
 		padding-left: 0;
 		border: none;
-		border-bottom: 1px solid rgba($color-black, 0.4);
+
 		border-radius: 0;
 
 		&:hover {
 			color: rgba($color-black, 0.4);
+		}
+	}
+
+	.select2-container {
+		border-bottom: 1px solid rgba($color-black, 0.4);
+		@include defaultTransition(border);
+
+		@include touchLessHover {
+			border-bottom: 1px solid rgba($color-black, 1);
 		}
 	}
 
