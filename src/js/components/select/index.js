@@ -219,6 +219,10 @@ export default {
 				}
 			});
 
+			// $select.on('select2:select', () => {
+			// 	$('.select-shell .select2-container--focus').addClass('focus');
+			// });
+
 			$select.on('select2:selecting', () => {
 				if ($select.attr('multiple')) {
 					const $placeholder = $select.attr(
