@@ -14,10 +14,12 @@
         </div>
     {% endif %}
     <div class="hero-default__container container">
-        {% if hero_default.link %}
-            <a class="hero-default__link" href="{{hero_default.link.href}}" data-fade-in-up>
-                {{ hero_default.link.text }}
-            </a>
+        {% if hero_default.breadcrumbs %}
+            <div class="hero-default__breadcrumbs">
+                {% view '^breadcrumbs' with {
+                    breadcrumbs: hero_default.breadcrumbs
+                } %}
+            </div>
         {% endif %}
         {% if hero_default.title %}
             <h1 class="hero-default__title h1" data-fade-in-up>

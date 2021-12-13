@@ -136,9 +136,14 @@
 	},
 	"hero_default": {
 		"layout": "2",
-		"link": {
-			"text": "На главную",
-			"href": "main.html"
+		"breadcrumbs": {
+			"theme": "white",
+			"items": [
+				{
+					"text": "На главную",
+					"href": "main.html"
+				}
+			]
 		},
 		"desc": "Artel осуществляет взаимодействие с&nbsp;прессой и прочими СМИ на протяжении долгих лет",
 		"title": "Пресс-центр",

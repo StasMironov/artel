@@ -1,0 +1,46 @@
+{
+	"data": [
+		{
+			"id": "1",
+			"coords": [42.152684, 63.562397],
+			"type": "export",
+			"region": "uz"
+		},
+		{
+			"id": "2",
+			"coords": [55.755819, 37.617644],
+			"type": "export",
+			"region": "ru"
+		},
+		{
+			"id": "3",
+			"coords": [50.450441, 30.52355],
+			"type": "export",
+			"region": "ua"
+		},
+		{
+			"id": "4",
+			"coords": [51.128207, 71.430411],
+			"type": "export",
+			"region": "kz"
+		},
+		{
+			"id": "5",
+			"coords": [41.168708, 75.813085],
+			"type": "export",
+			"region": "kg"
+		},
+		{
+			"id": "6",
+			"coords": [38.389521, 69.317177],
+			"type": "export",
+			"region": "tj"
+		},
+		{
+			"id": "7",
+			"coords": [40.347675, 48.147228],
+			"type": "export",
+			"region": "az"
+		}
+	]
+}

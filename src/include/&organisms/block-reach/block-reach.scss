@@ -1,0 +1,54 @@
+.block-reach {
+	display: flex;
+	align-items: center;
+
+	&__wrapper {
+		width: 50%;
+		margin-left: 33.333%;
+
+		@include media-breakpoint-down(md) {
+			width: 100%;
+			margin-left: initial;
+		}
+	}
+
+	&__container {
+		padding-top: rem(88);
+
+		@include media-breakpoint-down(sm) {
+			padding-top: rem(48);
+		}
+	}
+
+	&__border {
+		width: 100%;
+		height: 1px;
+		background-color: rgba($color-black, 0.1);
+	}
+
+	&__items {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: rem(33);
+
+		@include media-breakpoint-down(md) {
+			padding-right: rem(110);
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-top: rem(24);
+			padding-right: 0;
+		}
+	}
+
+	&__item {
+		max-width: rem(216);
+
+		@include media-breakpoint-down(sm) {
+			justify-content: space-between;
+			width: 48%;
+			max-width: initial;
+		}
+	}
+}
