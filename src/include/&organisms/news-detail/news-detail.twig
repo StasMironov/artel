@@ -1,5 +1,9 @@
 <div class="news-detail {% if news_detail.layout %}news-detail--layout-{{news_detail.layout}}{% endif %}">
     <div class="news-detail__container container">
+        {% if news_detail.title_hidden %}
+            <h1 class="visually-hidden">{{ news_detail.title_hidden }}</h1>
+        {% endif %}
+
         {% if news_detail.intro %}
             {% view '&block-intro' with {
                 block_intro: news_detail.intro
