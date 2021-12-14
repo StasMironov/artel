@@ -351,8 +351,23 @@
 				]
 			},
 			{
-				"href": "javascript:void(0);",
-				"text": "Контакты"
+				"text": "Контакты",
+				"back": {
+					"icon": {
+						"name": "24/arrow-next-right",
+						"size": "24"
+					}
+				},
+				"sublist": [
+					{
+						"href": "javascript:void(0);",
+						"text": "Контакты"
+					},
+					{
+						"href": "javascript:void(0);",
+						"text": "Обратная связь"
+					}
+				]
 			}
 		]
 	},
