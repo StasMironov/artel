@@ -24,15 +24,17 @@ export default {
 		const wrapNode = document.querySelector('[data-content]');
 		if (!wrapNode) return;
 
-		this.ps = new PerfectScrollbar(wrapNode, {
-			suppressScrollX: true,
-			wheelPropagation: false,
-			minScrollbarLength: 140, // исправляет бесконечную прокрутку и баг с большим количеством элементов
-		});
-		this.ps.update();
-		wrapNode.addEventListener('scroll', () => {
-			this.ps.update();
-		});
+		if (isTablet()) {
+			this.ps = new PerfectScrollbar(wrapNode, {
+				suppressScrollX: true,
+				wheelPropagation: false,
+				minScrollbarLength: 140, // исправляет бесконечную прокрутку и баг с большим количеством элементов
+			});
+
+			wrapNode.addEventListener('scroll', () => {
+				this.ps.update();
+			});
+		}
 
 		let state = false;
 
@@ -96,18 +98,26 @@ export default {
 								'[data-sub-wrap]'
 							);
 
-							if (isTablet()) {
-								console.log('tablet');
-								this.psSub = new PerfectScrollbar(wrapSubNode, {
-									wheelSpeed: 2,
-									wheelPropagation: true,
-									minScrollbarLength: 20,
-								});
-							}
-							wrapSubNode.addEventListener('scroll', () => {
-								this.psSub.update();
-							});
-							wrapSubNode.scrollTop = 0;
+							// if (
+							// 	window.matchMedia('(max-width: 768px)').matches
+							// ) {
+							// 	console.log('tablet');
+							// 	this.psSub = '';
+							// 	this.psSub = new PerfectScrollbar(wrapSubNode, {
+							// 		wheelSpeed: 2,
+							// 		wheelPropagation: true,
+							// 		minScrollbarLength: 20,
+							// 	});
+							// 	this.psSub.update();
+
+							// 	wrapSubNode.addEventListener('scroll', () => {
+							// 		this.psSub.update();
+							// 	});
+							// 	wrapSubNode.scrollTop = 0;
+							// } else {
+							// 	this.psSub.destroy();
+							// }
+
 							if (!wrapSubNode) {
 								try {
 								} catch (err) {
@@ -138,7 +148,7 @@ export default {
 								tlSubItems.seek(100);
 							}
 							state = true;
-							this.psSub.update();
+							// this.psSub.update();
 						}
 					});
 				})
@@ -165,39 +175,20 @@ export default {
 			});
 			timelineTrigger.reverse().delay(0);
 		}
-		window.addEventListener(
-			'resize',
-			debounce(100, () => {
-				// if (this.psSub) {
-				// 	this.psSub.update();
-				// }
-				if (isDesktop()) {
-					parentNode.classList.remove('is-open');
-					window._enableScroll();
-				} else if (!isDesktop()) {
-					resetState();
-					parentNode.classList.remove('is-open');
-				}
-				if (isMob()) {
-					this.ps.destroy();
-					//this.psSub.destroy();
-				} else {
-					this.ps = new PerfectScrollbar(wrapNode, {
-						suppressScrollX: true,
-						wheelPropagation: false,
-						minScrollbarLength: 200, // исправляет бесконечную прокрутку и баг с большим количеством элементов
-					});
-				}
-			})
-		);
-		window.addEventListener(
-			'load',
-			debounce(100, () => {
-				if (isMob()) {
-					this.ps.destroy();
-					//this.psSub.destroy();
-				}
-			})
-		);
+		// window.addEventListener(
+		// 	'resize',
+		// 	debounce(100, () => {
+		// 		// if (this.psSub) {
+		// 		// 	this.psSub.update();
+		// 		// }
+		// 		if (isDesktop()) {
+		// 			parentNode.classList.remove('is-open');
+		// 			window._enableScroll();
+		// 		} else if (!isDesktop()) {
+		// 			resetState();
+		// 			parentNode.classList.remove('is-open');
+		// 		}
+		// 	})
+		// );
 	},
 };
