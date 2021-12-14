@@ -35,7 +35,7 @@
 		position: relative;
 		padding: rem(80) rem(54) rem(130);
 		height: calc(100vh - #{rem(80)});
-		overflow-y: auto;
+		// overflow-y: auto;
 
 		@include media-breakpoint-only(md) {
 			padding: rem(54) rem(54) rem(48);
@@ -161,7 +161,7 @@
 			bottom: 0;
 			right: 0;
 			left: 0;
-			@include defaultTransition(width);
+			transition: width 0.5s linear;
 		}
 
 		&.h2 {
@@ -250,7 +250,7 @@
 			left: 0;
 			width: 0%;
 			margin: auto;
-			@include defaultTransition(width);
+			transition: width 0.5s linear;
 		}
 
 
