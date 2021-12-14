@@ -112,8 +112,9 @@
 		}
 	}
 
-	.slider-photo img:not([width]):not([height]) {
+	.swiper-container img:not([width]):not([height]) {
 		margin: 0;
+		height: 100%;
 	}
 
 	p + h4,
