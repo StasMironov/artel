@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import { throttle } from 'throttle-debounce';
 import PerfectScrollbar from 'perfect-scrollbar';
 import { debounce } from 'throttle-debounce';
-import { isDesktop, isMob } from '../../utils/breakpoints';
+import { isDesktop, isMob, isTablet } from '../../utils/breakpoints';
 
 export default {
 	psSub: '',
@@ -96,7 +96,8 @@ export default {
 								'[data-sub-wrap]'
 							);
 
-							if (!isMob()) {
+							if (isTablet()) {
+								console.log('tablet');
 								this.psSub = new PerfectScrollbar(wrapSubNode, {
 									wheelSpeed: 2,
 									wheelPropagation: true,
