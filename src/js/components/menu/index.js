@@ -8,6 +8,7 @@ export default {
 	psSub: '',
 	ps: '',
 	init() {
+		// console.log(1);
 		// const menuNode = document.querySelector('[data-menu]');
 		// if (!menuNode) return;
 		// const triggers = menuNode.querySelectorAll('[data-trigger]');
@@ -171,7 +172,7 @@ export default {
 		// 	'load',
 		// 	debounce(100, () => {
 		// 		if (isMob()) {
-		// 			this.ps.destroy();
+		// 			//this.ps.destroy();
 		// 			//this.psSub.destroy();
 		// 		}
 		// 	})
