@@ -140,42 +140,42 @@ export default {
 		// 		wrapNode.scrollTop = 0;
 		// 	});
 		// });
-		// function resetState() {
-		// 	menuNode.classList.remove('is-active');
-		// 	burger.classList.remove('active');
-		// 	burger.classList.add('not-active');
-		// 	submenu.forEach((subMenu, idx) => {
-		// 		subMenu.classList.remove('is-active');
-		// 	});
-		// 	timelineTrigger.reverse().delay(0);
-		// }
-		// window.addEventListener(
-		// 	'resize',
-		// 	debounce(100, () => {
-		// 		if (this.psSub) {
-		// 			this.psSub.update();
-		// 		}
-		// 		if (isDesktop()) {
-		// 			parentNode.classList.remove('is-open');
-		// 			window._enableScroll();
-		// 		} else if (!isDesktop()) {
-		// 			resetState();
-		// 			parentNode.classList.remove('is-open');
-		// 		}
-		// 		// if (isMob()) {
-		// 		// 	this.ps.destroy();
-		// 		// 	this.psSub.destroy();
-		// 		// }
-		// 	})
-		// );
-		// window.addEventListener(
-		// 	'load',
-		// 	debounce(100, () => {
-		// 		if (isMob()) {
-		// 			//this.ps.destroy();
-		// 			//this.psSub.destroy();
-		// 		}
-		// 	})
-		// );
+		// // function resetState() {
+		// // 	menuNode.classList.remove('is-active');
+		// // 	burger.classList.remove('active');
+		// // 	burger.classList.add('not-active');
+		// // 	submenu.forEach((subMenu, idx) => {
+		// // 		subMenu.classList.remove('is-active');
+		// // 	});
+		// // 	timelineTrigger.reverse().delay(0);
+		// // }
+		// // window.addEventListener(
+		// // 	'resize',
+		// // 	debounce(100, () => {
+		// // 		if (this.psSub) {
+		// // 			this.psSub.update();
+		// // 		}
+		// // 		if (isDesktop()) {
+		// // 			parentNode.classList.remove('is-open');
+		// // 			window._enableScroll();
+		// // 		} else if (!isDesktop()) {
+		// // 			resetState();
+		// // 			parentNode.classList.remove('is-open');
+		// // 		}
+		// // 		// if (isMob()) {
+		// // 		// 	this.ps.destroy();
+		// // 		// 	this.psSub.destroy();
+		// // 		// }
+		// // 	})
+		// // );
+		// // window.addEventListener(
+		// // 	'load',
+		// // 	debounce(100, () => {
+		// // 		if (isMob()) {
+		// // 			//this.ps.destroy();
+		// // 			//this.psSub.destroy();
+		// // 		}
+		// // 	})
+		// // );
 	},
 };
