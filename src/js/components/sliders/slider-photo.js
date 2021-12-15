@@ -113,6 +113,10 @@ if (document.querySelector('[data-slider-photo-wrap]')) {
 		});
 		sliderPhoto.update();
 		pagSlide.update();
+
+		window.addEventListener('resize', () => {
+			pagSlide.update();
+		});
 	} catch (err) {
 		console.log(err);
 	}
