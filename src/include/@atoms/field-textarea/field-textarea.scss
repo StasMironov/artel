@@ -1,14 +1,18 @@
 .textarea-shell {
 	position: relative;
+	padding-top: rem(20);
 }
 
 .textarea {
 	@include base-input;
-	min-height: rem(61);
+	height: rem(40);
+	min-height: rem(40);
+	padding-top: 0;
 	line-height: rem(40);
 
 	@include media-breakpoint-down(sm) {
-		min-height: rem(56);
-		line-height: rem(35);
+		height: rem(35);
+		min-height: rem(35);
+		line-height: rem(34);
 	}
 }

@@ -113,10 +113,22 @@
 		}
 
 		&--aside {
+			// columns: 2 auto;
+			// column-gap: 1rem;
+			
+			// min-height: rem(200);
 			.footer__link {
 				@include touchLessHover {
 					color: $color-green;
 				}
+			}
+
+			.footer__item {
+				page-break-inside: avoid;
+				break-inside: avoid;
+				margin-bottom: 0 !important;
+				padding-bottom: rem(16);
+				//width: 50%;
 			}
 		}
 	}
