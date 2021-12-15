@@ -1,7 +1,7 @@
 <div class="slider-similar{% if slider_similar.bg %} bg-{{ slider_similar.bg }}{% else %} bg-white{% endif %}" data-slider-similar-wrap>
     <div class="slider-similar__container container">
         {% if slider_similar.title %}
-            <div class="slider-similar__title h2">
+            <div class="slider-similar__title h2"  data-fade-in-up>
                 {{slider_similar.title}}
             </div>
         {% endif %}

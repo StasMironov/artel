@@ -1,28 +1,3 @@
-{# <div class="table" data-table-viewport>
-    <table class="table__content" data-table-content>
-        {% if table.caption %}
-            <tr>
-                {% for item in  table.caption %}
-                    <th>
-                        {{item}}
-                    </th>
-                {% endfor %}
-            </tr>
-        {% endif %}
-        {% if table.rows %}
-            {% for row in  table.rows %}
-                <tr>
-                    {% for item in  row %}
-                        <td>
-                            {{item}}
-                        </td>
-                    {% endfor %}
-                </tr>
-            {% endfor %}  
-        {% endif %}
-    </table>
-</div> #}
-
 <div class="table">
     <div class="table-left">
         <table>

@@ -76,6 +76,7 @@
 		margin-bottom: rem(14);
 		margin-bottom: rem(16);
 		color: $color-white;
+		opacity: 0;
 		@include defaultTransition(color);
 
 		@include touchLessHover {
@@ -90,6 +91,7 @@
 	&__box {
 		display: flex;
 		align-items: center;
+		opacity: 0;
 	}
 
 	&__icon {
@@ -240,7 +242,6 @@
 					rgba(0, 211, 114, 0.8) 50%,
 					rgba(0, 211, 114, 1) 100%
 				);
-				
 			}
 		}
 	}

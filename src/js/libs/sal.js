@@ -28,6 +28,7 @@ export default {
 			selector: '[data-fade-in-up]',
 			rootMargin: '0px',
 		});
+		
 
 		document.documentElement.classList.remove('animate-disabled');
 		document.documentElement.classList.add('sal-init');

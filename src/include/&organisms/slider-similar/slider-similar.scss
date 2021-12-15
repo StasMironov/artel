@@ -1,4 +1,6 @@
 .slider-similar {
+	$root: &;
+
 	&__nav {
 		display: flex;
 		justify-content: flex-end;
@@ -33,9 +35,9 @@
 		left: 0;
 		height: 1px;
 		background-color: rgba($color-black, 0.1);
-		transform: scaleX(1);
+		transform: scaleX(0);
 		transform-origin: left;
-		transition: transform 1s ease 5s, background 0.5s ease;
+		transition: transform 0.5s ease 0.2s, background 0.5s ease;
 		content: '';
 	}
 
@@ -55,6 +57,12 @@
 
 		@include media-breakpoint-down(sm) {
 			margin-top: rem(24);
+		}
+	}
+
+	.swiper-container.animate {
+		#{$root}__border {
+			transform: scaleX(1);
 		}
 	}
 }

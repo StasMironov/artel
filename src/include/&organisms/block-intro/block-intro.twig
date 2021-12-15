@@ -4,16 +4,20 @@
             {% if block_intro.factoids %}
                 <div class="block-intro__left">
                     {% for factoid in block_intro.factoids %}
-                        {% view '^factoid' with {
-                            factoid: factoid
-                        } %}
+                        <div class="block-intro__factoid" data-fade-in-up data-delay="{{ (loop.index0 / 2.5)|round(2, 'floor') }}">
+                            {% view '^factoid' with {
+                                factoid: factoid
+                            } %}
+                        </div>
+                        
                     {% endfor %}
                 </div>
             {% endif %}
             {% if block_intro.items %}
                 <div class="block-intro__right">
                     {% for item in block_intro.items %}
-                        <div class="block-intro__item h3">
+                        <div class="block-intro__item h3" data-fade-in-up
+						 data-delay="{{ (loop.index0 / 1)|round(2, 'floor') }}">
                             {{item}}
                         </div>
                     {% endfor %}
