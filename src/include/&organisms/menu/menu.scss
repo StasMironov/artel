@@ -225,7 +225,7 @@
 	}
 
 	&__wrapper {
-		padding: rem(84) rem(43) rem(84);
+		padding: rem(84) rem(0) rem(84);
 		height: 100%;
 
 
@@ -235,7 +235,8 @@
 			// }
 
 			@media all and (orientation:landscape) {
-				padding: rem(40) rem(16) rem(32);
+				padding-top: rem(40);
+				padding-bottom: rem(32);
 			}
 		}
 
@@ -256,18 +257,22 @@
 
 	&__back {
 		position: relative;
-		width: 100%;
+		width: calc(100% - #{rem(96)});
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		background-color: transparent;
 		border: none;
 		padding-bottom: rem(30);
+		margin: 0 auto;
+		// padding-left: rem(48);
+		// padding-right: rem(48);
 
 		@include media-breakpoint-down(sm) {
 			padding-bottom: rem(16);
 			padding-left: 0;
     		padding-right: 0;
+			width: 100%;
 		}
 
 		.icon {
@@ -307,12 +312,21 @@
 			height: calc(100% - #{rem(40)});
 		}
 
+		#{$root}__item {
+			padding-left: rem(48);
+			padding-right: rem(48);
+
+			@include media-breakpoint-down(sm) {
+				padding: 0;
+			}
+		}
+
 		.ps__rail-y:before{
 			background-color: transparent;
 		}
 
 		.ps__thumb-y {
-			right: rem(21);
+			right: rem(8);
 			transform: translateY(#{rem(14)});
 		}
 	}
@@ -320,6 +334,10 @@
 	&__list {
 		height: 100%;
 		overflow: auto;
+
+		@include media-breakpoint-down(sm) {
+			height: 90%;
+		}
 	}
 
 	&.is-active {

@@ -265,19 +265,19 @@ export default class Map {
 		marker.setMap(this.map);
 		this.markers.push(marker);
 
-		marker.addListener('click', () => {
-			if (this.activeIndex !== index) {
-				// заперт на повторный клик по активной метке
-				this.showContent(markerData); // передача данных метки
-				this.cardWrap.classList.add('is-active'); // показ попапа с данными метки
+		// marker.addListener('click', () => {
+		// 	if (this.activeIndex !== index) {
+		// 		// заперт на повторный клик по активной метке
+		// 		this.showContent(markerData); // передача данных метки
+		// 		this.cardWrap.classList.add('is-active'); // показ попапа с данными метки
 
-				this.activeIndex = index;
-				this.filterMarkers(true); // true - исключаем все метки, кроме текущей
-			}
+		// 		this.activeIndex = index;
+		// 		this.filterMarkers(true); // true - исключаем все метки, кроме текущей
+		// 	}
 
-			this.map.setCenter(marker.getPosition());
-			this.map.setZoom(12);
-		});
+		// 	this.map.setCenter(marker.getPosition());
+		// 	this.map.setZoom(12);
+		// });
 	}
 
 	setIcon({ type }) {
