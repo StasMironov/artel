@@ -13,6 +13,7 @@
     transform: translateX(-100%);
     height: 100vh;
     // overflow: auto;
+	opacity: 0;
 
 	@include media-breakpoint-down(md) {
 		display: block;
@@ -219,6 +220,7 @@
 
 			transform: translateX(0%);
 			visibility: visible;
+			opacity: 1;
 			//display: block;
 		}
 		
@@ -342,5 +344,6 @@
 
 	&.is-active {
 		transform: none;
+		opacity: 1;
 	}
 }
