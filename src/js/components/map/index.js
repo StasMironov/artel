@@ -296,6 +296,7 @@ export default class Map {
 			fillOpacity: 1.0,
 			anchor: google.maps.Point(14, 17),
 			size: new google.maps.Size(80, 80),
+			// clickable: false,
 		};
 
 		// цвет иконки в зависимости от типа метки

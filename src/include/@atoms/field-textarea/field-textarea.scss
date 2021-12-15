@@ -8,11 +8,10 @@
 	height: rem(40);
 	min-height: rem(40);
 	padding-top: 0;
-	line-height: rem(40);
+	line-height: 1.2;
 
 	@include media-breakpoint-down(sm) {
 		height: rem(35);
 		min-height: rem(35);
-		line-height: rem(34);
 	}
 }
