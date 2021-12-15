@@ -78,8 +78,6 @@ export default {
 			gsap.set(subMenu, { xPercent: -100, autoAlpha: 0 });
 		});
 
-		let state = false;
-
 		const timelineTrigger = gsap.fromTo(
 			triggers,
 			{
