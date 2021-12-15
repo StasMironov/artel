@@ -91,23 +91,6 @@ if (document.querySelector('[data-slider-photo-wrap]')) {
 								.classList.add('nav-hidden');
 						}
 					},
-					resize() {
-						if (
-							!!this.slides &&
-							!!this.visibleSlidesIndexes &&
-							this.slides.length <=
-								this.visibleSlidesIndexes.length
-						) {
-							this.wrapperEl
-								.closest('[data-slider-photo-wrap]')
-								.classList.add('nav-hidden');
-						} else {
-							this.wrapperEl
-								.closest('[data-slider-photo-wrap]')
-								.classList.remove('nav-hidden');
-							this.slideTo(0);
-						}
-					},
 					slideChangeTransitionStart() {
 						const lastSlide =
 							pagSlide.swiper.slides[
