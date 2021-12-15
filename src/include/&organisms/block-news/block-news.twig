@@ -9,7 +9,7 @@
 			<div class="block-news__content">
 				{% if block.tabs %}
 					{% if block.layout %}
-					<div class="block-news__wrapper">
+					<div class="block-news__wrapper" data-fade-in-up data-delay="0.3">
 						{% if block.layout %}
 							{% if block.title %}
 								<h2 class="block-news__title" data-fade-in-up>{{ block.title }}</h2>
@@ -42,7 +42,7 @@
 					{% endif %}
 				{% endif %}
 				{% if block.tabs_content %}
-					<div class="block-news__tabs-content">
+					<div class="block-news__tabs-content" data-fade-in-up data-delay="0.5">
 						{% for item in block.tabs_content %}
 							<div class="block-news__pane{{ item.active ? ' is-active' }}" data-tab-pane="{{ loop.index }}">
 								{% if item.cards %}

@@ -12,10 +12,10 @@
 						<div class="slider-press__item slider-press__inner container">
 							<div class="slider-press__left">
 								{% if slide.article %}
-									<a {% if slide.href %}href="{{slide.href}}" {% endif %} class="slider-press__article h2">
+									<a {% if slide.href %}href="{{slide.href}}" {% endif %} class="slider-press__article h2" data-article>
 										{{ slide.article }}
 									</a>
-									<div class="slider-press__box">
+									<div class="slider-press__box" data-qty>
 										{% if slide.icon %}
 											<div class="slider-press__icon">
 												{% view '@icon' with {

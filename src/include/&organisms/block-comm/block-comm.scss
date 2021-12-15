@@ -1,4 +1,6 @@
 .block-comm {
+	$root: &;
+
 	&__container {
 		padding-top: rem(112);
 		padding-bottom: rem(32);
@@ -27,6 +29,7 @@
 	}
 
 	&__el {
+		position: relative;
 		width: 50%;
 		margin-right: rem(4);
 		margin-left: rem(4);
@@ -50,6 +53,26 @@
 				@include media-breakpoint-down(sm) {
 					margin-top: rem(-8);
 				}
+			}
+		}
+
+		&-border {
+			position: absolute;
+			top: 0;
+			right: rem(8);
+			left: 0;
+			height: 1px;
+			background-color: rgba($color-black, 0.1);
+			transform: scaleX(0);
+			transform-origin: left;
+			transition: transform 1s ease 0.3s, background 0.5s ease;
+			content: '';
+		}
+
+
+		&.animate {
+			#{$root}__el-border {
+				transform: scaleX(1);
 			}
 		}
 	}

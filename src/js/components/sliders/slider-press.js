@@ -1,4 +1,4 @@
-import { isDesktop } from '../../utils/breakpoints';
+import gsap from 'gsap';
 import Slider from './constructor';
 
 if (document.querySelector('[data-slider-press-wrap]')) {
@@ -49,6 +49,29 @@ if (document.querySelector('[data-slider-press-wrap]')) {
 		},
 	});
 
+	function showContent(element) {
+		const titleEl = element.querySelector('[data-article]');
+		const qtyEl = element.querySelector('[data-qty]');
+
+		const showTl = gsap.timeline({
+			paused: true,
+		});
+
+		showTl.fromTo(
+			[titleEl, qtyEl],
+			{ autoAlpha: 0, yPercent: 20 },
+			{
+				autoAlpha: 1,
+				yPercent: 0,
+				stagger: {
+					each: 0.3,
+				},
+			}
+		);
+
+		showTl.play();
+	}
+
 	const sliderPress = new Slider({
 		init: true,
 		wrap: '[data-slider-press-wrap]',
@@ -89,6 +112,7 @@ if (document.querySelector('[data-slider-press-wrap]')) {
 							.querySelector('[data-pag]')
 							.classList.add('overlay');
 					}
+					showContent(this.slides[this.activeIndex]);
 				},
 			},
 		},

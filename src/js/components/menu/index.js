@@ -1,8 +1,6 @@
 import gsap from 'gsap';
 import { throttle } from 'throttle-debounce';
 import PerfectScrollbar from 'perfect-scrollbar';
-import { debounce } from 'throttle-debounce';
-import { isDesktop, isMob, isTablet } from '../../utils/breakpoints';
 
 export default {
 	psSub: '',

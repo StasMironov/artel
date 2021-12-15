@@ -5,6 +5,7 @@ import './utils/userAgent';
 import libs from './libs';
 
 import Header from './components/header';
+import ScrollAnimation from './components/scroll-animation/scroll-animation';
 import Toggle from './components/lang-toggle';
 import Nav from './components/nav';
 import SlideDown from './components/slidedown';
@@ -49,6 +50,7 @@ window.addEventListener('init.input', () => {
 document.addEventListener('DOMContentLoaded', () => {
 	libs.init();
 	// Components
+
 	Animation.init();
 	Header.init();
 	Toggle.init();
@@ -62,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	Modals.init();
 	Menu.init();
 	select.init();
-
+	new ScrollAnimation();
 	new Map();
 	validation.init();
 	// Sticky.init();
@@ -95,4 +97,5 @@ window.addEventListener('reinit', () => {
 	Modal.init();
 	select.init();
 	Table.init();
+	new ScrollAnimation();
 });
