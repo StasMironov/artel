@@ -5,6 +5,7 @@ import PerfectScrollbar from 'perfect-scrollbar';
 export default {
 	psSub: '',
 	ps: '',
+	status: 0,
 	statePanel(el, status) {
 		const subItems = el.querySelectorAll('[data-sub-item]');
 		const tlSubItems = gsap.fromTo(
@@ -65,6 +66,18 @@ export default {
 		const wrapNode = document.querySelector('[data-content]');
 		if (!wrapNode) return;
 
+		function disableScrolling() {
+			var x = window.scrollX;
+			var y = window.scrollY;
+			window.onscroll = function () {
+				window.scrollTo(x, y);
+			};
+		}
+
+		function enableScrolling() {
+			window.onscroll = function () {};
+		}
+
 		if (window.innerWidth > 640) {
 			if (!$(wrapNode).hasClass('ps')) {
 				this.ps = new PerfectScrollbar(wrapNode);
@@ -105,6 +118,20 @@ export default {
 					window._disableScroll();
 					timelineTrigger.play().delay(0.3);
 					parentNode.classList.add('is-open');
+					this.status = 1;
+					// if (this.status) {
+					// 	window.addEventListener('scroll', (e) => {
+					// 		console.log(1);
+					// 		e.preventDefault();
+					// 		window.scrollTo(0, 0);
+					// 	});
+					// }
+
+					// $(window).bind('touchmove', function (e) {
+					// 	e.preventDefault();
+					// });
+
+					disableScrolling();
 				} else {
 					window._enableScroll();
 					burger.classList.remove('active');
@@ -115,6 +142,9 @@ export default {
 					});
 					timelineTrigger.reverse().delay(0);
 					parentNode.classList.remove('is-open');
+					//this.status=0;
+					//$('body').unbind('touchmove');
+					enableScrolling();
 				}
 			})
 		);
