@@ -102,7 +102,7 @@ export default {
 				burger.classList.add('active');
 				burger.classList.remove('not-active');
 				menuNode.classList.toggle('is-active');
-				state = false;
+
 				if (menuNode.classList.contains('is-active')) {
 					window._disableScroll();
 					timelineTrigger.play().delay(0.3);
