@@ -1,4 +1,4 @@
-<div class="map" data-map{% if map.url %} data-url="{{ map.url }}"{% endif %} {% if map.zoom %} data-zoom{% endif %} data-fade-in-up>
+<div class="map" {% if map.noClick %}data-noclick{% endif %} data-map{% if map.url %} data-url="{{ map.url }}"{% endif %} {% if map.zoom %} data-zoom{% endif %} data-fade-in-up>
 	{% if map.heading or map.tabs %}
 		<div class="map__top">
 			<div class="map__container container">
