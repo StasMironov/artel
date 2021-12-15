@@ -188,6 +188,7 @@
 	},
 	"map": {
 		"zoom": true,
+		"noClick":true,
 		"url": "ajax/map-country.json",
 		"heading": "Страны для экспорта",
 		"tabs": {
