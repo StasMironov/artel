@@ -288,6 +288,12 @@
 				}
 			}
 		}
+
+		&-3 #{$root} {
+			&__desc {
+				max-width: rem(530);
+			}
+		}
 	}
 
 	&--white {

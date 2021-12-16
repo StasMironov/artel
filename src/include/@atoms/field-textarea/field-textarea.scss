@@ -9,6 +9,8 @@
 	min-height: rem(40);
 	padding-top: 0;
 	line-height: 1.2;
+	-webkit-appearance: textfield;
+	resize: both;
 
 	@include media-breakpoint-down(sm) {
 		height: rem(35);
