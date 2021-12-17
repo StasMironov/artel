@@ -1,19 +1,43 @@
-<div class="block-history">
-    <div class="block-history__container">
-        <div class="block-history__inner">
-            <div class="block-history__aside">
-                <div class="block-history__period">
-                    {% view '&slider-period' with {
-                        slider: block_history.slider
-                    } %}
-                    <div class="block-history__progress">
+<div class="block-history" data-history-wrap>
+    <div class="block-history__container container" data-tab-container>
+        <div class="block-history__inner" data-tabs-wrap>
+            <div class="block-history__aside" data-pin-aside>
+                <div class="block-history__wrp">
+                    <div class="block-history__period">
+                        {% if block_history.tabs %}
+                            {% view '&tabs' with {
+                                tabs: block_history.tabs
+                            }%}
+                        {% endif %}
+                        <div class="progress">
+                            <div class="progress__line" data-progress>
+
+                            </div>
+                        </div>
+                        {# <progress class="block-history__progress" max="100" value="0" data-progress></progress> #}
                     </div>
-                </div>
+                </div>   
+                
             </div>
             <div class="block-history__content">
-                <div class="block-history__pin" data-pin-section>
+                {% if block_history.tabs_content %}
+                    <div class="block-info__tabs-content">
+                        {% for item in block_history.tabs_content %}
+                            <div class="block-history__pane{{ item.active ? ' is-active' }}" data-tab-pane="{{ loop.index }}" data-fade-in-up-repeat>   
+                                <div class="block-history__cards">
+                                    <div class="block-history__card">
+                                        {% view '^card-benefit' with {
+                                            card: item.card
+                                        }%}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {# <div class="block-history__pin" data-pin-section>
                    
-                </div>
+                </div> #}
             </div>
         </div>
     </div>
