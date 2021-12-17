@@ -81,6 +81,103 @@
 				}
 			}
 		}
+
+		#{$root}--layout-5 & {
+			margin-right: 0 !important;
+			pointer-events: none;
+
+			@media(max-width: 1023px) {
+				pointer-events: initial;
+			}
+
+			
+
+			&:not(:last-child) {
+				@include media-breakpoint-up(lg) {
+					margin-bottom: rem(0);
+				}
+
+				@media(max-width: 1023px) {
+					margin-right: rem(124) !important;
+				}
+
+				@include media-breakpoint-down(sm) {
+					margin-right: rem(102) !important;
+				}
+			}
+
+			&:first-child {
+				@media(max-width: 1023px) {
+					margin-left: rem(52);
+				}
+
+				@include media-breakpoint-down(sm) {
+					margin-left: rem(16);
+				}
+			}
+
+			&.swiper-slide-active {
+				margin-bottom: rem(0);
+			}
+
+			.tab {
+				color: rgba($color-white, $alpha: 0.4);
+				font-size: rem(48);
+				line-height: 1.2;
+
+				@media(max-width: 1023px) {
+					padding-bottom: rem(38);
+				}
+
+				@include media-breakpoint-down(sm) {
+					font-size: rem(32);
+				}
+
+				&::before {
+					top: rem(2);
+					bottom: 0;
+					margin: auto;
+					left: rem(-57);
+					width: rem(16);
+					height: rem(16);
+					transform: scale3d(1, 1, 1);
+					background: transparent;
+					border: 1px solid rgba($color-white, $alpha: 0.4);
+
+					@media(max-width: 1023px) {
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						top: auto;
+						background-color: $color-green;
+					}
+
+					@include media-breakpoint-down(sm) {
+						bottom: rem(8);
+					}
+				}
+
+				&--active {
+					font-size: rem(88);
+					color: $color-white;
+
+					@media(max-width: 1023px) {
+						font-size: rem(48);
+					}
+
+					@include media-breakpoint-down(sm) {
+						font-size: rem(32);
+					}
+
+					&::before {
+						background: $color-white;
+						border: 1px solid rgba($color-white, $alpha: 1);
+					}
+				}
+			}
+
+			
+		}
 	}
 
 	.swiper-container {
@@ -95,7 +192,7 @@
 		@include media-breakpoint-up(lg) {
 			display: flex;
 			flex-direction: column;
-			transform: none !important;
+			// transform: none !important;
 		}
 	}
 
@@ -124,6 +221,14 @@
 	&--layout-4 &{
 		&__item:not(:last-child){
 			margin-bottom: 0;
+		}
+	}
+
+	&--layout-5 {
+		.swiper-wrapper {
+			@media(max-width: 1023px) {
+				flex-direction: row;
+			}
 		}
 	}
 

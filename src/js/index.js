@@ -21,6 +21,7 @@ import Table from './components/table';
 import Input from './components/input';
 import Strategy from './components/strategy';
 import BlockProduct from './components/block-product';
+import BlockHistory from './components/block-history';
 import Modals from './components/modal';
 import Menu from './components/menu';
 import select from './components/select';
@@ -85,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	new BlockProduct();
+	new BlockHistory();
 
 	document.body.classList.add('content-loaded');
 });
