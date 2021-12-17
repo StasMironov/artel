@@ -23,15 +23,6 @@ export default class blockProduct {
 		let isVertical = true,
 			direction = 'vertical';
 
-		$(window)
-			.on('resize', () => {
-				if ($(window).width() > 1023) {
-					direction = 'vertical';
-				} else {
-					direction = 'horizontal';
-				}
-			})
-			.resize();
 		let slider = initSwiper(direction);
 
 		function initSwiper(direction) {
@@ -51,15 +42,6 @@ export default class blockProduct {
 			});
 		}
 
-		function changeDirection() {
-			isVertical = !isVertical;
-			direction = isVertical ? 'vertical' : 'horizontal';
-			let slideIndex = swiper.activeIndex;
-			swiper.destroy(true, true);
-			swiper = initSwiper(direction);
-			swiper.slideTo(slideIndex, 0);
-		}
-
 		$(window)
 			.on('resize', () => {
 				if ($(window).width() > 1023) {
@@ -75,6 +57,8 @@ export default class blockProduct {
 							)}%`;
 						},
 					});
+
+					slider.update();
 				}
 			})
 			.resize();
