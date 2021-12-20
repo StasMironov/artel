@@ -3,7 +3,7 @@
 	align-items: center;
 
 	&__wrapper {
-		width: 50%;
+		width: 66.6%;
 		margin-left: 33.333%;
 
 		@include media-breakpoint-down(md) {
@@ -31,9 +31,10 @@
 		align-items: center;
 		justify-content: space-between;
 		padding-top: rem(33);
+		padding-right: 33.5%;
 
 		@include media-breakpoint-down(md) {
-			padding-right: rem(110);
+			padding-right: rem(185);
 		}
 
 		@include media-breakpoint-down(sm) {
@@ -49,6 +50,10 @@
 			justify-content: space-between;
 			width: 48%;
 			max-width: initial;
+		}
+
+		.factoid__label {
+			width: min-content;
 		}
 	}
 }

@@ -39,6 +39,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
+		margin-top: rem(-4);
 	}
 
 	&__controls {
@@ -69,6 +70,7 @@
 		color: $color-black;
 		cursor: pointer;
 		@include defaultTransition(background-color, color);
+		box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
 
 		@include touchLessHover {
 			background-color: $color-green;
@@ -141,7 +143,20 @@
 		}
 
 		.swiper-container {
-			padding-bottom: rem(30);
+			padding-bottom: rem(20);
+
+			#{$root}--layout-2 &{
+				@include media-breakpoint-down(md) {
+					overflow: visible;
+				}
+			}
+		}
+
+		.swiper-slide {
+			
+				padding-bottom: 1rem;
+			
+			
 		}
 	}
 
