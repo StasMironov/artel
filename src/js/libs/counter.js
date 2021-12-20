@@ -28,7 +28,7 @@ export default {
 					.replace(/ +/g, '')
 					.trim();
 			} else if (initValue.split(' ').length > 1) {
-				decimal = ' ';
+				decimal = '';
 				endValue = initValue.replace(/ +/g, '').trim();
 			} else {
 				decimal = '';
@@ -39,7 +39,7 @@ export default {
 
 			const options = {
 				startVal: 0,
-				separator: ' ',
+				separator: '',
 				decimal,
 				decimalPlaces,
 				duration,

@@ -258,14 +258,17 @@ export default class Map {
 				markerData.coords[0],
 				markerData.coords[1]
 			),
+			map: this.map,
 			icon: this.setIcon(markerData),
 			region: markerData.region,
 		});
 
 		marker.setMap(this.map);
+		marker.setCursor('default');
 		this.markers.push(marker);
 
 		if (!this.mapNode.hasAttribute('data-noclick')) {
+			marker.setCursor('pointer');
 			marker.addListener('click', () => {
 				if (this.activeIndex !== index) {
 					// заперт на повторный клик по активной метке
@@ -296,7 +299,8 @@ export default class Map {
 			url: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg),
 			strokeOpacity: 0,
 			fillOpacity: 1.0,
-			anchor: google.maps.Point(14, 17),
+			origin: new google.maps.Point(0, 0), // origin
+			anchor: new google.maps.Point(0, 20), // anchor
 			size: new google.maps.Size(80, 80),
 		};
 
@@ -463,12 +467,18 @@ export default class Map {
 		if (dataZoom) {
 			if (!exclude && fit) {
 				this.map.fitBounds(this.bounds);
+				let bounds = this.bounds;
+				// this.map.panTo(this.bounds);
 				var listener = google.maps.event.addListener(
 					this.map,
 					'idle',
 					function () {
 						if (this.getZoom() > 16) this.setZoom(6);
 						google.maps.event.removeListener(listener);
+						let ne = bounds.getNorthEast(); // Coords of the northeast corner
+						let sw = bounds.getSouthWest(); // Coords of the southwest corner
+
+						this.panTo({ lat: ne.lat(), lng: sw.lng() });
 					}
 				);
 			}
