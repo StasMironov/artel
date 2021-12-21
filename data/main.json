@@ -5,7 +5,7 @@
 		"autoplay": "10000",
 		"slides": [
 			{
-				"title": "Artel — ведущий производитель бытовой техники и электроники в&nbsp;Центральной Азии",
+				"title": "Компания Artel",
 				"action": {
 					"href": "javascript:void(0);",
 					"text": "Подробнее о группе",
@@ -14,26 +14,10 @@
 						"name": "24/arrow-up-right"
 					}
 				},
-				"image": {
-					"src": "tmp/main-hero/hero-desk.jpg",
-					"alt": "image alt",
-					"fill": true,
-					"tab": {
-						"srcset": [
-							{
-								"scale": "1",
-								"src": "tmp/main-hero/hero-tab.jpg"
-							}
-						]
-					},
-					"mob": {
-						"srcset": [
-							{
-								"scale": "1",
-								"src": "tmp/main-hero/hero-mob.jpg"
-							}
-						]
-					}
+				"video": {
+					"attr": "data-video-main",
+					"src": "tmp/video/video-2.mp4",
+					"type": "video/mp4"
 				}
 			},
 			{
