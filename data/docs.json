@@ -1,0 +1,64 @@
+{
+	"title": "Партнёры по продажам",
+	"hero_default": {
+		"layout": "3",
+		"theme": "black",
+		"breadcrumbs": {
+			"items": [
+				{
+					"text": "Главная",
+					"href": "main.html"
+				},
+				{
+					"href": "./",
+					"text": "Партнерам"
+				}
+			]
+		},
+		"title": "Внутренние документы"
+	},
+	"features": {
+		"items": [
+			{
+				"layout": "2",
+				"href": "#",
+				"title": "2021 Сведения, направленные на LSE",
+				"text": "0,87 мб",
+				"action": {
+					"title": "Подробнее",
+					"text": "Подробнее",
+					"theme": "white",
+					"icon": {
+						"name": "24/arrow-up-right"
+					}
+				}
+			},
+			{
+				"layout": "2",
+				"href": "#!",
+				"title": "2020 Сведения, направленные на LSE",
+				"text": "1,87 мб",
+				"action": {
+					"title": "Подробнее",
+					"text": "Подробнее",
+					"icon": {
+						"name": "24/arrow-up-right"
+					}
+				}
+			},
+			{
+				"layout": "2",
+				"href": "#!!",
+				"title": "2019 Сведения, направленные на LSE",
+				"text": "0,87 мб",
+				"action": {
+					"title": "Подробнее",
+					"text": "Подробнее",
+					"icon": {
+						"name": "24/arrow-up-right"
+					}
+				}
+			}
+		]
+	}
+}

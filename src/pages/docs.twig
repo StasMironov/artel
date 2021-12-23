@@ -1,0 +1,16 @@
+{% extends "layouts::_page.twig" %}
+
+{% block content %}
+
+	{% view '&hero-default' with {
+        hero_default: hero_default
+    } %}
+
+
+	<div class="mb-md-120 mb-64">
+		{% view '&features' with {
+			features: features
+		} %}
+	</div>
+
+{% endblock %}

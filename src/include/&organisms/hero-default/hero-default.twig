@@ -1,4 +1,4 @@
-<div class="hero-default{% if hero_default.no_overlay %} hero-default--no-overlay{% endif %}
+<div class="hero-default{% if hero_default.no_overlay %} hero-default--no-overlay{% endif %} {% if hero_default.theme %}hero-default--theme-{{hero_default.theme}}{% endif %}
 {% if hero_default.no_title %} hero-default--no-title{% endif %}{% if hero_default.layout %} hero-default--layout-{{hero_default.layout}}{% endif %}">
     {% if hero_default.image %}
         <div class="hero-default__bg">
