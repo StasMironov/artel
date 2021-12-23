@@ -187,4 +187,12 @@
 		color: rgba($color-black, 0.5);
 		max-width: rem(240);
 	}
+
+	&--layout {
+		&-2 {
+			.checkbox__text {
+				max-width: rem(545);
+			}
+		}
+	}
 }
