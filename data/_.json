@@ -575,6 +575,22 @@
 			"data": {
 				"modal": {}
 			}
+		},
+		{
+			"id": "modal-warning",
+			"component": "&modal-warning",
+			"data": {
+				"modal": {
+					"title": "Сайт находится в&nbsp;стадии разработки",
+					"desc": "В данный момент сайт работает в&nbsp;тестовом режиме, спасибо за понимание",
+					"action": {
+						"text": "Продолжить",
+						"title": "Продолжить",
+						"theme": "white",
+						"attr": "data-modal-close"
+					}
+				}
+			}
 		}
 	]
 }

@@ -1,0 +1,41 @@
+.modal-warning {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	padding: rem(80) rem(117) rem(80) rem(112);
+	color: $color-white;
+	background-color: $color-green;
+
+	@include media-breakpoint-down(md) {
+		padding: rem(80) rem(64) rem(80);
+	}
+
+	@include media-breakpoint-down(sm) {
+		padding: rem(144) rem(16) rem(80);
+	}
+
+	&__title {
+		margin-bottom: rem(50);
+		font-size: rem(48);
+		line-height: rem(50);
+
+		@include media-breakpoint-down(md) {
+			font-size: rem(35);
+			line-height: rem(40);
+		}
+
+		@include media-breakpoint-down(sm) {
+			font-size: rem(28);
+			line-height: rem(35);
+		}
+	}
+
+	&__desc {
+		max-width: rem(335);
+	}
+
+	.button {
+		align-self: flex-start;
+		margin-top: auto;
+	}
+}

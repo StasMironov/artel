@@ -23,6 +23,7 @@ import Strategy from './components/strategy';
 import BlockProduct from './components/block-product';
 import BlockHistory from './components/block-history';
 import Modals from './components/modal';
+import ModalWarning from './components/modal/modal-base';
 import Menu from './components/menu';
 import select from './components/select';
 
@@ -91,11 +92,26 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.body.classList.add('content-loaded');
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+	window.addEventListener('init.modals', () => {
+		new ModalWarning({
+			init: true,
+			id: 'modal-warning',
+			trigger: '[data-modal-warning]',
+			closeTrigger: '#modal-warning [data-modal-close]',
+			openClass: 'is-open',
+		});
+	});
+
+	window.dispatchEvent(new CustomEvent('init.modals'));
+});
+
 window.addEventListener('reinit', () => {
 	window.dispatchEvent(new CustomEvent('init.lazyload'));
 	window.dispatchEvent(new CustomEvent('init.validation'));
 	window.dispatchEvent(new CustomEvent('init.mask'));
 	window.dispatchEvent(new CustomEvent('init.input'));
+	window.dispatchEvent(new CustomEvent('init.modals'));
 	Modal.init();
 	select.init();
 	Table.init();

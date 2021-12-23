@@ -7,6 +7,8 @@
 		display: block;
 	}
 
+	
+
 	&__overlay {
 		position: fixed;
 		top: 0;
@@ -18,6 +20,10 @@
 		align-items: center;
 		z-index: 100;
 		background-color: rgba($color-black, 0.85);
+
+		#{$b}.is-warning & {
+			background-color: rgba($color-black, 0.6);
+		}
 
 		#{$b}--adress & {
 			overflow-y: auto;
@@ -41,7 +47,7 @@
 
 	&__container {
 		position: relative;
-		background-color: $color-white;
+		background-color: transparent;
 		box-sizing: border-box;
 		width: rem(600);
 
@@ -71,6 +77,20 @@
 			@include media-breakpoint-down(sm) {
 				
 			}
+		}
+
+		#{$b}.is-warning & {
+			margin-left: auto;
+			min-width: rem(714);
+
+			@include media-breakpoint-down(md) {
+				min-width: initial;
+				width: 65vw;
+			}	
+
+			@include media-breakpoint-down(sm) {
+				width: 100vw;
+			}	
 		}
 	}
 
@@ -165,6 +185,18 @@
 
 		&:before {
 			transform: rotate(-45deg);
+		}
+
+		#{$b}.is-warning & {
+			width: rem(24);
+			height: rem(24);
+			top: rem(44);
+			right: rem(50);
+
+			@include media-breakpoint-down(sm) {
+				right: rem(32);
+			}
+
 		}
 		
 	}

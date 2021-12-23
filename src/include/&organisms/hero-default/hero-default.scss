@@ -75,6 +75,10 @@
 		@include media-breakpoint-down(sm) {
 			margin-left: 0;
 		}
+
+		#{$root}--theme-black & {
+			color: $color-black;
+		}
 	}
 
 	&--no-title {
