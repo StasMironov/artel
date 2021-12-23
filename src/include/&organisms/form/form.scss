@@ -76,6 +76,11 @@
 		}
 
 		max-width: rem(414);
+
+
+		@include media-breakpoint-down(md) {
+			max-width: initial;
+		}
 	}
 
 	&__text {

@@ -463,24 +463,33 @@ export default class Map {
 		}
 
 		const dataZoom = document.querySelector('[data-zoom]');
+		//let bounds = this.bounds;
+		let ne = this.bounds.getNorthEast(); // Coords of the northeast corner
+		let sw = this.bounds.getSouthWest(); // Coords of the southwest corner
+
+		function smoothZoom(map, max, cnt) {
+			if (cnt >= max) {
+				return;
+			} else {
+				let z = google.maps.event.addListener(
+					map,
+					'zoom_changed',
+					function (event) {
+						google.maps.event.removeListener(z);
+						smoothZoom(map, max, cnt + 1);
+					}
+				);
+				setTimeout(function () {
+					map.setZoom(cnt);
+					map.setCenter({ lat: ne.lat(), lng: sw.lng() });
+				}, 60); // 80ms is what I found to work well on my system -- it might not work well on all systems
+			}
+		}
 
 		if (dataZoom) {
 			if (!exclude && fit) {
-				this.map.fitBounds(this.bounds);
-				let bounds = this.bounds;
-				// this.map.panTo(this.bounds);
-				var listener = google.maps.event.addListener(
-					this.map,
-					'idle',
-					function () {
-						if (this.getZoom() > 16) this.setZoom(6);
-						google.maps.event.removeListener(listener);
-						let ne = bounds.getNorthEast(); // Coords of the northeast corner
-						let sw = bounds.getSouthWest(); // Coords of the southwest corner
-
-						this.panTo({ lat: ne.lat(), lng: sw.lng() });
-					}
-				);
+				this.map.setZoom(2);
+				smoothZoom(this.map, 6, this.map.getZoom()); //
 			}
 		} else {
 			if (!exclude && fit) {
