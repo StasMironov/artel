@@ -2,6 +2,7 @@
 	$root: &;
 	display: flex;
 	align-items: center;
+	overflow: hidden;
 
 	&__border {
 		position: absolute;
@@ -33,7 +34,7 @@
 		padding-top: rem(88);
 
 		@include media-breakpoint-down(sm) {
-			padding-top: rem(48);
+			padding-top: rem(68);
 		}
 	}
 
@@ -50,7 +51,7 @@
 		}
 
 		@include media-breakpoint-down(sm) {
-			padding-top: rem(24);
+			padding-top: rem(0);
 			padding-right: 0;
 			flex-wrap: wrap;
 			margin-top: rem(-20);
@@ -65,7 +66,7 @@
 			justify-content: space-between;
 			width: calc(33.333% + #{rem(18)});
 			max-width: initial;
-			margin-top: rem(20);
+			margin-top: rem(24);
 		}
 
 		.factoid__label {
