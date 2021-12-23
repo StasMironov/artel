@@ -43,6 +43,7 @@
 		justify-content: space-between;
 		padding-top: rem(33);
 		padding-right: 33.5%;
+		margin: 0 rem(-20);
 
 		@include media-breakpoint-down(md) {
 			padding-right: rem(185);
@@ -51,16 +52,20 @@
 		@include media-breakpoint-down(sm) {
 			padding-top: rem(24);
 			padding-right: 0;
+			flex-wrap: wrap;
+			margin-top: rem(-20);
 		}
 	}
 
 	&__item {
 		max-width: rem(216);
+		margin: 0 rem(20);
 
 		@include media-breakpoint-down(sm) {
 			justify-content: space-between;
-			width: 48%;
+			width: calc(33.333% + #{rem(18)});
 			max-width: initial;
+			margin-top: rem(20);
 		}
 
 		.factoid__label {

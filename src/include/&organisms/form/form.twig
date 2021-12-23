@@ -2,9 +2,8 @@
 	{% if form.name %} name="{{ form.name }}"{% endif %}
 	{% if form.action %} action="{{ form.action }}"{% endif %}
 	{% if form.method %} method="{{ form.method }}"{% endif %}
-	class="form {% if form.mob_layout %} form--mob-layout {% endif %} {% if form.bg %} bg-{{ form.bg }}{% else %} bg-white{% endif %}"
+	class="form {% if form.layout %}form--layout-{{form.layout}}{% endif %} {% if form.mob_layout %} form--mob-layout {% endif %} {% if form.bg %} bg-{{ form.bg }}{% else %} bg-white{% endif %}"
 	{% if form.attr %} {{ form.attr }}{% endif %}
-    
 	data-parsley-validate
 	
 >
