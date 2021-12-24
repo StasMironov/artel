@@ -2,7 +2,7 @@
 {% if card.delay %}
 	{% set delay = card.delay %}
 {% endif %}
-<div class="card-features{% if card.theme %} bg-{{ card.theme }}{% endif %} {% if card.layout %}card--layout-{{card.layout}}{% endif %}">
+<div class="card-features{% if card.theme %} bg-{{ card.theme }}{% endif %} {% if card.layout %}card-features--layout-{{card.layout}}{% endif %}">
 	{% if card.href %}
 		<a class="card-features__link" href="{{ card.href }}">{{ card.href }}</a>
 	{% endif %}

@@ -18,6 +18,10 @@
 			flex-wrap: wrap;
 			margin-right: rem(-8);
 		}
+
+		#{$root}--layout-2 &{
+			margin-top: rem(-8);
+		}
 	}
 
 	&__item {
@@ -29,6 +33,10 @@
 		@include media-breakpoint-up(lg) {
 			width: 33.33%;
 			padding-right: rem(8);
+		}
+
+		#{$root}--layout-2 &{
+			margin-top: rem(8);
 		}
 	}
 }

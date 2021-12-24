@@ -1,0 +1,56 @@
+<div class="block-docs" {% if block_docs.tabs %} data-tab-container {% endif %}>
+    <div class="block-docs__container container" {% if block_docs.tabs %} data-tabs-wrap {% endif %}>
+        <div class="block-docs__wrapper">
+            {% if block_docs.fields %}
+                <div class="filter-select" data-fade-in-up>
+                    {% for field in block_docs.fields %}
+                        <div class="filter-select__field">
+                            {% view '@field' with {
+                                field: field
+                            } %}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if block_docs.tabs %}
+                <div class="block-docs__tabs">
+                    {% view '&tabs' with {
+                        tabs: block_docs.tabs
+                    }%}
+                </div>
+            {% endif %}
+        </div>
+        {% if block_docs.tabs_content %}
+            <div class="block-docs__tabs-content" data-fade-in-up data-delay="0.5">
+                {% for item in block_docs.tabs_content %}
+                    <div class="block-docs__pane{{ item.active ? ' is-active' }}" data-tab-pane="{{ loop.index }}">
+                        {% if item.cards %}
+                            <div class="block-docs__cards">
+                                {% for card in item.cards %}
+                                    <div class="block-docs__card">
+                                            {% view '^card-features' with {
+                                                card: card
+                                            }%}
+                                        <div class="block-docs__card-border"></div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %} 
+        {% if block_docs.items %}
+            <div class="block-docs__cards">
+                {% for card in block_docs.items %}
+                    <div class="block-docs__card">
+                            {% view '^card-features' with {
+                                card: card
+                            }%}
+                        <div class="block-docs__card-border"></div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</div>
