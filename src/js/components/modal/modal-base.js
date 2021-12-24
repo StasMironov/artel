@@ -63,6 +63,11 @@ export default class ModalWarning {
 					window._enableScroll();
 				});
 			});
+
+			window.onbeforeunload = function () {
+				localStorage.removeItem('popupWarning');
+				return null;
+			};
 		}
 	}
 }

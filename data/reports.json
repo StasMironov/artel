@@ -1,5 +1,5 @@
 {
-	"title": "Внутренние документы",
+	"title": "Результаты и отчёты",
 	"hero_default": {
 		"layout": "3",
 		"theme": "black",
@@ -15,7 +15,7 @@
 				}
 			]
 		},
-		"title": "Внутренние документы"
+		"title": "Результаты и отчёты"
 	},
 	"block_docs": {
 		"tabs": {
@@ -200,6 +200,41 @@
 								"name": "24/arrow-up-right"
 							}
 						}
+					}
+				]
+			}
+		],
+		"fields": [
+			{
+				"select": true,
+				"id": "filter-form-select-1",
+				"name": "filter-form-select-1",
+				"attr": "data-form-select",
+				"placeholder": "Все года",
+				"options": [
+					{
+						"value": "All",
+						"text": "Все года"
+					},
+					{
+						"value": "2021",
+						"text": "2021"
+					},
+					{
+						"value": "2020",
+						"text": "2020"
+					},
+					{
+						"value": "2019",
+						"text": "2019"
+					},
+					{
+						"value": "2018",
+						"text": "2018"
+					},
+					{
+						"value": "2017",
+						"text": "2017"
 					}
 				]
 			}

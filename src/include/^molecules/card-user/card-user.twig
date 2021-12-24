@@ -1,4 +1,4 @@
-<div class="card-user" data-scroll-sticky>
+<div class="card-user {% if card.theme %} card-user--theme-{{card.theme}} {% endif %}" data-scroll-sticky>
     <div class="card-user__bg  {% if not card.image is defined %} is-noImage {% endif %}">
         {% if card.image %}
             {% view '@image' with {

@@ -1,0 +1,50 @@
+.block-docs {
+    &__cards {
+		@include media-breakpoint-up(lg) {
+			display: flex;
+			flex-wrap: wrap;
+			margin-right: rem(-8);
+            margin-top: rem(-8);
+		}
+	}
+
+	&__card {
+        margin-top: rem(8);
+		// @include media-breakpoint-down(md) {
+		// 	+ #{$root}__item {
+		// 		margin-top: rem(8);
+		// 	}
+		// }
+		@include media-breakpoint-up(lg) {
+			width: 33.33%;
+			padding-right: rem(8);
+		}
+	}
+
+    &__pane {
+		display: none;
+
+		&.is-active {
+			display: block;
+		}
+
+		opacity: 0;
+
+		&:first-child {
+			opacity: 1;
+            transform: none !important;
+		}
+	}
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: rem(76);
+    }
+
+    &__tabs {
+        background: red;
+        display: inline-block;
+        margin: 0 auto;
+    }
+}
