@@ -1,19 +1,22 @@
-<div class="block-docs" {% if block_docs.tabs %} data-tab-container {% endif %}>
+<div class="block-docs {% if block_docs.layout %} block-docs--layout-{{block_docs.layout}} {% endif %}" {% if block_docs.tabs %} data-tab-container {% endif %}>
     <div class="block-docs__container container" {% if block_docs.tabs %} data-tabs-wrap {% endif %}>
         <div class="block-docs__wrapper">
-            {% if block_docs.fields %}
-                <div class="filter-select" data-fade-in-up>
-                    {% for field in block_docs.fields %}
-                        <div class="filter-select__field">
-                            {% view '@field' with {
-                                field: field
-                            } %}
-                        </div>
-                    {% endfor %}
+            {% if block_docs.filter_select %}
+                <div class="block-docs__select {% if block_docs.filter_select.fill %}block-docs__select--fill{% endif %}">
+                    {% view '@filter-select' with {
+                        filter_select: block_docs.filter_select
+                    } %}
+                </div>
+            {% endif %}
+            {% if block_docs.form %}
+                <div class="block-docs__form">
+                    {% view '&search-form' with {
+                        form: block_docs.form
+                    } %}
                 </div>
             {% endif %}
             {% if block_docs.tabs %}
-                <div class="block-docs__tabs">
+                <div class="block-docs__tabs {% if block_docs.tabs.offset_left %}block-docs__offset-left-{{block_docs.tabs.offset_left}}{% endif %}" >
                     {% view '&tabs' with {
                         tabs: block_docs.tabs
                     }%}

@@ -1,7 +1,7 @@
 {
 	"title": "Результаты и отчёты",
 	"hero_default": {
-		"layout": "3",
+		"layout": "4",
 		"theme": "black",
 		"breadcrumbs": {
 			"items": [
@@ -18,20 +18,34 @@
 		"title": "Результаты и отчёты"
 	},
 	"block_docs": {
+		"layout": "2",
 		"tabs": {
+			"offset_left": "1",
 			"layout": "4",
 			"horizontal": true,
 			"items": [
 				{
-					"text": "RNS",
-					"title": "RNS",
+					"text": "Годовые отчеты",
+					"title": "Годовые отчеты",
 					"attr": "data-attr",
 					"active": "true",
 					"shift": true
 				},
 				{
-					"text": "Существенные факты",
-					"title": "Существенные факты",
+					"text": "Фин. отчеты",
+					"title": "Фин. отчеты",
+					"attr": "data-attr",
+					"shift": true
+				},
+				{
+					"text": "Опер. результаты",
+					"title": "Опер. результаты",
+					"attr": "data-attr",
+					"shift": true
+				},
+				{
+					"text": "Архив результатов",
+					"title": "Архив результатов",
 					"attr": "data-attr",
 					"shift": true
 				}
@@ -202,42 +216,209 @@
 						}
 					}
 				]
-			}
-		],
-		"fields": [
+			},
 			{
-				"select": true,
-				"id": "filter-form-select-1",
-				"name": "filter-form-select-1",
-				"attr": "data-form-select",
-				"placeholder": "Все года",
-				"options": [
+				"cards": [
 					{
-						"value": "All",
-						"text": "Все года"
+						"layout": "2",
+						"href": "#",
+						"title": "2021 Сведения, направленные на LSE",
+						"text": "0,87 мб",
+						"action": {
+							"title": "Скачать PDF",
+							"text": "Скачать PDF",
+							"icon": {
+								"name": "24/arrow-up-right"
+							}
+						}
 					},
 					{
-						"value": "2021",
-						"text": "2021"
+						"layout": "2",
+						"href": "#",
+						"title": "2021 Сведения, направленные на LSE",
+						"text": "0,87 мб",
+						"action": {
+							"title": "Скачать PDF",
+							"text": "Скачать PDF",
+							"icon": {
+								"name": "24/arrow-up-right"
+							}
+						}
 					},
 					{
-						"value": "2020",
-						"text": "2020"
+						"layout": "2",
+						"href": "#",
+						"title": "2021 Сведения, направленные на LSE",
+						"text": "0,87 мб",
+						"action": {
+							"title": "Скачать PDF",
+							"text": "Скачать PDF",
+							"icon": {
+								"name": "24/arrow-up-right"
+							}
+						}
 					},
 					{
-						"value": "2019",
-						"text": "2019"
+						"layout": "2",
+						"href": "#",
+						"title": "2021 Сведения, направленные на LSE",
+						"text": "0,87 мб",
+						"action": {
+							"title": "Скачать PDF",
+							"text": "Скачать PDF",
+							"icon": {
+								"name": "24/arrow-up-right"
+							}
+						}
 					},
 					{
-						"value": "2018",
-						"text": "2018"
+						"layout": "2",
+						"href": "#",
+						"title": "2021 Сведения, направленные на LSE",
+						"text": "0,87 мб",
+						"action": {
+							"title": "Скачать PDF",
+							"text": "Скачать PDF",
+							"icon": {
+								"name": "24/arrow-up-right"
+							}
+						}
 					},
 					{
-						"value": "2017",
-						"text": "2017"
+						"layout": "2",
+						"href": "#",
+						"title": "2021 Сведения, направленные на LSE",
+						"text": "0,87 мб",
+						"action": {
+							"title": "Скачать PDF",
+							"text": "Скачать PDF",
+							"icon": {
+								"name": "24/arrow-up-right"
+							}
+						}
+					}
+				]
+			},
+			{
+				"cards": [
+					{
+						"layout": "2",
+						"href": "#",
+						"title": "2021 Сведения, направленные на LSE",
+						"text": "0,87 мб",
+						"action": {
+							"title": "Скачать PDF",
+							"text": "Скачать PDF",
+							"icon": {
+								"name": "24/arrow-up-right"
+							}
+						}
+					},
+					{
+						"layout": "2",
+						"href": "#",
+						"title": "2021 Сведения, направленные на LSE",
+						"text": "0,87 мб",
+						"action": {
+							"title": "Скачать PDF",
+							"text": "Скачать PDF",
+							"icon": {
+								"name": "24/arrow-up-right"
+							}
+						}
+					},
+					{
+						"layout": "2",
+						"href": "#",
+						"title": "2021 Сведения, направленные на LSE",
+						"text": "0,87 мб",
+						"action": {
+							"title": "Скачать PDF",
+							"text": "Скачать PDF",
+							"icon": {
+								"name": "24/arrow-up-right"
+							}
+						}
+					},
+					{
+						"layout": "2",
+						"href": "#",
+						"title": "2021 Сведения, направленные на LSE",
+						"text": "0,87 мб",
+						"action": {
+							"title": "Скачать PDF",
+							"text": "Скачать PDF",
+							"icon": {
+								"name": "24/arrow-up-right"
+							}
+						}
+					},
+					{
+						"layout": "2",
+						"href": "#",
+						"title": "2021 Сведения, направленные на LSE",
+						"text": "0,87 мб",
+						"action": {
+							"title": "Скачать PDF",
+							"text": "Скачать PDF",
+							"icon": {
+								"name": "24/arrow-up-right"
+							}
+						}
+					},
+					{
+						"layout": "2",
+						"href": "#",
+						"title": "2021 Сведения, направленные на LSE",
+						"text": "0,87 мб",
+						"action": {
+							"title": "Скачать PDF",
+							"text": "Скачать PDF",
+							"icon": {
+								"name": "24/arrow-up-right"
+							}
+						}
 					}
 				]
 			}
-		]
+		],
+		"filter_select": {
+			"fill": true,
+			"fields": [
+				{
+					"select": true,
+					"id": "filter-form-select-1",
+					"name": "filter-form-select-1",
+					"attr": "data-form-select",
+					"placeholder": "Все года",
+					"options": [
+						{
+							"value": "All",
+							"text": "Все года"
+						},
+						{
+							"value": "2021",
+							"text": "2021"
+						},
+						{
+							"value": "2020",
+							"text": "2020"
+						},
+						{
+							"value": "2019",
+							"text": "2019"
+						},
+						{
+							"value": "2018",
+							"text": "2018"
+						},
+						{
+							"value": "2017",
+							"text": "2017"
+						}
+					]
+				}
+			]
+		}
 	}
 }

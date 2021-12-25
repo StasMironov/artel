@@ -1,17 +1,18 @@
 .input-search {
 	$root: &;
 
-	display: block;
-	width: 100%;
-	height: rem(48);
-	border: 0;
-	padding: 0 rem(80) rem(4) 0;
-	background-color: transparent;
-	color: $color-white;
-	// border-bottom: 1px solid $color-white;
-	outline: none;
-	@include defaultTransition(border-color);
+	// display: block;
+	// width: 100%;
+	// height: rem(62);
+	// border: 0;
+	// padding: 0 rem(80) rem(4) 0;
+	// background-color: transparent;
+	// color: rgba($color-black, 0.4);
+	// // border-bottom: 1px solid $color-white;
+	// outline: none;
 	@include text-body;
+	@include base-input;
+	border-color: rgba($color-black, 0.4);
 
 
 	@include media-breakpoint-up(md) {
@@ -25,7 +26,7 @@
 
 	&::placeholder {
 		opacity: 1;
-		color: rgba($color-white, 0.4);
+		color: rgba($color-black, 0.4);
 	}
 
 	&:disabled {
@@ -79,7 +80,7 @@
 		width: rem(24);
 		height: rem(48);
 		background-color: transparent;
-		color: $color-white;
+		color: rgba($color-black, 0.4);
 		border: 0;
 		padding: 0;
 		cursor: pointer;
@@ -90,7 +91,7 @@
 		}
 
 		@include touchLessHover {
-			color: rgba($color-white, 0.4);
+			color: rgba($color-black, 1.0);
 		}
 	}
 
@@ -99,10 +100,10 @@
 		top: 0;
 		right: 0;
 		width: rem(24);
-		height: rem(48);
+		height: rem(62);
 		font-size: 0;
-		line-height: rem(48);
-		color: $color-white;
+		line-height: rem(62);
+		color: $color-black;
 		pointer-events: none;
 
 		.icon {

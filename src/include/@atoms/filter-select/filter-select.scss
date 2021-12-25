@@ -1,4 +1,5 @@
 .filter-select {
+	display: flex;
 	width: 25%;
 
 	@include media-breakpoint-down(md) {
@@ -8,5 +9,13 @@
 
 	@include media-breakpoint-down(sm) {
 		width: 100%;
+	}
+
+	&--fill {
+		width: 100%;
+
+		@include media-breakpoint-down(md) {
+			justify-content: space-between;
+		}
 	}
 }
