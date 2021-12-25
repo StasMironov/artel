@@ -61,7 +61,7 @@ export default {
 								0.5,
 								{
 									opacity: 0,
-									y: 40,
+									y: 0,
 								},
 								{
 									opacity: 1,

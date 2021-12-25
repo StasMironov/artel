@@ -1,7 +1,7 @@
 {
 	"title": "Внутренние документы",
 	"hero_default": {
-		"layout": "3",
+		"layout": "5",
 		"theme": "black",
 		"breadcrumbs": {
 			"items": [
@@ -19,6 +19,7 @@
 	},
 	"block_docs": {
 		"tabs": {
+			"offset_left": "3",
 			"layout": "4",
 			"horizontal": true,
 			"items": [
