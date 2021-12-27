@@ -94,13 +94,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 	window.addEventListener('init.modals', () => {
-		new ModalWarning({
-			init: true,
-			id: 'modal-warning',
-			trigger: '[data-modal-warning]',
-			closeTrigger: '#modal-warning [data-modal-close]',
-			openClass: 'is-open',
-		});
+		if (document.querySelector('#modal-warning')) {
+			new ModalWarning({
+				init: true,
+				id: 'modal-warning',
+				trigger: '[data-modal-warning]',
+				closeTrigger: '#modal-warning [data-modal-close]',
+				openClass: 'is-open',
+			});
+		}
 	});
 
 	window.dispatchEvent(new CustomEvent('init.modals'));
