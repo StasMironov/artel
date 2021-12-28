@@ -15,6 +15,27 @@
 	&__control {
 		position: relative;
 	}
+
+	&--white-2 {
+		.input-search__icon {
+			color: rgba($color-white, $alpha: 0.4);
+		}	
+
+		.input-search__reset {
+			color: rgba($color-white, $alpha: 0.4);
+
+			@include touchLessHover {
+				color: rgba($color-white, $alpha: 1);
+			}
+		}
+
+		@include touchLessHover {
+			.input-search__icon {
+				color: rgba($color-white, $alpha: 1);
+			}	
+		}
+	}
+	
 }
 
 // Базовый стиль поведения label
@@ -86,6 +107,30 @@
 		&.not-empty  {
 			& ~ .label{
 				color: rgba($color-white, 0.6);
+			}
+		}
+	}
+
+	&--white-2 {
+		color: rgba($color-white, 1.0);
+		
+
+		&:focus  {
+			color: rgba($color-white, 1.0);
+		}
+
+		&::placeholder {
+			opacity: 1;
+			color: rgba($color-white, 0.4);
+		}
+
+
+		@include touchLessHover {
+			color: rgba($color-white, 0.4) !important;
+
+			&::placeholder {
+				opacity: 1;
+				color: rgba($color-white, 0.4);
 			}
 		}
 	}
