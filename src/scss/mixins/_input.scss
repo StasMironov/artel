@@ -11,7 +11,7 @@
 	border: none;
 	border-bottom: 1px solid rgba($color-black, 0.2);
 	border-radius: 0;
-	@include defaultTransition(border-color);
+	@include defaultTransition(border-color, color);
 
 	&:-webkit-autofill,
 	&:-webkit-autofill:hover,
@@ -53,10 +53,9 @@
 	&::-ms-input-placeholder,
 	&::placeholder {
 		color: rgba($color-black, 0.4);
-		@include defaultTransition(opacity);
+		@include defaultTransition(opacity, color);
 	}
 
-	// Отдельно для ie - иначе не будет применен placeholder
 	&:-ms-input-placeholder {
 		color: rgba($color-black, 0.4);
 		opacity: 1;
@@ -106,6 +105,38 @@
 		&::-moz-placeholder {
 			color: rgba($color-white, 0.6);
 			@include defaultTransition(opacity);
+		}
+	}
+
+	&--white-2 {
+		color: rgba($color-white, 1);
+
+		&:focus {
+			color: rgba($color-white, 1);
+		}
+
+		&::placeholder {
+			color: rgba($color-white, 0.4);
+			opacity: 1;
+		}
+
+		@include touchLessHover {
+			color: rgba($color-white, 1);
+
+			&:not(:disabled) {
+				color: rgba($color-white, 1);
+				border-color: rgba($color-white, 1);
+				-webkit-text-fill-color: rgba($color-white, 1) !important;
+			}
+
+			&::placeholder {
+				color: rgba($color-white, 0.4);
+				opacity: 1;
+			}
+		}
+
+		.input-search__icon {
+			color: $color-white;
 		}
 	}
 

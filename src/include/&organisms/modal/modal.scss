@@ -192,6 +192,7 @@
 			height: rem(24);
 			top: rem(44);
 			right: rem(50);
+			outline: none;
 
 			@include media-breakpoint-down(sm) {
 				right: rem(32);

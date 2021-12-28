@@ -383,6 +383,7 @@
 			"action": "/",
 			"name": "footer-form-name",
 			"search": {
+				"theme": "white-2",
 				"id": "form-1-search-1",
 				"search": true,
 				"placeholder": "Поиск по сайту",
