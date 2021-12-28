@@ -163,6 +163,16 @@
 					"text": "Казахстан",
 					"href": "javascript:void(0);",
 					"attr": "data-attr"
+				},
+				{
+					"text": "Кыргызстан",
+					"href": "javascript:void(0);",
+					"attr": "data-attr"
+				},
+				{
+					"text": "Азербайджан",
+					"href": "javascript:void(0);",
+					"attr": "data-attr"
 				}
 			]
 		},
@@ -255,6 +265,56 @@
 					},
 					"icon": {
 						"name": "logos/contacts/kaz",
+						"size": "fit"
+					},
+					"action": {
+						"href": "javascript:void(0);",
+						"text": "Связаться с нами",
+						"title": "Связаться с нами",
+						"icon": {
+							"name": "24/arrow-up-right"
+						},
+						"attr": "data-btn-handler"
+					}
+				}
+			},
+			{
+				"card": {
+					"phone": {
+						"text": "+998 (55) 123-55-67",
+						"href": "tel:+998(71)123-45-67"
+					},
+					"email": {
+						"text": "info@artel.kyr",
+						"href": "info@artel.kyr"
+					},
+					"icon": {
+						"name": "logos/contacts/kyr",
+						"size": "fit"
+					},
+					"action": {
+						"href": "javascript:void(0);",
+						"text": "Связаться с нами",
+						"title": "Связаться с нами",
+						"icon": {
+							"name": "24/arrow-up-right"
+						},
+						"attr": "data-btn-handler"
+					}
+				}
+			},
+			{
+				"card": {
+					"phone": {
+						"text": "+998 (55) 123-55-67",
+						"href": "tel:+998(71)123-45-67"
+					},
+					"email": {
+						"text": "info@artel.azb",
+						"href": "info@artel.azb"
+					},
+					"icon": {
+						"name": "logos/contacts/azb",
 						"size": "fit"
 					},
 					"action": {
@@ -364,6 +424,54 @@
 						"title": "Отдел закупок 4",
 						"text": "purchasing@artel.uz",
 						"href": "purchasing@artel.uz"
+					}
+				]
+			},
+			{
+				"cards": [
+					{
+						"title": "Отдел продаж 4",
+						"text": "sales@artel.kyr",
+						"href": "sales@artel.kyr"
+					},
+					{
+						"title": "Отдел кадров 4",
+						"text": "hr@artel.kyr",
+						"href": "hr@artel.kyr"
+					},
+					{
+						"title": "Отдел аналитики 4",
+						"text": "analytics@artel.kyr",
+						"href": "analytics@artel.kyr"
+					},
+					{
+						"title": "Отдел закупок 4",
+						"text": "purchasing@artel.kyr",
+						"href": "purchasing@artel.kyr"
+					}
+				]
+			},
+			{
+				"cards": [
+					{
+						"title": "Отдел продаж 4",
+						"text": "sales@artel.azb",
+						"href": "sales@artel.azb"
+					},
+					{
+						"title": "Отдел кадров 4",
+						"text": "hr@artel.azb",
+						"href": "hr@artel.azb"
+					},
+					{
+						"title": "Отдел аналитики 4",
+						"text": "analytics@artel.azb",
+						"href": "analytics@artel.azb"
+					},
+					{
+						"title": "Отдел закупок 4",
+						"text": "purchasing@artel.azb",
+						"href": "purchasing@artel.azb"
 					}
 				]
 			}
