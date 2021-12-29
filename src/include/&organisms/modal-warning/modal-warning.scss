@@ -20,6 +20,7 @@
 		line-height: rem(50);
 
 		@include media-breakpoint-down(md) {
+			margin-bottom: rem(25);
 			font-size: rem(35);
 			line-height: rem(40);
 		}
@@ -28,16 +29,28 @@
 			font-size: rem(28);
 			line-height: rem(35);
 		}
+
+		@media only screen and (min-width: 480px) and (max-width: 767px) {
+			margin-bottom: rem(20);
+		}
 	}
 
 	&__desc {
 		max-width: rem(335);
 		margin-bottom: rem(40);
+
+		@media only screen and (min-width: 480px) and (max-width: 767px) {
+			margin-bottom: rem(20);
+		}
 	}
 
 	.button {
 		align-self: flex-start;
 		min-height: rem(56);
 		margin-top: auto;
+	}
+
+	@media only screen and (min-width: 480px) and (max-width: 767px) {
+		padding: rem(40) rem(16) rem(60) rem(16);
 	}
 }
