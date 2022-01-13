@@ -86,11 +86,27 @@
 	}
 
 	&--highlighted {
-		color: $color-black;
+		//color: $color-black;
 		background: $color-white;
 
 		&:before {
-			background-color: $color-green;
+	//		background-color: $color-green;
+		}
+	}
+
+	@include touchLessHover {
+		color: $color-black;
+		background-color: $color-gray;
+
+		&::before {
+			background-color: transparent;
+		}
+	}
+
+	&--selected {
+		color: $color-black;
+		&:before {
+			background-color: $color-green !important;
 		}
 	}
 }

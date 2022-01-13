@@ -38,8 +38,11 @@
 	@include touchLessHover {
 		&:not(:disabled) {
 			border-color: rgba($color-black, 1);
-			-webkit-text-fill-color: rgba($color-black, 1);
 		}
+	}
+
+	&:focus {
+		-webkit-text-fill-color: rgba($color-black, 1);
 	}
 
 	&:disabled {
@@ -91,6 +94,10 @@
 			}
 		}
 
+		&:focus {
+			-webkit-text-fill-color: rgba($color-white, 1);
+		}
+
 		&::placeholder {
 			color: rgba($color-white, 0.6);
 		}
@@ -133,6 +140,10 @@
 				color: rgba($color-white, 0.4);
 				opacity: 1;
 			}
+		}
+
+		&:focus {
+			-webkit-text-fill-color: rgba($color-white, 1) !important;
 		}
 
 		.input-search__icon {

@@ -16,6 +16,8 @@ export default class blockProduct {
 	}
 
 	render(node) {
+		if (this.supportsTouch && $(window).width() < 1024) return;
+
 		const pinSidebar = this.nodes[0].querySelector('[data-pin-aside]');
 		const progress = this.nodes[0].querySelector('[data-progress]');
 		const dataTabs = this.nodes[0].querySelectorAll('[data-tab]');
@@ -42,22 +44,20 @@ export default class blockProduct {
 			});
 		}
 
+		const ST = ScrollTrigger.create({
+			trigger: this.nodes[0],
+			start: 'top top',
+			end: 'bottom bottom',
+			//onUpdate: getCurrentSection,
+			pin: pinSidebar,
+			onUpdate(self) {
+				progress.style.height = `${Math.ceil(self.progress * 100)}%`;
+			},
+		});
+
 		$(window)
 			.on('resize', () => {
 				if ($(window).width() > 1023) {
-					const ST = ScrollTrigger.create({
-						trigger: this.nodes[0],
-						start: 'top top',
-						end: 'bottom bottom',
-						//onUpdate: getCurrentSection,
-						pin: pinSidebar,
-						onUpdate(self) {
-							progress.style.height = `${Math.ceil(
-								self.progress * 100
-							)}%`;
-						},
-					});
-
 					slider.update();
 				}
 			})
@@ -107,7 +107,7 @@ export default class blockProduct {
 					});
 				},
 				anticipatePin: 1,
-				// markers: true,
+				//markers: true,
 			});
 		});
 	}

@@ -1,4 +1,8 @@
 .block-history {
+	@include media-breakpoint-down(md) {
+		overflow: hidden;
+	}
+
 	&__pane {
 		display: block;
 		margin-bottom: rem(120);

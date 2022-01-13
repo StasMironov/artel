@@ -1,6 +1,10 @@
 .block-docs {
 	$root: &;
 
+	&__container {
+		overflow: hidden;
+	}
+
     &__cards {
 		@include media-breakpoint-up(lg) {
 			display: flex;

@@ -53,6 +53,14 @@
 
 	&__tabs {
 		margin-top: auto;
+
+		&-content {
+			padding-top: rem(108);
+
+			@media (max-width: 1023px) {
+				padding-top: 0;
+			}
+		}
 	}
 
 	&__card {

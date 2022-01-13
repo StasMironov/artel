@@ -90,8 +90,6 @@
 				pointer-events: initial;
 			}
 
-			
-
 			&:not(:last-child) {
 				@include media-breakpoint-up(lg) {
 					margin-bottom: rem(0);
@@ -141,8 +139,8 @@
 					width: rem(16);
 					height: rem(16);
 					transform: scale3d(1, 1, 1);
-					background: transparent;
-					border: 1px solid rgba($color-white, $alpha: 0.4);
+					background: $color-green;
+					border: 1px solid rgba($color-white, $alpha: 1.0);
 
 					@media(max-width: 1023px) {
 						position: absolute;
@@ -178,6 +176,8 @@
 
 			
 		}
+
+		&:focus {outline: none !important;}
 	}
 
 	.swiper-container {

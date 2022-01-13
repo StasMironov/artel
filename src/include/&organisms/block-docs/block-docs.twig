@@ -9,7 +9,7 @@
                 </div>
             {% endif %}
             {% if block_docs.form %}
-                <div class="block-docs__form">
+                <div class="block-docs__form" data-fade-in-up>
                     {% view '&search-form' with {
                         form: block_docs.form
                     } %}
@@ -46,7 +46,7 @@
         {% if block_docs.items %}
             <div class="block-docs__cards">
                 {% for card in block_docs.items %}
-                    <div class="block-docs__card">
+                    <div class="block-docs__card" data-fade-in-up data-delay="{{ (0.2 + loop.index0 / 5)|round(2, 'floor') }}">
                             {% view '^card-features' with {
                                 card: card
                             }%}

@@ -67,6 +67,7 @@
 		color: rgba($color-black, 0.4);
 		@include defaultTransition(color);
 		line-height: rem(20);
+		font-size: rem(14);
 
 		#{$b}--light & {
 			color: rgba($color-white, 0.4);
