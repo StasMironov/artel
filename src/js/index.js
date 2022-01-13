@@ -23,7 +23,7 @@ import Strategy from './components/strategy';
 import BlockProduct from './components/block-product';
 import BlockHistory from './components/block-history';
 import Modals from './components/modal';
-import ModalWarning from './components/modal/modal-base';
+// import ModalWarning from './components/modal/modal-base';
 import Menu from './components/menu';
 import select from './components/select';
 
@@ -93,17 +93,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-	window.addEventListener('init.modals', () => {
-		if (document.querySelector('#modal-warning')) {
-			new ModalWarning({
-				init: true,
-				id: 'modal-warning',
-				trigger: '[data-modal-warning]',
-				closeTrigger: '#modal-warning [data-modal-close]',
-				openClass: 'is-open',
-			});
-		}
-	});
+	// window.addEventListener('init.modals', () => {
+	// 	if (document.querySelector('#modal-warning')) {
+	// 		new ModalWarning({
+	// 			init: true,
+	// 			id: 'modal-warning',
+	// 			trigger: '[data-modal-warning]',
+	// 			closeTrigger: '#modal-warning [data-modal-close]',
+	// 			openClass: 'is-open',
+	// 		});
+	// 	}
+	// });
 
 	window.dispatchEvent(new CustomEvent('init.modals'));
 });

@@ -10,8 +10,8 @@
 					"href": "main.html"
 				},
 				{
-					"href": "./",
-					"text": "Партнерам"
+					"text": "Инвесторам",
+					"href": "./"
 				}
 			]
 		},
@@ -124,7 +124,7 @@
 					"title": "Скачать PDF",
 					"text": "Скачать PDF",
 					"icon": {
-						"name": "24/arrow-up-right"
+						"name": "24/download"
 					}
 				}
 			},
@@ -137,7 +137,7 @@
 					"title": "Скачать PDF",
 					"text": "Скачать PDF",
 					"icon": {
-						"name": "24/arrow-up-right"
+						"name": "24/download"
 					}
 				}
 			},
@@ -150,7 +150,7 @@
 					"title": "Скачать PDF",
 					"text": "Скачать PDF",
 					"icon": {
-						"name": "24/arrow-up-right"
+						"name": "24/download"
 					}
 				}
 			},
@@ -163,7 +163,7 @@
 					"title": "Скачать PDF",
 					"text": "Скачать PDF",
 					"icon": {
-						"name": "24/arrow-up-right"
+						"name": "24/download"
 					}
 				}
 			},
@@ -176,7 +176,7 @@
 					"title": "Скачать PDF",
 					"text": "Скачать PDF",
 					"icon": {
-						"name": "24/arrow-up-right"
+						"name": "24/download"
 					}
 				}
 			},
@@ -189,7 +189,7 @@
 					"title": "Скачать PDF",
 					"text": "Скачать PDF",
 					"icon": {
-						"name": "24/arrow-up-right"
+						"name": "24/download"
 					}
 				}
 			}

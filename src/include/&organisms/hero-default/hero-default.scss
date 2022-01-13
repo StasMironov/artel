@@ -305,7 +305,7 @@
 				}
 
 				&__container {
-					padding-bottom: rem(80);
+					padding-bottom: rem(64);
 
 					@include media-breakpoint-down(md) {
 						flex-direction: column;
@@ -355,7 +355,7 @@
 				}
 
 				&__container {
-					padding-bottom: rem(80);
+					padding-bottom: rem(88);
 
 					@include media-breakpoint-down(md) {
 						flex-direction: column;
