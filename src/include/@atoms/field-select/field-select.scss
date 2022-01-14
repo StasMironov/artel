@@ -99,7 +99,7 @@
 		background-color: $color-gray;
 
 		&::before {
-			background-color: transparent;
+		//	background-color: transparent;
 		}
 	}
 
@@ -115,7 +115,7 @@
 	right: rem(5) !important;
 
 	&:before {
-		background: transparent;
+		//background: transparent;
 	}
 }
 
@@ -125,4 +125,15 @@
 
 .select2-selection__placeholder {
 	color: rgba($color-black, 0.4);
+}
+
+.select2-results__option[aria-selected=true], .select2-results__option--highlighted[aria-selected] {
+    
+		color: $color-black;
+		background-color: $color-gray;
+
+		&::before {
+			background-color: $color-green !important;
+		}
+	
 }

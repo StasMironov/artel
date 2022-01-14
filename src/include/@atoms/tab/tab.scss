@@ -10,6 +10,7 @@
 	border: 0;
 	cursor: pointer;
 	@include defaultTransition(color);
+	outline: none;
 
 	@include touchLessHover {
 		&:not(:disabled):not(#{$root}__tab--disabled) {

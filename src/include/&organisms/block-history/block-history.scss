@@ -179,3 +179,45 @@
 		}
 	}
 }
+
+.swiper-progress-bar {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: rem(4);
+
+	// width: 600px;
+	height: 100%;
+	//height: 4px;
+	margin: 20px auto;
+	background: #eeeeee;
+
+	// .progress {
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	z-index: 1;
+	// 	// height: inherit;
+	// 	width: inherit;
+	// 	background: #007aff;
+	// }
+	// .progress-sections {
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	z-index: 2;
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	width: inherit;
+	// 	height: inherit;
+	// 	span {
+	// 		flex: 1;
+	// 		height: inherit;
+	// 		border-right: 2px solid #eee;
+	// 		&:last-child {
+	// 			border-right-width: 0;
+	// 		}
+	// 	}
+	// }
+}
