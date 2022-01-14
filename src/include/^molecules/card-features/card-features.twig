@@ -10,6 +10,20 @@
 		{% if card.title %}
 			<div class="card-features__title">{{ card.title }}</div>
 		{% endif %}
+		{% if card.date %}
+			<div class="card-features__date">
+				{% if card.date.month %}
+					<span class="card-features__month">
+						{{ card.date.month }}
+					</span>
+				{% endif %}
+				{% if card.date.day %}
+					<span class="card-features__day">
+						{{ card.date.day }}
+					</span>
+				{% endif %}
+			</div>
+		{% endif %}
 		{% if card.text %}
 			<div class="card-features__text">{{ card.text }}</div>
 		{% endif %}

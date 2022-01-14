@@ -25,6 +25,8 @@ export default class blockProduct {
 		let isVertical = true,
 			direction = 'vertical';
 
+		let autoPlayDelay = 1500;
+
 		let slider = initSwiper(direction);
 
 		function initSwiper(direction) {
@@ -33,6 +35,12 @@ export default class blockProduct {
 				direction: direction,
 				slidesPerView: 4,
 				touchRatio: false,
+				watchSlidesProgress: true,
+				watchSlidesVisibility: true,
+				// pagination: {
+				// 	el: '.swiper-pagination',
+				// 	type: 'progressbar',
+				// },
 				breakpoints: {
 					320: {
 						slidesPerView: 'auto',
@@ -44,6 +52,71 @@ export default class blockProduct {
 			});
 		}
 
+		// let slidersCount = slider.params.loop
+		// 	? slider.slides.length - 2
+		// 	: slider.slides.length;
+		// let widthParts = 100 / slidersCount;
+
+		// for (let i = 0; i < slidersCount; i++) {
+		// 	$('.swiper-progress-bar .progress-sections').append(
+		// 		'<span></span>'
+		// 	);
+		// }
+
+		// function initProgressBar() {
+		// 	let calcProgress =
+		// 		(slidersCount - 1) * (autoPlayDelay + slider.params.speed);
+		// 	calcProgress += autoPlayDelay;
+		// 	console.log(calcProgress);
+		// 	$('.swiper-progress-bar .progress').animate(
+		// 		{
+		// 			height: '100%',
+		// 		},
+		// 		calcProgress,
+		// 		'linear'
+		// 	);
+		// }
+
+		// initProgressBar();
+
+		// slider.on('slideChange', function () {
+		// 	let progress = $('.swiper-progress-bar .progress');
+
+		// 	//$('.swiper-counter .current').html(this.activeIndex + 1);
+
+		// 	if (
+		// 		(this.progress == -0 ||
+		// 			(this.progress == 1 && this.params.loop)) &&
+		// 		!progress.parent().is('.stopped')
+		// 	) {
+		// 		progress.css('height', '0');
+		// 		if (this.activeIndex == 0) {
+		// 			initProgressBar();
+		// 		}
+		// 	}
+
+		// 	if (progress.parent().is('.stopped')) {
+		// 		progress.animate(
+		// 			{
+		// 				width:
+		// 					Math.round(widthParts * (this.activeIndex + 1)) +
+		// 					'%',
+		// 			},
+		// 			this.params.speed,
+		// 			'linear'
+		// 		);
+		// 	}
+		// });
+
+		// $('.swiper-progress-bar .progress').stop().parent().addClass('stopped');
+
+		// slider.on('touchMove', function () {
+		// 	$('.swiper-progress-bar .progress')
+		// 		.stop()
+		// 		.parent()
+		// 		.addClass('stopped');
+		// });
+
 		const ST = ScrollTrigger.create({
 			trigger: this.nodes[0],
 			start: 'top top',
@@ -51,7 +124,9 @@ export default class blockProduct {
 			//onUpdate: getCurrentSection,
 			pin: pinSidebar,
 			onUpdate(self) {
-				progress.style.height = `${Math.ceil(self.progress * 100)}%`;
+				progress.style.height =
+					`${Math.ceil(self.progress * 100)}%` - 140 + 'px';
+				// console.log(`${self.progress * 100}%`);
 			},
 		});
 
@@ -80,6 +155,8 @@ export default class blockProduct {
 						if (elem.getAttribute('data-tab') == dataPane) {
 							elem.classList.add('tab--active');
 							slider.slideTo(index);
+							progress.style.height =
+								progress.style.height - 140 + 'px';
 						} else {
 							elem.classList.remove('tab--active');
 						}
@@ -107,7 +184,7 @@ export default class blockProduct {
 					});
 				},
 				anticipatePin: 1,
-				//markers: true,
+				markers: true,
 			});
 		});
 	}
