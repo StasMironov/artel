@@ -66,9 +66,9 @@ export default class blockProduct {
 
 		$(window)
 			.on('resize', () => {
-				if ($(window).width() > 1023) {
-					slider.update();
-				}
+				console.log('zoom');
+				slider.update();
+				slider.init();
 			})
 			.resize();
 
