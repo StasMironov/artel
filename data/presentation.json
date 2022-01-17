@@ -30,7 +30,8 @@
 					"options": [
 						{
 							"value": "All",
-							"text": "Все года"
+							"text": "Все года",
+							"selected": "selected"
 						},
 						{
 							"value": "2021",
@@ -63,7 +64,8 @@
 					"options": [
 						{
 							"value": "All",
-							"text": "Все рубрики"
+							"text": "Все рубрики",
+							"selected": "selected"
 						},
 						{
 							"value": "Рубрика 1",
