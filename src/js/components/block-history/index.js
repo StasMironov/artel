@@ -125,8 +125,8 @@ export default class blockProduct {
 			pin: pinSidebar,
 			onUpdate(self) {
 				progress.style.height =
-					`${Math.ceil(self.progress * 100)}%` - 140 + 'px';
-				// console.log(`${self.progress * 100}%`);
+					`${Math.ceil(self.progress * 100)}%`;
+				console.log(`${self.progress * 100}%`);
 			},
 		});
 
