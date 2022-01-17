@@ -171,9 +171,9 @@ export default class Slider {
 					delay: 1.5, // ~ продолжительность анимации при смене слайдов
 					clearProps: 'all',
 					onStart: () => {
-						this.slides[this.activeIndex].querySelector(
-							'img'
-						).style.transform = 'none';
+						// this.slides[this.activeIndex].querySelector(
+						// 	'img'
+						// ).style.transform = 'none';
 						this.parallaxImage = this.slides[
 							this.activeIndex
 						].querySelector('img');
@@ -460,9 +460,9 @@ export default class Slider {
 			this.parallaxMove(this.parallaxImage, e, 0.013);
 		});
 
-		this.sliderWrapNode.addEventListener('mouseleave', (e) => {
-			this.parallaxEnd(this.parallaxImage);
-		});
+		// this.sliderWrapNode.addEventListener('mouseleave', (e) => {
+		// 	this.parallaxEnd(this.parallaxImage);
+		// });
 	}
 
 	parallaxMove(el, e, strafeAmount) {
