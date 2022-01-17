@@ -50,9 +50,9 @@ export default class Slider {
 			onComplete: () => {
 				this.sliderWrapNode.classList.remove('in-transition');
 				this.inTransition = false;
-				if (this.parallaxImage) {
-					this.initParallaxImage();
-				}
+				// if (this.parallaxImage) {
+				// 	this.initParallaxImage();
+				// }
 			},
 		});
 
@@ -170,6 +170,18 @@ export default class Slider {
 					duration: this.autoplayInterval / 1000,
 					delay: 1.5, // ~ продолжительность анимации при смене слайдов
 					clearProps: 'all',
+					onStart: () => {
+						this.slides[this.activeIndex].querySelector(
+							'img'
+						).style.transform = 'none';
+						this.parallaxImage = this.slides[
+							this.activeIndex
+						].querySelector('img');
+
+						if (this.parallaxImage) {
+							this.initParallaxImage();
+						}
+					},
 					onComplete: () => {
 						this.slideChange(this.calcPrevNextIndex());
 					},
@@ -177,11 +189,6 @@ export default class Slider {
 			);
 
 			this.timerTimeline.play();
-		}
-
-		this.parallaxImage = this.slides[this.activeIndex].querySelector('img');
-		if (this.parallaxImage) {
-			this.initParallaxImage();
 		}
 	}
 
@@ -247,9 +254,9 @@ export default class Slider {
 		this.animation();
 		this.parallaxImage = this.slides[this.activeIndex].querySelector('img');
 
-		if (this.parallaxImage) {
-			this.initParallaxImage();
-		}
+		// if (this.parallaxImage) {
+		// 	this.initParallaxImage();
+		// }
 	}
 
 	findNode(index, selector) {
@@ -462,7 +469,7 @@ export default class Slider {
 		gsap.to(el, {
 			x: -e.pageX * strafeAmount,
 			y: -e.pageY * strafeAmount,
-			duration: 1.5,
+			duration: 5,
 		});
 	}
 
@@ -470,7 +477,7 @@ export default class Slider {
 		gsap.to(el, {
 			x: 0,
 			y: 0,
-			duration: 2,
+			duration: 5,
 		});
 	}
 }

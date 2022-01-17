@@ -35,6 +35,8 @@
 		color: $color-black;
 		font-size: rem(24);
         @include defaultTransition(color);
+		text-overflow: ellipsis;
+    	overflow: hidden;
 
 
         @include media-breakpoint-up(sm) {
