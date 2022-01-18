@@ -85,6 +85,7 @@
 		#{$root}--layout-5 & {
 			margin-right: 0 !important;
 			pointer-events: none;
+			opacity: 1;
 
 			@media(max-width: 1023px) {
 				pointer-events: initial;

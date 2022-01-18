@@ -16,8 +16,6 @@ export default class blockProduct {
 	}
 
 	render(node) {
-		if (this.supportsTouch && $(window).width() < 1024) return;
-
 		const pinSidebar = this.nodes[0].querySelector('[data-pin-aside]');
 		const progress = this.nodes[0].querySelector('[data-progress]');
 		const dataTabs = this.nodes[0].querySelectorAll('[data-tab]');
@@ -37,6 +35,8 @@ export default class blockProduct {
 				touchRatio: false,
 				watchSlidesProgress: true,
 				watchSlidesVisibility: true,
+				observer: true,
+				observeParents: true,
 				// pagination: {
 				// 	el: '.swiper-pagination',
 				// 	type: 'progressbar',
@@ -45,7 +45,7 @@ export default class blockProduct {
 					320: {
 						slidesPerView: 'auto',
 					},
-					1023: {
+					1024: {
 						slidesPerView: 4,
 					},
 				},
@@ -58,23 +58,7 @@ export default class blockProduct {
 
 		//console.log(progressNodeHeight);
 
-		const ST = ScrollTrigger.create({
-			trigger: this.nodes[0],
-			start: 'top top',
-			end: 'bottom bottom',
-			//onUpdate: getCurrentSection,
-			pin: pinSidebar,
-
-			//	markers: true,
-		});
-
-		$(window)
-			.on('resize', () => {
-				//console.log('zoom');
-				slider.update();
-				slider.init();
-			})
-			.resize();
+		//console.log(ST);
 
 		gsap.to(progress, {
 			//value: 100,
@@ -84,6 +68,7 @@ export default class blockProduct {
 
 		gsap.utils.toArray('[data-tab-pane]').forEach((stage, index) => {
 			ScrollTrigger.create({
+				id: 'trigger2',
 				trigger: stage,
 				start: 'center center',
 				end: 'center center',
@@ -176,5 +161,52 @@ export default class blockProduct {
 				//markers: true,
 			});
 		});
+
+		// let ST = gsap.timeline({
+		// 	scrollTrigger: {
+		// 		id: 'trigger1',
+		// 		trigger: this.nodes[0],
+		// 		start: 'top top',
+		// 		end: 'bottom bottom',
+		// 		//onUpdate: getCurrentSection,
+		// 		//pin: pinSidebar,
+
+		// 		//	markers: true,
+		// 	},
+		// });
+
+		//	ST.play();
+
+		// $(window)
+		// 	.on('resize', () => {
+		// 		if ($(window).width() < 1024) {
+		// 			if (typeof ST !== 'undefined') {
+		// 				ST.pause(0).kill(true);
+		// 				ScrollTrigger.getById('trigger1').kill(true);
+		// 				// ScrollTrigger.querySelector(
+		// 				// 	'.block-history__aside'
+		// 				// ).kill(true);
+		// 				gsap.set('.block-history__aside', { clearProps: true });
+		// 				gsap.set(pinSidebar, { clearProps: true });
+		// 			}
+		// 			return false;
+
+		// 			// console.log(ST);
+		// 		} else {
+		// 			ST = gsap.timeline({
+		// 				scrollTrigger: {
+		// 					id: 'trigger1',
+		// 					trigger: this.nodes[0],
+		// 					start: 'top top',
+		// 					end: 'bottom bottom',
+		// 					//onUpdate: getCurrentSection,
+		// 					pin: pinSidebar,
+
+		// 					//	markers: true,
+		// 				},
+		// 			});
+		// 		}
+		// 	})
+		// 	.resize();
 	}
 }
