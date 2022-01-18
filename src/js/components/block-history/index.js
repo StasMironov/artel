@@ -52,16 +52,20 @@ export default class blockProduct {
 			});
 		}
 
+		const progressNodeHeight =
+			($('.block-history__period .tabs__item').height() * 100) /
+			$('.block-history__period').height();
+
+		console.log(progressNodeHeight);
+
 		const ST = ScrollTrigger.create({
 			trigger: this.nodes[0],
 			start: 'top top',
 			end: 'bottom bottom',
 			//onUpdate: getCurrentSection,
 			pin: pinSidebar,
-			onUpdate(self) {
-				progress.style.height = `${Math.ceil(self.progress * 100)}%`;
-				// console.log(`${self.progress * 100}%`);
-			},
+
+			//	markers: true,
 		});
 
 		$(window)
@@ -83,20 +87,33 @@ export default class blockProduct {
 				trigger: stage,
 				start: 'center center',
 				end: 'center center',
-				onEnter: () => {
+				onUpdate(self) {
+					// console.log(index * 10);
+					// console.log(`${self.progress * 100}%`);
+				},
+				onEnter: (self) => {
 					let dataPane = stage.getAttribute('data-tab-pane');
 					dataTabs.forEach((elem) => {
 						if (elem.getAttribute('data-tab') == dataPane) {
 							elem.classList.add('tab--active');
+							// progress.style.height =
+							// 	progress.style.height - 4 + '%';
+
 							slider.slideTo(index);
-							progress.style.height =
-								progress.style.height - 140 + 'px';
+							progress.style.height = `${
+								Math.ceil(
+									self.progress * (index * progressNodeHeight)
+								) + 5.5
+							}%`;
+							//console.log(progress.style.height);
 						} else {
 							elem.classList.remove('tab--active');
 						}
+						// +
+						// index * 1.25
 					});
 				},
-				onEnterBack: () => {
+				onEnterBack: (self) => {
 					let elemCurrent;
 					if (index !== 0) {
 						elemCurrent = gsap.utils.toArray('[data-tab-pane]')[
@@ -111,14 +128,27 @@ export default class blockProduct {
 						if (elem.getAttribute('data-tab') == dataPane) {
 							elem.classList.add('tab--active');
 							slider.slideTo(index - 1);
+							progress.style.height = `${
+								Math.ceil((index - 1) * progressNodeHeight) +
+								5.5
+							}%`;
+
+							console.log(index);
 						} else {
 							elem.classList.remove('tab--active');
 							slider.slideTo(index - 1);
+							// progress.style.height = `${
+							// 	Math.ceil(index * progressNodeHeight) + 5.5
+							// }%`;
+							// console.log(
+							// 	Math.ceil(index * progressNodeHeight) + 5.5
+							// );
 						}
 					});
 				},
+
 				anticipatePin: 1,
-				markers: true,
+				//markers: true,
 			});
 		});
 	}
