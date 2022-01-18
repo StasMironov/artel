@@ -116,11 +116,32 @@
 			left: 0;
 			width: 100%;
 			background-color: rgba($color-white, $alpha: 1);
+			z-index: -1;
 
 			@media (max-width: 1023px) {
 				background-color: rgba($color-white, $alpha: 0.4);
 			}
+
+			// &:after {
+			// 	position: absolute;
+			// 	content: "";
+			// 	width: rem(40);
+			// 	height: rem(100);
+			// 		background-color: $color-green;
+			// 		bottom: 0
+			// }
 		}
+
+		&--transparent {
+			background-color: transparent;
+			left: rem(-48);
+
+			&:after {
+				content: none
+			}
+		}
+
+		
 	}
 
 	&__content {
