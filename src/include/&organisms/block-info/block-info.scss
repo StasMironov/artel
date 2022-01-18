@@ -2,6 +2,7 @@
 	&__container {
 		padding-top: rem(112);
 		padding-bottom: rem(120);
+		overflow: hidden;
 
 		@include media-breakpoint-down(sm) {
 			padding-top: rem(64);

@@ -56,7 +56,7 @@ export default class blockProduct {
 			($('.block-history__period .tabs__item').height() * 100) /
 			$('.block-history__period').height();
 
-		console.log(progressNodeHeight);
+		//console.log(progressNodeHeight);
 
 		const ST = ScrollTrigger.create({
 			trigger: this.nodes[0],
@@ -70,7 +70,7 @@ export default class blockProduct {
 
 		$(window)
 			.on('resize', () => {
-				console.log('zoom');
+				//console.log('zoom');
 				slider.update();
 				slider.init();
 			})
@@ -93,6 +93,7 @@ export default class blockProduct {
 				},
 				onEnter: (self) => {
 					let dataPane = stage.getAttribute('data-tab-pane');
+
 					dataTabs.forEach((elem) => {
 						if (elem.getAttribute('data-tab') == dataPane) {
 							elem.classList.add('tab--active');
@@ -100,11 +101,23 @@ export default class blockProduct {
 							// 	progress.style.height - 4 + '%';
 
 							slider.slideTo(index);
-							progress.style.height = `${
-								Math.ceil(
-									self.progress * (index * progressNodeHeight)
-								) + 5.5
-							}%`;
+
+							if (index == 0) {
+								progress.style.height = `${
+									Math.ceil(
+										self.progress *
+											(index * progressNodeHeight)
+									) + 9
+								}%`;
+							} else {
+								progress.style.height = `${
+									Math.ceil(
+										self.progress *
+											(index * progressNodeHeight)
+									) + 5.5
+								}%`;
+							}
+
 							//console.log(progress.style.height);
 						} else {
 							elem.classList.remove('tab--active');
@@ -128,12 +141,24 @@ export default class blockProduct {
 						if (elem.getAttribute('data-tab') == dataPane) {
 							elem.classList.add('tab--active');
 							slider.slideTo(index - 1);
-							progress.style.height = `${
-								Math.ceil((index - 1) * progressNodeHeight) +
-								5.5
-							}%`;
 
-							console.log(index);
+							if (index == 1) {
+								progress.style.height = `${
+									Math.ceil(
+										self.progress *
+											(index * progressNodeHeight)
+									) + 7.5
+								}%`;
+								console.log(index);
+							} else {
+								progress.style.height = `${
+									Math.ceil(
+										(index - 1) * progressNodeHeight
+									) + 5.5
+								}%`;
+							}
+
+							//console.log(index);
 						} else {
 							elem.classList.remove('tab--active');
 							slider.slideTo(index - 1);
