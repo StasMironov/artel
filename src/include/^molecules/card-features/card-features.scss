@@ -166,6 +166,18 @@
 		#{$root}[class*='bg-'] & {
 			background-color: rgba($color-white, .1);
 		}
+
+		#{$root}--layout-2 & {
+			right: rem(-20);
+
+			@include media-breakpoint-down(sm) {
+				right: rem(-33);
+				bottom: rem(-101);
+				width: rem(300);
+				height: rem(300);
+			}
+			
+		}
 	}
 
 	@include touchLessHover {
