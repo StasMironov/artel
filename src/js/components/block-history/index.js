@@ -60,10 +60,6 @@ export default class blockProduct {
 			(($('.block-history__period .tab').height() / 2) * 100) /
 			$('.block-history__period').height();
 
-		console.log(kof);
-
-		//console.log(ST);
-
 		gsap.to(progress, {
 			//value: 100,
 			ease: 'none',
@@ -86,8 +82,6 @@ export default class blockProduct {
 					dataTabs.forEach((elem) => {
 						if (elem.getAttribute('data-tab') == dataPane) {
 							elem.classList.add('tab--active');
-							// progress.style.height =
-							// 	progress.style.height - 4 + '%';
 
 							slider.slideTo(index);
 
@@ -105,13 +99,9 @@ export default class blockProduct {
 										kof
 								)}%`;
 							}
-
-							//console.log(progress.style.height);
 						} else {
 							elem.classList.remove('tab--active');
 						}
-						// +
-						// index * 1.25
 					});
 				},
 				onEnterBack: (self) => {
@@ -150,12 +140,6 @@ export default class blockProduct {
 						} else {
 							elem.classList.remove('tab--active');
 							slider.slideTo(index - 1);
-							// progress.style.height = `${
-							// 	Math.ceil(index * progressNodeHeight) + 5.5
-							// }%`;
-							// console.log(
-							// 	Math.ceil(index * progressNodeHeight) + 5.5
-							// );
 						}
 					});
 				},
@@ -164,52 +148,5 @@ export default class blockProduct {
 				//markers: true,
 			});
 		});
-
-		// let ST = gsap.timeline({
-		// 	scrollTrigger: {
-		// 		id: 'trigger1',
-		// 		trigger: this.nodes[0],
-		// 		start: 'top top',
-		// 		end: 'bottom bottom',
-		// 		//onUpdate: getCurrentSection,
-		// 		//pin: pinSidebar,
-
-		// 		//	markers: true,
-		// 	},
-		// });
-
-		//	ST.play();
-
-		// $(window)
-		// 	.on('resize', () => {
-		// 		if ($(window).width() < 1024) {
-		// 			if (typeof ST !== 'undefined') {
-		// 				ST.pause(0).kill(true);
-		// 				ScrollTrigger.getById('trigger1').kill(true);
-		// 				// ScrollTrigger.querySelector(
-		// 				// 	'.block-history__aside'
-		// 				// ).kill(true);
-		// 				gsap.set('.block-history__aside', { clearProps: true });
-		// 				gsap.set(pinSidebar, { clearProps: true });
-		// 			}
-		// 			return false;
-
-		// 			// console.log(ST);
-		// 		} else {
-		// 			ST = gsap.timeline({
-		// 				scrollTrigger: {
-		// 					id: 'trigger1',
-		// 					trigger: this.nodes[0],
-		// 					start: 'top top',
-		// 					end: 'bottom bottom',
-		// 					//onUpdate: getCurrentSection,
-		// 					pin: pinSidebar,
-
-		// 					//	markers: true,
-		// 				},
-		// 			});
-		// 		}
-		// 	})
-		// 	.resize();
 	}
 }
