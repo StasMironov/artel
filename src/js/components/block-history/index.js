@@ -56,7 +56,11 @@ export default class blockProduct {
 			($('.block-history__period .tabs__item').height() * 100) /
 			$('.block-history__period').height();
 
-		//console.log(progressNodeHeight);
+		const kof =
+			(($('.block-history__period .tab').height() / 2) * 100) /
+			$('.block-history__period').height();
+
+		console.log(kof);
 
 		//console.log(ST);
 
@@ -92,15 +96,14 @@ export default class blockProduct {
 									Math.ceil(
 										self.progress *
 											(index * progressNodeHeight)
-									) + 9
+									) + kof
 								}%`;
 							} else {
-								progress.style.height = `${
-									Math.ceil(
-										self.progress *
-											(index * progressNodeHeight)
-									) + 5.5
-								}%`;
+								progress.style.height = `${Math.ceil(
+									self.progress *
+										(index * progressNodeHeight) +
+										kof
+								)}%`;
 							}
 
 							//console.log(progress.style.height);
@@ -132,14 +135,14 @@ export default class blockProduct {
 									Math.ceil(
 										self.progress *
 											(index * progressNodeHeight)
-									) + 7.5
+									) + kof
 								}%`;
-								console.log(index);
+								// console.log(index);
 							} else {
 								progress.style.height = `${
 									Math.ceil(
 										(index - 1) * progressNodeHeight
-									) + 5.5
+									) + kof
 								}%`;
 							}
 
