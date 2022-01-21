@@ -109,16 +109,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	window.dispatchEvent(new CustomEvent('init.modals'));
 });
-
 window.addEventListener('reinit', () => {
 	window.dispatchEvent(new CustomEvent('init.lazyload'));
 	window.dispatchEvent(new CustomEvent('init.validation'));
 	window.dispatchEvent(new CustomEvent('init.mask'));
 	window.dispatchEvent(new CustomEvent('init.input'));
 	window.dispatchEvent(new CustomEvent('init.modals'));
+	libs.init();
+	Animation.init();
+	Sliders.init();
 	Modals.init();
 	ModalAjax.init();
 	select.init();
 	Table.init();
+	Menu.init();
+	select.init();
+
 	new ScrollAnimation();
 });
