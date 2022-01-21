@@ -578,6 +578,11 @@
 			}
 		},
 		{
+			"id": "modal-ajax",
+			"ajax": true,
+			"modificator": "partners"
+		},
+		{
 			"id": "modal-warning",
 			"component": "&modal-warning",
 			"data": {

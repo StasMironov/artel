@@ -23,6 +23,7 @@ import Strategy from './components/strategy';
 import BlockProduct from './components/block-product';
 import BlockHistory from './components/block-history';
 import Modals from './components/modal';
+import ModalAjax from './components/modal/ajax-modal';
 // import ModalWarning from './components/modal/modal-base';
 import Menu from './components/menu';
 import select from './components/select';
@@ -66,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	Modals.init();
 	Menu.init();
 	select.init();
+	ModalAjax.init();
 	new ScrollAnimation();
 	new Map();
 	validation.init();
@@ -114,7 +116,8 @@ window.addEventListener('reinit', () => {
 	window.dispatchEvent(new CustomEvent('init.mask'));
 	window.dispatchEvent(new CustomEvent('init.input'));
 	window.dispatchEvent(new CustomEvent('init.modals'));
-	Modal.init();
+	Modals.init();
+	ModalAjax.init();
 	select.init();
 	Table.init();
 	new ScrollAnimation();

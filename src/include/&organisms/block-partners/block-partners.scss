@@ -1,0 +1,78 @@
+.block-partners {
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		max-width: rem(888);
+		overflow: hidden;
+		background-color: $color-white;
+		border-radius: rem(8);
+	}
+
+	&__item {
+		width: 50%;
+
+		&:nth-child(-2n + 3) {
+			border-right: 1px solid rgba($color-black, 0.1);
+
+			@include media-breakpoint-down(sm) {
+				border-right: none;
+			}
+		}
+
+		&:nth-child(3),
+		&:nth-child(4) {
+			border-top: 1px solid rgba($color-black, 0.1);
+
+			@include media-breakpoint-down(sm) {
+				border-top: none;
+			}
+		}
+
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+		}
+
+		&:not(:first-child) {
+			@include media-breakpoint-down(sm) {
+				border-top: 1px solid rgba($color-black, 0.1);
+			}
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+
+		@include media-breakpoint-down(md) {
+			flex-direction: column;
+		}
+	}
+
+	&__left {
+		width: 26%;
+		margin-right: 8%;
+
+		@include media-breakpoint-down(md) {
+			width: 100%;
+			margin-right: 0;
+			margin-bottom: rem(50);
+		}
+
+		@include media-breakpoint-down(sm) {
+			margin-bottom: rem(26);
+		}
+	}
+
+	&__right {
+		width: 66.6%;
+
+		@include media-breakpoint-down(md) {
+			width: 100%;
+		}
+	}
+
+	&__title {
+		@include media-breakpoint-down(md) {
+			max-width: rem(440);
+		}
+	}
+}
