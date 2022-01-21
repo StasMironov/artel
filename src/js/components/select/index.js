@@ -178,14 +178,14 @@ export default {
 			$select.on('change', (e) => {
 				if (e.detail?.cancel) return;
 				if ($select[0]) {
-					$select[0].dispatchEvent(
-						new CustomEvent('change', {
-							bubbles: true,
-							detail: {
-								cancel: true,
-							},
-						})
-					);
+					// $select[0].dispatchEvent(
+					// 	new CustomEvent('change', {
+					// 		bubbles: true,
+					// 		detail: {
+					// 			cancel: true,
+					// 		},
+					// 	})
+					// );
 				}
 				if ($select.attr('multiple')) {
 					if ($select[0].value) {
