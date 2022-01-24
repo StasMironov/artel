@@ -1,4 +1,6 @@
 import MicroModal from 'micromodal';
+import { throttle } from 'throttle-debounce';
+import PerfectScrollbar from 'perfect-scrollbar';
 
 const Modal = {
 	init() {
@@ -21,12 +23,11 @@ const Modal = {
 				}
 				window._disableScroll();
 				window.dispatchEvent(new CustomEvent('modal.open'));
-				window.ps.update();
 			},
 			onClose: (modal) => {
 				window._enableScroll();
 				window.dispatchEvent(new CustomEvent('modal.close'));
-				window.ls.update();
+				//window.ls.update();
 			},
 		});
 	},
@@ -76,6 +77,17 @@ const Modal = {
 			})
 			.then((text) => {
 				container.innerHTML = text;
+				if (document.querySelector('[data-ps]')) {
+					console.log('ps');
+					let wrapSubNode = document.querySelector('[data-ps]');
+					let ps = new PerfectScrollbar(wrapSubNode, {
+						wheelSpeed: 2,
+						wheelPropagation: true,
+						minScrollbarLength: 20,
+					});
+
+					console.log(wrapSubNode);
+				}
 			})
 			.catch((err) => {
 				console.log(`failed to fetch url (${url}): `, err);
