@@ -23,11 +23,13 @@
 					{% if block.fields %}
 						<div class="filter-select" data-fade-in-up>
 							{% for field in block.fields %}
-								<div class="filter-select__field">
-									{% view '@field' with {
-										field: field
-									} %}
-								</div>
+								<form data-ajax-form-to=".js-press-news" data-method="get" data-isScrollOnLoad data-isParseSelector>
+									<div class="filter-select__field">
+										{% view '@field' with {
+											field: field
+										} %}
+									</div>
+								</form>
 							{% endfor %}
 						</div>
 					{% endif %}

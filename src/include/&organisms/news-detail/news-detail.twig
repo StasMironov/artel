@@ -15,8 +15,8 @@
             {% endif %}
             {% if news_detail.table %}
                 {% view '^table' with {
-                    table: news_detail.table
-                } %}
+					table: news_detail.table
+				} %}
             {% endif %}
             {% if news_detail.slider %}
                 {% view '&slider-photo' with {
