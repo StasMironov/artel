@@ -1,0 +1,12 @@
+{% extends "layouts::_page.twig" %}
+
+{% block content %}
+
+	{% view '&hero-default' with {
+        hero_default: hero_default
+    } %}
+    {% view '&block-nav' %}
+    
+
+
+{% endblock %}
