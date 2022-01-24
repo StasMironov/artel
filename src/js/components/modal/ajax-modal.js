@@ -1,6 +1,7 @@
 import MicroModal from 'micromodal';
 import { throttle } from 'throttle-debounce';
 import PerfectScrollbar from 'perfect-scrollbar';
+import { isMob } from '../../utils/breakpoints';
 
 const Modal = {
 	init() {
@@ -78,7 +79,6 @@ const Modal = {
 			.then((text) => {
 				container.innerHTML = text;
 				if (document.querySelector('[data-ps]')) {
-					console.log('ps');
 					let wrapSubNode = document.querySelector('[data-ps]');
 					let ps = new PerfectScrollbar(wrapSubNode, {
 						wheelSpeed: 2,
@@ -86,7 +86,35 @@ const Modal = {
 						minScrollbarLength: 20,
 					});
 
-					console.log(wrapSubNode);
+					if (isMob()) {
+						wrapSubNode.addEventListener('ps-scroll-y', () => {
+							if ($('.modal-partner__info').offset().top <= 0) {
+								$('[data-wrap-scroll]').addClass('scroll');
+							} else {
+								$('[data-wrap-scroll]').removeClass('scroll');
+							}
+						});
+
+						function iOS() {
+							return (
+								[
+									'iPad Simulator',
+									'iPhone Simulator',
+									'iPod Simulator',
+									'iPad',
+									'iPhone',
+									'iPod',
+								].includes(navigator.platform) ||
+								// iPad on iOS 13 detection
+								(navigator.userAgent.includes('Mac') &&
+									'ontouchend' in document)
+							);
+						}
+
+						if (iOS()) {
+							$('[data-wrap-scroll]').addClass('ios-scroll');
+						}
+					}
 				}
 			})
 			.catch((err) => {

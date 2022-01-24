@@ -25,6 +25,37 @@
                             {{ block_nav.desc }}
                         </div>
                     {% endif %}
+                    {% if block_nav.factoids %} 
+                        {% set count = 0 %}
+                        {% set res = [] %}
+                        {% set items = [] %}
+
+                        {% for item in block_nav.factoids %}
+                                {% if count <= 1 %}
+                                    {% set items = items|merge([item]) %}
+                                    {% set count = count + 1 %}
+                                {% else %}
+                                    {% set res = res|merge([items]) %}
+                                    {% set items = []  %}
+                                    {% set items = items|merge([item]) %}
+                                    {% set count = 1 %}
+                                {% endif %}
+                        {% endfor %}
+
+                        {% set res = res|merge([items]) %}
+
+                        {% for elem in res %}
+                            <div class="block-nav__row">
+                                {% for card in elem %}
+                                    <div class="block-nav__factoid">
+                                        {% view '^factoid' with {
+                                            factoid: card
+                                        } %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
                 </div>
             </div>
         </div>
