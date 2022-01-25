@@ -5,7 +5,6 @@
 
 	@include media-breakpoint-down(md) {
 		height: 100vh;
-        overflow: auto;;
 	}
 
 
@@ -33,7 +32,7 @@
 			position: absolute;
 			content: "";
 			width: 100%;
-			height: rem(52);
+			height: rem(70);
 			top: 0;
 			left: 0;
 			right: 0;
@@ -53,7 +52,7 @@
 
 		&.ios-scroll {
 			&::after {
-				height: rem(90);
+				height: rem(100);
 			}
 		}
 	}
