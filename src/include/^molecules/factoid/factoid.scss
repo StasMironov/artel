@@ -38,11 +38,20 @@
       font-weight: 600;
   
       &-sup {
-        font-size: 9px;
-        top: -.9em;
+        font-size: 32px;
+        top: -.6em;
         position: relative;
         right: 0.3em;
         font-weight: 600;
+
+        @include media-breakpoint-down(md) {
+          font-size: 28px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          font-size: 20px;
+          top: -0.4em;
+        }
       }
     }
   

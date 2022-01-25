@@ -51,6 +51,7 @@
                                         {% view '^factoid' with {
                                             factoid: card
                                         } %}
+                                        <div class="block-nav__factoid-border" style="--delay: {{ (0.2 + loop.index0 / 5)|round(2, 'floor') }}"></div>
                                     </div>
                                 {% endfor %}
                             </div>

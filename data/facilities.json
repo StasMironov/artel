@@ -160,7 +160,7 @@
 	},
 	"block_nav": {
 		"bg": "gray",
-		"layout": "4",
+
 		"icon": {
 			"name": "logos/decor",
 			"size": "fit"
@@ -202,38 +202,189 @@
 				}
 			]
 		},
+		"layout": "5",
 		"factoids": [
 			{
-				"text": "80",
+				"text": "11,5",
 				"after": {
 					"txt": "млн"
 				},
-				"before": "≈$",
-				"label": "финансовые показатели"
+				"label": "Произведенная техника за&nbsp;2020 г"
 			},
 			{
-				"text": "50",
+				"text": "8 271",
+				"label": "Общее кол-во сотрудников"
+			},
+			{
+				"text": "9 326",
+				"label": "Общее кол-во сотрудников"
+			},
+			{
+				"text": "23,2",
 				"after": {
 					"txt": "млн"
 				},
-				"before": "≈$",
-				"label": "чистая выручка"
+				"label": "Произведенная техника за&nbsp;2019 г"
+			}
+		]
+	},
+	"block_facilities": {
+		"tabs": {
+			"horizontal": true,
+			"items": [
+				{
+					"text": "Производство",
+					"attr": "data-attr",
+					"active": "true",
+					"shift": true
+				},
+				{
+					"text": "Обслуживающие компании",
+					"attr": "data-attr",
+					"shift": true
+				}
+			]
+		},
+		"tabs_content": [
+			{
+				"active": true,
+				"slider": {
+					"items": [
+						{
+							"title": "Завод по производству кондиционеров",
+							"location": {
+								"country": "г. Ташкент",
+								"icon": {
+									"name": "24/location",
+									"size": "24"
+								}
+							},
+							"activity": {
+								"label": "Деятельность",
+								"info": "производство промышленных кондиционеров"
+							},
+							"img": {
+								"src": "tmp/slider-facilities/1.jpg",
+								"alt": "img"
+							},
+							"factoids": [
+								{
+									"text": "2012",
+									"label": "Год основания завода"
+								},
+								{
+									"text": "1236",
+									"after": {
+										"txt": "м",
+										"sup": "2"
+									},
+
+									"label": "Общая площадь"
+								}
+							]
+						},
+						{
+							"title": "Завод по производству 2",
+							"location": {
+								"country": "г. Москва",
+								"icon": {
+									"name": "24/location",
+									"size": "24"
+								}
+							},
+							"activity": {
+								"label": "Деятельность",
+								"info": "производство телевизоров"
+							},
+							"img": {
+								"src": "tmp/slider-facilities/1.jpg",
+								"alt": "img"
+							},
+							"factoids": [
+								{
+									"text": "2013",
+									"label": "Год основания завода"
+								},
+								{
+									"text": "1233",
+									"after": {
+										"txt": "м",
+										"sup": "2"
+									},
+									"label": "Общая площадь"
+								}
+							]
+						}
+					]
+				}
 			},
 			{
-				"text": "20",
-				"after": {
-					"txt": "%"
-				},
-				"before": "≈",
-				"label": "маржа EBITDA"
-			},
-			{
-				"text": "20",
-				"after": {
-					"txt": "%"
-				},
-				"before": "≈",
-				"label": "маржа EBITDA"
+				"slider": {
+					"items": [
+						{
+							"title": "Завод по производству кондиционеров",
+							"location": {
+								"country": "г. Ташкент",
+								"icon": {
+									"name": "24/location",
+									"size": "24"
+								}
+							},
+							"activity": {
+								"label": "Деятельность",
+								"info": "производство промышленных кондиционеров"
+							},
+							"img": {
+								"src": "tmp/slider-facilities/1.jpg",
+								"alt": "img"
+							},
+							"factoids": [
+								{
+									"text": "2012",
+									"label": "Год основания завода"
+								},
+								{
+									"text": "1236",
+									"after": {
+										"txt": "м2"
+									},
+									"label": "Общая площадь"
+								}
+							]
+						},
+						{
+							"title": "Завод по производству 2",
+							"location": {
+								"country": "г. Москва",
+								"icon": {
+									"name": "24/location",
+									"size": "24"
+								}
+							},
+							"activity": {
+								"label": "Деятельность",
+								"info": "производство телевизоров"
+							},
+							"img": {
+								"src": "tmp/slider-facilities/1.jpg",
+								"alt": "img"
+							},
+							"factoids": [
+								{
+									"text": "2013",
+									"label": "Год основания завода"
+								},
+								{
+									"text": "1233",
+									"after": {
+										"txt": "м2"
+									},
+									"label": "Общая площадь"
+								}
+							]
+						}
+					]
+				}
 			}
 		]
 	}

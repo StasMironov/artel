@@ -7,6 +7,7 @@ import './slider-period';
 import './slider-press';
 import './slider-photo';
 import './slider-similar';
+import './slider-facilities';
 
 export default {
 	init() {
