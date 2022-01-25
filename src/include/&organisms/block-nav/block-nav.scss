@@ -41,6 +41,12 @@
 		#{$root}--slim & {
 			padding-bottom: 0;
 		}
+
+		#{$root}--layout-5 & {
+			@include media-breakpoint-down(sm) {
+				padding-bottom: rem(40);
+			}
+		}
 	}
 
 	&__wrap {
@@ -55,6 +61,21 @@
 		@include media-breakpoint-up(md) {
 			flex-direction: row;
 			justify-content: space-between;
+		}
+	}
+
+	&__info {
+		#{$root}--layout-5 & {
+			padding-top: rem(8);
+
+			@include media-breakpoint-down(md) {
+				padding-top: 0;
+				transform: translateY(rem(-11));
+			}
+
+			@include media-breakpoint-down(sm) {
+				transform: translateY(rem(-5));
+			}
 		}
 	}
 
@@ -206,6 +227,22 @@
 				bottom: rem(-48);
 			}
 		}
+
+		#{$root}--layout-5 & {
+			left: rem(4);
+
+			@include media-breakpoint-down(md) {
+				bottom: auto;
+				top: rem(70);
+				left: rem(-4);
+			}
+
+			@include media-breakpoint-down(sm) {
+				bottom: auto;
+				top: rem(58);
+    			left: rem(-11);
+			}
+		}
 	}
 
 	&__left {
@@ -245,9 +282,72 @@
 		}
 	}
 
+	
+
 	&__row {
 		display: flex;
+		justify-content: space-between;
+		padding-right: rem(230);
+		padding-top: rem(34);
+		border-top: 1px solid rgba($color-black, 0.1);
+
+		@include media-breakpoint-down(md) {
+			flex-direction: column;
+			border: none;
+			padding-right: 0;
+			padding-top: 0;
+		}
+
+		&:not(:last-child){
+			margin-bottom: rem(32);
+		}
 	}
+
+	&__factoid {
+		position: relative;
+		max-width: rem(216);
+
+		@include media-breakpoint-down(md) {
+			max-width: initial;
+			width: 100%;
+			padding-top: rem(34);
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-top: rem(24);
+		}
+
+		&:not(:last-child){
+			@include media-breakpoint-down(md) {
+				margin-bottom: rem(31);
+			}
+		}
+
+		&-border {
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: rem(8);
+			height: 1px;
+			background-color: rgba($color-black, .1);
+			transform-origin: left;
+			transition: transform 1s ease 5s,
+			background .5s ease;
+			transform: scaleX(1);
+
+			@include media-breakpoint-down(md) {
+				display: block;
+			}
+		}
+
+		.factoid__label {
+			@include media-breakpoint-down(md) {
+				max-width: rem(240);
+			}
+		}
+	}
+	
 
 	&--layout {
 		&-2 {
