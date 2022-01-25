@@ -1,0 +1,50 @@
+<div class="vacancy">
+	<div class="vacancy__container container">
+		{% if vacancy.subtitle %}
+			<p class="vacancy__subtitle" data-fade-in-up>{{ vacancy.subtitle }}</p>
+		{% endif %}
+
+		{% for description in vacancy.descriptions %}
+			<div class="vacancy__wrapper">
+				<div class="vacancy__border"></div>
+				<div class="vacancy__left" data-fade-in-up>
+					{% if description.title %}
+						<h2 class="vacancy__title h2">{{ description.title }}</h2>
+					{% endif %}
+				</div>
+
+				{% if description.list %}
+					<div class="user-text vacancy__right" data-fade-in-up data-delay="0.3">
+						{{ description.list }}
+					</div>
+				{% endif %}
+			</div>
+		{% endfor %}
+
+	
+		<div class="vacancy__wrapper">
+			<div class="vacancy__border"></div>
+			<div class="vacancy__left" data-fade-in-up>
+				{% if vacancy.benefit_title %}
+					<h2 class="vacancy__title vacancy__title-benefit 2">{{ vacancy.benefit_title  }}</h2>
+				{% endif %}
+			</div>	
+
+			{% if block_benefit.tabs %}
+				<div class="vacancy__right" data-fade-in-up data-delay="0.3">
+					{% view '&tabs' with {
+						tabs: block_benefit.tabs
+					}%}
+				</div>	
+			{% endif %}
+
+			{% if vacancy.button %}
+				<div class="vacancy__button">
+					{% view '@button' with {
+						button: vacancy.button
+					} %}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</div>
