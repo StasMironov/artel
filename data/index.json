@@ -59,6 +59,14 @@
 				"name": "Результаты и отчёты"
 			},
 			{
+				"link": "partners",
+				"name": "Партнёры"
+			},
+			{
+				"link": "facilities",
+				"name": "Предприятия"
+			},
+			{
 				"link": "vacancy",
 				"name": "Вакансия"
 			}
