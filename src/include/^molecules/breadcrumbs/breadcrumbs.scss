@@ -11,7 +11,8 @@
 
 		@include media-breakpoint-down(md) {
 			line-height: rem(21);
-			overflow-x: auto;
+			flex-wrap: wrap;
+			//overflow-x: auto;
 		}
 
 		@include media-breakpoint-up(lg) {
@@ -55,6 +56,16 @@
 					background-color: rgba($color-white, 1.0);
 				}
 			}
+		}
+
+		&:last-child{
+			&:before {
+				content: none;
+			}
+		}
+
+		&:nth-last-child(2){
+			
 		}
 	}
 
