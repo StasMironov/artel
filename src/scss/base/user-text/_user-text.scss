@@ -162,7 +162,7 @@
 			left: rem(-34);
 			display: block;
 			width: rem(2);
-			background-color: yellow;
+			background-color: green;
 			content: '';
 
 			@include media-breakpoint-down(md) {
