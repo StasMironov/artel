@@ -1,0 +1,121 @@
+.innovation {
+    $root: &;
+    background-color: $color-green;
+    h2, .h2{
+        color: $color-white;
+    }
+    &__wrapper {	
+		@include media-breakpoint-up(sm) {
+			padding-top: rem(64);
+			padding-bottom: rem(64);
+			display: flex;	
+			flex-direction: column;
+		}
+
+		@include media-breakpoint-up(md) {
+			padding-top: rem(112);
+			padding-bottom: rem(120);
+			display: flex;	
+			flex-direction: column;
+		}
+
+		@include media-breakpoint-up(lg) {
+			display: flex;		
+			width: 100%;
+			flex-wrap: nowrap;
+			flex-direction: row;
+			justify-content: space-between;
+			padding-top: rem(112);
+			padding-bottom: rem(116);					
+		}
+       
+	}
+
+    &__left {		
+		@include media-breakpoint-up(sm) {
+			width: 100;
+		}
+
+		@include media-breakpoint-up(md) {
+			width: 100%;
+		}
+
+		@include media-breakpoint-up(lg) {
+			width: 50%;	
+        }
+	}
+	&__right {
+		@include media-breakpoint-up(sm) {
+			display: flex;		
+			width: 100%;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			margin-top: rem(40);
+		}
+
+		@include media-breakpoint-up(md) {
+			display: flex;		
+			width: 100%;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			margin-top: rem(53);
+		}
+
+		@include media-breakpoint-up(lg) {	
+			display: flex;
+			width: 50%;
+			flex-wrap: nowrap;
+			margin-top: 0;
+		}	
+		.block-info__cards{
+			display: flex;
+			flex-wrap: wrap;
+			color:white;
+			margin-left: rem(3);
+			margin-top: rem(8);
+			border: none;
+			@include media-breakpoint-up(sm) {
+				padding-bottom: rem(32);
+				border-bottom: 1px solid rgba($color-white, .6);
+			}
+			@include media-breakpoint-up(md) {
+				padding-bottom: 0;
+				border-bottom: 1px solid rgba($color-white, .6);
+			}
+		}
+		.block-info__card{
+			padding: 0;
+		}
+		.block-info__row{
+			width: 100%;
+		}
+		.block-info__card{
+			@include media-breakpoint-up(sm) {
+				width: 100%;
+				padding: rem(24) 0 0 0;
+				border-top: 1px solid rgba($color-white, .6);
+			}
+			@include media-breakpoint-up(md) {
+				width: 50%;
+				padding: rem(32) 0 0 0;
+				border-top: 1px solid rgba($color-white, .6);
+			}
+			
+			.factoid{
+				@include media-breakpoint-up(sm) {
+					width: rem(300);
+				}
+				@include media-breakpoint-up(md) {
+					width: rem(300);
+				}
+				@include media-breakpoint-up(lg) {
+					width: rem(224);
+				}
+				&__label{
+					color: rgba($color-white, .6);
+				}
+			}
+		}
+		
+	}
+}

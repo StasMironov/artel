@@ -79,6 +79,22 @@
 		#{$root}--theme-black & {
 			color: $color-black;
 		}
+		&--fullwidth{
+			width: 100%;
+			margin-right: 0;
+			@include media-breakpoint-up(sm) {
+				text-align: left;
+				margin-bottom: rem(-37);
+			}
+			@include media-breakpoint-up(md) {
+				text-align: left;
+				margin-bottom: rem(-53);
+			}
+			@include media-breakpoint-up(lg) {
+				text-align: left;
+				margin-bottom: rem(0);
+			}
+		}
 	}
 
 	&--no-title {
