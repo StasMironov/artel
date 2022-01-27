@@ -7,19 +7,7 @@
 
 	<div class="sustain__container ">
 
-		<div class="sustain__production container">
-			{% if production.title  %}
-				<h2>{{ production.title  }}</h2>
-			{% endif %}
-			<div class="sustain__wrapper">
-				{% if production.cards.tabs %}
-					{% view '&tabs' with {
-						tabs: production.cards.tabs
-					}%}
-				{% endif %}
-			</div>
-		</div>
-
+		{% view '&block-icons' %}
 
 		{% view '&block-innovation' %}
 
