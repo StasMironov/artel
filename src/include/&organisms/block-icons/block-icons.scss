@@ -1,24 +1,14 @@
 .block-icons {
   	&__top {
 		margin-bottom: rem(64);
-		margin-top: rem(64);  
-
 		@include media-breakpoint-up(md) {
 			margin-bottom: rem(96);
-			margin-top: rem(112);
 		}
 	}
   
 	&__items {
 		display: flex;
 		flex-wrap: wrap;
-		padding-bottom: rem(65);
-		@include media-breakpoint-up(md) {
-			padding-bottom: rem(80);
-		}
-		@include media-breakpoint-up(lg) {
-			padding-bottom: rem(130);
-		}
 	}
   
 	&__item {
