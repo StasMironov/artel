@@ -119,6 +119,12 @@
 			width: 50%;
 			max-width: initial;
 		}
+
+		.factoid__label {
+			@include media-breakpoint-down(sm) {
+				max-width: rem(159);
+			}
+		}
 	}
 
 	&__border {
