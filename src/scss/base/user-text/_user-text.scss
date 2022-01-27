@@ -98,7 +98,7 @@
 		width: 100%;
 		max-width: 100%;
 		margin-top: rem(80);
-		margin-bottom: rem(80);
+		margin-bottom: rem(80);object-fit: cover;
 
 		@include media-breakpoint-only(md) {
 			margin-top: rem(80);
