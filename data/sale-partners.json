@@ -182,7 +182,8 @@
 			{
 				"text": "1500",
 				"before": ">",
-				"label": "Общее кол-во магазинов&nbsp;Артель"
+				"label": "Общее кол-во магазинов&nbsp;Артель",
+				"attr": "data-counter-nospace"
 			}
 		]
 	},
