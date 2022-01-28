@@ -9,7 +9,17 @@
                 {% endif %}
             </div>
             <div class="block-advantages__left">
-                {# {% if block_advantages.title %} #}
+                {% if block_advantages.cards %}
+                    <div class="block-advantages__items">
+                        {% for card in block_advantages.cards %}
+                            <div class="block-advantages__card">
+                                {% view "^card-advantages" with {
+                                    card: card
+                                } %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>
