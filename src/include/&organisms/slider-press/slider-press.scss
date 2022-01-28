@@ -1,13 +1,6 @@
 .slider-press {
-	padding-top: rem(64);
-
 	@include media-breakpoint-down(md) {
-		padding-top: rem(64);
 		overflow: hidden;
-	}
-
-	@include media-breakpoint-down(sm) {
-		padding-top: rem(16);
 	}
 
 	&__item {
