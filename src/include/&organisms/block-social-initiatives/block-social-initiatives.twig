@@ -1,0 +1,14 @@
+<div class="initiatives container">
+	<div class="initiatives__wrapper">
+		<div class="initiatives__left" data-fade-in-up>
+			{% if block_social_initiatives.title  %}
+				<h2>{{ block_social_initiatives.title  }}</h2>
+			{% endif %}
+		</div>
+		<div class="initiatives__right" data-fade-in-up>
+			{% if block_social_initiatives.description %}
+				{{ block_social_initiatives.description  }}
+			{% endif %}
+		</div>
+	</div>
+</div>

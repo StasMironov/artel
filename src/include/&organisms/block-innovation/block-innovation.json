@@ -1,39 +1,34 @@
 {
-    "innovation": {
+    "block_innovation": {
         "title": "R&D и Инновации",
-        "tabs_content": [
+        "factoids": [
             {
-                "active": true,
-                "cards": [
-                    {
-                        "text": "80",
-                        "after": {
-                            "txt": "%"
-                        },
-                        "label": "Контент от Artel Electronics "
-                    },
-                    {
-                        "text": "14",
-                        "after": {
-                            "txt": "%"
-                        },
-                        "label": "Контент от Artel Electronics "
-                    },
-                    {
-                        "text": "14",
-                        "after": {
-                            "txt": "%"
-                        },
-                        "label": "Контент от Artel Electronics "
-                    },
-                    {
-                        "text": "80",
-                        "after": {
-                            "txt": "%"
-                        },
-                        "label": "Контент от Artel Electronics "
-                    }
-                ]
+                "text": "80",
+                "after": {
+                    "txt": "%"
+                },
+                "label": "Контент от Artel Electronics"
+            },
+            {
+                "text": "14",
+                "after": {
+                    "txt": "%"
+                },
+                "label": "Контент от Artel Electronics"
+            },
+            {
+                "text": "14",
+                "after": {
+                    "txt": "%"
+                },
+                "label": "Контент от Artel Electronics"
+            },
+            {
+                "text": "80",
+                "after": {
+                    "txt": "%"
+                },
+                "label": "Контент от Artel Electronics"
             }
         ]
     }
