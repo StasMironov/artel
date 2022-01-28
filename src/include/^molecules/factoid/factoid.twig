@@ -13,7 +13,7 @@
 
             {% if  factoid.text %}
                 <p class="factoid__number"
-					data-counter
+					data-counter {% if factoid.attr %}{{factoid.attr}}{% endif %}
 				>
 					{{ factoid.text }}
 				</p>

@@ -10,6 +10,12 @@
         block_advantages: block_advantages
     } %}
 
-    {% view '&block-contacts' %}
+    {% view '&block-contacts' with {
+        block_contacts: block_contacts
+    } %}
+
+    {% view '&form' with {
+        form: contacts_form
+    }%}
 
 {% endblock %}

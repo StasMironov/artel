@@ -36,14 +36,25 @@ export default {
 			}
 
 			this.setMinWidth(element);
+			let options;
 
-			const options = {
-				startVal: 0,
-				separator: ' ',
-				decimal,
-				decimalPlaces,
-				duration,
-			};
+			if ($(element).is('[data-counter-nospace]')) {
+				options = {
+					startVal: 0,
+					separator: '',
+					decimal,
+					decimalPlaces,
+					duration,
+				};
+			} else {
+				options = {
+					startVal: 0,
+					separator: ' ',
+					decimal,
+					decimalPlaces,
+					duration,
+				};
+			}
 
 			const count = new CountUp(element, endValue, options);
 
