@@ -482,13 +482,13 @@ export default class Map {
 				setTimeout(function () {
 					map.setZoom(cnt);
 					map.setCenter({ lat: ne.lat(), lng: sw.lng() });
-				}, 60); // 80ms is what I found to work well on my system -- it might not work well on all systems
+				}, 300); // 80ms is what I found to work well on my system -- it might not work well on all systems
 			}
 		}
 
 		if (dataZoom) {
 			if (!exclude && fit) {
-				this.map.setZoom(2);
+				this.map.setZoom(0);
 				smoothZoom(this.map, 6, this.map.getZoom()); //
 			}
 		} else {
