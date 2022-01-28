@@ -3,12 +3,12 @@
         <div class="block-advantages__wrapper">
             <div class="block-advantages__left">
                 {% if block_advantages.title %}
-                    <div class="block-advantages__title">
+                    <h2 class="block-advantages__title h2">
                         {{block_advantages.title}}
-                    </div>
+                    </h2>
                 {% endif %}
             </div>
-            <div class="block-advantages__left">
+            <div class="block-advantages__right" data-fade-in-up>
                 {% if block_advantages.cards %}
                     <div class="block-advantages__items">
                         {% for card in block_advantages.cards %}
