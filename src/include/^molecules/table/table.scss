@@ -87,7 +87,7 @@
 
 		&__content {
 			@include media-breakpoint-up(md) {
-				transform: none !important;
+				// transform: none !important;
 			}
 		}
 
