@@ -1,29 +1,41 @@
-<div class="innovation">
-	<div class="innovation__wrapper container">
-		<div class="innovation__left" data-fade-in-up>
-			{% if innovation.title  %}
-				<h2>{{ innovation.title  }}</h2>
+<div class="block-innovation">
+	<div class="block-innovation__wrapper container">
+		<div class="block-innovation__left" data-fade-in-up>
+			{% if block_innovation.title  %}
+				<h2>{{ block_innovation.title  }}</h2>
 			{% endif %}
 		</div>
-		<div class="innovation__right" data-fade-in-up>
-			{% if innovation.tabs_content %}
-				{% for item in innovation.tabs_content %}
-					<div class="block-info__pane{{ item.active ? ' is-active' }}">
-						{% if item.cards %}
-							<div class="block-info__cards">
-								{% for card in item.cards %}
-									<div class="block-info__card">
-										<div class="block-info__row">
-											<div class="block-info__factoid">
-												{% view '^factoid' with {
-                                                    factoid: card
-                                                }%}
-											</div>
-										</div>
-									</div>
-								{% endfor %}
+		<div class="block-innovation__right" data-fade-in-up>
+
+			{% if block_innovation.factoids %}
+				{% set count = 0 %}
+				{% set res = [] %}
+				{% set items = [] %}
+
+				{% for item in block_innovation.factoids %}
+					{% if count <= 1 %}
+						{% set items = items|merge([item]) %}
+						{% set count = count + 1 %}
+					{% else %}
+						{% set res = res|merge([items]) %}
+						{% set items = []  %}
+						{% set items = items|merge([item]) %}
+						{% set count = 1 %}
+					{% endif %}
+				{% endfor %}
+
+				{% set res = res|merge([items]) %}
+
+				{% for elem in res %}
+					<div class="block-innovation__row">
+						{% for card in elem %}
+							<div class="block-innovation__factoid">
+								{% view '^factoid' with {
+                                            factoid: card
+                                        } %}
+								<div class="block-innovation__factoid-border" style="--delay: {{ (0.2 + loop.index0 / 5)|round(2, 'floor') }}"></div>
 							</div>
-						{% endif %}
+						{% endfor %}
 					</div>
 				{% endfor %}
 			{% endif %}

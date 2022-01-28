@@ -12,17 +12,6 @@
 			margin-right: rem(-8);
             margin-top: rem(-8);
 		}
-		#{$root}--layout-3 & {
-			@include media-breakpoint-up(sm) {
-				margin-top: rem(227);
-			}
-			@include media-breakpoint-up(md) {
-				margin-top: rem(254);
-			}
-			@include media-breakpoint-up(lg) {
-				margin-top: rem(120);
-			}
-		}
 	}
 
 	&__card {
@@ -58,7 +47,7 @@
         margin-bottom: rem(76);
 
 		#{$root}--layout-3 & {
-			position: relative;
+			justify-content: space-between;
 		}
 
 		@include media-breakpoint-down(md) {
@@ -79,6 +68,9 @@
 		}
     }
 
+	&__title{
+		width: rem(390);
+	}
     &__tabs {
         display: inline-block;
 		width: 100%;		
@@ -136,8 +128,11 @@
 		.filter-select__field {
 			width: 37%;
 
-			#{$root}--layout-2 &, #{$root}--layout-3 & {
+			#{$root}--layout-2 &{
 				width: 100%;
+			}
+			#{$root}--layout-3 & {
+				width: rem(328);
 			}
 		}
 
@@ -184,6 +179,17 @@
 			@include media-breakpoint-down(sm) {
 				flex-direction: column;
 			}
+			#{$root}--layout-3 & {
+				width: rem(328);
+				@include media-breakpoint-down(md) {
+					margin-top: rem(26);
+				}
+
+				@include media-breakpoint-down(lg) {
+					margin-top: rem(0);
+				}
+				
+			}
 		}
 
 		&--fill {
@@ -196,26 +202,6 @@
 
 			@include media-breakpoint-down(md) {
 				margin-bottom: rem(47);
-			}
-		}
-
-		#{$root}--layout-3 & {
-			@include media-breakpoint-down(sm) {
-				max-width: rem(328);
-				position: absolute;
-				left: rem(0);
-			}
-			@include media-breakpoint-down(md) {
-				max-width: rem(328);
-				position: absolute;
-				left: rem(0);
-				top: rem(112);
-			}
-			@include media-breakpoint-down(lg) {
-				max-width: rem(328);
-				position: absolute;
-				right: rem(0);
-				top: rem(-16);
 			}
 		}
 	}
