@@ -10,6 +10,8 @@
 	"dependencies": {
 		"@csstools/normalize.css": "^10.1.0",
 		"axios": "^0.24.0",
+		"chart.js": "^3.7.0",
+		"chartjs-plugin-datalabels": "^2.0.0",
 		"countup.js": "^2.0.7",
 		"es7-object-polyfill": "^1.0.1",
 		"google-maps": "^4.3.3",

@@ -24,6 +24,7 @@ import BlockProduct from './components/block-product';
 import BlockHistory from './components/block-history';
 import Modals from './components/modal';
 import ModalAjax from './components/modal/ajax-modal';
+
 // import ModalWarning from './components/modal/modal-base';
 import Menu from './components/menu';
 import select from './components/select';
@@ -33,6 +34,7 @@ import { devices } from './utils/breakpoints';
 // Api
 
 import server from '../api/mock';
+import ChartCanvas from "./components/chart-canvas";
 
 if (process.env.API) {
 	server.start();
@@ -73,6 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	validation.init();
 	// Sticky.init();
 	new FormHandler();
+
+	new ChartCanvas();
 
 	const strategyContainers = document.querySelectorAll(
 		'[data-strategy-container]'
