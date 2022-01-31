@@ -1,0 +1,25 @@
+.block-advantages {
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__right {
+		width: 66.4%;
+	}
+
+	&__left {
+		width: 33%;
+	}
+
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__card {
+		width: 50%;
+		min-height: rem(268);
+		border: 1px solid;
+	}
+}

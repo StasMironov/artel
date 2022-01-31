@@ -3,6 +3,7 @@ import DrawSVGPlugin from 'gsap/DrawSVGPlugin';
 
 const Draw = {
 	init() {
+		console.log('draw');
 		let containers = document.querySelectorAll('[data-icon="draw"]');
 		let pathElem;
 

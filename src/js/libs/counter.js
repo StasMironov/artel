@@ -12,7 +12,7 @@ export default {
 				element.getAttribute('data-counter') || element.innerHTML;
 
 			let endValue = 0;
-			let decimal = '';
+			let decimal = ' ';
 			let decimalPlaces = 0;
 			const duration = 3;
 
@@ -28,22 +28,33 @@ export default {
 					.replace(/ +/g, '')
 					.trim();
 			} else if (initValue.split(' ').length > 1) {
-				decimal = '';
+				decimal = ' ';
 				endValue = initValue.replace(/ +/g, '').trim();
 			} else {
-				decimal = '';
+				decimal = ' ';
 				endValue = initValue.trim();
 			}
 
 			this.setMinWidth(element);
+			let options;
 
-			const options = {
-				startVal: 0,
-				separator: '',
-				decimal,
-				decimalPlaces,
-				duration,
-			};
+			if ($(element).is('[data-counter-nospace]')) {
+				options = {
+					startVal: 0,
+					separator: '',
+					decimal,
+					decimalPlaces,
+					duration,
+				};
+			} else {
+				options = {
+					startVal: 0,
+					separator: ' ',
+					decimal,
+					decimalPlaces,
+					duration,
+				};
+			}
 
 			const count = new CountUp(element, endValue, options);
 
