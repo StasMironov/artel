@@ -468,7 +468,7 @@
 					"text": "Стать поставщиком",
 					"title": "Стать поставщиком",
 					"theme": "white",
-					"attr": "data-modal-close"
+					"attr": "data-modal-person='modal-person'"
 				}
 			},
 			{
