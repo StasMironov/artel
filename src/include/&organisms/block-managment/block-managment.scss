@@ -40,27 +40,27 @@
 	}
 
 	&__heading{
+		margin-bottom: rem(28);
 		@include media-breakpoint-up(md) {
 			width: rem(328);
+			margin-bottom: rem(32);
 		}
 
 		@include media-breakpoint-up(lg) {	
-			width: rem(328);	
+			width: rem(328);			
+			margin-bottom: rem(8);	
 		}
 	}
 	&__title{
-		@include media-breakpoint-up(sm) {
-			margin-top: rem(28);
+		@include media-breakpoint-up(sm) {			
 			margin-bottom: rem(24);
 		}
 		@include media-breakpoint-up(md) {
 			width: 100%;
 			margin-bottom: rem(24);
-			margin-top: rem(32);
 		}	
 		@include media-breakpoint-up(lg) {
 			width: 100%;
-			margin-top: rem(8);
 			margin-bottom: rem(24);
 		}
 	}

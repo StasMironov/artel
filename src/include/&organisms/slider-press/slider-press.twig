@@ -12,7 +12,7 @@
 						<div class="slider-press__item slider-press__inner container">
 							<div class="slider-press__left">
 								{% if slide.article %}
-									<a {% if slide.href %}href="{{slide.href}}" {% endif %} class="slider-press__article h2" data-article>
+									<a {% if slide.href %} href="{{slide.href}}" {% endif %} class="slider-press__article h2" data-article>
 										{{ slide.article }}
 									</a>
 									<div class="slider-press__box" data-qty>
@@ -25,7 +25,8 @@
 										{% endif %}
 										{% if slide.qty %}
 											<span class="slider-press__qty">
-												{{slide.qty}} фото
+												{{slide.qty}}
+												фото
 											</span>
 										{% endif %}
 									</div>
@@ -39,8 +40,8 @@
 								</div>
 							</div>
 						</div>
-						
-						
+
+
 					</div>
 				{% endfor %}
 			</div>
@@ -58,6 +59,6 @@
 					} %}
 				</div>
 			</div>
-		</div>		
+		</div>
 	</div>
 </div>

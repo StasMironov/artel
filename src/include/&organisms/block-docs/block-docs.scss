@@ -78,7 +78,7 @@
 			}
 			@include media-breakpoint-down(lg) {
 				width: 50%;
-				margin-bottom: 0;
+				margin-bottom: rem(16);
 			}
 		}
 	}

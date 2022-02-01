@@ -51,9 +51,9 @@
         }
         @include media-breakpoint-up(lg) {            
             margin-bottom: rem(40);
-           /* @include last-row(4) {
+            @include last-row(4) {
                 margin-bottom: 0;
-            }*/
+            }
         }
     }
 }
