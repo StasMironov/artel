@@ -1,0 +1,55 @@
+.card-directors{
+    $root: &;
+    width: 100%;
+    color: $color-black;
+    &__icon {
+		width: rem(56);
+        height: rem(56);
+        margin-right: rem(48);
+		border-radius: 50%;
+		background-color: $color-white;
+        span{
+            display: flex;
+            width: rem(56);
+            height: rem(56);
+            align-items: center;
+            justify-content: center;
+        }
+	}
+
+
+    &__item{
+        border-top: 1px solid rgba($color-black, 0.1);
+        display: flex;
+        justify-content: space-between;
+        padding-top: rem(32);
+        padding-bottom: rem(48);
+        margin-right: rem(8);
+        @include media-breakpoint-up(md) {
+            padding-top: rem(56);
+            padding-bottom: rem(80);
+            margin-right: rem(8);
+        }
+        @include media-breakpoint-up(lg) {
+            padding-top: rem(56);
+            padding-bottom: rem(80);
+            margin-right: rem(8);
+        } 
+        &:hover{
+            border-top: 1px solid $color-green;
+            color: $color-green;
+            .card-directors__icon{
+                background-color: $color-green;
+                color: $color-white
+            }
+        }
+    }
+    &__title{
+    }
+    &__text{
+        color: rgba($color-black, 0.4);
+        margin-top: rem(8);
+    }
+
+    
+}

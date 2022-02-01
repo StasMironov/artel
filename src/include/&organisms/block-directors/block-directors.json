@@ -1,0 +1,38 @@
+{
+    "block_directors": {
+        "title": "Совет директоров",
+        "subtitle": "Наш Совет директоров использует свой опыт и навыки в различных областях для обеспечения эффективного и стратегического принятия решений",
+        "items": [
+            {
+                "title": "Ким Уи Так",
+                "text": "Независимый директор",
+                "attr": "data-modal=\"modal-ajax\" data-modal-ajax=\"ajax/modal-director.html\"",
+                "icon": true
+            },
+            {
+                "title": "Абдуллаев Баходир",
+                "text": "Неисполнительный директор",
+                "attr": "data-modal=\"modal-ajax\" data-modal-ajax=\"ajax/modal-director.html\"",
+                "icon": true
+            },
+            {
+                "title": "Рузикулов Шохрух",
+                "text": "Неисполнительный директор",
+                "attr": "data-modal=\"modal-ajax\" data-modal-ajax=\"ajax/modal-director.html\"",
+                "icon": true
+            },
+            {
+                "title": "Гаипов Дилмурод",
+                "text": "Неисполнительный директор",
+                "attr": "data-modal=\"modal-ajax\" data-modal-ajax=\"ajax/modal-director.html\"",
+                "icon": true
+            },
+            {
+                "title": "Аблакулов Уктам",
+                "text": "Неисполнительный директор",
+                "attr": "data-modal=\"modal-ajax\" data-modal-ajax=\"ajax/modal-director.html\"",
+                "icon": true
+            }
+        ]
+    }
+}

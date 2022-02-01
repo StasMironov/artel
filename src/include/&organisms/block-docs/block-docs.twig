@@ -2,7 +2,7 @@
 	<div class="block-docs__container container" {% if block_docs.tabs %} data-tabs-wrap {% endif %}>
 		<div class="block-docs__wrapper">
 			{% if block_docs.title %}
-				<div class="block-docs__title">
+				<div class="block-docs__title {% if block_docs.oneline %} block-docs__title--oneline {% endif %}">
 					<h2>{{ block_docs.title  }}</h2>
 				</div>
 			{% endif %}

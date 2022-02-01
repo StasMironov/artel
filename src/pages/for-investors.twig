@@ -1,0 +1,50 @@
+{% extends "layouts::_page.twig" %}
+
+{% block content %}
+
+	{% view '&hero-default' with {
+        hero_default: hero_default
+    } %}
+
+	{% view '&block-nav' %}
+
+	<div class="mb-md-120 mb-64">
+		{% view '&block-forinvestors-docs' %}
+	</div>
+
+	<div class="mb-80 mb-md-128">
+		{% view '&block-structure' %}
+	</div>
+
+	<div class="mb-64 mb-md-120 mt-120 mt-md-0">
+		{% view '&block-docs' with {
+		block_docs: block_reports
+	} %}
+	</div>
+
+
+	<div class="mb-64 mb-md-40">
+		{% view '&block-directors' %}
+	</div>
+
+	<div class="pt-64 pt-md-112 pb-md-80  bg-white">
+		{% view '&block-team' %}
+	</div>
+
+	<div class="mb-64 mb-md-120 pb-64 pb-md-120 pb-lg-120 bg-white">
+		{% view '&block-managment' %}
+	</div>
+
+	<div class="mb-64 mb-md-16">
+		{% view '&block-docs' with {
+		block_docs: block_docs
+	} %}
+	</div>
+
+	<div class="mb-64 mb-md-112">
+		{% view "&block-comm" with {
+        block_comm: block_comm
+    } %}
+	</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+<div class="block-managment container">
+	<div class="block-managment__wrapper">
+
+		<div class="block-managment__left" data-fade-in-up>
+			{% if block_managment.heading %}
+				<h2 class="block-managment__heading h2">{{ block_managment.heading }}</h2>
+			{% endif %}
+		</div>
+
+		{% for description in block_managment.descriptions %}
+			<div class=" block-managment__right" data-fade-in-up data-delay="0.3">
+				{% if description.title %}
+					<h2 class="block-managment__title h3">
+						{{ description.title }}
+					</h2>
+				{% endif %}
+				{% if description.text %}
+					{{ description.text }}
+				{% endif %}
+				{% if description.link %}
+					<a href="#" class="block-managment__link">{{ description.link }}</a>
+				{% endif %}
+			</div>
+		{% endfor %}
+	</div>
+</div>

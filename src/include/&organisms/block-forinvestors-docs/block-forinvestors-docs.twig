@@ -1,0 +1,24 @@
+<div class="block-forinvestors-docs container">
+	<div class="block-forinvestors-docs__wrapper">
+
+		<div class="block-forinvestors-docs__left" data-fade-in-up>
+			{% if block_forinvestors_docs.heading %}
+				<h2 class="block-forinvestors-docs__heading h2">{{ block_forinvestors_docs.heading }}</h2>
+			{% endif %}
+		</div>
+
+		<div class="block-forinvestors-docs__right">
+
+			{% for item in info_docs.items %}
+				<div class="block-forinvestors-docs__item" data-fade-in-up data-delay="{{ (0.2 + loop.index0 / 5)|round(2, 'floor') }}">
+					{% view '^card-features' with {
+						card: item|merge({
+							delay: (0.2 + loop.index0 / 5)|round(2, 'floor')
+						})
+					} %}
+				</div>
+			{% endfor %}
+
+		</div>
+	</div>
+</div>

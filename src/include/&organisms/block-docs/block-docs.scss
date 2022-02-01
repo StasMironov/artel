@@ -70,6 +70,17 @@
 
 	&__title{
 		width: rem(390);
+		&--oneline{
+			width: 100%;
+			@include media-breakpoint-down(md) {
+				width: 100%;
+				margin-bottom: rem(16);
+			}
+			@include media-breakpoint-down(lg) {
+				width: 50%;
+				margin-bottom: 0;
+			}
+		}
 	}
     &__tabs {
         display: inline-block;

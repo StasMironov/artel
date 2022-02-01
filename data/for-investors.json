@@ -1,0 +1,387 @@
+{
+    "title": "Инвесторам",
+    "header": {
+        "transparent": true,
+        "logo": {
+            "href": "./",
+            "name": "logos/main-logo",
+            "size": "fit"
+        },
+        "navigation": [
+            {
+                "text": "О группе",
+                "submenu": {
+                    "title": "О группе",
+                    "text": "Общая информация для инвесторов в формате отчетов, графиков и документов",
+                    "links": [
+                        {
+                            "href": "javascript:void(0);",
+                            "text": "Общая информация для инвесторов"
+                        },
+                        {
+                            "href": "javascript:void(0);",
+                            "text": "Презентации"
+                        },
+                        {
+                            "href": "javascript:void(0);",
+                            "text": "Соблюдение требований корпоративного управления"
+                        },
+                        {
+                            "href": "javascript:void(0);",
+                            "text": "Структура компании"
+                        },
+                        {
+                            "href": "javascript:void(0);",
+                            "text": "Совет директоров"
+                        },
+                        {
+                            "href": "javascript:void(0);",
+                            "text": "Руководство"
+                        }
+                    ]
+                }
+            },
+            {
+                "text": "Инвесторам",
+                "submenu": {
+                    "title": "Инвесторам",
+                    "text": "Общая информация для инвесторов в формате отчетов, графиков и документов",
+                    "links": [
+                        {
+                            "text": "Общая информация для инвесторов",
+                            "active": true
+                        },
+                        {
+                            "href": "javascript:void(0);",
+                            "text": "Результаты и отчеты"
+                        },
+                        {
+                            "href": "javascript:void(0);",
+                            "text": "Презентации"
+                        },
+                        {
+                            "href": "javascript:void(0);",
+                            "text": "Соблюдение требований корпоративного управления"
+                        },
+                        {
+                            "href": "javascript:void(0);",
+                            "text": "Структура компании"
+                        },
+                        {
+                            "href": "javascript:void(0);",
+                            "text": "Совет директоров"
+                        },
+                        {
+                            "href": "javascript:void(0);",
+                            "text": "Руководство"
+                        },
+                        {
+                            "href": "javascript:void(0);",
+                            "text": "Корпоративное управление"
+                        },
+                        {
+                            "href": "javascript:void(0);",
+                            "text": "Внутренние документы"
+                        },
+                        {
+                            "href": "javascript:void(0);",
+                            "text": "Каталог продукции"
+                        },
+                        {
+                            "href": "javascript:void(0);",
+                            "text": "Контакты для инвесторов"
+                        }
+                    ]
+                }
+            },
+            {
+                "href": "javascript:void(0);",
+                "text": "Партнерам"
+            },
+            {
+                "href": "javascript:void(0);",
+                "text": "Устойчивое развитие"
+            },
+            {
+                "href": "javascript:void(0);",
+                "text": "Пресс-центр"
+            },
+            {
+                "href": "javascript:void(0);",
+                "text": "Карьера"
+            },
+            {
+                "href": "javascript:void(0);",
+                "text": "Контакты"
+            }
+        ],
+        "lang": {
+            "action": {
+                "text": "Ру",
+                "title": "Ру"
+            },
+            "items": [
+                {
+                    "href": "javascript:void(0);",
+                    "text": "En",
+                    "title": "En"
+                },
+                {
+                    "href": "javascript:void(0);",
+                    "text": "Оʻz",
+                    "title": "Оʻz"
+                }
+            ]
+        }
+    },
+    "hero_default": {
+        "title": "Инвесторам",
+        "title_fullwidth": true,
+        "image": {
+            "src": "tmp/default-hero/hero-for-investors.jpg",
+            "alt": "image alt",
+            "fill": true,
+            "tab": {
+                "srcset": [
+                    {
+                        "scale": "1",
+                        "src": "tmp/default-hero/hero-for-investors-tab.jpg"
+                    }
+                ]
+            },
+            "mob": {
+                "srcset": [
+                    {
+                        "scale": "1",
+                        "src": "tmp/default-hero/hero-for-investors-mob.jpg"
+                    }
+                ]
+            }
+        }
+    },
+    "block_nav": {
+        "desc": "Наши акционеры имеют точное представление о кратко-срочных и долгосрочных перспективах бизнеса. Благодаря специальной модели владения существует триединство доверия, подотчетности и автономии.",
+        "bg": "gray",
+        "layout": "4",
+        "icon": {
+            "name": "logos/decor",
+            "size": "fit"
+        },
+        "theme": "white",
+        "tabs": {
+            "layout": "3",
+            "items": [
+                {
+                    "href": "!#",
+                    "text": "Инвесторам",
+                    "title": "Инвесторам",
+                    "active": "true"
+                },
+                {
+                    "href": "!#",
+                    "text": "Структура компании",
+                    "title": "Структура компании"
+                },
+                {
+                    "href": "!#",
+                    "text": "Совет директоров",
+                    "title": "Совет директоров"
+                },
+                {
+                    "href": "!#",
+                    "text": "Руководство",
+                    "title": "Руководство"
+                },
+                {
+                    "href": "!#",
+                    "text": "Корпоративное управление",
+                    "title": "Корпоративное управление"
+                },
+                {
+                    "href": "!#",
+                    "text": "Внутренние документы",
+                    "title": "Внутренние документы"
+                },
+                {
+                    "href": "!#",
+                    "text": "Контакты",
+                    "title": "Контакты"
+                }
+            ]
+        }
+    },
+    "block_features": {
+        "title": "Годовые отчеты и стратегия для инвесторов",
+        "items": [
+            {
+                "theme": "green",
+                "href": "#",
+                "title": "Результаты и отчеты",
+                "text": "Стабильная производитель&shy;ность несмотря на некоторые ограничения COVID-19",
+                "icon": true
+            },
+            {
+                "theme": "black",
+                "href": "#!",
+                "title": "Инвесторам",
+                "text": "Мы строим доверительные отношения с заинтересован&shy;ными сторонами",
+                "icon": true
+            },
+            {
+                "href": "#!!",
+                "title": "ESG",
+                "text": "Высокие стандарты ESG — приоритет в нашей Группе",
+                "icon": true
+            }
+        ]
+    },
+    "block_reports": {
+        "layout": "3",
+        "tabs_content": [
+            {
+                "active": true,
+                "cards": [
+                    {
+                        "layout": "2",
+                        "href": "#",
+                        "title": "Отчет о корпоративном управлении",
+                        "text": "0,87 мб",
+                        "date": {
+                            "month": "Ноябрь",
+                            "day": "2021"
+                        },
+                        "action": {
+                            "title": "Скачать PDF",
+                            "text": "Скачать PDF",
+                            "icon": {
+                                "name": "24/download"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "block_docs": {
+        "title": "Отчеты об устойчивом развитии",
+        "oneline": true,
+        "layout": "3",
+        "tabs_content": [
+            {
+                "active": true,
+                "cards": [
+                    {
+                        "layout": "2",
+                        "href": "#",
+                        "title": "2021 Отчет об устойчивом развитии",
+                        "text": "0,87 мб",
+                        "date": {
+                            "month": "Ноябрь",
+                            "day": "2021"
+                        },
+                        "action": {
+                            "title": "Скачать PDF",
+                            "text": "Скачать PDF",
+                            "icon": {
+                                "name": "24/download"
+                            }
+                        }
+                    },
+                    {
+                        "layout": "2",
+                        "href": "#",
+                        "title": "2021 Отчет об устойчивом развитии",
+                        "text": "0,87 мб",
+                        "date": {
+                            "month": "Ноябрь",
+                            "day": "2021"
+                        },
+                        "action": {
+                            "title": "Скачать PDF",
+                            "text": "Скачать PDF",
+                            "icon": {
+                                "name": "24/download"
+                            }
+                        }
+                    },
+                    {
+                        "layout": "2",
+                        "href": "#",
+                        "title": "2021 Отчет об устойчивом развитии",
+                        "text": "0,87 мб",
+                        "date": {
+                            "month": "Ноябрь",
+                            "day": "2021"
+                        },
+                        "action": {
+                            "title": "Скачать PDF",
+                            "text": "Скачать PDF",
+                            "icon": {
+                                "name": "24/download"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "info_docs": {
+        "items": [
+            {
+                "theme": "green",
+                "href": "#!!",
+                "title": "Результаты и отчеты",
+                "text": "Прозрачность и полноценное раскрытие финансовой и нефи-нансовой информации для всех заинтересованных сторон",
+                "icon": true
+            },
+            {
+                "theme": "black",
+                "href": "#!",
+                "title": "Презентации",
+                "text": "Высокие стандарты ESG - приоритет в нашей Группе",
+                "icon": true
+            }
+        ]
+    },
+    "block_comm": {
+        "bg": "gray",
+        "title": "Контакты для инвесторов",
+        "items": [
+            {
+                "img": {
+                    "src": "tmp/block-forinvestors/comm-img.jpg",
+                    "alt": "img"
+                },
+                "name": "Кобил Ташмухамедов",
+                "position": "Заместитель председателя<br/>по производству",
+                "comm": [
+                    {
+                        "title": "E-mail",
+                        "text": "info@artel.uz",
+                        "href": "mailto:info@artel.uz"
+                    },
+                    {
+                        "title": "Телефон",
+                        "text": "+998 (71) 123-45-67",
+                        "href": "tel:+998(71)123-45-67"
+                    }
+                ]
+            },
+            {
+                "img": {
+                    "src": "tmp/press/img3.jpg",
+                    "alt": "img"
+                },
+                "name": "Элеанор Крамерс",
+                "position": "Руководитель по международным<br/>коммуникациям",
+                "comm": [
+                    {
+                        "title": "E-mail",
+                        "text": "eleanor.kramers@artelelectronics.com",
+                        "href": "mailto:eleanor.kramers@artelelectronics.com"
+                    }
+                ]
+            }
+        ]
+    }
+}

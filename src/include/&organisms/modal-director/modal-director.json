@@ -1,0 +1,10 @@
+{
+    "modal_partner": {
+        "description": "54454545",
+        "img": {
+            "src": "./tmp/block-directors/img1",
+            "alt": "logo",
+            "disable_lazy": true
+        }
+    }
+}

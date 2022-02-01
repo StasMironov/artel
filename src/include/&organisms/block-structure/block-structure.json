@@ -1,0 +1,37 @@
+{
+    "block_structure": {
+        "title": "Структура компании",
+        "subtitle": "Наша cильная организационная структура, которая продолжает повышать производительность",
+        "img": {
+            "src": "img/structure.svg",
+            "alt": "image alt",
+            "tab": {
+                "srcset": [
+                    {
+                        "scale": "1",
+                        "src": "img/structure-tab.svg"
+                    }
+                ]
+            },
+            "mob": {
+                "srcset": [
+                    {
+                        "scale": "1",
+                        "src": "img/structure-mob.svg"
+                    }
+                ]
+            }
+        },
+        "buttons": [
+            {
+                "title": "Общее собрание участников"
+            },
+            {
+                "title": "Наблюдательный совет"
+            },
+            {
+                "title": "Правление"
+            }
+        ]
+    }
+}

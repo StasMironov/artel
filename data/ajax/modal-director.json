@@ -1,0 +1,14 @@
+{
+    "modal_director": {
+        "description": [
+            "текст"
+        ],
+        "title": "Ким Уи Так",
+        "subtitle": "Независимый директор",
+        "img": {
+            "src": "./tmp/block-team/modal-img1.jpg",
+            "alt": "photo",
+            "disable_lazy": true
+        }
+    }
+}

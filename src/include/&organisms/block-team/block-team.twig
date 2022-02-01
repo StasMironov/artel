@@ -1,0 +1,20 @@
+<div class="block-team container">
+
+	<div class="block-team__heading">
+		<p class="block-team__title h2" data-fade-in-up>{{ block_team.title }}</p>
+		<p class="block-team__subtitle" data-fade-in-up>{{ block_team.subtitle }}</p>
+	</div>
+
+	<div class="block-team__items">
+		{% for item in block_team.items %}
+			<div class="block-team__item" data-fade-in-up data-delay="{{ (0.2 + loop.index0 / 5)|round(2, 'floor') }}">
+				{% view '^card-team' with {
+						card: item|merge({
+							delay: (0.2 + loop.index0 / 5)|round(2, 'floor')
+						})
+					} %}
+			</div>
+		{% endfor %}
+	</div>
+
+</div>

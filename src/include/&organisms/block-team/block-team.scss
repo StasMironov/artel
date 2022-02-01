@@ -1,0 +1,59 @@
+.block-team{
+    $root: &;
+    &__heading{
+        margin-bottom: rem(74);
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        @include media-breakpoint-up(md) {            
+            flex-direction: column;
+        }
+        @include media-breakpoint-up(lg) {            
+            flex-direction: row;
+        }
+    }
+    &__title{
+        width: 100%;
+        margin-bottom: rem(24);
+        @include media-breakpoint-up(md) {            
+            width: 100%;
+            margin-bottom: rem(24);
+        }
+        @include media-breakpoint-up(lg) {            
+            width: 50%;
+            margin-bottom: rem(0);
+        }
+    }
+    &__subtitle{
+        width: rem(328);
+        margin-right: 0;
+        @include media-breakpoint-up(md) {            
+            width: rem(440);
+            margin-right: 0;
+        }
+        @include media-breakpoint-up(lg) {            
+            width: rem(440);
+            margin-right: rem(220);
+        }
+    }
+
+    &__items{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__item{  
+        @include media-breakpoint-up(md) {            
+            margin-bottom: rem(40);
+            @include last-row(2) {
+                margin-bottom: 0;
+            }
+        }
+        @include media-breakpoint-up(lg) {            
+            margin-bottom: rem(40);
+           /* @include last-row(4) {
+                margin-bottom: 0;
+            }*/
+        }
+    }
+}

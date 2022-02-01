@@ -1,0 +1,12 @@
+.card-team{
+    $root: &;
+    &__img{
+        width: rem(328);
+        margin-bottom: rem(40);
+    }
+    &__title{
+    }
+    &__text{
+        color: rgba($color-black, 0.4)
+    }
+}
