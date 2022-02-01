@@ -232,6 +232,8 @@ export default class Map {
 				this.currentRegion = tab.getAttribute('data-region');
 				this.filterMarkers(false, true);
 
+				// this.map.setZoom(0);
+
 				this.cardWrap.classList.remove('is-active'); // при переключении табов скрываем попап с данными ранее выбранной метки
 			});
 		});
@@ -489,7 +491,11 @@ export default class Map {
 		if (dataZoom) {
 			if (!exclude && fit) {
 				this.map.setZoom(0);
-				smoothZoom(this.map, 6, this.map.getZoom()); //
+				if (this.currentRegion == 'ru') {
+					smoothZoom(this.map, 4, this.map.getZoom()); //
+				} else {
+					smoothZoom(this.map, 6, this.map.getZoom()); //
+				}
 			}
 		} else {
 			if (!exclude && fit) {
