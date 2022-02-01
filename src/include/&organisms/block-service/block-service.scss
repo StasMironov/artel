@@ -1,0 +1,249 @@
+.block-service {
+	&__wrapper {
+		position: relative;
+	}
+
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: rem(-8);
+		margin-left: rem(-8);
+
+		@include media-breakpoint-down(sm) {
+			margin-left: 0;
+		}
+	}
+
+	&__item {
+		width: calc(33.333% - #{rem(8)});
+		min-height: rem(345);
+		margin-bottom: rem(8);
+		margin-left: rem(8);
+
+		@include media-breakpoint-down(md) {
+			width: calc(50% - #{rem(8)});
+		}
+
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+			min-height: rem(324);
+			margin-left: 0;
+		}
+
+        &.hide {
+            display: none;
+        }
+	}
+
+	&__left {
+        position: relative;
+		height: rem(672);
+		// overflow: hidden;
+
+		@include media-breakpoint-down(md) {
+			height: rem(801);
+		}
+	}
+
+	&__header {
+        position: sticky;
+        top: 0;
+        background: $color-gray;
+        z-index: 1;
+		
+		padding-bottom: rem(53);
+
+		@include media-breakpoint-down(md) {
+			flex-direction: column;
+			align-items: flex-start;
+			margin-bottom: rem(48);
+		}
+
+		@include media-breakpoint-down(sm) {
+			margin-bottom: rem(37);
+		}
+
+        &-container {
+            display: flex;
+
+            @include media-breakpoint-down(md) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+	}
+
+	&__box {
+		display: flex;
+		flex: 1;
+		align-items: flex-end;
+
+		@include media-breakpoint-down(md) {
+			width: 100%;
+		}
+
+		@include media-breakpoint-down(sm) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+
+	&__title {
+		margin-right: 9.3%;
+		padding-top: 31px;
+
+		@include media-breakpoint-down(md) {
+			margin-bottom: rem(24);
+			padding-top: 0;
+		}
+
+		@include media-breakpoint-down(sm) {
+			margin-bottom: rem(19);
+		}
+	}
+
+	&__form {
+		width: 100%;
+		max-width: rem(440);
+		margin-right: 13.3%;
+
+		@include media-breakpoint-down(md) {
+			width: 49%;
+			max-width: initial;
+			margin-right: 10%;
+		}
+
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+			margin-right: 0;
+		}
+	}
+
+	&__select {
+		width: 100%;
+		max-width: rem(328);
+
+		@include media-breakpoint-down(md) {
+			width: 40%;
+			max-width: initial;
+		}
+
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+		}
+	}
+
+	&__right {
+		position: absolute;
+		top: 0;
+		right: rem(-52);
+		bottom: 0;
+		z-index: 1;
+		width: rem(56);
+		height: 100%;
+		background-color: $color-white;
+		box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+		cursor: pointer;
+
+		@include media-breakpoint-down(md) {
+			width: rem(44);
+		}
+
+		@include media-breakpoint-down(sm) {
+			top: auto;
+			right: 0;
+			width: 100vw;
+			height: rem(48);
+			margin-right: -16px;
+		}
+	}
+
+	&__view {
+		display: none;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
+		height: rem(108);
+		margin: 0 auto;
+
+		@include media-breakpoint-down(md) {
+			height: rem(137);
+			margin: 0 auto;
+			padding-top: rem(16);
+			padding-bottom: rem(7);
+		}
+
+		@include media-breakpoint-down(sm) {
+			display: flex;
+			flex-direction: row;
+			flex-direction: row-reverse;
+			width: 50%;
+			height: 100%;
+			padding: 0;
+			padding: 0;
+			padding-right: rem(44);
+			padding-left: rem(52);
+		}
+
+		&.show {
+			display: flex;
+		}
+
+		&:first-child {
+			border-right: 1px solid rgba($color-black, 0.1);
+		}
+	}
+
+	&__wrp {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		background-color: $color-white;
+	}
+
+	&__txt {
+		transform: rotate(-90deg);
+
+		@include media-breakpoint-down(sm) {
+			transform: none;
+		}
+	}
+
+	&__icon {
+		transform: rotate(90deg);
+
+		@include media-breakpoint-down(sm) {
+			margin-right: rem(7);
+			transform: none;
+		}
+	}
+
+	&__map {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		width: 92vw;
+		height: 100%;
+		margin-left: calc((100% - 100vw) / 2);
+		background-color: $color-white;
+		transform: translateX(109%);
+		opacity: 0;
+		@include defaultTransition(transform, opacity);
+
+		&.show {
+			transform: translateX(0%);
+			opacity: 1;
+		}
+
+		.map {
+			height: 100%;
+			transform: none !important;
+
+            &__box {
+                @include media-breakpoint-down(sm) {
+                    height: 100%;
+                }
+            }
+		}
+	}
+}

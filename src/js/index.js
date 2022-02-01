@@ -5,6 +5,7 @@ import './utils/userAgent';
 import libs from './libs';
 
 import Header from './components/header';
+import FilterService from './components/filter-service';
 import ScrollAnimation from './components/scroll-animation/scroll-animation';
 import Toggle from './components/lang-toggle';
 import Nav from './components/nav';
@@ -14,6 +15,7 @@ import Sliders from './components/sliders';
 import Submenu from './components/submenu';
 import Animation from './components/animation';
 import Map from './components/map';
+import MapService from './components/map-service';
 import validation from './components/validation';
 import FormHandler from './components/form-handler';
 import ScrollTo from './components/scrollto';
@@ -58,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	Animation.init();
 	Header.init();
+	FilterService.init();
 	Toggle.init();
 	Nav.init();
 	InputSearch.init();
@@ -72,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	ModalAjax.init();
 	new ScrollAnimation();
 	new Map();
+	new MapService();
 	validation.init();
 	// Sticky.init();
 	new FormHandler();
@@ -128,6 +132,7 @@ window.addEventListener('reinit', () => {
 	Table.init();
 	Menu.init();
 	select.init();
+	new MapService();
 
 	new ScrollAnimation();
 });

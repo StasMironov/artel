@@ -1,4 +1,6 @@
 .block-contacts {
+	$root: &;
+
 	&__wrapper {
 		display: flex;
 		justify-content: space-between;
@@ -139,6 +141,10 @@
 
 		@include media-breakpoint-up(lg) {
 			padding-top: rem(215);
+		}
+
+		#{$root}--layout-2 &{
+			padding-top: 0;
 		}
 	}
 
