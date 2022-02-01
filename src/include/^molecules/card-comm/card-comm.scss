@@ -18,9 +18,9 @@
 	// }
 
 	&__avatar {
-		width: rem(104);
+		width: rem(128);
 		min-width: rem(104);
-		height: rem(104);
+		height: rem(128);
 		margin-right: rem(24);
 		overflow: hidden;
 		border-radius: 50%;
@@ -34,19 +34,21 @@
 
 	&__person {
 		display: flex;
-		align-items: center;
-		margin-bottom: rem(48);
-
-		@include media-breakpoint-down(sm) {
+		align-items: top;
+		margin-bottom: rem(58);
+		@include media-breakpoint-only(sm) {
 			align-items: normal;
 			margin-bottom: rem(32);
 		}
 	}
 
-	&__name,
-	&__position {
-		font-weight: 500;
-		font-size: rem(16);
+	&__name{
+		margin-bottom: rem(8);
+		@include text-body;
+		@include media-breakpoint-up(md) {
+			@include h3;
+		}
+
 	}
 
 	&__position,
@@ -64,11 +66,11 @@
 	}
 
 	&__title {
+		/*margin-bottom: rem(8);*/
 		margin-bottom: rem(8);
-
-		@include media-breakpoint-down(sm) {
+		/*@include media-breakpoint-down(sm) {
 			margin-bottom: rem(5);
-		}
+		}*/
 	}
 
 	&__position {
@@ -84,14 +86,17 @@
 	}
 
 	&__box {
-		@include media-breakpoint-down(sm) {
-			padding-top: rem(10);
+		margin-top: rem(8);
+		margin-left: rem(0);
+		@include media-breakpoint-up(md) {			
+			margin-top: rem(24);
+			margin-left: rem(8);
 		}
 	}
 
 	&__comm {
 		&:not(:last-child) {
-			margin-bottom: rem(32);
+			margin-bottom: rem(24);
 		}
 	}
 }
