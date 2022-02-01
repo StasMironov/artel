@@ -11,8 +11,19 @@
 		width: 100%;
 	}
 
+	&__label {
+		display: block;
+		color: rgba($color-black, 0.6);
+		font-size: rem(14);
+		transform: translateY(16px);
+	}
+
 	&--fill {
 		width: 100%;
+
+		.filter-select__field {
+			width: 100%;
+		}
 
 		@include media-breakpoint-down(md) {
 			justify-content: space-between;

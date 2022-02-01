@@ -6,9 +6,24 @@
         hero_default: hero_default
     } %}
 
-    {% view '&block-advantages' with {
-        block_advantages: block_advantages
-    } %}
+    <div class="mt-lg-96 mt-md-80 mt-64 mb-md-120 mb-64">
+        {% view '&block-service' with {
+            block_service: block_service
+        } %}
+    </div>
+
+
+    <div class="mt-md-112 mt-64 mb-md-120 mb-64">
+        {% view '&block-advantages' with {
+            block_advantages: block_advantages
+        } %}
+    </div>
+
+    <div class="mb-md-120 mb-64">
+		{% view '&features' with {
+			features: features
+		} %}
+	</div>
 
     {% view '&block-contacts' with {
         block_contacts: block_contacts

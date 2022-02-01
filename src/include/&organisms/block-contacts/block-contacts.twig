@@ -1,4 +1,4 @@
-<div class="block-contacts {% if block_contacts.bg %} bg-{{ block_contacts.bg }}{% else %} bg-white{% endif %}" data-tab-container>
+<div class="block-contacts {% if block_contacts.bg %} bg-{{ block_contacts.bg }}{% else %} bg-white{% endif %} {% if block_contacts.layout %} block-contacts--layout-{{block_contacts.layout}}{% endif %}" data-tab-container>
     <div class="block-contacts__container container">
         {% if block_contacts.title_hidden %}
             <h1 class="visually-hidden">{{ block_contacts.title_hidden }}</h1>
