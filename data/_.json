@@ -597,6 +597,21 @@
 					}
 				}
 			}
+		},
+		{
+			"id": "modal-person",
+			"component": "&modal-person",
+			"data": {
+				"modal": {
+					"title": "Стать поставщиком",
+					"action": {
+						"text": "Отправить",
+						"title": "Отправить",
+						"theme": "white",
+						"attr": "data-modal-close"
+					}
+				}
+			}
 		}
 	]
 }
