@@ -484,7 +484,7 @@ export default class Map {
 				setTimeout(function () {
 					map.setZoom(cnt);
 					map.setCenter({ lat: ne.lat(), lng: sw.lng() });
-				}, 300); // 80ms is what I found to work well on my system -- it might not work well on all systems
+				}, 80); // 80ms is what I found to work well on my system -- it might not work well on all systems
 			}
 		}
 
