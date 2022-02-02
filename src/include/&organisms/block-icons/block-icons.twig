@@ -7,12 +7,12 @@
 		{% endif %}
 		<div class="block-icons__items" data-fade-in-up>
 			{% for item in block_icons.items %}
-				<div class="block-icons__item" {% if item.attr %} {{ item.attr }} {% endif %} data-fade-in-up data-delay="{{ (0.2 + loop.index0 / 5)|round(2, 'floor') }}">
+				<div class="block-icons__item" {% if item.attr %} {{ item.attr }} {% endif %} data-fade-in-up data-delay="{{ (0.5 + loop.index0 / 5)|round(2, 'floor') }}">
 					{% if item.icon %}
 						<div class="block-icons__icon" data-icon="draw">
 							{% view '@icon' with {
-                                icon: item.icon
-                            } %}
+									icon: item.icon
+							} %}
 						</div>
 					{% endif %}
 

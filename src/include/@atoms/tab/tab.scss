@@ -192,6 +192,15 @@
 		}
 	}
 
+	&--white-2 {
+		color: rgba(white, 1);
+		@include touchLessHover {
+			&:not(:disabled):not(#{$root}__tab--disabled) {
+				color: rgba(white, 1);
+			}
+		}
+	}
+
 	&--white#{$root}--active {
 		cursor: default;
 		color: rgba(white, 1);

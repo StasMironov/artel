@@ -1,4 +1,4 @@
-<div class="slider-press {% if slider.bg %} bg-{{ slider.bg }}{% else %} bg-white{% endif %}" data-slider-press-wrap>
+<div class="slider-press {% if slider.bg %} bg-{{ slider.bg }}{% else %} bg-white{% endif %} {% if slider.slider_block %} slider-press__theme-2 {% endif %}" data-slider-press-wrap>
 	<div class="slider-press__inner">
 		{% if slider.title %}
 			<h3 class="slider-press__title h2 container" data-fade-in-up>
@@ -30,6 +30,11 @@
 											</span>
 										{% endif %}
 									</div>
+								{% endif %}
+								{% if slide.text %}
+									<p class="slider-press__text">
+										{{slide.text}}
+									</p>
 								{% endif %}
 							</div>
 							<div class="slider-press__right">
