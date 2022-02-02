@@ -240,56 +240,138 @@
 	},
 	"block_innovation": {
 		"title": "Artel в цифрах",
-		"theme": "white",
+		"theme": "gray",
+		"layout": "2",
 		"factoids": [
 			{
-				"text": "80",
-				"after": {
-					"txt": "%"
-				},
-				"label": "Контент от Artel Electronics"
+				"text": "10",
+				"label": "лет на рынке"
 			},
 			{
-				"text": "14",
-				"after": {
-					"txt": "%"
-				},
-				"label": "Контент от Artel Electronics"
+				"text": "8 271",
+				"label": "сотрудников по всему миру"
 			},
 			{
-				"text": "14",
+				"text": "30",
 				"after": {
 					"txt": "%"
 				},
-				"label": "Контент от Artel Electronics"
+				"label": "женщин в компании"
 			},
 			{
-				"text": "80",
-				"after": {
-					"txt": "%"
-				},
-				"label": "Контент от Artel Electronics"
+				"text": "21",
+				"label": "национальность в компании"
 			},
 			{
-				"text": "14",
-				"after": {
-					"txt": "%"
-				},
-				"label": "Контент от Artel Electronics"
+				"text": "11",
+				"label": "городов присутствия по стране"
 			},
 			{
-				"text": "80",
-				"after": {
-					"txt": "%"
-				},
-				"label": "Контент от Artel Electronics"
+				"text": "29",
+				"label": "средний возраст сотрудников"
+			}
+		]
+	},
+	"block_career_cards": {
+		"heading": "Работа в Artel — это ",
+		"items": [
+			{
+				"text": "Работа в крупной, стабильной компании и достойная заработная плата",
+				"icon": {
+					"name": "104/company",
+					"size": "104"
+				}
+			},
+			{
+				"text": "Дружная, сплочённая и эффективная команда",
+				"icon": {
+					"name": "104/team",
+					"size": "104"
+				}
+			},
+			{
+				"text": "Быстрый карьерный рост",
+				"icon": {
+					"name": "104/time",
+					"size": "104"
+				}
+			},
+			{
+				"text": "Обучение и оплачиваемая стажировка",
+				"icon": {
+					"name": "104/study",
+					"size": "104"
+				}
+			},
+			{
+				"text": "Возможность профессионального и духовного роста",
+				"icon": {
+					"name": "104/grow",
+					"size": "104"
+				}
+			},
+			{
+				"text": "Полноценное здоровое питание за счёт компании",
+				"icon": {
+					"name": "104/apple",
+					"size": "104"
+				}
+			}
+		]
+	},
+	"slider": {
+		"title": "Почему мы работаем со&nbsp;студентами и&nbsp;выпускниками?​",
+		"arrows_theme": "white",
+		"bg": "gray",
+		"layout": "2",
+		"items": [
+			{
+				"article": "Понимая свою ответственность и заботясь о подготовке специалистов «для себя», Artel охотно идет на взаимодействие с вузами.",
+
+				"img": {
+					"src": "tmp/slider-сareer/1.jpg",
+					"alt": "img"
+				}
+			},
+			{
+				"article": "Студенты же приобретают необходимые им практические знания, реальный опыт командной работы и коммуникаций в проектах, успешно защищают дипломы на базе компании.",
+
+				"img": {
+					"src": "tmp/slider-сareer/2.jpg",
+					"alt": "img"
+				}
+			},
+			{
+				"article": "3",
+
+				"img": {
+					"src": "tmp/press/img1.jpg",
+					"alt": "img"
+				}
+			},
+			{
+				"article": "4",
+				"href": "test2.html",
+				"img": {
+					"src": "tmp/card-news/news2.jpg",
+					"alt": "img"
+				}
+			},
+			{
+				"article": "5",
+
+				"img": {
+					"src": "tmp/press/img1.jpg",
+					"alt": "img"
+				}
 			}
 		]
 	},
 	"block_information": {
 		"title": "Работать с Artel",
-		"desc": "Расскажите о себе и начните работать с нами в ближайшее время",
+		"desc": "Расскажите о себе и начните работать с нами в&nbsp;ближайшее время",
 		"bg": "green",
+
 		"image": {
 			"src": "tmp/block-information/img1.jpg",
 			"alt": "image alt"

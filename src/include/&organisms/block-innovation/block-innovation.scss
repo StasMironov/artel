@@ -7,8 +7,8 @@
 		color: $color-white;
 	}
 
-	&--white {
-		background-color: $color-white;
+	&--gray {
+		background-color: $color-gray;
 
 		h2,
 		.h2 {
@@ -22,6 +22,10 @@
 			flex-direction: column;
 			padding-top: rem(64);
 			padding-bottom: rem(64);
+
+			#{$root}--layout-2 & {
+				padding-bottom: 0;
+			}
 		}
 
 		@include media-breakpoint-up(md) {
@@ -47,6 +51,19 @@
 		@include media-breakpoint-up(lg) {
 			width: 50%;
 		}
+
+		#{$root}--layout-2 & {
+			width: 16.6%;
+
+			@include media-breakpoint-down(md) {
+				width: 100%;
+				margin-bottom: rem(60);
+			}
+
+			@include media-breakpoint-down(sm) {
+				margin-bottom: rem(48);
+			}
+		}
 	}
 	&__right {
 		width: 100%;
@@ -58,6 +75,17 @@
 			width: 50%;
 			margin-top: rem(8);
 		}
+
+
+		#{$root}--layout-2 & {
+			width: 67%;
+			max-width: rem(888);
+			margin-top: 0;
+
+			@include media-breakpoint-down(md) {
+				width: 100%;
+			}
+		}
 	}
 
 	&__row {
@@ -65,12 +93,16 @@
 		justify-content: space-between;
 		border-top: 1px solid rgba($color-white, 0.6);
 
-		#{$root}--white & {
-			border-top: 1px solid rgba($color-black, 0.6);
+		#{$root}--gray & {
+			border-top: 1px solid rgba($color-black, 0.1);
 		}
 
 		&:last-of-type {
 			border-bottom: 1px solid rgba($color-white, 0.6);
+
+			#{$root}--gray & {
+				border-bottom: 1px solid rgba($color-black, 0.1);
+			}
 		}
 		@include media-breakpoint-down(md) {
 			padding-top: rem(34);
@@ -104,7 +136,7 @@
 		width: 50%;
 		color: $color-white;
 
-		#{$root}--white & {
+		#{$root}--gray & {
 			color: $color-black;;
 		}
 		
@@ -147,7 +179,7 @@
 				max-width: rem(240);
 			}
 
-			#{$root}--white & {
+			#{$root}--gray & {
 				color: rgba($color-black, 0.6);
 			}
 		}
