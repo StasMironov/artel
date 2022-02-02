@@ -26,6 +26,7 @@ import BlockProduct from './components/block-product';
 import BlockHistory from './components/block-history';
 import Modals from './components/modal';
 import ModalAjax from './components/modal/ajax-modal';
+import Search from './components/search';
 
 // import ModalWarning from './components/modal/modal-base';
 import Menu from './components/menu';
@@ -76,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	new ScrollAnimation();
 	new Map();
 	new MapService();
+	new Search();
 	validation.init();
 	// Sticky.init();
 	new FormHandler();
