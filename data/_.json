@@ -609,9 +609,106 @@
 						"title": "Отправить",
 						"theme": "white",
 						"attr": "data-modal-close"
+					},
+					"form": {
+						"id": "form-1",
+						"name": "form-1",
+						"method": "POST",
+						"action": "/ajax/contacts/?repo=artel.frontend&status=success",
+						"attr": "data-ajax-form data-scroll-target data-scroll-contacts",
+						"title": "Стать поставщиком",
+						"bg": "green",
+						"layout": "3",
+						"fields": [
+							{
+								"input": true,
+								"id": "form-1-input-1",
+								"name": "form-1-input-1",
+								"theme": "white",
+								"required": true,
+								"label": "ФИО"
+							},
+							{
+								"input": true,
+								"id": "form-1-input-2",
+								"name": "form-1-input-2",
+								"theme": "white",
+								"required": true,
+								"label": "Компания"
+							},
+							{
+								"input": true,
+								"id": "form-1-input-3",
+								"name": "form-1-input-3",
+								"theme": "white",
+								"required": true,
+								"label": "Должность"
+							},
+							{
+								"input": true,
+								"id": "form-1-input-4",
+								"name": "form-1-input-4",
+								"theme": "white",
+								"required": true,
+								"type": "tel",
+								"label": "Телефон",
+								"mask_list": [
+									"+998-##-###-####",
+									"+7(###)###-##-##",
+									"+380(##)###-##-##",
+									"+7(6##)###-##-##",
+									"+992-##-###-####",
+									"+994-##-###-##-##",
+									"+996-###-######"
+								]
+							},
+							{
+								"input": true,
+								"id": "form-1-input-4",
+								"name": "form-1-input-4",
+								"theme": "white",
+								"required": true,
+								"label": "E-mail"
+							},
+							{
+								"textarea": true,
+								"id": "form-1-textarea-1",
+								"name": "form-1-textarea-1",
+								"theme": "white",
+								"label": "Сообщение"
+							}
+						],
+						"agreement": [
+							{
+								"checkbox": true,
+								"id": "form-1-checkbox-1",
+								"name": "form-1-checkbox-1",
+								"text": "Я согласен/на с <a href='javascript:void(0);' class='link-content' target='_blank'>политикой конфиденциальности</a> и&nbsp;даю добро на обработку <a href='javascript:void(0);' class='link-content' target='_blank'>моих персональных данных</a>",
+								"required": true,
+								"theme": "white"
+							},
+							{
+								"checkbox": true,
+								"id": "form-1-checkbox-2",
+								"name": "form-1-checkbox-2",
+								"text": "Я не робот",
+								"required": true,
+								"theme": "white"
+							}
+						],
+						"submit": {
+							"type": "submit",
+							"text": "Отправить",
+							"title": "Отправить",
+							"theme": "white",
+							"icon": {
+								"name": "24/arrow-up-right"
+							}
+						}
 					}
 				}
-			}
+			},
+			"modificator": "right"
 		}
 	]
 }

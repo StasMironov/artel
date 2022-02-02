@@ -1,6 +1,7 @@
 {
-	"title": "Контакты",
+	"title": "Карьера",
 	"header": {
+		"transparent": true,
 		"logo": {
 			"href": "./",
 			"name": "logos/main-logo",
@@ -133,9 +134,191 @@
 			]
 		}
 	},
+	"hero_default": {
+		"layout": "3",
+		"breadcrumbs": {
+			"theme": "white",
+			"items": [
+				{
+					"text": "На главную",
+					"href": "main.html"
+				}
+			]
+		},
+		"title": "Карьера в Artel",
+		"image": {
+			"src": "tmp/default-hero/hero-сareer.jpg",
+			"alt": "image alt",
+			"fill": true,
+			"tab": {
+				"srcset": [
+					{
+						"scale": "1",
+						"src": "tmp/default-hero/hero-сareer-tab.jpg"
+					}
+				]
+			},
+			"mob": {
+				"srcset": [
+					{
+						"scale": "1",
+						"src": "tmp/default-hero/hero-сareer-mob.jpg"
+					}
+				]
+			}
+		}
+	},
+	"block_nav": {
+		"desc": "1 февраля в отеле Hilton компания Artel подписала меморандум о спонсорстве с платформой бесплатного онлайн-образования&nbsp;Khan Academy Uzbek.",
+		"bg": "green",
+		"icon": {
+			"name": "logos/decor",
+			"size": "fit"
+		},
+		"tabs": {
+			"layout": "3",
+			"items": [
+				{
+					"href": "!#",
+					"text": "Стратегия",
+					"title": "Стратегия",
+					"active": "true",
+					"theme": "white"
+				},
+				{
+					"href": "!#",
+					"text": "Миссия компании",
+					"title": "Миссия компании",
+					"theme": "white"
+				},
+				{
+					"href": "!#",
+					"text": "История группы",
+					"title": "История группы",
+					"theme": "white"
+				},
+				{
+					"href": "!#",
+					"text": "Партнеры",
+					"title": "Партнеры",
+					"theme": "white"
+				},
+				{
+					"href": "!#",
+					"text": "Наши продукты",
+					"title": "Наши продукты",
+					"theme": "white"
+				},
+				{
+					"href": "!#",
+					"text": "Предприятия",
+					"title": "Предприятия",
+					"theme": "white"
+				}
+			]
+		},
+		"action": [
+			{
+				"href": "javascript:void(0);",
+				"text": "Вакансии",
+				"title": "Вакансии",
+				"theme": "white",
+				"icon": {
+					"name": "24/arrow-up-right"
+				}
+			},
+			{
+				"href": "javascript:void(0);",
+				"text": "Я студент",
+				"title": "Я студент",
+				"theme": "outline-white",
+				"icon": {
+					"name": "24/arrow-up-right"
+				}
+			}
+		]
+	},
+	"block_innovation": {
+		"title": "Artel в цифрах",
+		"theme": "white",
+		"factoids": [
+			{
+				"text": "80",
+				"after": {
+					"txt": "%"
+				},
+				"label": "Контент от Artel Electronics"
+			},
+			{
+				"text": "14",
+				"after": {
+					"txt": "%"
+				},
+				"label": "Контент от Artel Electronics"
+			},
+			{
+				"text": "14",
+				"after": {
+					"txt": "%"
+				},
+				"label": "Контент от Artel Electronics"
+			},
+			{
+				"text": "80",
+				"after": {
+					"txt": "%"
+				},
+				"label": "Контент от Artel Electronics"
+			},
+			{
+				"text": "14",
+				"after": {
+					"txt": "%"
+				},
+				"label": "Контент от Artel Electronics"
+			},
+			{
+				"text": "80",
+				"after": {
+					"txt": "%"
+				},
+				"label": "Контент от Artel Electronics"
+			}
+		]
+	},
+	"block_information": {
+		"title": "Работать с Artel",
+		"desc": "Расскажите о себе и начните работать с нами в ближайшее время",
+		"bg": "green",
+		"image": {
+			"src": "tmp/block-information/img1.jpg",
+			"alt": "image alt"
+		},
+		"action": [
+			{
+				"href": "javascript:void(0);",
+				"text": "Онлайн-заявка",
+				"title": "Онлайн-заявка",
+				"theme": "white",
+				"icon": {
+					"name": "24/arrow-up-right"
+				}
+			},
+			{
+				"href": "javascript:void(0);",
+				"text": "Отправить резюме",
+				"title": "Отправить резюме",
+				"theme": "outline-white",
+				"icon": {
+					"name": "24/file"
+				}
+			}
+		]
+	},
 	"block_contacts": {
 		"title": "Контакты",
 		"bg": "gray",
+		"layout": "2",
 		"breadcrumbs": [
 			{
 				"href": "./",

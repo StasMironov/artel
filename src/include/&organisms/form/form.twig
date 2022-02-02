@@ -29,11 +29,17 @@
 					{% endfor %}
 				</div>
 				{% if form.agreement %}
-					<div class="form__agreement">
-						{% view '@field' with {
-							field: form.agreement
-						} %}
-					</div>
+					
+					{% for check in form.agreement %}
+						<div class="form__agreement">
+							{% view '@field' with {
+								field: check
+							} %}
+						</div>
+					{% endfor %}
+					
+
+
 				{% endif %}
 				{% if form.submit %}
 					<div class="form__submit">

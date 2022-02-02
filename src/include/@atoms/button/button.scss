@@ -96,4 +96,17 @@
 			}
 		}
 	}
+
+	&--outline-white {
+		background-color: transparent;
+		border: 1px solid $color-white;
+
+		@include touchLessHover {
+			&:not(#{$root}--non-interactive):not(:disabled):not(.button--disabled) {
+				color: $color-black;
+				background-color: $color-gray-light;
+				border-color: $color-gray-light;
+			}
+		}
+	}
 }

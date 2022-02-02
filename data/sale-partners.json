@@ -287,14 +287,16 @@
 				"label": "Сообщение"
 			}
 		],
-		"agreement": {
-			"checkbox": true,
-			"id": "form-1-checkbox-1",
-			"name": "form-1-checkbox-1",
-			"text": "Настоящим даю согласие по установленной форме на обработку моих <a href='javascript:void(0);' class='link-content' target='_blank'>персональных данных</a> в порядке, установленном законом РУз от 27.07.2006 N 152-ФЗ 'О персональных данных'. Код подтверждения",
-			"required": true,
-			"theme": "white"
-		},
+		"agreement": [
+			{
+				"checkbox": true,
+				"id": "form-1-checkbox-1",
+				"name": "form-1-checkbox-1",
+				"text": "Настоящим даю согласие по установленной форме на обработку моих <a href='javascript:void(0);' class='link-content' target='_blank'>персональных данных</a> в порядке, установленном законом РУз от 27.07.2006 N 152-ФЗ 'О персональных данных'. Код подтверждения",
+				"required": true,
+				"theme": "white"
+			}
+		],
 		"submit": {
 			"type": "submit",
 			"text": "Отправить",

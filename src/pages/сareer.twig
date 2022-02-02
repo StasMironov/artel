@@ -1,0 +1,33 @@
+{% extends "layouts::_page.twig" %}
+
+{% block content %}
+
+	{% view '&hero-default' with {
+        hero_default: hero_default
+    } %}
+
+    {% view '&block-nav' with {
+        block_nav: block_nav
+    } %}
+
+    <div class="mb-64 mb-md-120">
+		{% view '&block-innovation' with {
+            block_innovation: block_innovation
+        } %}
+	</div>
+
+    <div class="mt-lg-96 mt-md-80 mt-64 mb-md-120 mb-64">
+        {% view '&block-information' with {
+            block_information: block_information
+        } %}
+    </div>
+
+    {% view '&block-contacts' with {
+        block_contacts: block_contacts
+    } %}
+
+    {% view '&form' with {
+        form: contacts_form
+    }%}
+
+{% endblock %}
