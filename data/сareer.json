@@ -135,7 +135,7 @@
 		}
 	},
 	"hero_default": {
-		"layout": "3",
+		"layout": "6",
 		"breadcrumbs": {
 			"theme": "white",
 			"items": [
@@ -154,7 +154,7 @@
 				"srcset": [
 					{
 						"scale": "1",
-						"src": "tmp/default-hero/hero-сareer-tab.jpg"
+						"src": "tmp/default-hero/hero-career-tab.jpg"
 					}
 				]
 			},
@@ -318,6 +318,74 @@
 				}
 			}
 		]
+	},
+	"block_event": {
+		"title": "Корпоративная культура",
+		"desc": "Artel делает акцент на развитие корпоративной культуры, развитие и обучение людей, карьерный рост и социальную защиту",
+		"slider": {
+			"items": [
+				{
+					"article": "Заключение партнерских отношений с «Baku Electronics» в&nbsp;Азербайджане",
+					"href": "test.html",
+					"img": {
+						"src": "tmp/press/img8.jpg",
+						"alt": "img"
+					},
+					"icon": {
+						"name": "24/pic"
+					},
+					"qty": "33"
+				},
+				{
+					"article": "2",
+					"href": "test2.html",
+					"img": {
+						"src": "tmp/card-news/news2.jpg",
+						"alt": "img"
+					},
+					"icon": {
+						"name": "24/pic"
+					},
+					"qty": "30"
+				},
+				{
+					"article": "3",
+					"href": "test.html",
+					"img": {
+						"src": "tmp/press/img1.jpg",
+						"alt": "img"
+					},
+					"icon": {
+						"name": "24/pic"
+					},
+					"qty": "33"
+				},
+				{
+					"article": "4",
+					"href": "test2.html",
+					"img": {
+						"src": "tmp/card-news/news2.jpg",
+						"alt": "img"
+					},
+					"icon": {
+						"name": "24/pic"
+					},
+					"qty": "30"
+				},
+				{
+					"article": "5",
+					"href": "test.html",
+					"img": {
+						"src": "tmp/press/img1.jpg",
+						"alt": "img"
+					},
+					"icon": {
+						"name": "24/pic"
+					},
+					"qty": "33"
+				}
+			]
+		}
 	},
 	"slider": {
 		"title": "Почему мы работаем со&nbsp;студентами и&nbsp;выпускниками?​",

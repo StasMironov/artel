@@ -10,7 +10,7 @@
         block_nav: block_nav
     } %}
 
-    <div class="mb-56 mb-md-112 mb-lg-96">
+    <div class="mb-56 mb-md-112 mb-lg-88">
 		{% view '&block-innovation' with {
             block_innovation: block_innovation
         } %}
@@ -19,6 +19,20 @@
     <div class="mb-64 mb-md-112">
 		{% view '&block-career-cards' with {
             block_career_cards: block_career_cards
+        } %}
+	</div>
+
+    <div class="mt-lg-112 mb-48 mb-lg-112 mb-md-56 mb-lg-56">
+		{% view '&block-chart' %}
+	</div>
+
+    <div class="mt-lg-112 mb-48 mb-lg-112 mb-md-56 mb-lg-56">
+        {% view '&block-training' %}
+    </div>
+
+    <div class="mt-lg-112 mb-48 mb-lg-112 mb-md-56 mb-lg-56">
+		{% view '&block-event' with {
+            block_event: block_event
         } %}
 	</div>
 

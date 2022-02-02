@@ -8,13 +8,12 @@ export default class FormHandler {
 		this.form = null;
 		this.url = null;
 		this.formData = null;
-
 		this.init();
 	}
 
 	init() {
-		window.addEventListener('form:submit', (e) => this.handler(e));
-		window.addEventListener('form:result', (e) => this.showResult(e));
+		// window.addEventListener('form:submit', (e) => this.handler(e));
+		// window.addEventListener('form:result', (e) => this.showResult(e));
 	}
 
 	handler(e) {

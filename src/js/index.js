@@ -26,6 +26,7 @@ import BlockProduct from './components/block-product';
 import BlockHistory from './components/block-history';
 import Modals from './components/modal';
 import ModalAjax from './components/modal/ajax-modal';
+import Accordion from './components/accordion';
 
 import ModalBase from './components/modal/modal-base';
 import Menu from './components/menu';
@@ -77,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	new Map();
 	new MapService();
 	validation.init();
-	// Sticky.init();
+	Accordion.init();
 	new FormHandler();
 
 	new ChartCanvas();
@@ -104,8 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 	window.addEventListener('init.modals', () => {
-		//if (document.querySelector('#modal-person')) {
-
 		new ModalBase({
 			init: true,
 			id: 'modal-person',
@@ -113,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			closeTrigger: 'data-modal-close',
 			openClass: 'is-open',
 		});
-		//}
 	});
 
 	window.dispatchEvent(new CustomEvent('init.modals'));
@@ -134,6 +132,5 @@ window.addEventListener('reinit', () => {
 	Menu.init();
 	select.init();
 	new MapService();
-
 	new ScrollAnimation();
 });
