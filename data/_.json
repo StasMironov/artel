@@ -387,14 +387,15 @@
 				"id": "form-1-search-1",
 				"search": true,
 				"placeholder": "Поиск по сайту",
-				"name": "form-1-search-1",
+				"name": "search",
 				"action": {
 					"type": "submit",
 					"icon": {
 						"name": "24/magnifier"
 					}
 				}
-			}
+			},
+			"url": "ajax/search-result-ajax.html"
 		},
 		"contacts": {
 			"title": "Справочный центр",
