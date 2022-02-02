@@ -29,7 +29,6 @@
 		padding: rem(112) rem(120) rem(120) rem(0);
 		color: white;
 		background-color: $color-green;
-
 		@include media-breakpoint-down(md) {
 			flex: 1;
 			min-height: rem(512);
@@ -85,10 +84,17 @@
 		display: flex;
 		align-items: center;
 		opacity: 0;
+    margin-bottom: rem(33);
 	}
 
 	&__icon {
 		margin-right: rem(15);
+	}
+
+	&__text{
+    @include media-breakpoint-up(md) {
+			width: rem(440);
+		}
 	}
 
 	&__right {
@@ -238,4 +244,29 @@
 			}
 		}
 	}
+
+  &__theme-2{
+    .slider-press__left {
+      @include media-breakpoint-down(md) {
+        min-height: rem(512);
+        padding: rem(80) rem(0) rem(0) rem(0);
+      }
+  
+      @include media-breakpoint-down(sm) {
+        min-height: rem(482);
+        padding: rem(48) rem(0) rem(0) rem(0);
+      }
+    }
+    .slider-press__cover {  
+      @include media-breakpoint-down(md) {
+        top: rem(380);
+      }  
+      @include media-breakpoint-down(sm) {
+        top: rem(390);
+      }
+      @include media-breakpoint-only(lg) {
+        top: rem(450);
+      }
+    }
+  }
 }
