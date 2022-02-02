@@ -3,6 +3,7 @@ import SliderInfo from './slider-info';
 import SliderStrategy from './slider-strategy';
 import Tabs from './tabs';
 import SliderDocs from './slider-docs';
+import SliderTeam from './slider-team';
 import './slider-logos';
 import './slider-period';
 import './slider-press';
@@ -18,5 +19,6 @@ export default {
 
 		Tabs.init();
 		SliderDocs.init();
+		SliderTeam.init();
 	},
 };
