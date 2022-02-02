@@ -1,0 +1,58 @@
+.icon-tabs{
+    $root: &; 
+    &__content{
+        display: flex;
+    }
+    &__top{
+        display: flex;
+        @include media-breakpoint-up(md) {            
+            margin-bottom: rem(80);
+        }
+    }
+    .swiper-wrapper{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__tabs{
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__tab{
+        width: rem(296);
+        margin-bottom: rem(48);
+    }    
+    &__icon{
+        color: $color-green;
+    }
+
+
+    &__wrapper{
+        width: 50%;
+    }
+    &__pane{
+        width: 100%;
+		opacity: 0;
+		&:not(.is-active) {
+			display: none;
+		}
+
+		&:first-child {
+			opacity: 1;
+		}
+	}
+
+    &__suptitle{
+        color: rgba($color-black, 0.4);
+        margin-bottom: rem(16);
+    }
+    &__title{
+        margin-bottom: rem(48);
+    }
+    &__img{
+        margin-bottom: rem(48);
+    }
+    &__text{
+        
+    }
+}

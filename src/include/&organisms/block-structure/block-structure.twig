@@ -1,27 +1,19 @@
 <div class="block-structure container" data-fade-in-up>
 
 	<div class="block-structure__heading">
-		<p class="block-structure__title h2">{{ block_structure.title }}</p>
-		<p class="block-structure__subtitle">{{ block_structure.subtitle }}</p>
+		{% if block.title %}
+			<p class="block-structure__title h2">{{ block.title }}</p>
+		{% endif %}
+		{% if block.subtitle %}
+			<p class="block-structure__subtitle">{{ block.subtitle }}</p>
+		{% endif %}
 	</div>
 
-
-	{% if block_structure.img %}
+	{% if block.img %}
 		<div class="block-structure__image">
 			{% view '@image-adaptive' with {
-				image: block_structure.img
+				image: block.img
 			} %}
 		</div>
 	{% endif %}
-	{% if block_structure.buttons %}
-		<div class="block-structure__buttons">
-			{% for item in block_structure.buttons %}
-				<div class="block-structure__button">
-					{{ item.title }}
-				</div>
-			{% endfor %}
-		</div>
-	{% endif %}
-
-
 </div>

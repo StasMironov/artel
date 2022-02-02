@@ -1,149 +1,49 @@
 .block-structure{
-    $root: &;    
-    position: relative;
+  $root: &;    
+  position: relative;
+  
+  &__heading{
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      @include media-breakpoint-up(md) {            
+          margin-bottom: 0;   
+          flex-direction: column;
+      }
+      @include media-breakpoint-up(lg) {            
+          margin-bottom: rem(74);
+          flex-wrap: nowrap;
+          flex-direction: row;
+          justify-content: space-between;
+      }
+  }
+  &__title{
+      width: 100%;
+      margin-bottom: rem(24);
+      @include media-breakpoint-up(md) {
+          width: 100%;
+          margin-bottom: rem(24);
+      }
+      @include media-breakpoint-up(lg) {
+          width: rem(440);
+          margin-bottom: 0;
+      }
+  }
+  &__subtitle{
+      width: rem(325);
+      margin-bottom: rem(40);
+      @include media-breakpoint-up(md) {
+          width: rem(440);
+          margin-right: 0;
+          margin-top: 0;
+          margin-bottom: rem(80);
+      }
+      @include media-breakpoint-up(lg) {
+          width: rem(440);
+          margin-right: rem(225);
+          margin-top: rem(8);
+          margin-bottom: 0;
+      }
+  }
     
-    &__heading{
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        @include media-breakpoint-up(md) {            
-            margin-bottom: 0;   
-            flex-direction: column;
-        }
-        @include media-breakpoint-up(lg) {            
-            margin-bottom: rem(74);
-            flex-wrap: nowrap;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-    }
-    &__title{
-        width: 100%;
-        margin-bottom: rem(24);
-        @include media-breakpoint-up(md) {
-            width: 100%;
-            margin-bottom: rem(24);
-        }
-        @include media-breakpoint-up(lg) {
-            width: rem(440);
-            margin-bottom: 0;
-        }
-    }
-    &__subtitle{
-        width: rem(325);
-        margin-bottom: rem(40);
-        @include media-breakpoint-up(md) {
-            width: rem(440);
-            margin-right: 0;
-            margin-top: 0;
-            margin-bottom: rem(80);
-        }
-        @include media-breakpoint-up(lg) {
-            width: rem(440);
-            margin-right: rem(225);
-            margin-top: rem(8);
-            margin-bottom: 0;
-        }
-    }
-
-    &__image{
-        z-index: -1;
-        padding-top: rem(3);
-        
-        @include media-breakpoint-up(sm) {
-            width: rem(328); 
-            margin: 0;          
-        }
-        @include media-breakpoint-up(md) {
-            width: rem(663);  
-            margin: 0 auto;         
-        }
-        @include media-breakpoint-up(lg) {
-            width: rem(1336);
-        }
-    }
-
-    &__buttons{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 0;
-
-        @include media-breakpoint-up(md) {
-            left: rem(0);
-        }
-        @include media-breakpoint-up(lg) {
-            left: rem(500);
-        }
-        
-    }
-
-    &__button{
-        background: $color-green;
-        border-radius: rem(8);
-        font-weight: 500;
-        color: $color-white;
-        @include media-breakpoint-up(sm) {
-            width: rem(328);
-            padding: rem(26) rem(22);
-            font-size: rem(20);
-            &:nth-child(1){
-                position: absolute;
-                top: rem(235);
-                left: rem(0);
-            }
-            &:nth-child(2){
-                position: absolute;
-                top: rem(415);
-                left: rem(0);
-            }
-            &:nth-child(3){
-                position: absolute;
-                top: rem(845);
-                left: rem(0);
-            }
-        }
-        @include media-breakpoint-up(md) {
-            width: rem(440);
-            padding: rem(30) rem(32);
-            font-size: rem(24);
-            &:nth-child(1){
-                position: absolute;
-                top: rem(265);
-                left: rem(165);
-            }
-            &:nth-child(2){
-                position: absolute;
-                top: rem(470);
-                left: rem(165);
-            }
-            &:nth-child(3){
-                position: absolute;
-                top: rem(835);
-                left: rem(165);
-            }
-        }
-        @include media-breakpoint-up(lg) {
-            &:nth-child(1){
-                position: absolute;
-                top: rem(206);
-                left: 0
-            }
-            &:nth-child(2){
-                position: absolute;
-                top: rem(410);
-                left: 0
-            }
-            &:nth-child(3){
-                position: absolute;
-                top: rem(657);
-                left: 0
-            }
-        }
-
-
-        
-    }
 }

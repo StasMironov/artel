@@ -3,7 +3,7 @@
 		{% if block_docs.title or block_docs.filter_select or block_docs.form or block_docs.tabs %}
 			<div class="block-docs__wrapper">
 				{% if block_docs.title %}
-					<div class="block-docs__title {% if block_docs.oneline %} block-docs__title--oneline {% endif %}">
+					<div class="block-docs__title {% if block_docs.oneline %} block-docs__title--oneline {% endif %}" data-fade-in-up>
 						<h2>{{ block_docs.title  }}</h2>
 					</div>
 				{% endif %}
