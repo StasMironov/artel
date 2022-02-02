@@ -269,105 +269,128 @@
 			}
 		]
 	},
-	"block_docs": {
-		"title": "Отчеты и презентации об&nbsp;устойчивом развитии",
-		"layout": "3",
-		"small_margins": true,
-		"tabs_content": [
-			{
-				"active": true,
-				"cards": [
-					{
-						"layout": "2",
-						"href": "#",
-						"title": "2021 Отчет об устойчивом развитии",
-						"text": "0,87 мб",
-						"date": {
-							"month": "Ноябрь",
-							"day": "2021"
-						},
-						"action": {
-							"title": "Скачать PDF",
-							"text": "Скачать PDF",
-							"icon": {
-								"name": "24/download"
-							}
-						}
-					},
-					{
-						"layout": "2",
-						"href": "#",
-						"title": "2021 Отчет об устойчивом развитии",
-						"text": "0,87 мб",
-						"date": {
-							"month": "Ноябрь",
-							"day": "2021"
-						},
-						"action": {
-							"title": "Скачать PDF",
-							"text": "Скачать PDF",
-							"icon": {
-								"name": "24/download"
-							}
-						}
-					},
-					{
-						"layout": "2",
-						"href": "#",
-						"title": "2021 Отчет об устойчивом развитии",
-						"text": "0,87 мб",
-						"date": {
-							"month": "Ноябрь",
-							"day": "2021"
-						},
-						"action": {
-							"title": "Скачать PDF",
-							"text": "Скачать PDF",
-							"icon": {
-								"name": "24/download"
-							}
-						}
-					}
-				]
-			}
-		],
-		"filter_select": {
-			"fields": [
+	"sliderDocs": {
+		"heading": "Отчеты и презентации об&nbsp;устойчивом развитии",
+		"field": {
+			"select": true,
+			"id": "filter-form-select-1",
+			"name": "filter-form-select-1",
+			"placeholder": "Все года",
+			"options": [
 				{
-					"select": true,
-					"id": "filter-form-select-1",
-					"name": "filter-form-select-1",
-					"attr": "data-form-select",
-					"placeholder": "Все года",
-					"options": [
-						{
-							"value": "All",
-							"text": "Все года",
-							"selected": "selected"
-						},
-						{
-							"value": "2021",
-							"text": "2021"
-						},
-						{
-							"value": "2020",
-							"text": "2020"
-						},
-						{
-							"value": "2019",
-							"text": "2019"
-						},
-						{
-							"value": "2018",
-							"text": "2018"
-						},
-						{
-							"value": "2017",
-							"text": "2017"
-						}
-					]
+					"value": "All",
+					"text": "Все года",
+					"selected": "selected"
+				},
+				{
+					"value": "2021",
+					"text": "2021"
+				},
+				{
+					"value": "2020",
+					"text": "2020"
+				},
+				{
+					"value": "2019",
+					"text": "2019"
+				},
+				{
+					"value": "2018",
+					"text": "2018"
+				},
+				{
+					"value": "2017",
+					"text": "2017"
 				}
-			]
-		}
+			],
+			"attr": "data-slider-docs-field"
+		},
+		"items": [
+			{
+				"layout": "2",
+				"href": "javascript:void(0);",
+				"title": "2021 Отчет об устойчивом развитии",
+				"text": "0,87 мб",
+				"date": {
+					"month": "Ноябрь",
+					"day": "2021"
+				},
+				"action": {
+					"title": "Скачать PDF",
+					"text": "Скачать PDF",
+					"icon": {
+						"name": "24/download"
+					}
+				}
+			},
+			{
+				"layout": "2",
+				"href": "javascript:void(0);",
+				"title": "2021 Отчет об устойчивом развитии",
+				"text": "0,87 мб",
+				"date": {
+					"month": "Ноябрь",
+					"day": "2021"
+				},
+				"action": {
+					"title": "Скачать PDF",
+					"text": "Скачать PDF",
+					"icon": {
+						"name": "24/download"
+					}
+				}
+			},
+			{
+				"layout": "2",
+				"href": "javascript:void(0);",
+				"title": "2021 Отчет об устойчивом развитии",
+				"text": "0,87 мб",
+				"date": {
+					"month": "Ноябрь",
+					"day": "2021"
+				},
+				"action": {
+					"title": "Скачать PDF",
+					"text": "Скачать PDF",
+					"icon": {
+						"name": "24/download"
+					}
+				}
+			},
+			{
+				"layout": "2",
+				"href": "javascript:void(0);",
+				"title": "2021 Отчет об устойчивом развитии",
+				"text": "0,87 мб",
+				"date": {
+					"month": "Ноябрь",
+					"day": "2021"
+				},
+				"action": {
+					"title": "Скачать PDF",
+					"text": "Скачать PDF",
+					"icon": {
+						"name": "24/download"
+					}
+				}
+			},
+			{
+				"layout": "2",
+				"href": "javascript:void(0);",
+				"title": "2021 Отчет об устойчивом развитии",
+				"text": "0,87 мб",
+				"date": {
+					"month": "Ноябрь",
+					"day": "2021"
+				},
+				"action": {
+					"title": "Скачать PDF",
+					"text": "Скачать PDF",
+					"icon": {
+						"name": "24/download"
+					}
+				}
+			}
+		]
 	}
 }
