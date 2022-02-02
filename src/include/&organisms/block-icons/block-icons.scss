@@ -1,5 +1,5 @@
 .block-icons {
-  	&__top {
+  &__top {
 		margin-bottom: rem(64);
 		@include media-breakpoint-up(md) {
 			margin-bottom: rem(96);
@@ -39,32 +39,26 @@
 					height: rem(104);
 				}
 			}
-		}		
-
-		
-		@include media-breakpoint-up(lg) {
-			width: 25%;
-
-			@include last-row(4) {
-			margin-bottom: 0;
-			}
-		}
-		@include media-breakpoint-up(md) {
-			padding-right: rem(32);
-			margin-bottom: rem(96);
-		}
-		@include media-breakpoint-only(md) {
-			width: 50%;
-
-			@include last-row(2) {
-				margin-bottom: 0;
-			}
-		}
+		}			
 		@include media-breakpoint-down(sm) {
 			&:not(:last-child) {
 				margin-bottom: rem(48);
 			}
 		} 
+		@include media-breakpoint-up(md) {
+			padding-right: rem(32);
+			margin-bottom: rem(96);
+			width: 50%;
+			@include last-row(2) {
+				margin-bottom: 0;
+			}
+		}
+		@include media-breakpoint-up(lg) {
+			width: 25%;
+			@include last-row(4) {
+				margin-bottom: 0;
+			}
+		}
 	}
 
 	&__text{

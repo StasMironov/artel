@@ -8,11 +8,11 @@
 		{% view '&block-image' %}
 	</div>
 
-	<div class="mb-64 mb-md-120">
+	<div class="mb-64 mb-md-112">
 		{% view '&block-icons' %}
 	</div>
 
-	<div class="mb-64 mb-md-120">
+	<div class="mb-64 mb-md-120 pt-64 pb-40 pt-md-112 pb-md-120 bg-green">
 		{% view '&block-innovation' %}
 	</div>
 
@@ -20,16 +20,16 @@
 		{% view '&block-social-initiatives' %}
 	</div>
 
-	<div class="mb-64 mb-md-120">
+	<div class="mb-64 mb-md-112">
 		{% view '&slider-press' with {
-		slider_press: slider
-	} %}
+			slider_press: slider
+		} %}
 	</div>
 
 	<div class="mb-64 mb-md-120">
-		{% view '&block-docs' with {
-		block_docs: block_docs
-	} %}
+		{% view '&slider-docs' with {
+			slider: sliderDocs
+		} %}
 	</div>
 
 {% endblock %}
