@@ -1,4 +1,5 @@
 import Swiper from 'swiper/swiper-bundle';
+import gsap from 'gsap';
 
 export default {
   init() {
@@ -31,25 +32,38 @@ export default {
       const tabs = wrappers[i].querySelectorAll('[data-slider-tab]');
 
       tabs.forEach((tab, tabIdx) => {
+        
         tab.addEventListener('click', () => {
           this.classToggle(tabs, tabIdx);
-          this.classToggle(blocks, tabIdx);         
+          this.classToggle(blocks, tabIdx, true);         
           
           swiper.slideTo(tabIdx, 800);
         });
+
       });
     }
   },
 
-  classToggle(arr, idx = undefined) {
+  classToggle(arr, idx = undefined, animate = false) {
     arr.forEach((el, elIdx) => {
       if (idx === elIdx) {
-        el.classList.add('is-active');
-        
+        if (animate) {
+          gsap.fromTo(el, {
+            opacity: 0,
+            translateY: 24,
+          }, {
+            opacity: 1,
+            translateY: 0,
+            duration: 0.5,
+            ease: 'power4.out',
+            onStart: () => {
+              el.classList.add('is-active');
+            }
+          });
+        }
       } else {
         el.classList.remove('is-active');
       }
-      
     });
   }
 }

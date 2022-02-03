@@ -1,12 +1,7 @@
-<svg width="104" height="104" viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g opacity="0.4">
-<path d="M11.4667 43L21.6667 26L31.8667 43" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M21.6666 60.6666C28.8463 60.6666 34.6666 54.8463 34.6666 47.6666H8.66663C8.66663 54.8463 14.4869 60.6666 21.6666 60.6666Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M72.1333 43L82.3333 26L92.5333 43" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M82.3334 60.6666C89.5131 60.6666 95.3334 54.8463 95.3334 47.6666H69.3334C69.3334 54.8463 75.1537 60.6666 82.3334 60.6666Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M52 13V91" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M21.6666 26H52H82.3333" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M21.6666 26H52H82.3333" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M82.3333 91H52H21.6666" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" fill="none" viewBox="0 0 104 104">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.467 43l10.2-17 10.2 17"/>
+  <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.667 60.667c7.18 0 13-5.82 13-13h-26c0 7.18 5.82 13 13 13z" clip-rule="evenodd"/>
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M72.133 43l10.2-17 10.2 17"/>
+  <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M82.333 60.667c7.18 0 13-5.82 13-13h-26c0 7.18 5.82 13 13 13z" clip-rule="evenodd"/>
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M52 13v78M21.667 26h60.666M21.667 26h60.666M82.333 91H21.667"/>
 </svg>
