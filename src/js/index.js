@@ -26,9 +26,10 @@ import BlockProduct from './components/block-product';
 import BlockHistory from './components/block-history';
 import Modals from './components/modal';
 import ModalAjax from './components/modal/ajax-modal';
+import Accordion from './components/accordion';
 import Search from './components/search';
 
-// import ModalWarning from './components/modal/modal-base';
+import ModalBase from './components/modal/modal-base';
 import Menu from './components/menu';
 import select from './components/select';
 
@@ -37,7 +38,7 @@ import { devices } from './utils/breakpoints';
 // Api
 
 import server from '../api/mock';
-import ChartCanvas from "./components/chart-canvas";
+import ChartCanvas from './components/chart-canvas';
 
 if (process.env.API) {
 	server.start();
@@ -79,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	new MapService();
 	new Search();
 	validation.init();
-	// Sticky.init();
+	Accordion.init();
 	new FormHandler();
 
 	new ChartCanvas();
@@ -105,17 +106,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-	// window.addEventListener('init.modals', () => {
-	// 	if (document.querySelector('#modal-warning')) {
-	// 		new ModalWarning({
-	// 			init: true,
-	// 			id: 'modal-warning',
-	// 			trigger: '[data-modal-warning]',
-	// 			closeTrigger: '#modal-warning [data-modal-close]',
-	// 			openClass: 'is-open',
-	// 		});
-	// 	}
-	// });
+	window.addEventListener('init.modals', () => {
+		new ModalBase({
+			init: true,
+			id: 'modal-person',
+			trigger: 'data-modal-person',
+			closeTrigger: 'data-modal-close',
+			openClass: 'is-open',
+		});
+	});
 
 	window.dispatchEvent(new CustomEvent('init.modals'));
 });
@@ -135,6 +134,5 @@ window.addEventListener('reinit', () => {
 	Menu.init();
 	select.init();
 	new MapService();
-
 	new ScrollAnimation();
 });

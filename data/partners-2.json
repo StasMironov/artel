@@ -877,14 +877,16 @@
 				"label": "Сообщение"
 			}
 		],
-		"agreement": {
-			"checkbox": true,
-			"id": "form-1-checkbox-1",
-			"name": "form-1-checkbox-1",
-			"text": "Я согласен/на с <a href='javascript:void(0);' class='link-content' target='_blank'>политикой конфиденциальности</a> и&nbsp;даю добро на обработку <a href='javascript:void(0);' class='link-content' target='_blank'>моих персональных данных</a>",
-			"required": true,
-			"theme": "white"
-		},
+		"agreement": [
+			{
+				"checkbox": true,
+				"id": "form-1-checkbox-1",
+				"name": "form-1-checkbox-1",
+				"text": "Я согласен/на с <a href='javascript:void(0);' class='link-content' target='_blank'>политикой конфиденциальности</a> и&nbsp;даю добро на обработку <a href='javascript:void(0);' class='link-content' target='_blank'>моих персональных данных</a>",
+				"required": true,
+				"theme": "white"
+			}
+		],
 		"submit": {
 			"type": "submit",
 			"text": "Отправить",

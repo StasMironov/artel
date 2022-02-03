@@ -1,7 +1,7 @@
 .block_career_cards {
 	$root: &;
-	&__wrapper {		
-		display: flex;	
+	&__wrapper {
+		display: flex;
 		width: 100%;
 		@include media-breakpoint-up(sm) {
 			flex-wrap: wrap;
@@ -12,8 +12,7 @@
 		@include media-breakpoint-up(lg) {
 			flex-wrap: nowrap;
 		}
-
-	}	
+	}
 	&__left {
 		@include media-breakpoint-up(sm) {
 			width: 100%;
@@ -27,7 +26,7 @@
 			width: rem(440);
 		}
 	}
-	&__right {	
+	&__right {
 		@include media-breakpoint-up(md) {
 			width: 100%;
 			margin-left: rem(0);
@@ -36,26 +35,25 @@
 			width: rem(888);
 			margin-left: rem(8);
 		}
-		
 	}
-	  
+
 	&__items {
 		display: flex;
 		flex-wrap: wrap;
 		width: 100%;
 	}
-  
+
 	&__item {
 		@include media-breakpoint-up(sm) {
-			width: 100%;
-			height: rem(240);
-			box-sizing: border-box;
-			padding: rem(32);
-			margin: rem(1);
-			background: $color-white;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+			box-sizing: border-box;
+			width: 100%;
+			height: rem(240);
+			margin: rem(1);
+			padding: rem(32);
+			background: $color-white;
 			&:first-child {
 				border-radius: rem(8) rem(8) 0 0;
 			}
@@ -64,15 +62,15 @@
 			}
 		}
 		@include media-breakpoint-up(md) {
-			width: 49%;
-			height: rem(288);
-			box-sizing: border-box;
-			padding: rem(40) rem(44);
-			margin: rem(1);
-			background: $color-white;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+			box-sizing: border-box;
+			width: 49%;
+			height: rem(288);
+			margin: rem(1);
+			padding: rem(40) rem(44);
+			background: $color-white;
 			&:first-child {
 				border-radius: rem(8) 0 0 0;
 			}
@@ -88,15 +86,15 @@
 		}
 
 		@include media-breakpoint-up(lg) {
-			width: 49%;
-			height: rem(268);
-			box-sizing: border-box;
-			padding: rem(40) rem(46);
-			margin: rem(1);
-			background: $color-white;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+			box-sizing: border-box;
+			width: 49.7%;
+			height: rem(268);
+			margin: rem(1);
+			padding: rem(40) rem(46);
+			background: $color-white;
 			&:first-child {
 				border-radius: rem(8) 0 0 0;
 			}
@@ -110,7 +108,7 @@
 				border-radius: 0 0 0 rem(8);
 			}
 		}
-	
+
 		.icon {
 			color: $color-green;
 			@include defaultTransition(color);
@@ -122,44 +120,42 @@
 			}
 			@at-root .animate & {
 				path {
+					animation: dash 2.5s ease 0.5s forwards;
 					stroke-dasharray: 280;
 					stroke-dashoffset: 280;
-					animation: dash 2.5s ease .5s forwards;
 				}
 			}
 
-			svg{				
+			svg {
 				@include media-breakpoint-up(sm) {
+					height: rem(72);
 					margin-top: rem(12);
 					margin-left: rem(-10);
-					height: rem(72);
 				}
 				@include media-breakpoint-up(md) {
+					height: rem(104);
 					margin-top: rem(16);
 					margin-left: 0;
-					height: rem(104);
 				}
 			}
-		}		
-
+		}
 	}
 
-	&__text{
+	&__text {
 		@include line-clamp(16, 1.4, 3);
 		@include media-breakpoint-up(sm) {
 			max-width: rem(250);
 		}
-		@include media-breakpoint-up(md) {			
+		@include media-breakpoint-up(md) {
 			max-width: none;
 		}
 		@include media-breakpoint-up(lg) {
-			margin-top: rem(40);
 			max-width: none;
+			margin-top: rem(40);
 		}
-		
 	}
 
-	&__button{
+	&__button {
 		@include media-breakpoint-up(sm) {
 			width: rem(211);
 			margin-top: rem(32);
@@ -174,4 +170,3 @@
 		}
 	}
 }
-  

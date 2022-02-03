@@ -6,6 +6,7 @@ import SliderDocs from './slider-docs';
 import './slider-logos';
 import './slider-period';
 import './slider-press';
+import SliderComment from './slider-comment';
 import './slider-photo';
 import './slider-similar';
 import './slider-facilities';
@@ -18,5 +19,6 @@ export default {
 
 		Tabs.init();
 		SliderDocs.init();
+		SliderComment.init();
 	},
 };

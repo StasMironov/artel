@@ -1,9 +1,11 @@
-<div class="slider-press {% if slider.bg %} bg-{{ slider.bg }}{% else %} bg-white{% endif %} {% if slider.slider_block %} slider-press__theme-2 {% endif %}" data-slider-press-wrap>
+<div class="slider-press {% if slider.bg %} bg-{{ slider.bg }}{% else %} bg-white{% endif %} {% if slider.layout %}slider-press--layout-{{slider.layout}}{% endif %} {% if slider.slider_block %} slider-press__theme-2 {% endif %}" data-slider-press-wrap>
 	<div class="slider-press__inner">
 		{% if slider.title %}
-			<h3 class="slider-press__title h2 container" data-fade-in-up>
-				{{ slider.title }}
-			</h3>
+			<div class="slider-press__header container" data-fade-in-up>
+				<h3 class="slider-press__title h2 ">
+					{{ slider.title }}
+				</h3>
+			</div>
 		{% endif %}
 		<div class="swiper-container" data-slider-press data-fade-in-up>
 			<div class="swiper-wrapper">
@@ -12,9 +14,15 @@
 						<div class="slider-press__item slider-press__inner container">
 							<div class="slider-press__left">
 								{% if slide.article %}
-									<a {% if slide.href %} href="{{slide.href}}" {% endif %} class="slider-press__article h2" data-article>
-										{{ slide.article }}
-									</a>
+									{% if slide.href %}
+										<a href="{{slide.href}}" class="slider-press__article {% if slide.href %} slider-press__article--link {% endif %} h2" data-article>
+											{{ slide.article }}
+										</a>
+									{% else %}
+										<div class="slider-press__article h2" data-article>
+											{{ slide.article }}
+										</div>
+									{% endif %}
 									<div class="slider-press__box" data-qty>
 										{% if slide.icon %}
 											<div class="slider-press__icon">
