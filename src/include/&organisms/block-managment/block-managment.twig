@@ -14,11 +14,11 @@
 						{{ description.title }}
 					</h2>
 				{% endif %}
-				{% if description.text %}
-					{{ description.text }}
-				{% endif %}
-				{% if description.link %}
-					<a href="#" class="block-managment__link">{{ description.link }}</a>
+
+				{% if description.read_more %}
+					{% view '^read-more' with {
+							card: description.read_more
+					}%}
 				{% endif %}
 			</div>
 		{% endfor %}
