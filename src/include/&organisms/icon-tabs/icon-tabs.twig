@@ -5,14 +5,14 @@
 				{% if block.heading %}
 					<p class="icon-tabs__heading h2">{{ block.heading }}</p>
 				{% endif %}
-				{% if block.text %}
-					<p class="icon-tabs__text">{{ block.text }}</p>
+				{% if block.subtitle %}
+					<p class="icon-tabs__subtitle">{{ block.subtitle }}</p>
 				{% endif %}
 			</div>
 		{% endif %}
 		<div class="icon-tabs__content">
-			<div class="icon-tabs__tabs" data-slider-content-tabs>
-				<div class="swiper" data-slider>
+			<div class="icon-tabs__tabs">
+				<div class="swiper-container">
 					<div class="swiper-wrapper">
 						{% for tab in block.items %}
 							<div class="icon-tabs__tab">
@@ -40,7 +40,7 @@
 						{% if pane.content.title %}
 							<p class="icon-tabs__title h2">{{ pane.content.title }}</p>
 						{% endif %}
-						{% if pane.content.title %}
+						{% if pane.content.image %}
 							<div class="icon-tabs__img">
 								{% view '@image' with {
                   image: pane.content.image
