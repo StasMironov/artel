@@ -27,6 +27,7 @@ import BlockHistory from './components/block-history';
 import Modals from './components/modal';
 import ModalAjax from './components/modal/ajax-modal';
 import Accordion from './components/accordion';
+import Search from './components/search';
 
 import ModalBase from './components/modal/modal-base';
 import Menu from './components/menu';
@@ -77,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	new ScrollAnimation();
 	new Map();
 	new MapService();
+	new Search();
 	validation.init();
 	Accordion.init();
 	new FormHandler();

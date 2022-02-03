@@ -1,5 +1,5 @@
 <div class="hero-default {% if hero_default.small %}hero-default--small{% endif %} {% if hero_default.no_overlay %} hero-default--no-overlay{% endif %} {% if hero_default.theme %}hero-default--theme-{{hero_default.theme}}{% endif %}
-	{% if hero_default.no_title %} hero-default--no-title{% endif %}{% if hero_default.layout %} hero-default--layout-{{hero_default.layout}}{% endif %}">
+					{% if hero_default.no_title %} hero-default--no-title{% endif %}{% if hero_default.layout %} hero-default--layout-{{hero_default.layout}}{% endif %}">
 	{% if hero_default.image %}
 		<div class="hero-default__bg">
 			{% if hero_default.image.tab or hero_default.image.mob %}
@@ -13,7 +13,7 @@
 			{% endif %}
 		</div>
 	{% endif %}
-	<div class="hero-default__container container">
+	<div class="hero-default__container container {% if hero_default.title_fullwidth %}no-padding{% endif %}">
 		{% if hero_default.breadcrumbs %}
 			<div class="hero-default__breadcrumbs">
 				{% view '^breadcrumbs' with {

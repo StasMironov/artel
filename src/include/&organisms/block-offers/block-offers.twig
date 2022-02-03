@@ -1,0 +1,59 @@
+<div class="block-offers" data-fade-in-up>
+    <div class="block-offers__container container">
+        <div class="block-offers__wrapper">
+                <div class="block-offers__left">
+                    {% if block_offers.title %}
+                        <h2 class="block-offers__title h2">
+                            {{ block_offers.title }}
+                        </h2>
+                    {% endif %}
+                    {% if block_offers.selects %}
+                        <div class="block-offers__selects">
+                            {% for select in block_offers.selects %}
+                                <div class="block-offers__select {% if block_offers.select.fill %}block-offers--fill{% endif %}">
+                                    {% view '@filter-select' with {
+                                        filter_select: select
+                                    } %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    
+                </div>
+                <div class="block-offers__right">
+                    {% if block_offers.items %}
+                        <div class="block-offers__items">
+                            {% for item in block_offers.items %}
+                                <a href={{ item.href }} class="block-offers__item">
+                                    <div class="block-offers__text">
+                                        {{ item.text }}
+                                    </div>
+                                    <div class="block-offers__label">
+                                        {{ item.label }}
+                                    </div>
+                                    {% if item.icon %}
+                                        <div class="block-offers__icon">
+                                            {% view '@icon' with {
+                                                icon: item.icon
+                                            } %}
+                                        </div>
+                                    {% endif %}
+                                </a>
+                            {% endfor %}
+                        </div>
+
+
+                        {% if block_offers.action %}
+                            <div class="block-offers__action">
+                                {% view '@button' with {
+                                    button: block_offers.action
+                                } %}
+                            </div>
+								
+                        {% endif %}
+
+                    {% endif %}
+                </div>
+        </div>
+    </div>
+</div>

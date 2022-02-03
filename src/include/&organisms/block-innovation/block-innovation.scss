@@ -1,52 +1,39 @@
 .block-innovation {
-	$root: &;
-	background-color: $color-green;
+  $root: &;
+  background-color: $color-green;
 
-	h2,
-	.h2 {
-		color: $color-white;
-	}
+  h2, .h2{
+    color: $color-white;
+  }
 
-	&--gray {
+	&--dark {
 		background-color: $color-gray;
 
-		h2,
-		.h2 {
+		h2, .h2{
 			color: $color-black;
 		}
 	}
 
-	&__wrapper {
-		@include media-breakpoint-up(sm) {
-			display: flex;
-			flex-direction: column;
-			padding-top: rem(64);
-			padding-bottom: rem(64);
 
-			#{$root}--layout-2 & {
-				padding-bottom: 0;
-			}
+  &__wrapper {	
+		@include media-breakpoint-up(sm) {
+			display: flex;	
+			flex-direction: column;
 		}
 
 		@include media-breakpoint-up(md) {
-			display: flex;
+			display: flex;	
 			flex-direction: column;
-			padding-top: rem(112);
-			padding-bottom: rem(120);
 		}
 
 		@include media-breakpoint-up(lg) {
 			display: flex;
 			flex-direction: row;
-			flex-wrap: nowrap;
-			justify-content: space-between;
-			width: 100%;
-			padding-top: rem(112);
-			padding-bottom: rem(116);
+			justify-content: space-between;		
 		}
 	}
 
-	&__left {
+  &__left {		
 		width: 100;
 		@include media-breakpoint-up(lg) {
 			width: 50%;
@@ -93,14 +80,14 @@
 		justify-content: space-between;
 		border-top: 1px solid rgba($color-white, 0.6);
 
-		#{$root}--gray & {
+		#{$root}--dark & {
 			border-top: 1px solid rgba($color-black, 0.1);
 		}
 
 		&:last-of-type {
 			border-bottom: 1px solid rgba($color-white, 0.6);
 
-			#{$root}--gray & {
+			#{$root}--dark & {
 				border-bottom: 1px solid rgba($color-black, 0.1);
 			}
 		}
@@ -136,14 +123,12 @@
 		width: 50%;
 		color: $color-white;
 
-		#{$root}--gray & {
+		#{$root}--dark & {
 			color: $color-black;;
 		}
 		
 		@include media-breakpoint-down(md) {
 			width: 100%;
-			max-width: initial;
-			/*padding-top: rem(24);*/
 		}
 
 		@include media-breakpoint-down(sm) {
@@ -179,7 +164,7 @@
 				max-width: rem(240);
 			}
 
-			#{$root}--gray & {
+			#{$root}--dark & {
 				color: rgba($color-black, 0.6);
 			}
 		}
