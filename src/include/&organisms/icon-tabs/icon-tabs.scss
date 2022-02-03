@@ -1,76 +1,187 @@
 .icon-tabs{
   $root: &; 
+
   &__content{
-      display: flex;
+    display: flex;
+    @include media-breakpoint-up(md) {   
+      flex-wrap: wrap;
+    }
   }
 
   &__top{
-      display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: rem(32);
+    @include media-breakpoint-up(md) {            
+        margin-bottom: rem(80);
+    }
+    @include media-breakpoint-up(lg) {        
       justify-content: space-between;
-      @include media-breakpoint-up(md) {            
-          margin-bottom: rem(80);
-      }
+      flex-wrap: nowrap;
+    }
   }
 
   &__heading{
-    width: 33.3333%;
+    width: 100%;
+    &:not(:last-child){
+      margin-bottom: rem(24);
+    }
+    @include media-breakpoint-up(md) {            
+      width: 75%;
+      &:not(:last-child){
+        margin-bottom: rem(24);
+      }
+    }
+    @include media-breakpoint-up(lg) { 
+      width: 33.3333%;
+      margin-bottom: 0;
+    }
   }
 
   &__subtitle{
-    width: 33.3333%;
-    margin-right: 16%;
-  }
+    width: 100%;
 
+    margin-right: 0;
+    @include media-breakpoint-up(md) {            
+      width: 75%;
+    }
+    @include media-breakpoint-up(lg) {            
+      
+      width: 33.3333%;
+      margin-right: 16%;
+    }
+  }
+  .swiper-container{
+    overflow: visible;
+    align-items: flex-start;
+    margin-left: 0;
+    width: 66%;
+    @include media-breakpoint-up(md) {     
+      width: 84%;
+    }
+    @include media-breakpoint-up(lg) {            
+      width: 100%;
+    }
+  }
   .swiper-wrapper{
-      display: flex;
+    width: 100%;
+    overflow: visible;
+    flex-wrap: nowrap;
+    @include media-breakpoint-up(md) {
+      flex-wrap: nowrap;
+      width: 76%;
+    }
+    @include media-breakpoint-up(lg) {
+      transform: none !important;
+      width: 100%;
       flex-wrap: wrap;
+    }   
+	}
+
+  &__tabs{      
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: rem(48);
+    @include media-breakpoint-up(md) {
+      width: 100%;
+      flex-wrap: wrap;
+      margin-bottom: rem(72);
+    }
+    @include media-breakpoint-up(lg) {
+      width: 50%;
+      flex-wrap: wrap;
+    }
   }
 
-  &__tabs{
-      width: 50%;
-      display: flex;
-      flex-wrap: wrap;
+  .swiper-slide{
+    height: auto; 
+    width: rem(150);  
+    @include media-breakpoint-up(md) {
+      width: rem(296);       
+    }
+    @include media-breakpoint-up(lg) {
+      width: 50%!important;
+    }  
   }
 
   &__tab{
-      width: rem(296);
+    height: auto;
+    overflow: visible;
+    width: rem(150);   
+    @include media-breakpoint-up(md) {
+      width: rem(296);       
+    }
+    @include media-breakpoint-up(lg) {
+      /*width: 20%;*/
       margin-bottom: rem(48);
+    }     
   }  
 
   &__icon{
-      color: $color-green; 
-      margin-bottom: rem(16);    
+    color: $color-green; 
+    margin-bottom: rem(12);  
+    @include media-breakpoint-only(sm) {
+      margin-bottom: rem(0); 
+    }
+    svg{
+      @include media-breakpoint-only(sm) {
+        width: rem(80);
+      }
+    }  
+  }
+
+  &__caption{
+    width: 100%;
+    @include media-breakpoint-up(md) {
+      width: rem(216);
+    }
+    @include media-breakpoint-up(lg) {
+      width: rem(283);
+    }
   }
 
   &__wrapper{
-      width: 50%;
+    width: 50%;
+    @include media-breakpoint-down(md) {
+      width: 100%;
+    }
   }
 
   &__pane{
-    width: 100%;
-    opacity: 0;
+    width: 100%;  
+    display: block;
     &:not(.is-active) {
       display: none;
-    }
-    &:first-child {
-      opacity: 1;
     }
   }
 
   &__suptitle{
-      color: rgba($color-black, 0.4);
-      margin-bottom: rem(16);
+    color: rgba($color-black, 0.4);
+    margin-bottom: rem(16);
   }
 
   &__title{
+    margin-bottom: rem(32);
+    @include media-breakpoint-up(lg) {
       margin-bottom: rem(48);
+    }
   }
 
   &__img{
+    margin-bottom: rem(32);
+    @include media-breakpoint-up(lg) {
       margin-bottom: rem(48);
+    }
   }
 
   &__text{
-      
+    width: 100%;
+    @include media-breakpoint-up(md) {
+      width: 75%;
+    }
+    @include media-breakpoint-up(lg) {
+      width: 100%;
+    }
   }
 }
