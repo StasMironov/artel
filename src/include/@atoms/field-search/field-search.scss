@@ -85,6 +85,12 @@
 		padding: 0;
 		cursor: pointer;
 		@include defaultTransition(color);
+		
+		width: 1.5rem;
+		height: 3.875rem;
+		font-size: 0;
+		line-height: 3.875rem;
+		color: #000;
 
 		#{$root}:not(.filled) ~ & {
 			display: none;
@@ -107,7 +113,7 @@
 		pointer-events: none;
 
 		.icon {
-			margin-bottom: rem(6);
+			margin-bottom: rem(0);
 		}
 
 		#{$root}.filled ~ & {

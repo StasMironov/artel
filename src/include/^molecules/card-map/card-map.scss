@@ -16,6 +16,10 @@
 		height: rem(8);
 		background-color: $color-black;
 		content: '';
+
+		@at-root .map__card--green & {
+			background-color: $color-green;
+		}
 	}
 
 	// если понадобится прелоадер

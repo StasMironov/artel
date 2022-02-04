@@ -47,6 +47,12 @@
 			padding-top: rem(152);
 			padding-left: rem(112);
 		}
+
+		@at-root .block-contacts--layout-3 & {
+			@include media-breakpoint-down(sm) {
+				padding-top: rem(67);
+			}
+		}
 	}
 
 	&__phone {
