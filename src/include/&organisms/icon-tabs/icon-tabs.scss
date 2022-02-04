@@ -69,6 +69,7 @@
 
   .swiper-wrapper{
     width: 100%;
+    height: auto;
     overflow: visible;
     flex-wrap: nowrap;
     @include media-breakpoint-up(md) {
@@ -95,27 +96,27 @@
     @include media-breakpoint-up(lg) {
       width: 50%;
       flex-wrap: wrap;
+      margin-bottom: 0;
     }
   }
 
   .swiper-slide{
-    height: rem(164);
+    height: auto;
     width: rem(227)!important;    
     padding-right: rem(4);
-    opacity: 0.4;
     @include media-breakpoint-up(md) {
       width: rem(280)!important; 
+      height: auto;
     }
     @include media-breakpoint-up(lg) {
       width: 50%!important;
-    } 
-
+      height: rem(164);
+    }
   }
 
-
   &__tab{
-    /*height: auto;*/
     cursor: pointer;
+    opacity: 0.4!important;
     @include media-breakpoint-up(md) {
       width: rem(296);       
     }
@@ -125,6 +126,13 @@
 				margin-bottom: 0;
 			}
     }   
+    &-active{
+      opacity: 1!important;
+    }
+    &:hover{
+      opacity: 1!important;
+      transition: 0.9s;
+    }
   }  
 
   &__icon{

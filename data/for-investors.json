@@ -136,7 +136,6 @@
   },
   "hero_default": {
     "title": "Инвесторам",
-    "title_fullwidth": true,
     "image": {
       "src": "tmp/default-hero/hero-for-investors.jpg",
       "alt": "image alt",

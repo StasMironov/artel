@@ -1,6 +1,7 @@
 .block-team{
-    $root: &;
-    .swiper-container {      
+  $root: &;
+    
+  .swiper-container {      
 		@include media-breakpoint-down(sm) {
       margin-left: rem(-8);
 		}
@@ -17,7 +18,8 @@
 			overflow: visible;
 		}
 	}
-    &__slide {
+
+  &__slide {
 		@include media-breakpoint-up(lg) {		
 			margin-bottom: rem(40);
 			@include last-row(4) {
@@ -42,6 +44,7 @@
       
 		}
   }
+
 	&__arrows {
 		display: flex;
 		justify-content: flex-end;
@@ -52,41 +55,43 @@
 	}
 
   &__heading{
-      margin-bottom: rem(45);
-      display: flex;
-      justify-content: space-between;
+    margin-bottom: rem(48);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    @include media-breakpoint-up(md) {            
       flex-direction: column;
-      @include media-breakpoint-up(md) {            
-          flex-direction: column;
-          margin-bottom: rem(60);
-      }
-      @include media-breakpoint-up(lg) {            
-          flex-direction: row;
-          margin-bottom: rem(64);
-      }
+      margin-bottom: rem(60);
+    }
+    @include media-breakpoint-up(lg) {            
+      flex-direction: row;
+      margin-bottom: rem(64);
+    }
   }
+
   &__title{
+    width: 100%;
+    margin-bottom: rem(24);
+    @include media-breakpoint-up(md) {            
       width: 100%;
       margin-bottom: rem(24);
-      @include media-breakpoint-up(md) {            
-          width: 100%;
-          margin-bottom: rem(24);
-      }
-      @include media-breakpoint-up(lg) {            
-          width: 50%;
-          margin-bottom: rem(0);
-      }
+    }
+    @include media-breakpoint-up(lg) {            
+      width: 50%;
+      margin-bottom: rem(0);
+    }
   }
+
   &__subtitle{
-      width: rem(328);
+    width: rem(328);
+    margin-right: 0;
+    @include media-breakpoint-up(md) {            
+      width: rem(440);
       margin-right: 0;
-      @include media-breakpoint-up(md) {            
-          width: rem(440);
-          margin-right: 0;
-      }
-      @include media-breakpoint-up(lg) {            
-          width: rem(440);
-          margin-right: rem(220);
-      }
+  }
+    @include media-breakpoint-up(lg) {            
+      width: rem(440);
+      margin-right: rem(220);
+    }
   }
 }

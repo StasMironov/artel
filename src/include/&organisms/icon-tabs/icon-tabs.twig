@@ -10,12 +10,12 @@
 				{% endif %}
 			</div>
 		{% endif %}
-		<div class="icon-tabs__content">
+		<div class="icon-tabs__content" data-fade-in-up>
 			<div class="icon-tabs__tabs">
 				<div class="swiper-container" data-slider>
 					<div class="swiper-wrapper">
 						{% for tab in block.items %}
-							<div class="icon-tabs__tab {% if tab.active %} is-active {% endif %} swiper-slide" data-slider-tab="{{ loop.index }}" data-fade-in-up data-delay="{{ (0.8 + loop.index0 / 5)|round(2, 'floor') }}">
+							<div class="icon-tabs__tab swiper-slide {% if tab.active %} icon-tabs__tab-active {% endif %} " data-slider-tab="{{ loop.index }}">
 								{% if tab.icon %}
 									<div class="icon-tabs__icon">
 										{% view '@icon' with {
@@ -31,9 +31,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="icon-tabs__wrapper">
+			<div class="icon-tabs__wrapper" data-fade-in-up data-delay="1">
 				{% for pane in block.items %}
-					<div class="icon-tabs__pane {% if pane.active %} is-active {% endif %}" data-tab-block="{{ loop.index }}" data-fade-in-up data-delay="1">
+					<div class="icon-tabs__pane {% if pane.active %} is-active {% endif %}" data-tab-block="{{ loop.index }}">
 						{% if pane.content.suptitle %}
 							<p class="icon-tabs__suptitle">{{ pane.content.suptitle }}</p>
 						{% endif %}

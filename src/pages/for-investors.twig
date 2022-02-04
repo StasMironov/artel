@@ -3,8 +3,8 @@
 {% block content %}
 
 	{% view '&hero-default' with {
-        hero_default: hero_default
-    } %}
+			hero_default: hero_default
+	} %}
 
 	{% view '&block-nav' %}
 
@@ -14,28 +14,28 @@
     } %}
 	</div>
 
-	<div class="mb-md-120 pt-64 pt-md-112 pb-64 pb-md-112 bg-white">
+	<div class="mb-64 mb-md-120 pt-64 pt-md-112 pb-64 pb-md-112 pb-lg-80 bg-white">
 		{% view '&icon-tabs' with {
-            block: block_tabs
-        } %}
+				block: block_tabs
+		} %}
 	</div>
 
-	<div class="mb-32 mb-md-80">
+	<div class="mb-32 mb-md-64 pb-sm-8">
 		{% view '&block-structure' with {
-            block: block_structure
-        } %}
+				block: block_structure
+		} %}
 	</div>
 
-	<div class="mb-64 mb-md-120">
+	<div class="mb-64 mb-md-120 pt-lg-16">
 		{% view '&block-docs' with {
-            block_docs: block_reports
-        } %}
+				block_docs: block_reports
+		} %}
 	</div>
 
 	<div class="mb-8 mb-md-40">
 		{% view '&block-directors' with {
-            block: block_directors
-        } %}
+				block: block_directors
+		} %}
 	</div>
 
 	<div class="pt-64 pt-md-112 pb-md-120 pb-md-80 bg-white">
@@ -44,7 +44,7 @@
     } %}
 	</div>
 
-	<div class="mb-64 mb-md-120 pb-64 pb-md-120 pt-64 pt-md-8 bg-white">
+	<div class="mb-64 mb-md-120 mb-lg-112 pb-64 pb-md-120 pt-64 pt-md-8 bg-white">
 		{% view '&block-managment' with {
         block: block_managment
     } %}
@@ -56,7 +56,7 @@
 		} %}
 	</div>
 
-	<div class="mb-40 mb-md-112">
+	<div class="mb-40 mb-md-112 mb-lg-80">
 		{% view "&block-comm" with {
         block_comm: block_comm
     } %}

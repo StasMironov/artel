@@ -31,8 +31,19 @@ export default {
       const blocks = wrappers[i].querySelectorAll('[data-tab-block]');
       const tabs = wrappers[i].querySelectorAll('[data-slider-tab]');
 
+     
+      let lastClicked = tabs[0];
+
+      for( let i = 0; i < tabs.length; i++ ){              
+        tabs[i].addEventListener('click', function(){
+          lastClicked.classList.remove('icon-tabs__tab-active');
+          this.classList.add('icon-tabs__tab-active');          
+          lastClicked = this; 
+        });
+      }
+
       tabs.forEach((tab, tabIdx) => {
-        
+                
         tab.addEventListener('click', () => {
           this.classToggle(tabs, tabIdx);
           this.classToggle(blocks, tabIdx, true);         

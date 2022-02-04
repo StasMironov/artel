@@ -1,10 +1,11 @@
 .block-managment {
 	$root: &;
+
 	&__wrapper {		
 		display: flex;
-		flex-wrap: wrap;
-		
+		flex-wrap: wrap;		
 	}	
+
 	&__left {	
 		@include media-breakpoint-up(sm) {
 			width: 100%;
@@ -15,28 +16,25 @@
 		}
 		@include media-breakpoint-up(lg) {
 			width: rem(328);
-            margin-right: rem(120);
+      margin-right: rem(120);
 		}
 	}
+
 	&__right {			
 		@include media-breakpoint-up(sm) {
 			width: rem(328);
 		}
-
 		@include media-breakpoint-up(md) {
 			width: 100%;
 		}
-
 		@include media-breakpoint-up(lg) {	
 			width: rem(664);	
-		}
-        
-        p{
-            &:last-of-type{
-                margin-bottom: rem(24);
-            }
-        }
-        
+		}        
+		p{
+			&:last-of-type{
+				margin-bottom: rem(24);
+			}
+		}        
 	}
 
 	&__heading{
@@ -51,6 +49,7 @@
 			margin-bottom: rem(8);	
 		}
 	}
+
 	&__title{
 		@include media-breakpoint-up(sm) {			
 			margin-bottom: rem(24);
@@ -62,10 +61,12 @@
 		@include media-breakpoint-up(lg) {
 			width: 100%;
 			margin-bottom: rem(24);
+			margin-top: rem(8);
 		}
 	}
-    &__img{
-        border-radius: rem(8);
+
+  &__img{
+    border-radius: rem(8);
 		@include media-breakpoint-up(sm) {			
 			margin-top: rem(32);
 			margin-bottom: rem(32);
@@ -76,8 +77,5 @@
 			margin-bottom: rem(64)!important;
 			height: rem(345)!important;
 		}
-    }
-    &__link{
-        color: rgba(0,0,0,0.4);
-    }
+  }
 }
