@@ -43,7 +43,7 @@
 		</div>
 		<div class="map__init" data-map-init></div>
 	</div>
-	<div class="map__card" data-card-wrap>
+	<div class="map__card {% if map.card_bg %}map__card--{{map.card_bg}}{% endif %}" data-card-wrap>
 		{% view '^card-map' %}
 	</div>
 	{% if map.legend %}

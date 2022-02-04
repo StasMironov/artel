@@ -16,7 +16,7 @@
                 {% endif %}
                 {% if block_service.select %}
                   
-                    <div class="block-service__select {% if block_service.select.fill %}block-service--fill{% endif %}">
+                    <div class="block-service__select {% if block_service.select.color %} color {% endif %} {% if block_service.select.fill %}block-service--fill{% endif %}">
                         {% view '@filter-select' with {
                             filter_select: block_service.select
                         } %}
