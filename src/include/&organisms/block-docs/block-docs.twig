@@ -1,33 +1,35 @@
 <div class="block-docs {% if block_docs.layout %} block-docs--layout-{{block_docs.layout}} {% endif %}" {% if block_docs.tabs %} data-tab-container {% endif %}>
 	<div class="block-docs__container container" {% if block_docs.tabs %} data-tabs-wrap {% endif %}>
-		<div class="block-docs__wrapper">
-			{% if block_docs.title %}
-				<div class="block-docs__title">
-					<h2>{{ block_docs.title  }}</h2>
-				</div>
-			{% endif %}
-			{% if block_docs.filter_select %}
-				<div class="block-docs__select {% if block_docs.filter_select.fill %}block-docs__select--fill{% endif %}">
-					{% view '@filter-select' with {
+		{% if block_docs.title or block_docs.filter_select or block_docs.form or block_docs.tabs %}
+			<div class="block-docs__wrapper">
+				{% if block_docs.title %}
+					<div class="block-docs__title {% if block_docs.oneline %} block-docs__title--oneline {% endif %}" data-fade-in-up>
+						<h2>{{ block_docs.title  }}</h2>
+					</div>
+				{% endif %}
+				{% if block_docs.filter_select %}
+					<div class="block-docs__select {% if block_docs.filter_select.fill %}block-docs__select--fill{% endif %}">
+						{% view '@filter-select' with {
                         filter_select: block_docs.filter_select
                     } %}
-				</div>
-			{% endif %}
-			{% if block_docs.form %}
-				<div class="block-docs__form" data-fade-in-up>
-					{% view '&search-form' with {
+					</div>
+				{% endif %}
+				{% if block_docs.form %}
+					<div class="block-docs__form" data-fade-in-up>
+						{% view '&search-form' with {
                         form: block_docs.form
                     } %}
-				</div>
-			{% endif %}
-			{% if block_docs.tabs %}
-				<div class="block-docs__tabs {% if block_docs.tabs.offset_left %}block-docs__offset-left-{{block_docs.tabs.offset_left}}{% endif %}">
-					{% view '&tabs' with {
+					</div>
+				{% endif %}
+				{% if block_docs.tabs %}
+					<div class="block-docs__tabs {% if block_docs.tabs.offset_left %}block-docs__offset-left-{{block_docs.tabs.offset_left}}{% endif %}">
+						{% view '&tabs' with {
                         tabs: block_docs.tabs
                     }%}
-				</div>
-			{% endif %}
-		</div>
+					</div>
+				{% endif %}
+			</div>
+		{% endif %}
 		{% if block_docs.tabs_content %}
 			<div class="block-docs__tabs-content" data-fade-in-up data-delay="0.5">
 				{% for item in block_docs.tabs_content %}

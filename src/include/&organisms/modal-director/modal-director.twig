@@ -1,0 +1,42 @@
+<div class="modal-director">
+	<div class="modal-director__wrapper">
+		<div class="modal-director__left">
+			{% if modal_director.img %}
+				<div class="modal-director__img">
+					{% view '@image' with {
+						image: modal_director.img
+                    } %}
+				</div>
+			{% endif %}
+		</div>
+		<div class="modal-director__right" data-wrap-scroll>
+			<div></div>
+
+			{% if modal_director.description %}
+				<div class="modal-director__description" data-ps>
+					<div class="modal-director__info">
+
+
+						{% if modal_director.title %}
+							<h3>
+								{{ modal_director.title  }}
+							</h3>
+						{% endif %}
+						{% if modal_director.subtitle %}
+							<p>
+								{{ modal_director.subtitle  }}
+							</p>
+						{% endif %}
+
+
+						{% for item in modal_director.description %}
+							<div class="modal-director__text">
+								{{ item }}
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</div>
