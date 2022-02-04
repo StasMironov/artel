@@ -22,7 +22,7 @@ export default {
 				simulateTouch: false,
 				resistance: true,
 				resistanceRatio: 0,
-				spaceBetween: 24,
+				//spaceBetween: 24,
 				observer: true,
 				observeParents: true,
 				[window.breakpoints.lg]: {
@@ -69,7 +69,7 @@ export default {
 								}
 							);
 
-							tabs.forEach((tab) => {
+							tabs.forEach((tab, idx) => {
 								tab.addEventListener('click', (e) => {
 									e.preventDefault();
 									tabs.forEach((tab) => {
@@ -127,6 +127,9 @@ export default {
 									// 	+tab.getAttribute('data-tab') - 1,
 									// 	800
 									// );
+
+									this.slideTo(idx, 400);
+
 								});
 							});
 						});
