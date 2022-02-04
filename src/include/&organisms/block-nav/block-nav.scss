@@ -49,6 +49,34 @@
 		}
 	}
 
+	&__box {
+		display: flex;
+		align-items: center;
+		margin-top: rem(48);
+
+		@include media-breakpoint-down(sm) {
+			margin-top: rem(38);
+			flex-direction: column;
+			align-items: baseline;
+		}
+	}
+
+	&__btn {
+		&:not(:last-child){
+			margin-right: rem(23);
+
+			@include media-breakpoint-down(md) {
+				margin-right: rem(30);
+			}
+
+			@include media-breakpoint-down(sm) {
+				margin-right: 0;
+				margin-bottom: rem(16);
+			}
+			
+		}
+	}
+
 	&__wrap {
 		display: flex;
 		height: 100%;
@@ -199,7 +227,7 @@
 		left: 0;
 
 		@include media-breakpoint-up(sm) {
-			left: rem(-7);
+			left: rem(4);
 			bottom: rem(-1);
 		}
 

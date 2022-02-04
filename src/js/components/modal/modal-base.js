@@ -1,6 +1,7 @@
 import MicroModal from 'micromodal';
+import PerfectScrollbar from 'perfect-scrollbar';
 
-export default class ModalWarning {
+export default class ModalBase {
 	constructor(props) {
 		this.initial = props.init;
 		this.trigger = props.trigger;
@@ -25,10 +26,13 @@ export default class ModalWarning {
 	}
 
 	init() {
-		const btnClose = document.querySelectorAll(this.closeTrigger);
+		//	const btnClose = document.querySelectorAll(this.closeTrigger);
+
+		const wrapNode = document.querySelector('.' + this.id);
+		const scrollNode = wrapNode.querySelector('[data-modal-ps]');
 
 		MicroModal.init({
-			// openTrigger: this.trigger,
+			openTrigger: this.trigger,
 			closeTrigger: this.closeTrigger,
 			openClass: this.openClass,
 			disableFocus: false,
@@ -37,37 +41,43 @@ export default class ModalWarning {
 			debugMode: true,
 			disableScroll: false,
 			onShow: (modal) => {
-				this.onShow(modal);
+				// this.onShow(modal);
+				let ps = new PerfectScrollbar(scrollNode, {
+					wheelSpeed: 2,
+					wheelPropagation: true,
+					minScrollbarLength: 20,
+				});
 				window._disableScroll();
 			},
 			onClose: (modal) => {
 				this.onClose(modal);
+				window._enableScroll();
 			},
 		});
 
-		if (this.id === 'modal-warning') {
-			let state = 0;
+		// if (this.id === 'modal-warning') {
+		// 	let state = 0;
 
-			$(`#${this.id}`).addClass('is-warning');
-			setTimeout(() => {
-				if (localStorage.getItem('popupWarning') != true) {
-					MicroModal.show(this.id);
-					localStorage.setItem('popupWarning', 1);
-					window._disableScroll();
-				}
-			}, 1500);
+		// 	$(`#${this.id}`).addClass('is-warning');
+		// 	setTimeout(() => {
+		// 		if (localStorage.getItem('popupWarning') != true) {
+		// 			MicroModal.show(this.id);
+		// 			localStorage.setItem('popupWarning', 1);
+		// 			window._disableScroll();
+		// 		}
+		// 	}, 1500);
 
-			btnClose.forEach((elem, index) => {
-				elem.addEventListener('click', () => {
-					MicroModal.close(this.id);
-					window._enableScroll();
-				});
-			});
+		// 	btnClose.forEach((elem, index) => {
+		// 		elem.addEventListener('click', () => {
+		// 			MicroModal.close(this.id);
+		// 			window._enableScroll();
+		// 		});
+		// 	});
 
-			window.onbeforeunload = function () {
-				localStorage.removeItem('popupWarning');
-				return null;
-			};
-		}
+		// 	window.onbeforeunload = function () {
+		// 		localStorage.removeItem('popupWarning');
+		// 		return null;
+		// 	};
+		// }
 	}
 }

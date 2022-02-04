@@ -79,6 +79,10 @@
 				"name": "Партнёрам"
 			},
 			{
+				"link": "career",
+				"name": "Карьера"
+			},
+			{
 				"link": "for-investors",
 				"name": "Инвесторам"
 			}

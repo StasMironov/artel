@@ -83,13 +83,14 @@
 			width: 100%;
 		}
 
-		#{$b}.is-warning & {
+		#{$b}.is-warning &,
+		#{$b}--right & {
 			margin-left: auto;
 			min-width: rem(714);
 
 			@include media-breakpoint-down(md) {
 				min-width: initial;
-				width: 65vw;
+				width: 100vw;
 			}	
 
 			@include media-breakpoint-down(sm) {

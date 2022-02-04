@@ -20,7 +20,7 @@
                             {{ block_nav.title}}
                         </h1>
                     {% endif %}
-                    {% if block_nav.desc  %}
+                    {% if block_nav.desc %}
                         <div class="block-nav__desc h3" data-fade-in-up data-delay="0.5">
                             {{ block_nav.desc }}
                         </div>
@@ -56,6 +56,17 @@
                                 {% endfor %}
                             </div>
                         {% endfor %}
+                    {% endif %}
+                    {% if block_nav.action %}
+                        <div class="block-nav__box" data-fade-in-up data-delay="0.5">
+                            {% for btn in block_nav.action %}
+                                <div class="block-nav__btn">
+                                    {% view '@button' with {
+                                        button: btn
+                                    } %}
+                                </div>
+                            {% endfor %}
+                        </div>
                     {% endif %}
                 </div>
             </div>
