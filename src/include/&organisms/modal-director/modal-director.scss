@@ -1,4 +1,6 @@
 .modal-director {
+	$root: &;   
+	
 	width: 100%;
 	height: 100vh;
 	background-color: $color-white;
@@ -7,143 +9,116 @@
 		height: 100vh;
 	}
 
-	&__right {
-		position: relative;
-		width: 50%;
-		// max-width: rem(716);
-		padding: rem(113) rem(0) rem(109) rem(0);
-
-		@include media-breakpoint-down(md) {
-			flex: 1;
-			width: 100%;
-			max-width: initial;
-			min-height: rem(550);
-			padding: rem(75) rem(0) rem(80) rem(0);
-		}
-
-		@include media-breakpoint-down(sm) {
-			padding: rem(50) rem(0) rem(40);
-            min-height: auto;
-            height: rem(410)
-		}
-
-		&:after {
-			position: absolute;
-			content: "";
-			width: 100%;
-			height: rem(70);
-			top: 0;
-			left: 0;
-			right: 0;
-			@include defaultTransition(background-color);
-			background: transparent;
-		}
-
-        .ps__rail-y {
-            right: rem(8);
-		}
-
-		&.scroll {
-			&::after {
-				background: $color-white;
-			}
-		}
-
-		&.ios-scroll {
-			&::after {
-				height: rem(100);
-			}
-		}
-	}
-    
-
-	&__left {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: rem(724);
-		background-color: $color-gray;
-
-		/*@include media-breakpoint-down(md) {
-			width: 100%;
-			height: 0;
-            position: relative;
-            padding: 28%;
-            padding: 31.3%;
-		}
-
-		@include media-breakpoint-down(sm) {
-			width: 100%;
-			height: rem(232);
-			position: fixed;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-		}*/
-	}
-
 	&__wrapper {
 		display: flex;
 		height: 100%;
-
 		@include media-breakpoint-down(md) {
 			flex-direction: column;
 		}
 	}
-    &__description {
-        position: relative;
-        height: 100%;
-        overflow: hidden;
-        padding: 0 rem(150) 0 rem(112);
 
-        @include media-breakpoint-down(md) {
-			padding: 0 rem(108);
+	&__left {
+		width: 100%;
+		@include media-breakpoint-up(md) {
+			width: 100%;
 		}
-
-        @include media-breakpoint-down(sm) {
-			padding: rem(200) rem(0) 0;
+		@include media-breakpoint-up(lg) {
+			width: 50%;
 		}
-    }
-
-	&__info {
-		@include media-breakpoint-down(sm) {
-			padding: rem(40) rem(16) 0;
-			background-color: $color-white;
-		}
-	}
-
-	&__text {
-		&:not(:last-of-type) {
-			margin-bottom: rem(26);
-		}
-
-        &:last-of-type {
-            margin-bottom: 0;
-        }
 	}
 
 	&__img {
 		width: 100%;
-        height: 100%
-       /* @include media-breakpoint-down(md) {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            height: min-content;
-            display: block;
-            transform: scale(0.334);
-            width: auto;
+		margin-bottom: rem(48);   
+		@include media-breakpoint-up(md) {
+			width: 100%;
+			margin-bottom: rem(80); 			
 		}
+		@include media-breakpoint-up(lg) {
+			width: 100%;
+			margin-bottom: rem(0); 			
+		}
+	}
 
-        @include media-breakpoint-down(sm) {
-			width: auto;
-            transform: scale(0.38);
-		}*/
 
-      
+	&__right {		
+		width: 100%;
+		margin: 0;
+		@include media-breakpoint-up(md) {			
+			width: 100%;
+			margin: 0 rem(108);
+		}
+		@include media-breakpoint-up(lg) {
+			width: 50%;
+			margin: 0;
+			padding: rem(112) rem(52) 0 rem(112);
+		}
+	}
+
+	&__title{
+		margin-bottom: rem(8);
+		padding: rem(0) rem(16) 0 rem(39);
+		@include media-breakpoint-up(md) {
+			padding: 0;
+		}
+	}
+
+	&__subtitle{
+		color: rgba($color-black, 0.4);
+		@include text-body;
+		margin-bottom: rem(24);
+		padding: rem(0) rem(16) 0 rem(39);
+		@include media-breakpoint-up(md) {
+			padding: 0;
+			margin-bottom: rem(32);
+		}
+	}
+
+	&__text{	
+		ul{					
+			margin-right: rem(8);
+			max-width: 100%;
+			padding-left: rem(40);
+			@include media-breakpoint-up(md) {
+				padding-left: 0;
+				max-width: rem(552);
+			}
+			li{
+				position: relative;
+				margin-bottom: rem(16);
+				@include media-breakpoint-up(md) {
+					margin-bottom: rem(26);
+				}
+				&::before{
+					position: absolute;
+					top: rem(10);
+					left: rem(-24);
+					display: block;
+					width: 8px;
+					height: 8px;
+					background-color: #00d372;
+					border-radius: 50%;
+					-webkit-transform: translateY(-50%);
+					-ms-transform: translateY(-50%);
+					transform: translateY(-50%);
+					content: '';
+				}
+			}
+		}
+	}
+	.ps__rail-y {
+		right: rem(8);
+}
+
+	&.scroll {
+		&::after {
+			background: $color-white;
+		}
+	}
+
+	&.ios-scroll {
+		&::after {
+			height: rem(100);
+		}
 	}
 }

@@ -79,7 +79,7 @@
 			}
 		}
 
-		#{$b}--partners & {
+		#{$b}--partners &, #{$b}--director & {
 			width: 100%;
 		}
 
@@ -106,7 +106,7 @@
 			overflow-y: auto;
 		}
 
-		#{$b}--partners & {
+		#{$b}--partners &, #{$b}--director & {
 			display: flex;
 			justify-content: center;
 		}
@@ -176,7 +176,7 @@
 
 		}
 
-		#{$b}--partners & {
+		#{$b}--partners &, #{$b}--director & {
 			width: rem(20);
 			height: rem(20);
 			top: rem(50);
@@ -209,6 +209,14 @@
 			#{$b}--partners & {
 				width: 2px;
 				background-color: $color-black;
+			}
+
+			#{$b}--director & {
+				width: 2px;
+				background-color: $color-white;
+				@include media-breakpoint-up(lg) {					
+					background-color: $color-black;
+				}
 			}
 		}
 

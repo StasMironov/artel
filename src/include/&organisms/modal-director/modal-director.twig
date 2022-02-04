@@ -1,40 +1,36 @@
-<div class="modal-director">
-	<div class="modal-director__wrapper">
+<div class="modal-director" data-wrap-scroll>
+	<div class="modal-director__wrapper" data-ps>
 		<div class="modal-director__left">
 			{% if modal_director.img %}
 				<div class="modal-director__img">
-					{% view '@image' with {
+					{% view '@image-adaptive' with {
 						image: modal_director.img
-                    } %}
+          } %}
 				</div>
 			{% endif %}
 		</div>
-		<div class="modal-director__right" data-wrap-scroll>
-			<div></div>
+
+
+		<div class="modal-director__right">
 
 			{% if modal_director.description %}
-				<div class="modal-director__description" data-ps>
-					<div class="modal-director__info">
+				<div class="modal-director__description">
+					{% if modal_director.title %}
+						<div class="modal-director__title h3">
+							{{ modal_director.title  }}
+						</div>
+					{% endif %}
+					{% if modal_director.subtitle %}
+						<div class="modal-director__subtitle">
+							{{ modal_director.subtitle  }}
+						</div>
+					{% endif %}
 
-
-						{% if modal_director.title %}
-							<h3>
-								{{ modal_director.title  }}
-							</h3>
-						{% endif %}
-						{% if modal_director.subtitle %}
-							<p>
-								{{ modal_director.subtitle  }}
-							</p>
-						{% endif %}
-
-
-						{% for item in modal_director.description %}
-							<div class="modal-director__text">
-								{{ item }}
-							</div>
-						{% endfor %}
-					</div>
+					{% for item in modal_director.description %}
+						<div class="modal-director__text">
+							{{ item }}
+						</div>
+					{% endfor %}
 				</div>
 			{% endif %}
 		</div>

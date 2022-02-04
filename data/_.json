@@ -1,5 +1,8 @@
 {
-	"colors": ["white", "black"],
+	"colors": [
+		"white",
+		"black"
+	],
 	"breakpoints": {
 		"md": 640,
 		"lg": 990
@@ -582,6 +585,11 @@
 			"id": "modal-ajax",
 			"ajax": true,
 			"modificator": "partners"
+		},
+		{
+			"id": "modal-director",
+			"ajax": true,
+			"modificator": "director"
 		},
 		{
 			"id": "modal-warning",
