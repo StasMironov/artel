@@ -27,7 +27,9 @@
 	</div>
 
     <div class="mt-lg-112 mb-64 mb-md-120 mb-lg-56">
-        {% view '&block-training' %}
+        {% view '&block-training' with {
+            block: block_training
+        } %}
     </div>
 
     <div class="pt-64 pt-md-112 pb-lg-112 pb-md-128 pb-64 bg-white" >
@@ -63,8 +65,6 @@
             block_information: block_information
         } %}
     </div>
-
-    
 
     {% view '&block-contacts' with {
         block_contacts: block_contacts

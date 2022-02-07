@@ -28,21 +28,15 @@ if (document.querySelector('[data-slider-press-wrap]')) {
 			on: {
 				init() {
 					if (this.slides.length >= 5) {
-						document
-							.querySelector('[data-pag]')
-							.classList.add('overlay');
+						$(this.$el[0]).addClass('overlay');
 					}
 				},
 				touchEnd() {
 					const lastSlide = this.slides[this.slides.length - 1];
 					if ($(lastSlide).hasClass('swiper-slide-thumb-active')) {
-						document
-							.querySelector('[data-pag]')
-							.classList.remove('overlay');
+						$(this.$el[0]).removeClass('overlay');
 					} else {
-						document
-							.querySelector('[data-pag]')
-							.classList.add('overlay');
+						$(this.$el[0]).addClass('overlay');
 					}
 				},
 			},
@@ -92,25 +86,22 @@ if (document.querySelector('[data-slider-press-wrap]')) {
 				loadPrevNext: true,
 				elementClass: 'swiper-lazy',
 			},
-			autoHeight: false,
+			autoHeight: true,
 
 			thumbs: {
 				swiper: pagSlide.swiper,
 			},
 			on: {
 				slideChangeTransitionStart() {
+					console.log($(pagSlide.swiper.$el[0]));
 					const lastSlide =
 						pagSlide.swiper.slides[
 							pagSlide.swiper.slides.length - 1
 						];
 					if ($(lastSlide).hasClass('swiper-slide-thumb-active')) {
-						document
-							.querySelector('[data-pag]')
-							.classList.remove('overlay');
+						$(pagSlide.swiper.$el[0]).removeClass('overlay');
 					} else {
-						document
-							.querySelector('[data-pag]')
-							.classList.add('overlay');
+						$(pagSlide.swiper.$el[0]).addClass('overlay');
 					}
 					showContent(this.slides[this.activeIndex]);
 				},

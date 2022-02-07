@@ -180,8 +180,8 @@
 			"items": [
 				{
 					"href": "!#",
-					"text": "Стратегия",
-					"title": "Стратегия",
+					"text": "Развитие сотрудников",
+					"title": "Развитие сотрудников",
 					"active": "true",
 					"theme": "white"
 				},
@@ -316,6 +316,28 @@
 					"name": "104/apple",
 					"size": "104"
 				}
+			}
+		]
+	},
+	"block_training": {
+		"factoids": [
+			{
+				"text": "226",
+				"label": "проведенных треннингов"
+			}
+		],
+		"accordions": [
+			{
+				"title": "Направления тренингов",
+				"content": "<ul><li>Технические навыки</li><li>Навыки коммуникации</li><li>Тим билдинги​</li><li>Психология​</li><li>Обратная связь через опросники</li></ul>"
+			},
+			{
+				"title": "Тренинги сотрудникам финансового блока",
+				"content": "<div>Test2</div>"
+			},
+			{
+				"title": "Тренинги сотрудникам отдела продаж",
+				"content": "<div>Test3</div>"
 			}
 		]
 	},
@@ -583,11 +605,20 @@
 					"src": "tmp/press/img1.jpg",
 					"alt": "img"
 				}
+			},
+			{
+				"article": "6",
+				"href": "test2.html",
+				"img": {
+					"src": "tmp/card-news/news2.jpg",
+					"alt": "img"
+				}
 			}
 		]
 	},
 	"slider_comment2": {
 		"title": "Истории студентов",
+		"quote": "Программа «Next generation» ",
 		"arrows_theme": "white",
 		"items": [
 			{
@@ -877,7 +908,7 @@
 		]
 	},
 	"block_contacts": {
-		"title": "Контакты",
+		"title": "Контакты HR",
 		"bg": "gray",
 		"layout": "2",
 		"breadcrumbs": [
@@ -925,12 +956,12 @@
 				"active": true,
 				"card": {
 					"phone": {
-						"text": "+998 (71) 123-45-67",
-						"href": "tel:+998(71)123-45-67"
+						"text": "+998 (78) 888-05-05",
+						"href": "tel:+998(78)888-05-05"
 					},
 					"email": {
-						"text": "info@artel.uz",
-						"href": "info@artel.uz"
+						"text": "hr@artelgroup.org",
+						"href": "hr@artelgroup.org"
 					},
 					"icon": {
 						"name": "logos/contacts/map",
@@ -954,8 +985,8 @@
 						"href": "tel:+998(71)123-45-67"
 					},
 					"email": {
-						"text": "info@artel2.ru",
-						"href": "info@artel.uz"
+						"text": "hr@artelgroup.org",
+						"href": "hr@artelgroup.org"
 					},
 					"icon": {
 						"name": "logos/contacts/rus",
@@ -979,8 +1010,8 @@
 						"href": "tel:+998(71)123-45-67"
 					},
 					"email": {
-						"text": "info@artel.uk",
-						"href": "info@artel.uz"
+						"text": "hr@artelgroup.org",
+						"href": "hr@artelgroup.org"
 					},
 					"icon": {
 						"name": "logos/contacts/uk",
@@ -1004,8 +1035,8 @@
 						"href": "tel:+998(71)123-45-67"
 					},
 					"email": {
-						"text": "info@artel.kaz",
-						"href": "info@artel.uz"
+						"text": "hr@artelgroup.org",
+						"href": "hr@artelgroup.org"
 					},
 					"icon": {
 						"name": "logos/contacts/kaz",
@@ -1029,8 +1060,8 @@
 						"href": "tel:+998(71)123-45-67"
 					},
 					"email": {
-						"text": "info@artel.kyr",
-						"href": "info@artel.kyr"
+						"text": "hr@artelgroup.org",
+						"href": "hr@artelgroup.org"
 					},
 					"icon": {
 						"name": "logos/contacts/kyr",
@@ -1054,8 +1085,8 @@
 						"href": "tel:+998(71)123-45-67"
 					},
 					"email": {
-						"text": "info@artel.azb",
-						"href": "info@artel.azb"
+						"text": "hr@artelgroup.org",
+						"href": "hr@artelgroup.org"
 					},
 					"icon": {
 						"name": "logos/contacts/azb",
@@ -1078,144 +1109,144 @@
 				"active": true,
 				"cards": [
 					{
-						"title": "Отдел продаж",
-						"text": "export@artelelectronics.com",
-						"href": "sales@artel.uz"
+						"title": "Телеграм-бот",
+						"text": "@RabotaArtel_Bot",
+						"href": "@RabotaArtel_Bot"
 					},
 					{
-						"title": "Отдел кадров",
-						"text": "hr@artelelectronics.com",
-						"href": "hr@artel.uz"
+						"title": "Телеграм-канал",
+						"text": "t.me/HR_Artel",
+						"href": "t.me/HR_Artel"
 					},
 					{
-						"title": "Отдел аналитики",
-						"text": "analytics@artel.uz",
-						"href": "analytics@artel.uz"
+						"title": "Instagram",
+						"text": "Artel_career",
+						"href": "Artel_career"
 					},
 					{
-						"title": "Отдел закупок",
-						"text": "purchasing@artel.uz",
-						"href": "purchasing@artel.uz"
+						"title": "Facebook",
+						"text": "ArtelCareer",
+						"href": "ArtelCareer"
 					}
 				]
 			},
 			{
 				"cards": [
 					{
-						"title": "Отдел продаж 2",
-						"text": "sales@artel.uz",
-						"href": "sales@artel.uz"
+						"title": "Телеграм-бот",
+						"text": "@RabotaArtel_Bot",
+						"href": "@RabotaArtel_Bot"
 					},
 					{
-						"title": "Отдел кадров 2",
-						"text": "hr@artel.uz",
-						"href": "hr@artel.uz"
+						"title": "Телеграм-канал",
+						"text": "t.me/HR_Artel",
+						"href": "t.me/HR_Artel"
 					},
 					{
-						"title": "Отдел аналитики 2",
-						"text": "analytics@artel.uz",
-						"href": "analytics@artel.uz"
+						"title": "Instagram",
+						"text": "Artel_career",
+						"href": "Artel_career"
 					},
 					{
-						"title": "Отдел закупок 2",
-						"text": "purchasing@artel.uz",
-						"href": "purchasing@artel.uz"
+						"title": "Facebook",
+						"text": "ArtelCareer",
+						"href": "ArtelCareer"
 					}
 				]
 			},
 			{
 				"cards": [
 					{
-						"title": "Отдел продаж 3",
-						"text": "sales@artel.uz",
-						"href": "sales@artel.uz"
+						"title": "Телеграм-бот",
+						"text": "@RabotaArtel_Bot",
+						"href": "@RabotaArtel_Bot"
 					},
 					{
-						"title": "Отдел кадров 3",
-						"text": "hr@artel.uz",
-						"href": "hr@artel.uz"
+						"title": "Телеграм-канал",
+						"text": "t.me/HR_Artel",
+						"href": "t.me/HR_Artel"
 					},
 					{
-						"title": "Отдел аналитики 3",
-						"text": "analytics@artel.uz",
-						"href": "analytics@artel.uz"
+						"title": "Instagram",
+						"text": "Artel_career",
+						"href": "Artel_career"
 					},
 					{
-						"title": "Отдел закупок 3",
-						"text": "purchasing@artel.uz",
-						"href": "purchasing@artel.uz"
+						"title": "Facebook",
+						"text": "ArtelCareer",
+						"href": "ArtelCareer"
 					}
 				]
 			},
 			{
 				"cards": [
 					{
-						"title": "Отдел продаж 4",
-						"text": "sales@artel.uz",
-						"href": "sales@artel.uz"
+						"title": "Телеграм-бот",
+						"text": "@RabotaArtel_Bot",
+						"href": "@RabotaArtel_Bot"
 					},
 					{
-						"title": "Отдел кадров 4",
-						"text": "hr@artel.uz",
-						"href": "hr@artel.uz"
+						"title": "Телеграм-канал",
+						"text": "t.me/HR_Artel",
+						"href": "t.me/HR_Artel"
 					},
 					{
-						"title": "Отдел аналитики 4",
-						"text": "analytics@artel.uz",
-						"href": "analytics@artel.uz"
+						"title": "Instagram",
+						"text": "Artel_career",
+						"href": "Artel_career"
 					},
 					{
-						"title": "Отдел закупок 4",
-						"text": "purchasing@artel.uz",
-						"href": "purchasing@artel.uz"
+						"title": "Facebook",
+						"text": "ArtelCareer",
+						"href": "ArtelCareer"
 					}
 				]
 			},
 			{
 				"cards": [
 					{
-						"title": "Отдел продаж 4",
-						"text": "sales@artel.kyr",
-						"href": "sales@artel.kyr"
+						"title": "Телеграм-бот",
+						"text": "@RabotaArtel_Bot",
+						"href": "@RabotaArtel_Bot"
 					},
 					{
-						"title": "Отдел кадров 4",
-						"text": "hr@artel.kyr",
-						"href": "hr@artel.kyr"
+						"title": "Телеграм-канал",
+						"text": "t.me/HR_Artel",
+						"href": "t.me/HR_Artel"
 					},
 					{
-						"title": "Отдел аналитики 4",
-						"text": "analytics@artel.kyr",
-						"href": "analytics@artel.kyr"
+						"title": "Instagram",
+						"text": "Artel_career",
+						"href": "Artel_career"
 					},
 					{
-						"title": "Отдел закупок 4",
-						"text": "purchasing@artel.kyr",
-						"href": "purchasing@artel.kyr"
+						"title": "Facebook",
+						"text": "ArtelCareer",
+						"href": "ArtelCareer"
 					}
 				]
 			},
 			{
 				"cards": [
 					{
-						"title": "Отдел продаж 4",
-						"text": "sales@artel.azb",
-						"href": "sales@artel.azb"
+						"title": "Телеграм-бот",
+						"text": "@RabotaArtel_Bot",
+						"href": "@RabotaArtel_Bot"
 					},
 					{
-						"title": "Отдел кадров 4",
-						"text": "hr@artel.azb",
-						"href": "hr@artel.azb"
+						"title": "Телеграм-канал",
+						"text": "t.me/HR_Artel",
+						"href": "t.me/HR_Artel"
 					},
 					{
-						"title": "Отдел аналитики 4",
-						"text": "analytics@artel.azb",
-						"href": "analytics@artel.azb"
+						"title": "Instagram",
+						"text": "Artel_career",
+						"href": "Artel_career"
 					},
 					{
-						"title": "Отдел закупок 4",
-						"text": "purchasing@artel.azb",
-						"href": "purchasing@artel.azb"
+						"title": "Facebook",
+						"text": "ArtelCareer",
+						"href": "ArtelCareer"
 					}
 				]
 			}
