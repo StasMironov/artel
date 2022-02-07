@@ -1,6 +1,10 @@
 .block-chart {
 	$root: &;
 
+	&__canvas {
+		pointer-events: none;
+	}
+
 	&__top {
 		margin-bottom: rem(40);
 
