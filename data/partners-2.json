@@ -173,6 +173,7 @@
 		"url": "ajax/map-city.json",
 		"title": "Наши сервис центры",
 		"select": {
+			"color": true,
 			"fill": true,
 			"label": "Продукция",
 			"fields": [
@@ -214,7 +215,7 @@
 				"search": true,
 				"id": "search-field",
 				"name": "search-field",
-				"placeholder": "Поиск",
+				"placeholder": "Поиск по городу",
 				"icon": {
 					"name": "24/search"
 				},
@@ -421,7 +422,8 @@
 		}
 	},
 	"map": {
-		"url": "ajax/map-service.json"
+		"url": "ajax/map-service.json",
+		"card_bg": "green"
 	},
 	"block_advantages": {
 		"title": "Преимущества наших сервис центров",
@@ -434,21 +436,21 @@
 				}
 			},
 			{
-				"text": "Повышение качества обслуживания в республике и странах СНГ",
+				"text": "Служба поддержки с инженерами технического отдела",
 				"icon": {
 					"name": "104/tools",
 					"size": "fit"
 				}
 			},
 			{
-				"text": "Повышение качества обслуживания в республике и странах СНГ",
+				"text": "Поддержка региональных клиентов и клиентов из стран СНГ",
 				"icon": {
 					"name": "104/local",
 					"size": "fit"
 				}
 			},
 			{
-				"text": "Повышение качества обслуживания в республике и странах СНГ",
+				"text": "Ввод в эксплуатацию и техническая поддержка «Авторизованных Сервисных Центров»",
 				"icon": {
 					"name": "104/settings",
 					"size": "fit"
@@ -482,15 +484,9 @@
 		]
 	},
 	"block_contacts": {
-		"title": "Контакты",
+		"title": "Контакты для партнеров",
 		"bg": "gray",
-		"layout": "2",
-		"breadcrumbs": [
-			{
-				"href": "./",
-				"text": "Главная"
-			}
-		],
+		"layout": "3",
 		"tabs": {
 			"items": [
 				{
@@ -834,6 +830,7 @@
 		"attr": "data-ajax-form data-scroll-target data-scroll-contacts",
 		"title": "Связаться с нами",
 		"bg": "green",
+		"layout": "2",
 		"fields": [
 			{
 				"input": true,
@@ -874,7 +871,8 @@
 				"id": "form-1-textarea-1",
 				"name": "form-1-textarea-1",
 				"theme": "white",
-				"label": "Сообщение"
+				"label": "Сообщение",
+				"attr": "data-autoresize"
 			}
 		],
 		"agreement": [
@@ -882,7 +880,7 @@
 				"checkbox": true,
 				"id": "form-1-checkbox-1",
 				"name": "form-1-checkbox-1",
-				"text": "Я согласен/на с <a href='javascript:void(0);' class='link-content' target='_blank'>политикой конфиденциальности</a> и&nbsp;даю добро на обработку <a href='javascript:void(0);' class='link-content' target='_blank'>моих персональных данных</a>",
+				"text": "Настоящим даю согласие по установленной форме на обработку моих <a href='javascript:void(0);' class='link-content' target='_blank'>персональных данных в порядке</a>, установленном законом РУз от 27.07.2006 N 152-ФЗ 'О персональных данных'. Код&nbsp;подтверждения",
 				"required": true,
 				"theme": "white"
 			}

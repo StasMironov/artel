@@ -37,6 +37,7 @@ export default class blockProduct {
 				watchSlidesVisibility: true,
 				observer: true,
 				observeParents: true,
+				speed: 1300,
 				// pagination: {
 				// 	el: '.swiper-pagination',
 				// 	type: 'progressbar',

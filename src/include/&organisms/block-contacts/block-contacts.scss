@@ -18,6 +18,12 @@
 		@include media-breakpoint-up(lg) {
 			flex-direction: row;
 		}
+
+		#{$root}--layout-3 & {
+			@include media-breakpoint-up(sm) {
+				margin-bottom: rem(75);
+			}
+		}
 	}
 
 	&__items {
@@ -146,6 +152,17 @@
 		#{$root}--layout-2 &{
 			padding-top: 0;
 		}
+		#{$root}--layout-3 & {
+			padding-top: 0;
+
+			@include media-breakpoint-down(md) {
+				padding-top: rem(90);
+			}
+
+			@include media-breakpoint-down(sm) {
+				padding-top: rem(120);
+			}
+		}
 	}
 
 	&__breadcrumbs,
@@ -197,6 +214,10 @@
 		// 		overflow: initial;
 		// 	}
 		// }
+
+		#{$root}--layout-3 & {
+			padding-top: 0;
+		}
 	}
 
 	&__contents {
@@ -220,6 +241,12 @@
 		@include media-breakpoint-up(lg) {
 			top: auto;
 			left: rem(117);
+		}
+
+		#{$root}--layout-3 & {
+			@include media-breakpoint-down(sm) {
+				top: rem(-130);
+			}
 		}
 	}
 }

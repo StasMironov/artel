@@ -193,6 +193,17 @@
 		height: 100%;
 	}
 
+	.tabs{
+		@include media-breakpoint-only(sm) {
+			padding-left: rem(12);
+			padding-right: rem(24);
+		}
+		@include media-breakpoint-only(md) {
+			padding-left: rem(12);
+			padding-right: rem(12);
+		}
+	}
+
 	.swiper-container {
 		height: 100%;
 		//overflow: hidden !important;

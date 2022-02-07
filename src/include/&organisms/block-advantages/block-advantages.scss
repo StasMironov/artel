@@ -47,6 +47,26 @@
 		min-height: rem(268);
 		background-color: $color-white;
 
+		&:not(:nth-child(n + 3)) {
+			border-bottom: 1px solid rgba($color-black, 0.1);
+
+			@include media-breakpoint-down(sm) {
+				border: none;
+			}
+		}
+		&:not(:nth-child(even)) {
+			border-right: 1px solid rgba($color-black, 0.1);
+
+			@include media-breakpoint-down(sm) {
+				border: none;
+			}
+		}
+		&:not(:last-child) {
+			@include media-breakpoint-down(sm) {
+				border-bottom: 1px solid rgba($color-black, 0.1);
+			}
+		}
+
 		@include media-breakpoint-down(md) {
 			min-height: rem(288);
 		}

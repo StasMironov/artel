@@ -134,6 +134,14 @@
 		background-color: $color-green;
 		color: $color-white;
 		z-index: 2;
+		transition-property: background-color;
+		transition-duration: 1s;
+		transition-timing-function: ease;
+
+		#{$root}--layout-3 & {
+			background-color: $color-white;
+			color: $color-black;
+		}
 
 		@include media-breakpoint-up(md) {
 			right: rem(40);
@@ -152,10 +160,14 @@
 			bottom: rem(119);
 
 			@include media-breakpoint-down(md) {
-				right: rem(39);
+				right: rem(213);
+				bottom: rem(84);
+			}
+
+			@include media-breakpoint-down(sm) {
+				right: rem(38);
 				bottom: rem(41);
 			}
-			
 		} 
 
 		
@@ -180,16 +192,15 @@
 	&__icon svg {
 		width: 100%;
 		height: 100%;
+		transition-duration: 1s;
+		transition-timing-function: ease;
+
 		@include media-breakpoint-down(sm) {
 			position: absolute;
 			top: 0;
 			left: 0;
 		}
 
-
-
-
-		
 	}
 
 	&__circle {
@@ -245,6 +256,14 @@
 				right: rem(-143);
 			}
 
+
+			@include media-breakpoint-down(sm) {
+				width: rem(430);
+				height: rem(430);
+				bottom: rem(-140);
+				right: rem(-165);
+			}
+			
 			
 		}
 		
@@ -254,6 +273,15 @@
 		#{$root}__circle {
 			transform: scale3d(1.35, 1.35, 1.35);
 		}
+	}
+
+	&--layout-3 {
+			@include touchLessHover {
+				#{$root}__icon {
+					background-color: $color-green;
+					color: $color-white;
+				}
+			}
 	}
 
 	.button {

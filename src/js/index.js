@@ -20,6 +20,7 @@ import validation from './components/validation';
 import FormHandler from './components/form-handler';
 import ScrollTo from './components/scrollto';
 import Table from './components/table';
+import TextArea from './components/textarea';
 import Input from './components/input';
 import Strategy from './components/strategy';
 import BlockProduct from './components/block-product';
@@ -70,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	Sliders.init();
 	Submenu.init();
 	ScrollTo.init();
+	TextArea.init();
 	Table.init();
 	Modals.init();
 	Menu.init();
@@ -131,6 +133,7 @@ window.addEventListener('reinit', () => {
 	ModalAjax.init();
 	select.init();
 	Table.init();
+	TextArea.init();
 	Menu.init();
 	select.init();
 	new MapService();

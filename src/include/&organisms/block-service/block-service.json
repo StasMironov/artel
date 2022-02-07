@@ -3,6 +3,7 @@
 		"title": "Наши сервис центры",
 		"select": {
 			"fill": true,
+			"color": true,
 			"label": "Продукция",
 			"fields": [
 				{
