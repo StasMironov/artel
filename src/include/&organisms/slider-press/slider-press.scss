@@ -7,7 +7,7 @@
 
 	&__item {
 		display: flex;
-		height: rem(1);
+		//height: rem(1);
 		min-height: rem(588);
 
 		@include media-breakpoint-down(md) {
@@ -28,13 +28,14 @@
 
 	&__left {
 		position: relative;
-		padding: rem(112) rem(120) rem(120) rem(0);
+		padding: rem(112) rem(120) rem(184) rem(0);
 		color: white;
 		background-color: $color-green;
+		
 		@include media-breakpoint-down(md) {
 			flex: 1;
 			min-height: rem(512);
-			padding: rem(112) rem(120) rem(236) rem(0);
+			padding: rem(80) rem(120) rem(0) rem(0);
 		}
 
 		@include media-breakpoint-down(sm) {
@@ -133,7 +134,8 @@
 	&__cover {
 		position: absolute;
 		right: 0;
-		bottom: 0;
+		top: 75%;
+    	bottom: 0%;
 		left: 0;
 		z-index: 1;
 		display: flex;
@@ -143,9 +145,10 @@
 		padding-bottom: rem(120);
 
 		@include media-breakpoint-down(md) {
-			top: rem(483);
 			bottom: initial;
 			width: 100%;
+			top: 44%;
+    		padding-bottom: rem(88);
 		}
 
 		@include media-breakpoint-down(sm) {

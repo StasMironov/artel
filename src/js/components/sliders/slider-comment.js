@@ -1,6 +1,7 @@
 import gsap from 'gsap';
-import Slider from './constructor';
+import { debounce } from 'throttle-debounce';
 import Swiper from 'swiper/swiper-bundle';
+
 export default {
 	init() {
 		if (document.querySelector('[data-slider-comment-wrap]')) {
@@ -31,7 +32,7 @@ export default {
 							spaceBetween: 13,
 							slidesPerView: 3,
 						},
-						769: {
+						939: {
 							spaceBetween: 10,
 						},
 					},
@@ -73,15 +74,17 @@ export default {
 					fadeEffect: { crossFade: true },
 					effect: 'fade',
 					loop: true,
+					observer: true,
+					observeParents: true,
 					lazy: {
 						loadPrevNext: true,
 						elementClass: 'swiper-lazy',
 					},
 					autoplay: {
-						delay: 5000,
+						delay: 10000,
 						disableOnInteraction: false,
 					},
-					autoHeight: false,
+					autoHeight: true,
 					navigation: {
 						nextEl: next,
 						prevEl: prev,
@@ -120,6 +123,14 @@ export default {
 
 				sliderComment.update();
 				pagSlide.update();
+
+				window.addEventListener(
+					'resize',
+					debounce(100, () => {
+						sliderComment.update();
+						pagSlide.update();
+					})
+				);
 			});
 		}
 	},
