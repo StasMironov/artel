@@ -71,6 +71,10 @@
 
 	&__info {
 		max-width: rem(300);
+
+		@include media-breakpoint-down(md) {
+			min-height: rem(44);
+		}
 	}
 
 	&__city {

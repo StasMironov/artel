@@ -22,7 +22,7 @@ export default {
 				simulateTouch: false,
 				resistance: true,
 				resistanceRatio: 0,
-				//spaceBetween: 24,
+				spaceBetween: 24,
 				observer: true,
 				observeParents: true,
 				[window.breakpoints.lg]: {
@@ -128,8 +128,7 @@ export default {
 									// 	800
 									// );
 
-									this.slideTo(idx, 400);
-
+									//this.slideTo(idx, 400);
 								});
 							});
 						});
