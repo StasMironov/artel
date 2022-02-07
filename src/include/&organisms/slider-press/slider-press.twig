@@ -64,13 +64,16 @@
 				<div class="slider-press__pag">
 					{% view '@nav-pag' %}
 				</div>
-				<div class="slider-press__nav" data-fade-in-up>
-					{% view '@nav-arrows' with {
-						nav_arrows: {
-							theme: "on-white"
-						}
-					} %}
-				</div>
+
+				{% if slider.items|length > 1 %}
+					<div class="slider-press__nav" data-fade-in-up>
+						{% view '@nav-arrows' with {
+							nav_arrows: {
+								theme: "on-white"
+							}
+						} %}
+					</div>
+            	{% endif %}
 			</div>
 		</div>
 	</div>

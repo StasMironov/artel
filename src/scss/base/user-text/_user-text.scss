@@ -70,21 +70,11 @@
 		position: relative;
 		display: inline;
 		@include defaultTransition(color);
+		color: rgba($color-black, 0.4);
 
 		&:hover {
-			color: yellow;
+			color: rgba($color-black, 1);
 			text-decoration: none;
-		}
-
-		&:after {
-			position: absolute;
-			bottom: -1px;
-			left: 0;
-			display: block;
-			width: 100%;
-			height: 1px;
-			background-color: yellow;
-			content: '';
 		}
 	}
 
@@ -175,6 +165,7 @@
 		position: relative;
 		width: 73vw;
 		margin-top: rem(64);
+		margin-bottom: rem(80);
 		margin-left: -16.6%;
 		padding: rem(80) rem(164) rem(88) rem(112);
 		color: $color-white;
@@ -212,6 +203,7 @@
 
 		@include media-breakpoint-down(sm) {
 			margin-top: rem(38);
+			margin-bottom: rem(48);
 		//	margin-left: calc((100% - 100vw) / 2);
 			padding: rem(56) 0 rem(64);
 		}
@@ -327,6 +319,8 @@
 	}
 
 	.table {
+		margin-bottom: rem(143);
+
 		@include media-breakpoint-down(md) {
 			right: 50%;
 			left: 50%;
@@ -338,6 +332,7 @@
 		@include media-breakpoint-down(sm) {
 			width: 102vw;
 			margin-left: -5vw;
+			margin-bottom: rem(40);
 		}
 	}
 }
