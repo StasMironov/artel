@@ -117,6 +117,12 @@
   &__tab{
     cursor: pointer;
     opacity: 0.4!important;
+    transition: 0.3s; 
+
+    @include touchLessHover {
+      opacity: 1!important;
+    }
+
     @include media-breakpoint-up(md) {
       width: rem(296);       
     }
@@ -128,11 +134,7 @@
     }   
     &-active{
       opacity: 1!important;
-    }
-    &:hover{
-      opacity: 1!important;
-      transition: 0.9s;
-    }
+    }    
   }  
 
   &__icon{
