@@ -84,7 +84,7 @@ export default {
 						delay: 10000,
 						disableOnInteraction: false,
 					},
-					autoHeight: true,
+					// autoHeight: true,
 					navigation: {
 						nextEl: next,
 						prevEl: prev,

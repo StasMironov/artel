@@ -86,7 +86,7 @@ if (document.querySelector('[data-slider-press-wrap]')) {
 				loadPrevNext: true,
 				elementClass: 'swiper-lazy',
 			},
-			autoHeight: true,
+			autoHeight: false,
 
 			thumbs: {
 				swiper: pagSlide.swiper,

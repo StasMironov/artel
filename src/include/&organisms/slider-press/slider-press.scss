@@ -7,7 +7,7 @@
 
 	&__item {
 		display: flex;
-		//height: rem(1);
+		height: rem(1);
 		min-height: rem(588);
 
 		@include media-breakpoint-down(md) {
@@ -40,8 +40,13 @@
 
 		@include media-breakpoint-down(sm) {
 			min-height: rem(365);
-			padding: rem(64) rem(16) rem(140);
+			padding: rem(62) rem(16) rem(62);
 			padding-left: 0;
+
+			#{$root}--layout-2 & {
+				min-height: rem(395);
+				padding: rem(48) rem(0) rem(62);
+			}
 		}
 
 		&::before {
@@ -73,9 +78,11 @@
 		color: $color-white;
 		opacity: 0;
 		@include defaultTransition(color);
+		@include line-clamp(32, 1.33, 6);
 
 		@include media-breakpoint-down(sm) {
 			margin-bottom: rem(16);
+			@include line-clamp(24, 1.33, 7);
 		}
 
 		&--link {
@@ -147,12 +154,21 @@
 		@include media-breakpoint-down(md) {
 			bottom: initial;
 			width: 100%;
-			top: 44%;
-    		padding-bottom: rem(88);
+    		padding-bottom: rem(80);
+			top: 43%;
+
+			#{$root}--layout-2 & {
+				top: 45%;
+			}
 		}
 
 		@include media-breakpoint-down(sm) {
-			top: rem(340);
+			top: rem(341);
+    		padding-bottom: rem(48);
+
+			#{$root}--layout-2 & {
+				top: 56%;
+			}
 		}
 	}
 
