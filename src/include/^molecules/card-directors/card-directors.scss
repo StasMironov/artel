@@ -31,6 +31,7 @@
     padding-bottom: rem(48);
     margin-right: rem(0);
     transition: 0.3s; 
+
     @include media-breakpoint-up(md) {
         padding-top: rem(56);
         padding-bottom: rem(80);
@@ -42,19 +43,8 @@
         padding-bottom: rem(80);
         margin-right: rem(8);
     } 
-      /*&:hover{
-          @include defaultTransition(color);
-          border-top: 1px solid $color-green;
-          color: $color-green;
-          .card-directors__icon{
-              @include defaultTransition(color);
-              background-color: $color-green;
-              color: $color-white
-          }
-      }*/
 
     @include touchLessHover {
-      //@include defaultTransition(color);
       border-top: 1px solid $color-green;
       color: $color-green;
       .card-directors__icon{
@@ -62,8 +52,6 @@
         color: $color-white;
       }
     }
-
-
   }
 
   &__text{

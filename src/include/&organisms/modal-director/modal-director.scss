@@ -1,6 +1,6 @@
 .modal-director {
 	$root: &;   
-	
+	position: relative;
 	width: 100%;
 	height: 100vh;
 	background-color: $color-white;
@@ -96,9 +96,23 @@
 			}
 		}
 	}
+
 	.ps__rail-y {
-		right: rem(8);
-}
+		pointer-events: none;
+		right: rem(8) !important;
+
+		&:before {
+			top: rem(12) !important;
+			bottom: rem(12) !important;
+		}
+	}
+
+	.ps__thumb-y {
+		&:before {
+			top: rem(12) !important;
+			bottom: rem(12) !important;
+		}
+	}
 
 	&.scroll {
 		&::after {
