@@ -8,7 +8,7 @@
 	&__items {
 		display: flex;
 		flex-wrap: wrap;
-		margin-bottom: rem(-8);
+		margin-top: rem(-8);
 		margin-left: rem(-8);
 
 		@include media-breakpoint-down(sm) {
@@ -20,7 +20,7 @@
 	&__item {
 		width: calc(33.333% - #{rem(8)});
 		min-height: rem(345);
-		margin-bottom: rem(8);
+		margin-top: rem(8);
 		margin-left: rem(8);
 
 		@include media-breakpoint-down(md) {
@@ -227,14 +227,18 @@
 	&__map {
 		position: absolute;
 		top: 0;
-		width: 100%;
-		width: 92vw;
+		width: calc(100% + 3.86% + 9.98%);
+		margin-left: calc(-3.86% - 9.98%);
 		height: 100%;
-		margin-left: calc((100% - 100vw) / 2);
 		background-color: $color-white;
 		transform: translateX(109%);
 		opacity: 0;
 		@include defaultTransition(transform, opacity);
+
+		@include media-breakpoint-down(sm) {
+			width: calc(100% + #{rem(32)});
+    		margin-left: rem(-16);
+		}
 
 		&.show {
 			transform: translateX(0%);

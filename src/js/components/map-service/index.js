@@ -8,35 +8,23 @@ export default class MapService {
 		this.mapNode = document.querySelector('[data-map]');
 		if (!this.mapNode) return;
 
-		//console.log('mNode');
-
 		this.triggerBtnMap = document.querySelector('[data-trigger-map]');
 		if (!this.triggerBtnMap) return;
 
 		this.triggerBtnList = document.querySelector('[data-trigger-list]');
 		if (!this.triggerBtnList) return;
 
-		//console.log('btn');
-
 		this.mapWrp = document.querySelector('[data-wrp-map]');
 		if (!this.mapWrp) return;
-
-		//console.log(1);
 
 		this.mapInitNode = this.mapNode.querySelector('[data-map-init]');
 		if (!this.mapInitNode) return;
 
-		//console.log(1);
-
 		this.urlData = this.mapNode.getAttribute('data-url');
 		if (!this.urlData) return;
 
-		//console.log('url');
-
 		this.card = this.mapNode.querySelector('[data-map-card]');
 		if (!this.card) return;
-
-		//console.log('card');
 
 		this.cardContent = this.card.querySelector('[data-map-card-content]');
 		if (!this.cardContent) return;
@@ -57,7 +45,7 @@ export default class MapService {
 		this.filterProduction = false;
 		this.id = false;
 
-		//console.log(true);
+		this.inputVal = false;
 
 		this.load();
 	}
@@ -213,7 +201,8 @@ export default class MapService {
 			this.cardWrap.classList.remove('is-active');
 			this.filterMarkers(); // показ всех меток текущего региона
 			this.map.fitBounds(this.bounds);
-			this.activeIndex = null;
+			$('#filter-form-select-1').val('All').trigger('change');
+			//	this.activeIndex = null;
 		});
 
 		this.psWrap = new PerfectScrollbar(this.wrapCard, {
@@ -479,35 +468,34 @@ export default class MapService {
 
 		for (let i = 0; i < this.markers.length; i++) {
 			if (filter) {
-				console.log('city: ' + this.id);
-				console.log('prod: ' + this.filterProduction);
-				if (
-					this.markers[i].city == this.id &&
-					this.markers[i].products == this.filterProduction
-				) {
-					console.log('filter 2');
-					this.markers[i].setVisible(true);
-				} else if (
-					this.id == false &&
-					this.markers[i].products == this.filterProduction
-				) {
-					console.log('filter 3');
-					this.markers[i].setVisible(true);
+				if (this.inputVal) {
+					if (
+						this.markers[i].city == this.inputVal &&
+						this.markers[i].products == this.filterProduction
+					) {
+						this.markers[i].setVisible(true);
+					} else {
+						this.markers[i].setVisible(false);
+					}
+					if (
+						this.filterProduction === 'All' &&
+						this.markers[i].city == this.inputVal
+					) {
+						this.markers[i].setVisible(true);
+					}
 				} else {
-					console.log('filter 4');
-					this.markers[i].setVisible(false);
-				}
-				//  else if (this.markers[i].products !== this.filterProduction) {
-				// 	this.markers[i].setVisible(false);
-				// } else {
-				// 	this.markers[i].setVisible(true);
-				// }
+					if (
+						this.inputVal == false &&
+						this.markers[i].products == this.filterProduction
+					) {
+						this.markers[i].setVisible(true);
+					} else {
+						this.markers[i].setVisible(false);
+					}
 
-				if (
-					this.filterProduction === 'All' &&
-					this.markers[i].city == this.id
-				) {
-					this.markers[i].setVisible(true);
+					if (this.filterProduction === 'All') {
+						this.markers[i].setVisible(true);
+					}
 				}
 			} else {
 				if (!exclude) {
@@ -518,25 +506,43 @@ export default class MapService {
 					this.markers[i].setVisible(true);
 				}
 			}
-
-			//this.map.setZoom(2);
-
-			// if (this.markers[i].products !== this.filterProduction) {
-			// 	this.markers[i].setVisible(false);
-			// } else {
-			// 	if (!exclude) {
-			// 		// если нужно исключить все метки, кроме выбранной
-			// 		this.markers[i].setVisible(true);
-
-			// 		this.bounds.extend(this.markers[i].position);
-			// 	} else {
-			// 		this.markers[i].setVisible(true);
-			// 	}
-			// }
 		}
 
 		if (!exclude && fit) {
 			this.map.fitBounds(this.bounds);
+		}
+	}
+
+	stateMarks(inputVal, select) {
+		let arrival = inputVal;
+		let cityEl;
+		if (!arrival.length) {
+			cityEl = '';
+		} else {
+			cityEl = this.markers
+				.filter(function (place) {
+					return place.city.indexOf(arrival) !== -1;
+				})
+				.map(function (place) {
+					return place;
+				});
+		}
+
+		if (!this.filterProduction) {
+			for (let i = 0; i < this.markers.length; i++) {
+				this.markers[i].setVisible(false);
+			}
+			for (let i = 0; i < cityEl.length; i++) {
+				cityEl[i].setVisible(true);
+			}
+		} else {
+			for (let i = 0; i < this.markers.length; i++) {
+				this.markers[i].setVisible(false);
+			}
+
+			for (let i = 0; i < cityEl.length; i++) {
+				cityEl[i].setVisible(true);
+			}
 		}
 	}
 
@@ -559,31 +565,19 @@ export default class MapService {
 		$('#filter-form-select-1').on('select2:select', (e) => {
 			var select_val = $(e.currentTarget).val();
 			this.filterProduction = select_val;
-			console.log(select_val);
 			this.filterMarkers(false, false, true);
 		});
 
-		$('body').on('keyup', '[data-input]', (e) => {
-			let inputVal = e.target.value;
-
-			for (let i = 0; i < this.markers.length; i++) {
-				if (this.markers[i].city == inputVal) {
-					console.log(this.markers[i]);
-					this.id = this.markers[i].city;
-					this.markers[i].setVisible(true);
-				} else {
-					this.markers[i].setVisible(false);
-				}
-			}
+		$('body').on('keypress keyup change input', '[data-input]', (e) => {
+			this.inputVal = e.target.value;
+			this.stateMarks(this.inputVal);
 		});
 
 		$('[data-reset]').on('click', () => {
-			console.log('reset');
 			for (let i = 0; i < this.markers.length; i++) {
 				this.markers[i].setVisible(true);
 
-				$('#filter-form-select-1').val('All');
-				$('#filter-form-select-1').select2().trigger('change');
+				$('#filter-form-select-1').val('All').trigger('change');
 			}
 		});
 	}

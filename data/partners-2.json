@@ -871,7 +871,8 @@
 				"id": "form-1-textarea-1",
 				"name": "form-1-textarea-1",
 				"theme": "white",
-				"label": "Сообщение"
+				"label": "Сообщение",
+				"attr": "data-autoresize"
 			}
 		],
 		"agreement": [
