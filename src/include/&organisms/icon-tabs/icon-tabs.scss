@@ -89,7 +89,7 @@
     flex-wrap: nowrap;
     margin-bottom: rem(48);
     @include media-breakpoint-up(md) {
-      width: 100%;
+      //width: 100%;
       flex-wrap: wrap;
       margin-bottom: rem(80);
     }
@@ -102,10 +102,8 @@
 
   .swiper-slide{
     height: auto;
-    width: rem(227)!important;    
     padding-right: rem(4);
     @include media-breakpoint-up(md) {
-      width: rem(280)!important; 
       height: auto;
     }
     @include media-breakpoint-up(lg) {
@@ -168,15 +166,6 @@
       width: rem(232);
     }
   }
-
- /* .swiper-slide-active{
-    .icon-tabs__icon{
-      opacity: 1;
-    }
-    .icon-tabs__caption{
-      opacity: 1;
-    }
-  } */
 
   &__wrapper{
     width: 50%;

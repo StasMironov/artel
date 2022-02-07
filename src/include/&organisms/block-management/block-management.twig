@@ -1,16 +1,16 @@
-<div class="block-managment container">
-	<div class="block-managment__wrapper">
+<div class="block-management container">
+	<div class="block-management__wrapper">
 
-		<div class="block-managment__left" data-fade-in-up>
+		<div class="block-management__left" data-fade-in-up>
 			{% if block.heading %}
-				<h2 class="block-managment__heading h2">{{ block.heading }}</h2>
+				<h2 class="block-management__heading h2">{{ block.heading }}</h2>
 			{% endif %}
 		</div>
 
 		{% for description in block.descriptions %}
-			<div class=" block-managment__right" data-fade-in-up data-delay="0.3">
+			<div class=" block-management__right user-text" data-fade-in-up data-delay="0.3">
 				{% if description.title %}
-					<h2 class="block-managment__title h3">
+					<h2 class="block-management__title h3">
 						{{ description.title }}
 					</h2>
 				{% endif %}
