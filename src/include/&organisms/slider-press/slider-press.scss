@@ -178,6 +178,7 @@
 
 	&__pag {
 		max-width: rem(200);
+		width: 100%;
 		overflow: hidden;
 
 		@include media-breakpoint-down(sm) {
