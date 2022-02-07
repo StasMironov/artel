@@ -3,16 +3,20 @@
 		<div class="modal-director__left">
 			{% if modal_director.img %}
 				<div class="modal-director__img">
-					{% view '@image-adaptive' with {
-						image: modal_director.img
-          } %}
+					{% if modal_director.img.tab or modal_director.img.mob %}
+						{% view '@image-adaptive' with {
+									image: modal_director.img
+							} %}
+					{% else %}
+						{% view '@image' with {
+									image: modal_director.img
+							} %}
+					{% endif %}
 				</div>
 			{% endif %}
 		</div>
 
-
 		<div class="modal-director__right">
-
 			{% if modal_director.description %}
 				<div class="modal-director__description">
 					{% if modal_director.title %}

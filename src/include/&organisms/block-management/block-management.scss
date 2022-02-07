@@ -1,4 +1,4 @@
-.block-managment {
+.block-management {
 	$root: &;
 
 	&__wrapper {		
@@ -65,17 +65,41 @@
 		}
 	}
 
-  &__img{
-    border-radius: rem(8);
-		@include media-breakpoint-up(sm) {			
-			margin-top: rem(32);
-			margin-bottom: rem(32);
-			height: rem(164);
+	.user-text{
+		h3, .h3 {
+			margin-bottom: rem(24);
 		}
-		@include media-breakpoint-up(md) {			
-			margin-top: rem(48)!important;
-			margin-bottom: rem(64)!important;
-			height: rem(345)!important;
+		.read-more__base {
+			p {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+
+			img {
+				border-radius: rem(8);
+				@include media-breakpoint-up(sm) {			
+					margin-top: rem(32);
+					margin-bottom: rem(32);
+					height: rem(164)!important;
+				}
+				@include media-breakpoint-up(md) {			
+					margin-top: rem(48)!important;
+					margin-bottom: rem(64)!important;
+					height: rem(345)!important;
+				}
+			}
+
+			& > :first-child {
+				margin-top: 0;
+			}
+
+			& > :last-child {
+				margin-bottom: 0;
+			}
 		}
-  }
+
+		.read-more__btn {
+			margin-top: rem(24);
+		}
+	}  
 }

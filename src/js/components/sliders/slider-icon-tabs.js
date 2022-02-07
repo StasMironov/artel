@@ -65,7 +65,7 @@ export default {
           }, {
             opacity: 1,
             translateY: 0,
-            duration: 0.5,
+            duration: 1.1,
             ease: 'power4.out',
             onStart: () => {
               el.classList.add('is-active');

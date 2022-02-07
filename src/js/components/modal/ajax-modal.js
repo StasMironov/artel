@@ -78,7 +78,14 @@ const Modal = {
 			})
 			.then((text) => {
 				container.innerHTML = text;
-				if (document.querySelector('[data-ps]')) {
+
+				const content = container.querySelector('[data-ps]');
+				let ps = new PerfectScrollbar(content, {
+						wheelPropagation: true,
+						minScrollbarLength: 120,
+				});
+
+				/*if (document.querySelector('[data-ps]')) {
 					let wrapSubNode = document.querySelector('[data-ps]');
 					let ps = new PerfectScrollbar(wrapSubNode, {
 						wheelSpeed: 2,
@@ -115,7 +122,7 @@ const Modal = {
 							$('[data-wrap-scroll]').addClass('ios-scroll');
 						}
 					}
-				}
+				}*/
 			})
 			.catch((err) => {
 				console.log(`failed to fetch url (${url}): `, err);
