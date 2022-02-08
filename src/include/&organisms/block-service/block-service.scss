@@ -3,6 +3,10 @@
 
 	&__wrapper {
 		position: relative;
+
+		@include media-breakpoint-down(md) {
+			overflow: hidden;
+		}
 	}
 
 	&__container {
@@ -143,7 +147,7 @@
 	&__right {
 		position: absolute;
 		top: 0;
-		right: rem(-52);
+		right: 0;
 		bottom: 0;
 		z-index: 1;
 		width: rem(56);
@@ -161,7 +165,7 @@
 			right: 0;
 			width: 100vw;
 			height: rem(48);
-			margin-right: -16px;
+			margin-right: 0;
 		}
 	}
 
@@ -175,10 +179,9 @@
 		margin: 0 auto;
 
 		@include media-breakpoint-down(md) {
-			height: rem(137);
+			height: rem(100%);
 			margin: 0 auto;
-			padding-top: rem(16);
-			padding-bottom: rem(7);
+			padding: rem(361) 0 rem(348);
 		}
 
 		@include media-breakpoint-down(sm) {
@@ -231,8 +234,8 @@
 	&__map {
 		position: absolute;
 		top: 0;
-		width: calc(100% + 3.86% + 9.98%);
-		margin-left: calc(-3.86% - 9.98%);
+		width: calc(100% + 3.86% + -6%);
+    	margin-left: 0;
 		height: 100%;
 		background-color: $color-white;
 		transform: translateX(109%);
@@ -240,8 +243,8 @@
 		@include defaultTransition(transform, opacity);
 
 		@include media-breakpoint-down(sm) {
-			width: calc(100% + #{rem(32)});
-    		margin-left: rem(-16);
+			width: calc(100%);
+    		margin-left: 0;
 		}
 
 		&.show {
@@ -262,10 +265,14 @@
 	}
 
 	.ps__rail-y {
-		right: rem(8);
+		right: rem(48);
 
 		@include media-breakpoint-down(md) {
-			right: 0;
+			right: rem(64);
+		}
+
+		@include media-breakpoint-down(sm) {
+			right: rem(24);
 		}
 	}
 }
