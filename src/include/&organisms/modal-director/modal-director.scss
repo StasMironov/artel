@@ -22,12 +22,21 @@
 
 	&__img {
 		width: 100%;
-		margin-bottom: rem(48);   
+		margin-bottom: rem(48);  
+		overflow: hidden; 
 		@include media-breakpoint-up(md) {
 			margin-bottom: rem(80); 			
 		}
 		@include media-breakpoint-up(lg) {
 			margin-bottom: rem(0); 			
+		}
+
+		.image{
+			height: auto;
+			@include media-breakpoint-up(lg) {
+				height: 100vh!important;		
+				object-position: center;
+			}
 		}
 	}
 
@@ -100,8 +109,9 @@
 	.ps__rail-y {
 		pointer-events: none;
 		right: rem(8) !important;
-
-		&:before {
+		height: 100% !important;
+		top: 0 !important;
+		&:before {			
 			top: rem(12) !important;
 			bottom: rem(12) !important;
 		}
