@@ -42,7 +42,7 @@
 		position: relative;
 		min-width: rem(332);
 		max-width: 24.5%;
-		height: 100vh;
+		height: 100vh;		
 		padding: rem(108) rem(90) rem(31) rem(0);
 		background-color: $color-green;
 		position: sticky;
@@ -83,7 +83,7 @@
 			transition-duration: 0.3s;
 			transition-property: background-color;
 			content: '';
-
+			
 			@media (max-width: 1023px) {
 				right: 50%;
 				left: 50%;
@@ -121,7 +121,7 @@
 			width: 100%;
 			background-color: rgba($color-white, $alpha: 1);
 			z-index: -1;
-
+			transition-duration: 1.5s;
 			@media (max-width: 1023px) {
 				background-color: rgba($color-white, $alpha: 0.4);
 			}
@@ -191,6 +191,7 @@
 	.tabs,
 	.tabs__content {
 		height: 100%;
+
 	}
 
 	.tabs{
@@ -202,6 +203,7 @@
 			padding-left: rem(12);
 			padding-right: rem(12);
 		}
+
 	}
 
 	.swiper-container {
@@ -212,7 +214,7 @@
 			display: flex;
 			flex-direction: column;
 			//transform:inherit !important;
-		}
+		}		
 	}
 }
 
@@ -256,4 +258,5 @@
 	// 		}
 	// 	}
 	// }
+
 }
