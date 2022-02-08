@@ -167,9 +167,9 @@ export default class MapService {
 		};
 
 		if (isMob()) {
-			console.log('mob');
 			this.mapOptions.zoom = 0;
-			console.log(this.mapOptions);
+		} else if (isTablet()) {
+			this.mapOptions.zoom = 3;
 		}
 
 		this.map = new google.maps.Map(this.mapInitNode, this.mapOptions);
