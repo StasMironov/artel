@@ -60,12 +60,12 @@
 			</div>
 		</div>
 		<div class="slider-press__cover container">
-			<div class="slider-press__navigation">
-				<div class="slider-press__pag">
-					{% view '@nav-pag' %}
-				</div>
+			{% if slider.items|length > 1 %}
+				<div class="slider-press__navigation">
+					<div class="slider-press__pag">
+						{% view '@nav-pag' %}
+					</div>
 
-				{% if slider.items|length > 1 %}
 					<div class="slider-press__nav" data-fade-in-up>
 						{% view '@nav-arrows' with {
 							nav_arrows: {
@@ -73,8 +73,8 @@
 							}
 						} %}
 					</div>
-            	{% endif %}
-			</div>
+				</div>
+			{% endif %}
 		</div>
 	</div>
 </div>
