@@ -303,8 +303,8 @@
 	.slider-photo {
 		display: block;
 		width: 131%;
-		margin-top: rem(143);
-		margin-bottom: rem(140);
+		margin-top: rem(64);
+		margin-bottom: rem(80);
 
 		@include media-breakpoint-only(md) {
 			width: 110%;
@@ -314,12 +314,13 @@
 		@include media-breakpoint-down(sm) {
 			width: 100%;
 			margin-top: rem(38);
-			margin-bottom: rem(64);
+			margin-bottom: rem(40);
 		}
 	}
 
 	.table {
-		margin-bottom: rem(143);
+		margin-top: rem(64);
+		margin-bottom: rem(80);
 
 		@include media-breakpoint-down(md) {
 			right: 50%;
@@ -332,6 +333,7 @@
 		@include media-breakpoint-down(sm) {
 			width: 102vw;
 			margin-left: -5vw;
+			margin-top: rem(38);
 			margin-bottom: rem(40);
 		}
 	}
