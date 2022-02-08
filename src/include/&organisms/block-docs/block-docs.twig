@@ -2,13 +2,13 @@
     <div class="block-docs__container container" {% if block_docs.tabs %} data-tabs-wrap {% endif %}>
         <div class="block-docs__wrapper">
             {% if block_docs.filter_select %}
-				<form  {{block_docs.filter_select.attr}}>
 					<div class="block-docs__select {% if block_docs.filter_select.fill %}block-docs__select--fill{% endif %}">
-						{% view '@filter-select' with {
-							filter_select: block_docs.filter_select
-						} %}
+						<form  {{block_docs.filter_select.attr}}>
+							{% view '@filter-select' with {
+								filter_select: block_docs.filter_select
+							} %}
+						</form>
 					</div>
-				</form>
             {% endif %}
             {% if block_docs.form %}
                 <div class="block-docs__form" data-fade-in-up>
