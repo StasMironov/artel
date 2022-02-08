@@ -18,11 +18,14 @@
 
 	&__right {
 		width: 75%;
+		max-width: rem(667);
+		margin-left: auto;
 
 		@include media-breakpoint-down(md) {
 			width: 100%;
 			margin-bottom: rem(64);
 			padding-right: rem(72);
+			max-width: initial;
 		}
 
 		@include media-breakpoint-down(sm) {
