@@ -39,7 +39,7 @@
 
 				&__content {
 					padding: 0;
-					width: 55%;
+					width: 73.5%;
 					margin-left: 15.7%;
 					padding-top: rem(6);
 
@@ -53,15 +53,15 @@
 
 			.user-text {
 				p {
-					max-width: rem(430);
+					max-width: initial;
 
-					@include media-breakpoint-down(md) {
-						max-width: rem(440);
-					}
+					// @include media-breakpoint-down(md) {
+					// 	max-width: rem(440);
+					// }
 
-					@include media-breakpoint-down(sm) {
-						margin-bottom: rem(15);
-					}					
+					// @include media-breakpoint-down(sm) {
+					// 	margin-bottom: rem(15);
+					// }					
 				}
 
 				h2 {
