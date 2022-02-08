@@ -91,20 +91,21 @@
 			flex-direction: column;
 		}
 	}
-    &__description {
-        position: relative;
-        height: 100%;
-        overflow: hidden;
-        padding: 0 rem(150) 0 rem(112);
 
-        @include media-breakpoint-down(md) {
+  &__description {
+		position: relative;
+		height: 100%;
+		//overflow: hidden;
+		padding: 0 rem(150) 0 rem(112);
+
+		@include media-breakpoint-down(md) {
 			padding: 0 rem(108);
 		}
 
-        @include media-breakpoint-down(sm) {
+		@include media-breakpoint-down(sm) {
 			padding: rem(200) rem(0) 0;
 		}
-    }
+  }
 
 	&__info {
 		@include media-breakpoint-down(sm) {
@@ -118,34 +119,63 @@
 			margin-bottom: rem(26);
 		}
 
-        &:last-of-type {
-            margin-bottom: 0;
-        }
+		&:last-of-type {
+			//margin-bottom: 0;
+			margin-bottom: rem(24);
+		}
 	}
 
 	&__logo {
 		width: rem(257);
 
-        @include media-breakpoint-down(md) {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            /* width: 100%; */
-            /* transform: translate(-50%, 50%); */
-            height: min-content;
-            display: block;
-            transform: scale(0.334);
-            width: auto;
-		}
-
-        @include media-breakpoint-down(sm) {
+		@include media-breakpoint-down(md) {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			/* width: 100%; */
+			/* transform: translate(-50%, 50%); */
+			height: min-content;
+			display: block;
+			transform: scale(0.334);
 			width: auto;
-            transform: scale(0.38);
 		}
 
-      
+    @include media-breakpoint-down(sm) {
+			width: auto;
+      transform: scale(0.38);
+		}      
+	}
+
+	.ps__rail-y {
+		pointer-events: none;
+		right: rem(8) !important;
+		height: 100% !important;
+		top: 0 !important;
+		&:before {			
+			top: rem(12) !important;
+			bottom: rem(12) !important;
+		}
+	}
+
+	.ps__thumb-y {
+		&:before {
+			top: rem(12) !important;
+			bottom: rem(12) !important;
+		}
+	}
+
+	&.scroll {
+		&::after {
+			background: $color-white;
+		}
+	}
+
+	&.ios-scroll {
+		&::after {
+			height: rem(100);
+		}
 	}
 }
