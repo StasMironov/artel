@@ -260,4 +260,12 @@
             }
 		}
 	}
+
+	.ps__rail-y {
+		right: rem(8);
+
+		@include media-breakpoint-down(md) {
+			right: 0;
+		}
+	}
 }
