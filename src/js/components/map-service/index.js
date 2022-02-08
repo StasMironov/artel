@@ -2,6 +2,7 @@ import { Loader } from 'google-maps';
 import PerfectScrollbar from 'perfect-scrollbar';
 import Swiper from 'swiper/swiper-bundle';
 import gsap from 'gsap';
+import { isDesktop, isTablet, isMob } from '../../utils/breakpoints';
 
 export default class MapService {
 	constructor() {
@@ -165,6 +166,12 @@ export default class MapService {
 			],
 		};
 
+		if (isMob()) {
+			console.log('mob');
+			this.mapOptions.zoom = 0;
+			console.log(this.mapOptions);
+		}
+
 		this.map = new google.maps.Map(this.mapInitNode, this.mapOptions);
 
 		this.zoomIn = this.mapNode.querySelector('[data-zoom-in]');
@@ -207,13 +214,13 @@ export default class MapService {
 
 		this.psWrap = new PerfectScrollbar(this.wrapCard, {
 			suppressScrollX: true,
-			wheelPropagation: false,
+			wheelPropagation: true,
 			minScrollbarLength: 140, // исправляет бесконечную прокрутку и баг с большим количеством элементов
 		});
 
 		this.ps = new PerfectScrollbar(this.cardContent, {
 			suppressScrollX: true,
-			wheelPropagation: false,
+			wheelPropagation: true,
 			minScrollbarLength: 140, // исправляет бесконечную прокрутку и баг с большим количеством элементов
 		});
 
@@ -574,11 +581,8 @@ export default class MapService {
 		});
 
 		$('[data-reset]').on('click', () => {
-			for (let i = 0; i < this.markers.length; i++) {
-				this.markers[i].setVisible(true);
-
-				$('#filter-form-select-1').val('All').trigger('change');
-			}
+			this.inputVal = false;
+			this.filterMarkers(false, false, true);
 		});
 	}
 }

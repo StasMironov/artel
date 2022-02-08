@@ -1,8 +1,12 @@
 .block-service {
-	overflow: hidden;
+	
 
 	&__wrapper {
 		position: relative;
+	}
+
+	&__container {
+		overflow: hidden;
 	}
 
 	&__items {

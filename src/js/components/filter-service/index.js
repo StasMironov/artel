@@ -12,7 +12,6 @@ export default {
 		let inputVal = false;
 
 		function renderServise(select, reset) {
-			//console.log(tempArr);
 			cards.forEach((card) => {
 				if (!select) {
 					tempArr.forEach((elem) => {
@@ -22,12 +21,9 @@ export default {
 					});
 				} else {
 					if (select != 'All') {
-						//console.log(card.dataset.products);
 						if (!inputVal) {
 							tempArr.forEach((elem) => {
-								//console.log(elem);
 								if (card.dataset.products == select) {
-									// console.log(card);
 									card.classList.remove('hide');
 								} else {
 									card.classList.add('hide');
@@ -35,12 +31,11 @@ export default {
 							});
 						} else {
 							tempArr.forEach((elem) => {
-								//console.log(elem);
 								if (
 									card.dataset.id == elem.id &&
-									card.dataset.products == select
+									card.dataset.products == select &&
+									elem.name.indexOf(inputVal) !== -1
 								) {
-									// console.log(card);
 									card.classList.remove('hide');
 								} else {
 									card.classList.add('hide');
@@ -48,19 +43,55 @@ export default {
 							});
 						}
 					} else {
-						tempArr.forEach((elem) => {
-							if (select == 'All' && card.dataset.id == elem.id) {
-								card.classList.remove('hide');
-							}
-						});
+						if (!inputVal) {
+							tempArr.forEach((elem) => {
+								if (select == 'All') {
+									card.classList.remove('hide');
+								}
+							});
+						} else {
+							tempArr.forEach((elem) => {
+								if (
+									select == 'All' &&
+									card.dataset.id == elem.id &&
+									elem.name.indexOf(inputVal) !== -1
+								) {
+									card.classList.remove('hide');
+								}
+							});
+						}
 					}
 				}
 			});
 
 			if (reset) {
-				cards.forEach((card) => {
-					card.classList.remove('hide');
-				});
+				if (!select) {
+					cards.forEach((card) => {
+						tempArr.forEach((elem) => {
+							if (card.dataset.id == elem.id) {
+								card.classList.remove('hide');
+							}
+						});
+					});
+				} else {
+					if (select != 'All') {
+						cards.forEach((card) => {
+							tempArr.forEach((elem) => {
+								if (card.dataset.products == select) {
+									card.classList.remove('hide');
+								} else {
+									card.classList.add('hide');
+								}
+							});
+						});
+					} else {
+						cards.forEach((card) => {
+							tempArr.forEach((elem) => {
+								card.classList.remove('hide');
+							});
+						});
+					}
+				}
 			}
 		}
 
@@ -121,7 +152,7 @@ export default {
 										}
 									});
 								});
-								renderServise();
+								renderServise(select_val, false);
 							} else {
 								cards.forEach((card) => {
 									card.classList.add('hide');
@@ -138,9 +169,13 @@ export default {
 		});
 
 		$('[data-reset]').on('click', function () {
-			renderServise(false, true);
-			inputVal = '';
-			$('#filter-form-select-1').val('All').trigger('change');
+			if (!select_val) {
+				renderServise(false, true);
+				inputVal = '';
+			} else {
+				renderServise(select_val, true);
+				inputVal = '';
+			}
 		});
 	},
 };
