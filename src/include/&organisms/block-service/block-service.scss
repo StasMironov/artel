@@ -10,7 +10,7 @@
 	}
 
 	&__container {
-		//overflow: hidden;
+		overflow: hidden;
 	}
 
 	&__items {
@@ -273,6 +273,8 @@
 
 		@include media-breakpoint-down(sm) {
 			right: rem(24);
+			top: rem(16);
+			bottom: rem(16);
 		}
 	}
 }
