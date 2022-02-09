@@ -73,7 +73,7 @@ export default {
 					slideToClickedSlide: true,
 					fadeEffect: { crossFade: true },
 					effect: 'fade',
-					loop: true,
+					// loop: true,
 					observer: true,
 					observeParents: true,
 					lazy: {
