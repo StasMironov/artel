@@ -1,6 +1,6 @@
 import PerfectScrollbar from 'perfect-scrollbar';
-import {debounce} from "throttle-debounce";
-import {isDesktop} from "../../utils/breakpoints";
+import { debounce } from 'throttle-debounce';
+import { isDesktop } from '../../utils/breakpoints';
 
 export default class ChartCanvas {
 	constructor() {
@@ -15,8 +15,12 @@ export default class ChartCanvas {
 		this.canvasNode = this.wrapNode.querySelector('[data-canvas]');
 		if (!this.canvasNode) return;
 
-		const chartModule = import(/* webpackChunkName: "chart" */ 'chart.js/auto/auto.esm');
-		const chartDataLabelsPlugin = import(/* webpackChunkName: "plugin-datalabels" */ 'chartjs-plugin-datalabels');
+		const chartModule = import(
+			/* webpackChunkName: "chart" */ 'chart.js/auto/auto.esm'
+		);
+		const chartDataLabelsPlugin = import(
+			/* webpackChunkName: "plugin-datalabels" */ 'chartjs-plugin-datalabels'
+		);
 
 		chartModule.then((module) => {
 			const Chart = module.default;
@@ -26,8 +30,8 @@ export default class ChartCanvas {
 
 				Chart.register(ChartDataLabels);
 
-				this.fontFamily = '"Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
-
+				this.fontFamily =
+					'"Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
 
 				this.chartData = this.wrapNode.getAttribute('data-chart');
 				const obj = JSON.parse(this.chartData);
@@ -69,39 +73,35 @@ export default class ChartCanvas {
 								color: 'rgb(0, 0, 0)',
 								font: {
 									size: 14,
-									family: this.fontFamily
-								}
-							}
+									family: this.fontFamily,
+								},
+							},
 						},
 						{
-							type: "bar",
+							type: 'bar',
 							data: this.end,
-							backgroundColor: [
-								'rgb(0, 211, 114)',
-							],
+							backgroundColor: ['rgb(0, 211, 114)'],
 							stack: 'stack0',
 							barThickness: 24,
 							maxBarThickness: 24,
 							minBarLength: 0,
 							datalabels: {
 								display: false,
-							}
+							},
 						},
 						{
-							type: "bar",
+							type: 'bar',
 							data: this.start,
-							backgroundColor: [
-								'rgb(255, 255, 255)',
-							],
+							backgroundColor: ['rgb(255, 255, 255)'],
 							stack: 'stack0',
 							barThickness: 24,
 							maxBarThickness: 24,
 							minBarLength: 0,
 							datalabels: {
 								display: false,
-							}
-						}
-					]
+							},
+						},
+					],
 				};
 
 				this.config = {
@@ -114,7 +114,7 @@ export default class ChartCanvas {
 							},
 							title: {
 								display: true,
-								text: '' // нужно оставить пустым
+								text: '', // нужно оставить пустым
 							},
 							tooltip: {
 								enabled: false,
@@ -128,12 +128,12 @@ export default class ChartCanvas {
 									color: 'rgb(0, 0, 0)',
 									font: {
 										size: 14,
-										family: this.fontFamily
-									}
+										family: this.fontFamily,
+									},
 								},
 								grid: {
-									color: 'transparent'
-								}
+									color: 'transparent',
+								},
 							},
 							y: {
 								display: true,
@@ -141,24 +141,28 @@ export default class ChartCanvas {
 									color: 'rgb(0, 0, 0, 0.4)',
 									font: {
 										size: 14,
-										family: this.fontFamily
-									}
+										family: this.fontFamily,
+									},
 								},
 								grid: {
 									color: 'rgb(0, 0, 0, 0.1)',
-								}
+								},
 							},
 						},
-					}
+					},
 				};
 
-				new Chart(
-					this.canvasNode,
-					this.config
-				);
+				new Chart(this.canvasNode, this.config);
 
 				this.initScroll();
-			})
+			});
+
+			window.addEventListener(
+				'resize',
+				debounce(100, () => {
+					//new Chart(this.canvasNode, this.config);
+				})
+			);
 		});
 	}
 
