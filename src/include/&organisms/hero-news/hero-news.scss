@@ -9,8 +9,7 @@
     }
 
     @include media-breakpoint-down(sm) {
-        min-height: rem(640);
-		height: 100vh;
+		min-height: 100vh;
     }
 
 	&__container {
@@ -114,7 +113,7 @@
         }
 
 		@media (max-width: 1024px) {
-			margin: auto;
+			margin: initial;
 		}
     }
 
