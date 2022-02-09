@@ -152,17 +152,14 @@ export default class ChartCanvas {
 					},
 				};
 
-				new Chart(this.canvasNode, this.config);
-
+				var chart = new Chart(this.canvasNode, this.config);
 				this.initScroll();
-			});
 
-			window.addEventListener(
-				'resize',
-				debounce(100, () => {
-					//new Chart(this.canvasNode, this.config);
-				})
-			);
+				window.addEventListener('resize', () => {
+					chart.destroy();
+					chart = new Chart(this.canvasNode, this.config);
+				});
+			});
 		});
 	}
 
