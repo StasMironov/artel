@@ -248,7 +248,7 @@
 			bottom: rem(-16);
 
 			@include media-breakpoint-down(md) {
-				bottom: rem(-32);
+				bottom: rem(48);
 			}
 
 			@include media-breakpoint-down(sm) {

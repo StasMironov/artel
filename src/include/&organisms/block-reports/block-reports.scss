@@ -2,14 +2,8 @@
 	$root: &;
 	&__wrapper {		
 		display: flex;
-		@include media-breakpoint-up(sm) {
-			flex-wrap: wrap;
-		}
-		@include media-breakpoint-up(md) {
-			flex-wrap: wrap;
-		}	
+		flex-wrap: wrap;
 		@include media-breakpoint-up(lg) {
-
 			flex-wrap: nowrap;
 		}
 		
@@ -28,24 +22,24 @@
 			margin-right: rem(191);
 		}
 	}
-	&__right {			
-		@include media-breakpoint-up(sm) {
-		}
-
+	&__right {
 		@include media-breakpoint-up(md) {
 			width: 100%;
-
 		}
 
 		@include media-breakpoint-up(lg) {	
 			width: rem(888);
 			display: flex;
 			justify-content: space-between;
+			margin-top: rem(-6);
 		}
 	}
 
 	&__heading{
 		margin-bottom: rem(0);
+		@include media-breakpoint-only(lg) {	
+			margin-top: rem(-16);
+		}
 	}
 
 	&__item{		

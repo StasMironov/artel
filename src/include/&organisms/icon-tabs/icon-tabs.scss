@@ -14,7 +14,7 @@
     flex-wrap: wrap;
     margin-bottom: rem(32);
     @include media-breakpoint-up(md) {            
-        margin-bottom: rem(80);
+      margin-bottom: rem(80);
     }
     @include media-breakpoint-up(lg) {        
       justify-content: space-between;
@@ -37,6 +37,7 @@
     @include media-breakpoint-up(lg) { 
       width: 40%;
       margin-bottom: 0;
+      margin-top: rem(-8);
     }
   }
 
@@ -46,12 +47,10 @@
     margin-right: 0;
     @include media-breakpoint-up(md) {            
       width: 75%;
-      padding-top: 0;
     }
     @include media-breakpoint-up(lg) {      
       width: 33.3333%;
       margin-right: 16%;
-      padding-top: rem(8);
     }
   }
 
@@ -156,7 +155,7 @@
   }
 
   &__caption{
-    width: 95%;
+    width: 93%;
     @include media-breakpoint-up(md) {
       width: rem(216);
       padding-right: 0;
