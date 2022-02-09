@@ -10,7 +10,7 @@
 	}
 
 	&__container {
-		//overflow: hidden;
+		overflow: hidden;
 	}
 
 	&__items {
@@ -71,7 +71,8 @@
 		}
 
 		@include media-breakpoint-down(sm) {
-			margin-bottom: rem(37);
+			margin-bottom: rem(8);
+			padding-bottom: rem(32);
 		}
 
         &-container {
@@ -215,10 +216,12 @@
 	&__txt {
 		transform: rotate(-90deg);
 		margin-bottom: rem(8);
+		margin-right: rem(-4);
+    	margin-left: rem(-6);
 
 		@include media-breakpoint-down(sm) {
 			transform: none;
-			margin-bottom: rem(0);
+			margin: rem(0);
 		}
 	}
 
@@ -273,6 +276,13 @@
 
 		@include media-breakpoint-down(sm) {
 			right: rem(24);
+			top: rem(16);
+			bottom: rem(16);
 		}
+	}
+
+	.ps__rail-y:before,
+	.ps__thumb-y:before {
+		top: #{rem(16)}
 	}
 }
