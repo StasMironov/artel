@@ -5,17 +5,18 @@
 	height: 100vh;
 	background-color: $color-white;
 
+	.modal__overlay{		
+		@include media-breakpoint-only(sm) {
+			display: block;
+		}
+	}
+
 	&__wrapper {
 		display: flex;
 		height: 100%;
 		@include media-breakpoint-down(md) {
 			flex-direction: column;
 		}
-		@include media-breakpoint-only(sm) {
-			height: 100%;
-			height: fill-available;
-		}
-	
 	}
 
 	&__left {
