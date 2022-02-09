@@ -277,4 +277,9 @@
 			bottom: rem(16);
 		}
 	}
+
+	.ps__rail-y:before,
+	.ps__thumb-y:before {
+		top: #{rem(16)}
+	}
 }
