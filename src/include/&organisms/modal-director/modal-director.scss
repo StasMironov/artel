@@ -11,6 +11,11 @@
 		@include media-breakpoint-down(md) {
 			flex-direction: column;
 		}
+		@include media-breakpoint-only(sm) {
+			height: 100%;
+			height: fill-available;
+		}
+	
 	}
 
 	&__left {
@@ -45,7 +50,7 @@
 		width: 100%;
 		margin: 0;
 		@include media-breakpoint-up(md) {			
-			margin: 0 rem(108);
+			padding: 0 rem(108);
 		}
 		@include media-breakpoint-up(lg) {
 			width: 50%;

@@ -89,10 +89,12 @@
     @include media-breakpoint-up(md) {            
       width: rem(440);
       margin-right: 0;
+      padding-top: 0;
   }
     @include media-breakpoint-up(lg) {            
       width: rem(440);
       margin-right: rem(220);
+      padding-top: rem(8);
     }
   }
 }

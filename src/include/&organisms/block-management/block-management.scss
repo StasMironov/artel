@@ -26,9 +26,11 @@
 		}
 		@include media-breakpoint-up(md) {
 			width: 100%;
+			padding-top: 0;
 		}
 		@include media-breakpoint-up(lg) {	
-			width: rem(664);	
+			width: rem(664);
+			padding-top: rem(9);
 		}        
 		p{
 			&:last-of-type{
