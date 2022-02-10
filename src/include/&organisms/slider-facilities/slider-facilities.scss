@@ -96,16 +96,10 @@
 		display: flex;
 		justify-content: space-between;
 		padding-top: rem(32);
-		padding-right: rem(265);
-
-		@include media-breakpoint-down(md) {
-			padding-right: rem(153);
-		}
 
 		@include media-breakpoint-down(sm) {
 			align-items: flex-start;
 			padding-top: rem(24);
-			padding-right: 0;
 		}
 	}
 
@@ -115,13 +109,8 @@
 		}
 	}
 
-	&__factoid {
-		max-width: rem(235);
-		@include media-breakpoint-down(sm) {
-			width: 50%;
-			max-width: initial;
-		}
-
+	&__factoid {		
+		width: 50%;
 		.factoid__label {
 			@include media-breakpoint-down(sm) {
 				max-width: rem(159);
