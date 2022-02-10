@@ -388,6 +388,7 @@
 				"search": true,
 				"placeholder": "Поиск по сайту",
 				"name": "search",
+				"autocomplete": "off",
 				"action": {
 					"type": "submit",
 					"icon": {
