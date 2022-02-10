@@ -42,11 +42,14 @@ export default class ModalBase {
 			disableScroll: false,
 			onShow: (modal) => {
 				// this.onShow(modal);
-				let ps = new PerfectScrollbar(scrollNode, {
-					wheelSpeed: 2,
-					wheelPropagation: true,
-					minScrollbarLength: 20,
-				});
+				if (scrollNode) {
+					let ps = new PerfectScrollbar(scrollNode, {
+						wheelSpeed: 2,
+						wheelPropagation: true,
+						minScrollbarLength: 20,
+					});
+				}
+
 				window._disableScroll();
 			},
 			onClose: (modal) => {
