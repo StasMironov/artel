@@ -19,7 +19,7 @@
 	&--white-2 {
 		.input-search__icon {
 			color: rgba($color-white, $alpha: 0.4);
-		}	
+		}
 
 		.input-search__reset {
 			color: rgba($color-white, $alpha: 0.4);
@@ -32,15 +32,16 @@
 		@include touchLessHover {
 			.input-search__icon {
 				color: rgba($color-white, $alpha: 1);
-			}	
+			}
 		}
 	}
-	
+
 }
 
 // Базовый стиль поведения label
 .input,
-.textarea {
+.textarea,
+.input-search {
 	padding-top: rem(20);
 	-webkit-appearance: none;
 
@@ -83,7 +84,8 @@
 	}
 
 	&:focus,
-	&.not-empty {
+	&.not-empty,
+	&.filled {
 		~ .label {
 			transform: translateY(-50%) scale(0.58);
 		}
@@ -104,8 +106,8 @@
 
 	&--white {
 		&:focus,
-		&.not-empty  {
-			& ~ .label{
+		&.not-empty {
+			& ~ .label {
 				color: rgba($color-white, 0.6);
 			}
 		}
@@ -113,9 +115,9 @@
 
 	&--white-2 {
 		color: rgba($color-white, 1.0);
-		
 
-		&:focus  {
+
+		&:focus {
 			color: rgba($color-white, 1.0);
 		}
 
@@ -134,7 +136,7 @@
 			}
 		}
 	}
-	
+
 }
 
 .textarea {
