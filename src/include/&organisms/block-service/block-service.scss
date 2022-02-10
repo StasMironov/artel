@@ -269,14 +269,14 @@
 	}
 
 	.ps__rail-y {
-		right: rem(48);
+		right: rem(64) !important;;
 
 		@include media-breakpoint-down(md) {
-			right: rem(57);
+			right: rem(57) !important;
 		}
 
 		@include media-breakpoint-down(sm) {
-			right: rem(30);
+			right: rem(30) !important;;
 			top: rem(16);
 			bottom: rem(16);
 		}
