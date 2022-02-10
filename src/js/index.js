@@ -116,6 +116,22 @@ document.addEventListener('DOMContentLoaded', () => {
 			closeTrigger: 'data-modal-close',
 			openClass: 'is-open',
 		});
+
+		new ModalBase({
+			init: true,
+			id: 'modal-career',
+			trigger: 'data-modal-career',
+			closeTrigger: 'data-modal-close',
+			openClass: 'is-open',
+		});
+
+		new ModalBase({
+			init: true,
+			id: 'modal-warning',
+			trigger: 'data-modal-warning',
+			closeTrigger: 'data-modal-close',
+			openClass: 'is-open',
+		});
 	});
 
 	window.dispatchEvent(new CustomEvent('init.modals'));

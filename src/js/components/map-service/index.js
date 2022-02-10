@@ -395,7 +395,7 @@ export default class MapService {
 
 				for (let i = 0; i < markerData.phone.links.length; i++) {
 					links += `<li class='card-map__link-item'>
-								<a href='${markerData.phone.links[i].href}' class="card-map__link h3">${markerData.phone.links[i].text}</a>
+								<a href='tel:${markerData.phone.links[i].href}' class="card-map__link h3">${markerData.phone.links[i].text}</a>
 								</li>`;
 				}
 

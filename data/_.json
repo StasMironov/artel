@@ -1,8 +1,5 @@
 {
-	"colors": [
-		"white",
-		"black"
-	],
+	"colors": ["white", "black"],
 	"breakpoints": {
 		"md": 640,
 		"lg": 990
@@ -714,6 +711,47 @@
 								"name": "24/arrow-up-right"
 							}
 						}
+					}
+				}
+			},
+			"modificator": "right"
+		},
+		{
+			"id": "modal-career",
+			"component": "&modal-career",
+			"data": {
+				"modal": {
+					"title": "Онлайн-анкета",
+					"attr": "data-steps-career",
+					"actions": [
+						{
+							"text": "Назад",
+							"title": "Назад",
+							"attr": "data-btn-prev",
+							"theme": "outline-white"
+						},
+						{
+							"text": "Дальше",
+							"title": "Дальше",
+							"attr": "data-btn-next",
+							"theme": "white"
+						}
+					],
+					"form": {
+						"id": "form-career",
+						"name": "form-career",
+						"method": "POST",
+						"action": "#",
+						"steps": {
+							"items": []
+						},
+						"tabs": [
+							{
+								"active": true
+							},
+							{},
+							{}
+						]
 					}
 				}
 			},

@@ -44,6 +44,8 @@
 	}
 
 	&__item {
+		$b: &;
+
 		@include media-breakpoint-up(sm) {
 			display: flex;
 			flex-direction: column;
@@ -118,13 +120,6 @@
 			@include media-breakpoint-up(md) {
 				height: rem(104);
 			}
-			@at-root .animate & {
-				path {
-					animation: dash 2.5s ease 0.5s forwards;
-					stroke-dasharray: 280;
-					stroke-dashoffset: 280;
-				}
-			}
 
 			svg {
 				@include media-breakpoint-up(sm) {
@@ -137,6 +132,14 @@
 					margin-top: rem(16);
 					margin-left: 0;
 				}
+			}
+		}
+
+		&.animate {
+			path {
+				animation: dash 3.5s ease 0.8s forwards;
+				stroke-dasharray: 280;
+				stroke-dashoffset: 280;
 			}
 		}
 	}
