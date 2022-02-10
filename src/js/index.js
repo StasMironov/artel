@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	Animation.init();
 	Header.init();
-	FilterService.init();
+	//FilterService.init();
 	Toggle.init();
 	Nav.init();
 	InputSearch.init();
@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
+	new FilterService();
 	new BlockProduct();
 	new BlockHistory();
 

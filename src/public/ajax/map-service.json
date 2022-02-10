@@ -22,7 +22,7 @@
 			},
 			"coords": [55.749022105147304, 37.62367004576858],
 			"type": "service",
-			"products": "fridge",
+			"products": ["fridge", "tv"],
 			"city": "Москва"
 		},
 		{
@@ -47,7 +47,7 @@
 			},
 			"coords": [59.93275101438514, 30.373730487448988],
 			"type": "service",
-			"products": "fridge",
+			"products": ["fridge", "tv", "conditioner"],
 			"city": "Москва"
 		},
 		{
@@ -72,7 +72,7 @@
 			},
 			"coords": [55.79263750724355, 49.13299749533365],
 			"type": "service",
-			"products": "fridge",
+			"products": ["fridge"],
 			"city": "Москва"
 		},
 		{
@@ -97,7 +97,7 @@
 			},
 			"coords": [43.6016595497655, 39.73638765207798],
 			"type": "service",
-			"products": "tv",
+			"products": ["tv"],
 			"city": "Магнитогорск"
 		},
 		{
@@ -122,7 +122,7 @@
 			},
 			"coords": [54.7314227220896, 55.952585130200745],
 			"type": "service",
-			"products": "tv",
+			"products": ["tv", "conditioner"],
 			"city": "Москва"
 		},
 		{
@@ -147,7 +147,7 @@
 			},
 			"coords": [55.010244579646056, 82.90003841681133],
 			"type": "service",
-			"products": "tv",
+			"products": ["tv"],
 			"city": "Москва"
 		},
 		{
@@ -172,7 +172,7 @@
 			},
 			"coords": [39.85285361972607, 66.98130142194397],
 			"type": "service",
-			"products": "tv",
+			"products": ["tv"],
 			"city": "Магнитогорск"
 		},
 		{
@@ -197,7 +197,7 @@
 			},
 			"coords": [42.56080559597786, 59.61000116327704],
 			"type": "service",
-			"products": "tv",
+			"products": ["tv"],
 			"city": "Москва"
 		},
 		{
@@ -222,7 +222,7 @@
 			},
 			"coords": [41.3054598269923, 69.24309271017306],
 			"type": "service",
-			"products": "conditioner",
+			"products": ["conditioner"],
 			"city": "Магнитогорск"
 		}
 	]
