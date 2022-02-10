@@ -11,11 +11,6 @@
 		@include media-breakpoint-down(md) {
 			flex-direction: column;
 		}
-		@include media-breakpoint-only(sm) {
-			height: 100%;
-			height: fill-available;
-		}
-	
 	}
 
 	&__left {
