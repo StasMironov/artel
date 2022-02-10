@@ -160,7 +160,6 @@
 	},
 	"block_nav": {
 		"bg": "gray",
-
 		"icon": {
 			"name": "logos/decor",
 			"size": "fit"
@@ -269,17 +268,17 @@
 							},
 							"factoids": [
 								{
-									"text": "2012",
-									"label": "Год основания завода",
+									"text": "2021",
+									"label": "Год основания компании",
 									"attr": "data-counter-nospace"
 								},
 								{
-									"text": "1236",
+									"text": "10 454",
 									"after": {
 										"txt": "м",
 										"sup": "2"
 									},
-									"label": "Общая площадь"
+									"label": "Общая площадь зданий и сооружений"
 								}
 							]
 						},
