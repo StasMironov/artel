@@ -472,36 +472,46 @@ export default class MapService {
 	filterMarkers(exclude = false, fit = false, filter = false) {
 		// отображение / скрытие меток
 		this.bounds = new google.maps.LatLngBounds();
+		let arrProducts = '';
+
+		for (let i = 0; i < this.markers.length; i++) {
+			this.markers[i].setVisible(false);
+		}
 
 		for (let i = 0; i < this.markers.length; i++) {
 			if (filter) {
 				if (this.inputVal) {
-					if (
-						this.markers[i].city == this.inputVal &&
-						this.markers[i].products == this.filterProduction
-					) {
-						this.markers[i].setVisible(true);
-					} else {
-						this.markers[i].setVisible(false);
+					//console.log('filter 1');
+					if (this.markers[i].city == this.inputVal) {
+						arrProducts = this.markers[i].products;
+						arrProducts.forEach((el) => {
+							if (el == this.filterProduction) {
+								this.markers[i].setVisible(true);
+							}
+						});
 					}
+
 					if (
 						this.filterProduction === 'All' &&
 						this.markers[i].city == this.inputVal
 					) {
+						//console.log('filter 2');
 						this.markers[i].setVisible(true);
 					}
 				} else {
-					if (
-						this.inputVal == false &&
-						this.markers[i].products == this.filterProduction
-					) {
-						this.markers[i].setVisible(true);
-					} else {
-						this.markers[i].setVisible(false);
+					if (this.inputVal == false) {
+						arrProducts = this.markers[i].products;
+						arrProducts.forEach((el) => {
+							if (el == this.filterProduction) {
+								//console.log('filter 3');
+								this.markers[i].setVisible(true);
+							}
+						});
 					}
 
 					if (this.filterProduction === 'All') {
 						this.markers[i].setVisible(true);
+						//console.log('filter 4');
 					}
 				}
 			} else {
@@ -521,10 +531,29 @@ export default class MapService {
 	}
 
 	stateMarks(inputVal, select) {
+		let arrProducts = '';
 		let arrival = inputVal;
-		let cityEl;
+		let cityEl = '';
+
+		for (let i = 0; i < this.markers.length; i++) {
+			this.markers[i].setVisible(false);
+		}
+
 		if (!arrival.length) {
 			cityEl = '';
+
+			if (this.filterProduction) {
+				for (let i = 0; i < this.markers.length; i++) {
+					arrProducts = this.markers[i].products;
+
+					arrProducts.forEach((el) => {
+						if (el == this.filterProduction) {
+							//console.log('temp: ' + el);
+							this.markers[i].setVisible(true);
+						}
+					});
+				}
+			}
 		} else {
 			cityEl = this.markers
 				.filter(function (place) {
@@ -533,6 +562,8 @@ export default class MapService {
 				.map(function (place) {
 					return place;
 				});
+
+			//console.log(cityEl);
 		}
 
 		if (!this.filterProduction) {
@@ -543,12 +574,19 @@ export default class MapService {
 				cityEl[i].setVisible(true);
 			}
 		} else {
-			for (let i = 0; i < this.markers.length; i++) {
-				this.markers[i].setVisible(false);
-			}
+			//console.log('filter 5' + this.filterProduction);
+
+			//console.log(cityEl);
 
 			for (let i = 0; i < cityEl.length; i++) {
-				cityEl[i].setVisible(true);
+				arrProducts = cityEl[i].products;
+
+				arrProducts.forEach((el) => {
+					if (el == this.filterProduction) {
+						//console.log('temp: ' + el);
+						cityEl[i].setVisible(true);
+					}
+				});
 			}
 		}
 	}
