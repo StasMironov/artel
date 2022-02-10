@@ -4,7 +4,7 @@
 		grid-template-areas:
 			'avatar name comm'
 			'. country comm';
-		grid-template-columns: 0.1fr 0.8fr 1fr;
+		grid-template-columns: 0.1fr 0.7fr 1fr;
 		gap: 0px 0px;
 
 		@include media-breakpoint-down(md) {
@@ -29,8 +29,8 @@
 
 	&__avatar {
 		grid-area: avatar;
-		width: rem(104);
-		height: rem(104);
+		width: rem(128);
+		height: rem(128);
 		overflow: hidden;
 		border-radius: 50%;
 
@@ -42,33 +42,42 @@
 
 	&__comm {
 		grid-area: comm;
-
-		@include media-breakpoint-down(sm) {
-			margin-top: rem(24);
+		
+		margin-top: rem(24);
+		@include media-breakpoint-up(md) {
+			margin-top: rem(-8);
+			padding-left: rem(8);
+		}
+		@include media-breakpoint-up(lg) {
+			padding-left: rem(8);
 		}
 	}
 
 	&__name {
 		grid-area: name;
 		padding-top: rem(16);
-		padding-left: rem(24);
+		padding-left: rem(28);
 
+		@include media-breakpoint-only(sm) {
+			max-width: rem(212);
+		}
 		@include media-breakpoint-down(md) {
 			margin: initial;
-			padding-top: rem(19);
-			padding-left: 0;
+			padding-top: rem(12);
+			padding-left: rem(8);
 		}
 	}
 
 	&__country {
 		display: flex;
 		grid-area: country;
-		margin-top: rem(-36);
-		padding-left: rem(24);
-
+		margin-top: rem(-32);
+		padding-left: rem(31);
+		
 		@include media-breakpoint-down(md) {
 			margin: initial;
-			padding-left: 0;
+			padding-left: rem(8);
+			margin-top: rem(-3);
 		}
 
 		@include media-breakpoint-down(sm) {
@@ -79,6 +88,9 @@
 
 	&__txt {
 		max-width: rem(180);
+		@include media-breakpoint-only(lg) {
+			max-width: 100%;
+		}
 	}
 
 	&__icon {

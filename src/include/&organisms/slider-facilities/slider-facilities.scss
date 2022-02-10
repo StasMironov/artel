@@ -94,7 +94,6 @@
 	&__factoids {
 		position: relative;
 		display: flex;
-		align-items: center;
 		justify-content: space-between;
 		padding-top: rem(32);
 		padding-right: rem(265);
@@ -117,8 +116,7 @@
 	}
 
 	&__factoid {
-		max-width: rem(216);
-
+		max-width: rem(235);
 		@include media-breakpoint-down(sm) {
 			width: 50%;
 			max-width: initial;

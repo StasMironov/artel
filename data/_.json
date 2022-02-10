@@ -386,7 +386,7 @@
 				"theme": "white-2",
 				"id": "form-1-search-1",
 				"search": true,
-				"placeholder": "Поиск по сайту",
+				"label": "Поиск по сайту",
 				"name": "search",
 				"autocomplete": "off",
 				"action": {

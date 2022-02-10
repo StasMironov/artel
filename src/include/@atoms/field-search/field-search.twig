@@ -23,4 +23,9 @@
 			}
 		} %}
 	</div>
+	{% if field.label %}
+		{% view '@field-label' with {
+			field: field
+		} %}
+	{% endif %}
 </div>
