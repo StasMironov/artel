@@ -45,8 +45,13 @@
 		-webkit-text-fill-color: rgba($color-black, 1);
 	}
 
+	&::placeholder {
+		opacity: 1 !important;
+	}
+
 	&:focus::placeholder {
 		color: transparent;
+		opacity: 0 !important;
 	}
 
 	&:disabled {
