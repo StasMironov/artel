@@ -57,24 +57,38 @@ export default {
 
   classToggle(arr, idx = undefined, animate = false) {
     arr.forEach((el, elIdx) => {
-      if (idx === elIdx) {
-        if (animate) {
-          gsap.fromTo(el, {
-            opacity: 0,
-            translateY: 24,
-          }, {
-            opacity: 1,
-            translateY: 0,
-            duration: 1.1,
-            ease: 'power4.out',
-            onStart: () => {
-              el.classList.add('is-active');
-            }
-          });
+
+      if (el.classList.contains('is-active')){ //Убрать кликабельность у выбранного таба
+        if (idx === elIdx) {
+           el.classList.add('is-active');        
+        } else {
+          el.classList.remove('is-active');
         }
-      } else {
-        el.classList.remove('is-active');
+        return;
       }
+
+      else {
+        if (idx === elIdx) {
+          if (animate) {
+            gsap.fromTo(el, {
+              opacity: 0,
+              translateY: 24,
+            }, {
+              opacity: 1,
+              translateY: 0,
+              duration: 1.1,
+              ease: 'power4.out',
+              onStart: () => {
+                el.classList.add('is-active');
+              }
+            });
+          }
+        } else {
+          el.classList.remove('is-active');
+        }
+      }
+
+
     });
   }
 }

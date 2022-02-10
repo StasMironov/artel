@@ -12,6 +12,13 @@
 		min-height: rem(536);
 	}
 
+
+	.swiper-wrapper{				
+		@include media-breakpoint-up(md) {
+			transform: none!important;
+		}
+	}
+
 	&--slim {
 		min-height: rem(360);
 
@@ -440,6 +447,19 @@
 		&-3 #{$root} {
 			&__desc {
 				max-width: rem(530);
+			}
+		}
+
+		&-4 #{$root} {
+			&__left {
+				@include media-breakpoint-up(md) {
+					width: 27%;
+					margin-bottom: 0;
+				}
+		
+				@include media-breakpoint-up(lg) {
+					width: 17%;
+				}
 			}
 		}
 	}
