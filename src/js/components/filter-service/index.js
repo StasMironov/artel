@@ -34,6 +34,13 @@ export default class FilterService {
 
 			if (!cityServ.length) {
 				serviceEl = '';
+				if (!this.select_val) {
+					this.renderServise(false, true);
+					this.inputVal = '';
+				} else {
+					this.inputVal = '';
+					this.renderServise(this.select_val, true);
+				}
 			} else {
 				serviceEl = city.filter(function (place) {
 					return place.name.indexOf(cityServ) !== -1;
@@ -170,11 +177,7 @@ export default class FilterService {
 		if (reset) {
 			if (!select) {
 				this.cards.forEach((card) => {
-					this.tempArr.forEach((elem) => {
-						if (card.dataset.id == elem.id) {
-							card.classList.remove('hide');
-						}
-					});
+					card.classList.remove('hide');
 				});
 			} else {
 				if (select != 'All') {
@@ -189,10 +192,9 @@ export default class FilterService {
 						});
 					});
 				} else {
+					console.log('empty 2');
 					this.cards.forEach((card) => {
-						this.tempArr.forEach((elem) => {
-							card.classList.remove('hide');
-						});
+						card.classList.remove('hide');
 					});
 				}
 			}

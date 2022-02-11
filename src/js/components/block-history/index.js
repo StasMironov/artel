@@ -58,7 +58,7 @@ export default class blockProduct {
 			$('.block-history__period').height();
 
 		const kof =
-			(($('.block-history__period .tab').height() / 2 - 33) * 100) /
+			(($('.block-history__period .tab').height() / 2 - 44) * 100) /
 			$('.block-history__period').height();
 
 		gsap.to(progress, {
