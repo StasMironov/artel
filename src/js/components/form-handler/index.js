@@ -12,8 +12,8 @@ export default class FormHandler {
 	}
 
 	init() {
-		// window.addEventListener('form:submit', (e) => this.handler(e));
-		// window.addEventListener('form:result', (e) => this.showResult(e));
+		window.addEventListener('form:submit', (e) => this.handler(e));
+		window.addEventListener('form:result', (e) => this.showResult(e));
 	}
 
 	handler(e) {
