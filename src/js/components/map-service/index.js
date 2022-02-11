@@ -473,6 +473,7 @@ export default class MapService {
 		// отображение / скрытие меток
 		this.bounds = new google.maps.LatLngBounds();
 		let arrProducts = '';
+		let markers;
 
 		for (let i = 0; i < this.markers.length; i++) {
 			this.markers[i].setVisible(false);
@@ -481,8 +482,7 @@ export default class MapService {
 		for (let i = 0; i < this.markers.length; i++) {
 			if (filter) {
 				if (this.inputVal) {
-					//console.log('filter 1');
-					if (this.markers[i].city == this.inputVal) {
+					if (this.markers[i].city.indexOf(this.inputVal) !== -1) {
 						arrProducts = this.markers[i].products;
 						arrProducts.forEach((el) => {
 							if (el == this.filterProduction) {
@@ -493,9 +493,8 @@ export default class MapService {
 
 					if (
 						this.filterProduction === 'All' &&
-						this.markers[i].city == this.inputVal
+						this.markers[i].city.indexOf(this.inputVal) !== -1
 					) {
-						//console.log('filter 2');
 						this.markers[i].setVisible(true);
 					}
 				} else {
@@ -543,50 +542,64 @@ export default class MapService {
 			cityEl = '';
 
 			if (this.filterProduction) {
-				for (let i = 0; i < this.markers.length; i++) {
-					arrProducts = this.markers[i].products;
+				if (this.filterProduction !== 'All') {
+					for (let i = 0; i < this.markers.length; i++) {
+						arrProducts = this.markers[i].products;
 
-					arrProducts.forEach((el) => {
-						if (el == this.filterProduction) {
-							//console.log('temp: ' + el);
-							this.markers[i].setVisible(true);
-						}
-					});
+						arrProducts.forEach((el) => {
+							if (el == this.filterProduction) {
+								this.markers[i].setVisible(true);
+							}
+						});
+					}
+				} else {
+					for (let i = 0; i < this.markers.length; i++) {
+						this.markers[i].setVisible(true);
+					}
+				}
+			} else {
+				for (let i = 0; i < this.markers.length; i++) {
+					this.markers[i].setVisible(true);
 				}
 			}
 		} else {
-			cityEl = this.markers
-				.filter(function (place) {
-					return place.city.indexOf(arrival) !== -1;
-				})
-				.map(function (place) {
-					return place;
-				});
-
-			//console.log(cityEl);
-		}
-
-		if (!this.filterProduction) {
-			for (let i = 0; i < this.markers.length; i++) {
-				this.markers[i].setVisible(false);
-			}
-			for (let i = 0; i < cityEl.length; i++) {
-				cityEl[i].setVisible(true);
-			}
-		} else {
-			//console.log('filter 5' + this.filterProduction);
-
-			//console.log(cityEl);
-
-			for (let i = 0; i < cityEl.length; i++) {
-				arrProducts = cityEl[i].products;
-
-				arrProducts.forEach((el) => {
-					if (el == this.filterProduction) {
-						//console.log('temp: ' + el);
-						cityEl[i].setVisible(true);
+			if (!this.filterProduction) {
+				cityEl = this.markers.filter(function (place) {
+					if (place.city.indexOf(arrival) !== -1) {
+						//console.log(place);
 					}
+					return place.city.indexOf(arrival) !== -1;
 				});
+
+				for (let i = 0; i < cityEl.length; i++) {
+					cityEl[i].setVisible(true);
+				}
+			} else {
+				if (this.filterProduction !== 'All') {
+					cityEl = this.markers.filter(function (place) {
+						if (place.city.indexOf(arrival) !== -1) {
+							//console.log(place);
+						}
+						return place.city.indexOf(arrival) !== -1;
+					});
+
+					for (let i = 0; i < cityEl.length; i++) {
+						arrProducts = cityEl[i].products;
+						arrProducts.forEach((el) => {
+							if (el == this.filterProduction) {
+								cityEl[i].setVisible(true);
+							}
+						});
+					}
+				} else {
+					for (let i = 0; i < this.markers.length; i++) {
+						if (
+							this.markers[i].city.indexOf(this.inputVal) !== -1
+						) {
+							this.markers[i].setVisible(true);
+						}
+					}
+				}
 			}
 		}
 	}
