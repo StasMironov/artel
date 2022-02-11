@@ -226,9 +226,9 @@
 			{
 				"href": "#",
 				"attr": "data-modal=\"modal-ajax\" data-modal-ajax=\"ajax/modal-partner.html\"",
-				"icon": {
-					"name": "logos/partners/avalon",
-					"size": "fit"
+				"img": {
+					"src": "./tmp/partners/avalon.png",
+					"alt": "logo"
 				}
 			},
 			{
