@@ -29,7 +29,6 @@
 					{% endfor %}
 				</div>
 				{% if form.agreement %}
-					
 					{% for check in form.agreement %}
 						<div class="form__agreement">
 							{% view '@field' with {
@@ -37,9 +36,6 @@
 							} %}
 						</div>
 					{% endfor %}
-					
-
-
 				{% endif %}
 				{% if form.submit %}
 					<div class="form__submit">
