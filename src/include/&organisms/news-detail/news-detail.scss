@@ -74,7 +74,7 @@
 
 				.slider-photo {
 					margin-top: rem(80);		
-					width: calc(100% + #{rem(305)});
+					width: calc(100% + #{rem(112)});
 
 					@include media-breakpoint-down(md) {
 						width: 100%;
