@@ -23,7 +23,7 @@
 			"coords": [55.749022105147304, 37.62367004576858],
 			"type": "service",
 			"products": ["fridge", "tv"],
-			"city": "Москва"
+			"city": "Челябинск"
 		},
 		{
 			"id": "2",
@@ -48,7 +48,7 @@
 			"coords": [59.93275101438514, 30.373730487448988],
 			"type": "service",
 			"products": ["fridge", "tv", "conditioner"],
-			"city": "Москва"
+			"city": "Челябинск"
 		},
 		{
 			"id": "3",
