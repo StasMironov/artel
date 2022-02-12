@@ -28,11 +28,15 @@ export default class ModalBase {
 	init() {
 		//	const btnClose = document.querySelectorAll(this.closeTrigger);
 
+		if (typeof this.id == 'undefined') return;
+
 		const wrapNode = document.querySelector('.' + this.id);
 
 		if (!wrapNode) return;
 
 		const scrollNode = wrapNode.querySelector('[data-modal-ps]');
+
+		if (!scrollNode) return;
 
 		MicroModal.init({
 			openTrigger: this.trigger,
