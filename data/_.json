@@ -675,6 +675,7 @@
 								"name": "form-1-input-5",
 								"theme": "white",
 								"required": true,
+								"type": "email",
 								"label": "E-mail"
 							},
 							{
