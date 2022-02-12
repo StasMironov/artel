@@ -128,14 +128,17 @@ export default class FilterService {
 			if (select != 'All') {
 				if (!this.inputVal) {
 					this.cards.forEach((card) => {
-						arrProducts = card.dataset.products.split(',');
-						//	console.log(arrProducts);
+						console.log('1: ' + card.dataset.products);
+						if (typeof card.dataset.products != 'undefined') {
+							arrProducts = card.dataset.products.split(',');
+							//	console.log(arrProducts);
 
-						arrProducts.forEach((el) => {
-							if (el == select) {
-								card.classList.remove('hide');
-							}
-						});
+							arrProducts.forEach((el) => {
+								if (el == select) {
+									card.classList.remove('hide');
+								}
+							});
+						}
 					});
 				} else {
 					this.cards.forEach((card) => {
@@ -144,12 +147,18 @@ export default class FilterService {
 								card.dataset.id == elem.id &&
 								elem.name.indexOf(this.inputVal) !== -1
 							) {
-								arrProducts = card.dataset.products.split(',');
-								arrProducts.forEach((el) => {
-									if (el == select) {
-										card.classList.remove('hide');
-									}
-								});
+								if (
+									typeof card.dataset.products != 'undefined'
+								) {
+									arrProducts = card.dataset.products.split(
+										','
+									);
+									arrProducts.forEach((el) => {
+										if (el == select) {
+											card.classList.remove('hide');
+										}
+									});
+								}
 							}
 						});
 					});
@@ -183,12 +192,15 @@ export default class FilterService {
 				if (select != 'All') {
 					this.cards.forEach((card) => {
 						this.tempArr.forEach((elem) => {
-							arrProducts = card.dataset.products.split(',');
-							arrProducts.forEach((el) => {
-								if (el == select) {
-									card.classList.remove('hide');
-								}
-							});
+							// console.log(card.dataset.products);
+							if (typeof card.dataset.products != 'undefined') {
+								arrProducts = card.dataset.products.split(',');
+								arrProducts.forEach((el) => {
+									if (el == select) {
+										card.classList.remove('hide');
+									}
+								});
+							}
 						});
 					});
 				} else {
