@@ -622,7 +622,7 @@
 						"name": "form-1",
 						"method": "POST",
 						"action": "/ajax/contacts/?repo=artel.frontend&status=success",
-						"attr": "data-ajax-form data-scroll-target data-scroll-contacts",
+						"attr": "data-ajax-form",
 						"title": "Стать поставщиком",
 						"bg": "green",
 						"layout": "3",
