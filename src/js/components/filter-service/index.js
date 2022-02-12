@@ -17,6 +17,9 @@ export default class FilterService {
 		this.urlData = this.filterNode.dataset.url;
 		if (!this.urlData) return;
 
+		this.noSearch = this.filterNode.querySelector('[data-nosearch]');
+		if (!this.noSearch) return;
+
 		this.render();
 	}
 
@@ -67,6 +70,8 @@ export default class FilterService {
 					});
 				}
 			}
+
+			this.checkSearch();
 		});
 
 		$('#filter-form-select-1').on('select2:select', (e) => {
@@ -107,6 +112,29 @@ export default class FilterService {
 					});
 				}
 			});
+	}
+
+	checkSearch() {
+		let state = 0;
+
+		if (this.cards.length) {
+			$(this.cards).each((elem) => {
+				if ($(elem).hasClass('hide')) {
+					state++;
+				} else {
+					state--;
+				}
+			});
+
+			console.log('state: ' + state);
+
+			if (state) {
+				$(this.noSearch).addClass('show');
+				state = 0;
+			} else {
+				$(this.noSearch).removeClass('show');
+			}
+		}
 	}
 
 	renderServise(select, reset) {

@@ -172,6 +172,7 @@
 	"block_service": {
 		"url": "ajax/map-city.json",
 		"title": "Наши сервис центры",
+		"nosearch": "К сожалению, поиск не дал результатов",
 		"select": {
 			"color": true,
 			"fill": true,
