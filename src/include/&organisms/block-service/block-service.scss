@@ -235,6 +235,15 @@
 		}
 	}
 
+	&__nosearch {
+		display: none;
+		text-align: center;
+
+		&.show {
+			display: block;
+		}
+	}
+
 	&__map {
 		position: absolute;
 		top: 0;
