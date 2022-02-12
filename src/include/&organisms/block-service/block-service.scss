@@ -238,9 +238,13 @@
 	&__nosearch {
 		display: none;
 		text-align: center;
+		height: 97%;
+		align-items: center;
+		justify-content: center;
+		color: rgba($color-black, 0.4);
 
 		&.show {
-			display: block;
+			display: flex;
 		}
 	}
 
