@@ -77,6 +77,7 @@ export default class FilterService {
 		$('#filter-form-select-1').on('select2:select', (e) => {
 			this.select_val = $(e.currentTarget).val();
 			this.renderServise(this.select_val, false);
+			this.checkSearch();
 		});
 
 		$('[data-reset]').on('click', () => {
@@ -87,6 +88,8 @@ export default class FilterService {
 				this.inputVal = '';
 				this.renderServise(this.select_val, true);
 			}
+
+			this.checkSearch();
 		});
 	};
 
@@ -115,25 +118,22 @@ export default class FilterService {
 	}
 
 	checkSearch() {
-		let state = 0;
-
 		if (this.cards.length) {
-			$(this.cards).each((elem) => {
-				if ($(elem).hasClass('hide')) {
-					state++;
-				} else {
-					state--;
+			var state = 0;
+			$(this.cards).each((_, elem) => {
+				//console.log(elem);
+				if (!$(elem).hasClass('hide')) {
+					state += 1;
 				}
 			});
 
-			console.log('state: ' + state);
-
-			if (state) {
-				$(this.noSearch).addClass('show');
-				state = 0;
-			} else {
+			if (state > 0) {
 				$(this.noSearch).removeClass('show');
+			} else {
+				$(this.noSearch).addClass('show');
 			}
+
+			state = 0;
 		}
 	}
 
