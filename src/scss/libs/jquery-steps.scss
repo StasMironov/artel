@@ -79,36 +79,35 @@
 .wizard > .steps a:active {
 	display: block;
 	width: auto;
-	margin: 0 0.5em 0.5em;
-	padding: 1em 1em;
+	margin: 0;
+	padding: 0;
 	text-decoration: none;
-
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
 }
 
 .wizard > .steps .disabled a,
 .wizard > .steps .disabled a:hover,
 .wizard > .steps .disabled a:active {
-	color: #aaa;
-	background: #eee;
+	color: rgba($color-white, 0.4);
 	cursor: default;
 }
 
-.wizard > .steps .current a,
+.wizard > .steps .current a {
+	color: rgba($color-white, 1);
+}
+
 .wizard > .steps .current a:hover,
 .wizard > .steps .current a:active {
-	color: #fff;
-	background: #2184be;
+	color: rgba($color-white, 1);
 	cursor: default;
 }
 
-.wizard > .steps .done a,
+.wizard > .steps .done a {
+	color: rgba($color-white, 0.4);
+}
+
 .wizard > .steps .done a:hover,
 .wizard > .steps .done a:active {
-	color: #fff;
-	background: #9dc8e2;
+	color: rgba($color-white, 1);
 }
 
 .wizard > .steps .error a,
@@ -269,6 +268,8 @@
 	border-top-right-radius: 5px;
 	-moz-border-radius-topleft: 5px;
 	-moz-border-radius-topright: 5px;
+
+	
 }
 
 .tabcontrol > .steps > ul > li:hover {
@@ -326,4 +327,47 @@
 
 .tabcontrol > .content > .body ul > li {
 	display: list-item;
+}
+
+//==========================
+
+.steps ul {
+	display: flex;
+	align-items: center;
+	min-height: auto;
+}
+
+.steps {
+	padding-bottom: rem(17);
+    border-bottom: 1px solid;
+	margin-bottom: rem(64);
+}
+
+.actions {
+	margin-top: auto;
+
+	ul {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.wizard > .content {
+	// display: none;
+}
+
+.wizard > .steps .number {
+	font-size: rem(16);
+}
+
+.wizard > .steps > ul > li {
+	width: auto;
+
+	&:not(:last-child){
+		margin-right: rem(24);
+	}
+}
+
+.wizard > .content {
+	margin: 0;
 }

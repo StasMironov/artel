@@ -1,10 +1,15 @@
 <div class="modal-career">
     <div class="modal-career__wrapper">
+        {% if modal.title %}
+            <div class="modal-career__title h1">
+                {{modal.title}}
+            </div>
+        {% endif %}
         {% if modal.form %}
             <form id="{{modal.form.id}}" class="modal-career__form" action="{{modal.form.action}}" {% if modal.attr %}{{modal.attr}}{% endif %} novalidate="novalidate">
                 <div class="modal-career__inner" >
 
-                                <h3>Account</h3>
+                    <h3></h3>
                     <section>
                         <label for="userName">User name *</label>
                         <input id="userName" name="userName" type="text" class="required">
@@ -14,7 +19,7 @@
                         <input id="confirm" name="confirm" type="text" class="required">
                         <p>(*) Mandatory</p>
                     </section>
-                    <h3>Profile</h3>
+                    <h3></h3>
                     <section>
                         <label for="name">First name *</label>
                         <input id="name" name="name" type="text" class="required">
@@ -26,7 +31,7 @@
                         <input id="address" name="address" type="text">
                         <p>(*) Mandatory</p>
                     </section>
-                    <h3>Hints</h3>
+                    <h3></h3>
                     <section>
                         <ul>
                             <li>Foo</li>
@@ -34,7 +39,7 @@
                             <li>Foobar</li>
                         </ul>
                     </section>
-                    <h3>Finish</h3>
+                    <h3></h3>
                     <section>
                         <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">I agree with the Terms and Conditions.</label>
                     </section>

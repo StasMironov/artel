@@ -5,7 +5,7 @@
 
 	&__wrapper {
 		height: 100%;
-		padding: rem(80) rem(164) rem(105) rem(112);
+		padding: rem(80) rem(34) rem(80);
 	}
 
 	&__form {
@@ -17,13 +17,6 @@
 		flex-direction: column;
 		height: 100%;
 		background: red;
-
-		.steps ul {
-			display: flex;
-			align-items: center;
-			min-height: rem(50);
-			border: 1px solid;
-		}
 	}
 
 	&__action {
@@ -34,7 +27,7 @@
 
 	&__steps {
 		width: 100%;
-		min-height: rem(50);
+		min-height: auto;
 		background-color: gray;
 	}
 
@@ -51,5 +44,10 @@
 		flex-direction: column;
 		background: antiquewhite;
 		border: 1px solid;
+	}
+
+	&__title {
+		margin-bottom: rem(46);
+		color: $color-white;
 	}
 }
