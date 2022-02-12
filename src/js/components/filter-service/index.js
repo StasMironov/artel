@@ -121,7 +121,7 @@ export default class FilterService {
 		if (this.cards.length) {
 			var state = 0;
 			$(this.cards).each((_, elem) => {
-				//console.log(elem);
+				
 				if (!$(elem).hasClass('hide')) {
 					state += 1;
 				}
@@ -156,7 +156,7 @@ export default class FilterService {
 			if (select != 'All') {
 				if (!this.inputVal) {
 					this.cards.forEach((card) => {
-						console.log('1: ' + card.dataset.products);
+						
 						if (typeof card.dataset.products != 'undefined') {
 							arrProducts = card.dataset.products.split(',');
 							//	console.log(arrProducts);
@@ -232,7 +232,7 @@ export default class FilterService {
 						});
 					});
 				} else {
-					console.log('empty 2');
+					
 					this.cards.forEach((card) => {
 						card.classList.remove('hide');
 					});
