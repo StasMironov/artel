@@ -1,0 +1,28 @@
+{
+	"card": {
+		"select_education": {
+            "fill": true,
+            "fields": [
+                {
+                    "theme": "red",
+                    "select": true,
+                    "id": "filter-form-select-m-1",
+                    "name": "filter-form-select-m-1",
+                    "attr": "data-form-select",
+                    "placeholder": "Образование",
+                    "options": [
+                        {
+                            "value": "Образование 1",
+                            "text": "Образование 1",
+                            "selected": "selected"
+                        },
+                        {
+                            "value": "Образование 2",
+                            "text": "Образование 2"
+                        }
+                    ]
+                }
+            ]
+        }
+	}
+}

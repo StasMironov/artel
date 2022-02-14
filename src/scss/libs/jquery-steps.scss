@@ -124,7 +124,6 @@
 	min-height: rem(335);
 	margin: 0.5em;
 	overflow: hidden;
-	background: rgba(35, 40, 47, 0.15);
 
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -175,7 +174,6 @@
 
 .wizard > .content > .body label {
 	display: inline-block;
-	margin-bottom: 0.5em;
 }
 
 .wizard > .content > .body label.error {
@@ -336,9 +334,20 @@
 }
 
 .steps {
+	position: relative;
 	padding-bottom: rem(17);
-    border-bottom: 1px solid;
+    border-bottom: 1px solid rgba($color-white, 0.3);
 	margin-bottom: rem(64);
+
+	&:after {
+		position: absolute;
+		content: "";
+		width: 0%;
+		height: 1px;
+		background-color: red;
+		bottom: 0;
+		left: 0;
+	}
 }
 
 .actions {
@@ -471,7 +480,6 @@
 			a {
 				display: block;
 				height: inherit;
-				background-image: $icon-arrow;
 				background-repeat: no-repeat;
 				background-position: right;
 				background-size: rem(24);
@@ -484,6 +492,17 @@
 					color: $color-black !important;
 					background-color: $color-gray-light !important;
 				}
+			}
+		}
+
+		&:nth-child(2){
+			a {
+				background-image: $icon-arrow;
+			}
+		}
+		&:nth-child(3){
+			a {
+				background-image: $icon-arrow-right-up;
 			}
 		}
 
@@ -526,6 +545,7 @@
 		transform: none !important;
 	}
 }
+
 
 
 

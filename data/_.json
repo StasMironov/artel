@@ -790,9 +790,10 @@
 										"fill": true,
 										"fields": [
 											{
+												"theme": "red",
 												"select": true,
-												"id": "filter-form-select-1",
-												"name": "filter-form-select-1",
+												"id": "filter-form-select-m-1",
+												"name": "filter-form-select-m-1",
 												"attr": "data-form-select",
 												"placeholder": "В каком городе хотите работать?",
 												"options": [
@@ -825,26 +826,31 @@
 									],
 									"select_lng": {
 										"fill": true,
+										"label": "Продукция",
 										"fields": [
 											{
 												"select": true,
-												"id": "filter-form-select-2",
-												"name": "filter-form-select-2",
+												"multiple": true,
+												"selectAll": true,
+												
+												"theme": "multi",
+												"id": "filter-form-select-m-2",
+												"name": "filter-form-select-m-2",
 												"attr": "data-form-select",
 												"placeholder": "Знание языков",
 												"options": [
 													{
-														"value": "All",
-														"text": "Знание языков",
-														"selected": "selected"
-													},
-													{
 														"value": "Язык 1",
-														"text": "Язык 1"
+														"text": "Язык 1",
+														"selected": true
 													},
 													{
 														"value": "Язык 2",
 														"text": "Язык 2"
+													},
+													{
+														"value": "Язык 3",
+														"text": "Язык 3"
 													}
 												]
 											}
@@ -872,13 +878,25 @@
 											"article": "Формат файла: ",
 											"formats": [".doc", ".docx", ".odt", ".txt", ".pdf"],
 											"text": "Файл не должен превышать 2Mb. или добавьте ссылку",
-											"button": {
-												"text": "Загрузить",
-												"title": "Загрузить",
-												"attr": "",
+											"field": {
+												"input": true,
+												"theme": "white",
+												"name": "file",
+												"id": "file",
+												"type": "file",
+												"accept": ".doc,.docx,.txt,.pdf",
+												"placeholder": "",
+												"required": "true",
+												"max_size": 10,
 												"icon": {
-													"name": "24/arrow-up-right"
-												}
+													"name": "24/download",
+													"size": "24"
+												},
+												"button_upload": {
+													"text": "Загрузить",
+													"aria": "удалить загруженные данные"
+												},
+												"text": "Файл в формате doc, pdf или txt"
 											}
 										}
 									}, 

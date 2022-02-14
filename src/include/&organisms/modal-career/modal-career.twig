@@ -14,13 +14,13 @@
                             {% if card.pag %}
                                 {{ card.pag }}
                             {% endif %}
-                            <section>
-                                {% if card.component and card.data %}
-                                    <div>
-                                        {% view card.component with {card: card.data} %}
-                                    </div>
-                                {% endif %}
-                            </section>
+                                <section>
+                                    {% if card.component and card.data %}
+                                        <div>
+                                            {% view card.component with {card: card.data} %}
+                                        </div>
+                                    {% endif %}
+                                </section>
                         {% endfor %}
                     {% endif %}
                 </div>

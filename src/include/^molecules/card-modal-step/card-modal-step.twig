@@ -63,10 +63,10 @@
                             </div>
                         {% endif %}
 
-                        {% if card.info.block.button %}
+                        {% if card.info.block.field %}
                             <div class="card-modal-step__button">
-                                {% view '@button' with {
-                                    button: card.info.block.button
+                                {% view '@field' with {
+                                    field: card.info.block.field
                                 } %}
                             </div>
                         {% endif %}

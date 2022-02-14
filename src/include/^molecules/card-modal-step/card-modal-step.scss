@@ -10,7 +10,7 @@
     }
 
     &__article {
-        margin-bottom: rem(16);
+        margin-bottom: rem(20);
     }
 
     &__block {
@@ -28,6 +28,10 @@
     &__format {
         color: rgba($color-black, 0.4);
         font-size: rem(24);
+
+        &:not(:last-child){
+            margin-right: rem(18);
+        }
     }
 
     &__text {
@@ -40,9 +44,46 @@
     .filter-select {
         opacity: 1 !important;
         transform: none !important;
+
+        &__label {
+            position: absolute;
+            transform: translateY(rem(23));
+            font-size: rem(24);
+        }
     }
 
     .form__field {
         padding: 0;
     }
+
+    .select-shell .select2-selection__rendered {
+        color: rgba($color-white, 0.6);
+
+        &:hover {
+            color: rgba($color-white, 0.4) !important;
+        }
+    }
+
+    .select-shell .select2-selection:hover {
+        .select2-selection__rendered {
+            color: rgba($color-white, 0.4) !important;
+        }
+        
+        color: rgba($color-white, 0.4) !important;
+    }
+
+    .select-shell .select2-container {
+        border-color: rgba($color-white, 0.6);
+
+        &:hover {
+            border-color: rgba($color-white, 1.0);
+        }
+    }
+
+    .select-shell .select2-selection__arrow b {
+        background-image: $icon-arrow-white;
+        transform: rotate(0deg);
+    }
+
+    
 }
