@@ -96,7 +96,7 @@
 
 	.progress {
 		position: absolute;
-		top: rem(47);
+		top: 0;
 		bottom: 0;
 		left: 0;
 		width: rem(1);
@@ -165,7 +165,6 @@
 		width: 100%;
 		height: 100%;
 		padding-left: rem(48);
-
 		@media (max-width: 1023px) {
 			padding: 0;
 		}
@@ -203,7 +202,23 @@
 			padding-left: rem(12);
 			padding-right: rem(12);
 		}
+	}
 
+	.last-tab{
+		@include media-breakpoint-only(lg) {
+			position: relative;
+			&::after{
+				position: absolute;
+				top: 50%;
+				left: rem(-80);
+				width: rem(40);
+				height: rem(500);
+				background-color: $color-green;
+				z-index: -1;
+				content: '';
+			}
+		}
+			
 	}
 
 	.swiper-container {
