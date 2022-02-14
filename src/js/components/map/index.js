@@ -500,6 +500,13 @@ export default class Map {
 		} else {
 			if (!exclude && fit) {
 				this.map.fitBounds(this.bounds);
+
+			const visibleCount = this.markers.filter(el => el.visible).length;
+				if (visibleCount === 1) { // TODO временное решение
+						setTimeout(() => {
+								this.map.setZoom(4);
+						}, 100)
+				}
 			}
 		}
 	}

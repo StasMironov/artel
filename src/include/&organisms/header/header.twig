@@ -20,11 +20,7 @@
 						<li class="header__item" {% if link.submenu %} data-submenu-trigger {% endif %}>
 							{% if link.submenu %}
 
-								{% if link.href %}
-									<a href="{{ link.href }}" class="header__link {% if link.active %} header__link--active" {% endif %}>{{ link.text }}</a>
-								{% else %}
-									<button type="button" class="header__link">{{ link.text }}</button>
-								{% endif %}
+								<button type="button" class="header__link">{{ link.text }}</button>
 
 								<div class="header__submenu">
 									{% view '&submenu' with {
