@@ -30,20 +30,13 @@ export default class ModalBase {
 
 		if (typeof this.id == 'undefined') return;
 
-		console.log('1');
-
 		const wrapNode = document.querySelector('.' + this.id);
-		
 
 		if (!wrapNode) return;
-		console.log('2');
-
 
 		const scrollNode = wrapNode.querySelector('[data-modal-ps]');
 
 		if (!scrollNode) return;
-
-		console.log('3');
 
 		MicroModal.init({
 			openTrigger: this.trigger,

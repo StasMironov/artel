@@ -849,7 +849,49 @@
 												]
 											}
 										]
-									}
+									},
+									"fields_after": [
+										{
+											"input": true,
+											"id": "form-1-input-2",
+											"name": "form-1-input-2",
+											"theme": "white",
+											"required": true,
+											"label": "Кем работаете сейчас или ранее?"
+										}
+									]
+								}
+							},
+							{	
+								"component": "^card-modal-step",
+								"pag": "<h3></h3>",
+								"data": {
+									"info": {
+										"title": "Загрузить резюме",
+										"block": {
+											"article": "Формат файла: ",
+											"formats": [".doc", ".docx", ".odt", ".txt", ".pdf"],
+											"text": "Файл не должен превышать 2Mb. или добавьте ссылку",
+											"button": {
+												"text": "Загрузить",
+												"title": "Загрузить",
+												"attr": "",
+												"icon": {
+													"name": "24/arrow-up-right"
+												}
+											}
+										}
+									}, 
+									"agreement": [
+										{
+											"checkbox": true,
+											"id": "form-1-checkbox-1",
+											"name": "form-1-checkbox-1",
+											"text": "Настоящим даю согласие по установленной форме на обработку моих персональных данных в порядке, установленном законом РУз от 27.07.2006 N 152-ФЗ 'О персональных данных'. Код подтверждения",
+											"required": true,
+											"theme": "white"
+										}
+									]
 								}
 							}
 						]

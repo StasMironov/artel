@@ -14,22 +14,13 @@
                             {% if card.pag %}
                                 {{ card.pag }}
                             {% endif %}
-                            {# {% if tab.fields %} #}
-                                <section>
+                            <section>
                                 {% if card.component and card.data %}
                                     <div>
                                         {% view card.component with {card: card.data} %}
                                     </div>
                                 {% endif %}
-                                    {# {% for field in tab.fields %}
-                                        <div class="form__field{% if field.textarea %} form__field--fit{% endif %}" data-fade-in-up data-delay="{{ (0.2 + loop.index0 / 5)|round(2, 'floor') }}">
-                                            {% view '@field' with {
-                                                field: field
-                                            } %}
-                                        </div>
-                                    {% endfor %} #}
-                                </section>
-                            {# {% endif %} #}
+                            </section>
                         {% endfor %}
                     {% endif %}
                 </div>

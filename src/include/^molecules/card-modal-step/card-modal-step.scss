@@ -1,7 +1,42 @@
 .card-modal-step {
+
+    &__title {
+        color: $color-white;
+        margin-bottom: rem(16);
+    }
+
     &__select {
         margin-bottom: rem(28);
     }
+
+    &__article {
+        margin-bottom: rem(16);
+    }
+
+    &__block {
+        background-color: $color-white;
+        border-radius: rem(8);
+        padding: rem(40);
+    }
+
+    &__formats {
+        display: flex;
+        align-items: center;
+        margin-bottom: rem(8);
+    }
+
+    &__format {
+        color: rgba($color-black, 0.4);
+        font-size: rem(24);
+    }
+
+    &__text {
+        max-width: rem(271);
+        width: 100%;
+        color: rgba($color-black, 0.4);
+        margin-bottom: rem(32);
+    }
+
     .filter-select {
         opacity: 1 !important;
         transform: none !important;
