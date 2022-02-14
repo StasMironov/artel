@@ -75,7 +75,8 @@ export default class blockProduct {
 			ScrollTrigger.create({
 				id: 'trigger2',
 				trigger: stage,
-				start: 'center center',
+				//start: 'center center',
+				start: 'bottom bottom',
 				end: 'center center',
 				onUpdate(self) {
 					// console.log(index * 10);
