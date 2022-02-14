@@ -4,12 +4,15 @@
 	background-color: $color-green;
 
 	&__wrapper {
+		display: flex;
+		flex-direction: column;
 		height: 100%;
-		padding: rem(80) rem(34) rem(80);
+		padding: 80px 164px 5rem 104px;
+		overflow: scroll;
 	}
 
 	&__form {
-		height: 100%;
+		flex: 1;
 	}
 
 	&__inner {

@@ -1,0 +1,23 @@
+<div class="card-modal-step">
+     {% if card.select_city %}  
+        <div class="card-modal-step__select {% if card.select_city.fill %}card-modal-step__select--fill{% endif %}">
+            {% view '@filter-select' with {
+                filter_select: card.select_city
+            } %}
+        </div>
+    {% endif %}
+    {% for field in card.fields %}
+        <div class="form__field{% if field.textarea %} form__field--fit{% endif %}" data-fade-in-up data-delay="{{ (0.2 + loop.index0 / 5)|round(2, 'floor') }}">
+            {% view '@field' with {
+                field: field
+            } %}
+        </div>
+    {% endfor %}
+      {% if card.select_lng %}  
+        <div class="card-modal-step__select {% if card.select_lng.fill %}card-modal-step__select--fill{% endif %}">
+            {% view '@filter-select' with {
+                filter_select: card.select_lng
+            } %}
+        </div>
+    {% endif %}
+</div>

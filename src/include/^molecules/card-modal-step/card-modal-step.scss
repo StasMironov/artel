@@ -1,0 +1,13 @@
+.card-modal-step {
+    &__select {
+        margin-bottom: rem(28);
+    }
+    .filter-select {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .form__field {
+        padding: 0;
+    }
+}
