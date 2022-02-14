@@ -16,7 +16,7 @@
 	border: 0;
 	border-radius: rem(32);
 	cursor: pointer;
-	@include defaultTransition(background-color, background, color);
+	@include defaultTransition(background-color, color, border-color);
 
 	&--has-icon {
 		padding-right: rem(24);
@@ -94,6 +94,18 @@
 				color: $color-white;
 				background-color: $color-black;
 			}
+		}
+	}
+
+	&--outline {
+		border: 1px solid rgba($color-black, 0.1);
+		background-color: $color-white;
+		color: $color-black;
+
+		@include touchLessHover {
+			background-color: $color-green;
+			color: $color-white;
+			border-color: $color-green;
 		}
 	}
 

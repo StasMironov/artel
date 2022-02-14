@@ -148,7 +148,7 @@ export default {
 						// console.log('init on open');
 						$select.ps = new PerfectScrollbar(content, {
 							suppressScrollX: true, // disable scrollX
-							minScrollbarLength: 32,
+							minScrollbarLength: 80,
 						});
 					}
 				}, 10);
