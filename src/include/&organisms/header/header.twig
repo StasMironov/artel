@@ -17,9 +17,15 @@
 			<nav class="header__navigation">
 				<ul class="header__list">
 					{% for link in header.navigation %}
-						<li class="header__item"{% if link.submenu %} data-submenu-trigger{% endif %}>
+						<li class="header__item" {% if link.submenu %} data-submenu-trigger {% endif %}>
 							{% if link.submenu %}
-								<button type="button" class="header__link">{{ link.text }}</button>
+
+								{% if link.href %}
+									<a href="{{ link.href }}" class="header__link {% if link.active %} header__link--active" {% endif %}>{{ link.text }}</a>
+								{% else %}
+									<button type="button" class="header__link">{{ link.text }}</button>
+								{% endif %}
+
 								<div class="header__submenu">
 									{% view '&submenu' with {
 										submenu: link.submenu
@@ -28,8 +34,7 @@
 							{% elseif link.active %}
 								<span class="header__link header__link--active">{{ link.text }}</span>
 							{% else %}
-								<a href="{{ link.href }}"
-								   class="header__link"{% if link.external %} target="_blank"{% endif %}>{{ link.text }}</a>
+								<a href="{{ link.href }}" class="header__link" {% if link.external %} target="_blank" {% endif %}>{{ link.text }}</a>
 							{% endif %}
 						</li>
 					{% endfor %}

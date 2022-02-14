@@ -1,5 +1,8 @@
 {
-	"colors": ["white", "black"],
+	"colors": [
+		"white",
+		"black"
+	],
 	"breakpoints": {
 		"md": 640,
 		"lg": 990
@@ -47,6 +50,7 @@
 			},
 			{
 				"text": "Инвесторам",
+				"href": "javascript:void(0);",
 				"submenu": {
 					"title": "Инвесторам",
 					"text": "Общая информация для инвесторов в формате отчетов, графиков и документов",
