@@ -136,12 +136,15 @@
 	"block_contacts": {
 		"title": "Контакты",
 		"bg": "gray",
-		"breadcrumbs": [
-			{
-				"href": "./",
-				"text": "Главная"
-			}
-		],
+		"breadcrumbs": {
+			"items": [
+				{
+					"href": "./",
+					"text": "Главная"
+				}
+			]
+		},
+
 		"tabs": {
 			"items": [
 				{

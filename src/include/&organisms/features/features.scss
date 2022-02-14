@@ -1,6 +1,10 @@
 .features {
 	$root: &;
 
+	&--layout-3 {
+		overflow: hidden;
+	}
+
 	&__title {
 		display: inline-block;
 		width: rem(250);

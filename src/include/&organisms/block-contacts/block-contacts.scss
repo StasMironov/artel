@@ -24,6 +24,12 @@
 				margin-bottom: rem(75);
 			}
 		}
+
+		#{$root}--layout-4 & {
+			@include media-breakpoint-up(sm) {
+				margin-bottom: rem(75);
+			}
+		}
 	}
 
 	&__items {
@@ -163,6 +169,17 @@
 				padding-top: rem(120);
 			}
 		}
+		#{$root}--layout-4 & {
+			padding-top: 0;
+
+			@include media-breakpoint-down(md) {
+				padding-top: rem(90);
+			}
+
+			@include media-breakpoint-down(sm) {
+				padding-top: rem(77);
+			}
+		}
 	}
 
 	&__breadcrumbs,
@@ -218,6 +235,10 @@
 		#{$root}--layout-3 & {
 			padding-top: 0;
 		}
+
+		#{$root}--layout-4 & {
+			padding-top: 0;
+		}
 	}
 
 	&__contents {
@@ -246,6 +267,12 @@
 		#{$root}--layout-3 & {
 			@include media-breakpoint-down(sm) {
 				top: rem(-130);
+			}
+		}
+
+		#{$root}--layout-4 & {
+			@include media-breakpoint-down(sm) {
+				top: rem(-98);
 			}
 		}
 	}

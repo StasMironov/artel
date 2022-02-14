@@ -7,8 +7,9 @@
 	height: rem(273);
 
 	@include touchLessHover {
-		.icon {
-			color: rgba($color-blue-2, 1);
+		img, svg{
+			filter: none;
+			opacity: 1;
 		}
 	}
 
@@ -21,9 +22,11 @@
 			display: block;
 			transform: scale(0.77);
 		}
-		.icon {
-			color: rgba($color-black, 0.2);
-			@include defaultTransition(color);
+
+		img, svg{
+			filter: grayscale(100%);
+			opacity: 0.32;
+			transition: 0.4s;			
 		}
 	}
 }

@@ -45,6 +45,15 @@
 		-webkit-text-fill-color: rgba($color-black, 1);
 	}
 
+	&::placeholder {
+		opacity: 1 !important;
+	}
+
+	&:focus::placeholder {
+		color: transparent;
+		opacity: 0 !important;
+	}
+
 	&:disabled {
 		border-color: transparent;
 		cursor: not-allowed;
@@ -153,5 +162,38 @@
 
 	&.parsley-error {
 		border-color: $color-red !important;
+	}
+
+	&::-webkit-input-placeholder {
+		opacity: 1;
+		transition: opacity 0.3s ease;
+	}
+	&::-moz-placeholder {
+		opacity: 1;
+		transition: opacity 0.3s ease;
+	}
+	&:-moz-placeholder {
+		opacity: 1;
+		transition: opacity 0.3s ease;
+	}
+	&:-ms-input-placeholder {
+		opacity: 1;
+		transition: opacity 0.3s ease;
+	}
+	&:focus::-webkit-input-placeholder {
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+	&:focus::-moz-placeholder {
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+	&:focus:-moz-placeholder {
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+	&:focus:-ms-input-placeholder {
+		opacity: 0;
+		transition: opacity 0.3s ease;
 	}
 }

@@ -30,6 +30,10 @@
 			align-items: flex-start;
 		}
 
+		#{$b}--director & {
+			display: block;
+		}
+
 		#{$b}--location &,
 		#{$b}--basket & {
 			background-color: transparent;

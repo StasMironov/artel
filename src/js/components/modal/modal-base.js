@@ -28,8 +28,15 @@ export default class ModalBase {
 	init() {
 		//	const btnClose = document.querySelectorAll(this.closeTrigger);
 
+		if (typeof this.id == 'undefined') return;
+
 		const wrapNode = document.querySelector('.' + this.id);
+
+		if (!wrapNode) return;
+
 		const scrollNode = wrapNode.querySelector('[data-modal-ps]');
+
+		if (!scrollNode) return;
 
 		MicroModal.init({
 			openTrigger: this.trigger,
@@ -42,11 +49,14 @@ export default class ModalBase {
 			disableScroll: false,
 			onShow: (modal) => {
 				// this.onShow(modal);
-				let ps = new PerfectScrollbar(scrollNode, {
-					wheelSpeed: 2,
-					wheelPropagation: true,
-					minScrollbarLength: 20,
-				});
+				if (scrollNode) {
+					let ps = new PerfectScrollbar(scrollNode, {
+						wheelSpeed: 2,
+						wheelPropagation: true,
+						minScrollbarLength: 20,
+					});
+				}
+
 				window._disableScroll();
 			},
 			onClose: (modal) => {

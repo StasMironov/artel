@@ -299,7 +299,7 @@
 			{
 				"text": "Обучение и оплачиваемая стажировка",
 				"icon": {
-					"name": "104/study",
+					"name": "104/study-icon",
 					"size": "104"
 				}
 			},
@@ -910,13 +910,7 @@
 	"block_contacts": {
 		"title": "Контакты HR",
 		"bg": "gray",
-		"layout": "2",
-		"breadcrumbs": [
-			{
-				"href": "./",
-				"text": "Главная"
-			}
-		],
+		"layout": "4",
 		"tabs": {
 			"items": [
 				{

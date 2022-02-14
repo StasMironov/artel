@@ -1,8 +1,5 @@
 {
-	"colors": [
-		"white",
-		"black"
-	],
+	"colors": ["white", "black"],
 	"breakpoints": {
 		"md": 640,
 		"lg": 990
@@ -389,8 +386,9 @@
 				"theme": "white-2",
 				"id": "form-1-search-1",
 				"search": true,
-				"placeholder": "Поиск по сайту",
+				"label": "Поиск по сайту",
 				"name": "search",
+				"autocomplete": "off",
 				"action": {
 					"type": "submit",
 					"icon": {
@@ -624,7 +622,7 @@
 						"name": "form-1",
 						"method": "POST",
 						"action": "/ajax/contacts/?repo=artel.frontend&status=success",
-						"attr": "data-ajax-form data-scroll-target data-scroll-contacts",
+						"attr": "data-ajax-form",
 						"title": "Стать поставщиком",
 						"bg": "green",
 						"layout": "3",
@@ -673,10 +671,11 @@
 							},
 							{
 								"input": true,
-								"id": "form-1-input-4",
-								"name": "form-1-input-4",
+								"id": "form-1-input-5",
+								"name": "form-1-input-5",
 								"theme": "white",
 								"required": true,
+								"type": "email",
 								"label": "E-mail"
 							},
 							{
@@ -714,6 +713,47 @@
 								"name": "24/arrow-up-right"
 							}
 						}
+					}
+				}
+			},
+			"modificator": "right"
+		},
+		{
+			"id": "modal-career",
+			"component": "&modal-career",
+			"data": {
+				"modal": {
+					"title": "Онлайн-анкета",
+					"attr": "data-steps-career",
+					"actions": [
+						{
+							"text": "Назад",
+							"title": "Назад",
+							"attr": "data-btn-prev",
+							"theme": "outline-white"
+						},
+						{
+							"text": "Дальше",
+							"title": "Дальше",
+							"attr": "data-btn-next",
+							"theme": "white"
+						}
+					],
+					"form": {
+						"id": "form-career",
+						"name": "form-career",
+						"method": "POST",
+						"action": "#",
+						"steps": {
+							"items": []
+						},
+						"tabs": [
+							{
+								"active": true
+							},
+							{},
+							{}
+						]
 					}
 				}
 			},

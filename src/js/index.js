@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	Animation.init();
 	Header.init();
-	FilterService.init();
+	//FilterService.init();
 	Toggle.init();
 	Nav.init();
 	InputSearch.init();
@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
+	new FilterService();
 	new BlockProduct();
 	new BlockHistory();
 
@@ -116,6 +117,22 @@ document.addEventListener('DOMContentLoaded', () => {
 			init: true,
 			id: 'modal-person',
 			trigger: 'data-modal-person',
+			closeTrigger: 'data-modal-close',
+			openClass: 'is-open',
+		});
+
+		new ModalBase({
+			init: true,
+			id: 'modal-career',
+			trigger: 'data-modal-career',
+			closeTrigger: 'data-modal-close',
+			openClass: 'is-open',
+		});
+
+		new ModalBase({
+			init: true,
+			id: 'modal-warning',
+			trigger: 'data-modal-warning',
 			closeTrigger: 'data-modal-close',
 			openClass: 'is-open',
 		});

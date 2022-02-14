@@ -1,0 +1,53 @@
+.modal-career {
+	height: 100vh;
+	min-height: rem(800);
+	background-color: $color-green;
+
+	&__wrapper {
+		height: 100%;
+		padding: rem(80) rem(34) rem(80);
+	}
+
+	&__form {
+		height: 100%;
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		background: red;
+	}
+
+	&__action {
+		display: flex;
+		justify-content: space-between;
+		margin-top: auto;
+	}
+
+	&__steps {
+		width: 100%;
+		min-height: auto;
+		background-color: gray;
+	}
+
+	&__content {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		background: yellowgreen;
+	}
+
+	&__tab {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		background: antiquewhite;
+		border: 1px solid;
+	}
+
+	&__title {
+		margin-bottom: rem(46);
+		color: $color-white;
+	}
+}

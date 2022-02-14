@@ -1,0 +1,72 @@
+<div class="modal-career">
+    <div class="modal-career__wrapper">
+        {% if modal.title %}
+            <div class="modal-career__title h1">
+                {{modal.title}}
+            </div>
+        {% endif %}
+        {% if modal.form %}
+            <form id="{{modal.form.id}}" class="modal-career__form" action="{{modal.form.action}}" {% if modal.attr %}{{modal.attr}}{% endif %} novalidate="novalidate">
+                <div class="modal-career__inner" >
+
+                    <h3></h3>
+                    <section>
+                        <label for="userName">User name *</label>
+                        <input id="userName" name="userName" type="text" class="required">
+                        <label for="password">Password *</label>
+                        <input id="password" name="password" type="text" class="required">
+                        <label for="confirm">Confirm Password *</label>
+                        <input id="confirm" name="confirm" type="text" class="required">
+                        <p>(*) Mandatory</p>
+                    </section>
+                    <h3></h3>
+                    <section>
+                        <label for="name">First name *</label>
+                        <input id="name" name="name" type="text" class="required">
+                        <label for="surname">Last name *</label>
+                        <input id="surname" name="surname" type="text" class="required">
+                        <label for="email">Email *</label>
+                        <input id="email" name="email" type="text" class="required email">
+                        <label for="address">Address</label>
+                        <input id="address" name="address" type="text">
+                        <p>(*) Mandatory</p>
+                    </section>
+                    <h3></h3>
+                    <section>
+                        <ul>
+                            <li>Foo</li>
+                            <li>Bar</li>
+                            <li>Foobar</li>
+                        </ul>
+                    </section>
+                    <h3></h3>
+                    <section>
+                        <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">I agree with the Terms and Conditions.</label>
+                    </section>
+                    <!-- {% if modal.form.steps %}
+                        <div class="modal-career__steps">
+                        </div>
+                    {% endif %}
+
+                     {% if modal.form.tabs %}
+                        {% for tab in modal.form.tabs %}
+                            <section class="modal-career__tab">
+                                {{loop.index0}}
+                            </section>
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if modal.actions %}
+                        <div class="modal-career__action">
+                            {% for btn in modal.actions %}
+                                {% view '@button' with {
+                                    button: btn
+                                } %}
+                            {% endfor %}
+                        </div>
+                    {% endif %} -->
+                </div>
+            </form>
+        {% endif %}
+    </div>
+</div>

@@ -1,181 +1,243 @@
-export default {
-	init() {
-		const filterNode = document.querySelector('[data-service-wrap]');
-		if (!filterNode) return;
+import { isDesktop, isTablet } from '../../utils/breakpoints';
 
-		const urlData = filterNode.dataset.url;
-		if (!urlData) return;
+export default class FilterService {
+	constructor() {
+		this.city = 'temp';
 
+		this.tempArr = [];
+		this.inputVal = false;
+		this.select_val = false;
+
+		this.filterNode = document.querySelector('[data-service-wrap]');
+		if (!this.filterNode) return;
+
+		this.cards = document.querySelectorAll('[data-id]');
+		if (!this.cards) return;
+
+		this.urlData = this.filterNode.dataset.url;
+		if (!this.urlData) return;
+
+		this.noSearch = this.filterNode.querySelector('[data-nosearch]');
+		if (!this.noSearch) return;
+
+		this.render();
+	}
+
+	render = (node) => {
 		const cards = document.querySelectorAll('[data-id]');
-		let select_val = false;
-		let tempArr = [];
-		let inputVal = false;
+		this.tempArr = [];
 
-		function renderServise(select, reset) {
-			cards.forEach((card) => {
-				if (!select) {
-					tempArr.forEach((elem) => {
-						if (card.dataset.id == elem.id) {
-							card.classList.remove('hide');
-						}
-					});
+		this.initService();
+
+		$('body').on('keyup', '[data-input]', (e) => {
+			const city = this.city;
+			this.inputVal = e.target.value;
+			var cityServ = this.inputVal;
+			let serviceEl;
+
+			if (!cityServ.length) {
+				serviceEl = '';
+				if (!this.select_val) {
+					this.renderServise(false, true);
+					this.inputVal = '';
 				} else {
-					if (select != 'All') {
-						if (!inputVal) {
-							tempArr.forEach((elem) => {
-								if (card.dataset.products == select) {
-									card.classList.remove('hide');
-								} else {
-									card.classList.add('hide');
-								}
-							});
-						} else {
-							tempArr.forEach((elem) => {
-								if (
-									card.dataset.id == elem.id &&
-									card.dataset.products == select &&
-									elem.name.indexOf(inputVal) !== -1
-								) {
-									card.classList.remove('hide');
-								} else {
-									card.classList.add('hide');
-								}
-							});
-						}
-					} else {
-						if (!inputVal) {
-							tempArr.forEach((elem) => {
-								if (select == 'All') {
-									card.classList.remove('hide');
-								}
-							});
-						} else {
-							tempArr.forEach((elem) => {
-								if (
-									select == 'All' &&
-									card.dataset.id == elem.id &&
-									elem.name.indexOf(inputVal) !== -1
-								) {
-									card.classList.remove('hide');
-								}
-							});
-						}
-					}
+					this.inputVal = '';
+					this.renderServise(this.select_val, true);
 				}
-			});
+			} else {
+				serviceEl = city.filter(function (place) {
+					return place.name.indexOf(cityServ) !== -1;
+				});
 
-			if (reset) {
-				if (!select) {
-					cards.forEach((card) => {
-						tempArr.forEach((elem) => {
+				if (serviceEl.length) {
+					this.tempArr = [];
+					serviceEl.forEach((elem) => {
+						this.cards.forEach((card) => {
+							card.classList.add('hide');
 							if (card.dataset.id == elem.id) {
-								card.classList.remove('hide');
+								this.tempArr.push({
+									id: card.dataset.id,
+									name: elem.name,
+									products: card.dataset.products,
+								});
 							}
 						});
 					});
+					this.renderServise(this.select_val, false);
 				} else {
-					if (select != 'All') {
-						cards.forEach((card) => {
-							tempArr.forEach((elem) => {
-								if (card.dataset.products == select) {
-									card.classList.remove('hide');
-								} else {
-									card.classList.add('hide');
-								}
-							});
-						});
-					} else {
-						cards.forEach((card) => {
-							tempArr.forEach((elem) => {
-								card.classList.remove('hide');
-							});
-						});
-					}
+					cards.forEach((card) => {
+						card.classList.add('hide');
+					});
 				}
 			}
-		}
 
-		function initService() {
-			fetch(urlData)
-				.then((response) => response.json())
-				.then((response) => {
-					if (response && response.data) {
-						const city = response.data;
-						tempArr = [];
-
-						cards.forEach((card) => {
-							let obj = {
-								id: card.dataset.id,
-								products: card.dataset.products,
-							};
-							city.forEach((elem, index) => {
-								if (elem.id == card.dataset.id) {
-									obj.name = elem.name;
-								}
-							});
-							tempArr.push(obj);
-						});
-					}
-				});
-		}
-
-		initService();
-
-		$('body').on('keyup', '[data-input]', function (e) {
-			fetch(urlData)
-				.then((response) => response.json())
-				.then((response) => {
-					if (response && response.data) {
-						const city = response.data;
-						inputVal = e.target.value;
-						var cityServ = inputVal;
-						let serviceEl;
-
-						if (!cityServ.length) {
-							serviceEl = '';
-						} else {
-							serviceEl = city.filter(function (place) {
-								return place.name.indexOf(cityServ) !== -1;
-							});
-
-							if (serviceEl.length) {
-								tempArr = [];
-								serviceEl.forEach((elem) => {
-									cards.forEach((card) => {
-										card.classList.add('hide');
-										if (card.dataset.id == elem.id) {
-											tempArr.push({
-												id: card.dataset.id,
-												name: elem.name,
-												products: card.dataset.products,
-											});
-										}
-									});
-								});
-								renderServise(select_val, false);
-							} else {
-								cards.forEach((card) => {
-									card.classList.add('hide');
-								});
-							}
-						}
-					}
-				});
+			this.checkSearch();
 		});
 
 		$('#filter-form-select-1').on('select2:select', (e) => {
-			select_val = $(e.currentTarget).val();
-			renderServise(select_val, false);
+			this.select_val = $(e.currentTarget).val();
+			this.renderServise(this.select_val, false);
+			this.checkSearch();
 		});
 
-		$('[data-reset]').on('click', function () {
-			if (!select_val) {
-				renderServise(false, true);
-				inputVal = '';
+		$('[data-reset]').on('click', () => {
+			if (!this.select_val) {
+				this.renderServise(false, true);
+				this.inputVal = '';
 			} else {
-				renderServise(select_val, true);
-				inputVal = '';
+				this.inputVal = '';
+				this.renderServise(this.select_val, true);
 			}
+
+			this.checkSearch();
 		});
-	},
-};
+	};
+
+	initService() {
+		fetch(this.urlData)
+			.then((response) => response.json())
+			.then((response) => {
+				if (response && response.data) {
+					const city = response.data;
+					this.city = city;
+					this.tempArr = [];
+					this.cards.forEach((card) => {
+						let obj = {
+							id: card.dataset.id,
+							products: card.dataset.products,
+						};
+						city.forEach((elem, index) => {
+							if (elem.id == card.dataset.id) {
+								obj.name = elem.name;
+							}
+						});
+						this.tempArr.push(obj);
+					});
+				}
+			});
+	}
+
+	checkSearch() {
+		if (this.cards.length) {
+			var state = 0;
+			$(this.cards).each((_, elem) => {
+				
+				if (!$(elem).hasClass('hide')) {
+					state += 1;
+				}
+			});
+
+			if (state > 0) {
+				$(this.noSearch).removeClass('show');
+			} else {
+				$(this.noSearch).addClass('show');
+			}
+
+			state = 0;
+		}
+	}
+
+	renderServise(select, reset) {
+		let arrProducts = '';
+
+		this.cards.forEach((card) => {
+			card.classList.add('hide');
+		});
+
+		if (!select) {
+			this.cards.forEach((card) => {
+				this.tempArr.forEach((elem) => {
+					if (card.dataset.id == elem.id) {
+						card.classList.remove('hide');
+					}
+				});
+			});
+		} else {
+			if (select != 'All') {
+				if (!this.inputVal) {
+					this.cards.forEach((card) => {
+						
+						if (typeof card.dataset.products != 'undefined') {
+							arrProducts = card.dataset.products.split(',');
+							//	console.log(arrProducts);
+
+							arrProducts.forEach((el) => {
+								if (el == select) {
+									card.classList.remove('hide');
+								}
+							});
+						}
+					});
+				} else {
+					this.cards.forEach((card) => {
+						this.tempArr.forEach((elem) => {
+							if (
+								card.dataset.id == elem.id &&
+								elem.name.indexOf(this.inputVal) !== -1
+							) {
+								if (
+									typeof card.dataset.products != 'undefined'
+								) {
+									arrProducts = card.dataset.products.split(
+										','
+									);
+									arrProducts.forEach((el) => {
+										if (el == select) {
+											card.classList.remove('hide');
+										}
+									});
+								}
+							}
+						});
+					});
+				}
+			} else {
+				if (!this.inputVal) {
+					this.cards.forEach((card) => {
+						card.classList.remove('hide');
+					});
+				} else {
+					this.cards.forEach((card) => {
+						this.tempArr.forEach((elem) => {
+							if (
+								card.dataset.id == elem.id &&
+								elem.name.indexOf(this.inputVal) !== -1
+							) {
+								card.classList.remove('hide');
+							}
+						});
+					});
+				}
+			}
+		}
+
+		if (reset) {
+			if (!select) {
+				this.cards.forEach((card) => {
+					card.classList.remove('hide');
+				});
+			} else {
+				if (select != 'All') {
+					this.cards.forEach((card) => {
+						this.tempArr.forEach((elem) => {
+							// console.log(card.dataset.products);
+							if (typeof card.dataset.products != 'undefined') {
+								arrProducts = card.dataset.products.split(',');
+								arrProducts.forEach((el) => {
+									if (el == select) {
+										card.classList.remove('hide');
+									}
+								});
+							}
+						});
+					});
+				} else {
+					
+					this.cards.forEach((card) => {
+						card.classList.remove('hide');
+					});
+				}
+			}
+		}
+	}
+}

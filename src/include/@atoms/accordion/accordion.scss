@@ -5,6 +5,8 @@
 	z-index: 1;
 	display: block;
 	width: 100%;
+	border-radius: rem(8);
+    overflow: hidden;
 
 	&__toggle {
 		position: relative;
@@ -39,6 +41,14 @@
 		#{$root}.is-active & {
 		//	background-color: $color-lightgray;
 		//	color: $color-green;
+		}
+
+		@include touchLessHover {
+			.accordion__icon {
+				background-color: $color-green;
+				color: $color-white;
+				border-color: $color-green;
+			}
 		}
 	}
 

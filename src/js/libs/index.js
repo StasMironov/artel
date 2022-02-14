@@ -8,6 +8,7 @@ export default {
 	init() {
 		require('./jquery.inputmask.bundle');
 		require('./jquery.inputmask-multi');
+		require('./steps');
 
 		lazyload.init();
 		mask.initMask();

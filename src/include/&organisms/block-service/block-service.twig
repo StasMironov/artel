@@ -41,6 +41,11 @@
                         {% endfor %}
                     </div>
                 {% endif %}
+                {% if block_service.nosearch %}
+                    <div class="block-service__nosearch h3" data-nosearch>
+                        {{block_service.nosearch}}
+                    </div>
+                {% endif %}
             </div>
             <div class="block-service__right">
                 <div class="block-service__wrp">
