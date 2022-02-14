@@ -1,6 +1,6 @@
 .select-shell {
 	.select2-selection {
-		height: rem(62);
+
 		padding-left: 0;
 		border: none;
 
@@ -21,18 +21,11 @@
 	}
 
 	.select2-selection__rendered {
-		color: rgba($color-black, 0.4);
-		font-weight: 500;
-		font-size: rem(24);
-		line-height: 1.2;
+		//color: rgba($color-black, 0.4); // TODO нужно перенести всё в стильник scss/libs/select2, используя темы
 
-		@include media-breakpoint-down(sm) {
-			font-size: rem(20);
-		}
-
-		&:hover {
-			color: rgba($color-black, 0.4) !important;
-		}
+		//&:hover { // TODO нужно использовать миксин ховера
+		//	color: rgba($color-black, 0.4) !important;
+		//}
 	}
 
 	.select2-selection__arrow b {
@@ -128,12 +121,12 @@
 }
 
 .select2-results__option[aria-selected=true], .select2-results__option--highlighted[aria-selected] {
-    
+
 		color: $color-black;
 		background-color: $color-gray;
 
 		&::before {
 		//	background-color: $color-green !important;
 		}
-	
+
 }

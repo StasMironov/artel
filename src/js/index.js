@@ -29,12 +29,13 @@ import Modals from './components/modal';
 import ModalAjax from './components/modal/ajax-modal';
 import Accordion from './components/accordion';
 import Search from './components/search';
+import Datepicker from './components/datepicker';
 
 import ModalBase from './components/modal/modal-base';
 import Menu from './components/menu';
 import select from './components/select';
 
-import { devices } from './utils/breakpoints';
+import {devices} from './utils/breakpoints';
 
 // Api
 
@@ -105,6 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	new BlockProduct();
 	new BlockHistory();
 
+	new Datepicker();
+
 	document.body.classList.add('content-loaded');
 });
 
@@ -155,4 +158,6 @@ window.addEventListener('reinit', () => {
 	select.init();
 	new MapService();
 	new ScrollAnimation();
+
+	new Datepicker();
 });
