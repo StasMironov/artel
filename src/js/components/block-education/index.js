@@ -46,7 +46,11 @@ export default class Education {
 				});
 			})
 
-			select.init();
+			setTimeout(()=>{
+				select.init();
+				const elements = document.querySelectorAll('[data-select]');
+				console.log(elements)
+			}, 2000);
 			this.inputs.render();
 			new Datepicker();
 		});
@@ -86,11 +90,11 @@ export default class Education {
 		if (!value) {
 			//this.frame.innerHTML = '';
 		} else {
-			this.temp = this.frame.innerHTML + value;
-			this.frame.innerHTML = '';
-			this.frame.innerHTML = this.temp;
+			// this.temp = this.frame.innerHTML + value;
+			// this.frame.innerHTML = '';
+			// this.frame.innerHTML = this.temp;
 
-			$(window).trigger("custom");
+			//$(window).trigger("custom");
 
 			
 			

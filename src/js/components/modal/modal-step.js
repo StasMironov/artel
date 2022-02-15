@@ -24,6 +24,7 @@ export default {
 		let step;
 		var form = $('[data-steps-career]');
 		var is_async_step = false;
+		var stateValid = 0;
 		
 		// form.validate({
 		// 	errorPlacement: function errorPlacement(error, element) { element.before(error); },
@@ -67,9 +68,33 @@ export default {
 				$('.wizard .content').animate({ height: $('.body.current').outerHeight() }, "slow");
 			},
 			onStepChanging: function (event, currentIndex, newIndex){
-				// if (currentIndex > newIndex) {
-					return true;
-				//}
+				stateValid = 0;
+
+				
+				let fields = $('.body.current').find('[data-parsley-trigger]');
+			
+				
+				fields.each((_, field)=>{
+					$(field).parsley().validate();
+
+					//console.log($(field).parsley().isValid());
+
+					if (!$(field).parsley().isValid()){
+						stateValid  = 0;
+					} 
+					else {
+						stateValid = 1;
+					}
+				});
+				console.log(stateValid);
+				
+
+				if (stateValid) {
+					console.log(stateValid);
+					
+				return true;
+				}
+				
 			},
 			onStepChanged: function (event, currentIndex, priorIndex) {
 				resizeJquerySteps();
