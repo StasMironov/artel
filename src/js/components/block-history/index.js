@@ -75,9 +75,8 @@ export default class blockProduct {
 			ScrollTrigger.create({
 				id: 'trigger2',
 				trigger: stage,
-				//start: 'center center',
-				start: 'bottom bottom',
-				end: 'center center',
+				start: 'top center',
+				end: 'center bottom',
 				onUpdate(self) {
 					// console.log(index * 10);
 					// console.log(`${self.progress * 100}%`);
