@@ -54,12 +54,16 @@ export default class blockProduct {
 		}
 
 		const progressNodeHeight =
-			($('.block-history__period .tabs__item').height() * 100 - 30) /
+			($('.block-history__period .tabs__item').height() * 100) /
 			$('.block-history__period').height();
 
 		const kof =
-			(($('.block-history__period .tab').height() / 2 - 44) * 100) /
+			(($('.block-history__period .tab').height() / 2) * 100) /
 			$('.block-history__period').height();
+
+		
+		const lastTab = document.querySelectorAll(".tab");
+		lastTab[lastTab.length -1].classList.add('last-tab');
 
 		gsap.to(progress, {
 			//value: 100,
@@ -71,7 +75,8 @@ export default class blockProduct {
 			ScrollTrigger.create({
 				id: 'trigger2',
 				trigger: stage,
-				start: 'center center',
+				//start: 'center center',
+				start: 'bottom bottom',
 				end: 'center center',
 				onUpdate(self) {
 					// console.log(index * 10);

@@ -9,7 +9,7 @@ if (document.querySelector('[data-slider-photo-wrap]')) {
 			options: {
 				slidesPerView: 5,
 				spaceBetween: 20,
-				touchRatio: false,
+				// touchRatio: false, // TODO дублирует touchRatio: 0.2
 				//loop: true,
 				slideToClickedSlide: true,
 				touchRatio: 0.2,

@@ -16,7 +16,7 @@
 	border: 0;
 	border-radius: rem(32);
 	cursor: pointer;
-	@include defaultTransition(background-color, background, color);
+	@include defaultTransition(background-color, color, border-color);
 
 	&--has-icon {
 		padding-right: rem(24);
@@ -97,6 +97,18 @@
 		}
 	}
 
+	&--outline {
+		border: 1px solid rgba($color-black, 0.1);
+		background-color: $color-white;
+		color: $color-black;
+
+		@include touchLessHover {
+			background-color: $color-green;
+			color: $color-white;
+			border-color: $color-green;
+		}
+	}
+
 	&--outline-white {
 		background-color: transparent;
 		border: 1px solid $color-white;
@@ -107,6 +119,32 @@
 				background-color: $color-gray-light;
 				border-color: $color-gray-light;
 			}
+		}
+	}
+
+	&--circle-white {
+		position: relative;
+		background-color: $color-white;
+		width: rem(56);
+		min-width: auto;
+		height: rem(56);
+		padding: 0;
+
+		&:after, &:before {
+			position: absolute;
+			content: "";
+			width: rem(16);
+			height: rem(2);
+			background-color: $color-black;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+		}
+
+		&:after {
+			transform: rotate(90deg);
 		}
 	}
 }

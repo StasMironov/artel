@@ -4,17 +4,16 @@
             "fill": true,
             "fields": [
                 {
-                    "theme": "red",
                     "select": true,
-                    "id": "filter-form-select-m-1",
-                    "name": "filter-form-select-m-1",
+                    "theme": "white",
+                    "id": "1-filter-form-select-m-10",
+                    "name": "1-filter-form-select-m-10",
                     "attr": "data-form-select",
                     "placeholder": "Образование",
                     "options": [
                         {
                             "value": "Образование 1",
-                            "text": "Образование 1",
-                            "selected": "selected"
+                            "text": "Образование 1"
                         },
                         {
                             "value": "Образование 2",
@@ -23,6 +22,13 @@
                     ]
                 }
             ]
+        },
+        "trigger": {
+            "attr": "data-add-education",
+            "button": {
+                "theme": "circle-white"
+            },
+            "text": "Добавить образование"
         }
 	}
 }

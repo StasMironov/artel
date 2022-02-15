@@ -210,6 +210,7 @@ export default class MapService {
 			this.map.fitBounds(this.bounds);
 			$('#filter-form-select-1').val('All').trigger('change');
 			//	this.activeIndex = null;
+			this.activeIndex = null; // это нужно для возможности повторного нажатия на пин при закрытии карточки
 		});
 
 		this.psWrap = new PerfectScrollbar(this.wrapCard, {

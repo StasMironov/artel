@@ -123,7 +123,7 @@
 	width: auto;
 	min-height: rem(335);
 	margin: 0.5em;
-	overflow: hidden;
+	overflow: visible !important;
 
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -197,8 +197,8 @@
 }
 
 .wizard > .actions > ul {
-	display: inline-block;
-	text-align: right;
+	// display: inline-block;
+	// text-align: right;
 }
 
 .wizard > .actions > ul > li {
@@ -339,6 +339,10 @@
     border-bottom: 1px solid rgba($color-white, 0.3);
 	margin-bottom: rem(64);
 
+	@include media-breakpoint-down(md) {
+		margin-bottom: rem(48);
+	}
+
 	&:after {
 		position: absolute;
 		content: "";
@@ -354,8 +358,10 @@
 	margin-top: auto;
 
 	ul {
-		display: flex;
 		align-items: center;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
 	}
 
 	
@@ -514,12 +520,16 @@
 
 				@include touchLessHover {
 					
-						color: $color-black;
-						background-color: $color-gray-light;
-						border-color: $color-gray-light;
+					color: $color-black !important;
+					background-color: $color-gray-light !important;
+					border-color: $color-gray-light !important;
 					
 				}
 			}
+		}
+
+		&.disabled {
+			opacity: 0;
 		}
 	}
 }

@@ -1,5 +1,8 @@
 {
-	"colors": ["white", "black"],
+	"colors": [
+		"white",
+		"black"
+	],
 	"breakpoints": {
 		"md": 640,
 		"lg": 990
@@ -47,6 +50,7 @@
 			},
 			{
 				"text": "Инвесторам",
+				"href": "javascript:void(0);",
 				"submenu": {
 					"title": "Инвесторам",
 					"text": "Общая информация для инвесторов в формате отчетов, графиков и документов",
@@ -738,24 +742,24 @@
 									"fields": [
 										{
 											"input": true,
-											"id": "form-1-input-1",
-											"name": "form-1-input-1",
+											"id": "form-1-input-11",
+											"name": "form-1-input-11",
 											"theme": "white",
 											"required": true,
 											"label": "ФИО"
 										},
 										{
 											"input": true,
-											"id": "form-1-input-2",
-											"name": "form-1-input-2",
+											"id": "form-1-input-22",
+											"name": "form-1-input-22",
 											"theme": "white",
 											"required": true,
 											"label": "Адрес проживания"
 										},
 										{
 											"input": true,
-											"id": "form-1-input-4",
-											"name": "form-1-input-4",
+											"id": "form-1-input-44",
+											"name": "form-1-input-44",
 											"theme": "white",
 											"required": true,
 											"type": "tel",
@@ -772,8 +776,8 @@
 										},
 										{
 											"input": true,
-											"id": "form-1-input-5",
-											"name": "form-1-input-5",
+											"id": "form-1-input-55",
+											"name": "form-1-input-55",
 											"theme": "white",
 											"required": true,
 											"type": "email",
@@ -790,18 +794,13 @@
 										"fill": true,
 										"fields": [
 											{
-												"theme": "red",
 												"select": true,
-												"id": "filter-form-select-m-1",
-												"name": "filter-form-select-m-1",
+												"id": "filter-form-select-m-11",
+												"name": "filter-form-select-m-11",
 												"attr": "data-form-select",
+												"theme": "white",
 												"placeholder": "В каком городе хотите работать?",
 												"options": [
-													{
-														"value": "All",
-														"text": "В каком городе хотите работать?",
-														"selected": "selected"
-													},
 													{
 														"value": "Город 1",
 														"text": "Город 1"
@@ -817,8 +816,8 @@
 									"fields": [
 										{
 											"input": true,
-											"id": "form-1-input-1",
-											"name": "form-1-input-1",
+											"id": "form-1-input-66",
+											"name": "form-1-input-66",
 											"theme": "white",
 											"required": true,
 											"label": "Знание компьютерных программ"
@@ -826,6 +825,7 @@
 									],
 									"select_lng": {
 										"fill": true,
+										"theme": "white",
 										"label": "Продукция",
 										"fields": [
 											{
@@ -834,8 +834,8 @@
 												"selectAll": true,
 												
 												"theme": "multi",
-												"id": "filter-form-select-m-2",
-												"name": "filter-form-select-m-2",
+												"id": "filter-form-select-m-22",
+												"name": "filter-form-select-m-22",
 												"attr": "data-form-select",
 												"placeholder": "Знание языков",
 												"options": [
@@ -859,13 +859,292 @@
 									"fields_after": [
 										{
 											"input": true,
-											"id": "form-1-input-2",
-											"name": "form-1-input-2",
+											"id": "form-1-input-77",
+											"name": "form-1-input-77",
 											"theme": "white",
 											"required": true,
 											"label": "Кем работаете сейчас или ранее?"
 										}
 									]
+								}
+							},
+							{
+								"component": "^card-modal-step",
+								"pag": "<h3></h3>",
+								"data": {
+									"url": "ajax/education-card-ajax.html",
+									"component": "^education-card",
+									"data": {
+										
+										"select_education": {
+											"fill": true,
+											"fields": [
+												{
+													"select": true,
+													"theme": "white",
+													"id": "filter-form-select-m-33",
+													"name": "filter-form-select-m-33",
+													"attr": "data-form-select",
+													"placeholder": "Образование",
+													"options": [
+														{
+															"value": "Образование 1",
+															"text": "Образование 1"
+														},
+														{
+															"value": "Образование 2",
+															"text": "Образование 2"
+														}
+													]
+												}
+											]
+										},
+										"field_job": {
+												"input": true,
+												"id": "form-1-input-88",
+												"name": "form-1-input-88",
+												"theme": "white",
+												"required": true,
+												"label": "Специальность"
+										},
+										"datepicker": {
+											"datepicker": true,
+											"id": "datepicker-2",
+											"name": "datepicker-name-2",
+											"theme": "white",
+											"label": "Годы обучения",
+											"attr": "data-some-attr",
+											"dropdownStart": {
+												"select": true,
+												"id": "datepicker2-select-1",
+												"name": "datepicker2-select-1",
+												"placeholder": "Выберите год",
+												"size": "small",
+												"attr": "data-datepicker-select-start",
+												"options": [
+													{
+														"text": "2008",
+														"value": "2008"
+													},
+													{
+														"text": "2009",
+														"value": "2009"
+													},
+													{
+														"text": "2010",
+														"value": "2010"
+													},
+													{
+														"text": "2011",
+														"value": "2011"
+													},
+													{
+														"text": "2012",
+														"value": "2012"
+													},
+													{
+														"text": "2013",
+														"value": "2013"
+													},
+													{
+														"text": "2014",
+														"value": "2014"
+													},
+													{
+														"text": "2015",
+														"value": "2015"
+													},
+													{
+														"text": "2016",
+														"value": "2016"
+													},
+													{
+														"text": "2017",
+														"value": "2017"
+													},
+													{
+														"text": "2018",
+														"value": "2018"
+													},
+													{
+														"text": "2019",
+														"value": "2019"
+													},
+													{
+														"text": "2020",
+														"value": "2020"
+													},
+													{
+														"text": "2021",
+														"value": "2021"
+													},
+													{
+														"text": "2022",
+														"value": "2022"
+													}
+												]
+											},
+											"dropdownEnd": {
+												"select": true,
+												"id": "datepicker2-select-2",
+												"name": "datepicker2-select-2",
+												"placeholder": "Выберите год",
+												"size": "small",
+												"attr": "data-datepicker-select-end",
+												"options": [
+													{
+														"text": "2008",
+														"value": "2008"
+													},
+													{
+														"text": "2009",
+														"value": "2009"
+													},
+													{
+														"text": "2010",
+														"value": "2010"
+													},
+													{
+														"text": "2011",
+														"value": "2011"
+													},
+													{
+														"text": "2012",
+														"value": "2012"
+													},
+													{
+														"text": "2013",
+														"value": "2013"
+													},
+													{
+														"text": "2014",
+														"value": "2014"
+													},
+													{
+														"text": "2015",
+														"value": "2015"
+													},
+													{
+														"text": "2016",
+														"value": "2016"
+													},
+													{
+														"text": "2017",
+														"value": "2017"
+													},
+													{
+														"text": "2018",
+														"value": "2018"
+													},
+													{
+														"text": "2019",
+														"value": "2019"
+													},
+													{
+														"text": "2020",
+														"value": "2020"
+													},
+													{
+														"text": "2021",
+														"value": "2021"
+													},
+													{
+														"text": "2022",
+														"value": "2022"
+													}
+												]
+											},
+											"startTitle": "Начало",
+											"endTitle": "Окончание",
+											"months": [
+												{
+													"text": "Янв",
+													"value": "jan"
+												},
+												{
+													"text": "Фев",
+													"value": "feb"
+												},
+												{
+													"text": "Мар",
+													"value": "mar"
+												},
+												{
+													"text": "Апр",
+													"value": "apr"
+												},
+												{
+													"text": "Май",
+													"value": "may"
+												},
+												{
+													"text": "Июн",
+													"value": "jun"
+												},
+												{
+													"text": "Июл",
+													"value": "jul"
+												},
+												{
+													"text": "Авг",
+													"value": "aug"
+												},
+												{
+													"text": "Сен",
+													"value": "sep"
+												},
+												{
+													"text": "Окт",
+													"value": "oct"
+												},
+												{
+													"text": "Ноя",
+													"value": "nov"
+												},
+												{
+													"text": "Дек",
+													"value": "dec"
+												}
+											],
+											"actions": [
+												{
+													"text": "Применить",
+													"attr": "data-datepicker-apply"
+												},
+												{
+													"text": "Отмена",
+													"theme": "outline",
+													"attr": "data-datepicker-reset"
+												}
+											]
+										},
+										"agreement": [
+											{
+												"checkbox": true,
+												"id": "form-1-checkbox-11",
+												"name": "form-1-checkbox-11",
+												"text": "По настоящее время",
+												"required": true,
+												"theme": "white"
+											}
+										],
+										"field_certificate": {
+											"input": true,
+											"id": "form-1-input-99",
+											"name": "form-1-input-99",
+											"theme": "white",
+											"required": true,
+											"label": "Наличие сертификатов"
+										},
+										"trigger": {
+											"attr": "data-add-education",
+											"button": {
+												"theme": "circle-white"
+											},
+											"text": "Добавить образование"
+										}
+										
+									}
 								}
 							},
 							{	
@@ -903,8 +1182,8 @@
 									"agreement": [
 										{
 											"checkbox": true,
-											"id": "form-1-checkbox-1",
-											"name": "form-1-checkbox-1",
+											"id": "form-1-checkbox-22",
+											"name": "form-1-checkbox-22",
 											"text": "Настоящим даю согласие по установленной форме на обработку моих персональных данных в порядке, установленном законом РУз от 27.07.2006 N 152-ФЗ 'О персональных данных'. Код подтверждения",
 											"required": true,
 											"theme": "white"

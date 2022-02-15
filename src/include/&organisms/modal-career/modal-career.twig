@@ -6,7 +6,7 @@
             </div>
         {% endif %}
         {% if modal.form %}
-            <form id="{{modal.form.id}}" class="modal-career__form" action="{{modal.form.action}}" {% if modal.attr %}{{modal.attr}}{% endif %} novalidate="novalidate">
+            <form id="{{modal.form.id}}" method="get" class="modal-career__form" data-parsley-validate action="{{modal.form.action}}" {% if modal.attr %}{{modal.attr}}{% endif %} novalidate="novalidate">
                 <div class="modal-career__inner" >
 
                     {% if modal.form.tabs %}

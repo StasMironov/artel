@@ -19,7 +19,7 @@
 
 	display: flex;
 	align-items: center;
-	height: rem(48);
+	height: rem(62);
 	padding: 0 rem(56) 0 rem(16);
 	color: $color-black;
 	border: 1px solid $color-black;
@@ -28,6 +28,10 @@
 	cursor: pointer;
 	user-select: none;
 	@include defaultTransition(border-color);
+
+	&--small {
+		height: rem(36);
+	}
 
 	@include touchLessHover {
 		border-color: $color-red;
@@ -130,8 +134,12 @@
 		white-space: nowrap;
 		overflow: hidden;
 		color: $color-black;
-		@include text-body;
+		@include h3;
 		@include defaultTransition(color);
+
+		#{$root}--small & {
+			@include text-body;
+		}
 
 		.select2-prefix {
 			color: rgba($color-white, 1);
@@ -243,6 +251,10 @@
 		max-height: rem(264);
 		padding-bottom: rem(12);
 
+		@at-root .select2-dropdown--small & {
+			max-height: rem(172);
+		}
+
 		.ps__rail-y {
 			right: rem(16) !important;
 			bottom: 0 !important;
@@ -287,6 +299,11 @@
 				//background-color: $color-grey;
 				color: $color-black;
 			}
+		}
+
+		@at-root .select2-dropdown--small & {
+			min-height: rem(30);
+			@include text-small;
 		}
 
 		&.multiselect-option {

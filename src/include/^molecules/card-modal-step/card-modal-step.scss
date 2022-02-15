@@ -45,18 +45,18 @@
         opacity: 1 !important;
         transform: none !important;
 
-        &__label {
-            position: absolute;
-            transform: translateY(rem(23));
-            font-size: rem(24);
-        }
+        // &__label {
+        //     position: absolute;
+        //     transform: translateY(#{rem(23));
+        //     font-size: rem(24);
+        // }
     }
 
     .form__field {
         padding: 0;
     }
 
-    .select-shell .select2-selection__rendered {
+    .select2-container--white .select2-selection__rendered {
         color: rgba($color-white, 0.6);
 
         &:hover {
@@ -64,7 +64,7 @@
         }
     }
 
-    .select-shell .select2-selection:hover {
+    .select-shell .select--white .select2-selection:hover {
         .select2-selection__rendered {
             color: rgba($color-white, 0.4) !important;
         }
@@ -72,7 +72,7 @@
         color: rgba($color-white, 0.4) !important;
     }
 
-    .select-shell .select2-container {
+    .select-shell .select2-container--white {
         border-color: rgba($color-white, 0.6);
 
         &:hover {
@@ -80,9 +80,13 @@
         }
     }
 
-    .select-shell .select2-selection__arrow b {
+    .select-shell .select2-container--white .select2-selection__arrow b {
         background-image: $icon-arrow-white;
         transform: rotate(0deg);
+    }
+
+    .select2-container--white .select2-selection__placeholder {
+       color: rgba($color-white, 0.6) !important; 
     }
 
     

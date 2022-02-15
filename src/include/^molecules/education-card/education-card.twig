@@ -1,3 +1,51 @@
-<div class="education-card">
-    
+<div class="education-card" >
+    {% if card.select_education %}  
+        <div class="card-modal-step__select {% if card.select_education.fill %}card-modal-step__select--fill{% endif %}">
+            {% view '@filter-select' with {
+                filter_select: card.select_education
+            } %}
+        </div>
+    {% endif %}
+    {% if card.field_job %}  
+        <div class="form__field">
+            {% view '@field' with {
+                field: card.field_job
+            } %}
+        </div>
+    {% endif %}
+    {% if card.datepicker %}
+        {% view '@field' with {
+            field: card.datepicker
+        } %}
+    {% endif %}
+    {% if card.agreement %}
+        {% for check in card.agreement %}
+            <div class="form__agreement">
+                {% view '@field' with {
+                    field: check
+                } %}
+            </div>
+        {% endfor %}
+    {% endif %}
+    {% if card.field_certificate %}  
+        <div class="form__field">
+            {% view '@field' with {
+                field: card.field_certificate
+            } %}
+        </div>
+    {% endif %}
+    {% if card.trigger %}
+        <div class="education-card__trigger" data-btn-education>
+            {% if card.trigger.button %}
+                <span class="education-card__btn">
+                </span>
+            {% endif %}
+            {% if card.trigger.text %}
+                <div class="education-card__text">
+                    {{card.trigger.text}}
+                </div>
+            {% endif %}
+        </div>
+        
+    {% endif %}
 </div>

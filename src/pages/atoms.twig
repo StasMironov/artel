@@ -2,6 +2,40 @@
 
 {% block content %}
 
+	<!--<editor-fold desc="Fields">-->
+
+	<div class="mt-120 py-24">
+		<div class="container">
+			<p class="h2 mb-24">Fields</p>
+
+			<div class="mb-24">
+				<p class="text-lead mb-16"><code>Datepicker</code></p>
+
+				<div class="py-24 px-24">
+					<div style="width: 27.5rem;">
+						{% view '@field' with {
+							field: datepicker1
+						} %}
+					</div>
+				</div>
+			</div>
+
+			<div class="mb-24">
+				<p class="text-lead mb-16"><code>Datepicker white</code></p>
+
+				<div class="py-64 px-24 bg-green">
+					<div style="width: 27.5rem;">
+						{% view '@field' with {
+							field: datepicker2
+						} %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--</editor-fold>-->
+
 	<!--<editor-fold desc="Icons">-->
 
 	<div class="py-24">

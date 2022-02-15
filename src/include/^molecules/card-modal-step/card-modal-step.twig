@@ -1,4 +1,4 @@
-<div class="card-modal-step">
+<div class="card-modal-step" {% if card.url %} data-education-ajax data-url="{{ card.url }}"{% endif %}>
     {% if card.select_city %}  
         <div class="card-modal-step__select {% if card.select_city.fill %}card-modal-step__select--fill{% endif %}">
             {% view '@filter-select' with {
@@ -83,6 +83,12 @@
 					{% endfor %}
 				{% endif %}
             {% endif %}
+        </div>
+    {% endif %}
+
+    {% if card.component %}
+        <div class="card-modal-step__container" data-container-frame>
+            {% view card.component with {card: card.data} %}
         </div>
     {% endif %}
 </div>
