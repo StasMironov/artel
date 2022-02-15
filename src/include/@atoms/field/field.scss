@@ -36,6 +36,12 @@
 		}
 	}
 
+	&--multi {
+		.select2-container--multi .selection .select2-selection .select2-selection__rendered {
+			//opacity: 0;
+		}
+	}
+
 }
 
 // Базовый стиль поведения label

@@ -4,19 +4,29 @@
 	background-color: $color-green;
 
 	&__wrapper {
+		display: flex;
+		flex-direction: column;
 		height: 100%;
-		padding: rem(80) rem(34) rem(80);
+		padding: 80px 164px 5rem 104px;
+		overflow: scroll;
+
+		@include media-breakpoint-down(md) {
+			padding: rem(80) rem(108) rem(80) rem(108);
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding: rem(64) rem(16) rem(64);
+		}
 	}
 
 	&__form {
-		height: 100%;
+		flex: 1;
 	}
 
 	&__inner {
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-		background: red;
 	}
 
 	&__action {
@@ -35,19 +45,32 @@
 		display: flex;
 		flex: 1;
 		flex-direction: column;
-		background: yellowgreen;
 	}
 
 	&__tab {
 		display: flex;
 		flex: 1;
 		flex-direction: column;
-		background: antiquewhite;
-		border: 1px solid;
+		//border: 1px solid;
 	}
 
 	&__title {
 		margin-bottom: rem(46);
 		color: $color-white;
 	}
+
+
+	.progress-step{
+		background: $color-white;
+		width: 0%;
+		height: 1px;
+		position: absolute;
+		bottom: 0;
+		@include defaultTransition(width);
+
+	}
+
+
+	
+	
 }

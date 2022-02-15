@@ -121,10 +121,9 @@
 	position: relative;
 	display: block;
 	width: auto;
-	min-height: 35em;
+	min-height: rem(335);
 	margin: 0.5em;
-	overflow: hidden;
-	background: #eee;
+	overflow: visible !important;
 
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -141,9 +140,8 @@
 .wizard > .content > .body {
 	position: absolute;
 	float: left;
-	width: 95%;
-	height: 95%;
-	padding: 2.5%;
+	width: 100%;
+//	height: 95%;
 }
 
 .wizard > .content > .body ul {
@@ -160,14 +158,13 @@
 	border: 0 none;
 }
 
-.wizard > .content > .body input {
-	display: block;
-	border: 1px solid #ccc;
-}
+// .wizard > .content > .body input {
+// 	display: block;
+// }
 
-.wizard > .content > .body input[type='checkbox'] {
-	display: inline-block;
-}
+// .wizard > .content > .body input[type='checkbox'] {
+// 	display: inline-block;
+// }
 
 .wizard > .content > .body input.error {
 	color: #8a1f11;
@@ -177,7 +174,6 @@
 
 .wizard > .content > .body label {
 	display: inline-block;
-	margin-bottom: 0.5em;
 }
 
 .wizard > .content > .body label.error {
@@ -201,8 +197,8 @@
 }
 
 .wizard > .actions > ul {
-	display: inline-block;
-	text-align: right;
+	// display: inline-block;
+	// text-align: right;
 }
 
 .wizard > .actions > ul > li {
@@ -213,26 +209,26 @@
 	margin: 0 0 0 1em;
 }
 
-.wizard > .actions a,
-.wizard > .actions a:hover,
-.wizard > .actions a:active {
-	display: block;
-	padding: 0.5em 1em;
-	color: #fff;
-	text-decoration: none;
-	background: #2184be;
+// .wizard > .actions a,
+// .wizard > .actions a:hover,
+// .wizard > .actions a:active {
+// 	display: block;
+// 	padding: 0.5em 1em;
+// 	color: #fff;
+// 	text-decoration: none;
+// 	background: #2184be;
 
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-}
+// 	-webkit-border-radius: 5px;
+// 	-moz-border-radius: 5px;
+// 	border-radius: 5px;
+// }
 
-.wizard > .actions .disabled a,
-.wizard > .actions .disabled a:hover,
-.wizard > .actions .disabled a:active {
-	color: #aaa;
-	background: #eee;
-}
+// .wizard > .actions .disabled a,
+// .wizard > .actions .disabled a:hover,
+// .wizard > .actions .disabled a:active {
+// 	color: #aaa;
+// 	background: #eee;
+// }
 
 .wizard > .loading {
 }
@@ -338,22 +334,204 @@
 }
 
 .steps {
+	position: relative;
 	padding-bottom: rem(17);
-    border-bottom: 1px solid;
+    border-bottom: 1px solid rgba($color-white, 0.3);
 	margin-bottom: rem(64);
+
+	@include media-breakpoint-down(md) {
+		margin-bottom: rem(48);
+	}
+
+	&:after {
+		position: absolute;
+		content: "";
+		width: 0%;
+		height: 1px;
+		background-color: red;
+		bottom: 0;
+		left: 0;
+	}
 }
 
 .actions {
 	margin-top: auto;
 
 	ul {
-		display: flex;
 		align-items: center;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
 	}
-}
 
-.wizard > .content {
-	// display: none;
+	
+	a {
+		$root: &;
+
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		min-width: rem(110);
+		height: rem(56);
+		padding: 0 rem(32);
+		color: $color-white;
+		line-height: rem(56);
+		white-space: nowrap;
+		text-align: center;
+		background-color: $color-green;
+		border: 0;
+		border-radius: rem(32);
+		cursor: pointer;
+		width: auto;
+		@include defaultTransition(background-color, background, color);
+
+		&--has-icon {
+			padding-right: rem(24);
+		}
+
+		@include touchLessHover {
+			&:not(#{$root}--non-interactive):not(:disabled):not(.button--disabled) {
+				color: $color-white;
+				background-color: darken($color-green, 5%);
+			}
+		}
+
+		&__text {
+			position: relative;
+			display: inline-block;
+			width: 100%;
+			font-weight: 500;
+			font-size: rem(15);
+			line-height: rem(18);
+			vertical-align: middle;
+
+			@include media-breakpoint-up(sm) {
+				font-size: rem(16);
+				line-height: rem(24);
+			}
+		}
+
+		&__icon {
+			display: block;
+			width: rem(24);
+			height: rem(24);
+			margin-left: rem(8);
+			font-size: 0;
+			line-height: rem(24);
+		}
+
+		&--non-interactive {
+			cursor: default;
+		}
+
+		&--fit {
+			width: 100%;
+		}
+
+		&--mob-fit {
+			@include media-breakpoint-down(sm) {
+				width: 100%;
+			}
+		}
+
+		&:disabled,
+		&--disabled {
+			cursor: not-allowed;
+			opacity: 0.4;
+		}
+
+		&--white {
+			color: $color-black;
+			background-color: $color-white;
+
+			@include touchLessHover {
+				&:not(#{$root}--non-interactive):not(:disabled):not(.button--disabled) {
+					color: $color-black;
+					background-color: $color-gray-light;
+				}
+			}
+		}
+
+		&--gray {
+			color: $color-black;
+			background-color: $color-gray;
+
+			@include touchLessHover {
+				&:not(#{$root}--non-interactive):not(:disabled):not(.button--disabled) {
+					color: $color-white;
+					background-color: $color-black;
+				}
+			}
+		}
+
+		&--outline-white {
+			background-color: transparent;
+			border: 1px solid $color-white;
+
+			@include touchLessHover {
+				&:not(#{$root}--non-interactive):not(:disabled):not(.button--disabled) {
+					color: $color-black;
+					background-color: $color-gray-light;
+					border-color: $color-gray-light;
+				}
+			}
+		}
+
+
+		
+	}
+
+	li {
+		&:nth-child(2), &:nth-child(3) {
+			a {
+				display: block;
+				height: inherit;
+				background-repeat: no-repeat;
+				background-position: right;
+				background-size: rem(24);
+    			background-position-x: 81%;
+				padding-right: rem(58);
+				color: $color-black;
+				background-color: $color-white;
+	
+				@include touchLessHover {
+					color: $color-black !important;
+					background-color: $color-gray-light !important;
+				}
+			}
+		}
+
+		&:nth-child(2){
+			a {
+				background-image: $icon-arrow;
+			}
+		}
+		&:nth-child(3){
+			a {
+				background-image: $icon-arrow-right-up;
+			}
+		}
+
+
+		&:first-child {
+			a {
+				background-color: transparent;
+				border: 1px solid $color-white;
+
+				@include touchLessHover {
+					
+					color: $color-black !important;
+					background-color: $color-gray-light !important;
+					border-color: $color-gray-light !important;
+					
+				}
+			}
+		}
+
+		&.disabled {
+			opacity: 0;
+		}
+	}
 }
 
 .wizard > .steps .number {
@@ -370,4 +548,14 @@
 
 .wizard > .content {
 	margin: 0;
+	margin-bottom: rem(48);
+
+	.form__field {
+		opacity: 1 !important;
+		transform: none !important;
+	}
 }
+
+
+
+

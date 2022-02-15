@@ -1,0 +1,34 @@
+{
+	"card": {
+		"select_education": {
+            "fill": true,
+            "fields": [
+                {
+                    "select": true,
+                    "theme": "white",
+                    "id": "1-filter-form-select-m-10",
+                    "name": "1-filter-form-select-m-10",
+                    "attr": "data-form-select",
+                    "placeholder": "Образование",
+                    "options": [
+                        {
+                            "value": "Образование 1",
+                            "text": "Образование 1"
+                        },
+                        {
+                            "value": "Образование 2",
+                            "text": "Образование 2"
+                        }
+                    ]
+                }
+            ]
+        },
+        "trigger": {
+            "attr": "data-add-education",
+            "button": {
+                "theme": "circle-white"
+            },
+            "text": "Добавить образование"
+        }
+	}
+}

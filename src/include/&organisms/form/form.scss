@@ -29,6 +29,11 @@
 		}
 	}
 
+	&__tex-upload {
+		display: inline-block;
+    	margin-right: rem(5);
+	}
+
 	&__container {
 		
 		@include media-breakpoint-up(sm) {
@@ -225,5 +230,56 @@
 
 	&--white {
 		
+	}
+
+	&__upload-file {
+		.button {
+			font-size: rem(16);
+			margin: 0;
+			padding-right: rem(24);
+		}
+	}
+	
+}
+
+.file-wrapper {
+	display: flex;
+	flex-direction: row;
+	padding-top: rem(8);
+	padding-bottom: rem(16);
+
+	.icon {
+		min-width: rem(24);
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		margin-left: rem(16);
+		margin-right: auto;
+	}
+
+	&__name,
+	&__info {
+		@include text-body;
+		word-break: break-all;
+	}
+
+	&__info {
+		opacity: 0.5;
+	}
+
+	&__close {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: rem(24);
+		height: rem(24);
+		z-index: 2;
+		padding: 0;
+		margin: 0;
+		border: none;
+		background-color: transparent;
+		@include defaultTransition(background-color, color);
 	}
 }

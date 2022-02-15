@@ -1,0 +1,93 @@
+.card-modal-step {
+
+    &__title {
+        color: $color-white;
+        margin-bottom: rem(16);
+    }
+
+    &__select {
+        margin-bottom: rem(28);
+    }
+
+    &__article {
+        margin-bottom: rem(20);
+    }
+
+    &__block {
+        background-color: $color-white;
+        border-radius: rem(8);
+        padding: rem(40);
+    }
+
+    &__formats {
+        display: flex;
+        align-items: center;
+        margin-bottom: rem(8);
+    }
+
+    &__format {
+        color: rgba($color-black, 0.4);
+        font-size: rem(24);
+
+        &:not(:last-child){
+            margin-right: rem(18);
+        }
+    }
+
+    &__text {
+        max-width: rem(271);
+        width: 100%;
+        color: rgba($color-black, 0.4);
+        margin-bottom: rem(32);
+    }
+
+    .filter-select {
+        opacity: 1 !important;
+        transform: none !important;
+
+        // &__label {
+        //     position: absolute;
+        //     transform: translateY(#{rem(23));
+        //     font-size: rem(24);
+        // }
+    }
+
+    .form__field {
+        padding: 0;
+    }
+
+    .select2-container--white .select2-selection__rendered {
+        color: rgba($color-white, 0.6);
+
+        &:hover {
+            color: rgba($color-white, 0.4) !important;
+        }
+    }
+
+    .select-shell .select--white .select2-selection:hover {
+        .select2-selection__rendered {
+            color: rgba($color-white, 0.4) !important;
+        }
+        
+        color: rgba($color-white, 0.4) !important;
+    }
+
+    .select-shell .select2-container--white {
+        border-color: rgba($color-white, 0.6);
+
+        &:hover {
+            border-color: rgba($color-white, 1.0);
+        }
+    }
+
+    .select-shell .select2-container--white .select2-selection__arrow b {
+        background-image: $icon-arrow-white;
+        transform: rotate(0deg);
+    }
+
+    .select2-container--white .select2-selection__placeholder {
+       color: rgba($color-white, 0.6) !important; 
+    }
+
+    
+}
