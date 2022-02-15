@@ -25,15 +25,24 @@ export default {
 		var form = $('[data-steps-career]');
 		var is_async_step = false;
 		var stateValid = 0;
+	
+		function fieldValidate(){
+			stateValid = 0;
+
+				
+			let fields = $('.body.current').find('[data-field-check]');
+			
+			fields.each((_, field)=>{
+				$(field).parsley().validate();
+			});
 		
-		// form.validate({
-		// 	errorPlacement: function errorPlacement(error, element) { element.before(error); },
-		// 	rules: {
-		// 		confirm: {
-		// 			equalTo: "#password"
-		// 		}
-		// 	}
-		// });
+			const erorFields = $('.body.current').find('.parsley-error')
+
+			if (erorFields.length <= 0) {
+				return true;
+			}
+		}
+	
 		form.children("div").steps({
 			headerTag: 'h3',
 			bodyTag: 'section',
@@ -45,17 +54,15 @@ export default {
 				previous: "Назад",
 				current: "current step:",
 				pagination: "Pagination",
-				//finish: "Save",
-				loading: "Loading ..."
 			},
 			onInit: function (event, currentIndex, priorIndex) {
 				require('./../../libs/jquery.inputmask.bundle');
 				require('./../../libs/jquery.inputmask-multi');
-				mask.initMask();
+				//mask.initMask();
 				// select.init();
-				validation.init();
+				//validation.init();
 				const inputs = new Input();
-				inputs.render();
+				//inputs.render();
 
 				$('.steps').append(progressLine);
 			
@@ -68,33 +75,9 @@ export default {
 				$('.wizard .content').animate({ height: $('.body.current').outerHeight() }, "slow");
 			},
 			onStepChanging: function (event, currentIndex, newIndex){
-				stateValid = 0;
-
-				
-				let fields = $('.body.current').find('[data-parsley-trigger]');
-			
-				
-				fields.each((_, field)=>{
-					$(field).parsley().validate();
-
-					//console.log($(field).parsley().isValid());
-
-					if (!$(field).parsley().isValid()){
-						stateValid  = 0;
-					} 
-					else {
-						stateValid = 1;
-					}
-				});
-				console.log(stateValid);
-				
-
-				if (stateValid) {
-					console.log(stateValid);
-					
-				return true;
+				if(fieldValidate()){
+					return true;
 				}
-				
 			},
 			onStepChanged: function (event, currentIndex, priorIndex) {
 				resizeJquerySteps();
@@ -103,12 +86,15 @@ export default {
         		// return form.valid();
 
 				
-			},
-			onFinishing: function (event, currentIndex, newIndex) {
-				return $(this).parsley().validate();
 			},	
 			onFinished: function (event, currentIndex){
-				alert("Submitted!");
+				// if(fieldValidate()){
+				// 	console.log('submit');
+				// 	alert("Submitted!");
+				// }
+
+				console.log(form);
+				form.submit();
 			}	
 		});
 		
