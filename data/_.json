@@ -833,7 +833,8 @@
 												"multiple": true,
 												"selectAll": true,
 												
-												"theme": "multi",
+												"layout": "multi",
+												"theme": "white",
 												"id": "filter-form-select-m-22",
 												"name": "filter-form-select-m-22",
 												"attr": "data-form-select",

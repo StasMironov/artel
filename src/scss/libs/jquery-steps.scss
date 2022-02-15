@@ -114,7 +114,7 @@
 .wizard > .steps .error a:hover,
 .wizard > .steps .error a:active {
 	color: #fff;
-	background: #ff3111;
+	// background: #ff3111;
 }
 
 .wizard > .content {
@@ -202,7 +202,7 @@
 }
 
 .wizard > .actions > ul > li {
-	margin: 0 0.5em;
+	margin: 0;
 }
 
 .wizard.vertical > .actions > ul > li {
@@ -337,10 +337,14 @@
 	position: relative;
 	padding-bottom: rem(17);
     border-bottom: 1px solid rgba($color-white, 0.3);
-	margin-bottom: rem(64);
+	margin-bottom: rem(48);
 
 	@include media-breakpoint-down(md) {
 		margin-bottom: rem(48);
+	}
+
+	@include media-breakpoint-down(sm) {
+		margin-bottom: rem(32);
 	}
 
 	&:after {
@@ -549,6 +553,11 @@
 .wizard > .content {
 	margin: 0;
 	margin-bottom: rem(48);
+
+	@include media-breakpoint-down(sm) {
+        margin-bottom: rem(40);
+	}
+
 
 	.form__field {
 		opacity: 1 !important;
