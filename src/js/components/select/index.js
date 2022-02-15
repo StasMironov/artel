@@ -20,6 +20,10 @@ export default {
 			],
 			(DropdownAdapter, SelectionAdapter, ResultsAdapter) => {
 				elements.forEach((el) => {
+
+					// console.log('select:');
+					// console.log(el);
+					
 					if (el.initialized) return;
 
 					const $select = $(el);
@@ -186,6 +190,8 @@ export default {
 					}
 
 					$select.on('change', (e) => {
+						// console.log($select);
+						// $select.trigger('input')
 						if (e.detail?.cancel) return;
 						if ($select[0]) {
 							$select[0].dispatchEvent(

@@ -23,8 +23,6 @@ export default class Education {
 
 
 	render() {
-	
-
 		this.frame = this.form.querySelector('[data-container-frame]');
 		if (!this.frame) return;
 
@@ -32,26 +30,38 @@ export default class Education {
 		if (!this.url) return;
 
 		
-
 		$(window ).on( "custom", ()=> {
 			this.btnAddEducations = this.form.querySelectorAll('[data-btn-education]');
-			//if (this.btnAddEducations.length > 0) return;
+			this.btnDeleteEducations = this.form.querySelectorAll('[data-btn-delete]');
 
-			this.btnAddEducations.forEach((el)=>{
-				console.log(el);
+
+			this.btnDeleteEducations.forEach((el)=>{
+				//console.log(el);
 				el.addEventListener('click', (e)=>{	
-					this.counter += 1;
-					this.fetch();
-					this.resizeJquerySteps();
+					let parentBox = $(el).closest('[data-box-ed]');
+					console.log(parentBox);
+					parentBox.remove();
+					this.resizeJquerySteps() 
 				});
 			})
 
-			setTimeout(()=>{
+			this.btnAddEducations.forEach((el)=>{
+				//console.log(el);
+				el.addEventListener('click', (e)=>{	
+					this.counter += 1;
+					this.fetch();
+					
+				});
+			})
+
+
+
+			
 				select.init();
-				const elements = document.querySelectorAll('[data-select]');
-				console.log(elements)
-			}, 2000);
-			this.inputs.render();
+			//	const elements = document.querySelectorAll('[data-select]');
+			//	console.log(elements)
+		
+			// this.inputs.render();
 			new Datepicker();
 		});
 
@@ -86,22 +96,12 @@ export default class Education {
 	}
 
 	appendText(value = null) {
-		
-		if (!value) {
-			//this.frame.innerHTML = '';
-		} else {
-			// this.temp = this.frame.innerHTML + value;
-			// this.frame.innerHTML = '';
-			// this.frame.innerHTML = this.temp;
+		let htmlEl = document.createElement('div');
+			htmlEl.innerHTML = value;
+			htmlEl.setAttribute('data-box-ed','');
+			this.frame.appendChild(htmlEl);
 
-			//$(window).trigger("custom");
-
-			
-			
-
-		
-			
-		
-		}
+			$(window).trigger("custom");
+			this.resizeJquerySteps();
 	}
 }

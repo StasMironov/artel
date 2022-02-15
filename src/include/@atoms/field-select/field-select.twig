@@ -11,7 +11,7 @@
 		{% if field.search %} data-select-search="true"{% endif %}
 		{% if field.search_placeholder %} data-search-placeholder="{{ field.search_placeholder }}"{% endif %}
 		{% if field.multiple %} multiple{% endif %}
-		{% if field.required %} required{% endif %}
+		{% if field.required %} data-parsley-trigger="change" required="required" data-parsley-validate-if-empty="true"  data-parsley-minSelect="2" data-field-check required{% endif %}
 		{% if field.disabled %} disabled{% endif %}
 		{% if field.attr %}{{ field.attr }}{% endif %}
 		{% if field.submit %} data-select-submit{% endif %}

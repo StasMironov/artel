@@ -799,6 +799,7 @@
 												"name": "filter-form-select-m-11",
 												"attr": "data-form-select",
 												"theme": "white",
+												"required": true,
 												"placeholder": "В каком городе хотите работать?",
 												"options": [
 													{
@@ -832,6 +833,7 @@
 												"select": true,
 												"multiple": true,
 												"selectAll": true,
+												"required": true,
 												
 												"layout": "multi",
 												"theme": "white",
@@ -882,6 +884,7 @@
 											"fields": [
 												{
 													"select": true,
+													"required": true,
 													"theme": "white",
 													"id": "filter-form-select-m-33",
 													"name": "filter-form-select-m-33",
@@ -987,6 +990,7 @@
 											},
 											"dropdownEnd": {
 												"select": true,
+												
 												"id": "datepicker2-select-2",
 												"name": "datepicker2-select-2",
 												"placeholder": "Выберите год",
