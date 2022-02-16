@@ -6,7 +6,7 @@
                 {
                     "select": true,
                     "required": true,
-                    "theme": "white",
+                    "theme": "on-green",
                     "id": "1-filter-form-select-m-10",
                     "name": "1-filter-form-select-m-10",
                     "attr": "data-form-select",
@@ -29,8 +29,8 @@
                 "input": true,
                 "id": "101-form-input",
                 "name": "101-form-input",
-                "theme": "white",
                 "required": true,
+                "theme": "white",
                 "label": "Специальность"
             }        ,
         "datepicker": {
