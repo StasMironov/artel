@@ -16,7 +16,7 @@ export default class FilterService {
 
 		this.urlData = this.filterNode.dataset.url;
 		if (!this.urlData) return;
-
+		
 		this.noSearch = this.filterNode.querySelector('[data-nosearch]');
 		if (!this.noSearch) return;
 

@@ -318,7 +318,7 @@
 		align-items: center;
 		padding: rem(12) rem(24) rem(12);
 		width: 100%;
-		min-height: rem(48);
+		min-height: rem(46);
 		cursor: pointer;
 		color: rgba($color-black, 0.4);
 		background-color: transparent;
@@ -369,16 +369,15 @@
 		}
 
 		&.multiselect-option {
-			padding-left: rem(56);
+			padding-left: rem(64);
 
 			&:before {
 				position: absolute;
 				display: block;
 				top: rem(13);
-				left: rem(16);
+				left: rem(25);
 				width: rem(24);
 				height: rem(24);
-				border-radius: rem(4);
 				border: 2px solid $color-black;
 				content: "";
 				@include defaultTransition(border-color);
@@ -424,11 +423,11 @@
 		position: relative;
 		display: block;
 		width: 100%;
-		height: rem(48);
-		line-height: rem(48);
+		height: rem(46);
+		line-height: rem(46);
 		font-size: rem(14);
 		border: 0;
-		padding: 0 rem(16) 0 rem(56);
+		padding: 0 16px 0 65px;
 		background-color: transparent;
 		cursor: pointer;
 		text-align: left;
@@ -437,11 +436,10 @@
 		&:before {
 			position: absolute;
 			display: block;
-			top: rem(12);
-			left: rem(16);
+			top: rem(9);
+			left: rem(25);
 			width: rem(24);
 			height: rem(24);
-			border-radius: rem(4);
 			border: 2px solid $color-black;
 			content: "";
 			@include defaultTransition(border-color);
@@ -456,7 +454,7 @@
 			transform: rotate(-45deg);
 			content: "";
 			border-style: solid;
-			border-color: $color-red;
+			border-color: $color-green;
 			border-width: 0 0 2px 2px;
 			opacity: 0;
 			@include defaultTransition(border-color, opacity);
@@ -536,8 +534,24 @@
 	height: rem(24);
 	width: rem(24);
 	border-radius: 0;
+	background: transparent !important;
 	top: 0;
+	border-color: rgba($color-black, 1.0);
 }
+
+.select2-results__option.multiselect-option:after {
+	top: rem(18);
+	left: rem(31);
+	border-color: $color-green;
+}
+
+.select2-results__btn:after {
+	top: rem(18);
+	left: rem(31);
+	border-color: $color-green;
+}
+
+
 
 
 .select2-container--multi {
