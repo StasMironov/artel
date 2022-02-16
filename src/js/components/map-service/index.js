@@ -504,7 +504,7 @@ export default class MapService {
 		for (let i = 0; i < this.markers.length; i++) {
 			if (filter) {
 				if (this.inputVal) {
-					if (this.markers[i].city.indexOf(this.inputVal) !== -1) {
+					if (this.markers[i].city.toLowerCase().indexOf(this.inputVal.toLowerCase()) !== -1) {
 						if(this.markers[i].products.length>0){
 							arrProducts = this.markers[i].products;
 							arrProducts.forEach((el) => {
@@ -517,7 +517,7 @@ export default class MapService {
 
 					if (
 						this.filterProduction === 'All' &&
-						this.markers[i].city.indexOf(this.inputVal) !== -1
+						this.markers[i].city.toLowerCase().indexOf(this.inputVal.toLowerCase()) !== -1
 					) {
 						if(this.markers[i].products.length>0){
 							this.markers[i].setVisible(true);
@@ -595,10 +595,10 @@ export default class MapService {
 		} else {
 			if (!this.filterProduction) {
 				cityEl = this.markers.filter(function (place) {
-					if (place.city.indexOf(arrival) !== -1) {
+					if (place.city.toLowerCase().indexOf(arrival.toLowerCase()) !== -1) {
 						//console.log(place);
 					}
-					return place.city.indexOf(arrival) !== -1;
+					return place.city.toLowerCase().indexOf(arrival.toLowerCase()) !== -1;
 				});
 
 				for (let i = 0; i < cityEl.length; i++) {
@@ -607,10 +607,10 @@ export default class MapService {
 			} else {
 				if (this.filterProduction !== 'All') {
 					cityEl = this.markers.filter(function (place) {
-						if (place.city.indexOf(arrival) !== -1) {
+						if (place.city.toLowerCase().indexOf(arrival.toLowerCase()) !== -1) {
 							//console.log(place);
 						}
-						return place.city.indexOf(arrival) !== -1;
+						return place.city.toLowerCase().indexOf(arrival.toLowerCase()) !== -1;
 					});
 
 					for (let i = 0; i < cityEl.length; i++) {
@@ -626,7 +626,7 @@ export default class MapService {
 				} else {
 					for (let i = 0; i < this.markers.length; i++) {
 						if (
-							this.markers[i].city.indexOf(this.inputVal) !== -1
+							this.markers[i].city.toLowerCase().indexOf(this.inputVal.toLowerCase()) !== -1
 						) {
 							this.markers[i].setVisible(true);
 						}
