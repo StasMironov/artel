@@ -76,38 +76,38 @@
         padding: 0;
     }
 
-    .select2-container--white .select2-selection__rendered {
-        color: rgba($color-white, 0.6);
+    // .select2-container--white .select2-selection__rendered {
+    //     color: rgba($color-white, 0.6);
 
-        &:hover {
-            color: rgba($color-white, 0.4) !important;
-        }
-    }
+    //     &:hover {
+    //         color: rgba($color-white, 0.4) !important;
+    //     }
+    // }
 
-    .select-shell .select--white .select2-selection:hover {
-        .select2-selection__rendered {
-            color: rgba($color-white, 0.4) !important;
-        }
+    // .select-shell .select--white .select2-selection:hover {
+    //     .select2-selection__rendered {
+    //         color: rgba($color-white, 0.4) !important;
+    //     }
         
-        color: rgba($color-white, 0.4) !important;
-    }
+    //     color: rgba($color-white, 0.4) !important;
+    // }
 
-    .select-shell .select2-container--white {
-        border-color: rgba($color-white, 0.6);
+    // .select-shell .select2-container--white {
+    //     border-color: rgba($color-white, 0.6);
 
-        &:hover {
-            border-color: rgba($color-white, 1.0);
-        }
-    }
+    //     &:hover {
+    //         border-color: rgba($color-white, 1.0);
+    //     }
+    // }
 
-    .select-shell .select2-container--white .select2-selection__arrow b {
-        background-image: $icon-arrow-white;
-        transform: rotate(0deg);
-    }
+    // .select-shell .select2-container--white .select2-selection__arrow b {
+    //     background-image: $icon-arrow-white;
+    //     transform: rotate(0deg);
+    // }
 
-    .select2-container--white .select2-selection__placeholder {
-       color: rgba($color-white, 0.6) !important; 
-    }
+    // .select2-container--white .select2-selection__placeholder {
+    //    color: rgba($color-white, 0.6) !important; 
+    // }
 
     .datepicker--white {
         @include media-breakpoint-down(sm) {

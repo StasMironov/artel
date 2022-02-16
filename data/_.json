@@ -798,7 +798,7 @@
 												"id": "filter-form-select-m-11",
 												"name": "filter-form-select-m-11",
 												"attr": "data-form-select",
-												"theme": "white",
+												"theme": "on-green",
 												"required": true,
 												"placeholder": "В каком городе хотите работать?",
 												"options": [
@@ -826,7 +826,7 @@
 									],
 									"select_lng": {
 										"fill": true,
-										"theme": "white",
+										"theme": "on-green",
 										"label": "Продукция",
 										"fields": [
 											{
@@ -834,9 +834,8 @@
 												"multiple": true,
 												"selectAll": true,
 												"required": true,
-												
+												"theme": "on-green",
 												"layout": "multi",
-												"theme": "white",
 												"id": "filter-form-select-m-22",
 												"name": "filter-form-select-m-22",
 												"attr": "data-form-select",
@@ -885,7 +884,7 @@
 												{
 													"select": true,
 													"required": true,
-													"theme": "white",
+													"theme": "on-green",
 													"id": "filter-form-select-m-33",
 													"name": "filter-form-select-m-33",
 													"attr": "data-form-select",
