@@ -1,5 +1,7 @@
 //@import "~select2/dist/css/select2.css";
 
+
+
 .select2-hidden-accessible {
 	@include visually-hidden;
 }
@@ -20,10 +22,9 @@
 	display: flex;
 	align-items: center;
 	height: rem(62);
-	padding: 0 rem(56) 0 rem(16);
-	color: $color-black;
-	border: 1px solid $color-black;
-	border-radius: rem(8);
+	padding: 0 rem(56) 0 rem(0);
+	color: rgba($color-black, 0.4);
+	border-bottom: 1px solid rgba($color-black, 0.4);
 	background-color: transparent;
 	cursor: pointer;
 	user-select: none;
@@ -34,15 +35,20 @@
 	}
 
 	@include touchLessHover {
-		border-color: $color-red;
+		border-color: rgba($color-black, 1);
 	}
 
 	&:focus {
 		outline: none;
 	}
 
+	#{$root}__placeholder {
+		color: rgba($color-black, 0.4);
+	}
+
 	@at-root select.parsley-error ~ .select2 & {
 		// parsley-error styles
+		border-color: red !important;
 	}
 
 	@at-root select.select--outline-none ~ .select2 & {
@@ -56,13 +62,20 @@
 	}
 
 	@at-root .select2-container:not(.select2-container--disabled) & {
+		#{$root}__rendered {
+			color: rgba($color-black, 0.4);
+		}
 		@include touchLessHover {
 			#{$root}__placeholder {
-				color: $color-black;
+			//	color: $color-black;
 			}
 
 			#{$root}__rendered {
 				color: $color-black;
+
+				@at-root .select2-container--on-green:not(.select2-container--disabled) & {
+					color: $color-white;
+				}
 			}
 		}
 	}
@@ -97,24 +110,24 @@
 		}
 	}
 
-	// theme on-red
-	@at-root .select2-container.select2-container--on-red & {
-		border-color: $color-white;
-		color: rgba($color-white, 0.7);
+	// theme on-green
+	@at-root .select2-container.select2-container--on-green & {
+		border-color: rgba($color-white, 0.6);
+		color: rgba($color-white, 0.6);
 
 		@include touchLessHover {
 			color: $color-white;
-			border-color: $color-black;
+			border-color: $color-white;
 		}
 	}
 
-	@at-root .select2-container.select2-container--on-red.select2-container--disabled & {
+	@at-root .select2-container.select2-container--on-green.select2-container--disabled & {
 		background: rgba(#FF6F7D, 0.7);
 		border-color: rgba($color-white, 0.7);
 		color: rgba($color-white, 0.7);
 	}
 
-	@at-root .select2-container:not(.select2-container--disabled).select2-container--on-red & {
+	@at-root .select2-container:not(.select2-container--disabled).select2-container--on-green & {
 		@include touchLessHover {
 			#{$root}__placeholder {
 				color: $color-white;
@@ -153,11 +166,11 @@
 			}
 		}
 
-		@at-root .select2-container.select2-container--on-red & {
-			color: $color-white;
+		@at-root .select2-container--on-green:not(.select2-container--disabled) .select2-selection & {
+			color: rgba($color-white, 0.6);
 
 			.select2-prefix {
-				color: rgba($color-white, 0.7);
+				color: rgba($color-white, 0.6);
 			}
 		}
 
@@ -169,7 +182,7 @@
 			color: $color-white;
 		}
 
-		@at-root select.select.something-selected ~ .select2-container.select2-container--on-red & {
+		@at-root select.select.something-selected ~ .select2-container.select2-container--on-green & {
 			color: $color-white;
 		}
 	}
@@ -182,15 +195,15 @@
 			color: rgba($color-white, 0.7);
 		}
 
-		@at-root .select2-container.select2-container--on-red & {
-			color: rgba($color-white, 0.7);
+		@at-root .select2-container.select2-container--on-green & {
+			color: rgba($color-white, 0.6);
 		}
 	}
 
 	&__arrow {
 		position: absolute;
 		top: calc(50% - #{rem(12)});
-		right: rem(16);
+		right: 0;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -221,6 +234,23 @@
 		}
 	}
 }
+
+.select2-selection__arrow b {
+		display: block;
+		width: rem(24);
+		height: inherit;
+		background-image: $icon-arrow;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		transform: rotate(90deg);
+
+		@at-root .select2-container--on-green & {
+			background-image: $icon-arrow-white;
+			transform: rotate(0deg);
+		}
+}
+
 
 .select2-dropdown {
 	$root: &;
@@ -273,28 +303,60 @@
 		}
 	}
 
+	&__option--selected {
+		color: $color-black;
+		background-color: $color-gray;
+
+		&::before {
+			background-color: $color-green;
+		}
+	}
+
 	&__option {
 		position: relative;
 		display: flex;
 		align-items: center;
-		padding: rem(12) rem(16);
+		padding: rem(12) rem(24) rem(12);
 		width: 100%;
 		min-height: rem(48);
 		cursor: pointer;
+		color: rgba($color-black, 0.4);
 		background-color: transparent;
 		word-break: break-word;
 		@include defaultTransition(background-color, color);
 
+		&:before {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: rem(10);
+			width: rem(6);
+			height: rem(6);
+			margin: auto;
+			background-color: transparent;
+			border-radius: 50%;
+			content: '';
+		}
+
 		&--highlighted {
-			background-color: $color-red;
-			color: $color-white;
+			background-color: $color-gray;
+			color: $color-black;
 		}
 
 		&--disabled {
 			display: none;
 		}
 
-		@at-root .select2-container--on-red & {
+		&--selected {
+			color: $color-black;
+			&:before {
+				background-color: $color-green !important;
+			}
+		}
+
+	
+
+		@at-root .select2-container--on-green & {
 			&--highlighted {
 				//background-color: $color-grey;
 				color: $color-black;
@@ -468,17 +530,14 @@
 	}
 }
 
+
+
 .select2-results__option.multiselect-option:before {
 	height: rem(24);
 	width: rem(24);
 	border-radius: 0;
 	top: 0;
 }
-
-.select2-results__option.multiselect-option:after {
-
-}
-
 
 
 .select2-container--multi {
@@ -522,7 +581,7 @@
 	border-bottom: 1px solid rgba($color-white, 0.6);
 }
 
-.parsley-error + .select-shell{
+.parsley-error.select2-hidden-accessible ~ .select2-container{
     border-color: #e3350f !important;
 }
 
