@@ -9,16 +9,18 @@
                     {% endif %}
                     {% if block_offers.selects %}
                         <div class="block-offers__selects">
-                            {% for select in block_offers.selects %}
-                                <div class="block-offers__select {% if block_offers.select.fill %}block-offers--fill{% endif %}">
-                                    {% view '@filter-select' with {
-                                        filter_select: select
-                                    } %}
-                                </div>
-                            {% endfor %}
+							<form data-ajax-form-to=".js-vacancies" data-method="get" data-isScrollOnLoad data-isParseSelector>
+								{% for select in block_offers.selects %}
+									<div class="block-offers__select {% if block_offers.select.fill %}block-offers--fill{% endif %}">
+										{% view '@filter-select' with {
+											filter_select: select
+										} %}
+									</div>
+								{% endfor %}
+							</form>
                         </div>
                     {% endif %}
-                    
+
                 </div>
                 <div class="block-offers__right">
                     {% if block_offers.items %}
@@ -49,7 +51,7 @@
                                     button: block_offers.action
                                 } %}
                             </div>
-								
+
                         {% endif %}
 
                     {% endif %}
