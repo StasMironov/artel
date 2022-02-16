@@ -58,11 +58,11 @@ export default {
 			onInit: function (event, currentIndex, priorIndex) {
 				require('./../../libs/jquery.inputmask.bundle');
 				require('./../../libs/jquery.inputmask-multi');
-				//mask.initMask();
+				mask.initMask();
 				// select.init();
 				//validation.init();
 				const inputs = new Input();
-				//inputs.render();
+				inputs.render();
 
 				$('.steps').append(progressLine);
 			

@@ -49,7 +49,12 @@ export default class Input {
 		if (input.classList.contains('search')) {
 			input.parentNode.classList.add(this.NOT_EMPTY);
 		} else {
+			console.log(input);
 			input.classList.add(this.NOT_EMPTY);
+		}
+
+		if (input.type === "tel") {
+			input.classList.remove(this.NOT_EMPTY);
 		}
 	}
 }

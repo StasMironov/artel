@@ -42,12 +42,14 @@ export default {
 								$(this).parsley().validate();
 							});
 							if ($(this).val()) {
+								
 								$(this).addClass('not-empty');
 							} else {
 								$(this).removeClass('not-empty');
 							}
 						} else {
 							if ($(this).val()) {
+								console.log('not');
 								$(this).addClass('not-empty');
 							} else {
 								$(this).removeClass('not-empty');
