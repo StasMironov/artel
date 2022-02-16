@@ -12,6 +12,7 @@
 	// outline: none;
 	@include text-body;
 	@include base-input;
+	padding: 0 rem(40) 0 0;
 	border-color: rgba($color-black, 0.4);
 
 
@@ -85,7 +86,7 @@
 		padding: 0;
 		cursor: pointer;
 		@include defaultTransition(color);
-		
+
 		width: 1.5rem;
 		height: 3.875rem;
 		font-size: 0;
