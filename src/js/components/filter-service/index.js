@@ -16,7 +16,7 @@ export default class FilterService {
 
 		this.urlData = this.filterNode.dataset.url;
 		if (!this.urlData) return;
-		
+
 		this.noSearch = this.filterNode.querySelector('[data-nosearch]');
 		if (!this.noSearch) return;
 
@@ -46,7 +46,7 @@ export default class FilterService {
 				}
 			} else {
 				serviceEl = city.filter(function (place) {
-					return place.name.indexOf(cityServ) !== -1;
+					return place.name.toLowerCase().indexOf(cityServ.toLowerCase()) !== -1;
 				});
 
 				if (serviceEl.length) {
@@ -173,7 +173,7 @@ export default class FilterService {
 						this.tempArr.forEach((elem) => {
 							if (
 								card.dataset.id == elem.id &&
-								elem.name.indexOf(this.inputVal) !== -1
+								elem.name.toLowerCase().indexOf(this.inputVal.toLowerCase()) !== -1
 							) {
 								if (
 									typeof card.dataset.products != 'undefined'
@@ -201,7 +201,7 @@ export default class FilterService {
 						this.tempArr.forEach((elem) => {
 							if (
 								card.dataset.id == elem.id &&
-								elem.name.indexOf(this.inputVal) !== -1
+								elem.name.toLowerCase().indexOf(this.inputVal.toLowerCase()) !== -1
 							) {
 								card.classList.remove('hide');
 							}
