@@ -390,6 +390,7 @@
 				"theme": "white-2",
 				"id": "form-1-search-1",
 				"search": true,
+				"value": "test123",
 				"label": "Поиск по сайту",
 				"name": "search",
 				"autocomplete": "off",
@@ -735,7 +736,7 @@
 						"method": "POST",
 						"action": "#",
 						"tabs": [
-							{	
+							{
 								"component": "^card-modal-step",
 								"pag": "<h3></h3>",
 								"data": {
@@ -786,7 +787,7 @@
 									]
 								}
 							},
-							{	
+							{
 								"component": "^card-modal-step",
 								"pag": "<h3></h3>",
 								"data": {
@@ -877,7 +878,7 @@
 									"url": "ajax/education-card-ajax.html",
 									"component": "^education-card",
 									"data": {
-										
+
 										"select_education": {
 											"fill": true,
 											"fields": [
@@ -989,7 +990,7 @@
 											},
 											"dropdownEnd": {
 												"select": true,
-												
+
 												"id": "datepicker2-select-2",
 												"name": "datepicker2-select-2",
 												"placeholder": "Выберите год",
@@ -1147,11 +1148,11 @@
 											},
 											"text": "Добавить образование"
 										}
-										
+
 									}
 								}
 							},
-							{	
+							{
 								"component": "^card-modal-step",
 								"pag": "<h3></h3>",
 								"data": {
@@ -1182,7 +1183,7 @@
 												"text": "Файл в формате doc, pdf или txt"
 											}
 										}
-									}, 
+									},
 									"agreement": [
 										{
 											"checkbox": true,
