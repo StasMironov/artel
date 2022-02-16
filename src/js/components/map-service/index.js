@@ -307,7 +307,9 @@ export default class MapService {
 					this.cardWrap.classList.add('is-active'); // показ попапа с данными метки
 
 					this.activeIndex = index;
-					this.filterMarkers(true); // true - исключаем все метки, кроме текущей
+					// console.log(this.activeIndex)
+					// console.log(marker);
+				//	this.excludeMarker(this.activeIndex); // true - исключаем все метки, кроме текущей
 				}
 
 				this.map.setCenter(marker.getPosition());
@@ -319,6 +321,21 @@ export default class MapService {
 
 		
 	}
+
+	// excludeMarker(index){
+	// 	//console.log(index);
+	// 	console.log(this.markers[index]);
+	// 	for (let i = 0; i < this.markers.length; i++) {
+			
+	// 		if(index == i){
+				
+	// 		//	console.log(this.markers[i]);
+	// 			// this.markers[i].setVisible(true);
+	// 		} else {
+	// 			//this.markers[i].setVisible(false);
+	// 		}
+	// 	}
+	// }
 
 	setIcon({ type }) {
 		let fillColor = '#000000';
@@ -528,17 +545,17 @@ export default class MapService {
 			} else {
 				if (!exclude) {
 					// если нужно исключить все метки, кроме выбранной
-					this.markers[i].setVisible(true);
+					// this.markers[i].setVisible(true);
 					this.bounds.extend(this.markers[i].position);
 				} else {
-					this.markers[i].setVisible(true);
+					//this.markers[i].setVisible(true);
 				}
 			}
 		}
 
-		if (!exclude && fit) {
-			this.map.fitBounds(this.bounds);
-		}
+		// if (!exclude && fit) {
+		// 	this.map.fitBounds(this.bounds);
+		// }
 	}
 
 	stateMarks(inputVal, select) {

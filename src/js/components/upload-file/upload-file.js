@@ -1,7 +1,6 @@
 const uploadFile = {
 	init() {
 		const starter = document.querySelector('[data-upload-file]');
-        console.log('file');
 
 		if (!starter) return
 
