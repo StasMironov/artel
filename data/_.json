@@ -390,7 +390,6 @@
 				"theme": "white-2",
 				"id": "form-1-search-1",
 				"search": true,
-				"value": "test123",
 				"label": "Поиск по сайту",
 				"name": "search",
 				"autocomplete": "off",
