@@ -207,10 +207,8 @@ export default class MapService {
 		this.cardClose.addEventListener('click', () => {
 			this.cardWrap.classList.remove('is-active');
 			this.filterMarkers(); // показ всех меток текущего региона
-			this.map.fitBounds(this.bounds);
 			this.stateMarks(this.inputVal);
-			//$('#filter-form-select-1').val('All').trigger('change');
-			//	this.activeIndex = null;
+			this.map.setZoom(4);
 			this.activeIndex = null; // это нужно для возможности повторного нажатия на пин при закрытии карточки
 		});
 
@@ -313,7 +311,7 @@ export default class MapService {
 				}
 
 				this.map.setCenter(marker.getPosition());
-				this.map.setZoom(12);
+				this.map.setZoom(6);
 			});
 		}
 		}
