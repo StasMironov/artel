@@ -33,11 +33,13 @@
                 {% if block_service.items %}
                     <div class="block-service__items">
                         {% for card in block_service.items %}
-                            <div class="block-service__item" {% if card.city %} data-id={{ card.city }} {% endif %} {% if card.products %} data-products={{ card.products }} {% endif %}>
-                                {% view "^card-service" with {
-                                    card: card
-                                } %}
-                            </div>
+                            {% if card.products|length > 0 %}
+                                <div class="block-service__item" {% if card.city %} data-id={{ card.city }} {% endif %} {% if card.products %} data-products={{ card.products }} {% endif %}>
+                                    {% view "^card-service" with {
+                                        card: card
+                                    } %}
+                                </div>
+                            {% endif %}
                         {% endfor %}
                     </div>
                 {% endif %}

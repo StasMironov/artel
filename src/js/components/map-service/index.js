@@ -208,7 +208,8 @@ export default class MapService {
 			this.cardWrap.classList.remove('is-active');
 			this.filterMarkers(); // показ всех меток текущего региона
 			this.map.fitBounds(this.bounds);
-			$('#filter-form-select-1').val('All').trigger('change');
+			this.stateMarks(this.inputVal);
+			//$('#filter-form-select-1').val('All').trigger('change');
 			//	this.activeIndex = null;
 			this.activeIndex = null; // это нужно для возможности повторного нажатия на пин при закрытии карточки
 		});
@@ -281,7 +282,8 @@ export default class MapService {
 	}
 
 	addMarker(markerData, index) {
-		const marker = new google.maps.Marker({
+		if(markerData.products.length>0){
+			const marker = new google.maps.Marker({
 			id: markerData.id,
 			exist: !!markerData.exist,
 			position: new google.maps.LatLng(
@@ -314,6 +316,10 @@ export default class MapService {
 				this.map.setZoom(12);
 			});
 		}
+		}
+		
+
+		
 	}
 
 	setIcon({ type }) {
@@ -484,34 +490,41 @@ export default class MapService {
 			if (filter) {
 				if (this.inputVal) {
 					if (this.markers[i].city.indexOf(this.inputVal) !== -1) {
-						arrProducts = this.markers[i].products;
-						arrProducts.forEach((el) => {
-							if (el == this.filterProduction) {
-								this.markers[i].setVisible(true);
-							}
-						});
+						if(this.markers[i].products.length>0){
+							arrProducts = this.markers[i].products;
+							arrProducts.forEach((el) => {
+								if (el == this.filterProduction) {
+									this.markers[i].setVisible(true);
+								}
+							});
+						}
 					}
 
 					if (
 						this.filterProduction === 'All' &&
 						this.markers[i].city.indexOf(this.inputVal) !== -1
 					) {
-						this.markers[i].setVisible(true);
+						if(this.markers[i].products.length>0){
+							this.markers[i].setVisible(true);
+						}
 					}
 				} else {
 					if (this.inputVal == false) {
-						arrProducts = this.markers[i].products;
-						arrProducts.forEach((el) => {
-							if (el == this.filterProduction) {
-								//console.log('filter 3');
-								this.markers[i].setVisible(true);
-							}
-						});
+						if(this.markers[i].products.length>0){
+							arrProducts = this.markers[i].products;
+							arrProducts.forEach((el) => {
+								if (el == this.filterProduction) {
+									//console.log('filter 3');
+									this.markers[i].setVisible(true);
+								}
+							});
+						}
 					}
 
 					if (this.filterProduction === 'All') {
-						this.markers[i].setVisible(true);
-						//console.log('filter 4');
+						if(this.markers[i].products.length>0){
+							this.markers[i].setVisible(true);
+						}
 					}
 				}
 			} else {
@@ -545,13 +558,14 @@ export default class MapService {
 			if (this.filterProduction) {
 				if (this.filterProduction !== 'All') {
 					for (let i = 0; i < this.markers.length; i++) {
-						arrProducts = this.markers[i].products;
-
-						arrProducts.forEach((el) => {
-							if (el == this.filterProduction) {
-								this.markers[i].setVisible(true);
-							}
-						});
+						if(this.markers[i].products.length>0){
+							arrProducts = this.markers[i].products;
+							arrProducts.forEach((el) => {
+								if (el == this.filterProduction) {
+									this.markers[i].setVisible(true);
+								}
+							});
+						}
 					}
 				} else {
 					for (let i = 0; i < this.markers.length; i++) {
@@ -585,12 +599,14 @@ export default class MapService {
 					});
 
 					for (let i = 0; i < cityEl.length; i++) {
-						arrProducts = cityEl[i].products;
-						arrProducts.forEach((el) => {
-							if (el == this.filterProduction) {
-								cityEl[i].setVisible(true);
-							}
-						});
+						if(cityEl[i].products.length>0){
+							arrProducts = cityEl[i].products;
+							arrProducts.forEach((el) => {
+								if (el == this.filterProduction) {
+									cityEl[i].setVisible(true);
+								}
+							});
+						}
 					}
 				} else {
 					for (let i = 0; i < this.markers.length; i++) {
