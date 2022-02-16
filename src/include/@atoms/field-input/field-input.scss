@@ -1,5 +1,9 @@
 .input {
 	@include base-input;
+
+	&--file {
+		@include visually-hidden;
+	}
   }
   
 .input-shell {

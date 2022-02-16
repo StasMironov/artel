@@ -726,7 +726,7 @@
 			cssClass: 'wizard',
 			clearFixCssClass: 'clearfix',
 			stepsOrientation: _.horizontal,
-			titleTemplate: '<span class="number">#index#.</span> #title#',
+			titleTemplate: '<span class="number">0#index#</span> #title#',
 			loadingTemplate: '<span class="spinner"></span> #text#',
 			autoFocus: !1,
 			enableAllSteps: !1,

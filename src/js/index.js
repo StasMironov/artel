@@ -29,6 +29,7 @@ import Modals from './components/modal';
 import ModalAjax from './components/modal/ajax-modal';
 import Accordion from './components/accordion';
 import Search from './components/search';
+import Education from './components/block-education';
 import Datepicker from './components/datepicker';
 
 import ModalBase from './components/modal/modal-base';
@@ -41,6 +42,7 @@ import {devices} from './utils/breakpoints';
 
 import server from '../api/mock';
 import ChartCanvas from './components/chart-canvas';
+import uploadFile from './components/upload-file/upload-file';
 
 if (process.env.API) {
 	server.start();
@@ -54,8 +56,13 @@ window.jQuery = $;
 window.breakpoints = devices;
 
 const inputs = new Input();
+
 window.addEventListener('init.input', () => {
 	inputs.render();
+});
+
+window.addEventListener('init.uploadFile', () => {
+	uploadFile.init();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -82,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	new Map();
 	new MapService();
 	new Search();
+	new Education();
 	validation.init();
 	Accordion.init();
 	new FormHandler();
@@ -139,19 +147,23 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	window.dispatchEvent(new CustomEvent('init.modals'));
+	window.dispatchEvent(new CustomEvent('init.uploadFile'));
 });
+
 window.addEventListener('reinit', () => {
 	window.dispatchEvent(new CustomEvent('init.lazyload'));
 	window.dispatchEvent(new CustomEvent('init.validation'));
 	window.dispatchEvent(new CustomEvent('init.mask'));
 	window.dispatchEvent(new CustomEvent('init.input'));
 	window.dispatchEvent(new CustomEvent('init.modals'));
+	window.dispatchEvent(new CustomEvent('init.uploadFile'));
+
 	libs.init();
 	Animation.init();
 	Sliders.init();
 	Modals.init();
 	ModalAjax.init();
-	select.init();
+//	select.init();
 	Table.init();
 	TextArea.init();
 	Menu.init();

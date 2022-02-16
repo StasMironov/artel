@@ -1,6 +1,6 @@
 <div class="datepicker{% if field.theme %} datepicker--{{ field.theme }}{% endif %}" data-datepicker>
 	<input{% if field.id %} id="{{ field.id }}"{% endif %}{% if field.name %} name="{{ field.name }}"{% endif %}
-		type="text" class="datepicker__input"{% if field.pattern %} pattern="{{ field.pattern }}"{% endif %}{% if field.attr %} {{ field.attr }}{% endif %}{% if field.required %} required{% endif %} data-datepicker-input data-parsley-trigger="change">
+		type="text" class="datepicker__input"{% if field.pattern %} pattern="{{ field.pattern }}"{% endif %}{% if field.attr %} {{ field.attr }}{% endif %}{% if field.required %}data-field-check required{% endif %} data-datepicker-input data-parsley-trigger="change">
 	<div class="datepicker__toggle" data-datepicker-toggle>
 		{% if field.label %}
 			<span class="datepicker__field-select">{{ field.label }}</span>

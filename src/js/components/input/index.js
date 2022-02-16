@@ -51,5 +51,9 @@ export default class Input {
 		} else {
 			input.classList.add(this.NOT_EMPTY);
 		}
+
+		if (input.type === "tel") {
+			input.classList.remove(this.NOT_EMPTY);
+		}
 	}
 }

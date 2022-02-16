@@ -121,4 +121,30 @@
 			}
 		}
 	}
+
+	&--circle-white {
+		position: relative;
+		background-color: $color-white;
+		width: rem(56);
+		min-width: auto;
+		height: rem(56);
+		padding: 0;
+
+		&:after, &:before {
+			position: absolute;
+			content: "";
+			width: rem(16);
+			height: rem(2);
+			background-color: $color-black;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+		}
+
+		&:after {
+			transform: rotate(90deg);
+		}
+	}
 }

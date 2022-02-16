@@ -207,9 +207,8 @@ export default class MapService {
 		this.cardClose.addEventListener('click', () => {
 			this.cardWrap.classList.remove('is-active');
 			this.filterMarkers(); // показ всех меток текущего региона
-			this.map.fitBounds(this.bounds);
-			$('#filter-form-select-1').val('All').trigger('change');
-			//	this.activeIndex = null;
+			this.stateMarks(this.inputVal);
+			this.map.setZoom(4);
 			this.activeIndex = null; // это нужно для возможности повторного нажатия на пин при закрытии карточки
 		});
 
@@ -281,7 +280,8 @@ export default class MapService {
 	}
 
 	addMarker(markerData, index) {
-		const marker = new google.maps.Marker({
+		if(markerData.products.length>0){
+			const marker = new google.maps.Marker({
 			id: markerData.id,
 			exist: !!markerData.exist,
 			position: new google.maps.LatLng(
@@ -307,14 +307,35 @@ export default class MapService {
 					this.cardWrap.classList.add('is-active'); // показ попапа с данными метки
 
 					this.activeIndex = index;
-					this.filterMarkers(true); // true - исключаем все метки, кроме текущей
+					// console.log(this.activeIndex)
+					// console.log(marker);
+				//	this.excludeMarker(this.activeIndex); // true - исключаем все метки, кроме текущей
 				}
 
 				this.map.setCenter(marker.getPosition());
-				this.map.setZoom(12);
+				this.map.setZoom(6);
 			});
 		}
+		}
+		
+
+		
 	}
+
+	// excludeMarker(index){
+	// 	//console.log(index);
+	// 	console.log(this.markers[index]);
+	// 	for (let i = 0; i < this.markers.length; i++) {
+			
+	// 		if(index == i){
+				
+	// 		//	console.log(this.markers[i]);
+	// 			// this.markers[i].setVisible(true);
+	// 		} else {
+	// 			//this.markers[i].setVisible(false);
+	// 		}
+	// 	}
+	// }
 
 	setIcon({ type }) {
 		let fillColor = '#000000';
@@ -483,51 +504,58 @@ export default class MapService {
 		for (let i = 0; i < this.markers.length; i++) {
 			if (filter) {
 				if (this.inputVal) {
-					if (this.markers[i].city.indexOf(this.inputVal) !== -1) {
-						arrProducts = this.markers[i].products;
-						arrProducts.forEach((el) => {
-							if (el == this.filterProduction) {
-								this.markers[i].setVisible(true);
-							}
-						});
+					if (this.markers[i].city.toLowerCase().indexOf(this.inputVal.toLowerCase()) !== -1) {
+						if(this.markers[i].products.length>0){
+							arrProducts = this.markers[i].products;
+							arrProducts.forEach((el) => {
+								if (el == this.filterProduction) {
+									this.markers[i].setVisible(true);
+								}
+							});
+						}
 					}
 
 					if (
 						this.filterProduction === 'All' &&
-						this.markers[i].city.indexOf(this.inputVal) !== -1
+						this.markers[i].city.toLowerCase().indexOf(this.inputVal.toLowerCase()) !== -1
 					) {
-						this.markers[i].setVisible(true);
+						if(this.markers[i].products.length>0){
+							this.markers[i].setVisible(true);
+						}
 					}
 				} else {
 					if (this.inputVal == false) {
-						arrProducts = this.markers[i].products;
-						arrProducts.forEach((el) => {
-							if (el == this.filterProduction) {
-								//console.log('filter 3');
-								this.markers[i].setVisible(true);
-							}
-						});
+						if(this.markers[i].products.length>0){
+							arrProducts = this.markers[i].products;
+							arrProducts.forEach((el) => {
+								if (el == this.filterProduction) {
+									//console.log('filter 3');
+									this.markers[i].setVisible(true);
+								}
+							});
+						}
 					}
 
 					if (this.filterProduction === 'All') {
-						this.markers[i].setVisible(true);
-						//console.log('filter 4');
+						if(this.markers[i].products.length>0){
+							this.markers[i].setVisible(true);
+						}
 					}
 				}
 			} else {
 				if (!exclude) {
 					// если нужно исключить все метки, кроме выбранной
-					this.markers[i].setVisible(true);
+					// this.markers[i].setVisible(true);
 					this.bounds.extend(this.markers[i].position);
 				} else {
-					this.markers[i].setVisible(true);
+					//this.markers[i].setVisible(true);
 				}
 			}
 		}
 
-		if (!exclude && fit) {
-			this.map.fitBounds(this.bounds);
-		}
+		// if (!exclude && fit) {
+		// 	this.map.fitBounds(this.bounds);
+		// }
 	}
 
 	stateMarks(inputVal, select) {
@@ -545,13 +573,14 @@ export default class MapService {
 			if (this.filterProduction) {
 				if (this.filterProduction !== 'All') {
 					for (let i = 0; i < this.markers.length; i++) {
-						arrProducts = this.markers[i].products;
-
-						arrProducts.forEach((el) => {
-							if (el == this.filterProduction) {
-								this.markers[i].setVisible(true);
-							}
-						});
+						if(this.markers[i].products.length>0){
+							arrProducts = this.markers[i].products;
+							arrProducts.forEach((el) => {
+								if (el == this.filterProduction) {
+									this.markers[i].setVisible(true);
+								}
+							});
+						}
 					}
 				} else {
 					for (let i = 0; i < this.markers.length; i++) {
@@ -566,10 +595,10 @@ export default class MapService {
 		} else {
 			if (!this.filterProduction) {
 				cityEl = this.markers.filter(function (place) {
-					if (place.city.indexOf(arrival) !== -1) {
+					if (place.city.toLowerCase().indexOf(arrival.toLowerCase()) !== -1) {
 						//console.log(place);
 					}
-					return place.city.indexOf(arrival) !== -1;
+					return place.city.toLowerCase().indexOf(arrival.toLowerCase()) !== -1;
 				});
 
 				for (let i = 0; i < cityEl.length; i++) {
@@ -578,24 +607,26 @@ export default class MapService {
 			} else {
 				if (this.filterProduction !== 'All') {
 					cityEl = this.markers.filter(function (place) {
-						if (place.city.indexOf(arrival) !== -1) {
+						if (place.city.toLowerCase().indexOf(arrival.toLowerCase()) !== -1) {
 							//console.log(place);
 						}
-						return place.city.indexOf(arrival) !== -1;
+						return place.city.toLowerCase().indexOf(arrival.toLowerCase()) !== -1;
 					});
 
 					for (let i = 0; i < cityEl.length; i++) {
-						arrProducts = cityEl[i].products;
-						arrProducts.forEach((el) => {
-							if (el == this.filterProduction) {
-								cityEl[i].setVisible(true);
-							}
-						});
+						if(cityEl[i].products.length>0){
+							arrProducts = cityEl[i].products;
+							arrProducts.forEach((el) => {
+								if (el == this.filterProduction) {
+									cityEl[i].setVisible(true);
+								}
+							});
+						}
 					}
 				} else {
 					for (let i = 0; i < this.markers.length; i++) {
 						if (
-							this.markers[i].city.indexOf(this.inputVal) !== -1
+							this.markers[i].city.toLowerCase().indexOf(this.inputVal.toLowerCase()) !== -1
 						) {
 							this.markers[i].setVisible(true);
 						}
