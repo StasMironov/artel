@@ -2,6 +2,16 @@ import gsap from 'gsap';
 
 export default {
 	init() {
+		
+
+		// let form = document.querySelector('[data-search-form]');
+		// console.log(form);
+		
+		// $('[data-search-form]').submit(function (evt) {
+		// 	evt.preventDefault();
+		// 	console.log('1');
+		// });
+
 		const accordions = document.querySelectorAll('[data-accordion]');
 
 		if (!accordions.length) return;

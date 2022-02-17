@@ -1,7 +1,9 @@
 .education-card {
    $b: &;
 
-  // margin-top: rem(64);
+    &:not(:last-child) {
+        margin-bottom: rem(64);
+    }
 
    &__actions {
     display: flex;

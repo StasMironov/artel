@@ -17,8 +17,13 @@ export default class Education {
 		this.render();
 	}
 
-	resizeJquerySteps() {
-		$('.wizard .content').animate({ height: $('.body.current').outerHeight() }, "slow");
+	resizeJquerySteps(del=true) {
+		console.log(del);
+		if(!del){
+			$('.wizard .content').animate({ height: $('.body.current').outerHeight()}, "slow");
+		} else {
+			$('.wizard .content').animate({ height: $('.body.current').outerHeight() + 32}, "slow");
+		}
 	}
 
 
@@ -38,10 +43,10 @@ export default class Education {
 			this.btnDeleteEducations.forEach((el)=>{
 				//console.log(el);
 				el.addEventListener('click', (e)=>{	
-					let parentBox = $(el).closest('[data-box-ed]');
+					let parentBox = $(el).closest('[data-ed-card]');
 					console.log(parentBox);
 					parentBox.remove();
-					this.resizeJquerySteps() 
+					this.resizeJquerySteps(false) 
 				});
 			})
 
@@ -96,11 +101,11 @@ export default class Education {
 	}
 
 	appendText(value = null) {
-		let htmlEl = document.createElement('div');
-			htmlEl.innerHTML = value;
-			htmlEl.setAttribute('data-box-ed','');
-			this.frame.appendChild(htmlEl);
-
+		//let htmlEl = document.createDocumentFragment();
+			let range = document.createRange();
+			let fragment = range.createContextualFragment(value); //Creates a DOM object
+			// htmlEl.setAttribute('data-box-ed','');
+			this.frame.appendChild(fragment);
 			$(window).trigger("custom");
 			this.resizeJquerySteps();
 	}

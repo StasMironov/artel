@@ -1,5 +1,6 @@
 import MicroModal from 'micromodal';
 import PerfectScrollbar from 'perfect-scrollbar';
+import { debounce } from 'throttle-debounce';
 
 export default class ModalBase {
 	constructor(props) {
@@ -50,11 +51,18 @@ export default class ModalBase {
 			onShow: (modal) => {
 				// this.onShow(modal);
 				if (scrollNode) {
-					let ps = new PerfectScrollbar(scrollNode, {
+					this.ps  = new PerfectScrollbar(scrollNode, {
 						wheelSpeed: 2,
 						wheelPropagation: true,
 						minScrollbarLength: 20,
 					});
+
+					window.addEventListener(
+						'resize',
+						debounce(100, () => {
+							this.ps.update();
+						})
+					);
 				}
 
 				window._disableScroll();
@@ -64,6 +72,8 @@ export default class ModalBase {
 				window._enableScroll();
 			},
 		});
+
+		
 
 		// if (this.id === 'modal-warning') {
 		// 	let state = 0;

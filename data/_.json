@@ -145,7 +145,12 @@
 	"menu": {
 		"navigation": [
 			{
+				"text": "Ссылка",
+				"href": "!#"
+			},
+			{
 				"text": "О группе",
+				"attr":"data-trigger",
 				"back": {
 					"icon": {
 						"name": "24/arrow-next-right",
@@ -181,6 +186,7 @@
 			},
 			{
 				"text": "Инвесторам",
+				"attr":"data-trigger",
 				"back": {
 					"icon": {
 						"name": "24/arrow-next-right",
@@ -216,6 +222,7 @@
 			},
 			{
 				"text": "Партнерам",
+				"attr":"data-trigger",
 				"back": {
 					"icon": {
 						"name": "24/arrow-next-right",
@@ -250,6 +257,7 @@
 				]
 			},
 			{
+				"attr":"data-trigger",
 				"text": "Устойчивое развитие",
 				"back": {
 					"icon": {
@@ -285,93 +293,24 @@
 				]
 			},
 			{
-				"text": "Пресс-центр",
-				"back": {
-					"icon": {
-						"name": "24/arrow-next-right",
-						"size": "24"
-					}
-				},
-				"sublist": [
-					{
-						"href": "javascript:void(0);",
-						"text": "Общая информация для инвесторов"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Презентации"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Соблюдение требований корпоративного управления"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Структура компании"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Совет директоров"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Руководство"
-					}
-				]
+				"text": "Ссылка",
+				"href": "!#"
 			},
 			{
-				"text": "Карьера",
-				"back": {
-					"icon": {
-						"name": "24/arrow-next-right",
-						"size": "24"
-					}
-				},
-				"sublist": [
-					{
-						"href": "javascript:void(0);",
-						"text": "Общая информация для инвесторов"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Презентации"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Соблюдение требований корпоративного управления"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Структура компании"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Совет директоров"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Руководство"
-					}
-				]
+				"text": "Ссылка2",
+				"href": "!#"
 			},
 			{
-				"text": "Контакты",
-				"back": {
-					"icon": {
-						"name": "24/arrow-next-right",
-						"size": "24"
-					}
-				},
-				"sublist": [
-					{
-						"href": "javascript:void(0);",
-						"text": "Контакты"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Обратная связь"
-					}
-				]
+				"text": "Ссылка",
+				"href": "!#"
+			},
+			{
+				"text": "Ссылка",
+				"href": "!#"
+			},
+			{
+				"text": "Ссылка",
+				"href": "!#"
 			}
 		]
 	},
@@ -735,7 +674,7 @@
 						"method": "POST",
 						"action": "#",
 						"tabs": [
-							{
+							{	
 								"component": "^card-modal-step",
 								"pag": "<h3></h3>",
 								"data": {
@@ -786,7 +725,7 @@
 									]
 								}
 							},
-							{
+							{	
 								"component": "^card-modal-step",
 								"pag": "<h3></h3>",
 								"data": {
@@ -827,7 +766,7 @@
 									"select_lng": {
 										"fill": true,
 										"theme": "on-green",
-										"label": "Продукция",
+										"label": "Знание языков",
 										"fields": [
 											{
 												"select": true,
@@ -839,7 +778,7 @@
 												"id": "filter-form-select-m-22",
 												"name": "filter-form-select-m-22",
 												"attr": "data-form-select",
-												"placeholder": "Знание языков",
+												"placeholder": "Выбрано",
 												"options": [
 													{
 														"value": "Язык 1",
@@ -853,6 +792,14 @@
 													{
 														"value": "Язык 3",
 														"text": "Язык 3"
+													},
+													{
+														"value": "Язык 4",
+														"text": "Язык 4"
+													},
+													{
+														"value": "Язык 5",
+														"text": "Язык 5"
 													}
 												]
 											}
@@ -877,7 +824,7 @@
 									"url": "ajax/education-card-ajax.html",
 									"component": "^education-card",
 									"data": {
-
+										
 										"select_education": {
 											"fill": true,
 											"fields": [
@@ -989,7 +936,7 @@
 											},
 											"dropdownEnd": {
 												"select": true,
-
+												
 												"id": "datepicker2-select-2",
 												"name": "datepicker2-select-2",
 												"placeholder": "Выберите год",
@@ -1147,11 +1094,11 @@
 											},
 											"text": "Добавить образование"
 										}
-
+										
 									}
 								}
 							},
-							{
+							{	
 								"component": "^card-modal-step",
 								"pag": "<h3></h3>",
 								"data": {
@@ -1172,7 +1119,7 @@
 												"required": "true",
 												"max_size": 10,
 												"icon": {
-													"name": "24/download",
+													"name": "24/download-2",
 													"size": "24"
 												},
 												"button_upload": {
@@ -1182,13 +1129,13 @@
 												"text": "Файл в формате doc, pdf или txt"
 											}
 										}
-									},
+									}, 
 									"agreement": [
 										{
 											"checkbox": true,
 											"id": "form-1-checkbox-22",
 											"name": "form-1-checkbox-22",
-											"text": "Настоящим даю согласие по установленной форме на обработку моих персональных данных в порядке, установленном законом РУз от 27.07.2006 N 152-ФЗ 'О персональных данных'. Код подтверждения",
+											"text": "Настоящим даю согласие по установленной форме на обработку моих <a href='javascript:void(0);' class='link-content' target='_blank'>персональных данных</a> в порядке, установленном законом РУз от 27.07.2006 N 152-ФЗ 'О персональных данных'. Код подтверждения",
 											"required": true,
 											"theme": "white"
 										}

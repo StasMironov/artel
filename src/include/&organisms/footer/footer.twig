@@ -16,7 +16,7 @@
 			{% endif %}
 			{% if footer.form %}
 				<form{% if footer.form.id %} id="{{ footer.form.id }}"{% endif %}{% if footer.form.method %} method="{{ footer.form.method }}"{% endif %}{% if footer.form.action %} action="{{ footer.form.action }}"{% endif %}{% if footer.form.name %} name="{{ footer.form.name }}"{% endif %}
-					class="footer__form"{% if footer.form.attr %} {{ footer.form.attr }}{% endif %}data-fade-in-up{% if footer.form.url %} data-search-ajax data-url="{{ footer.form.url }}"{% endif %}>
+					class="footer__form" {% if footer.form.attr %} {{ footer.form.attr }}{% endif %}data-fade-in-up{% if footer.form.url %} data-search-ajax data-url="{{ footer.form.url }}"{% endif %}>
 					<div class="footer__search">
 						{% view '@field' with {
 							field: footer.form.search|merge({attr: "data-search-ajax-field"})

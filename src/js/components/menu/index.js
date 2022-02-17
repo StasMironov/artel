@@ -52,19 +52,25 @@ export default {
 	},
 	init() {
 		const menuNode = document.querySelector('[data-menu]');
-		if (!menuNode) return;
+	//	if (!menuNode) return;
+		//console.log(menuNode);
 		const triggers = menuNode.querySelectorAll('[data-trigger]');
-		if (!triggers.length) return;
+		//console.log(triggers);
+		//if (!triggers.length) return;
 		const submenu = menuNode.querySelectorAll('[data-submenu]');
-		if (!triggers.length) return;
+		// console.log(submenu);
+		//if (!triggers.length) return;
+
 		const backBtn = menuNode.querySelectorAll('[data-back]');
-		if (!backBtn.length) return;
+		//if (!backBtn.length) return;
 		const burger = document.querySelector('[data-menu-burger]');
 		if (!burger) return;
+
 		const parentNode = document.querySelector('body');
-		if (!parentNode) return;
+		//if (!parentNode) return;
+
 		const wrapNode = document.querySelector('[data-content]');
-		if (!wrapNode) return;
+		//if (!wrapNode) return;
 
 		function disableScrolling() {
 			var x = window.scrollX;
@@ -156,12 +162,16 @@ export default {
 					event.stopPropagation();
 					trigger.style = '';
 					submenu.forEach((subMenu, idx) => {
+						
 						if (index === idx) {
+							//console.log(subMenu);
 							subMenu.classList.add('is-active');
 							this.statePanel(subMenu, true);
 							const wrapSubNode = subMenu.querySelector(
 								'[data-sub-wrap]'
 							);
+
+							
 
 							if (window.innerWidth > 640) {
 								if (!$(wrapSubNode).hasClass('ps')) {
