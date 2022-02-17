@@ -12,8 +12,10 @@
 
   &__left {		
 		width: 100%;
+		margin-bottom: rem(24);
 		@include media-breakpoint-up(lg) {
 			width: 50%;
+			margin-bottom: 0;
     }
 	}
 	&__right {
