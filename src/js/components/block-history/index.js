@@ -22,7 +22,7 @@ export default class blockHistory {
               id: 'trigger',
               trigger: stage,
               start: 'top center',
-              end: 'center bottom',
+              end: 'center center',
               onEnter: () => {
                   this.slider.slideTo(index, 800);
 
@@ -34,7 +34,7 @@ export default class blockHistory {
                   this.toggleActive([...this.slider.slides], index);
               },
               anticipatePin: 1,
-              // markers: true,
+              //markers: true,
             });
 
             const lastTab = document.querySelectorAll(".tab");
