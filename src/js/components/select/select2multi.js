@@ -143,19 +143,19 @@
 
 
 				setTimeout(() => {
-					const content = document.querySelector(
-						'.select2-results__options'
-					);
-					if (container.ps && container.ps.update) {
-						// console.log('update on open');
-						container.ps.update();
-					} else {
-						// console.log('init on open');
-						// window.PerfectScrollbar = new PerfectScrollbar(content, {
-						// 	suppressScrollX: true, // disable scrollX
-						// 	minScrollbarLength: 32,
-						// });
-					}
+					// const content = document.querySelector(
+					// 	'.select2-results__options'
+					// );
+					// if (container.ps && container.ps.update) {
+					// 	// console.log('update on open');
+					// 	container.ps.update();
+					// } else {
+					// 	// console.log('init on open');
+					// 	window.PerfectScrollbar = new PerfectScrollbar(content, {
+					// 		suppressScrollX: true, // disable scrollX
+					// 		minScrollbarLength: 32,
+					// 	});
+					// }
 				}, 10);
 			});
 			Results.__super__.bind.apply(this, arguments);
