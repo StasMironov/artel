@@ -49,7 +49,7 @@ export default {
 							}
 						} else {
 							if ($(this).val()) {
-								console.log('not');
+								
 								$(this).addClass('not-empty');
 							} else {
 								$(this).removeClass('not-empty');

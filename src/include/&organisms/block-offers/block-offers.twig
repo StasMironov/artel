@@ -9,7 +9,7 @@
                     {% endif %}
                     {% if block_offers.selects %}
                         <div class="block-offers__selects">
-							<form data-ajax-form-to=".js-vacancies" data-method="get" data-isScrollOnLoad data-isParseSelector>
+							<form class="block-offers__form" data-ajax-form-to=".js-vacancies" data-method="get" data-isScrollOnLoad data-isParseSelector>
 								{% for select in block_offers.selects %}
 									<div class="block-offers__select {% if block_offers.select.fill %}block-offers--fill{% endif %}">
 										{% view '@filter-select' with {
