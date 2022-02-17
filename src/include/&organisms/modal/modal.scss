@@ -222,6 +222,10 @@
 					background-color: $color-black;
 				}
 			}
+
+			#{$b}--right & {
+				width: 2px;
+			}
 		}
 
 		#{$b}--partners & {
@@ -253,6 +257,26 @@
 			@media only screen and (min-width: 480px) and (max-width: 767px) {
 				right: rem(16);
 			}
+		}
+
+
+		#{$b}--right & {
+			width: rem(20);
+			height: rem(20);
+			right: rem(60);
+
+
+			@include media-breakpoint-down(md) {
+				right: rem(55)x;
+				top: rem(49);
+			}
+
+			@include media-breakpoint-down(sm) {
+				right: rem(26);
+				top: rem(26);
+			}
+
+			
 		}
 		
 	}

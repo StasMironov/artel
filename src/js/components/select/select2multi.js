@@ -1,3 +1,4 @@
+
 /**
  * jQuery Select2 Multi checkboxes
  * - allow to select multi values via normal dropdown control
@@ -21,6 +22,8 @@
 		define = jQuery.fn.select2.amd.define;
 	}
 	let define;
+	window.PerfectScrollbar = require('perfect-scrollbar').default;
+
 
 	/* global define */
 	define('select2/multi-checkboxes/dropdown', [
@@ -137,6 +140,23 @@
 					: $selected
 				).first();
 				$optionToScrollTo.trigger('mouseenter');
+
+
+				setTimeout(() => {
+					const content = document.querySelector(
+						'.select2-results__options'
+					);
+					if (container.ps && container.ps.update) {
+						// console.log('update on open');
+						container.ps.update();
+					} else {
+						// console.log('init on open');
+						// window.PerfectScrollbar = new PerfectScrollbar(content, {
+						// 	suppressScrollX: true, // disable scrollX
+						// 	minScrollbarLength: 32,
+						// });
+					}
+				}, 10);
 			});
 			Results.__super__.bind.apply(this, arguments);
 		};

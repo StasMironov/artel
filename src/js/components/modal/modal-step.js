@@ -75,9 +75,9 @@ export default {
 				$('.wizard .content').animate({ height: $('.body.current').outerHeight() }, "slow");
 			},
 			onStepChanging: function (event, currentIndex, newIndex){
-				if(fieldValidate()){
+				//if(fieldValidate()){
 					return true;
-				}
+				//}
 			},
 			onStepChanged: function (event, currentIndex, priorIndex) {
 				resizeJquerySteps();
@@ -103,7 +103,7 @@ export default {
 		}
 
 		$(window).resize(debounce(100, () => {
-			250, resizeJquerySteps
+			250, resizeJquerySteps();
 		}));
 	},
 };

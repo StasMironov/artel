@@ -320,6 +320,10 @@
 				]
 			},
 			{
+				"text": "Ссылка2",
+				"href": "!#"
+			},
+			{
 				"text": "Карьера",
 				"back": {
 					"icon": {
@@ -376,7 +380,6 @@
 			{
 				"text": "Ссылка",
 				"href": "!#"
-				
 			}
 		]
 	},
@@ -832,7 +835,7 @@
 									"select_lng": {
 										"fill": true,
 										"theme": "on-green",
-										"label": "Продукция",
+										"label": "Знание языков",
 										"fields": [
 											{
 												"select": true,
@@ -844,7 +847,7 @@
 												"id": "filter-form-select-m-22",
 												"name": "filter-form-select-m-22",
 												"attr": "data-form-select",
-												"placeholder": "Знание языков",
+												"placeholder": "Выбрано",
 												"options": [
 													{
 														"value": "Язык 1",
@@ -1177,7 +1180,7 @@
 												"required": "true",
 												"max_size": 10,
 												"icon": {
-													"name": "24/download",
+													"name": "24/download-2",
 													"size": "24"
 												},
 												"button_upload": {
@@ -1193,7 +1196,7 @@
 											"checkbox": true,
 											"id": "form-1-checkbox-22",
 											"name": "form-1-checkbox-22",
-											"text": "Настоящим даю согласие по установленной форме на обработку моих персональных данных в порядке, установленном законом РУз от 27.07.2006 N 152-ФЗ 'О персональных данных'. Код подтверждения",
+											"text": "Настоящим даю согласие по установленной форме на обработку моих <a href='javascript:void(0);' class='link-content' target='_blank'>персональных данных</a> в порядке, установленном законом РУз от 27.07.2006 N 152-ФЗ 'О персональных данных'. Код подтверждения",
 											"required": true,
 											"theme": "white"
 										}

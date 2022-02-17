@@ -196,4 +196,14 @@
 		opacity: 0;
 		transition: opacity 0.3s ease;
 	}
+
+// 	&:-webkit-autofill,
+// &:-webkit-autofill:hover,
+// &:-webkit-autofill:focus,
+// &:-webkit-autofill:active,
+// &:-internal-autofill-selected {
+// 	-webkit-box-shadow: 0 0 0 30px white inset !important;
+//     transition-property: background-color, color;
+//     transition-delay: 10000s, 10000s;
+// }
 }
