@@ -1,6 +1,7 @@
 <div class="select-shell">
 	<select {% if field.id %}id="{{ field.id }}"{% endif %}
 			class="select{% if field.class %} {{ field.class }}{% endif %}
+				{% if field.mod %} select--{{field.mod}}{% endif %}
 				{% if field.theme %} select--{{ field.theme }}{% endif %}
 				{% if field.outline_none %} select--outline-none {% endif %}"
 			name="{{ field.name }}"

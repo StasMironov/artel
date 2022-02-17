@@ -145,7 +145,12 @@
 	"menu": {
 		"navigation": [
 			{
+				"text": "Ссылка",
+				"href": "!#"
+			},
+			{
 				"text": "О группе",
+				"attr":"data-trigger",
 				"back": {
 					"icon": {
 						"name": "24/arrow-next-right",
@@ -181,6 +186,7 @@
 			},
 			{
 				"text": "Инвесторам",
+				"attr":"data-trigger",
 				"back": {
 					"icon": {
 						"name": "24/arrow-next-right",
@@ -216,6 +222,7 @@
 			},
 			{
 				"text": "Партнерам",
+				"attr":"data-trigger",
 				"back": {
 					"icon": {
 						"name": "24/arrow-next-right",
@@ -250,6 +257,7 @@
 				]
 			},
 			{
+				"attr":"data-trigger",
 				"text": "Устойчивое развитие",
 				"back": {
 					"icon": {
@@ -285,97 +293,20 @@
 				]
 			},
 			{
-				"text": "Пресс-центр",
-				"back": {
-					"icon": {
-						"name": "24/arrow-next-right",
-						"size": "24"
-					}
-				},
-				"sublist": [
-					{
-						"href": "javascript:void(0);",
-						"text": "Общая информация для инвесторов"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Презентации"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Соблюдение требований корпоративного управления"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Структура компании"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Совет директоров"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Руководство"
-					}
-				]
+				"text": "Ссылка",
+				"href": "!#"
 			},
 			{
 				"text": "Ссылка2",
 				"href": "!#"
 			},
 			{
-				"text": "Карьера",
-				"back": {
-					"icon": {
-						"name": "24/arrow-next-right",
-						"size": "24"
-					}
-				},
-				"sublist": [
-					{
-						"href": "javascript:void(0);",
-						"text": "Общая информация для инвесторов"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Презентации"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Соблюдение требований корпоративного управления"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Структура компании"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Совет директоров"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Руководство"
-					}
-				]
+				"text": "Ссылка",
+				"href": "!#"
 			},
 			{
-				"text": "Контакты",
-				"back": {
-					"icon": {
-						"name": "24/arrow-next-right",
-						"size": "24"
-					}
-				},
-				"sublist": [
-					{
-						"href": "javascript:void(0);",
-						"text": "Контакты"
-					},
-					{
-						"href": "javascript:void(0);",
-						"text": "Обратная связь"
-					}
-				]
+				"text": "Ссылка",
+				"href": "!#"
 			},
 			{
 				"text": "Ссылка",
@@ -861,6 +792,14 @@
 													{
 														"value": "Язык 3",
 														"text": "Язык 3"
+													},
+													{
+														"value": "Язык 4",
+														"text": "Язык 4"
+													},
+													{
+														"value": "Язык 5",
+														"text": "Язык 5"
 													}
 												]
 											}
