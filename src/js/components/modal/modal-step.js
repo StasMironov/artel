@@ -62,7 +62,7 @@ export default {
 				// select.init();
 				//validation.init();
 				const inputs = new Input();
-				inputs.render();
+				//inputs.render();
 
 				$('.steps').append(progressLine);
 			
