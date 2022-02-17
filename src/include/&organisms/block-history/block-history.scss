@@ -114,28 +114,6 @@
 			bottom: rem(8);
 		}
 
-		&__line {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			background-color: rgba($color-white, $alpha: 1);
-			z-index: -1;
-			transition-duration: 1.5s;
-			@media (max-width: 1023px) {
-				background-color: rgba($color-white, $alpha: 0.4);
-			}
-
-			// &:after {
-			// 	position: absolute;
-			// 	content: "";
-			// 	width: rem(40);
-			// 	height: rem(100);
-			// 		background-color: $color-green;
-			// 		bottom: 0
-			// }
-		}
-
 		&--transparent {
 			background-color: transparent;
 			left: rem(-48);
@@ -144,7 +122,6 @@
 				content: none
 			}
 		}
-
 		
 	}
 
@@ -204,22 +181,67 @@
 		}
 	}
 
-	.last-tab{
-		@include media-breakpoint-only(lg) {
+	.tabs__item {
+		@media (min-width: 1024px) {
 			position: relative;
-			&::after{
-				position: absolute;
-				top: 50%;
-				left: rem(-80);
-				width: rem(40);
-				height: rem(500);
-				background-color: $color-green;
+			z-index: 1;
+
+			.tab {				
+				&:before {
+					z-index: 2;
+					background-color: $color-green;
+				}
+			}
+	
+			&.is-active {
 				z-index: -1;
-				content: '';
+
+				.tab {			
+					@media (min-width: 1024px) {
+						position: relative;
+						&:after {
+							position: absolute;
+							left: rem(-48);
+							bottom: rem(44);
+							height: 100vh;
+							width: 1px;
+							background-color: $color-white;
+							content: "";
+						}
+					}
+					
+				}
+	
+				&:first-child {
+					@media (min-width: 1024px) {
+						.tab {
+							&:after {
+								bottom: rem(48);
+							}
+						}
+					}					
+				}
+			}
+
+		  .last-tab .tab__text{
+				@media (min-width: 1024px) {
+					&:before{
+						position: absolute;
+						display: block;
+						top: rem(35);
+						left: rem(-60);
+						width: rem(20);
+						height: rem(500);
+						background-color: $color-green;
+						content: '';
+						z-index: -2;
+					}
+				}		
 			}
 		}
-			
 	}
+
+	
 
 	.swiper-container {
 		height: 100%;
@@ -245,33 +267,4 @@
 	//height: 4px;
 	margin: 20px auto;
 	background: #eeeeee;
-
-	// .progress {
-	// 	position: absolute;
-	// 	top: 0;
-	// 	left: 0;
-	// 	z-index: 1;
-	// 	// height: inherit;
-	// 	width: inherit;
-	// 	background: #007aff;
-	// }
-	// .progress-sections {
-	// 	position: absolute;
-	// 	top: 0;
-	// 	left: 0;
-	// 	z-index: 2;
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	width: inherit;
-	// 	height: inherit;
-	// 	span {
-	// 		flex: 1;
-	// 		height: inherit;
-	// 		border-right: 2px solid #eee;
-	// 		&:last-child {
-	// 			border-right-width: 0;
-	// 		}
-	// 	}
-	// }
-
 }

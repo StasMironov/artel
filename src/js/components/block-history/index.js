@@ -4,154 +4,79 @@ import Swiper from 'swiper/swiper-bundle';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default class blockProduct {
-	constructor() {
-		this.supportsTouch = 'ontouchstart' in document.documentElement;
-		this.nodes = document.querySelectorAll('[data-history-wrap]');
-		if (this.nodes && this.nodes.length > 0) {
-			this.nodes.forEach((node) => {
-				this.render(node);
-			});
-		}
-	}
+export default class blockHistory {
+  constructor() {
+    this.wrap = document.querySelector('[data-history-wrap]');
+    if (!this.wrap) return;
 
-	render(node) {
-		const pinSidebar = this.nodes[0].querySelector('[data-pin-aside]');
-		const progress = this.nodes[0].querySelector('[data-progress]');
-		const dataTabs = this.nodes[0].querySelectorAll('[data-tab]');
+    this.render();
+  }
 
-		let isVertical = true,
-			direction = 'vertical';
+  render() {
+    this.initSlider();
 
-		let autoPlayDelay = 1500;
+    gsap.utils.toArray('[data-tab-pane]').forEach((stage, index) => {
+      ScrollTrigger.matchMedia({
+        '(min-width: 1024px)': () => {
+            ScrollTrigger.create({
+              id: 'trigger',
+              trigger: stage,
+              start: 'top center',
+              end: 'center bottom',
+              onEnter: () => {
+                  this.slider.slideTo(index, 800);
 
-		let slider = initSwiper(direction);
+                  this.toggleActive([...this.slider.slides], index);
+              },
+              onEnterBack: () => {
+                  this.slider.slideTo(index, 800);
 
-		function initSwiper(direction) {
-			return new Swiper('.block-history [data-slider]', {
-				spaceBetween: 0,
-				direction: direction,
-				slidesPerView: 4,
-				touchRatio: false,
-				watchSlidesProgress: true,
-				watchSlidesVisibility: true,
-				observer: true,
-				observeParents: true,
-				speed: 1300,
-				// pagination: {
-				// 	el: '.swiper-pagination',
-				// 	type: 'progressbar',
-				// },
-				breakpoints: {
-					320: {
-						slidesPerView: 'auto',
-					},
-					1024: {
-						slidesPerView: 4,
-					},
-				},
-			});
-		}
+                  this.toggleActive([...this.slider.slides], index);
+              },
+              anticipatePin: 1,
+              // markers: true,
+            });
 
-		const progressNodeHeight =
-			($('.block-history__period .tabs__item').height() * 100) /
-			$('.block-history__period').height();
+            const lastTab = document.querySelectorAll(".tab");
+            lastTab[lastTab.length -1].classList.add('last-tab');
+        },
+      });
+    });
+  }
 
-		const kof =
-			(($('.block-history__period .tab').height() / 2) * 100) /
-			$('.block-history__period').height();
+  initSlider() {
+    this.slider = new Swiper('.block-history [data-slider]', {
+      spaceBetween: 0,
+      direction: 'vertical',
+      slidesPerView: 4,
+      touchRatio: false,
+      watchSlidesProgress: true,
+      watchSlidesVisibility: true,
+      observer: true,
+      observeParents: true,
+      speed: 1300,
+      breakpoints: {
+        320: {
+            slidesPerView: 'auto',
+        },
+        1024: {
+            slidesPerView: 4,
+          },
+      },
+    });
+  }
 
-		
-		const lastTab = document.querySelectorAll(".tab");
-		lastTab[lastTab.length -1].classList.add('last-tab');
+  toggleActive(arr, index = undefined) {
+    arr.forEach((el, idx) => {
+      const tab = el.querySelector('.tab');
 
-		gsap.to(progress, {
-			//value: 100,
-			ease: 'none',
-			scrollTrigger: { scrub: 0.3 },
-		});
-
-		gsap.utils.toArray('[data-tab-pane]').forEach((stage, index) => {
-			ScrollTrigger.create({
-				id: 'trigger2',
-				trigger: stage,
-				start: 'top center',
-				end: 'center bottom',
-				onUpdate(self) {
-					// console.log(index * 10);
-					// console.log(`${self.progress * 100}%`);
-				},
-				onEnter: (self) => {
-					let dataPane = stage.getAttribute('data-tab-pane');
-
-					dataTabs.forEach((elem) => {
-						if (elem.getAttribute('data-tab') == dataPane) {
-							elem.classList.add('tab--active');
-
-							slider.slideTo(index);
-
-							if (index == 0) {
-								progress.style.height = `${
-									Math.ceil(
-										self.progress *
-											(index * progressNodeHeight)
-									) + kof
-								}%`;
-							} else {
-								progress.style.height = `${Math.ceil(
-									self.progress *
-										(index * progressNodeHeight) +
-										kof
-								)}%`;
-							}
-						} else {
-							elem.classList.remove('tab--active');
-						}
-					});
-				},
-				onEnterBack: (self) => {
-					let elemCurrent;
-					if (index !== 0) {
-						elemCurrent = gsap.utils.toArray('[data-tab-pane]')[
-							index - 1
-						];
-					} else {
-						elemCurrent = stage;
-					}
-
-					let dataPane = elemCurrent.getAttribute('data-tab-pane');
-					dataTabs.forEach((elem) => {
-						if (elem.getAttribute('data-tab') == dataPane) {
-							elem.classList.add('tab--active');
-							slider.slideTo(index - 1);
-
-							if (index == 1) {
-								progress.style.height = `${
-									Math.ceil(
-										self.progress *
-											(index * progressNodeHeight)
-									) + kof
-								}%`;
-								// console.log(index);
-							} else {
-								progress.style.height = `${
-									Math.ceil(
-										(index - 1) * progressNodeHeight
-									) + kof
-								}%`;
-							}
-
-							//console.log(index);
-						} else {
-							elem.classList.remove('tab--active');
-							slider.slideTo(index - 1);
-						}
-					});
-				},
-
-				anticipatePin: 1,
-				//markers: true,
-			});
-		});
-	}
+      if (index === idx) {
+        el.classList.add('is-active');
+        tab.classList.add('tab--active');
+      } else {
+        el.classList.remove('is-active');
+        tab.classList.remove('tab--active');
+      }
+    });
+  }
 }
