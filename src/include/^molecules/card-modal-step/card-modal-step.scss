@@ -1,5 +1,9 @@
 .card-modal-step {
 
+    &__info {
+        margin-top: rem(18);
+    }
+
     &__title {
         color: $color-white;
         margin-bottom: rem(16);
@@ -25,9 +29,11 @@
         background-color: $color-white;
         border-radius: rem(8);
         padding: rem(40);
+        min-height: rem(284);
 
         @include media-breakpoint-down(sm) {
             padding: rem(32);
+            min-height: rem(260);
         }
     }
 
@@ -117,5 +123,9 @@
 
     div[data-box-ed]{
         margin-top: rem(64);
+    }
+
+    .datepicker--white {
+        color: rgba($color-white, 0.6);
     }
 }

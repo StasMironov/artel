@@ -102,7 +102,7 @@
 }
 
 .wizard > .steps .done a {
-	color: rgba($color-white, 0.4);
+	color: rgba($color-white, 1.0);
 }
 
 .wizard > .steps .done a:hover,
@@ -187,7 +187,7 @@
 	display: block;
 	width: 100%;
 	text-align: right;
-	margin-top: rem(48);
+	margin-top: rem(0);
 }
 
 .wizard.vertical > .actions {
@@ -553,7 +553,7 @@
 
 .wizard > .content {
 	margin: 0;
-	margin-bottom: rem(48);
+	margin-bottom: rem(32);
 
 	@include media-breakpoint-down(sm) {
         margin-bottom: rem(40);
@@ -565,6 +565,8 @@
 		transform: none !important;
 	}
 }
+
+ul li { list-style-type: none; }
 
 
 
