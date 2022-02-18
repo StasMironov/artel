@@ -1,13 +1,9 @@
 <div class="modal-resume">
-    {% if modal.title %}
-        <div class="modal-resume__title">{{modal.title}}</div>
-    {% endif %}
-    {% if modal.desc %}
-        <div class="modal-resume__desc">{{modal.desc}}</div>
-    {% endif %}
-    {% if modal.action %}
-        {% view '@button' with {
-            button: modal.action
-        } %}
-    {% endif %}
+    <div class="modal-resume__inner" data-modal-ps>
+        <div class="modal-resume__wrapper" >
+            {% view '&form' with {
+                form: modal.form
+            }%}
+        </div>
+    </div>
 </div>

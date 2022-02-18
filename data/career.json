@@ -902,6 +902,7 @@
 				"text": "Отправить резюме",
 				"title": "Отправить резюме",
 				"theme": "outline-white",
+				"attr": "data-modal-resume='modal-resume'",
 				"icon": {
 					"name": "24/file"
 				}

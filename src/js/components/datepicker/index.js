@@ -34,7 +34,6 @@ export default class Datepicker {
 	}
 
 	render(datepicker, idx) {
-		console.log(this.timelines)
 		const toggle = datepicker.querySelector('[data-datepicker-toggle]');
 		toggle.addEventListener('click', () => {
 			if (datepicker.active) {

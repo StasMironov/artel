@@ -146,6 +146,14 @@ document.addEventListener('DOMContentLoaded', () => {
 			closeTrigger: 'data-modal-close',
 			openClass: 'is-open',
 		});
+
+		new ModalBase({
+			init: true,
+			id: 'modal-resume',
+			trigger: 'data-modal-resume',
+			closeTrigger: 'data-modal-close',
+			openClass: 'is-open',
+		});
 	});
 
 	window.dispatchEvent(new CustomEvent('init.modals'));

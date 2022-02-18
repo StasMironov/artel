@@ -1408,15 +1408,67 @@
 		{
 			"id":"modal-resume",
 			"component": "&modal-resume",
+			"modificator": "resume",
 			"data": {
 				"modal": {
-					"title": "Сайт находится в&nbsp;стадии разработки",
-					"desc": "В данный момент сайт работает в&nbsp;тестовом режиме, спасибо за понимание",
-					"action": {
-						"text": "Продолжить",
-						"title": "Продолжить",
-						"theme": "white",
-						"attr": "data-modal-close"
+					"form": {
+						"id": "form-modal-100",
+						"name": "form-modal-100",
+						"method": "POST",
+						"action": "/ajax/contacts/?repo=artel.frontend&status=success",
+						"attr": "data-ajax-form data-scroll-target data-scroll-contacts",
+						"title": "Отправить резюме",
+						"bg": "green",
+						"layout":"modal-resume",
+						"info": {
+							"title": "Загрузить резюме",
+							"block": {
+								"article": "Формат файла: ",
+								"formats": [".doc", ".docx", ".odt", ".txt", ".pdf"],
+								"text": "Файл не должен превышать 2Mb. или добавьте ссылку",
+								"fields": [
+									{
+										"input": true,
+										"required": true,
+										"theme": "white",
+										"name": "file-resume",
+										"id": "file-resume",
+										"type": "file",
+										"accept": ".doc,.docx,.txt,.pdf",
+										"placeholder": "",
+										"max_size": 10,
+										"icon": {
+											"name": "24/download-2",
+											"size": "24"
+										},
+										"button_upload": {
+											"text": "Загрузить",
+											"aria": "удалить загруженные данные"
+										},
+										"text": "Файл в формате doc, pdf или txt"
+									}
+								]
+							}
+						},
+						"agreement": [
+							{
+								"checkbox": true,
+								"id": "form-1-checkbox-22",
+								"name": "form-1-checkbox-22",
+								"text": "Настоящим даю согласие по установленной форме на обработку моих <a href='javascript:void(0);' class='link-content' target='_blank'>персональных данных</a> в порядке, установленном законом РУз от 27.07.2006 N 152-ФЗ 'О персональных данных'. Код подтверждения",
+								"required": true,
+								"theme": "white"
+							}
+						],
+						"submit": {
+							"type": "submit",
+							"text": "Отправить",
+							"title": "Отправить",
+							"theme": "white",
+							"icon": {
+								"name": "24/arrow-up-right"
+							}
+						}
 					}
 				}
 			}

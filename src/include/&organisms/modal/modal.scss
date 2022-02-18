@@ -64,9 +64,6 @@
 		}
 
 		#{$b}--media & {
-			
-			
-
 			@include media-breakpoint-up(md) {
 			    width: rem(664);
     			height: rem(374);
@@ -77,14 +74,21 @@
 				width: 100%;
 				height: rem(626);
 			}
-
-			@include media-breakpoint-down(sm) {
-				
-			}
 		}
 
 		#{$b}--partners &, #{$b}--director & {
 			width: 100%;
+		}
+
+		#{$b}--resume & {
+			width: rem(876);
+			height: 91vh;
+			background-color: $color-white;
+
+			@include media-breakpoint-down(md) {
+				width: 100%;
+    			height: 100vh;
+			}
 		}
 
 		#{$b}.is-warning &,
@@ -223,6 +227,10 @@
 				}
 			}
 
+			#{$b}--resume & {
+				width: 2px;
+			}
+
 			#{$b}--right & {
 				width: 2px;
 			}
@@ -278,6 +286,17 @@
 
 			
 		}
+
+		
+
+		
+
+
+    // &__container {
+    //     max-width: rem(876);
+    // }
+
+
 		
 	}
 }
