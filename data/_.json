@@ -744,6 +744,7 @@
 												"theme": "on-green",
 												"required": true,
 												"placeholder": "В каком городе хотите работать?",
+												"autocomplete":"off",
 												"options": [
 													{
 														"value": "Город 1",
@@ -764,7 +765,8 @@
 											"name": "form-1-input-66",
 											"theme": "white",
 											"required": true,
-											"label": "Знание компьютерных программ"
+											"label": "Знание компьютерных программ",
+											"autocomplete":"off"
 										}
 									],
 									"select_lng": {
@@ -783,6 +785,7 @@
 												"name": "filter-form-select-m-22",
 												"attr": "data-form-select",
 												"placeholder": "Выбрано",
+												"autocomplete":"off",
 												"options": [
 													{
 														"value": "Язык 1",
@@ -816,7 +819,8 @@
 											"name": "form-1-input-77",
 											"theme": "white",
 											"required": true,
-											"label": "Кем работаете сейчас или ранее?"
+											"label": "Кем работаете сейчас или ранее?",
+											"autocomplete":"off"
 										}
 									]
 								}
@@ -842,6 +846,7 @@
 													"name": "filter-form-select-m-33",
 													"attr": "data-form-select",
 													"placeholder": "Образование",
+													"autocomplete":"off",
 													"options": [
 														{
 															"value": "Образование 1",
@@ -861,7 +866,8 @@
 												"name": "form-1-input-88",
 												"theme": "white",
 												"required": true,
-												"label": "Специальность"
+												"label": "Специальность",
+												"autocomplete":"off"
 										},
 										"datepicker": {
 											"datepicker": true,
@@ -1090,7 +1096,8 @@
 											"name": "form-1-input-99",
 											"theme": "white",
 											"required": true,
-											"label": "Наличие сертификатов"
+											"label": "Наличие сертификатов",
+											"autocomplete":"off"
 										},
 										"trigger": {
 											"attr": "data-add-education",
@@ -1119,7 +1126,8 @@
 										"name": "form-1-input-111",
 										"theme": "white",
 										"required": true,
-										"label": "Место работы"
+										"label": "Место работы",
+										"autocomplete":"off"
 									},
 									"field_post": {
 										"input": true,
@@ -1127,7 +1135,8 @@
 										"name": "form-1-input-222",
 										"theme": "white",
 										"required": true,
-										"label": "Должность"
+										"label": "Должность",
+										"autocomplete":"off"
 									},
 									"datepicker": {
 										"datepicker": true,
