@@ -13,8 +13,6 @@ export default class Datepicker {
 	}
 
 	init() {
-		this.timelines = []; // массив всех timeline
-
 		this.nodes.forEach((el, idx) => {
 			if (!el.init) this.render(el, idx); // пропуск, если ранее был проинициализирован
 		});
@@ -24,14 +22,14 @@ export default class Datepicker {
 				&& !e.target.hasAttribute('data-datepicker-box')
 				&& !e.target.closest('[data-datepicker-box]')
 				&& !e.target.closest('.select2-container')) {
-				this.reverse(this.timelines, this.nodes); // закрыть все datepicker
+				this.reverse(this.nodes); // закрыть все datepicker
 			}
 		});
 
 		window.addEventListener(
 			'resize',
 			debounce(100, () => {
-				this.reverse(this.timelines, this.nodes); // закрыть все datepicker
+				this.reverse(this.nodes); // закрыть все datepicker
 			}));
 	}
 
@@ -40,12 +38,12 @@ export default class Datepicker {
 		const toggle = datepicker.querySelector('[data-datepicker-toggle]');
 		toggle.addEventListener('click', () => {
 			if (datepicker.active) {
-				this.timelines[idx].reverse(); // закрыть
+				datepicker.timeline.reverse(); // закрыть
 			} else {
-				this.timelines[idx].play(); // открыть
+				datepicker.timeline.play(); // открыть
 			}
 
-			this.reverse(this.timelines, this.nodes, idx); // закрыть все, кроме текущего
+			this.reverse(this.nodes, idx); // закрыть все, кроме текущего
 		});
 
 		const dates = {
@@ -181,7 +179,7 @@ export default class Datepicker {
 				opacity: 1, y: 0, duration: '0.25', ease: 'power1.out'
 			}, '0.15');
 
-		this.timelines.push(timeline);
+		datepicker.timeline = timeline;
 
 		resetButton.addEventListener('click', () => {
 			for (let key in dates) {
@@ -271,12 +269,12 @@ export default class Datepicker {
 		return Object.values(obj).indexOf(undefined);
 	}
 
-	reverse(timelines, arr, idx = undefined) {
+	reverse(arr, idx = undefined) {
 		for (let i = 0; i < arr.length; i++) {
 			if (idx === i) continue;
 
 			if (arr[i].active) {
-				timelines[i].reverse();
+				arr[i].timeline.reverse();
 			}
 		}
 	}
