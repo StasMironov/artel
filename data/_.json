@@ -685,7 +685,8 @@
 											"name": "form-1-input-11",
 											"theme": "white",
 											"required": true,
-											"label": "ФИО"
+											"label": "ФИО",
+											"autocomplete":"off"
 										},
 										{
 											"input": true,
@@ -693,7 +694,8 @@
 											"name": "form-1-input-22",
 											"theme": "white",
 											"required": true,
-											"label": "Адрес проживания"
+											"label": "Адрес проживания",
+											"autocomplete":"off"
 										},
 										{
 											"input": true,
@@ -711,7 +713,8 @@
 												"+992-##-###-####",
 												"+994-##-###-##-##",
 												"+996-###-######"
-											]
+											],
+											"autocomplete":"off"
 										},
 										{
 											"input": true,
@@ -720,7 +723,8 @@
 											"theme": "white",
 											"required": true,
 											"type": "email",
-											"label": "E-mail"
+											"label": "E-mail",
+											"autocomplete":"off"
 										}
 									]
 								}
