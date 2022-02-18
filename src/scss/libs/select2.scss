@@ -596,11 +596,18 @@
 }
 
 
+
+
 .field__control .select-shell .select2-container--multi {
 	border-bottom: 1px solid rgba($color-white, 0.6);
 }
 
 .parsley-error.select2-hidden-accessible ~ .select2-container{
     border-color: #e3350f !important;
+}
+
+.select2-results__options[aria-multiselectable]{
+	max-height: rem(186);
+    padding-bottom: rem(9);
 }
 

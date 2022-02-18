@@ -148,7 +148,7 @@ export default class Datepicker {
 				datepicker.classList.add('is-active');
 
 				if (isMob()) {
-					window._disableScroll();
+					//window._disableScroll();
 				}
 			}, onComplete: () => {
 				datepicker.active = true;
@@ -164,7 +164,7 @@ export default class Datepicker {
 
 				timeline.invalidate();
 
-				window._enableScroll();
+				//window._enableScroll();
 			}
 		});
 
