@@ -1,0 +1,13 @@
+<div class="modal-resume">
+    {% if modal.title %}
+        <div class="modal-resume__title">{{modal.title}}</div>
+    {% endif %}
+    {% if modal.desc %}
+        <div class="modal-resume__desc">{{modal.desc}}</div>
+    {% endif %}
+    {% if modal.action %}
+        {% view '@button' with {
+            button: modal.action
+        } %}
+    {% endif %}
+</div>

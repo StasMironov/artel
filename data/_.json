@@ -1404,6 +1404,22 @@
 				}
 			},
 			"modificator": "right"
+		},
+		{
+			"id":"modal-resume",
+			"component": "&modal-resume",
+			"data": {
+				"modal": {
+					"title": "Сайт находится в&nbsp;стадии разработки",
+					"desc": "В данный момент сайт работает в&nbsp;тестовом режиме, спасибо за понимание",
+					"action": {
+						"text": "Продолжить",
+						"title": "Продолжить",
+						"theme": "white",
+						"attr": "data-modal-close"
+					}
+				}
+			}
 		}
 	]
 }
