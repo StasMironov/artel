@@ -1,4 +1,4 @@
-<div class="card-modal-step" {% if card.url %} data-education-ajax data-url="{{ card.url }}"{% endif %}>
+<div class="card-modal-step" {% if card.attr %} {{ card.attr }}{% endif %} {% if card.url %} data-url="{{ card.url }}"{% endif %}>
     {% if card.select_city %}  
         <div class="card-modal-step__select {% if card.select_city.fill %}card-modal-step__select--fill{% endif %}">
             {% view '@filter-select' with {
@@ -87,7 +87,7 @@
     {% endif %}
 
     {% if card.component %}
-        <div class="card-modal-step__container" data-container-frame>
+        <div class="card-modal-step__container" {% if card.attr_container %}{{ card.attr_container }}{% endif %}>
             {% view card.component with {card: card.data} %}
         </div>
     {% endif %}

@@ -51,7 +51,6 @@ export default {
 						);
 
 						tabsWrap.forEach((elem, index) => {
-							console.log(elem);
 							let panes = elem.querySelectorAll(
 								'[data-tab-pane]'
 							);

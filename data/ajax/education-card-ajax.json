@@ -251,7 +251,6 @@
                 "id": "form-1-checkbox-11",
                 "name": "form-1-checkbox-11",
                 "text": "По настоящее время",
-                "required": true,
                 "theme": "white"
             }
         ],

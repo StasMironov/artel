@@ -7,6 +7,7 @@ import mask from './../../libs/mask';
 import validation from './../validation';
 import Input from './../input';
 
+
 import 'parsleyjs';
 import './../validation/parsley-ru';
 
@@ -16,6 +17,8 @@ export default {
 		const wrapperNode = document.querySelector('[data-steps-career]');
 		if(!wrapperNode) return;
 
+		var curIdx = 0;
+
 		validation.init();
 
 		const progressLine = document.createElement('div');
@@ -23,7 +26,6 @@ export default {
 
 		let step;
 		var form = $('[data-steps-career]');
-		var is_async_step = false;
 		var stateValid = 0;
 	
 		function fieldValidate(){
@@ -48,10 +50,12 @@ export default {
 			bodyTag: 'section',
 			transitionEffect: "fade",
 			
+			
 			labels: {
 				finish: "Отправить",
-				next: "Дальше",
-				previous: "Назад",
+				next: "<button class='button button--white' data-btn-next>Дальше</button>",
+				previous: "<button class='button button--outline-white' data-btn-prev>Назад</button>",
+				finish: "<button class='button button--white' data-btn-prev>Отправить</button>",
 				current: "current step:",
 				pagination: "Pagination",
 			},
@@ -59,14 +63,9 @@ export default {
 				require('./../../libs/jquery.inputmask.bundle');
 				require('./../../libs/jquery.inputmask-multi');
 				mask.initMask();
-				// select.init();
-				//validation.init();
 				const inputs = new Input();
-				//inputs.render();
-
 				$('.steps').append(progressLine);
-			
-
+		
 				let tabs = wrapperNode.querySelectorAll('.steps li');
 				step = 100 / tabs.length;
 
@@ -74,36 +73,43 @@ export default {
 				
 				$('.wizard .content').animate({ height: $('.body.current').outerHeight() }, "slow");
 			},
-			onStepChanging: function (event, currentIndex, newIndex){
-				//if(fieldValidate()){
+			onStepChanging: function (event, currentIndex, newIndex){ 
+				if (newIndex<currentIndex){
+					curIdx = newIndex;
+					resizeJquerySteps(newIndex);
 					return true;
-				//}
+				}
+
+				if(fieldValidate()){
+					curIdx = newIndex;
+					resizeJquerySteps(newIndex);
+					return true;
+				}
 			},
 			onStepChanged: function (event, currentIndex, priorIndex) {
-				resizeJquerySteps();
-				$(progressLine).width(step*(currentIndex+1) + '%');
-				// form.validate().settings.ignore = ":disabled,:hidden";
-        		// return form.valid();
-
 				
-			},	
-			onFinished: function (event, currentIndex){
-				// if(fieldValidate()){
-				// 	console.log('submit');
-				// 	alert("Submitted!");
-				// }
-
-				console.log(form);
-				form.submit();
+				$(progressLine).width(step*(currentIndex+1) + '%');				
+			},
+			onFinishing: function (event, currentIndex)
+			{
+				return true;
+			},
+			onFinished: function (event, currentIndex)
+			{
+				if(fieldValidate()){
+					form.submit();
+				}
 			}	
 		});
 		
-		function resizeJquerySteps() {
-			$('.wizard .content').animate({ height: $('.body.current').outerHeight() }, "slow");
+		function resizeJquerySteps(index=false) {
+			if(index>=0){
+				$('.wizard .content').animate({ height: $('.body').eq(index).outerHeight() }, "faster");
+			}
 		}
 
 		$(window).resize(debounce(100, () => {
-			250, resizeJquerySteps();
+			250, resizeJquerySteps(curIdx);
 		}));
 	},
 };

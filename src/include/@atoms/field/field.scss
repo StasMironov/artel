@@ -158,11 +158,3 @@
 
 
 //для автозаполнения в хроме
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active,
-input:-internal-autofill-selected {
-    transition-property: background-color, color;
-    transition-delay: 10000s, 10000s;
-}
