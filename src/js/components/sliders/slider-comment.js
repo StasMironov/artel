@@ -4,6 +4,7 @@ import Swiper from 'swiper/swiper-bundle';
 
 export default {
 	init() {
+
 		if (document.querySelector('[data-slider-comment-wrap]')) {
 			let slidersWrapNode = document.querySelectorAll(
 				'[data-slider-comment-wrap]'
@@ -43,6 +44,12 @@ export default {
 									.querySelector('[data-pag]')
 									.classList.add('overlay');
 							}
+
+              if (this.slides.length < 2) {
+                sliderPag.setAttribute('style', 'display: none');
+                prev.setAttribute('style', 'display: none');
+                next.setAttribute('style', 'display: none');
+              }
 						},
 						touchEnd() {
 							const lastSlide = this.slides[
@@ -80,11 +87,12 @@ export default {
 						loadPrevNext: true,
 						elementClass: 'swiper-lazy',
 					},
-					autoplay: {
+				  autoplay: {
 						delay: 10000,
 						disableOnInteraction: false,
 					},
-					// autoHeight: true,
+					
+          //autoHeight: true,
 					navigation: {
 						nextEl: next,
 						prevEl: prev,
@@ -114,10 +122,15 @@ export default {
 						},
 						slideChangeTransitionStart: function () {
 							progress.classList.remove('animate');
+              if (state) {
+                toggle.slideUp();
+                showMoreText.text('Читать далее');
+                state--;
+              } 
 						},
 						slideChangeTransitionEnd: function () {
 							progress.classList.add('animate');
-						},
+						}
 					},
 				});
 
@@ -131,7 +144,24 @@ export default {
 						pagSlide.update();
 					})
 				);
-			});
+               
+        const toggle = $('[data-text-hidden]');
+        let state = 0;
+        const showMoreText = $('[data-show-text]');
+
+        showMoreText.on('click', function () {
+          if (state) {
+            toggle.slideUp();
+            $(this).text('Читать далее');
+            state--;
+          } else {
+            toggle.slideDown();
+            $(this).text('Скрыть');
+            state++;
+          }
+        });
+
+      });
 		}
 	},
 };
