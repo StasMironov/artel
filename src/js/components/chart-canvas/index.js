@@ -6,8 +6,6 @@ import { install } from 'resize-observer';
 export default class ChartCanvas {
   
 	constructor() {
-
-    install();
 		this.wrapNode = document.querySelector('[data-chart]');
 
 		if (this.wrapNode) {
@@ -16,6 +14,8 @@ export default class ChartCanvas {
 	}
 
 	render() {
+    install();
+
 		this.canvasNode = this.wrapNode.querySelector('[data-canvas]');
 		if (!this.canvasNode) return;
 
