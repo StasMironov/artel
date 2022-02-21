@@ -29,6 +29,7 @@
 		"perfect-scrollbar": "^1.5.3",
 		"plyr": "^3.6.9",
 		"promise-polyfill": "^8.2.0",
+		"resize-observer-polyfill": "^1.5.1",
 		"sal.js": "^0.8.5",
 		"scrollbooster": "^3.0.2",
 		"select2": "^4.1.0-rc.0",

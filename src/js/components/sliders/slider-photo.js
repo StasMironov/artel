@@ -32,6 +32,12 @@ if (document.querySelector('[data-slider-photo-wrap]')) {
 								.querySelector('[data-pag]')
 								.classList.add('overlay');
 						}
+
+            if (this.slides.length < 2) {
+							document.querySelector('[data-slider-photo-wrap]')
+								.querySelector('.slider-photo__navigation')
+								.setAttribute('style', 'display: none');
+						}
 					},
 					touchEnd() {
 						const lastSlide = this.slides[this.slides.length - 1];

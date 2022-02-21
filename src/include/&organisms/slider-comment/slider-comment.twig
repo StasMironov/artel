@@ -1,4 +1,4 @@
-<div class="slider-comment" data-slider-comment-wrap data-fade-in-up>
+<div class="slider-comment" data-slider-comment-wrap data-fade-in-up >
     <div class="slider-comment__container container">
         <div class="slider-comment__header">
             {% if slider.title %}
@@ -12,7 +12,8 @@
                 </div>
             {% endif %}
         </div>
-        <div class="slider-comment__slider">
+        
+        <div class="slider-comment__slider" >
             <div class="swiper-container" data-slider-comment>
                 <div class="swiper-wrapper">
                     {% for slide in slider.items %}
@@ -59,13 +60,13 @@
                                         </div>
                                     {% endif %}
 
-                                    {% if slide.desc %}
+                                    {% if slide.desc_read_more %}
                                         <div class="slider-comment__desc">
-                                            {% for item in slide.desc %}
-                                                <div class="slider-comment__par">
-                                                    {{ item }}
-                                                </div>
-                                            {% endfor %}
+                                              <div class="slider-comment__par" >
+                                                  {% view '^read-more-comment' with {
+                                                      card: slide.desc_read_more 
+                                                  }%}
+                                              </div> 
                                         </div>
                                     {% endif %}
                                 </div>
