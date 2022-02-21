@@ -8,7 +8,9 @@ import gsap from 'gsap';
 
 export default class Education {
 	constructor() {
-		this.form = document.querySelector('[data-education-ajax]');
+		this.form = document.querySelector('[data-work-ajax]');
+
+       
 		if (!this.form) return;
 
 		this.counter = 100;
@@ -19,7 +21,7 @@ export default class Education {
 	}
 
 	resizeJquerySteps(del=true) {
-		// console.log(del);
+		console.log(del);
 		if(!del){
 			$('.wizard .content').animate({ height: $('.body.current').outerHeight()}, "slow");
 		} else {
@@ -29,22 +31,22 @@ export default class Education {
 
 
 	render() {
-		this.frame = this.form.querySelector('[data-container-frame]');
+		this.frame = this.form.querySelector('[data-container-works]');
 		if (!this.frame) return;
 
 		this.url = this.form.getAttribute('data-url');
 		if (!this.url) return;
 
 		
-		$(window ).on( "custom", ()=> {
-			this.btnAddEducations = this.form.querySelectorAll('[data-btn-education]');
-			this.btnDeleteEducations = this.form.querySelectorAll('[data-btn-delete]');
+		$(window ).on( "custom-work", ()=> {
+			this.btnAddEducations = this.form.querySelectorAll('[data-add-work]');
+			this.btnDeleteEducations = this.form.querySelectorAll('[data-delete-work]');
 
 
 			this.btnDeleteEducations.forEach((el)=>{
-				//console.log(el);
+				console.log(el);
 				el.addEventListener('click', (e)=>{	
-					let parentBox = $(el).closest('[data-ed-card]');
+					let parentBox = $(el).closest('[data-work-card]');
 					console.log(parentBox);
 					parentBox.remove();
 					this.resizeJquerySteps(false) 
@@ -62,16 +64,15 @@ export default class Education {
 
 			select.init();
 			this.inputs.render();
-			new Datepicker();
+			
 		});
 
-		$(window).trigger("custom");
+		$(window).trigger("custom-work");
 	}
 
 	fetch() {
 		let url = this.url;
-	
-
+        console.log(url)
 		url += [
 			url.indexOf('?') >= 0 ? '&' : '?',
 			`q=${this.counter}`,
@@ -88,6 +89,7 @@ export default class Education {
 				}
 			})
 			.then((text) => {
+               // console.log(text)
 				this.appendText(text);
 			})
 			.catch((err) => {
@@ -96,16 +98,16 @@ export default class Education {
 	}
 
 	appendText(value = null) {
+        console.log(1)
 			let range = document.createRange();
 			let fragment = range.createContextualFragment(value); //Creates a DOM object
-			let fragmentCard = fragment.querySelector('[data-ed-card]');
-			console.log(1);
+			let fragmentCard = fragment.querySelector('[data-work-card]');
 
 			fragmentCard.style.opacity = 0;
 
 			//console.log(fragment);
 			this.frame.appendChild(fragment);
-			$(window).trigger("custom");
+			$(window).trigger("custom-work");
 			this.resizeJquerySteps();
 			gsap.fromTo(fragmentCard, {
 				autoAlpha: 0,
@@ -113,6 +115,7 @@ export default class Education {
 				autoAlpha: 1,
 				delay: 0.5
 			});
+            new Datepicker();
 			
 	}
 }

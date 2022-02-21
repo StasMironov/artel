@@ -37,6 +37,8 @@ export default class ModalBase {
 
 		const scrollNode = wrapNode.querySelector('[data-modal-ps]');
 
+		
+
 		if (!scrollNode) return;
 
 		MicroModal.init({
@@ -56,6 +58,8 @@ export default class ModalBase {
 						wheelPropagation: true,
 						minScrollbarLength: 20,
 					});
+
+					console.log(this.ps);
 
 					window.addEventListener(
 						'resize',

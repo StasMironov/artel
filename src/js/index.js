@@ -30,6 +30,7 @@ import ModalAjax from './components/modal/ajax-modal';
 import Accordion from './components/accordion';
 import Search from './components/search';
 import Education from './components/block-education';
+import Work from './components/block-work';
 import Datepicker from './components/datepicker';
 
 import ModalBase from './components/modal/modal-base';
@@ -90,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	new MapService();
 	new Search();
 	new Education();
+	new Work();
 	validation.init();
 	Accordion.init();
 	new FormHandler();
@@ -141,6 +143,14 @@ document.addEventListener('DOMContentLoaded', () => {
 			init: true,
 			id: 'modal-warning',
 			trigger: 'data-modal-warning',
+			closeTrigger: 'data-modal-close',
+			openClass: 'is-open',
+		});
+
+		new ModalBase({
+			init: true,
+			id: 'modal-resume',
+			trigger: 'data-modal-resume',
 			closeTrigger: 'data-modal-close',
 			openClass: 'is-open',
 		});

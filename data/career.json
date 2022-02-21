@@ -924,6 +924,7 @@
       {
         "href": "javascript:void(0);",
         "text": "Онлайн-заявка",
+        "attr": "data-modal-career='modal-career'",
         "title": "Онлайн-заявка",
         "theme": "white",
         "icon": {
@@ -935,6 +936,7 @@
         "text": "Отправить резюме",
         "title": "Отправить резюме",
         "theme": "outline-white",
+        "attr": "data-modal-resume='modal-resume'",
         "icon": {
           "name": "24/file"
         }

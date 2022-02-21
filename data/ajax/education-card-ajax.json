@@ -11,6 +11,7 @@
                     "name": "1-filter-form-select-m-10",
                     "attr": "data-form-select",
                     "placeholder": "Образование",
+                    "autocomplete":"off",
                     "options": [
                         {
                             "value": "Образование 1",
@@ -31,7 +32,8 @@
                 "name": "101-form-input",
                 "required": true,
                 "theme": "white",
-                "label": "Специальность"
+                "label": "Специальность",
+                "autocomplete":"off"
             }        ,
         "datepicker": {
             "datepicker": true,
@@ -251,7 +253,6 @@
                 "id": "form-1-checkbox-11",
                 "name": "form-1-checkbox-11",
                 "text": "По настоящее время",
-                "required": true,
                 "theme": "white"
             }
         ],
@@ -261,7 +262,8 @@
             "name": "103-form-input",
             "theme": "white",
             "required": true,
-            "label": "Наличие сертификатов"
+            "label": "Наличие сертификатов",
+            "autocomplete":"off"
         }  ,
         "trigger": {
             "attr": "data-add-education",
