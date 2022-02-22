@@ -136,6 +136,10 @@
 
 	&__select {
 
+		@include media-breakpoint-down(sm) {
+			overflow: hidden;
+		}
+
 		.filter-select__field {
 			width: 37%;
 
