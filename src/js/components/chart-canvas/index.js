@@ -1,8 +1,10 @@
 import PerfectScrollbar from 'perfect-scrollbar';
 import { debounce } from 'throttle-debounce';
 import { isDesktop } from '../../utils/breakpoints';
+import { install } from 'resize-observer';
 
 export default class ChartCanvas {
+  
 	constructor() {
 		this.wrapNode = document.querySelector('[data-chart]');
 
@@ -12,6 +14,8 @@ export default class ChartCanvas {
 	}
 
 	render() {
+    install();
+
 		this.canvasNode = this.wrapNode.querySelector('[data-canvas]');
 		if (!this.canvasNode) return;
 
