@@ -48,7 +48,7 @@ const sliderLogos = new Slider({
 					this.wrapperEl
 						.closest('[data-slider-logos-wrap]')
 						.classList.remove('nav-hidden');
-					this.slideTo(0);
+					//this.slideTo(0);
 				}
 			},
 		},
