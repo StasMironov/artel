@@ -73,7 +73,7 @@ export default class Datepicker {
 			dates.startYear = e.target.value;
 
 			this.selectOptionsCheck($selectEnd, $selectStart);
-			this.radioReset([...radioStart, ...radioEnd], dates);
+			//this.radioReset([...radioStart, ...radioEnd], dates);
 
 			applyButton.disabled = this.checkUndefined(dates) !== -1;
 		});
@@ -82,7 +82,7 @@ export default class Datepicker {
 			dates.endYear = e.target.value;
 
 			this.selectOptionsCheck($selectStart, $selectEnd, false);
-			this.radioReset([...radioStart, ...radioEnd], dates);
+			//this.radioReset([...radioStart, ...radioEnd], dates);
 
 			applyButton.disabled = this.checkUndefined(dates) !== -1;
 		});
