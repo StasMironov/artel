@@ -90,5 +90,25 @@
         <div class="card-modal-step__container" {% if card.attr_container %}{{ card.attr_container }}{% endif %}>
             {% view card.component with {card: card.data} %}
         </div>
+        {% if card.trigger %}
+            <div class="card-modal-step__actions">
+                <div class="card-modal-step__trigger" {% if card.actions_attr %}{{ card.actions_attr }}{% endif %}>
+                    {% if card.trigger.button %}
+                        <span class="card-modal-step__btn">
+                        </span>
+                    {% endif %}
+                    {% if card.trigger.text %}
+                        <div class="card-modal-step__txt">
+                            {{card.trigger.text}}
+                        </div>
+                    {% endif %}
+                </div> 
+                {% if card.delete %}
+                    <div class="card-modal-step__delete" {% if card.delete.attr %} data-btn-delete {% endif %}>
+                        {{ card.delete.text }}
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
     {% endif %}
 </div>

@@ -85,6 +85,8 @@ export default {
 					resizeJquerySteps(newIndex);
 					return true;
 				}
+
+				//return true;
 			},
 			onStepChanged: function (event, currentIndex, priorIndex) {
 				

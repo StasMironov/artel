@@ -34,9 +34,9 @@
             } %}
         </div>
     {% endif %}
-    {% if card.trigger %}
+    {% if card.delete %}
         <div class="education-card__actions">
-            <div class="education-card__trigger" data-btn-education>
+            {# <div class="education-card__trigger" data-btn-education>
                 {% if card.trigger.button %}
                     <span class="education-card__btn">
                     </span>
@@ -46,12 +46,12 @@
                         {{card.trigger.text}}
                     </div>
                 {% endif %}
-            </div> 
-            {% if card.delete %}
+            </div>  #}
+            
                 <div class="education-card__delete" {% if card.delete.attr %} data-btn-delete {% endif %}>
                     {{ card.delete.text }}
                 </div>
-            {% endif %}
+            
         </div>
     {% endif %}
 </div>

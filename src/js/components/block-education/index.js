@@ -35,9 +35,16 @@ export default class Education {
 		this.url = this.form.getAttribute('data-url');
 		if (!this.url) return;
 
+		this.btnAddEducations = this.form.querySelector('[data-btn-education]');
+
+		this.btnAddEducations.addEventListener('click', (e)=>{	
+			console.log('t');
+			this.counter += 1;
+			this.fetch();
+		});
 		
 		$(window ).on( "custom", ()=> {
-			this.btnAddEducations = this.form.querySelectorAll('[data-btn-education]');
+			
 			this.btnDeleteEducations = this.form.querySelectorAll('[data-btn-delete]');
 
 
@@ -51,14 +58,17 @@ export default class Education {
 				});
 			})
 
-			this.btnAddEducations.forEach((el)=>{
-				//console.log(el);
-				el.addEventListener('click', (e)=>{	
-					this.counter += 1;
-					this.fetch();
+			// this.btnAddEducations.forEach((el)=>{
+			// 	//console.log(el);
+			// 	el.addEventListener('click', (e)=>{	
+			// 		this.counter += 1;
+			// 		this.fetch();
 					
-				});
-			})
+			// 	});
+			// })
+
+			
+			
 
 			select.init();
 			this.inputs.render();
