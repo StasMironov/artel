@@ -26,7 +26,7 @@
             "id": "date-work-1",
             "name": "date-work-1",
             "text": "По настоящее время",
-            "theme": "on-white"
+            "theme": "white"
         },
         "dropdownStart": {
             "select": true,
