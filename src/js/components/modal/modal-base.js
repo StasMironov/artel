@@ -51,6 +51,7 @@ export default class ModalBase {
 			debugMode: true,
 			disableScroll: false,
 			onShow: (modal) => {
+				
 				// this.onShow(modal);
 				if (scrollNode) {
 					this.ps  = new PerfectScrollbar(scrollNode, {
@@ -59,7 +60,7 @@ export default class ModalBase {
 						minScrollbarLength: 20,
 					});
 
-					console.log(this.ps);
+					
 
 					window.addEventListener(
 						'resize',
@@ -70,9 +71,15 @@ export default class ModalBase {
 				}
 
 				window._disableScroll();
+				
+				setTimeout(()=>{
+					console.log($('header'));
+					$('.header').addClass('show-header');
+				}, 100);
 			},
 			onClose: (modal) => {
 				this.onClose(modal);
+				$('.header').removeClass('show-header');
 				window._enableScroll();
 			},
 		});

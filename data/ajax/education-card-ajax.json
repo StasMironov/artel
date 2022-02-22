@@ -247,15 +247,6 @@
                 }
             ]
         },
-        "agreement": [
-            {
-                "checkbox": true,
-                "id": "form-1-checkbox-11",
-                "name": "form-1-checkbox-11",
-                "text": "По настоящее время",
-                "theme": "white"
-            }
-        ],
         "field_certificate":  {
             "input": true,
             "id": "103-form-input",

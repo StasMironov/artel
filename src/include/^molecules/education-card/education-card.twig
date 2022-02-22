@@ -14,9 +14,11 @@
         </div>
     {% endif %}
     {% if card.datepicker %}
-        {% view '@field' with {
-            field: card.datepicker
-        } %}
+        <div class="form__field">
+            {% view '@field' with {
+                field: card.datepicker
+            } %}
+        </div>
     {% endif %}
     {% if card.agreement %}
         {% for check in card.agreement %}
