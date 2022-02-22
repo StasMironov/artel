@@ -37,9 +37,16 @@ export default class Education {
 		this.url = this.form.getAttribute('data-url');
 		if (!this.url) return;
 
+		this.btnAddEducations = this.form.querySelector('[data-add-work]');
+
+		this.btnAddEducations.addEventListener('click', (e)=>{	
+			this.counter += 1;
+			this.fetch();	
+		});
+
 		
 		$(window ).on( "custom-work", ()=> {
-			this.btnAddEducations = this.form.querySelectorAll('[data-add-work]');
+		
 			this.btnDeleteEducations = this.form.querySelectorAll('[data-delete-work]');
 
 
@@ -50,15 +57,6 @@ export default class Education {
 					console.log(parentBox);
 					parentBox.remove();
 					this.resizeJquerySteps(false) 
-				});
-			})
-
-			this.btnAddEducations.forEach((el)=>{
-				//console.log(el);
-				el.addEventListener('click', (e)=>{	
-					this.counter += 1;
-					this.fetch();
-					
 				});
 			})
 

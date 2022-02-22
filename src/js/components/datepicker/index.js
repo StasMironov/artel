@@ -210,7 +210,8 @@ export default class Datepicker {
 
 		applyButton.disabled = this.checkUndefined(dates) !== -1; // если хотя бы одно поле в date равно undefined
 
-		applyButton.addEventListener('click', () => {
+		applyButton.addEventListener('click', (e) => {
+			e.preventDefault();
 			const value = `${dates.startMonth.toLowerCase()} ${dates.startYear} – ${dates.endMonth.toLowerCase()} ${dates.endYear}`;
 
 			input.value = value;
@@ -226,6 +227,13 @@ export default class Datepicker {
 			datepicker.classList.add('filled');
 
 			timeline.reverse();
+		});
+
+		$('body').on('keydown', 'input, select', function(e) {
+			if (e.key === "Enter") {
+				$(applyButton).click(); 
+				return false;
+			}
 		});
 
 		datepicker.init = true;

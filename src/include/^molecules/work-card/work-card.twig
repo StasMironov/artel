@@ -27,24 +27,11 @@
             </div>
         {% endfor %}
     {% endif %}
-    {% if card.trigger %}
+    {% if card.delete %}
         <div class="work-card__actions">
-            <div class="work-card__trigger" data-add-work>
-                {% if card.trigger.button %}
-                    <span class="work-card__btn">
-                    </span>
-                {% endif %}
-                {% if card.trigger.text %}
-                    <div class="work-card__text">
-                        {{card.trigger.text}}
-                    </div>
-                {% endif %}
-            </div> 
-            {% if card.delete %}
-                <div class="work-card__delete" {% if card.delete.attr %} data-delete-work {% endif %}>
-                    {{ card.delete.text }}
-                </div>
-            {% endif %}
+            <div class="work-card__delete" {% if card.delete.attr %} {{ card.delete.attr }} {% endif %}>
+                {{ card.delete.text }}
+            </div>
         </div>
     {% endif %}
 </div>

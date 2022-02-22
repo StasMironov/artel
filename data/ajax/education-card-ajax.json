@@ -261,17 +261,9 @@
             "id": "103-form-input",
             "name": "103-form-input",
             "theme": "white",
-            "required": true,
             "label": "Наличие сертификатов",
             "autocomplete":"off"
         }  ,
-        "trigger": {
-            "attr": "data-add-education",
-            "button": {
-                "theme": "circle-white"
-            },
-            "text": "Добавить образование"
-        },
         "delete": {
             "text": "Удалить",
             "attr": "data-btn-delete"
