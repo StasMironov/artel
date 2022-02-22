@@ -885,8 +885,8 @@
 											"attr": "data-some-attr",
 											"dropdownStart": {
 												"select": true,
-												"id": "datepicker2-select-1",
-												"name": "datepicker2-select-1",
+												"id": "datepicker22-select-1",
+												"name": "datepicker22-select-1",
 												"placeholder": "Выберите год",
 												"size": "small",
 												"attr": "data-datepicker-select-start",
@@ -956,8 +956,8 @@
 											"dropdownEnd": {
 												"select": true,
 												
-												"id": "datepicker2-select-2",
-												"name": "datepicker2-select-2",
+												"id": "datepicker22-select-2",
+												"name": "datepicker22-select-2",
 												"placeholder": "Выберите год",
 												"size": "small",
 												"attr": "data-datepicker-select-end",

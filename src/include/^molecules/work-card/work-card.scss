@@ -1,8 +1,9 @@
 .work-card {
     $b: &;
 
-    &:not(:last-child) {
-        margin-bottom: rem(64);
+    &:not(:first-child) {
+        margin-bottom: rem(-64);
+        margin-top: rem(64);
     }
 
    &__actions {
@@ -60,6 +61,7 @@
 
     &__delete {
         color: $color-white;
+        margin-left: auto;
         cursor: pointer;
     }
     
