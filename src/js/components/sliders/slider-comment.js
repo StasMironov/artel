@@ -161,6 +161,14 @@ export default {
           }
         });
 
+        $(".slider-comment").on("mouseleave touchstart", function(){
+          if (state) {
+            toggle.slideUp();
+            showMoreText.text('Читать далее');
+            state--;
+          } 
+      });
+
       });
 		}
 	},
