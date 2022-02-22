@@ -21,6 +21,13 @@
         "theme": "white",
         "label": "Время работы",
         "attr": "data-some-attr",
+        "checkbox_date": {
+            "checkbox": true,
+            "id": "date-work-1",
+            "name": "date-work-1",
+            "text": "По настоящее время",
+            "theme": "on-white"
+        },
         "dropdownStart": {
             "select": true,
             "id": "datepicker2-select-888",
@@ -225,22 +232,6 @@
                 "attr": "data-datepicker-reset"
             }
         ]
-    },
-    "agreement": [
-        {
-            "checkbox": true,
-            "id": "form-1-checkbox-111",
-            "name": "form-1-checkbox-111",
-            "text": "По настоящее время",
-            "theme": "white"
-        }
-    ],
-    "trigger": {
-        "attr": "data-add-work",
-        "button": {
-            "theme": "circle-white"
-        },
-        "text": "Добавить место работы"
     },
     "delete": {
         "text": "Удалить",

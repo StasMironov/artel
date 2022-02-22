@@ -5,6 +5,10 @@
 
 	&--white {
 		color: $color-white;
+
+		.datepicker__icon {
+			color: $color-white;
+		}
 	}
 
 	&__input {
@@ -98,6 +102,8 @@
 		flex-shrink: 0;
 		margin-left: auto;
 		pointer-events: none;
+
+		
 	}
 
 	&__box {
@@ -276,5 +282,9 @@
 			color: rgba($color-black, 0.15);
 			cursor: not-allowed;
 		}
+	}
+
+	&__checkbox {
+		margin-bottom: rem(16);
 	}
 }

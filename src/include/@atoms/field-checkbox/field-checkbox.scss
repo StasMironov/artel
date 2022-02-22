@@ -10,6 +10,10 @@
 
 	&__input {
 		@include visually-hidden;
+
+		#{$root}--on-white #{$root}__input:checked ~ .checkbox__box:after {
+			border-color: $color-green;
+		}
 	}
 
 	&__box {
@@ -84,6 +88,27 @@
 			}
 		}
 
+		#{$root}--on-white {
+		//	border: 1px solid $color-black;
+			background: transparent;
+		}
+
+		#{$root}--on-white #{$root}__input ~ & {
+			border: 1px solid $color-black;
+		}
+
+		#{$root}--on-white #{$root}__input:checked ~ & {
+			background: transparent;
+			border: 2px solid $color-black;
+		}
+		
+
+		#{$root}--on-white #{$root}__input:checked ~ & {
+			&:after {
+				border-color: $color-green;
+			}
+		}
+
 		// --white
 
 		#{$root}--white & {
@@ -128,7 +153,18 @@
 		@include media-breakpoint-down(sm) {
 			padding-top: 2px;
 		}
+
+		#{$root}--on-white & {
+			color: rgba(0, 0, 0, 0.4);
+		}
+
+		
+		#{$root}--on-white #{$root}__input:checked ~ .checkbox__text & {
+			color: rgba(0, 0, 0, 1.0);
+		}
 	}
+
+
 
 
 	.link-content {

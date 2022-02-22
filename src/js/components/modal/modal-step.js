@@ -50,9 +50,9 @@ export default {
 			bodyTag: 'section',
 			transitionEffect: "fade",
 			
-			
+		
 			labels: {
-				finish: "Отправить",
+				// finish: "Отправить",
 				next: "<button class='button button--white' data-btn-next>Дальше</button>",
 				previous: "<button class='button button--outline-white' data-btn-prev>Назад</button>",
 				finish: "<button class='button button--white' data-btn-prev>Отправить</button>",

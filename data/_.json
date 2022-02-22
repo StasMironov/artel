@@ -1088,15 +1088,6 @@
 												}
 											]
 										},
-										"agreement": [
-											{
-												"checkbox": true,
-												"id": "form-1-checkbox-11",
-												"name": "form-1-checkbox-11",
-												"text": "По настоящее время",
-												"theme": "white"
-											}
-										],
 										"field_certificate": {
 											"input": true,
 											"id": "form-1-input-99",
@@ -1158,6 +1149,13 @@
 										"theme": "white",
 										"label": "Время работы",
 										"attr": "data-some-attr",
+										"checkbox_date": {
+											"checkbox": true,
+											"id": "date-work-1",
+											"name": "date-work-1",
+											"text": "По настоящее время",
+											"theme": "on-white"
+										},
 										"dropdownStart": {
 											"select": true,
 											"id": "datepicker2-select-111",
@@ -1363,15 +1361,6 @@
 											}
 										]
 									},
-									"agreement": [
-										{
-											"checkbox": true,
-											"id": "form-1-checkbox-111",
-											"name": "form-1-checkbox-111",
-											"text": "По настоящее время",
-											"theme": "white"
-										}
-									],
 									"trigger": {
 										"attr": "data-add-education",
 										"button": {

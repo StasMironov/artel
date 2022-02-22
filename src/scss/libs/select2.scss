@@ -378,7 +378,7 @@
 				left: rem(25);
 				width: rem(24);
 				height: rem(24);
-				border: 2px solid $color-black;
+				border: 1px solid $color-black;
 				content: "";
 				@include defaultTransition(border-color);
 			}
@@ -411,6 +411,7 @@
 		&.multiselect-option.select2-results__option--selected {
 			&:before {
 				border-color: $color-black;
+				border-width: 2px;
 			}
 
 			&:after {
@@ -534,7 +535,7 @@
 .select2-results__option.multiselect-option:before {
 	height: rem(24);
 	width: rem(24);
-	border-radius: 0;
+	border-radius: rem(2);
 	background: transparent !important;
 	top: 0;
 	border-color: rgba($color-black, 1.0);
