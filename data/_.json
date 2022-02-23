@@ -375,7 +375,6 @@
 		"groups": [
 			{
 				"headLink": {
-					"href": "javascript:void(0);",
 					"text": "О группе"
 				},
 				"items": [
@@ -1144,8 +1143,8 @@
 									},
 									"datepicker": {
 										"datepicker": true,
-										"id": "datepicker-2",
-										"name": "datepicker-name-2",
+										"id": "datepicker-3",
+										"name": "datepicker-name-3",
 										"theme": "white",
 										"label": "Время работы",
 										"attr": "data-some-attr",
@@ -1423,7 +1422,7 @@
 		{
 			"id":"modal-resume",
 			"component": "&modal-resume",
-			"modificator": "resume",
+			"modificator": "right",
 			"data": {
 				"modal": {
 					"form": {
@@ -1468,8 +1467,8 @@
 						"agreement": [
 							{
 								"checkbox": true,
-								"id": "form-1-checkbox-22",
-								"name": "form-1-checkbox-22",
+								"id": "form-1-checkbox-33",
+								"name": "form-1-checkbox-33",
 								"text": "Настоящим даю согласие по установленной форме на обработку моих <a href='javascript:void(0);' class='link-content' target='_blank'>персональных данных</a> в порядке, установленном законом РУз от 27.07.2006 N 152-ФЗ 'О персональных данных'. Код подтверждения",
 								"required": true,
 								"theme": "white"

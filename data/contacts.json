@@ -134,7 +134,7 @@
 		}
 	},
 	"block_contacts": {
-		"title": "Контакты",
+		"title": "Контакты для партнёров",
 		"bg": "gray",
 		"breadcrumbs": {
 			"items": [
