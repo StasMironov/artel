@@ -58,6 +58,7 @@ export default class ModalBase {
 						wheelSpeed: 2,
 						wheelPropagation: true,
 						minScrollbarLength: 20,
+						suppressScrollX: true
 					});
 
 					

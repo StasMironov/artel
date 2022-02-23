@@ -32,10 +32,13 @@
 							{% if group.headLink.active %}
 								<span class="footer__head-link h3 is-active"
 									  data-fade-in-up>{{ group.headLink.text }}</span>
-							{% else %}
+							{% elseif group.headLink.href  %}
 								<a href="{{ group.headLink.href }}"
 								   class="footer__head-link h3"{% if group.headLink.external %} target="_blank"{% endif %}
 								   data-fade-in-up>{{ group.headLink.text }}</a>
+							{% else %}
+								<span class="footer__head-link footer__head-link--no-hover h3"
+									  data-fade-in-up>{{ group.headLink.text }}</span>
 							{% endif %}
 						{% endif %}
 						<ul class="footer__list">

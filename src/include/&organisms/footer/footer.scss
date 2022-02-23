@@ -4,6 +4,7 @@
 	display: block;
 	background-color: $color-black;
 	padding-top: rem(64);
+	margin-top: auto;
 
 	@include media-breakpoint-up(md) {
 		padding-top: rem(80);
@@ -147,6 +148,10 @@
 
 		@include touchLessHover {
 			color: rgba($color-white, 0.4);
+		}
+
+		&--no-hover {
+			pointer-events: none;
 		}
 	}
 

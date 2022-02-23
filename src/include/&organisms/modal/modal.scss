@@ -95,6 +95,7 @@
 		#{$b}--right & {
 			margin-left: auto;
 			min-width: rem(714);
+			height: 100vh;
 
 			@include media-breakpoint-down(md) {
 				min-width: initial;
