@@ -118,7 +118,7 @@
 
     .datepicker--white {
         @include media-breakpoint-down(sm) {
-            margin-bottom: rem(-120);
+          //  margin-bottom: rem(-120);
         }
     }
 
