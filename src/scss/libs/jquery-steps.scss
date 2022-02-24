@@ -121,7 +121,7 @@
 	position: relative;
 	display: block;
 	width: auto;
-	min-height: rem(335);
+	min-height: rem(324);
 	margin: 0.5em;
 	overflow: visible !important;
 
@@ -561,6 +561,7 @@
 
 	@include media-breakpoint-down(sm) {
         margin-bottom: rem(40);
+		min-height: rem(298);
 	}
 
 
