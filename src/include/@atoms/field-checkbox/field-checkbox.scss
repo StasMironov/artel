@@ -95,11 +95,13 @@
 
 		#{$root}--on-white #{$root}__input ~ & {
 			border: 1px solid $color-black;
+			border-radius: rem(2);
 		}
 
 		#{$root}--on-white #{$root}__input:checked ~ & {
 			background: transparent;
 			border: 2px solid $color-black;
+		
 		}
 		
 
@@ -149,6 +151,7 @@
 		@include text-body;
 		max-width: rem(460);
 		color: rgba($color-white, 0.6);
+		@include defaultTransition(color);
 
 		@include media-breakpoint-down(sm) {
 			padding-top: 2px;
@@ -159,12 +162,10 @@
 		}
 
 		
-		#{$root}--on-white #{$root}__input:checked ~ .checkbox__text & {
-			color: rgba(0, 0, 0, 1.0);
-		}
+		
 	}
 
-
+	
 
 
 	.link-content {
@@ -195,4 +196,19 @@
 			border: 1px solid $color-red !important;
 		}
 	}
+
+
+	&--on-white .checkbox__input:checked ~ .checkbox__text  {
+		color: $color-black;
+	}
+
+	&--on-white {
+		@include touchLessHover {
+			.checkbox__text {
+				color: $color-black;
+			}
+		}
+	}
+
+	
 }
