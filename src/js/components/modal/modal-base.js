@@ -66,12 +66,12 @@ export default class ModalBase {
 						'resize',
 						debounce(100, () => {
 							this.ps.update();
-							if(this.state){
-								window._disableScroll();
-							}
-							else {
-								window._enableScroll();
-							}
+							// if(this.state){
+							// 	window._disableScroll();
+							// }
+							// else {
+							// 	window._enableScroll();
+							// }
 						})
 					);
 				}
