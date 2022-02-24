@@ -17,9 +17,7 @@ export default {
 		const wrapperNode = document.querySelector('[data-steps-career]');
 		if(!wrapperNode) return;
 
-		const resetButton = wrapperNode.querySelectorAll('[data-datepicker-reset]');
-
-		console.log(resetButton);
+		
 
 		var curIdx = 0;
 
@@ -76,6 +74,8 @@ export default {
 				$(progressLine).width(step*(1) + '%')
 				
 				$('.wizard .content').animate({ height: $('.body.current').outerHeight() }, "slow");
+
+				
 			},
 			onStepChanging: function (event, currentIndex, newIndex){ 
 				if (newIndex<currentIndex){
@@ -90,9 +90,18 @@ export default {
 					return true;
 				}
 
+				
+
 				//return true;
 			},
 			onStepChanged: function (event, currentIndex, priorIndex) {
+				let resetButton = wrapperNode.querySelectorAll('[data-datepicker-reset]');
+
+				resetButton.forEach((button)=>{
+					button.addEventListener('click', ()=>{
+						resizeJquerySteps(currentIndex);
+					});
+				});
 				
 				$(progressLine).width(step*(currentIndex+1) + '%');				
 			},
