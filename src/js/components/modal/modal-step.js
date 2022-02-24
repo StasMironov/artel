@@ -86,7 +86,7 @@ export default {
 					return true;
 				}
 
-				//return true;
+				return true;
 			},
 			onStepChanged: function (event, currentIndex, priorIndex) {
 				

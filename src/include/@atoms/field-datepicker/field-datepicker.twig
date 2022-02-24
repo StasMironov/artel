@@ -69,7 +69,13 @@
 						</div>
 					</div>
 				</div>
-				
+				{% if field.checkbox_date %}
+					<div class="datepicker__checkbox">
+						{% view '@field-checkbox' with {
+							field: field.checkbox_date|merge({attr: " data-datepicker-checkbox"})
+						} %}
+					</div>
+				{% endif %}
 				<div class="datepicker__actions">
 					{% for action in field.actions %}
 						<div class="datepicker__action">
@@ -83,12 +89,6 @@
 		</div>
 	</div>
 
-	{% if field.checkbox_date %}
-		<div class="datepicker__checkbox">
-			{% view '@field-checkbox' with {
-				field: field.checkbox_date|merge({attr: " data-datepicker-checkbox"})
-			} %}
-		</div>
-	{% endif %}
+	
 	
 </div>
