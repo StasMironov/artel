@@ -93,6 +93,10 @@
 		white-space: nowrap;
 		overflow: hidden;
 		pointer-events: none;
+
+		&.rendered {
+			color: $color-white;
+		}
 	}
 
 	&__icon {
@@ -285,7 +289,7 @@
 	}
 
 	&__checkbox {
-		margin-top: rem(24);
-		margin-bottom: rem(16);
+		margin-top: rem(-20);
+		margin-bottom: rem(24);
 	}
 }

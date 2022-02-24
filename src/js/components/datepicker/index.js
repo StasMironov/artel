@@ -33,7 +33,6 @@ export default class Datepicker {
             }));
     }
 
-	
 
     render(datepicker, idx) {
         const toggle = datepicker.querySelector('[data-datepicker-toggle]');
@@ -101,9 +100,14 @@ export default class Datepicker {
 
 				radioEnd.forEach((el) => {
 					el.disabled = true;
+                    el.checked = false;
 				});
-
-				applyButton.disabled = false;
+                dates.endMonth = undefined;
+                try {
+                    applyButton.disabled = this.checkUndefined(dates, datepicker) !== -1;
+                }
+                catch(err){
+                }
 			} else {
 				datepicker.classList.remove('only-start');
 				selectEnd.enabled = true;
@@ -121,10 +125,16 @@ export default class Datepicker {
 			checkbox.addEventListener('change', () => {
 				if(checkbox.checked){
 					datepicker.onlyStart = true;
+                    radioStart.forEach((el) => {
+                        // el.checked = false;
+                         el.disabled = false;
+                     });
+                   // this.radioReset([...radioStart, ...radioEnd], dates);
 				}
             	else {
 					datepicker.onlyStart = false;
 				}
+                
 
 				applyButton.disabled = this.checkUndefined(dates, datepicker) !== -1;
 
@@ -140,7 +150,13 @@ export default class Datepicker {
             dates.startYear = e.target.value;
 
             this.selectOptionsCheck($selectEnd, $selectStart);
-            this.radioReset([...radioStart, ...radioEnd], dates);
+
+           // if(dates.startYear == dates.endYear) {
+                this.radioReset([...radioStart, ...radioEnd], dates);
+           // }
+
+
+            
 
             applyButton.disabled = this.checkUndefined(dates, datepicker) !== -1;
         });
@@ -149,33 +165,41 @@ export default class Datepicker {
             dates.endYear = e.target.value;
 
             this.selectOptionsCheck($selectStart, $selectEnd, false);
-            this.radioReset([...radioStart, ...radioEnd], dates);
+
+            //if(dates.startYear == dates.endYear) {
+                this.radioReset([...radioStart, ...radioEnd], dates);
+            //}
+           
 
             applyButton.disabled = this.checkUndefined(dates, datepicker) !== -1;
         });
 
         radioStart.forEach((radio, idx) => {
             radio.addEventListener('change', (e) => {
+                //console.log(datepicker.onlyStart);
                 dates.startMonth = e.target
                     .getAttribute('data-radio-text')
                     .toLowerCase();
 
-                if (dates.startYear === dates.endYear) { // disabled для месяцев перед выбранным
-                    radioEnd.forEach((r, id) => {
-                        if (idx > id) {
-                            r.disabled = true;
-                            r.checked = false;
-                        } else {
-                            r.disabled = false;
-                        }
-                    });
-                }
+                if(!datepicker.onlyStart) {
+                    if (dates.startYear === dates.endYear) { // disabled для месяцев перед выбранным
+                        radioEnd.forEach((r, id) => {
+                            if (idx > id) {
+                                r.disabled = true;
+                                r.checked = false;
+                            } else {
+                                r.disabled = false;
+                            }
+                        });
+                    }
 
-				if (dates.startYear < dates.endYear) { // disabled для месяцев после выбранного
-                    radioStart.forEach((r, id) => {
-                        r.disabled = false;
-                    });
+                    if (dates.startYear < dates.endYear) { // disabled для месяцев после выбранного
+                        radioStart.forEach((r, id) => {
+                            r.disabled = false;
+                        });
+                    }  
                 }
+                
 
                 applyButton.disabled = this.checkUndefined(dates, datepicker) !== -1;
             });
@@ -186,6 +210,8 @@ export default class Datepicker {
                 dates.endMonth = e.target
                     .getAttribute('data-radio-text')
                     .toLowerCase();
+
+                    
 
                 if (dates.startYear === dates.endYear) { // disabled для месяцев после выбранного
                     radioStart.forEach((r, id) => {
@@ -260,6 +286,8 @@ export default class Datepicker {
         datepicker.timeline = timeline;
 
         resetButton.addEventListener('click', () => {
+            datepicker.onlyStart = false; 
+            
             for (let key in dates) {
                 dates[key] = undefined;
             }
@@ -270,10 +298,11 @@ export default class Datepicker {
             this.resetOptions($selectStart);
             this.resetOptions($selectEnd);
 
-            this.radioReset([...radioStart, ...radioEnd], dates);
+            this.radioReset([...radioStart, ...radioEnd], dates, true);
 
             input.value = '';
             placeholder.innerText = placeholderInitValue;
+            placeholder.classList.remove('rendered');
 
             const event = new CustomEvent('change', {
                 bubbles: true,
@@ -283,8 +312,16 @@ export default class Datepicker {
             input.dispatchEvent(event);
 
             datepicker.classList.remove('filled');
+            datepicker.classList.remove('only-start');
 
             timeline.reverse();
+           
+            if(checkbox) {
+               checkbox.checked = false; 
+            }
+
+            stateSelect();
+            
         });
 
         applyButton.disabled = this.checkUndefined(dates, datepicker) !== -1; // если хотя бы одно поле в date равно undefined
@@ -301,8 +338,9 @@ export default class Datepicker {
 				placeholder.innerText = value;
 			}
 
+
             input.value = value;
-          
+            placeholder.classList.add('rendered');
 
             const event = new CustomEvent('change', {
                 bubbles: true,
@@ -342,14 +380,22 @@ export default class Datepicker {
         });
     }
 
-    radioReset(arr, dates) { // сброс всех месяцев
-        arr.forEach((el) => {
-            el.checked = false;
-			el.disabled = false;
-        });
+    radioReset(arr, dates, btnRes = false) { // сброс всех месяцев
+        if(!btnRes) {
+            arr.forEach((el) => {
+                el.disabled = false;
+            }); 
+        } 
+        else {
+             arr.forEach((el) => {
+                el.checked = false;
+                el.disabled = false;
+            });
 
-        dates.startMonth = undefined;
-        dates.endMonth = undefined;
+            dates.startMonth = undefined;
+            dates.endMonth = undefined;
+            
+        }
     }
 
     resetOptions($select) { // сброс всех option
@@ -361,11 +407,13 @@ export default class Datepicker {
     }
 
     checkUndefined(obj, datepicker) { // проверка dates на наличие undefined
+       // console.log(datepicker.onlyStart)
         if (datepicker.onlyStart) {
             if ((obj.startYear && obj.startMonth)) {
                 return -1;
             }
         } else {
+            //console.log(Object.values(obj))
             return Object.values(obj).indexOf(undefined);
         }
 
