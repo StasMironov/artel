@@ -17,6 +17,10 @@ export default {
 		const wrapperNode = document.querySelector('[data-steps-career]');
 		if(!wrapperNode) return;
 
+		const resetButton = wrapperNode.querySelectorAll('[data-datepicker-reset]');
+
+		console.log(resetButton);
+
 		var curIdx = 0;
 
 		validation.init();
