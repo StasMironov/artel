@@ -67,12 +67,6 @@ export default class ModalBase {
 						'resize',
 						debounce(100, () => {
 							this.ps.update();
-							// if(this.state){
-							// 	window._disableScroll();
-							// }
-							// else {
-							// 	window._enableScroll();
-							// }
 						})
 					);
 				}
@@ -84,6 +78,17 @@ export default class ModalBase {
 					$('.header').addClass('show-header mf-index');
 					
 				}, 100);
+
+
+				//let inputsField = wrapNode.querySelectorAll('input');
+
+				// inputsField.forEach((element)=>{
+				// 	element.addEventListener('focus', ()=>{
+				// 		this.ps.update();
+				// 	});
+				// });
+
+				document.addEventListener('focusout', (e) => {	this.ps.update();});
 			},
 			onClose: (modal) => {
 				this.onClose(modal);

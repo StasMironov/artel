@@ -36,6 +36,7 @@ import Datepicker from './components/datepicker';
 import ModalBase from './components/modal/modal-base';
 import Menu from './components/menu';
 import select from './components/select';
+import fixView from './components/fixViewPort';
 
 import {devices} from './utils/breakpoints';
 
@@ -85,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	Modals.init();
 	Menu.init();
 	select.init();
+	// fixView.init();
 	ModalAjax.init();
 	new ScrollAnimation();
 	new Map();
@@ -129,6 +131,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			}, 200);
 		}
 	}
+
+
+	const setVH = () => {
+		const vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+	};
+	
+	window.addEventListener('resize', setVH, { passive: true });
+	setVH();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
