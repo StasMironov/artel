@@ -586,9 +586,13 @@
         }
       }
     ],
-    "link": {
+    "button": {
+      "href": "javascript:void(0);",
       "text": "Смотреть все",
-      "href": "#"
+      "title": "Смотреть все",
+      "icon": {
+        "name": "24/arrow-up-right"
+      }
     },
     "scroll_target": "docs"
   },

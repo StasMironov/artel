@@ -124,13 +124,5 @@
 			padding: rem(32) 0 0 0;
       justify-content: end;
 		}
-    a {
-      transition: 0.3s;
-      color: $color-black;
-      font-size: rem(20);
-      @include touchLessHover {
-        color: $color-green;
-      }
-    }
   }
 }
