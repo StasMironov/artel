@@ -308,10 +308,10 @@ export default {
 		});
     
     //скролл до блока
-    let scroll = new SmoothScroll('a[href*="#"]', {
+    let scroll = new SmoothScroll('[data-scroll]', {
       speed: 300,
       updateURL: false,
-      header: "header",
+      header: "header",      
     });
 
     // маркер у активной ссылки
