@@ -1,4 +1,4 @@
-<div class="block-chart"{% if block.chart.data %} data-chart='{{ block.chart.data }}'{% endif %} data-fade-in-up>
+<div {% if block.scroll_target %}id="{{block.scroll_target}}"{% endif %} class="block-chart"{% if block.chart.data %} data-chart='{{ block.chart.data }}'{% endif %} data-fade-in-up>
 	<div class="block-chart__container container">
 		{% if block.heading %}
 			<div class="block-chart__top">

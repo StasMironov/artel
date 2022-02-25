@@ -1,4 +1,4 @@
-<div class="slider-comment" data-slider-comment-wrap data-fade-in-up >
+<div {% if slider.scroll_target %}id="{{slider.scroll_target}}"{% endif %} class="slider-comment" data-slider-comment-wrap data-fade-in-up >
     <div class="slider-comment__container container">
         <div class="slider-comment__header">
             {% if slider.title %}
