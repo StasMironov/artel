@@ -109,10 +109,14 @@
 					-ms-transform: translateY(-50%);
 					transform: translateY(-50%);
 					content: '';
-				}     
-        &:last-child{
-          padding-bottom: rem(40);
-        }   
+				} 
+        @include media-breakpoint-only(sm) {
+          margin-right: rem(20);
+          &:last-child{
+            padding-bottom: rem(40);
+          } 
+        }    
+          
 			}
 		}
 	}
