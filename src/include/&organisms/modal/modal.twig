@@ -8,7 +8,7 @@
 	 id="{{ modal.id }}"
 	 aria-hidden="true">
 	<div class="modal__overlay" tabindex="-1" data-modal-close>
-		<button class="modal__close" aria-label='Close modal' data-modal-close>
+		<button class="modal__close {% if modal.close_black %} modal__close--black {% endif %}" aria-label='Close modal' data-modal-close>
 		</button>
 		<div class="modal__container" role="dialog" aria-modal="true">
 			<div class='modal__inner' {% if modal.ajax %}data-modal-ajax-container{% endif %}>
