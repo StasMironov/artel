@@ -269,4 +269,16 @@
 	&__arrows {
 		margin-left: auto;
 	}
+
+	&__ov {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: $color-white;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 10;
+	}
 }
