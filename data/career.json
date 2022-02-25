@@ -180,39 +180,37 @@
       "items": [
         {
           "href": "!#",
-          "text": "Развитие сотрудников",
-          "title": "Развитие сотрудников",
+          "text": "Работа в Artel",
+          "title": "Работа в Artel",
           "active": "true",
           "theme": "white"
         },
         {
-          "href": "!#",
-          "text": "Миссия компании",
-          "title": "Миссия компании",
+          "href": true,
+          "scroll_to": "#training",
+          "text": "Развитие сотрудников",
+          "title": "Развитие сотрудников",
           "theme": "white"
         },
         {
-          "href": "!#",
-          "text": "История группы",
-          "title": "История группы",
+          "href": true,
+          "scroll_to": "#stories",
+          "text": "Истории успеха",
+          "title": "Истории успеха",
           "theme": "white"
         },
         {
-          "href": "!#",
-          "text": "Партнеры",
-          "title": "Партнеры",
+          "href": true,
+          "scroll_to": "#culture",
+          "text": "Корпоративная культура",
+          "title": "Корпоративная культура",
           "theme": "white"
         },
         {
-          "href": "!#",
-          "text": "Наши продукты",
-          "title": "Наши продукты",
-          "theme": "white"
-        },
-        {
-          "href": "!#",
-          "text": "Предприятия",
-          "title": "Предприятия",
+          "href": true,
+          "scroll_to": "#job",
+          "text": "Вакансии",
+          "title": "Вакансии",
           "theme": "white"
         }
       ]
@@ -518,7 +516,8 @@
           "label": "лет в Artel"
         }
       }
-    ]
+    ],
+    "scroll_target": "stories"
   },
   "block_event": {
     "title": "Корпоративная культура",
@@ -586,7 +585,8 @@
           "qty": "33"
         }
       ]
-    }
+    },
+    "scroll_target": "culture"
   },
   "slider": {
     "title": "Почему мы работаем со&nbsp;студентами и&nbsp;выпускниками?​",
@@ -910,7 +910,8 @@
       "text": "Больше вакансий",
       "title": "Больше вакансий",
       "theme": "green"
-    }
+    },
+    "scroll_target": "job"
   },
   "block_information": {
     "title": "Работать с Artel",

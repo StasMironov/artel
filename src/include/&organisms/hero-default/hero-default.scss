@@ -95,19 +95,17 @@
 			color: $color-black;
 		}
 		&--fullwidth{
-			width: 100%;
 			margin-right: 0;
 			@include media-breakpoint-up(sm) {
-				text-align: left;
-				/*margin-bottom: rem(-37);*/
+        width: 80% !important;
 			}
 			@include media-breakpoint-up(md) {
-				text-align: left;
-				/*margin-bottom: rem(-53);*/
+        width: 80% !important;
+        padding-left: 0;
 			}
 			@include media-breakpoint-up(lg) {
-				text-align: left;
-				margin-bottom: rem(0);
+		  	width: 100% !important;
+        padding-left: rem(100);
 			}
 		}
 	}
