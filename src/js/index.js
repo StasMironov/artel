@@ -121,13 +121,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.body.classList.add('content-loaded');
 
 	if(document.body.classList.contains('content-loaded')){
-		setTimeout(()=>{
-			if(document.querySelector('.main-hero__ov')){
+		if(document.querySelector('.main-hero__ov')){
+			setTimeout(()=>{
 				$('.main-hero__ov').animate({
 					"opacity": 0
-				}, 300).remove();
-			}
-		}, 200);
+				}, 300).remove();	
+			}, 200);
+		}
 	}
 });
 
