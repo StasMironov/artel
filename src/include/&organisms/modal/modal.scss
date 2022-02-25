@@ -18,7 +18,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		z-index: 111;
+		z-index: 100;
 		background-color: rgba($color-black, 0.85);
 
 		#{$b}.is-warning & {
@@ -289,11 +289,7 @@
 		}
 
 		
-    &--black{
-      &:after, &:before {
-        background-color: $color-black !important;
-      }
-    }
+
 		
 
 
@@ -304,10 +300,6 @@
 
 		
 	}
-
-	// & ~ .select2-container .select2-dropdown {
-	// 	z-index: 100;
-	// }
 }
 
 /**************************\
@@ -354,5 +346,3 @@
 .modal .modal__overlay {
 	will-change: transform;
 }
-
-
