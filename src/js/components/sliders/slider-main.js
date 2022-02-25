@@ -28,6 +28,8 @@ export default class Slider {
 
 		if (!this.slides.length) return;
 
+
+
 		this.body = document.querySelector('body');
 
 		this.activeIndex = 0;

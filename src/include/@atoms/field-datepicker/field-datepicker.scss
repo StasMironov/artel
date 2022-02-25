@@ -63,7 +63,7 @@
 		display: flex;
 		align-items: flex-end;
 		//height: rem(42);
-		height: rem(72);
+		height: rem(64);
 		padding-bottom: rem(16);
 		border-bottom: 1px solid rgba($color-black, 0.4);
 		cursor: pointer;
@@ -73,12 +73,21 @@
 			border-color: $color-black;
 		}
 
+		@include media-breakpoint-down(sm) {
+			height: rem(55);
+			padding-bottom: rem(13);
+		}
+
 		#{$root}--white & {
 			border-color: rgba($color-white, 0.6);
 
 			@include touchLessHover {
 				border-color: $color-white;
 			}
+		}
+
+		#{$root}.filled & {
+			padding-bottom: rem(8);
 		}
 	}
 
