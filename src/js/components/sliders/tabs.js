@@ -307,11 +307,25 @@ export default {
 			},
 		});
     
-    let scroll = new SmoothScroll('a[href*="#"]', {
+    //скролл до блока
+    let scroll = new SmoothScroll('[data-scroll]', {
       speed: 300,
       updateURL: false,
-      header: "header",
-  });
+      header: "header",      
+    });
+
+    // маркер у активной ссылки
+    const tabs = document.querySelectorAll('.tab');
+    let lastClicked = tabs[0];
+
+    let logScrollEvent = function (event) {
+      //console.log('toggle:', event.detail.toggle);      
+      lastClicked.classList.remove('tab--active');
+      event.detail.toggle.classList.add("tab--active");     
+      lastClicked = event.detail.toggle; 
+    };
+    
+    document.addEventListener('scrollStart', logScrollEvent, false);
 
 	},
 };

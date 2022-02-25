@@ -26,9 +26,11 @@
 					{% endfor %}
 				</div>
 			</div>
-      {% if slider.link %}				  
-        <div class="slider-docs__link">
-            <a href={{ slider.link.href }}>{{ slider.link.text }}</a>
+      {% if slider.button %}				  
+        <div class="slider-docs__link" data-fade-in-up>
+            {% view '@button' with {
+						  button: slider.button
+					  } %}
         </div>
       {% endif %}
 			<div class="slider-docs__arrows">
