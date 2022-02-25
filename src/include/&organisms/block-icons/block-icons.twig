@@ -1,4 +1,4 @@
-<div class="block-icons">
+<div {% if block_icons.scroll_target %}id="{{block_icons.scroll_target}}"{% endif %} class="block-icons">
 	<div class="block-icons container">
 		{% if block_icons.heading %}
 			<div class="block-icons__top" data-fade-in-up>

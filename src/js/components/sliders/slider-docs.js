@@ -12,7 +12,7 @@ export default {
 			const prevEl = wrappers[i].querySelector('[data-nav-arrow-prev]');
 			const nextEl = wrappers[i].querySelector('[data-nav-arrow-next]');
 
-			const options = {
+      const swiper = new Swiper(sliderNode, {
 				slidesPerView: 1,
 				slidesPerGroup: 1,
 				navigation: {
@@ -25,9 +25,15 @@ export default {
 				observer: true,
 				observeParents: true,
 				simulateTouch: false,
-			};
-
-			const swiper = new Swiper(sliderNode, options);
+        on: {
+          init: function () {
+            if (this.slides.length < 2) {
+						  prevEl.setAttribute('style', 'display: none');
+              nextEl.setAttribute('style', 'display: none');
+						}
+          }
+        }
+      });
 
 			const select = wrappers[i].querySelector(
 				'[data-slider-docs-field]'

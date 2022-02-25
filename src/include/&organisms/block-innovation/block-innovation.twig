@@ -1,4 +1,4 @@
-<div class="block-innovation {% if block_innovation.layout %}block-innovation--layout-{{block_innovation.layout}}{% endif %}{% if block_innovation.theme %} block-innovation--{{block_innovation.theme}}{% endif %}">
+<div {% if block_innovation.scroll_target %}id="{{block_innovation.scroll_target}}"{% endif %} class="block-innovation {% if block_innovation.layout %}block-innovation--layout-{{block_innovation.layout}}{% endif %}{% if block_innovation.theme %} block-innovation--{{block_innovation.theme}}{% endif %}">
 	<div class="block-innovation__wrapper container">
 		<div class="block-innovation__left" data-fade-in-up>
 			{% if block_innovation.title  %}
