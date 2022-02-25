@@ -529,8 +529,7 @@
     {
       "id": "modal-director",
       "ajax": true,
-      "modificator": "director",
-      "close_black": true
+      "modificator": "director"
     },
     {
       "id": "modal-warning",
