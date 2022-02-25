@@ -1,4 +1,4 @@
-<div class="block-directors container">
+<div {% if block.scroll_target %}id="{{block.scroll_target}}"{% endif %} class="block-directors container">
 	<div class="block-directors__heading">
 		{% if block.title %}
 			<p class="block-directors__title h2" data-fade-in-up>{{ block.title }}</p>

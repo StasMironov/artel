@@ -135,6 +135,16 @@
     }
   },
   "hero_default": {
+    "layout": "3",
+    "breadcrumbs": {
+      "theme": "white",
+      "items": [
+        {
+          "text": "Главная",
+          "href": "main.html"
+        }
+      ]
+    },
     "title": "Инвесторам",
     "image": {
       "src": "tmp/default-hero/hero-for-investors.jpg",
@@ -171,38 +181,45 @@
       "layout": "3",
       "items": [
         {
-          "href": "!#",
+          "href": true,
+          "scroll_to": "#structure",
           "text": "Инвесторам",
           "title": "Инвесторам",
           "active": "true"
         },
         {
-          "href": "!#",
-          "text": "Структура компании",
-          "title": "Структура компании"
-        },
-        {
-          "href": "!#",
-          "text": "Совет директоров",
-          "title": "Совет директоров"
-        },
-        {
-          "href": "!#",
-          "text": "Руководство",
-          "title": "Руководство"
-        },
-        {
-          "href": "!#",
+          "href": true,
+          "scroll_to": "#management",
           "text": "Корпоративное управление",
           "title": "Корпоративное управление"
         },
         {
-          "href": "!#",
+          "href": true,
+          "scroll_to": "#structure",
+          "text": "Структура компании",
+          "title": "Структура компании"
+        },
+        {
+          "href": true,
+          "scroll_to": "#directors",
+          "text": "Совет директоров",
+          "title": "Совет директоров"
+        },
+        {
+          "href": true,
+          "scroll_to": "#team",
+          "text": "Руководство",
+          "title": "Руководство"
+        },
+        {
+          "href": true,
+          "scroll_to": "#docs",
           "text": "Внутренние документы",
           "title": "Внутренние документы"
         },
         {
-          "href": "!#",
+          "href": true,
+          "scroll_to": "#contacts",
           "text": "Контакты",
           "title": "Контакты"
         }
@@ -331,7 +348,8 @@
           "text": "Этические принципы, которые регулируют решения и поведение внутри компании"
         }
       }
-    ]
+    ],
+    "scroll_target": "management"
   },
   "block_structure": {
     "title": "Структура компании",
@@ -355,7 +373,8 @@
           }
         ]
       }
-    }
+    },
+    "scroll_target": "structure"
   },
   "block_reports": {
     "layout": "3",
@@ -418,7 +437,8 @@
         "attr": "data-modal=\"modal-director\" data-modal-ajax=\"ajax/modal-director.html\"",
         "icon": true
       }
-    ]
+    ],
+    "scroll_target": "directors"
   },
   "block_team": {
     "title": "Наша команда",
@@ -488,7 +508,8 @@
           "alt": "img"
         }
       }
-    ]
+    ],
+    "scroll_target": "team"
   },
   "block_management": {
     "heading": "Корпоративное управление ",
@@ -564,7 +585,12 @@
           }
         }
       }
-    ]
+    ],
+    "link": {
+      "text": "Смотреть все",
+      "href": "#"
+    },
+    "scroll_target": "docs"
   },
   "block_comm": {
     "bg": "gray",
@@ -605,6 +631,7 @@
           }
         ]
       }
-    ]
+    ],
+    "scroll_target": "contacts"
   }
 }

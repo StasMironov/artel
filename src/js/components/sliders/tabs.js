@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import Slider from './constructor';
 import { isDesktop } from '../../utils/breakpoints';
+import SmoothScroll from 'smooth-scroll';
 
 export default {
 	data: {
@@ -305,5 +306,12 @@ export default {
 				},
 			},
 		});
+    
+    let scroll = new SmoothScroll('a[href*="#"]', {
+      speed: 300,
+      updateURL: false,
+      header: "header",
+  });
+
 	},
 };

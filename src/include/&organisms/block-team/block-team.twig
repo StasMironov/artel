@@ -1,4 +1,4 @@
-<div class="block-team container" data-slider-team>
+<div {% if block.scroll_target %}id="{{block.scroll_target}}"{% endif %} class="block-team container" data-slider-team>
 
 	<div class="block-team__heading">
 		{% if block.title %}
