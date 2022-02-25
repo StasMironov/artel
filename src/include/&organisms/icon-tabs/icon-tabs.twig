@@ -1,4 +1,4 @@
-<div class="icon-tabs" data-slider-icon-tabs>
+<div {% if block.scroll_target %}id="{{block.scroll_target}}"{% endif %}  class="icon-tabs" data-slider-icon-tabs>
 	<div class="container icon-tabs__container">
 		{% if block.heading or block.text %}
 			<div class="icon-tabs__top" data-fade-in-up>

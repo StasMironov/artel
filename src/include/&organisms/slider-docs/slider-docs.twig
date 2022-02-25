@@ -1,4 +1,4 @@
-<div class="slider-docs" data-slider-docs>
+<div {% if slider.scroll_target %}id="{{slider.scroll_target}}"{% endif %} class="slider-docs" data-slider-docs>
 	<div class="container slider-docs__container">
 		{% if slider.heading or slider.field %}
 			<div class="slider-docs__top">
@@ -26,7 +26,11 @@
 					{% endfor %}
 				</div>
 			</div>
-
+      {% if slider.link %}				  
+        <div class="slider-docs__link">
+            <a href={{ slider.link.href }}>{{ slider.link.text }}</a>
+        </div>
+      {% endif %}
 			<div class="slider-docs__arrows">
 				{% view '@nav-arrows' %}
 			</div>
