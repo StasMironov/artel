@@ -1,7 +1,7 @@
 .header {
 	$root: &;
 	position: fixed;
-	z-index: 100;
+	z-index: 110;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -460,5 +460,9 @@
 
 	.lang-toggle__action {
 		font-weight: 500;
+	}
+
+	&.mf-index {
+		z-index: 100;
 	}
 }
