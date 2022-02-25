@@ -116,11 +116,7 @@
     //    color: rgba($color-white, 0.6) !important; 
     // }
 
-    .datepicker--white {
-        @include media-breakpoint-down(sm) {
-          //  margin-bottom: rem(-120);
-        }
-    }
+
 
     div[data-box-ed]{
         margin-top: rem(64);
@@ -128,6 +124,7 @@
 
     .datepicker--white {
         color: rgba($color-white, 0.6);
+        //margin-top: rem(-16);
     }
 
 
