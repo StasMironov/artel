@@ -19,12 +19,13 @@ export default class ModalBase {
 	onShow(modal) {
 		// window._disableScroll();
 		window.dispatchEvent(new CustomEvent('modal.open'));
-		// window.ps.update();
+	
 	}
 
 	onClose(modal) {
 		// window._enableScroll();
 		window.dispatchEvent(new CustomEvent('modal.close'));
+		//$('header').removeClass('mf-index');
 	}
 
 	init() {
@@ -79,13 +80,14 @@ export default class ModalBase {
 				window._disableScroll();
 				
 				setTimeout(()=>{
-					console.log($('header'));
-					$('.header').addClass('show-header');
+					//console.log($('header'));
+					$('.header').addClass('show-header mf-index');
+					
 				}, 100);
 			},
 			onClose: (modal) => {
 				this.onClose(modal);
-				$('.header').removeClass('show-header');
+				$('.header').removeClass('show-header mf-index');
 				window._enableScroll();
 				this.state = false;
 			},
