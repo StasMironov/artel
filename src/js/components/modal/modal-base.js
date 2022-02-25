@@ -9,6 +9,7 @@ export default class ModalBase {
 		this.closeTrigger = props.closeTrigger;
 		this.openClass = props.openClass;
 		this.id = props.id;
+		this.state = false;
 
 		if (this.initial) {
 			this.init();
@@ -51,8 +52,8 @@ export default class ModalBase {
 			debugMode: true,
 			disableScroll: false,
 			onShow: (modal) => {
+				this.state = true;
 				
-				// this.onShow(modal);
 				if (scrollNode) {
 					this.ps  = new PerfectScrollbar(scrollNode, {
 						wheelSpeed: 2,
@@ -61,12 +62,16 @@ export default class ModalBase {
 						suppressScrollX: true
 					});
 
-					
-
 					window.addEventListener(
 						'resize',
 						debounce(100, () => {
 							this.ps.update();
+							// if(this.state){
+							// 	window._disableScroll();
+							// }
+							// else {
+							// 	window._enableScroll();
+							// }
 						})
 					);
 				}
@@ -82,6 +87,7 @@ export default class ModalBase {
 				this.onClose(modal);
 				$('.header').removeClass('show-header');
 				window._enableScroll();
+				this.state = false;
 			},
 		});
 

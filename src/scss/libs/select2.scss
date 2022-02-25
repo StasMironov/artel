@@ -15,7 +15,7 @@
 	width: 100%;
 	@include text-body;
 
-	@include media-breakpoint-down(sm) {
+	@include media-breakpoint-down(md) {
 		width: initial;
 	}
 }

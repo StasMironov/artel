@@ -81,9 +81,14 @@
 			}
 		}
 
-		@include media-breakpoint-up(md) {
-			//height: rem(48);
-			height: rem(72);
+		@include media-breakpoint-down(md) {
+			height: rem(64);
+			//height: rem(56);
+		}
+
+		@include media-breakpoint-down(sm) {
+			height: rem(56);
+			//height: rem(56);
 		}
 	}
 
@@ -93,6 +98,10 @@
 		white-space: nowrap;
 		overflow: hidden;
 		pointer-events: none;
+
+		&.rendered {
+			color: $color-white;
+		}
 	}
 
 	&__icon {
@@ -123,7 +132,7 @@
 		@include media-breakpoint-down(sm) {
 			overflow-y: auto;
 			overflow-x: hidden;
-			margin-top: rem(104);
+		//	margin-top: rem(104);
 		}
 	}
 
@@ -285,7 +294,7 @@
 	}
 
 	&__checkbox {
-		margin-top: rem(24);
-		margin-bottom: rem(16);
+		margin-top: rem(-20);
+		margin-bottom: rem(24);
 	}
 }

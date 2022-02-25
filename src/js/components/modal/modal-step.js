@@ -17,6 +17,8 @@ export default {
 		const wrapperNode = document.querySelector('[data-steps-career]');
 		if(!wrapperNode) return;
 
+		
+
 		var curIdx = 0;
 
 		validation.init();
@@ -72,6 +74,8 @@ export default {
 				$(progressLine).width(step*(1) + '%')
 				
 				$('.wizard .content').animate({ height: $('.body.current').outerHeight() }, "slow");
+
+				
 			},
 			onStepChanging: function (event, currentIndex, newIndex){ 
 				if (newIndex<currentIndex){
@@ -86,9 +90,18 @@ export default {
 					return true;
 				}
 
+				
+
 				//return true;
 			},
 			onStepChanged: function (event, currentIndex, priorIndex) {
+				//let resetButton = wrapperNode.querySelectorAll('[data-datepicker-reset]');
+
+				// resetButton.forEach((button)=>{
+				// 	button.addEventListener('click', ()=>{
+				// 		resizeJquerySteps(currentIndex);
+				// 	});
+				// });
 				
 				$(progressLine).width(step*(currentIndex+1) + '%');				
 			},
@@ -104,14 +117,37 @@ export default {
 			}	
 		});
 		
-		function resizeJquerySteps(index=false) {
-			if(index>=0){
-				$('.wizard .content').animate({ height: $('.body').eq(index).outerHeight() }, "faster");
+		function resizeJquerySteps(index=false, datepicker=false) {
+			// if(index>=0){
+			// 	$('.wizard .content').animate({ height: $('.body').eq(index).outerHeight() }, "faster");
+			// }
+
+
+			if(datepicker){
+				let count = 0;
+				$('.datepicker').each((_, elem)=>{
+					if($(elem).hasClass('is-active')){
+						count++;
+					}
+				});
+				if(count<=0){
+					if(index>=0){
+						$('.wizard .content').animate({ height: $('.body').eq(index).outerHeight() }, "faster");
+					}
+				}
+				count = 0
+			} else {
+				if(index>=0){
+					$('.wizard .content').animate({ height: $('.body').eq(index).outerHeight() }, "faster");
+				}
 			}
 		}
 
 		$(window).resize(debounce(100, () => {
-			250, resizeJquerySteps(curIdx);
+			250, resizeJquerySteps(curIdx, true);	
 		}));
+		
+		
+		
 	},
 };
