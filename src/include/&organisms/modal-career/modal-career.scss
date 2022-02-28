@@ -1,13 +1,16 @@
 .modal-career {
-	height: 100vh;
-	height: calc(var(--vh, 1vh) * 100);
+	height: 100%;
+	
 
+
+	
 	background-color: $color-green;
 
 	&__wrapper {
+		position: relative;
 		display: flex;
 		flex-direction: column;
-		height: 100%;
+		height: calc(var(--vh, 1vh) * 100);
 		padding: rem(80) rem(172) rem(64) rem(104);
 		//overflow: scroll;
 
@@ -80,6 +83,20 @@
 	}
 
 
+	.ps__thumb-y:before, .ps__rail-y:before {
+		@include media-breakpoint-down(sm) {
+			top: rem(64);
+			bottom: rem(64);
+		}
 	
+	}
+
+	@supports (-webkit-touch-callout: none) {
+		.ps__thumb-y:before, .ps__rail-y:before {
+			@include media-breakpoint-down(sm) {
+				bottom: rem(0);
+			}
+		}
+	}
 	
 }
