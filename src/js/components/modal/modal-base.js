@@ -50,7 +50,7 @@ export default class ModalBase {
 			disableFocus: false,
 			awaitOpenAnimation: true,
 			awaitCloseAnimation: true,
-			debugMode: true,
+			debugMode: false,
 			disableScroll: false,
 			onShow: (modal) => {
 				this.state = true;

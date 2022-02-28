@@ -14,7 +14,7 @@ const Modal = {
 			disableFocus: false,
 			awaitOpenAnimation: true,
 			awaitCloseAnimation: true,
-			debugMode: true,
+			debugMode: false,
 			disableScroll: false,
 			onShow: (modal) => {
 				if (modal.querySelector('[data-modal-ajax-container]')) {

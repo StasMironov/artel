@@ -19,7 +19,7 @@ const Modal = {
 			disableFocus: false,
 			awaitOpenAnimation: true,
 			awaitCloseAnimation: true,
-			debugMode: true,
+			debugMode: false,
 			disableScroll: false,
 			onShow: (modal) => {
 				palyer.play();
