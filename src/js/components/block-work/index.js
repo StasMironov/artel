@@ -10,12 +10,10 @@ export default class Education {
 	constructor() {
 		this.form = document.querySelector('[data-work-ajax]');
 
-       
 		if (!this.form) return;
 
 		this.counter = 100;
 		this.temp;
-		//console.log(this.btnAddEducation);
 		this.inputs = new Input();
 		this.render();
 	}
@@ -28,7 +26,6 @@ export default class Education {
 			$('.wizard .content').animate({ height: $('.body.current').outerHeight() + 32}, "slow");
 		}
 	}
-
 
 	render() {
 		this.frame = this.form.querySelector('[data-container-works]');
@@ -46,16 +43,15 @@ export default class Education {
 
 		
 		$(window ).on( "custom-work", ()=> {
-		
 			this.btnDeleteEducations = this.form.querySelectorAll('[data-delete-work]');
-
-
 			this.btnDeleteEducations.forEach((el)=>{
 				console.log(el);
 				el.addEventListener('click', (e)=>{	
 					let parentBox = $(el).closest('[data-work-card]');
 					console.log(parentBox);
 					parentBox.remove();
+					let lastEl = $('[data-work-card]').last();
+					$(lastEl).get(0).scrollIntoView(false);
 					this.resizeJquerySteps(false) 
 				});
 			})
@@ -87,7 +83,6 @@ export default class Education {
 				}
 			})
 			.then((text) => {
-               // console.log(text)
 				this.appendText(text);
 			})
 			.catch((err) => {
@@ -102,8 +97,6 @@ export default class Education {
 			let fragmentCard = fragment.querySelector('[data-work-card]');
 
 			fragmentCard.style.opacity = 0;
-
-			//console.log(fragment);
 			this.frame.appendChild(fragment);
 			$(window).trigger("custom-work");
 			this.resizeJquerySteps();

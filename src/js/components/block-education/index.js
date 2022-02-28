@@ -52,24 +52,13 @@ export default class Education {
 				//console.log(el);
 				el.addEventListener('click', (e)=>{	
 					let parentBox = $(el).closest('[data-ed-card]');
-					console.log(parentBox);
 					parentBox.remove();
-					this.resizeJquerySteps(false) 
+					let lastEl = $('[data-ed-card]').last();
+					$(lastEl).get(0).scrollIntoView(false);
+					this.resizeJquerySteps(false);
 				});
 			})
-
-			// this.btnAddEducations.forEach((el)=>{
-			// 	//console.log(el);
-			// 	el.addEventListener('click', (e)=>{	
-			// 		this.counter += 1;
-			// 		this.fetch();
-					
-			// 	});
-			// })
-
 			
-			
-
 			select.init();
 			this.inputs.render();
 			new Datepicker();
@@ -109,7 +98,7 @@ export default class Education {
 			let range = document.createRange();
 			let fragment = range.createContextualFragment(value); //Creates a DOM object
 			let fragmentCard = fragment.querySelector('[data-ed-card]');
-			console.log(1);
+			
 
 			fragmentCard.style.opacity = 0;
 
