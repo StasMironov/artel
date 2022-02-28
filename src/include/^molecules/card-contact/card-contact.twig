@@ -1,7 +1,7 @@
 <a href="
-    {% if card.external %}{% if card.href %}{{ card.href }}{% endif %}
-    {% elseif card.phone %}tel:{% if card.href %}{{ card.href }}{% endif %}
-    {% else %}mailto:{% if card.href %}{{ card.href }}{% endif %}{% endif %}" 
+    {% if card.external %}{% if card.href %}{{ card.href }}" target=_blank {% endif %} 
+    {% elseif card.phone %}tel:{% if card.href %}{{ card.href }}"{% endif %}
+    {% else %}mailto:{% if card.href %}{{ card.href }}{% endif %}"{% endif %} 
     class="card-contact">
     {% if card.title %}
         <div class="card-contact__title">
