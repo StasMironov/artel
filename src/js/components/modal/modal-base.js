@@ -58,7 +58,7 @@ export default class ModalBase {
 				if (scrollNode) {
 					this.ps  = new PerfectScrollbar(scrollNode, {
 						wheelSpeed: 2,
-						wheelPropagation: true,
+						wheelPropagation: !1,
 						minScrollbarLength: 20,
 						suppressScrollX: true
 					});
@@ -69,6 +69,10 @@ export default class ModalBase {
 							this.ps.update();
 						})
 					);
+
+					$(window).on("updatePS", ()=> {
+						scrollNode.scrollTop = 0;
+					});
 				}
 
 				window._disableScroll();
