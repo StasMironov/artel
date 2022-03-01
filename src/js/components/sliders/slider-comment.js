@@ -122,15 +122,25 @@ export default {
 						},
 						slideChangeTransitionStart: function () {
 							progress.classList.remove('animate');
-              if (state) {
-                toggle.slideUp();
-                showMoreText.text('Читать далее');
-                state--;
-              } 
+              
+              document.querySelectorAll('[data-text-hidden]').forEach(txt => {
+                txt.style.display = "none";
+              });
+              document.querySelectorAll('[data-show-more]').forEach(btn => {
+                btn.innerHTML = "Читать далее";
+              });
 						},
 						slideChangeTransitionEnd: function () {
-							progress.classList.add('animate');
-						}
+							progress.classList.add('animate');              
+						},
+            slideChange: function () {
+              document.querySelectorAll('[data-text-hidden]').forEach(txt => {
+                txt.style.display = "none";
+              });
+              document.querySelectorAll('[data-show-more]').forEach(btn => {
+                btn.innerHTML = "Читать далее";
+              });  
+            }
 					},
 				});
 
@@ -144,31 +154,24 @@ export default {
 						pagSlide.update();
 					})
 				);
-               
-        const toggle = $('[data-text-hidden]');
-        let state = 0;
-        const showMoreText = $('[data-show-text]');
+      });  
 
-        showMoreText.on('click', function () {
-          if (state) {
-            toggle.slideUp();
-            $(this).text('Читать далее');
-            state--;
-          } else {
-            toggle.slideDown();
-            $(this).text('Скрыть');
-            state++;
-          }
-        });
+      let showHide = function() {
+        const moreBtn = this.previousElementSibling.querySelector('[data-text-hidden]');
 
-        $(".slider-comment").on("mouseleave touchstart", function(){
-          if (state) {
-            toggle.slideUp();
-            showMoreText.text('Читать далее');
-            state--;
-          } 
-      });
+        if (moreBtn.style.display === "block" ) {
+          moreBtn.style.display = "none";
+          moreBtn.classList.remove('read-more-comment__visible'); 
+          this.innerHTML = "Читать далее";
+        } else {
+          moreBtn.style.display = "block"; 
+          moreBtn.classList.add('read-more-comment__visible');        
+          this.innerHTML = "Скрыть";
+        }
+      }
 
+      document.querySelectorAll('.read-more-comment__btn').forEach(item => {
+        item.addEventListener('click', showHide);
       });
 		}
 	},

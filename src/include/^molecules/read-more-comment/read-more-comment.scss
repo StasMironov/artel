@@ -7,6 +7,10 @@
 		padding-bottom: rem(24);
 	}
 
+  &__visible {
+    animation: fadeInBlock 0.5s ease-in;
+	}
+
   &__base p{
     &:not(:last-child) {
 			margin-bottom: rem(24);
@@ -31,4 +35,27 @@
 			margin-bottom: rem(24);
 		}
 	}
+}
+
+
+@keyframes fadeInBlock {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  50% {
+    display: block;
+    opacity: 0.5;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
 }
