@@ -69,10 +69,6 @@ export default class ModalBase {
 							this.ps.update();
 						})
 					);
-
-					$(window).on("updatePS", ()=> {
-						scrollNode.scrollTop = 0;
-					});
 				}
 
 				window._disableScroll();

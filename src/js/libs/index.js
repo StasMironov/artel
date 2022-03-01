@@ -4,6 +4,7 @@ import sal from './sal';
 import repeat from './repeat';
 import counter from './counter';
 
+
 export default {
 	init() {
 		require('./jquery.inputmask.bundle');

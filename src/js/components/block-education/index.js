@@ -13,13 +13,11 @@ export default class Education {
 
 		this.counter = 100;
 		this.temp;
-		//console.log(this.btnAddEducation);
 		this.inputs = new Input();
 		this.render();
 	}
 
 	resizeJquerySteps(del=true) {
-		// console.log(del);
 		if(!del){
 			$('.wizard .content').animate({ height: $('.body.current').outerHeight()}, "slow");
 		} else {
@@ -47,9 +45,7 @@ export default class Education {
 			
 			this.btnDeleteEducations = this.form.querySelectorAll('[data-btn-delete]');
 
-
 			this.btnDeleteEducations.forEach((el)=>{
-				//console.log(el);
 				el.addEventListener('click', (e)=>{	
 					let parentBox = $(el).closest('[data-ed-card]');
 					parentBox.remove();
@@ -58,7 +54,7 @@ export default class Education {
 					this.resizeJquerySteps(false);
 				});
 			})
-			
+
 			select.init();
 			this.inputs.render();
 			new Datepicker();
@@ -98,11 +94,8 @@ export default class Education {
 			let range = document.createRange();
 			let fragment = range.createContextualFragment(value); //Creates a DOM object
 			let fragmentCard = fragment.querySelector('[data-ed-card]');
-			
 
 			fragmentCard.style.opacity = 0;
-
-			//console.log(fragment);
 			this.frame.appendChild(fragment);
 			$(window).trigger("custom");
 			this.resizeJquerySteps();
