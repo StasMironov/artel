@@ -157,21 +157,20 @@ export default {
       });  
 
       let showHide = function() {
-        const moreBtn = this.querySelector('[data-text-hidden]');
-        let txtMore = this.querySelector('[data-show-more]');
+        const moreBtn = this.previousElementSibling.querySelector('[data-text-hidden]');
 
         if (moreBtn.style.display === "block" ) {
           moreBtn.style.display = "none";
           moreBtn.classList.remove('read-more-comment__visible'); 
-          txtMore.innerHTML = "Читать далее";
+          this.innerHTML = "Читать далее";
         } else {
           moreBtn.style.display = "block"; 
           moreBtn.classList.add('read-more-comment__visible');        
-          txtMore.innerHTML = "Скрыть";
+          this.innerHTML = "Скрыть";
         }
       }
 
-      document.querySelectorAll('.read-more-comment').forEach(item => {
+      document.querySelectorAll('.read-more-comment__btn').forEach(item => {
         item.addEventListener('click', showHide);
       });
 		}
