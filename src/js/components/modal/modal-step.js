@@ -112,7 +112,7 @@ export default {
 			onFinished: function (event, currentIndex)
 			{
 				if(fieldValidate()){
-					form.submit();
+					window.dispatchEvent(new CustomEvent('submit.formPopup'));
 				}
 			}	
 		});
@@ -146,8 +146,13 @@ export default {
 		$(window).resize(debounce(100, () => {
 			250, resizeJquerySteps(curIdx, true);	
 		}));
+
+		window.addEventListener('submit.formPopup', () => {
+			const form = $('[data-steps-career]');
+			form.submit();
+		});
 		
 		
 		
-	},
+	}
 };
