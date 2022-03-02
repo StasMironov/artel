@@ -1,4 +1,10 @@
 {
+  "preloader": {
+    "icon": {
+      "name": "104/preloader",
+      "size": "fit"
+    }
+  },
   "colors": [
     "white",
     "black"

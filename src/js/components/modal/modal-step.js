@@ -57,7 +57,7 @@ export default {
 				// finish: "Отправить",
 				next: "<button class='button button--white' data-btn-next>Дальше</button>",
 				previous: "<button class='button button--outline-white' data-btn-prev>Назад</button>",
-				finish: "<button class='button button--white' data-btn-prev>Отправить</button>",
+				finish: "<button class='button button--white' type='submit' data-btn-submit>Отправить</button>",
 				current: "current step:",
 				pagination: "Pagination",
 			},
@@ -151,8 +151,5 @@ export default {
 			const form = $('[data-steps-career]');
 			form.submit();
 		});
-		
-		
-		
 	}
 };
