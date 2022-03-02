@@ -32,6 +32,7 @@ import Search from './components/search';
 import Education from './components/block-education';
 import Work from './components/block-work';
 import Datepicker from './components/datepicker';
+import Preloader from './components/preloader/index';
 
 import ModalBase from './components/modal/modal-base';
 import Menu from './components/menu';
@@ -97,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	validation.init();
 	Accordion.init();
 	new FormHandler();
-
+	new Preloader();
 	new ChartCanvas();
 
 	const strategyContainers = document.querySelectorAll(

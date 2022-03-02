@@ -21,6 +21,10 @@
 </head>
 <body {% if bodyClass %}class="{{ bodyClass }}"{% endif %} >
 
+{% if preloader %}
+	{% view '&preloader' %}
+{% endif %}
+
 {% view "&header" %}
 {% if menu %}
 	{% view '&menu' with {
