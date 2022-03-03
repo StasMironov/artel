@@ -104,21 +104,30 @@
 			line-height: 1.1;
 			@include media-breakpoint-up(md) {
 				font-size: rem(88);
+				
 			}
 
 			@include media-breakpoint-up(lg) {
 				position: relative;
-				left: 33.33%;
+				left: 34.7%;
 				@media (hover: none) and (pointer: coarse) {
 					position: absolute;
 				}
 			}
+
+			@include media-breakpoint-down(md) {
+				left: auto;
+			}
+
+
+			
 		}
 
 		&__image {
 			width: rem(320);
 			height: rem(212);
 			object-fit: cover;
+			position: relative;
 
 			@include media-breakpoint-up(md) {
 				width: rem(550);
@@ -133,6 +142,16 @@
 				@media (hover: none) and (pointer: coarse) {
 					position: relative;
 				}
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				background-color: rgba($color-black, 0.2);
 			}
 		}
 

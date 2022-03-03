@@ -21,9 +21,11 @@
 				{% endfor %}
 			</div>
 		</div>
-		<div class="slider-logos__nav" data-fade-in-up>
-			{% view '@nav-arrows' %}
-		</div>
+		{% if slider.items|length > 1 %}
+			<div class="slider-logos__nav" data-fade-in-up>
+				{% view '@nav-arrows' %}
+			</div>
+		{% endif %}
 	</div>
 </div>
 
