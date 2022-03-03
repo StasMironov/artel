@@ -195,13 +195,22 @@
     }
   }
 
-  &__img{
+  &__img{    
+    width: rem(664);
+    height: rem(334);
     margin-bottom: rem(32);
+    border-radius: rem(8);    
+    overflow: hidden;
     @include media-breakpoint-up(md) {
       margin-bottom: rem(50);
     }
     @include media-breakpoint-up(lg) {
       margin-bottom: rem(48);
+    }
+
+    img {
+      object-fit: cover; 
+      object-position: top center;
     }
   }
 
