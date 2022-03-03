@@ -54,6 +54,8 @@ export default {
 		const menuNode = document.querySelector('[data-menu]');
 	//	if (!menuNode) return;
 		//console.log(menuNode);
+    const links = menuNode.querySelectorAll('[data-link]');
+        
 		const triggers = menuNode.querySelectorAll('[data-trigger]');
 		//console.log(triggers);
 		//if (!triggers.length) return;
@@ -70,7 +72,8 @@ export default {
 		//if (!parentNode) return;
 
 		const wrapNode = document.querySelector('[data-content]');
-		//if (!wrapNode) return;
+		//if (!wrapNode) return;    
+
 
 		function disableScrolling() {
 			var x = window.scrollX;
@@ -96,7 +99,8 @@ export default {
 		});
 
 		const timelineTrigger = gsap.fromTo(
-			triggers,
+			//triggers,
+      links,
 			{
 				translateY: 20,
 				opacity: 0,

@@ -7,10 +7,10 @@
 						{% view '@image-adaptive' with {
 									image: modal_director.img
 							} %}
-					{% else %}
-						{% view '@image-adaptive' with {
-									image: modal_director.img
-							} %}
+					{% else %}          
+						{% view '@image' with {
+              image: modal_director.img|merge({disable_lazy: true})
+            } %}              
 					{% endif %}
 				</div>
 			{% endif %}

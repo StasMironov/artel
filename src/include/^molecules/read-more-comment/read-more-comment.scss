@@ -34,6 +34,10 @@
 		&:not(:last-child) {
 			margin-bottom: rem(24);
 		}
+    
+    p:not(:last-child) {
+      margin-bottom: rem(24);
+    }
 	}
 }
 
