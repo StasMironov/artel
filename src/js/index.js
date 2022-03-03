@@ -33,6 +33,7 @@ import Education from './components/block-education';
 import Work from './components/block-work';
 import Datepicker from './components/datepicker';
 import Preloader from './components/preloader/index';
+import PageTransition from './components/page-transition/page-transition';
 
 import ModalBase from './components/modal/modal-base';
 import Menu from './components/menu';
@@ -48,7 +49,7 @@ import ChartCanvas from './components/chart-canvas';
 import uploadFile from './components/upload-file/upload-file';
 
 if (process.env.API) {
-	server.start();
+	//server.start();
 }
 
 window.breakpoints = devices;
@@ -59,6 +60,12 @@ window.jQuery = $;
 window.breakpoints = devices;
 
 const inputs = new Input();
+
+window.addEventListener('load', () => {
+
+	new Preloader();
+	// Init after page is loaded
+});
 
 window.addEventListener('init.input', () => {
 	inputs.render();
@@ -71,7 +78,7 @@ window.addEventListener('init.uploadFile', () => {
 document.addEventListener('DOMContentLoaded', () => {
 	libs.init();
 	// Components
-
+	new PageTransition();
 	Animation.init();
 	Header.init();
 	//FilterService.init();
@@ -98,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	validation.init();
 	Accordion.init();
 	new FormHandler();
-	new Preloader();
+	// new Preloader();
 	new ChartCanvas();
 
 	const strategyContainers = document.querySelectorAll(

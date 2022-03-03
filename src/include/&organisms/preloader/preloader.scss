@@ -4,8 +4,6 @@
     height: 100%;
     z-index: 20000;
     background-color: $color-green;
-    display: none;
-    opacity: 0;
 
     &__wrap {
         height: 100%;
@@ -46,12 +44,17 @@
       position: absolute;
       top: 0;
       left: 0;
-      clip-path: polygon(0 0, 20% 0, 20% 100%, 0% 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
       transition: .5s;
+      transform: translate(-100%, 0%);
     }
 
     &__num {
         color: $color-white;
         font-size: rem(16);
     }
+
+    &.hidden {
+        display: none;
+    }    
 }

@@ -8,6 +8,7 @@
 		"> 1%"
 	],
 	"dependencies": {
+		"@barba/core": "^2.9.7",
 		"@csstools/normalize.css": "^10.1.0",
 		"axios": "^0.24.0",
 		"chart.js": "^3.7.0",

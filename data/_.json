@@ -5,6 +5,7 @@
       "size": "fit"
     }
   },
+  "page_transition": true,
   "colors": [
     "white",
     "black"
@@ -16,7 +17,7 @@
   "placeholder": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
   "header": {
     "logo": {
-      "href": "./",
+      "href": "main.html",
       "name": "logos/main-logo",
       "size": "fit"
     },

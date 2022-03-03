@@ -15,36 +15,36 @@ export default class Preloader {
 	}
 
 	updateText(progress) {
-		// this.progressText.innerHTML = Math.round(progress * 100) + ' %';
+		this.progressText.innerHTML = Math.round(progress * 100) + ' %';
 		// this.progressTextMasked.innerHTML = Math.round(progress * 100) + ' %';
 	}
 
 	animate() {
-        console.log('preloader');
-		// let els = [this.progress, this.progressMask];
-		// let that = this;
+       
+		let els = this.progress;
+		let that = this;
+        
 
-		// gsap.set(els, { y: '60%', rotation: 0, opacity: 1});
+		gsap.set(els, { x: '-100%', rotation: 0, opacity: 1});
 
-		// gsap.to(els, {
-		// 	y: '-50%',
-		// 	rotation: 30,
-		// 	duration: this.duration,
-		// 	// ease: this.contentEasingIn,
-		// 	// delay: 0.5,
-		// 	force3D: true,
-		// 	onStart() {
-		// 		[that.progressText, that.progressTextMasked].forEach(el => el.classList.add('visible'));
-		// 		document.body.classList.add('preloading');
-		// 		window.ls.stop();
-		// 	},
-		// 	onUpdate() {
-		// 		that.updateText(this.progress())
-		// 	},
-		// 	onComplete() {
-		// 		that.onComplete();
-		// 	},
-		// });
+		gsap.to(els, {
+			x: '0%',
+			duration: this.duration,
+			// ease: this.contentEasingIn,
+			// delay: 0.5,
+			force3D: true,
+			onStart() {
+			//	[that.progressText, that.progressTextMasked].forEach(el => el.classList.add('visible'));
+				document.body.classList.add('preloading');
+				//window.ls.stop();
+			},
+			onUpdate() {
+				that.updateText(this.progress())
+			},
+			onComplete() {
+				that.onComplete();
+			},
+		});
 	}
 
 	onComplete() {
@@ -55,8 +55,8 @@ export default class Preloader {
 		sessionStorage.setItem('preloader', 'initialize');
 
 		document.body.classList.remove('preloading');
-		window.ls.start();
-		window.ls.update();
+		// window.ls.start();
+		// window.ls.update();
 
 		gsap.to(this.preloader, {
 			opacity: 0,
@@ -107,16 +107,17 @@ export default class Preloader {
 
 		if(!this.preloader) return;
 
-		// this.progress = this.preloader.querySelector('.preloader-svg__progress');
+		this.progress = this.preloader.querySelector('[data-preloader-progress]');
 		// this.progressMask = this.preloader.querySelector('.preloader-svg__text-mask');
-		// this.progressText = this.preloader.querySelector('.preloader-svg__num');
+		this.progressText = this.preloader.querySelector('[data-preloader-num]');
+       
 		// this.progressTextMasked = this.preloader.querySelector('.preloader-svg__num--masked');
 
 		if (sessionStorage.getItem('preloader') !== 'initialize') {
 			this.animate();
 		} else {
 			this.preloader.classList.add('hidden');
-			//window.dispatchEvent(new CustomEvent('preloader:complete'))
+			window.dispatchEvent(new CustomEvent('preloader:complete'))
 		}
 	}
 }
