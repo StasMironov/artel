@@ -150,7 +150,6 @@ export default {
 		window.addEventListener('submit.formPopup', () => {
 			const form = $('[data-steps-career]');
 			form.submit();
-			console.log(form);
 		});
 	}
 };

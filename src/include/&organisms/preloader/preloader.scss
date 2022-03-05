@@ -55,6 +55,17 @@
     }
 
     &.hidden {
-        display: none;
+        opacity: 0;
+        pointer-events: none;
     }    
 }
+
+body:not(.loaded) > *:not(.preloader) {
+    display:none;  
+  }
+
+
+  body.loaded .preloader {
+    opacity: 0;
+    pointer-events: none;
+  }

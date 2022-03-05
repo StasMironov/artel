@@ -52,9 +52,15 @@ export default class MapService {
 	}
 
 	load() {
-		this.loader.load().then((google) => {
-			this.render(google);
-		});
+		if (!window.isMapsApiLoadedService) {
+			window.isMapsApiLoadedService = true;	
+			this.loader.load().then((google) => {
+				this.render(google);
+				window.mapLoadService = google;
+			});
+		} else  {
+			this.render(window.mapLoadService);
+		}
 	}
 
 	render(google) {

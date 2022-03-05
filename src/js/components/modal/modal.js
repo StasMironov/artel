@@ -24,9 +24,14 @@ const Modal = {
 			onShow: (modal) => {
 				palyer.play();
 				window._disableScroll();
+				setTimeout(()=>{
+					//console.log($('header'));
+					$('.header').addClass('show-header mf-index');
+				}, 100);
 			},
 			onClose: (modal) => {
 				palyer.stop();
+				$('.header').removeClass('show-header mf-index');
 				window._enableScroll();
 			},
 		});

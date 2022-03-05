@@ -14,72 +14,73 @@ export default class PageTransition {
 		this.delayPerPath = 250;
 		this.timeStart = Date.now();
 		this.isOpened = false;
-        
+        this.center = '';
+        this.kofOv = '';
 
 		this.init();
 	}
 
-    loaderIn() {
+    leaveAnimation(e) {
+        return new Promise(async resolve => {
         const loader = this.overlay;
-        let trigger = document.querySelector('html');
-        // console.log(trigger.getBoundingClientRect());
-        const { height, width, top, left } = trigger.getBoundingClientRect();
-        const triggerTop = Math.floor(top);
-        const triggerLeft = Math.floor(left);
-        const triggerWidth = Math.floor(width);
-        const triggerHeight = Math.floor(height);
-        // console.log({triggerTop, triggerLeft, triggerHeight, triggerWidth});
-
-        // GSAP timeline to stretch the loading screen across the whole screen
-
-        const viewportHeight = window.innerHeight;
-        const viewportWidth = window.innerWidth;     
-        const loaderSize = viewportHeight > viewportWidth ? viewportHeight*2 : viewportWidth*2;
-
-        const tl = gsap.timeline();
-        tl
-            .set(loader, {
-                autoAlpha: 1,
-               xPercent: -50,
-                yPercent: -100
-            })
-            .fromTo(loader, 
-            {
-                //scale: 0,
-                //transformOrigin: 'center center',
-                yPercent: -100
-            },
-            { 
-                duration: 20,
-                // scale: 2, 
-                yPercent: -300,
-                ease: 'Power4.out'
-            });
-        return tl;
+          await gsap
+          .fromTo(loader, 
+                    {
+                        //scale: 1,
+                       
+                        y: this.heightEl,
+                        scale: 1,
+                        autoAlpha: 1
+                        // zoom: 1
+                    },
+                    { 
+                        duration: 1,
+                        autoRound:false, 
+                        scale: 6.6, 
+                        y: this.center,
+                        ease: 'Power4.out',
+                        // scale: 3
+                    })
+            .then();
+          resolve()
+        });
     }
-
-    loaderAway() {
-        const loader = this.overlay;
-
-        console.log('finish');
-
-        const tl = gsap.timeline();
-        return tl.to(loader, { 
-            // scale: 0,
-            // transformOrigin: 'center center',
-            // duration: 0.8
-           // autoAlpha:0
+      
+    enterAnimation(e) {
+    return new Promise(resolve => {
+    const loader = this.overlay;
+        gsap
+        .fromTo(loader, 
+        {
+            //duration: 0.8,
+            scale: 6.6, 
+            y: this.center,
+            ease: 'Power4.out'
+        },
+        { 
+            duration: 1,
+            y: (this.center*2 - this.heightEl),
+            scale: 1,
+            // scale: 3
+            onComplete: ()=>{
+                gsap.set(this.overlay, {
+                    autoAlpha: 0
+                })
+            }
         })
+        .then(resolve());
+    
+    });
     }
 
 	toggle() {
 		this.isAnimating = true;
 
 		if (this.isOpened === false) {
-            console.log(this.isOpened);
+           // console.log(this.isOpened);
 			return this.open();
 		} else {
-            console.log(this.isOpened);
+           // console.log(this.isOpened);
 			return this.close();
 		}
 	}
@@ -133,54 +134,133 @@ export default class PageTransition {
 	initBarba() {
 		let that = this;
 
+        barba.hooks.beforeOnce(()=>{
+            if (sessionStorage.getItem('preloader') !== 'initialize') {
+                 document.querySelector('.preloader').classList.remove('hidden');
+            } 
+        });
+
+        barba.hooks.leave(()=>{
+            window.dispatchEvent(new CustomEvent('page:leave'));
+            window._disableScroll();
+        });
+
+        barba.hooks.enter(() => {
+            setTimeout(()=>{
+                document.querySelector('html').scrollTo(0, 0);
+            }, 100);
+
+            window._enableScroll();
+
+            if(document.querySelector('.main-hero__ov')){
+                setTimeout(()=>{
+                    $('.main-hero__ov').animate({
+                        "opacity": 0
+                    }, 300).remove();	
+                }, 200);
+            }
+    
+        });
+
+		// barba.init({
+		// 	debug: true,
+		// 	prefetchIgnore: true,
+		// 	// timeout: 5000,
+		// 	transitions: [{
+		// 		name: 'default-transition',
+		// 		// prevent: ({ el }) => {
+		// 		// 	console.log(el);
+		// 		// 	el.hasAttribute('data-prevent-barba-link');
+		// 		// },
+		// 		leave(data) {
+		// 			window.dispatchEvent(new CustomEvent('page:leave'));
+		// 			return that.toggle();
+		// 		},
+		// 		enter(data) {
+		// 			// Reset scroll
+		// 			//window.ls.destroy();
+		// 			//window.ls.init();
+
+		// 			window.dispatchEvent(new CustomEvent("reinit"));
+		// 			//window.ls.update();
+		// 			that.initBarbaLinks();
+                   
+        //             console.log('after');
+
+		// 		//	return that.toggle();
+		// 		},
+		// 		requestError: (trigger, action, url, response) => {
+		// 			// go to a custom 404 page if the user click on a link that return a 404 response status
+		// 			if (action === 'click' && response.status && response.status === 404) {
+		// 				barba.go('/404.html');
+		// 			}
+
+		// 			// prevent Barba from redirecting the user to the requested URL
+		// 			// this is equivalent to e.preventDefault() in this context
+		// 			return false;
+		// 		}
+		// 	}]
+		// });
+
 		barba.init({
-			debug: true,
-			prefetchIgnore: true,
-			// timeout: 5000,
-			transitions: [{
-				name: 'default-transition',
-				// prevent: ({ el }) => {
-				// 	console.log(el);
-				// 	el.hasAttribute('data-prevent-barba-link');
-				// },
-				leave(data) {
-					window.dispatchEvent(new CustomEvent('page:leave'));
+            debug: true,
+            transitions: [
+              {
+                sync: false,
+                leave: ({ current }) => 
+                  this.leaveAnimation(current.container.querySelector("main")),
+                once: ({ next }) => this.enterAnimation(next.container.querySelector("main")),
+                enter: ({ next }) => {
+                    this.enterAnimation(next.container.querySelector("main"));
+                    setTimeout(()=>{
+                        window.dispatchEvent(new CustomEvent("reinit"));
+                    }, 500)
+                    this.initBarbaLinks();
+                },
+                requestError: (trigger, action, url, response) => {
+                    // go to a custom 404 page if the user click on a link that return a 404 response status
+                    if (action === 'click' && response.status && response.status === 404) {
+                        barba.go('/404.html');
+                    }
 
-					return that.toggle();
-				},
-				after(data) {
-					// Reset scroll
-					//window.ls.destroy();
-					//window.ls.init();
-
-					window.dispatchEvent(new CustomEvent("reinit"));
-					//window.ls.update();
-					that.initBarbaLinks();
-
-					return that.toggle();
-				},
-				requestError: (trigger, action, url, response) => {
-					// go to a custom 404 page if the user click on a link that return a 404 response status
-					if (action === 'click' && response.status && response.status === 404) {
-						barba.go('/404.html');
-					}
-
-					// prevent Barba from redirecting the user to the requested URL
-					// this is equivalent to e.preventDefault() in this context
-					return false;
-				}
-			}]
-		});
-
-		this.initBarbaLinks();
+                    // prevent Barba from redirecting the user to the requested URL
+                    // this is equivalent to e.preventDefault() in this context
+                    return false;
+                }
+              }
+            ]
+          });
+        
+        
+        
 	}
+
+    setCenter(){
+        this.overlay = this.wrap.querySelector('.page-transition-overlay');  
+        this.kofOv = $(this.overlay).outerHeight(true)/2; 
+        this.center =  (-$('html,body').outerHeight(true) / 2) + this.kofOv;
+        this.heightEl = $(this.overlay).outerHeight(true);
+    }
 
 	init() {
 		if(!this.wrap) return;
+       
+        this.setCenter();
 
-		this.overlay = this.wrap.querySelector('.page-transition-overlay');
-		// this.path = this.overlay.querySelectorAll('path')
+        gsap.set(this.overlay, {
+            autoAlpha: 0,
+            xPercent: -50,
+            y: 0,
+            force3D: true,
+            transformOrigin: 'center center',
+        })
 
 		this.initBarba();
+
+        $(window).resize(
+            ()=>{
+                this.setCenter();
+            }
+        )
 	}
 }

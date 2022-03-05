@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	Nav.init();
 	InputSearch.init();
 	SlideDown.init();
-	Sliders.init();
+	//Sliders.init();
 	Submenu.init();
 	ScrollTo.init();
 	TextArea.init();
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	validation.init();
 	Accordion.init();
 	new FormHandler();
-	// new Preloader();
+	//new Preloader();
 	new ChartCanvas();
 
 	const strategyContainers = document.querySelectorAll(
@@ -129,6 +129,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	new Datepicker();
 
 	document.body.classList.add('content-loaded');
+
+	$(function() {
+		// simulate the heavy page loading
+		if(sessionStorage.getItem('preloader') !== 'initialize'){
+			setTimeout(function() {
+		  $('body').addClass('loaded');
+		}, 2000);
+		} else {
+			$('body').addClass('loaded');
+		}
+		
+	  });
 
 	if(document.body.classList.contains('content-loaded')){
 		if(document.querySelector('.main-hero__ov')){
@@ -185,7 +197,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
+
+	window.addEventListener('init.sliders', () => {
+		Sliders.init();
+	});
+
 	window.dispatchEvent(new CustomEvent('init.modals'));
+	window.dispatchEvent(new CustomEvent('init.sliders'));
 	window.dispatchEvent(new CustomEvent('init.uploadFile'));
 });
 
@@ -194,12 +212,13 @@ window.addEventListener('reinit', () => {
 	window.dispatchEvent(new CustomEvent('init.validation'));
 	window.dispatchEvent(new CustomEvent('init.mask'));
 	window.dispatchEvent(new CustomEvent('init.input'));
-	window.dispatchEvent(new CustomEvent('init.modals'));
+	window.dispatchEvent(new CustomEvent('init.sliders'));
+	
 	window.dispatchEvent(new CustomEvent('init.uploadFile'));
 
 	libs.init();
 	Animation.init();
-	Sliders.init();
+	// Sliders.init();
 	Modals.init();
 	ModalAjax.init();
 //	select.init();
@@ -209,6 +228,7 @@ window.addEventListener('reinit', () => {
 	select.init();
 	new MapService();
 	new ScrollAnimation();
+	//new Map();
 
 	new Datepicker();
 });

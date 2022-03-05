@@ -98,6 +98,8 @@ export default class ModalBase {
 			},
 		});
 
+		this.initEvents();
+
 		
 
 		// if (this.id === 'modal-warning') {
@@ -125,4 +127,28 @@ export default class ModalBase {
 		// 	};
 		// }
 	}
+
+	initEvents() {
+		window.addEventListener('page:leave', this.closeAllModals.bind(this))
+	}
+
+	closeAllModals() {
+		let modals = document.querySelectorAll('.modal');
+		let opened = [];
+
+		if(!modals.length) return;
+
+		opened = [...modals].filter(modal => modal.classList.contains('is-open'));
+
+		if(!opened.length) return;
+
+		opened.forEach(modal => {
+			let id = modal.getAttribute('id');
+
+			if(!id) return;
+
+			MicroModal.close(id);
+		})
+	}
+
 }
