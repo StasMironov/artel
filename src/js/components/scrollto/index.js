@@ -4,6 +4,7 @@ gsap.registerPlugin(ScrollToPlugin);
 
 export default {
 	init() {
+		console.log('scrollto');
 		if (
 			document.querySelectorAll('[data-btn-handler]').length > 0 &&
 			document.querySelector('[data-scroll-target]').length > 0

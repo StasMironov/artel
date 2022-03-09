@@ -4,6 +4,10 @@ import gsap from 'gsap';
 
 export default class PageTransition {
 	constructor() {
+        this.init = !window.hasAdminBX;
+
+		if (!this.init) return;
+
 		this.wrap = document.querySelector('.page-transition');
 		this.overlay = null;
 		this.path = null;
@@ -17,7 +21,9 @@ export default class PageTransition {
         this.center = '';
         this.kofOv = '';
 
-		this.init();
+        
+
+		this.render();
 	}
 
     leaveAnimation(e) {
@@ -73,50 +79,6 @@ export default class PageTransition {
     });
     }
 
-	toggle() {
-		this.isAnimating = true;
-
-		if (this.isOpened === false) {
-           // console.log(this.isOpened);
-			return this.open();
-		} else {
-           // console.log(this.isOpened);
-			return this.close();
-		}
-	}
-
-	open() {
-		this.isOpened = true;
-		//this.overlay.classList.add('is-opened');
-		this.timeStart = Date.now();
-
-		return this.renderLoop();
-	}
-
-	close() {
-		this.isOpened = false;
-		//this.overlay.classList.remove('is-opened');
-		this.timeStart = Date.now();
-
-		return this.renderLoop();
-	}
-
-
-	render() {
-		if (this.isOpened) {
-            this.loaderIn();
-		} else {
-            this.loaderAway();
-		}
-	}
-
-	renderLoop() {
-		return new Promise((resolve, reject) => {
-			this.render();
-            return resolve();
-		});
-	}
-
 	initBarbaLinks() {
 		let links = document.querySelectorAll('a[href]');
 
@@ -162,48 +124,13 @@ export default class PageTransition {
     
         });
 
-		// barba.init({
-		// 	debug: true,
-		// 	prefetchIgnore: true,
-		// 	// timeout: 5000,
-		// 	transitions: [{
-		// 		name: 'default-transition',
-		// 		// prevent: ({ el }) => {
-		// 		// 	console.log(el);
-		// 		// 	el.hasAttribute('data-prevent-barba-link');
-		// 		// },
-		// 		leave(data) {
-		// 			window.dispatchEvent(new CustomEvent('page:leave'));
-		// 			return that.toggle();
-		// 		},
-		// 		enter(data) {
-		// 			// Reset scroll
-		// 			//window.ls.destroy();
-		// 			//window.ls.init();
-
-		// 			window.dispatchEvent(new CustomEvent("reinit"));
-		// 			//window.ls.update();
-		// 			that.initBarbaLinks();
-                   
-        //             console.log('after');
-
-		// 		//	return that.toggle();
-		// 		},
-		// 		requestError: (trigger, action, url, response) => {
-		// 			// go to a custom 404 page if the user click on a link that return a 404 response status
-		// 			if (action === 'click' && response.status && response.status === 404) {
-		// 				barba.go('/404.html');
-		// 			}
-
-		// 			// prevent Barba from redirecting the user to the requested URL
-		// 			// this is equivalent to e.preventDefault() in this context
-		// 			return false;
-		// 		}
-		// 	}]
-		// });
+		
 
 		barba.init({
             debug: true,
+            // prevent: ({ el }) => el.hasAttribute('data-prevent-barba-link'),
+			// prefetchIgnore: !!process.env.API,
+            // cacheIgnore: true, // fix vue map init
             transitions: [
               {
                 sync: false,
@@ -242,7 +169,7 @@ export default class PageTransition {
         this.heightEl = $(this.overlay).outerHeight(true);
     }
 
-	init() {
+	render() {
 		if(!this.wrap) return;
        
         this.setCenter();

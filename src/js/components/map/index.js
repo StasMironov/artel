@@ -36,10 +36,19 @@ export default class Map {
 	}
 
 	load() {
-		this.loader.load().then((google) => {
-			this.render(google);
-		});
+		if (!window.isMapsApiLoaded) {
+			console.log('map main');
+			window.isMapsApiLoaded = true;	
+			this.loader.load().then((google) => {
+				this.render(google);
+				window.mapLoad = google;
+			});
+		} else  {
+			this.render(window.mapLoad);
+			console.log('map main уже');
+		}
 	}
+
 
 	render(google) {
 		this.mapOptions = {

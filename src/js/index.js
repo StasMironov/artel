@@ -164,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 	window.addEventListener('init.modals', () => {
+		console.log('modals reinit');
 		new ModalBase({
 			init: true,
 			id: 'modal-person',
@@ -213,22 +214,25 @@ window.addEventListener('reinit', () => {
 	window.dispatchEvent(new CustomEvent('init.mask'));
 	window.dispatchEvent(new CustomEvent('init.input'));
 	window.dispatchEvent(new CustomEvent('init.sliders'));
-	
+	window.dispatchEvent(new CustomEvent('init.modals'));
 	window.dispatchEvent(new CustomEvent('init.uploadFile'));
 
 	libs.init();
 	Animation.init();
-	// Sliders.init();
 	Modals.init();
 	ModalAjax.init();
-//	select.init();
 	Table.init();
 	TextArea.init();
 	Menu.init();
 	select.init();
+	new Map();
 	new MapService();
 	new ScrollAnimation();
-	//new Map();
+	ScrollTo.init();
+	SlideDown.init();
+	new BlockProduct();
+	new BlockHistory();
+	
 
 	new Datepicker();
 });

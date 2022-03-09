@@ -101,6 +101,11 @@ export default class ModalBase {
 		this.initEvents();
 
 		
+		$('[data-modal-person]').on('click', ()=>{
+			console.log(1);
+		});
+
+		
 
 		// if (this.id === 'modal-warning') {
 		// 	let state = 0;
