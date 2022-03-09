@@ -1,5 +1,5 @@
 .slider-comment {
- 
+  position: relative;
 
 	&__header {
 		display: flex;
@@ -18,17 +18,29 @@
 	}
 
   &__quote {
-    margin-left: 11.3%;
-    padding-top: rem(9);
-
-    @include media-breakpoint-down(md) {
-      padding-top: 0;
-      margin-left: 0;
-      margin-top: rem(23);
+    position: unset; 
+    margin-top: rem(-20);
+    margin-bottom: rem(40);
+    @include media-breakpoint-up(md) { 
+      position: unset; 
+      margin-top: rem(-45);
+      margin-bottom: rem(60);
+    }
+    @include media-breakpoint-up(lg) {  
+      position: absolute;    
+      top: rem(-120);
+      left: rem(450);
+      padding-top: rem(9);
+      margin: 0;
     }
   }
 
 	&__wrapper {
+    display: flex;
+    flex-direction: column;
+	}
+
+  &__content {
     display: flex;
     @include media-breakpoint-down(md) {
       flex-direction: column;

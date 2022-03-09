@@ -642,10 +642,10 @@
   },
   "slider_comment2": {
     "title": "Истории студентов",
-    "quote": "Программа «Next generation» ",
     "arrows_theme": "white",
     "items": [
       {
+        "quote": "Программа «Next generation» 1",
         "icon": {
           "name": "104/quote",
           "size": "fit"
@@ -665,6 +665,7 @@
         }
       },
       {
+        "quote": "Программа «Next generation» 2",
         "icon": {
           "name": "104/quote",
           "size": "fit"
@@ -691,6 +692,7 @@
         }
       },
       {
+        "quote": "Программа «Next generation» 3",
         "icon": {
           "name": "104/quote",
           "size": "fit"

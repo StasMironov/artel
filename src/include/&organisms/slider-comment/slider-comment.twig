@@ -6,11 +6,6 @@
                     {{ slider.title }}
                 </h3>
             {% endif %}
-            {% if slider.quote %}
-                <div class="slider-comment__quote">
-                    {{ slider.quote }}
-                </div>
-            {% endif %}
         </div>
         
         <div class="slider-comment__slider" >
@@ -19,6 +14,13 @@
                     {% for slide in slider.items %}
                         <div class="slider-comment__item swiper-slide">
                             <div class="slider-comment__wrapper">
+                              {% if slide.quote %}
+                                <div class="slider-comment__quote">
+                                    {{ slide.quote }}
+                                </div>
+                              {% endif %}
+
+                              <div class="slider-comment__content">
                                 <div class="slider-comment__left">
                                     <div class="slider-comment__box">
                                         {% if slide.avatar %}
@@ -70,6 +72,7 @@
                                         </div>
                                     {% endif %}
                                 </div>
+                              </div>                                
                             </div>
                         </div>
                     {% endfor %}
