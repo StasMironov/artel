@@ -33,6 +33,7 @@ import Education from './components/block-education';
 import Work from './components/block-work';
 import Datepicker from './components/datepicker';
 import Preloader from './components/preloader/index';
+import PageTransition from './components/page-transition/page-transition';
 
 import ModalBase from './components/modal/modal-base';
 import Menu from './components/menu';
@@ -48,7 +49,7 @@ import ChartCanvas from './components/chart-canvas';
 import uploadFile from './components/upload-file/upload-file';
 
 if (process.env.API) {
-	server.start();
+	//server.start();
 }
 
 window.breakpoints = devices;
@@ -59,6 +60,12 @@ window.jQuery = $;
 window.breakpoints = devices;
 
 const inputs = new Input();
+
+window.addEventListener('load', () => {
+
+	new Preloader();
+	// Init after page is loaded
+});
 
 window.addEventListener('init.input', () => {
 	inputs.render();
@@ -71,7 +78,7 @@ window.addEventListener('init.uploadFile', () => {
 document.addEventListener('DOMContentLoaded', () => {
 	libs.init();
 	// Components
-
+	new PageTransition();
 	Animation.init();
 	Header.init();
 	//FilterService.init();
@@ -79,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	Nav.init();
 	InputSearch.init();
 	SlideDown.init();
-	Sliders.init();
+	//Sliders.init();
 	Submenu.init();
 	ScrollTo.init();
 	TextArea.init();
@@ -98,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	validation.init();
 	Accordion.init();
 	new FormHandler();
-	new Preloader();
+	//new Preloader();
 	new ChartCanvas();
 
 	const strategyContainers = document.querySelectorAll(
@@ -123,6 +130,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	document.body.classList.add('content-loaded');
 
+	$(function() {
+		// simulate the heavy page loading
+		if(sessionStorage.getItem('preloader') !== 'initialize'){
+			setTimeout(function() {
+		  $('body').addClass('loaded');
+		}, 2000);
+		} else {
+			$('body').addClass('loaded');
+		}
+		
+	  });
+
 	if(document.body.classList.contains('content-loaded')){
 		if(document.querySelector('.main-hero__ov')){
 			setTimeout(()=>{
@@ -145,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 	window.addEventListener('init.modals', () => {
+		console.log('modals reinit');
 		new ModalBase({
 			init: true,
 			id: 'modal-person',
@@ -178,7 +198,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
+
+	window.addEventListener('init.sliders', () => {
+		Sliders.init();
+	});
+
 	window.dispatchEvent(new CustomEvent('init.modals'));
+	window.dispatchEvent(new CustomEvent('init.sliders'));
 	window.dispatchEvent(new CustomEvent('init.uploadFile'));
 });
 
@@ -187,21 +213,26 @@ window.addEventListener('reinit', () => {
 	window.dispatchEvent(new CustomEvent('init.validation'));
 	window.dispatchEvent(new CustomEvent('init.mask'));
 	window.dispatchEvent(new CustomEvent('init.input'));
+	window.dispatchEvent(new CustomEvent('init.sliders'));
 	window.dispatchEvent(new CustomEvent('init.modals'));
 	window.dispatchEvent(new CustomEvent('init.uploadFile'));
 
 	libs.init();
 	Animation.init();
-	Sliders.init();
 	Modals.init();
 	ModalAjax.init();
-//	select.init();
 	Table.init();
 	TextArea.init();
 	Menu.init();
 	select.init();
+	new Map();
 	new MapService();
 	new ScrollAnimation();
+	ScrollTo.init();
+	SlideDown.init();
+	new BlockProduct();
+	new BlockHistory();
+	
 
 	new Datepicker();
 });

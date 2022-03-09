@@ -3,7 +3,7 @@
 	"header": {
 		"transparent": true,
 		"logo": {
-			"href": "./",
+			"href": "main.html",
 			"name": "logos/main-logo",
 			"size": "fit"
 		},

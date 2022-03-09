@@ -88,11 +88,16 @@ export default class blockProduct {
 					0.2
 				);
 		});
+
 		// для корректного отображения data-pin-top при первой загрузке страницы
 		setTimeout(() => {
 			if (node.getBoundingClientRect().top > 0) {
 				topNode.style.position = '';
+				
 			}
+			window.dispatchEvent(new Event('resize'));
 		});
+
+		// console.log(document.querySelectorAll('[data-product-wrap]').getBoundingClientRect().top);
 	}
 }

@@ -2,7 +2,7 @@
   "title": "Контакты",
   "header": {
     "logo": {
-      "href": "./",
+      "href": "main.html",
       "name": "logos/main-logo",
       "size": "fit"
     },

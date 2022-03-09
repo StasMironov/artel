@@ -5,13 +5,13 @@ import Tabs from './tabs';
 import SliderDocs from './slider-docs';
 import SliderTeam from './slider-team';
 import SliderTabs from './slider-icon-tabs';
-import './slider-logos';
-import './slider-period';
-import './slider-press';
+import SliderLogo from './slider-logos';
+import SliderPeriod from './slider-period';
+import SliderPress from './slider-press';
 import SliderComment from './slider-comment';
-import './slider-photo';
-import './slider-similar';
-import './slider-facilities';
+import SliderPhoto from './slider-photo';
+import SliderSimilar from './slider-similar';
+import SliderFacilities from './slider-facilities';
 
 
 export default {
@@ -25,5 +25,11 @@ export default {
 		SliderTeam.init();
 		SliderTabs.init();
 		SliderComment.init();
+		SliderPhoto.init();
+		SliderLogo.init();
+		SliderPeriod.init();
+		SliderPress.init();
+		SliderSimilar.init();
+		SliderFacilities.init();
 	},
 };

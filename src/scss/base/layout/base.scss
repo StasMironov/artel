@@ -11,6 +11,7 @@ body {
 	width: 100%;
 	min-height: 100vh;
 	background-color: $color-gray;
+	overflow-y: unset !important
 	// overflow-x: hidden;
 }
 

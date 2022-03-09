@@ -326,6 +326,5 @@ export default {
     };
     
     document.addEventListener('scrollStart', logScrollEvent, false);
-
 	},
 };
