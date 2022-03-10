@@ -90,6 +90,17 @@
 		}
 
 	}
+
+	&__title {
+		max-width: rem(400);
+		padding-right: rem(32);
+
+		@include media-breakpoint-down(md) {
+			max-width: initial;
+			padding-right: 0;
+		}
+	}
+
 	.user-text {
 		@include media-breakpoint-up(sm) {
 			ul li{
