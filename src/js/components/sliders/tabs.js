@@ -319,7 +319,7 @@ export default {
     let lastClicked = tabs[0];
 
     let logScrollEvent = function (event) {
-      //console.log('toggle:', event.detail.toggle);      
+      console.log('toggle:', event.detail.toggle);      
       lastClicked.classList.remove('tab--active');
       event.detail.toggle.classList.add("tab--active");     
       lastClicked = event.detail.toggle; 
