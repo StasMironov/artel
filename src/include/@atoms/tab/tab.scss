@@ -201,10 +201,12 @@
 		}
 		@include media-breakpoint-only(sm) {
 			&::before{
-				display: none;
+				//display: none;
 			}
 		}
 	}
+
+
 
 	&--white#{$root}--active {
 		cursor: default;
@@ -224,6 +226,17 @@
 	&--white-2#{$root}--active {
 		cursor: default;
 		color: rgba(white, 1);
+
+		&::before {
+			width: rem(16);
+			height: rem(16);
+			transform: scale3d(1, 1, 1);
+			background-color: $color-white;
+
+			@include media-breakpoint-down(md) {
+				margin-right: rem(16);
+			}
+		}
 	}
 
 }
