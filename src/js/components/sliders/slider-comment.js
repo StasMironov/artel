@@ -21,6 +21,8 @@ export default {
 					slidesPerView: 8,
 					spaceBetween: 10,
 					touchRatio: false,
+          observer: true,
+			    observeParents: true,
 					//loop: true,
 					slideToClickedSlide: true,
 					touchRatio: 0.2,
