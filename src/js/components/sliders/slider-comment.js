@@ -88,7 +88,7 @@ export default {
 						elementClass: 'swiper-lazy',
 					},
 				  autoplay: {
-						delay: 10000,
+						delay: 50000,
 						disableOnInteraction: false,
 					},
 					
