@@ -143,13 +143,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	  });
 
 	if(document.body.classList.contains('content-loaded')){
-		if(document.querySelector('.main-hero__ov')){
-			setTimeout(()=>{
-				$('.main-hero__ov').animate({
-					"opacity": 0
-				}, 300).remove();	
-			}, 200);
-		}
+		// if(document.querySelector('.main-hero__ov')){
+		// 	setTimeout(()=>{
+		// 		$('.main-hero__ov').animate({
+		// 			"opacity": 0
+		// 		}, 300).remove();	
+		// 	}, 200);
+		// }
 	}
 
 
