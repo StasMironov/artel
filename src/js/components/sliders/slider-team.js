@@ -11,10 +11,12 @@ export default{
 		next: '[data-nav-arrow-next]',
 		options: {
 			slidesPerView: '1',
-			allowTouchMove: true,
+      observer: true,
+			observeParents: true,
+      freeMode: false,
 			speed: 800,
 			loop: false
-		},
+		}
 	});
 	}
 }
