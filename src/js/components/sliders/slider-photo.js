@@ -32,12 +32,13 @@ export default {
 						observer: true,
   						observeParents: true,
 						on: {
-							init() {
-								if (this.slides.length >= 5) {
-									document
-										.querySelector('[data-pag]')
-										.classList.add('overlay');
+              beforeInit: function () {
+                let numOfSlides = this.wrapperEl.querySelectorAll(".swiper-slide").length;
+								if (numOfSlides >= 5) {
+									document.querySelector('[data-pag]').classList.add('overlay');
 								}
+              },
+							init() {
 							},
 							touchEnd() {
 								const lastSlide = this.slides[this.slides.length - 1];

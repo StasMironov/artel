@@ -26,11 +26,12 @@ export default {
 				observeParents: true,
 				simulateTouch: false,
         on: {
-          init: function () {
-            if (this.slides.length < 2) {
-						  prevEl.setAttribute('style', 'display: none');
+          beforeInit: function () {
+            let numOfSlides = this.wrapperEl.querySelectorAll(".swiper-slide").length;
+            if (numOfSlides < 2) {
+              prevEl.setAttribute('style', 'display: none');
               nextEl.setAttribute('style', 'display: none');
-						}
+            }            
           }
         }
       });

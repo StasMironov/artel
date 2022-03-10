@@ -38,18 +38,18 @@ export default {
 						},
 					},
 					on: {
-						init() {
-							if (this.slides.length >= 5) {
-								document
-									.querySelector('[data-pag]')
-									.classList.add('overlay');
+            beforeInit: function () {
+              let numOfSlides = this.wrapperEl.querySelectorAll(".swiper-slide").length;
+              if (numOfSlides >= 5) {
+								document.querySelector('[data-pag]').classList.add('overlay');
 							}
-
-              if (this.slides.length < 2) {
+              if (numOfSlides < 2) {
                 sliderPag.setAttribute('style', 'display: none');
                 prev.setAttribute('style', 'display: none');
                 next.setAttribute('style', 'display: none');
-              }
+              }              
+            },
+						init() {
 						},
 						touchEnd() {
 							const lastSlide = this.slides[
