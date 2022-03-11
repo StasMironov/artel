@@ -314,16 +314,23 @@ export default {
       header: "header",      
     });
 
-	let scrollUnique = new SmoothScroll('[data-scroll-unique]', {
-		speed: 800,
-		updateURL: false,
-		header: "header",
-		clip: true, // If true, adjust scroll distance to prevent abrupt stops near the bottom of the page
-		offset: 150  
-	  });
-
-
 	// Скролл с настраиваемой областью
+
+	$('[data-scroll-unique]').on('click', (e)=>{
+		e.preventDefault();
+		// определяем высоту экрана
+        const screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        // определяем координату верхнего угла div, к нижней границе которого будем скроллить
+        const blockTopPosition = document.querySelector('#production').offsetTop;
+        // определяем высоту div, к нижней границе которого будем скролить
+        const blockHeight = document.querySelector('#production').offsetHeight;
+        // определяем координату нижней границы div, к которому нужно скролить
+        const blockBottomPosition = blockTopPosition + blockHeight - screenHeight;
+        // скроллим с помощью scrollTop к координате нижней границы div и анимируем сие действие
+        $("html,body").animate({"scrollTop":blockBottomPosition + 60},'slow'); 
+	});
+
+	
 
     // маркер у активной ссылки
     const tabs = document.querySelectorAll('.tab');
