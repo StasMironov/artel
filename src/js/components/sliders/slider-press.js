@@ -48,7 +48,7 @@ export default {
 			});
 		
 			function showContent(element) {
-				console.log(element);
+				//console.log(element);
 				const titleEl = element.querySelector('[data-article]');
 				const qtyEl = element.querySelector('[data-qty]');
 		

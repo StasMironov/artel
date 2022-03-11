@@ -1,13 +1,13 @@
 {% if tab.href %}
 	
-  {% if tab.active %}
+  {% if tab.active and not tab.scroll_to %}
 		<span
 			class="tab tab--active{% if tab.theme %} tab--{{ tab.theme }}{% endif %}{{ tab.disabled ? ' tab--disabled' : '' }}"{% if tab.attr %} {{ tab.attr }}{% endif %}>
 			<span class="tab__text">{{ tab.text }}</span>
 		</span>
 	{% else %}
-		<a {% if tab.scroll_to %} data-scroll {% endif %} href="{% if tab.scroll_to %}{{ tab.scroll_to }}{% else %}{{tab.href }}{% endif %}" 
-		   class="tab{% if tab.theme %} tab--{{ tab.theme }}{% endif %}{{ tab.disabled ? ' tab--disabled' : '' }}" {% if tab.attr %}{{ tab.attr }}{% endif %}>
+		<a {% if tab.unique %} data-scroll-unique {% endif %} {% if tab.scroll_to and not tab.unique %} data-scroll {% endif %} href="{% if tab.scroll_to %}{{ tab.scroll_to }}{% else %}{{tab.href }}{% endif %}" 
+		   class="tab {% if tab.active %}tab--active{% endif %}{% if tab.theme %} tab--{{ tab.theme }}{% endif %}{{ tab.disabled ? ' tab--disabled' : '' }}" {% if tab.attr %}{{ tab.attr }}{% endif %}>
 			{% if tab.icon %}
 				<span class="tab__icon">
 					{% view '@icon' with {

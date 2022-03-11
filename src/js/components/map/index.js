@@ -1,5 +1,6 @@
 import { Loader } from 'google-maps';
 import PerfectScrollbar from 'perfect-scrollbar';
+import { MarkerClusterer } from "@googlemaps/markerclusterer";
 import Swiper from 'swiper/swiper-bundle';
 import gsap from 'gsap';
 
@@ -259,6 +260,9 @@ export default class Map {
 				this.filterMarkers(false, true);
 			}
 		});
+
+
+		
 	}
 
 	addMarker(markerData, index) {
@@ -294,6 +298,8 @@ export default class Map {
 				this.map.setZoom(12);
 			});
 		}
+
+		
 	}
 
 	setIcon({ type }) {
@@ -453,10 +459,12 @@ export default class Map {
 	filterMarkers(exclude = false, fit = false) {
 		// отображение / скрытие меток
 		this.bounds = new google.maps.LatLngBounds();
+		let clusterArr = [];
 
 		for (let i = 0; i < this.markers.length; i++) {
 			if (this.markers[i].region !== this.currentRegion) {
 				this.markers[i].setVisible(false);
+				this.markers[i].setMap(null);
 			} else {
 				if (!exclude) {
 					// если нужно исключить все метки, кроме выбранной
@@ -468,8 +476,10 @@ export default class Map {
 						this.markers[i].setVisible(true);
 					} else {
 						this.markers[i].setVisible(false);
+						this.markers[i].setMap(null);
 					}
 				}
+				clusterArr.push(this.markers[i]);
 			}
 		}
 
@@ -518,5 +528,30 @@ export default class Map {
 				}
 			}
 		}
+
+		
+
+		if(this.clusterMarkers) {
+			console.log(this.clusterMarkers);
+            this.clusterMarkers.clearMarkers();
+            this.clusterMarkers = null;
+        }
+
+		let markers = clusterArr;
+		let map = this.map;
+
+		function onClusterClickHandler(clusterIcon, event) {
+			map.setZoom(7);
+			map.setCenter({ lat: clusterIcon.latLng.lat(), lng: clusterIcon.latLng.lng() });
+
+			
+		}
+		
+
+		// Add a marker clusterer to manage the markers.
+		this.clusterMarkers = new MarkerClusterer({ markers, map,zoomOnClick: true, maxZoom: 15, gridSize: 20, onClusterClick: onClusterClickHandler, imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+		this.clusterMarkers.prototype.MARKER_CLUSTER_IMAGE_PATH_ =
+    "https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m";
+		console.log(this.clusterMarkers);
 	}
 }

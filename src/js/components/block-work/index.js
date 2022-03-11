@@ -19,7 +19,7 @@ export default class Education {
 	}
 
 	resizeJquerySteps(del=true) {
-		console.log(del);
+		//console.log(del);
 		if(!del){
 			$('.wizard .content').animate({ height: $('.body.current').outerHeight()}, "slow");
 		} else {
@@ -45,10 +45,10 @@ export default class Education {
 		$(window ).on( "custom-work", ()=> {
 			this.btnDeleteEducations = this.form.querySelectorAll('[data-delete-work]');
 			this.btnDeleteEducations.forEach((el)=>{
-				console.log(el);
+				//console.log(el);
 				el.addEventListener('click', (e)=>{	
 					let parentBox = $(el).closest('[data-work-card]');
-					console.log(parentBox);
+					//console.log(parentBox);
 					parentBox.remove();
 					let lastEl = $('[data-work-card]').last();
 					$(lastEl).get(0).scrollIntoView(false);
@@ -66,7 +66,7 @@ export default class Education {
 
 	fetch() {
 		let url = this.url;
-        console.log(url)
+        //console.log(url)
 		url += [
 			url.indexOf('?') >= 0 ? '&' : '?',
 			`q=${this.counter}`,
@@ -91,7 +91,7 @@ export default class Education {
 	}
 
 	appendText(value = null) {
-        console.log(1)
+        //console.log(1)
 			let range = document.createRange();
 			let fragment = range.createContextualFragment(value); //Creates a DOM object
 			let fragmentCard = fragment.querySelector('[data-work-card]');

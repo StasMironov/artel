@@ -3,7 +3,7 @@ import DrawSVGPlugin from 'gsap/DrawSVGPlugin';
 
 const Draw = {
 	init() {
-		console.log('draw');
+		//console.log('draw');
 		let containers = document.querySelectorAll('[data-icon="draw"]');
 		let pathElem;
 
@@ -13,7 +13,7 @@ const Draw = {
 
 		containers.forEach((element) => {
 			pathElem = element.querySelectorAll('.path');
-			console.log(pathElem);
+			//console.log(pathElem);
 
 			tl.fromTo(
 				pathElem,
