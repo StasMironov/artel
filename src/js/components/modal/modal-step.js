@@ -17,7 +17,7 @@ export default {
 		const wrapperNode = document.querySelector('[data-steps-career]');
 		if(!wrapperNode) return;
 
-		
+
 
 		var curIdx = 0;
 
@@ -29,35 +29,35 @@ export default {
 		let step;
 		var form = $('[data-steps-career]');
 		var stateValid = 0;
-	
+
 		function fieldValidate(){
 			stateValid = 0;
 
-				
+
 			let fields = $('.body.current').find('[data-field-check]');
-			
+
 			fields.each((_, field)=>{
 				$(field).parsley().validate();
 			});
-		
+
 			const erorFields = $('.body.current').find('.parsley-error')
 
 			if (erorFields.length <= 0) {
 				return true;
 			}
 		}
-	
+
 		form.children("div").steps({
 			headerTag: 'h3',
 			bodyTag: 'section',
 			transitionEffect: "fade",
-			
-		
+
+
 			labels: {
 				// finish: "Отправить",
 				next: "<button class='button button--white' data-btn-next>Дальше</button>",
 				previous: "<button class='button button--outline-white' data-btn-prev>Назад</button>",
-				finish: "<button class='button button--white' type='submit' data-btn-submit>Отправить</button>",
+				finish: "<button class='button button--white' type='submit' data-submit-form>Отправить</button>",
 				current: "current step:",
 				pagination: "Pagination",
 			},
@@ -67,17 +67,17 @@ export default {
 				mask.initMask();
 				const inputs = new Input();
 				$('.steps').append(progressLine);
-		
+
 				let tabs = wrapperNode.querySelectorAll('.steps li');
 				step = 100 / tabs.length;
 
 				$(progressLine).width(step*(1) + '%')
-				
+
 				$('.wizard .content').animate({ height: $('.body.current').outerHeight() }, "slow");
 
-				
+
 			},
-			onStepChanging: function (event, currentIndex, newIndex){ 
+			onStepChanging: function (event, currentIndex, newIndex){
 				if (newIndex<currentIndex){
 					curIdx = newIndex;
 					resizeJquerySteps(newIndex);
@@ -90,7 +90,7 @@ export default {
 					return true;
 				}
 
-				
+
 
 				//return true;
 			},
@@ -102,8 +102,8 @@ export default {
 				// 		resizeJquerySteps(currentIndex);
 				// 	});
 				// });
-				
-				$(progressLine).width(step*(currentIndex+1) + '%');				
+
+				$(progressLine).width(step*(currentIndex+1) + '%');
 			},
 			onFinishing: function (event, currentIndex)
 			{
@@ -114,9 +114,9 @@ export default {
 				if(fieldValidate()){
 					window.dispatchEvent(new CustomEvent('submit.formPopup'));
 				}
-			}	
+			}
 		});
-		
+
 		function resizeJquerySteps(index=false, datepicker=false) {
 			// if(index>=0){
 			// 	$('.wizard .content').animate({ height: $('.body').eq(index).outerHeight() }, "faster");
@@ -144,7 +144,7 @@ export default {
 		}
 
 		$(window).resize(debounce(100, () => {
-			250, resizeJquerySteps(curIdx, true);	
+			250, resizeJquerySteps(curIdx, true);
 		}));
 
 		window.addEventListener('submit.formPopup', () => {
