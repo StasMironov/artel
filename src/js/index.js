@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 	window.addEventListener('init.modals', () => {
-		console.log('modals reinit');
+		//console.log('modals reinit');
 		new ModalBase({
 			init: true,
 			id: 'modal-person',

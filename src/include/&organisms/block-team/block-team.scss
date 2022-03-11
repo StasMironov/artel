@@ -84,16 +84,16 @@
   }
 
   &__subtitle{
-    width: rem(328);
+    width: initial;
     margin-right: 0;
     @include media-breakpoint-up(md) {            
-      width: rem(440);
+      width: initial;
       margin-right: 0;
       padding-top: 0;
   }
     @include media-breakpoint-up(lg) {            
-      width: rem(440);
-      margin-right: rem(220);
+      width: initial;
+      margin-right: rem(125);
       padding-top: rem(8);
     }
   }

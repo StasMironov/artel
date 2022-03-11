@@ -36,7 +36,7 @@ export default class Education {
 		this.btnAddEducations = this.form.querySelector('[data-btn-education]');
 
 		this.btnAddEducations.addEventListener('click', (e)=>{	
-			console.log('t');
+			//console.log('t');
 			this.counter += 1;
 			this.fetch();
 		});

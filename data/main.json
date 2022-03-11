@@ -609,6 +609,7 @@
 		"url": "ajax/map-companies.json",
 		"heading": "География компании",
 		"noClick": true,
+		"zoom": true,
 		"tabs": {
 			"horizontal": true,
 			"items": [

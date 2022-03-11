@@ -55,12 +55,12 @@ export default class MapService {
 		if (!window.isMapsApiLoaded) {
 			window.isMapsApiLoaded = true;	
 			this.loader.load().then((google) => {
-				console.log('map service');
+				//console.log('map service');
 				this.render(google);
 				window.mapLoad = google;
 			});
 		} else  {
-			console.log('map service уже');
+			//console.log('map service уже');
 			this.render(window.mapLoad);
 		}
 	}

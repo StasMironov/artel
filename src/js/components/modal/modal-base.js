@@ -102,7 +102,7 @@ export default class ModalBase {
 
 		
 		$('[data-modal-person]').on('click', ()=>{
-			console.log(1);
+			//console.log(1);
 		});
 
 		

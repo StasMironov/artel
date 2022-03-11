@@ -10,6 +10,7 @@
 	"dependencies": {
 		"@barba/core": "^2.9.7",
 		"@csstools/normalize.css": "^10.1.0",
+		"@googlemaps/markerclusterer": "^1.0.26",
 		"axios": "^0.24.0",
 		"chart.js": "^3.7.0",
 		"chartjs-plugin-datalabels": "^2.0.0",

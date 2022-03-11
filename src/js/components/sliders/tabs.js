@@ -309,17 +309,28 @@ export default {
     
     //скролл до блока
     let scroll = new SmoothScroll('[data-scroll]', {
-      speed: 300,
+      speed: 800,
       updateURL: false,
       header: "header",      
     });
+
+	let scrollUnique = new SmoothScroll('[data-scroll-unique]', {
+		speed: 800,
+		updateURL: false,
+		header: "header",
+		clip: true, // If true, adjust scroll distance to prevent abrupt stops near the bottom of the page
+		offset: 150  
+	  });
+
+
+	// Скролл с настраиваемой областью
 
     // маркер у активной ссылки
     const tabs = document.querySelectorAll('.tab');
     let lastClicked = tabs[0];
 
     let logScrollEvent = function (event) {
-      console.log('toggle:', event.detail.toggle);      
+      //console.log('toggle:', event.detail.toggle);      
       lastClicked.classList.remove('tab--active');
       event.detail.toggle.classList.add("tab--active");     
       lastClicked = event.detail.toggle; 

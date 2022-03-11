@@ -65,7 +65,7 @@ export default {
 				count.start();
 			});
 			element.addEventListener('sal:out', () => {
-				console.log(1);
+				//console.log(1);
 				count.reset();
 			});
 		}
