@@ -38,7 +38,6 @@ export default class Map {
 
 	load() {
 		if (!window.isMapsApiLoaded) {
-			console.log('map main');
 			window.isMapsApiLoaded = true;	
 			this.loader.load().then((google) => {
 				this.render(google);
@@ -46,7 +45,6 @@ export default class Map {
 			});
 		} else  {
 			this.render(window.mapLoad);
-			console.log('map main уже');
 		}
 	}
 
@@ -456,6 +454,49 @@ export default class Map {
 		return item;
 	}
 
+	setClusterIcon() {
+		let fillColor = '#999999';
+
+		const svg =
+
+			`<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M33.4362 16.4427C33.2265 14.2458 32.491 12.1317 31.292 10.2789C30.0929 8.4262 28.4655 6.88932 26.5472 5.79816C24.6289 4.707 22.4762 4.09364 20.2709 4.0099C18.0656 3.92616 15.8725 4.37451 13.877 5.31706C11.8815 6.2596 10.1422 7.66865 8.80615 9.42513C7.47004 11.1816 6.57639 13.2339 6.20069 15.4086C5.825 17.5833 5.97831 19.8164 6.64767 21.9194C7.31703 24.0223 8.48277 25.9332 10.0464 27.4906L18.6194 36.0798C18.7698 36.2314 18.9487 36.3518 19.1458 36.4339C19.3429 36.516 19.5543 36.5583 19.7679 36.5583C19.9814 36.5583 20.1928 36.516 20.3899 36.4339C20.587 36.3518 20.7659 36.2314 20.9163 36.0798L29.457 27.4906C30.8986 26.0598 32.0036 24.3261 32.6918 22.4152C33.3801 20.5043 33.6343 18.4641 33.4362 16.4427Z" fill="${fillColor}"/>
+			</svg>`;
+
+		const icon = {
+			url: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg),
+			strokeOpacity: 0,
+			fillOpacity: 1.0,
+			// origin: new google.maps.Point(0, 0), // origin
+			// anchor: new google.maps.Point(0, 0), // anchor
+			// size: new google.maps.Size(40, 40),
+		};
+
+		return icon;
+	}
+
+	rendererCluster() {
+		let that = this;
+
+		return {
+			render({ count, position }) {
+				return new google.maps.Marker({
+					label: {
+						text: String(count),
+						color: '#fff',
+						fontSize: '16px',
+						className: 'cluster'
+					},
+					position,
+					// icon: '/img/pin-cluster.svg',
+					icon: that.setClusterIcon(),
+					// adjust zIndex to be above other markers
+					zIndex: Number(google.maps.Marker.MAX_ZINDEX) + count,
+				});
+			}
+		}
+	}
+
 	filterMarkers(exclude = false, fit = false) {
 		// отображение / скрытие меток
 		this.bounds = new google.maps.LatLngBounds();
@@ -529,10 +570,7 @@ export default class Map {
 			}
 		}
 
-		
-
 		if(this.clusterMarkers) {
-			console.log(this.clusterMarkers);
             this.clusterMarkers.clearMarkers();
             this.clusterMarkers = null;
         }
@@ -542,16 +580,14 @@ export default class Map {
 
 		function onClusterClickHandler(clusterIcon, event) {
 			map.setZoom(7);
-			map.setCenter({ lat: clusterIcon.latLng.lat(), lng: clusterIcon.latLng.lng() });
-
-			
+			map.setCenter({ lat: clusterIcon.latLng.lat(), lng: clusterIcon.latLng.lng() });	
 		}
 		
 
 		// Add a marker clusterer to manage the markers.
-		this.clusterMarkers = new MarkerClusterer({ markers, map,zoomOnClick: true, maxZoom: 15, gridSize: 20, onClusterClick: onClusterClickHandler, imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
-		this.clusterMarkers.prototype.MARKER_CLUSTER_IMAGE_PATH_ =
-    "https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m";
-		console.log(this.clusterMarkers);
+		this.clusterMarkers = new MarkerClusterer({ markers, map,zoomOnClick: true, maxZoom: 15, gridSize: 20, onClusterClick: onClusterClickHandler, renderer: this.rendererCluster() });
+		
+
+		
 	}
 }
