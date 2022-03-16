@@ -9,12 +9,31 @@ import gsap from 'gsap';
 export default class Education {
 	constructor() {
 		this.form = document.querySelector('[data-work-ajax]');
-
 		if (!this.form) return;
+
+		this.wrapperNode = document.querySelector('[data-steps-career]');
+		if(!this.wrapperNode) return;
 
 		this.counter = 100;
 		this.temp;
 		this.inputs = new Input();
+
+
+		this.fields = {
+			work: {
+				fields: '[data-work]',
+				hidden: '[data-work-field]'
+			},
+			post: {
+				fields: '[data-post]',
+				hidden: '[data-post-field]'
+			},
+			date: {
+				fields: '[data-date-work]',
+				hidden: '[data-workdate-field]'
+			}
+		}
+
 		this.render();
 	}
 
@@ -25,6 +44,37 @@ export default class Education {
 		} else {
 			$('.wizard .content').animate({ height: $('.body.current').outerHeight() + 32}, "slow");
 		}
+	}
+
+	checkFields(fields,hiddenField){
+		let searchFields = this.wrapperNode.querySelectorAll(fields);
+		const hField = this.wrapperNode.querySelector(hiddenField);
+		
+		let valueFields = [];
+
+		searchFields.forEach((el)=>{
+				el.addEventListener('change', ()=>{
+					valueFields = [];
+					console.log('date');
+					searchFields.forEach((select)=>{
+						if(select.value.length >= 1){
+							valueFields.push(select.value);
+						}
+						
+					});
+					hField.value='';
+					hField.value = valueFields;
+							
+				});
+
+				valueFields = [];
+				console.log('change Dom');
+				valueFields.push(el.value);
+				hField.value='';
+				hField.value = valueFields;
+		});
+
+		//console.log(valueFields);
 	}
 
 	render() {
@@ -52,7 +102,10 @@ export default class Education {
 					parentBox.remove();
 					let lastEl = $('[data-work-card]').last();
 					$(lastEl).get(0).scrollIntoView(false);
-					this.resizeJquerySteps(false) 
+					this.resizeJquerySteps(false);
+					this.checkFields(this.fields.work.fields, this.fields.work.hidden);
+					this.checkFields(this.fields.post.fields, this.fields.post.hidden);
+					this.checkFields(this.fields.date.fields, this.fields.date.hidden);
 				});
 			})
 
@@ -62,6 +115,9 @@ export default class Education {
 		});
 
 		$(window).trigger("custom-work");
+		this.checkFields(this.fields.work.fields, this.fields.work.hidden);
+		this.checkFields(this.fields.post.fields, this.fields.post.hidden);
+		this.checkFields(this.fields.date.fields, this.fields.date.hidden);
 	}
 
 	fetch() {
@@ -107,6 +163,8 @@ export default class Education {
 				delay: 0.5
 			});
             new Datepicker();
-			
+			this.checkFields(this.fields.work.fields, this.fields.work.hidden);
+			this.checkFields(this.fields.post.fields, this.fields.post.hidden);
+			this.checkFields(this.fields.date.fields, this.fields.date.hidden);
 	}
 }

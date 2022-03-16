@@ -25,6 +25,11 @@ export default {
 
 		const progressLine = document.createElement('div');
 		progressLine.setAttribute('class', 'progress-step');
+	
+		// const selectEducation = $('[data-education-select]').siblings();
+
+
+		
 
 		let step;
 		var form = $('[data-steps-career]');
@@ -75,7 +80,6 @@ export default {
 
 				$('.wizard .content').animate({ height: $('.body.current').outerHeight() }, "slow");
 
-
 			},
 			onStepChanging: function (event, currentIndex, newIndex){
 				if (newIndex<currentIndex){
@@ -87,6 +91,7 @@ export default {
 				if(fieldValidate()){
 					curIdx = newIndex;
 					resizeJquerySteps(newIndex);
+					//console.log(hFieldEducation);
 					return true;
 				}
 
@@ -143,6 +148,7 @@ export default {
 			}
 		}
 
+	
 		$(window).resize(debounce(100, () => {
 			250, resizeJquerySteps(curIdx, true);
 		}));

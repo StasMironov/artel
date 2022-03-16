@@ -9,7 +9,7 @@
                     "theme": "on-green",
                     "id": "1-filter-form-select-m-10",
                     "name": "1-filter-form-select-m-10",
-                    "attr": "data-form-select",
+                    "attr": "data-education-select",
                     "placeholder": "Образование",
                     "autocomplete":"off",
                     "options": [
@@ -33,7 +33,8 @@
                 "required": true,
                 "theme": "white",
                 "label": "Специальность",
-                "autocomplete":"off"
+                "autocomplete":"off",
+                "attr": "data-profession"
             }        ,
         "datepicker": {
             "datepicker": true,
@@ -41,7 +42,7 @@
             "name": "datepicker-name-2",
             "theme": "white",
             "label": "Годы обучения",
-            "attr": "data-some-attr",
+            "attr": "data-date",
             "dropdownStart": {
                 "select": true,
                 "id": "101-datepicker2-select-1",
@@ -253,7 +254,8 @@
             "name": "103-form-input",
             "theme": "white",
             "label": "Наличие сертификатов",
-            "autocomplete":"off"
+            "autocomplete":"off",
+            "attr": "data-certificate"
         }  ,
         "delete": {
             "text": "Удалить",
