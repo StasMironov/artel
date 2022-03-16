@@ -316,6 +316,29 @@ export default {
 
 	// Скролл с настраиваемой областью
 
+	
+
+	
+
+    // маркер у активной ссылки
+    const tabs = document.querySelectorAll('.tab');
+    let lastClicked = tabs[0];
+
+
+	//console.log(lastClicked);
+
+    let logScrollEvent = function (event) {
+		if($('[data-scroll-unique]')){
+			$('[data-scroll-unique]').removeClass("tab--active");
+		}		
+      lastClicked.classList.remove('tab--active');
+      event.detail.toggle.classList.add("tab--active");     
+      lastClicked = event.detail.toggle; 
+    };
+    
+    document.addEventListener('scrollStart', logScrollEvent, false);
+
+
 	$('[data-scroll-unique]').on('click', (e)=>{
 		e.preventDefault();
 		// определяем высоту экрана
@@ -326,23 +349,12 @@ export default {
         const blockHeight = document.querySelector('#production').offsetHeight;
         // определяем координату нижней границы div, к которому нужно скролить
         const blockBottomPosition = blockTopPosition + blockHeight - screenHeight;
-        // скроллим с помощью scrollTop к координате нижней границы div и анимируем сие действие
         $("html,body").animate({"scrollTop":blockBottomPosition + 60},'slow'); 
+		tabs.forEach((element)=>{
+			element.classList.remove('tab--active');
+		})
+		e.currentTarget.classList.add('tab--active');
 	});
-
-	
-
-    // маркер у активной ссылки
-    const tabs = document.querySelectorAll('.tab');
-    let lastClicked = tabs[0];
-
-    let logScrollEvent = function (event) {
-      //console.log('toggle:', event.detail.toggle);      
-      lastClicked.classList.remove('tab--active');
-      event.detail.toggle.classList.add("tab--active");     
-      lastClicked = event.detail.toggle; 
-    };
-    
-    document.addEventListener('scrollStart', logScrollEvent, false);
 	},
+	
 };

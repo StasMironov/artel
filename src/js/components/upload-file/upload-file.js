@@ -22,15 +22,21 @@ const uploadFile = {
 					const fileType = fileStringToArray.pop().toUpperCase();
 					let fileSize;
 
+					console.log(file.size);
 
 					if (file.size <= maxSize * 1000000) {
 						if (file.size > 1000000) {
+							console.log('Превышает');
 							fileSize = Math.round(file.size / 1000000) + 'Mb'
 						} else {
+							console.log('Не превышает');
 							fileSize = Math.round(file.size / 1000) + 'Kb'
 						}
+
+						
 					} else {
 						starter.closest('form').pristine.addError(starter, input.dataset.sizeMessage);
+					
 						return
 					}
 					const fileContainer = document.createElement('div');
