@@ -11,9 +11,30 @@ export default class Education {
 		this.form = document.querySelector('[data-education-ajax]');
 		if (!this.form) return;
 
+		this.wrapperNode = document.querySelector('[data-steps-career]');
+		if(!this.wrapperNode) return;
+
+
 		this.counter = 100;
 		this.temp;
 		this.inputs = new Input();
+
+		this.fields = {
+			profession: {
+				fields: '[data-profession]',
+				hidden: '[data-profession-field]'
+			},
+			certificate: {
+				fields: '[data-certificate]',
+				hidden: '[data-certificate-field]'
+			},
+			date: {
+				fields: '[data-date]',
+				hidden: '[data-eddate-field]'
+			}
+		}
+
+
 		this.render();
 	}
 
@@ -23,6 +44,92 @@ export default class Education {
 		} else {
 			$('.wizard .content').animate({ height: $('.body.current').outerHeight() + 32}, "slow");
 		}
+	}
+
+	checkFields(fields,hiddenField){
+		let searchFields = this.wrapperNode.querySelectorAll(fields);
+		const hField = this.wrapperNode.querySelector(hiddenField);
+		
+		let valueFields = [];
+
+		searchFields.forEach((el)=>{
+				el.addEventListener('change', ()=>{
+					valueFields = [];
+					console.log('date');
+					searchFields.forEach((select)=>{
+						if(select.value.length >= 1){
+							valueFields.push(select.value);
+						}
+						
+					});
+					hField.value='';
+					hField.value = valueFields;
+							
+				});
+
+				valueFields = [];
+				console.log('change Dom');
+				valueFields.push(el.value);
+				hField.value='';
+				hField.value = valueFields;
+		});
+
+		//console.log(valueFields);
+	}
+
+	// checkProfField(changeContent = false){
+	// 	let fieldsProf = this.wrapperNode.querySelectorAll('[data-profession]');
+	// 	const hFieldProf = this.wrapperNode.querySelector('[data-profession-field]');
+	// 	hFieldProf.value='';
+	// 	let valueFields = [];
+		
+	// 	console.log(hFieldProf);
+
+	// 	fieldsProf.forEach((el)=>{
+	// 		if(!changeContent){
+	// 			el.addEventListener('change', ()=>{
+	// 				valueFields = [];
+	// 				fieldsProf.forEach((field)=>{
+	// 					valueFields.push(field.value.trim());
+	// 				});
+	// 				hFieldProf.value = valueFields;
+	// 				// console.log(hFieldEducation);
+	// 			});
+	// 		} else {
+	// 			valueFields.push(el.value.trim());
+	// 			hFieldProf.value = valueFields;
+	// 		}
+	// 	});
+	// }
+
+	checkEdSelect(changeContent = false){
+		const hFieldEducation = this.wrapperNode.querySelector('[data-education-field]');
+		hFieldEducation.value = '';
+		let valueSelect = [];
+		let selects = this.wrapperNode.querySelectorAll('[data-education-select]');
+
+		selects.forEach((el)=>{
+			if(!changeContent){
+				el.addEventListener('change', ()=>{
+					valueSelect = [];
+					
+					selects.forEach((select)=>{
+						if(select.value.length >= 1){
+							valueSelect.push(select.value);
+						}
+						
+					});
+					
+						hFieldEducation.value = valueSelect;
+						console.log(hFieldEducation);		
+				});
+			} else {
+				if(el.value.length >= 1){
+					valueSelect.push(el.value);
+					hFieldEducation.value = valueSelect;
+				}
+			}
+		});
 	}
 
 
@@ -36,7 +143,6 @@ export default class Education {
 		this.btnAddEducations = this.form.querySelector('[data-btn-education]');
 
 		this.btnAddEducations.addEventListener('click', (e)=>{	
-			//console.log('t');
 			this.counter += 1;
 			this.fetch();
 		});
@@ -52,6 +158,11 @@ export default class Education {
 					let lastEl = $('[data-ed-card]').last();
 					$(lastEl).get(0).scrollIntoView(false);
 					this.resizeJquerySteps(false);
+					this.checkEdSelect(true);
+					// this.checkProfField(true);
+					this.checkFields(this.fields.profession.fields, this.fields.profession.hidden);
+					this.checkFields(this.fields.certificate.fields, this.fields.certificate.hidden);
+					this.checkFields(this.fields.date.fields, this.fields.date.hidden);
 				});
 			})
 
@@ -61,6 +172,11 @@ export default class Education {
 		});
 
 		$(window).trigger("custom");
+		this.checkEdSelect();
+		//this.checkProfField();
+		this.checkFields(this.fields.profession.fields, this.fields.profession.hidden);
+		this.checkFields(this.fields.certificate.fields, this.fields.certificate.hidden);
+		this.checkFields(this.fields.date.fields, this.fields.date.hidden);
 	}
 
 	fetch() {
@@ -105,6 +221,11 @@ export default class Education {
 				autoAlpha: 1,
 				delay: 0.5
 			});
-			
+
+		this.checkEdSelect();
+		// this.checkProfField();
+		this.checkFields(this.fields.profession.fields, this.fields.profession.hidden);
+		this.checkFields(this.fields.certificate.fields, this.fields.certificate.hidden);
+		this.checkFields(this.fields.date.fields, this.fields.date.hidden);
 	}
 }

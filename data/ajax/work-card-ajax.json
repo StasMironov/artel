@@ -5,14 +5,16 @@
         "id": "form-1-input-111",
         "name": "form-1-input-111",
         "theme": "white",
-        "label": "Место работы"
+        "label": "Место работы",
+        "attr": "data-work"
     },
     "field_post": {
         "input": true,
         "id": "form-1-input-222",
         "name": "form-1-input-222",
         "theme": "white",
-        "label": "Должность"
+        "label": "Должность",
+        "attr": "data-post"
     },
     "datepicker": {
         "datepicker": true,
@@ -20,7 +22,7 @@
         "name": "datepicker-name-2",
         "theme": "white",
         "label": "Время работы",
-        "attr": "data-some-attr",
+        "attr": "data-date-work",
         "checkbox_date": {
             "checkbox": true,
             "id": "date-work-1",

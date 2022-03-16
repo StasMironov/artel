@@ -213,6 +213,12 @@
         },
         {
           "href": true,
+          "scroll_to": "#internal-control",
+          "text": "Внутренний контроль",
+          "title": "Внутренний контроль"
+        },
+        {
+          "href": true,
           "scroll_to": "#docs",
           "text": "Внутренние документы",
           "title": "Внутренние документы"
@@ -528,7 +534,8 @@
           }
         }
       }
-    ]
+    ],
+    "scroll_target": "internal-control"
   },
   "sliderDocs": {
     "heading": "Отчеты об устойчивом развитии",

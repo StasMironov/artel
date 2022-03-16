@@ -679,6 +679,57 @@
             "name": "form-career",
             "method": "POST",
             "action": "#",
+            "fields": [
+              {
+                "type": "hidden",
+                "name": "education-hidden",
+                "input": true,
+                "id": "education-hidden",
+                "attr":"data-education-field"
+              },
+              {
+                "type": "hidden",
+                "name": "profession-hidden",
+                "input": true,
+                "id": "profession-hidden",
+                "attr":"data-profession-field"
+              },
+              {
+                "type": "hidden",
+                "name": "certificate-hidden",
+                "input": true,
+                "id": "certificate-hidden",
+                "attr":"data-certificate-field"
+              },
+              {
+                "type": "hidden",
+                "name": "date-hidden",
+                "input": true,
+                "id": "date-hidden",
+                "attr":"data-eddate-field"
+              },
+              {
+                "type": "hidden",
+                "name": "work-hidden",
+                "input": true,
+                "id": "work-hidden",
+                "attr":"data-work-field"
+              },
+              {
+                "type": "hidden",
+                "name": "post-hidden",
+                "input": true,
+                "id": "post-hidden",
+                "attr":"data-post-field"
+              },
+              {
+                "type": "hidden",
+                "name": "work-date-hidden",
+                "input": true,
+                "id": "work-date-hidden",
+                "attr":"data-workdate-field"
+              }
+            ],
             "tabs": [
               {
                 "component": "^card-modal-step",
@@ -857,7 +908,7 @@
                           "theme": "on-green",
                           "id": "filter-form-select-m-33",
                           "name": "filter-form-select-m-33",
-                          "attr": "data-form-select",
+                          "attr": "data-education-select",
                           "placeholder": "Образование",
                           "autocomplete": "off",
                           "options": [
@@ -880,7 +931,8 @@
                       "theme": "white",
                       "required": true,
                       "label": "Специальность",
-                      "autocomplete": "off"
+                      "autocomplete": "off",
+                      "attr": "data-profession"
                     },
                     "datepicker": {
                       "datepicker": true,
@@ -888,7 +940,7 @@
                       "name": "datepicker-name-2",
                       "theme": "white",
                       "label": "Годы обучения",
-                      "attr": "data-some-attr",
+                      "attr": "data-date",
                       "dropdownStart": {
                         "select": true,
                         "id": "datepicker22-select-1",
@@ -1100,7 +1152,8 @@
                       "theme": "white",
                       "required": false,
                       "label": "Наличие сертификатов",
-                      "autocomplete": "off"
+                      "autocomplete": "off",
+                      "attr": "data-certificate"
                     },
                     "trigger": {
                       "attr": "data-add-education",
@@ -1135,7 +1188,8 @@
                       "name": "form-1-input-111",
                       "theme": "white",
                       "label": "Место работы",
-                      "autocomplete": "off"
+                      "autocomplete": "off",
+                      "attr": "data-work"
                     },
                     "field_post": {
                       "input": true,
@@ -1143,7 +1197,8 @@
                       "name": "form-1-input-222",
                       "theme": "white",
                       "label": "Должность",
-                      "autocomplete": "off"
+                      "autocomplete": "off",
+                      "attr": "data-post"
                     },
                     "datepicker": {
                       "datepicker": true,
@@ -1151,7 +1206,7 @@
                       "name": "datepicker-name-3",
                       "theme": "white",
                       "label": "Время работы",
-                      "attr": "data-some-attr",
+                      "attr": "data-date-work",
                       "checkbox_date": {
                         "checkbox": true,
                         "id": "date-work-1",
@@ -1398,6 +1453,7 @@
                         "accept": ".doc,.docx,.txt,.pdf",
                         "placeholder": "",
                         "max_size": 10,
+                        "required": true,
                         "icon": {
                           "name": "24/download-2",
                           "size": "24"
