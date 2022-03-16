@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import Slider from './constructor';
-import { isDesktop } from '../../utils/breakpoints';
+import { isDesktop, isMob, isTablet} from '../../utils/breakpoints';
 import SmoothScroll from 'smooth-scroll';
 
 export default {
@@ -328,9 +328,9 @@ export default {
 	//console.log(lastClicked);
 
     let logScrollEvent = function (event) {
-		if($('[data-scroll-unique]')){
-			$('[data-scroll-unique]').removeClass("tab--active");
-		}		
+		// if($('[data-scroll-unique]')){
+		// 	$('[data-scroll-unique]').removeClass("tab--active");
+		// }		
       lastClicked.classList.remove('tab--active');
       event.detail.toggle.classList.add("tab--active");     
       lastClicked = event.detail.toggle; 
@@ -349,7 +349,15 @@ export default {
         const blockHeight = document.querySelector('#production').offsetHeight;
         // определяем координату нижней границы div, к которому нужно скролить
         const blockBottomPosition = blockTopPosition + blockHeight - screenHeight;
-        $("html,body").animate({"scrollTop":blockBottomPosition + 60},'slow'); 
+
+		if(!isMob()){
+			$("html,body").animate({"scrollTop":blockBottomPosition + 60},'slow'); 
+		} else {
+			$("html,body").animate({"scrollTop":blockHeight - 100},'slow'); 
+		}
+        
+
+
 		tabs.forEach((element)=>{
 			element.classList.remove('tab--active');
 		})

@@ -58,7 +58,7 @@
                         {% endif %}
 
                         {% if card.info.block.text %}
-                            <div class="card-modal-step__text">
+                            <div class="card-modal-step__text" data-filetext="{{card.info.block.text}}">
                                 {{ card.info.block.text }}
                             </div>
                         {% endif %}
@@ -98,7 +98,7 @@
                         </span>
                     {% endif %}
                     {% if card.trigger.text %}
-                        <div class="card-modal-step__txt">
+                        <div class="card-modal-step__txt" >
                             {{card.trigger.text}}
                         </div>
                     {% endif %}

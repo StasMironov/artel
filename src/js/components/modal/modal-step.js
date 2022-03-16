@@ -92,6 +92,13 @@ export default {
 					curIdx = newIndex;
 					resizeJquerySteps(newIndex);
 					//console.log(hFieldEducation);
+
+					if($('[data-filetext]')){
+						console.log($('[data-filetext]').hasClass('error'));
+						if($('[data-filetext]').hasClass('error')){
+							return false;
+						}
+					}
 					return true;
 				}
 
@@ -117,7 +124,7 @@ export default {
 			onFinished: function (event, currentIndex)
 			{
 				if(fieldValidate()){
-					window.dispatchEvent(new CustomEvent('submit.formPopup'));
+				//	window.dispatchEvent(new CustomEvent('submit.formPopup'));
 				}
 			}
 		});

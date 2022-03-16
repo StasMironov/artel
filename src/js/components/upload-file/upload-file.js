@@ -10,6 +10,8 @@ const uploadFile = {
 		const inputs = document.querySelectorAll('[data-upload-file]');
 
 		starters.forEach(function(starter, index){
+			const fileText = $('[data-filetext]');
+			const tempFileText = $('[data-filetext]').text();
 			starter.addEventListener('change', (e) => {
 				if(starter.files.length) {
 					const previewContainer = starter.closest('[data-upload-parent]');
@@ -20,25 +22,34 @@ const uploadFile = {
 					const fileStringToArray = file.name.split('.');
 					const fileName = fileStringToArray.slice(0, fileStringToArray.length - 2).join('.');
 					const fileType = fileStringToArray.pop().toUpperCase();
+					const errorMessage = input.dataset.errorsize;
+					
 					let fileSize;
 
-					console.log(file.size);
+					console.log(fileText);
+
 
 					if (file.size <= maxSize * 1000000) {
 						if (file.size > 1000000) {
-							console.log('Превышает');
 							fileSize = Math.round(file.size / 1000000) + 'Mb'
 						} else {
-							console.log('Не превышает');
 							fileSize = Math.round(file.size / 1000) + 'Kb'
 						}
 
+						console.log('Не превышает');
+						console.log(fileText);
+						$(fileText).text(tempFileText);
+						$(fileText).removeClass('error');
 						
 					} else {
-						starter.closest('form').pristine.addError(starter, input.dataset.sizeMessage);
+						$(fileText).text(errorMessage);
+						$(fileText).addClass('error');
+						//starter.closest('form').pristine.addError(starter, input.dataset.sizeMessage);
 					
 						return
 					}
+
+
 					const fileContainer = document.createElement('div');
 					fileContainer.classList.add('file-wrapper');
 					fileContainer.innerHTML = `<span class="icon" aria-hidden="true">` +

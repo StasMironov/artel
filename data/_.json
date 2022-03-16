@@ -1452,7 +1452,8 @@
                         "type": "file",
                         "accept": ".doc,.docx,.txt,.pdf",
                         "placeholder": "",
-                        "max_size": 10,
+                        "max_size": 2,
+                        "sizeMessage": "Файл превышает 2Mb, пожалуйста, загрузите другой файл",
                         "icon": {
                           "name": "24/download-2",
                           "size": "24"
