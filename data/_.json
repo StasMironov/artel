@@ -1453,7 +1453,6 @@
                         "accept": ".doc,.docx,.txt,.pdf",
                         "placeholder": "",
                         "max_size": 10,
-                        "required": true,
                         "icon": {
                           "name": "24/download-2",
                           "size": "24"
