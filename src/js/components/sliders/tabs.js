@@ -328,7 +328,9 @@ export default {
 	//console.log(lastClicked);
 
     let logScrollEvent = function (event) {
-	  tabs[0].classList.remove('tab--active');
+		if($('[data-scroll-unique]')){
+			$('[data-scroll-unique]').removeClass("tab--active");
+		}		
       lastClicked.classList.remove('tab--active');
       event.detail.toggle.classList.add("tab--active");     
       lastClicked = event.detail.toggle; 
