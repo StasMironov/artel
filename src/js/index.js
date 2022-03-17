@@ -64,7 +64,7 @@ const inputs = new Input();
 
 window.addEventListener('load', () => {
 
-	new Preloader();
+	// new Preloader();
 	// Init after page is loaded
 });
 
