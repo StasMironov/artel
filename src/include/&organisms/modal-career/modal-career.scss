@@ -25,6 +25,21 @@
 
 	&__form {
 		flex: 1;
+		
+
+		
+	}
+
+	&__answer {
+		display: none;
+		max-width: rem(400);
+		width: 100%;
+		margin-right: auto;
+		color: $color-white;
+
+		& > :last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	&__inner {
@@ -66,9 +81,6 @@
 		@include media-breakpoint-down(sm) {
 			margin-bottom: rem(37);
 		}
-
-		
-
 	}
 
 
@@ -97,6 +109,18 @@
 				bottom: rem(0);
 			}
 		}
+	}
+
+	&.is-sent .modal-career__answer {
+		display: block;
+	}
+
+	&.is-sent .modal-career__inner{
+		display: none;
+	}
+
+	&.is-sent .modal-career__title {
+		display: none;
 	}
 	
 }

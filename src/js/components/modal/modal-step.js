@@ -84,6 +84,13 @@ export default {
 
 				$('.wizard .content').animate({ height: $('.body.current').outerHeight() }, "slow");
 
+
+				let answer = document.createElement('div');
+				answer.classList.add("modal-career__answer");
+				answer.setAttribute('data-form-answer','');
+				form.append(answer);
+			
+
 			},
 			onStepChanging: function (event, currentIndex, newIndex){
 				if (newIndex<currentIndex){

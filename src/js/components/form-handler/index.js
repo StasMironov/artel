@@ -88,8 +88,12 @@ export default class FormHandler {
 
 		// 	answerContainer.appendChild(caption);
 		// }
+		
 
 		this.form.classList.add('is-sent');
+		if($(this.form).closest('.modal-career')){
+			$(this.form).closest('.modal-career').addClass('is-sent');
+		}
 
 		window.dispatchEvent(new CustomEvent('form:sent'));
 

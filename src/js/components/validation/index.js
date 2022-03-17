@@ -22,9 +22,9 @@ export default {
 						e.preventDefault();
 						console.log('valid submit');
 
-						// window.dispatchEvent(
-						// 	new CustomEvent('form:submit', { detail: e })
-						// );
+						window.dispatchEvent(
+							new CustomEvent('form:submit', { detail: e })
+						);
 					}
 				});
 
