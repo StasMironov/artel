@@ -55,7 +55,6 @@ export default class Education {
 		searchFields.forEach((el)=>{
 				el.addEventListener('change', ()=>{
 					valueFields = [];
-					console.log('date');
 					searchFields.forEach((select)=>{
 						if(select.value.length >= 1){
 							valueFields.push(select.value);
@@ -73,34 +72,7 @@ export default class Education {
 				hField.value='';
 				hField.value = valueFields;
 		});
-
-		//console.log(valueFields);
 	}
-
-	// checkProfField(changeContent = false){
-	// 	let fieldsProf = this.wrapperNode.querySelectorAll('[data-profession]');
-	// 	const hFieldProf = this.wrapperNode.querySelector('[data-profession-field]');
-	// 	hFieldProf.value='';
-	// 	let valueFields = [];
-		
-	// 	console.log(hFieldProf);
-
-	// 	fieldsProf.forEach((el)=>{
-	// 		if(!changeContent){
-	// 			el.addEventListener('change', ()=>{
-	// 				valueFields = [];
-	// 				fieldsProf.forEach((field)=>{
-	// 					valueFields.push(field.value.trim());
-	// 				});
-	// 				hFieldProf.value = valueFields;
-	// 				// console.log(hFieldEducation);
-	// 			});
-	// 		} else {
-	// 			valueFields.push(el.value.trim());
-	// 			hFieldProf.value = valueFields;
-	// 		}
-	// 	});
-	// }
 
 	checkEdSelect(changeContent = false){
 		const hFieldEducation = this.wrapperNode.querySelector('[data-education-field]');
@@ -120,8 +92,7 @@ export default class Education {
 						
 					});
 					
-						hFieldEducation.value = valueSelect;
-						console.log(hFieldEducation);		
+						hFieldEducation.value = valueSelect;		
 				});
 			} else {
 				if(el.value.length >= 1){
@@ -173,7 +144,6 @@ export default class Education {
 
 		$(window).trigger("custom");
 		this.checkEdSelect();
-		//this.checkProfField();
 		this.checkFields(this.fields.profession.fields, this.fields.profession.hidden);
 		this.checkFields(this.fields.certificate.fields, this.fields.certificate.hidden);
 		this.checkFields(this.fields.date.fields, this.fields.date.hidden);
@@ -223,7 +193,6 @@ export default class Education {
 			});
 
 		this.checkEdSelect();
-		// this.checkProfField();
 		this.checkFields(this.fields.profession.fields, this.fields.profession.hidden);
 		this.checkFields(this.fields.certificate.fields, this.fields.certificate.hidden);
 		this.checkFields(this.fields.date.fields, this.fields.date.hidden);
