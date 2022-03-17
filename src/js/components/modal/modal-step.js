@@ -133,14 +133,16 @@ export default {
 			{
 
 				let checkFile = function(){
-					if($('[data-filetext]')){
-						if($('[data-filetext]').hasClass('error')){
+					if($(form).find('[data-filetextres]') && $(form).find('[data-upload-file]')){
+						if($(form).find('[data-filetextres]').hasClass('error')){
 							return false;
 						} else {
 							return true;
 						}
 					}
 				}
+
+				console.log(checkFile());
 
 				if(fieldValidate() && checkFile()){
 					console.log(true);

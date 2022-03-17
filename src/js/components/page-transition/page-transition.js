@@ -97,7 +97,7 @@ export default class PageTransition {
 		let that = this;
 
         barba.hooks.before(()=>{
-            console.log('stop server');
+            // console.log('stop server');
         });
 
         barba.hooks.beforeOnce(()=>{
@@ -128,12 +128,6 @@ export default class PageTransition {
             }
     
         });
-
-
-        // barba.hooks.afterEnter((data) => {
-        //     console.log('stop server')
-        //     if(window.devServer) window.devServer.start();
-        // });
 		
 
 		barba.init({
@@ -146,13 +140,13 @@ export default class PageTransition {
               {
                 sync: false,
                 before() {
-                    console.log('stop server');
+                    // console.log('stop server');
                     if(window.devServer) window.devServer.stop();
 				},
                 leave: ({ current }) => 
                   this.leaveAnimation(current.container.querySelector("main")),
                 afterEnter: () => {
-                    console.log('start server');
+                    // console.log('start server');
 					if(window.devServer) window.devServer.start();
 				},
                 once: ({ next }) => this.enterAnimation(next.container.querySelector("main")),

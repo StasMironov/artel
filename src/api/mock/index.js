@@ -33,7 +33,6 @@ export default class DevServer {
 
 	stop() {
 		if (this.server) {
-			
 			this.server.shutdown();
 			this.server = undefined;
 			console.log(this.server);
