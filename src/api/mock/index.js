@@ -4,9 +4,10 @@ import dealers from '../../public/ajax/contacts/success.json';
 
 const requestTime = 1000;
 
-class MirageServer {
+export default class DevServer {
 	constructor() {
 		this.server = null;
+		this.init();
 	}
 
 	start(environment = 'development') {
@@ -32,12 +33,18 @@ class MirageServer {
 
 	stop() {
 		if (this.server) {
+			
 			this.server.shutdown();
 			this.server = undefined;
+			console.log(this.server);
 		}
+	}
+
+	init(){
+		this.start();
 	}
 }
 
-const server = new MirageServer();
+// const server = new MirageServer();
 
-export default server;
+// export default server;

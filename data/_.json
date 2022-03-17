@@ -677,8 +677,9 @@
           "form": {
             "id": "form-career",
             "name": "form-career",
+            "action": "/ajax/contacts/?repo=atol-education.frontend&status=success",
             "method": "POST",
-            "action": "#",
+            "attr": "data-ajax-form",
             "fields": [
               {
                 "type": "hidden",
@@ -1453,6 +1454,7 @@
                         "accept": ".doc,.docx,.txt,.pdf",
                         "placeholder": "",
                         "max_size": 2,
+                        "typeErrorMessage": "Неверный тип файла",
                         "sizeMessage": "Файл превышает 2Mb, пожалуйста, загрузите другой файл",
                         "icon": {
                           "name": "24/download-2",

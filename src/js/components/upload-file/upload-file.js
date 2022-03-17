@@ -8,10 +8,19 @@ const uploadFile = {
 
 		const previewLabels = document.querySelectorAll('[data-upload-label]');
 		const inputs = document.querySelectorAll('[data-upload-file]');
+		//console.log(starters);
 
 		starters.forEach(function(starter, index){
 			const fileText = $('[data-filetext]');
 			const tempFileText = $('[data-filetext]').text();
+			let typeText;
+			
+			if($(starter).attr('data-typetext')){
+				typeText = $(starter).attr('data-typetext');
+				
+			}
+			
+			
 			starter.addEventListener('change', (e) => {
 				if(starter.files.length) {
 					const previewContainer = starter.closest('[data-upload-parent]');
@@ -23,10 +32,18 @@ const uploadFile = {
 					const fileName = fileStringToArray.slice(0, fileStringToArray.length - 2).join('.');
 					const fileType = fileStringToArray.pop().toUpperCase();
 					const errorMessage = input.dataset.errorsize;
+					let fileExtension = input.getAttribute('accept'); 
+					fileExtension = fileExtension.split(',')
+					// console.log(fileType.toLowerCase());
 					
 					let fileSize;
 
-					console.log(fileText);
+					// fileExtension.forEach(type=>{
+					// 	console.log(type);
+					// })
+
+					
+
 
 
 					if (file.size <= maxSize * 1000000) {
@@ -36,8 +53,6 @@ const uploadFile = {
 							fileSize = Math.round(file.size / 1000) + 'Kb'
 						}
 
-						console.log('Не превышает');
-						console.log(fileText);
 						$(fileText).text(tempFileText);
 						$(fileText).removeClass('error');
 						
@@ -46,7 +61,30 @@ const uploadFile = {
 						$(fileText).addClass('error');
 						//starter.closest('form').pristine.addError(starter, input.dataset.sizeMessage);
 					
-						return
+						if (file.size > 1000000) {
+							fileSize = Math.round(file.size / 1000000) + 'Mb'
+						} else {
+							fileSize = Math.round(file.size / 1000) + 'Kb'
+						}
+						//return
+					}
+
+					
+					if ($.inArray(`.${fileType.toLowerCase()}`, fileExtension) == -1) {
+						console.log($('[data-typetext]'));
+						$(fileText).text(typeText);
+						$(fileText).addClass('error');
+
+						if(file.size <= maxSize * 1000000){
+							$(fileText).text(errorMessage + ' ' + typeText);
+						}
+					} else {
+						if(file.size <= maxSize * 1000000){
+							$(fileText).text(tempFileText);
+							$(fileText).removeClass('error');
+						} else {
+							$(fileText).text(errorMessage);
+						}
 					}
 
 
@@ -74,6 +112,8 @@ const uploadFile = {
 					button.addEventListener('click', function () {
 						fileContainer.remove();
 						input.value = '';
+						$(fileText).text(tempFileText);
+						$(fileText).removeClass('error');
 						previewLabel.classList.remove('visually-hidden')
 					});
 					previewContainer.appendChild(fileContainer);

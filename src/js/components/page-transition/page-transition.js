@@ -96,7 +96,12 @@ export default class PageTransition {
 	initBarba() {
 		let that = this;
 
+        barba.hooks.before(()=>{
+            console.log('stop server');
+        });
+
         barba.hooks.beforeOnce(()=>{
+           
             if (sessionStorage.getItem('preloader') !== 'initialize') {
                  document.querySelector('.preloader').classList.remove('hidden');
             } 
@@ -124,18 +129,32 @@ export default class PageTransition {
     
         });
 
+
+        // barba.hooks.afterEnter((data) => {
+        //     console.log('stop server')
+        //     if(window.devServer) window.devServer.start();
+        // });
 		
 
 		barba.init({
             debug: true,
+            prefetchIgnore: true,
             // prevent: ({ el }) => el.hasAttribute('data-prevent-barba-link'),
 			// prefetchIgnore: !!process.env.API,
             // cacheIgnore: true, // fix vue map init
             transitions: [
               {
                 sync: false,
+                before() {
+                    console.log('stop server');
+                    if(window.devServer) window.devServer.stop();
+				},
                 leave: ({ current }) => 
                   this.leaveAnimation(current.container.querySelector("main")),
+                afterEnter: () => {
+                    console.log('start server');
+					if(window.devServer) window.devServer.start();
+				},
                 once: ({ next }) => this.enterAnimation(next.container.querySelector("main")),
                 enter: ({ next }) => {
                     this.enterAnimation(next.container.querySelector("main"));
