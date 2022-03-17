@@ -125,6 +125,10 @@
 		@include media-breakpoint-up(md) {
 			max-width: rem(240);
 		}
+
+		&.error {
+			color: $color-red;
+		}
 	}
 
 	&__content {

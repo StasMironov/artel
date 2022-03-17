@@ -4,7 +4,10 @@
 		   {% if field.name %} name="{{ field.name }}"{% endif %}{% if field.pattern %} pattern="{{ field.pattern }}"{% endif %}{% if field.type == 'tel' %} data-parsley-pattern="/[0-9]{11,15}/i" data-mask-tel {% if field.mask_list %} data-mask='{% for item in field.mask_list %}{{item}},{% endfor %}' {% endif %} {% endif %}{% if field.type == 'email' %} data-parsley-pattern="/^([\w.*-]+@([\w-]+\.)+[\w-]{2,4})?$/" {% endif %}{% if field.attr %} {{ field.attr }}{% endif %}{% if field.autocomplete %} autocomplete="{{ field.autocomplete }}"{% endif %}{% if field.disabled %} disabled{% endif %}{% if field.required %} data-field-check required{% endif %}{% if field.value %} value="{{ field.value }}"{% endif %}{% if field.readonly %} readonly{% endif %}
 		   {% if field.required %} data-parsley-trigger="change"{% endif %} spellcheck="false" {% if field.type == 'file' %} accept="{{ field.accept }}" data-upload-file {% endif %}
 		{% if field.max_size %} data-max-size="{{ field.max_size }}" {% endif %}
-		{% if field.sizeMessage %}data-errorsize="{{field.sizeMessage}}"{% endif %}
+		{% if field.sizeMessage %} data-errorsize="{{field.sizeMessage}}"{% endif %}
+		{% if field.sizeMessage %} data-typetext="{{field.typeErrorMessage}}"{% endif %}
+		{% if field.filetext %} data-filetext="{{field.filetext}}"{% endif %}
+		
 		>
 	{% if field.label %}
         {% view '@field-label' with {

@@ -11,15 +11,16 @@ const uploadFile = {
 		//console.log(starters);
 
 		starters.forEach(function(starter, index){
-			const fileText = $('[data-filetext]');
-			const tempFileText = $('[data-filetext]').text();
+			const fileText = $(starter).closest('form').find('[data-filetextres]');
+			const tempFileText = $(starter).data('filetext');
+
+			
 			let typeText;
 			
 			if($(starter).attr('data-typetext')){
 				typeText = $(starter).attr('data-typetext');
 				
 			}
-			
 			
 			starter.addEventListener('change', (e) => {
 				if(starter.files.length) {
@@ -34,7 +35,6 @@ const uploadFile = {
 					const errorMessage = input.dataset.errorsize;
 					let fileExtension = input.getAttribute('accept'); 
 					fileExtension = fileExtension.split(',')
-					// console.log(fileType.toLowerCase());
 					
 					let fileSize;
 
@@ -71,7 +71,6 @@ const uploadFile = {
 
 					
 					if ($.inArray(`.${fileType.toLowerCase()}`, fileExtension) == -1) {
-						console.log($('[data-typetext]'));
 						$(fileText).text(typeText);
 						$(fileText).addClass('error');
 
@@ -119,6 +118,8 @@ const uploadFile = {
 					previewContainer.appendChild(fileContainer);
 					previewLabel.classList.add('visually-hidden')
 				}
+
+
 			})
 		});
 

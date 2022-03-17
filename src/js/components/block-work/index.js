@@ -55,7 +55,6 @@ export default class Education {
 		searchFields.forEach((el)=>{
 				el.addEventListener('change', ()=>{
 					valueFields = [];
-					console.log('date');
 					searchFields.forEach((select)=>{
 						if(select.value.length >= 1){
 							valueFields.push(select.value);
@@ -68,7 +67,6 @@ export default class Education {
 				});
 
 				valueFields = [];
-				console.log('change Dom');
 				valueFields.push(el.value);
 				hField.value='';
 				hField.value = valueFields;

@@ -9,7 +9,6 @@ export default {
 				'[data-parsley-validate]:not([data-parsley-initialized])'
 			);
 			$forms.each((index, form) => {
-				console.log(form);
 				const $form = $(form);
 				$form.parsley({
 					errorClass: 'parsley-error',
@@ -20,11 +19,29 @@ export default {
 					
 					if (form.hasAttribute('data-ajax-form')) {
 						e.preventDefault();
-						console.log('valid submit');
 
-						window.dispatchEvent(
-							new CustomEvent('form:submit', { detail: e })
-						);
+						if($(form).find('[data-filetextres]') && $(form).find('[data-upload-file]')){
+							let checkFile = function(){
+								if($(form).find('[data-filetextres]').hasClass('error')){
+									return false;
+								} else {
+									return true;
+								}
+							}
+
+							if(checkFile()){
+								window.dispatchEvent(
+									new CustomEvent('form:submit', { detail: e })
+								);
+							}
+						} else {
+							window.dispatchEvent(
+								new CustomEvent('form:submit', { detail: e })
+							);
+						}
+						
+
+						
 					}
 				});
 
