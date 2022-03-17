@@ -140,7 +140,7 @@ export default class PageTransition {
               {
                 sync: false,
                 before() {
-                    // console.log('stop server');
+                    console.log('stop server');
                     if(window.devServer) window.devServer.stop();
 				},
                 leave: ({ current }) => 
@@ -152,9 +152,9 @@ export default class PageTransition {
                 once: ({ next }) => this.enterAnimation(next.container.querySelector("main")),
                 enter: ({ next }) => {
                     this.enterAnimation(next.container.querySelector("main"));
-                    setTimeout(()=>{
+                    // setTimeout(()=>{
                         window.dispatchEvent(new CustomEvent("reinit"));
-                    }, 500)
+                    // }, 500)
                     this.initBarbaLinks();
                 },
                 requestError: (trigger, action, url, response) => {

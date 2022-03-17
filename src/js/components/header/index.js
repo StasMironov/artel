@@ -9,6 +9,7 @@ export default {
 		if (!header) return;
 		let classesToAdd = ['in-progress', 'show-header'];
 
+		
 		ScrollTrigger.create({
 			trigger: 'body',
 			start: 'top top',
