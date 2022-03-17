@@ -67,7 +67,6 @@ export default class Education {
 				});
 
 				valueFields = [];
-				console.log('change Dom');
 				valueFields.push(el.value);
 				hField.value='';
 				hField.value = valueFields;

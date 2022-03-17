@@ -14,7 +14,7 @@ export default class blockProduct {
 
 	render(node) {
 		if (this.supportsTouch) return;
-
+		
 		const topNode = node.querySelector('[data-pin-top]');
 		const progress = topNode.querySelector('[data-pin-progress]');
 		const sections = gsap.utils.toArray('[data-pin-section]');
@@ -95,7 +95,7 @@ export default class blockProduct {
 				topNode.style.position = '';
 				
 			}
-			window.dispatchEvent(new Event('resize'));
+			//window.dispatchEvent(new Event('resize'));
 		});
 
 		// console.log(document.querySelectorAll('[data-product-wrap]').getBoundingClientRect().top);

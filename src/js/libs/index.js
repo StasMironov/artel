@@ -3,6 +3,9 @@ import mask from './mask';
 import sal from './sal';
 import repeat from './repeat';
 import counter from './counter';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 
 export default {

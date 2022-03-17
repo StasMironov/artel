@@ -48,6 +48,7 @@ import DevServer from '../api/mock';
 import ChartCanvas from './components/chart-canvas';
 import uploadFile from './components/upload-file/upload-file';
 
+
 if (process.env.NODE_ENV === 'development') {
 	window.devServer = new DevServer();
 }
@@ -123,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	new FilterService();
-	new BlockProduct();
+	
 	new BlockHistory();
 
 	new Datepicker();
@@ -160,6 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	
 	window.addEventListener('resize', setVH, { passive: true });
 	setVH();
+
+	new BlockProduct();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -206,6 +209,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	window.dispatchEvent(new CustomEvent('init.modals'));
 	window.dispatchEvent(new CustomEvent('init.sliders'));
 	window.dispatchEvent(new CustomEvent('init.uploadFile'));
+
+	
 });
 
 window.addEventListener('reinit', () => {
