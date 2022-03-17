@@ -75,6 +75,8 @@ const uploadFile = {
 						$(fileText).addClass('error');
 
 						if(file.size <= maxSize * 1000000){
+							$(fileText).text(typeText);
+						} else {
 							$(fileText).text(errorMessage + ' ' + typeText);
 						}
 					} else {
