@@ -331,8 +331,8 @@ export default class Datepicker {
             let value = '';
 
             if (datepicker.onlyStart) {
-                value += `${dates.startMonth.toLowerCase()} ${dates.startYear}`;
-				placeholder.innerText = `${value} по н.в`;
+                value += `${dates.startMonth.toLowerCase()} ${dates.startYear} по н.в`;
+				placeholder.innerText = `${value}`;
             } else {
                 value += `${dates.startMonth.toLowerCase()} ${dates.startYear} – ${dates.endMonth.toLowerCase()} ${dates.endYear}`;
 				placeholder.innerText = value;
