@@ -25,11 +25,16 @@ export default {
 		SliderTeam.init();
 		SliderTabs.init();
 		SliderComment.init();
-		SliderPhoto.init();
+		
 		SliderLogo.init();
 		SliderPeriod.init();
 		SliderPress.init();
 		SliderSimilar.init();
 		SliderFacilities.init();
+
+
+		setTimeout(() => {
+			SliderPhoto.init();
+		}, 400);
 	},
 };

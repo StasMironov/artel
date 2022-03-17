@@ -48,7 +48,9 @@
 							<div class="slider-press__right">
 								<div class="slider-press__img">
 									{% view '@image' with {
-										image: slide.img
+										image: slide.img|merge({
+											disable_lazy: true
+										})
 									} %}
 								</div>
 							</div>

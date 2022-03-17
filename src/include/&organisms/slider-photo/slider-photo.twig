@@ -5,7 +5,9 @@
 					<div class="swiper-slide">
                         <div class="slider-photo__img">
                             {% view '@image' with {
-                                image: slide.img
+                                image: slide.img|merge({
+								disable_lazy: true
+							})
                             } %}
                         </div>
 					</div>
