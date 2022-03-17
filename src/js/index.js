@@ -44,12 +44,12 @@ import {devices} from './utils/breakpoints';
 
 // Api
 
-import server from '../api/mock';
+import DevServer from '../api/mock';
 import ChartCanvas from './components/chart-canvas';
 import uploadFile from './components/upload-file/upload-file';
 
-if (process.env.API) {
-	//server.start();
+if (process.env.NODE_ENV === 'development') {
+	window.devServer = new DevServer();
 }
 
 window.breakpoints = devices;

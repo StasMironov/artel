@@ -6,7 +6,7 @@
             </div>
         {% endif %}
         {% if modal.form %}
-            <form id="{{modal.form.id}}" method="get" class="modal-career__form" data-parsley-validate action="{{modal.form.action}}" {% if modal.attr %}{{modal.attr}}{% endif %} novalidate="novalidate">
+            <form id="{{modal.form.id}}" class="modal-career__form" {% if modal.form.method %} method="{{ modal.form.method }}"{% endif %} data-parsley-validate action="{{modal.form.action}}" {% if modal.attr %}{{modal.attr}}{% endif %} data-ajax-form novalidate="novalidate">
                 <div class="modal-career__inner" >
                     {% if modal.form.tabs %}
                         {% for card in modal.form.tabs %}
@@ -30,7 +30,9 @@
                         {% endfor %}
                     {% endif %}
                 </div>
+                {# <div class="modal-career__answer" data-form-answer></div> #}
             </form>
         {% endif %}
+       
     </div>
 </div>

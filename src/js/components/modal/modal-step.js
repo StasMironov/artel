@@ -45,11 +45,15 @@ export default {
 				$(field).parsley().validate();
 			});
 
-			const erorFields = $('.body.current').find('.parsley-error')
+			const erorFields = $('.body.current').find('.parsley-error');
 
-			if (erorFields.length <= 0) {
+			
+
+			if (erorFields.length <= 0 ) {
 				return true;
 			}
+
+			
 		}
 
 		form.children("div").steps({
@@ -80,6 +84,13 @@ export default {
 
 				$('.wizard .content').animate({ height: $('.body.current').outerHeight() }, "slow");
 
+
+				let answer = document.createElement('div');
+				answer.classList.add("modal-career__answer");
+				answer.setAttribute('data-form-answer','');
+				form.append(answer);
+			
+
 			},
 			onStepChanging: function (event, currentIndex, newIndex){
 				if (newIndex<currentIndex){
@@ -88,17 +99,14 @@ export default {
 					return true;
 				}
 
+			
+
 				if(fieldValidate()){
 					curIdx = newIndex;
 					resizeJquerySteps(newIndex);
 					//console.log(hFieldEducation);
 
-					if($('[data-filetext]')){
-						console.log($('[data-filetext]').hasClass('error'));
-						if($('[data-filetext]').hasClass('error')){
-							return false;
-						}
-					}
+				
 					return true;
 				}
 
@@ -123,8 +131,22 @@ export default {
 			},
 			onFinished: function (event, currentIndex)
 			{
-				if(fieldValidate()){
-				//	window.dispatchEvent(new CustomEvent('submit.formPopup'));
+
+				let checkFile = function(){
+					if($('[data-filetext]')){
+						if($('[data-filetext]').hasClass('error')){
+							return false;
+						} else {
+							return true;
+						}
+					}
+				}
+
+				if(fieldValidate() && checkFile()){
+					console.log(true);
+					window.dispatchEvent(new CustomEvent('submit.formPopup'));
+				} else {
+					console.log(false);
 				}
 			}
 		});

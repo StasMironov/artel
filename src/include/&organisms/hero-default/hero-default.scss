@@ -550,4 +550,14 @@
 			}
 		}	
 	}
+
+	a {
+		color: rgba($color-black, 0.4);
+		@include defaultTransition(color);
+
+		@include touchLessHover {
+			color: $color-black;
+		}
+	}
+	
 }

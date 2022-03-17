@@ -9,6 +9,7 @@ export default {
 				'[data-parsley-validate]:not([data-parsley-initialized])'
 			);
 			$forms.each((index, form) => {
+				console.log(form);
 				const $form = $(form);
 				$form.parsley({
 					errorClass: 'parsley-error',
@@ -16,8 +17,10 @@ export default {
 				});
 
 				$form.on('submit', (e) => {
+					
 					if (form.hasAttribute('data-ajax-form')) {
 						e.preventDefault();
+						console.log('valid submit');
 
 						window.dispatchEvent(
 							new CustomEvent('form:submit', { detail: e })
