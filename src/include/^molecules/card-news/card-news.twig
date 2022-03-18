@@ -11,6 +11,16 @@
 		{% endif %}
 		{% if card.image %}
 			<div class="card-news__image">
+			{% if card.disable_lazy %}
+				{% view '@image' with {
+					image: card.image|merge({
+						"fill": true,
+						"width": "440",
+						"height": "240",
+						"disable_lazy": true
+					})
+				}%}
+			{% else %}
 				{% view '@image' with {
 					image: card.image|merge({
 						"fill": true,
@@ -18,6 +28,8 @@
 						"height": "240"
 					})
 				}%}
+			{% endif %}
+				
 			</div>
 		{% endif %}
 	</div>

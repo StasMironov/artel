@@ -23,7 +23,6 @@ class Strategy {
 		this.scrollTriggerId = 'strategy';
 
 		if (isDesktop()) {
-			console.log('pc');
 			this.init();
 		}
 		window.addEventListener(

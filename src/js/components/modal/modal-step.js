@@ -142,13 +142,13 @@ export default {
 					}
 				}
 
-				console.log(checkFile());
+				//console.log(checkFile());
 
 				if(fieldValidate() && checkFile()){
-					console.log(true);
+					//console.log(true);
 					window.dispatchEvent(new CustomEvent('submit.formPopup'));
 				} else {
-					console.log(false);
+					//console.log(false);
 				}
 			}
 		});
