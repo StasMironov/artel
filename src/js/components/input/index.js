@@ -18,9 +18,9 @@ export default class Input {
 			//     return;
 			// }
 
-			if (input.value !== '') {
-				this.removeEmpty(input);
-			}
+			// if (input.value !== '') {
+			// 	this.removeEmpty(input);
+			// }
 
 			input.addEventListener('change', this.handler.bind(this));
 			input.addEventListener('input', this.handler.bind(this));

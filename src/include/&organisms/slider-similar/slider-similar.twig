@@ -10,7 +10,9 @@
 				{% for slide in slider_similar.items %}
 					<div class="swiper-slide slider-similar__item">
                         {% view '^card-news' with {
-                            card: slide
+                            card: slide|merge({
+								disable_lazy: true
+							})
                         }%}
                         <div class="slider-similar__border"></div>
 					</div>

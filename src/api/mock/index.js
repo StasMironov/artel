@@ -35,7 +35,7 @@ export default class DevServer {
 		if (this.server) {
 			this.server.shutdown();
 			this.server = undefined;
-			console.log(this.server);
+			//console.log(this.server);
 		}
 	}
 
