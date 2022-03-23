@@ -128,7 +128,7 @@
 
 	&__info {
 		@include media-breakpoint-only(md) {
-			padding: 0 0;
+			padding: 0 0 rem(190);
 			width: 100%;
 			background-color: $color-white;
 		}
