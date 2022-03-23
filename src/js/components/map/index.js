@@ -579,7 +579,8 @@ export default class Map {
 		let map = this.map;
 
 		function onClusterClickHandler(clusterIcon, event) {
-			map.setZoom(7);
+			console.log(map.getZoom());
+			map.setZoom(map.getZoom() + 1);
 			map.setCenter({ lat: clusterIcon.latLng.lat(), lng: clusterIcon.latLng.lng() });	
 		}
 		
