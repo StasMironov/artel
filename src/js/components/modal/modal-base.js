@@ -92,7 +92,9 @@ export default class ModalBase {
 			},
 			onClose: (modal) => {
 				this.onClose(modal);
-				$('.header').removeClass('show-header mf-index');
+				setTimeout(()=>{
+					$('.header').removeClass('show-header mf-index');
+				}, 500);
 				window._enableScroll();
 				this.state = false;
 			},

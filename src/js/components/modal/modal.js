@@ -31,7 +31,10 @@ const Modal = {
 			},
 			onClose: (modal) => {
 				palyer.stop();
-				$('.header').removeClass('show-header mf-index');
+				setTimeout(()=>{
+					$('.header').removeClass('show-header mf-index');
+				}, 500);
+			
 				window._enableScroll();
 			},
 		});

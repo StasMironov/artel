@@ -29,7 +29,9 @@ const Modal = {
 				window.dispatchEvent(new CustomEvent('modal.open'));
 			},
 			onClose: (modal) => {
-				$('.header').removeClass('show-header mf-index');
+				setTimeout(()=>{
+					$('.header').removeClass('show-header mf-index');
+				}, 500);
 				window._enableScroll();
 				window.dispatchEvent(new CustomEvent('modal.close'));
 				//window.ls.update();
