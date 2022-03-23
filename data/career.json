@@ -205,31 +205,26 @@
           "text": "Корпоративная культура",
           "title": "Корпоративная культура",
           "theme": "white"
-        },
-        {
-          "href": true,
-          "scroll_to": "#job",
-          "text": "Вакансии",
-          "title": "Вакансии",
-          "theme": "white"
         }
       ]
     },
     "action": [
       {
-        "href": "javascript:void(0);",
+        "href": "#job",
         "text": "Вакансии",
         "title": "Вакансии",
         "theme": "white",
+        "scroll_to": true,
         "icon": {
           "name": "24/arrow-up-right"
         }
       },
       {
-        "href": "javascript:void(0);",
+        "href": "#student",
         "text": "Я студент",
         "title": "Я студент",
         "theme": "outline-white",
+        "scroll_to": true,
         "icon": {
           "name": "24/arrow-up-right"
         }
@@ -806,7 +801,8 @@
           "label": "лет в Artel"
         }
       }
-    ]
+    ],
+    "scroll_target": "student"
   },
   "block_offers": {
     "title": "Вакансии",

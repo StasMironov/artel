@@ -714,7 +714,7 @@ export default class MapService {
 		let map = this.map;
 
 		function onClusterClickHandler(clusterIcon, event) {
-			map.setZoom(7);
+			map.setZoom(map.getZoom() + 1);
 			map.setCenter({ lat: clusterIcon.latLng.lat(), lng: clusterIcon.latLng.lng() });	
 		}
 		
@@ -754,7 +754,7 @@ export default class MapService {
 
 		$('[data-reset]').on('click', () => {
 			this.inputVal = false;
-			this.filterMarkers(false, false, true);
+			this.stateMarks(this.inputVal);
 			this.setCluster();
 		});
 	}

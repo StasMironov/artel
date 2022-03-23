@@ -21,7 +21,7 @@
 	</div>
 {% else %}
 	{% if button.href %}
-		<a href="{{ button.href }}"
+		<a {% if button.scroll_to %}data-scroll{% endif %} href="{{ button.href }}"
 		   class="button
 			{% if button.class %} {{ button.class }}{% endif %}
 			{% if button.size %} button--{{ button.size }}{% endif %}
