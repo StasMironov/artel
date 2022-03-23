@@ -374,6 +374,8 @@
 
 		&--active {
 			color: rgba($color-black, 0.4);
+			// pointer-events: none;
+			cursor: auto;
 		}
 
 		#{$root}--transparent & {

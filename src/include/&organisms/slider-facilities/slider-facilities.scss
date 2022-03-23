@@ -43,7 +43,7 @@
 		margin-bottom: rem(24);
 
 		@include media-breakpoint-down(sm) {
-			min-height: rem(62);
+			min-height: rem(93);
 			margin-bottom: rem(16);
 		}
 	}
@@ -105,15 +105,22 @@
 
 	&__activity {
 		@include media-breakpoint-down(sm) {
-			min-height: rem(77);
+			min-height: rem(100);
 		}
 	}
 
 	&__factoid {		
 		width: 50%;
+
 		.factoid__label {
 			@include media-breakpoint-down(sm) {
 				max-width: rem(159);
+			}
+		}
+
+		&:first-child {
+			@include media-breakpoint-down(sm) {
+				width: 34%;
 			}
 		}
 	}
@@ -150,6 +157,7 @@
 		@include media-breakpoint-down(sm) {
 			top: rem(68);
 			left: rem(-2);
+			padding-top: rem(222);
 		}
 	}
 }
