@@ -724,7 +724,8 @@ export default class MapService {
 		
 
 		// Add a marker clusterer to manage the markers.
-		this.clusterMarkers = new MarkerClusterer({ markers, map,zoomOnClick: true, maxZoom: 15, gridSize: 20, onClusterClick: onClusterClickHandler, renderer: this.rendererCluster()});
+		this.clusterMarkers = new MarkerClusterer({
+			markers, map,zoomOnClick: true, maxZoom: 15, gridSize: 20, renderer: this.rendererCluster()});
 	}
 
 	triggerHandler() {
