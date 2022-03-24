@@ -118,9 +118,19 @@
 			}
 		}
 
+		.factoid__main {
+			white-space: nowrap;
+		}
+
 		&:first-child {
 			@include media-breakpoint-down(sm) {
-				width: 34%;
+				//width: 34%;
+			}
+		}
+
+		&:nth-child(2){
+			@include media-breakpoint-down(sm) {
+				//width: initial
 			}
 		}
 	}
