@@ -714,17 +714,18 @@ export default class MapService {
 		let map = this.map;
 
 		function onClusterClickHandler(clusterIcon, event) {
-			map.setZoom(map.getZoom() + 3.5);
+			map.setZoom(map.getZoom() + 2.5);
 
 			if(map.getZoom() <= 10) {
-				map.setZoom(map.getZoom() + 2);
+				map.setZoom(map.getZoom() + 1);
 			}
 			map.setCenter({ lat: clusterIcon.latLng.lat(), lng: clusterIcon.latLng.lng() });	
 		}
 		
 
 		// Add a marker clusterer to manage the markers.
-		this.clusterMarkers = new MarkerClusterer({ markers, map,zoomOnClick: true, maxZoom: 15, gridSize: 20, onClusterClick: onClusterClickHandler, renderer: this.rendererCluster()});
+		this.clusterMarkers = new MarkerClusterer({
+			markers, map,zoomOnClick: true, maxZoom: 15, gridSize: 20, renderer: this.rendererCluster()});
 	}
 
 	triggerHandler() {
