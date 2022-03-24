@@ -1,6 +1,6 @@
 import { Loader } from 'google-maps';
 import PerfectScrollbar from 'perfect-scrollbar';
-import { MarkerClusterer } from "@googlemaps/markerclusterer";
+import { MarkerClusterer } from '@googlemaps/markerclusterer';
 import Swiper from 'swiper/swiper-bundle';
 import gsap from 'gsap';
 
@@ -38,16 +38,15 @@ export default class Map {
 
 	load() {
 		if (!window.isMapsApiLoaded) {
-			window.isMapsApiLoaded = true;	
+			window.isMapsApiLoaded = true;
 			this.loader.load().then((google) => {
 				this.render(google);
 				window.mapLoad = google;
 			});
-		} else  {
+		} else {
 			this.render(window.mapLoad);
 		}
 	}
-
 
 	render(google) {
 		this.mapOptions = {
@@ -258,9 +257,6 @@ export default class Map {
 				this.filterMarkers(false, true);
 			}
 		});
-
-
-		
 	}
 
 	addMarker(markerData, index) {
@@ -296,8 +292,6 @@ export default class Map {
 				this.map.setZoom(12);
 			});
 		}
-
-		
 	}
 
 	setIcon({ type }) {
@@ -311,7 +305,7 @@ export default class Map {
 		}
 		const svg = `<svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27.4362 13.0009C27.2265 10.8039 26.491 8.68979 25.292 6.83705C24.0929 4.98431 22.4655 3.44742 20.5472 2.35627C18.6289 1.26511 16.4762 0.651746 14.2709 0.568008C12.0656 0.48427 9.87252 0.932617 7.87703 1.87516C5.88153 2.81771 4.14225 4.22676 2.80615 5.98323C1.47004 7.73971 0.576387 9.792 0.200694 11.9667C-0.174999 14.1414 -0.0216884 16.3745 0.64767 18.4775C1.31703 20.5804 2.48277 22.4913 4.04637 24.0487L12.6194 32.6379C12.7698 32.7895 12.9487 32.9099 13.1458 32.992C13.3429 33.0741 13.5543 33.1164 13.7679 33.1164C13.9814 33.1164 14.1928 33.0741 14.3899 32.992C14.587 32.9099 14.7659 32.7895 14.9163 32.6379L23.457 24.0487C24.8986 22.6179 26.0036 20.8842 26.6918 18.9733C27.3801 17.0624 27.6343 15.0222 27.4362 13.0009Z" fill="${fillColor}"/>		<path fill-rule="evenodd" clip-rule="evenodd" d="M20.7507 20.5581H13.7371C9.88303 20.5581 6.75073 17.3986 6.75073 13.5581C6.75073 9.70402 9.89665 6.55811 13.7507 6.55811C17.6048 6.55811 20.7507 9.70402 20.7507 13.5581V20.5581ZM18.204 13.5581V18.0114H13.7507C11.2994 18.0114 9.29743 15.9958 9.29743 13.5581C9.29743 11.1204 11.2994 9.1048 13.7507 9.1048C16.2021 9.1048 18.204 11.1204 18.204 13.5581Z" fill="white"/></svg>`;
 		const icon = {
-			url: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg),
+			url: `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`,
 			strokeOpacity: 0,
 			fillOpacity: 1.0,
 			origin: new google.maps.Point(0, 0), // origin
@@ -455,16 +449,14 @@ export default class Map {
 	}
 
 	setClusterIcon() {
-		let fillColor = '#999999';
+		const fillColor = '#999999';
 
-		const svg =
-
-			`<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+		const svg = `<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M33.4362 16.4427C33.2265 14.2458 32.491 12.1317 31.292 10.2789C30.0929 8.4262 28.4655 6.88932 26.5472 5.79816C24.6289 4.707 22.4762 4.09364 20.2709 4.0099C18.0656 3.92616 15.8725 4.37451 13.877 5.31706C11.8815 6.2596 10.1422 7.66865 8.80615 9.42513C7.47004 11.1816 6.57639 13.2339 6.20069 15.4086C5.825 17.5833 5.97831 19.8164 6.64767 21.9194C7.31703 24.0223 8.48277 25.9332 10.0464 27.4906L18.6194 36.0798C18.7698 36.2314 18.9487 36.3518 19.1458 36.4339C19.3429 36.516 19.5543 36.5583 19.7679 36.5583C19.9814 36.5583 20.1928 36.516 20.3899 36.4339C20.587 36.3518 20.7659 36.2314 20.9163 36.0798L29.457 27.4906C30.8986 26.0598 32.0036 24.3261 32.6918 22.4152C33.3801 20.5043 33.6343 18.4641 33.4362 16.4427Z" fill="${fillColor}"/>
 			</svg>`;
 
 		const icon = {
-			url: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg),
+			url: `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`,
 			strokeOpacity: 0,
 			fillOpacity: 1.0,
 			// origin: new google.maps.Point(0, 0), // origin
@@ -476,7 +468,7 @@ export default class Map {
 	}
 
 	rendererCluster() {
-		let that = this;
+		const that = this;
 
 		return {
 			render({ count, position }) {
@@ -485,7 +477,7 @@ export default class Map {
 						text: String(count),
 						color: '#fff',
 						fontSize: '16px',
-						className: 'cluster'
+						className: 'cluster',
 					},
 					position,
 					// icon: '/img/pin-cluster.svg',
@@ -493,14 +485,14 @@ export default class Map {
 					// adjust zIndex to be above other markers
 					zIndex: Number(google.maps.Marker.MAX_ZINDEX) + count,
 				});
-			}
-		}
+			},
+		};
 	}
 
 	filterMarkers(exclude = false, fit = false) {
 		// отображение / скрытие меток
 		this.bounds = new google.maps.LatLngBounds();
-		let clusterArr = [];
+		const clusterArr = [];
 
 		for (let i = 0; i < this.markers.length; i++) {
 			if (this.markers[i].region !== this.currentRegion) {
@@ -512,36 +504,33 @@ export default class Map {
 					this.markers[i].setVisible(true);
 
 					this.bounds.extend(this.markers[i].position);
+				} else if (this.activeIndex === i) {
+					this.markers[i].setVisible(true);
 				} else {
-					if (this.activeIndex === i) {
-						this.markers[i].setVisible(true);
-					} else {
-						this.markers[i].setVisible(false);
-						this.markers[i].setMap(null);
-					}
+					this.markers[i].setVisible(false);
+					this.markers[i].setMap(null);
 				}
 				clusterArr.push(this.markers[i]);
 			}
 		}
 
 		const dataZoom = document.querySelector('[data-zoom]');
-		//let bounds = this.bounds;
-		let ne = this.bounds.getNorthEast(); // Coords of the northeast corner
-		let sw = this.bounds.getSouthWest(); // Coords of the southwest corner
+		// let bounds = this.bounds;
+		const ne = this.bounds.getNorthEast(); // Coords of the northeast corner
+		const sw = this.bounds.getSouthWest(); // Coords of the southwest corner
 
 		function smoothZoom(map, max, cnt) {
 			if (cnt >= max) {
-				return;
 			} else {
-				let z = google.maps.event.addListener(
+				const z = google.maps.event.addListener(
 					map,
 					'zoom_changed',
-					function (event) {
+					(event) => {
 						google.maps.event.removeListener(z);
 						smoothZoom(map, max, cnt + 1);
 					}
 				);
-				setTimeout(function () {
+				setTimeout(() => {
 					map.setZoom(cnt);
 					map.setCenter({ lat: ne.lat(), lng: sw.lng() });
 				}, 80); // 80ms is what I found to work well on my system -- it might not work well on all systems
@@ -557,43 +546,31 @@ export default class Map {
 					smoothZoom(this.map, 6, this.map.getZoom()); //
 				}
 			}
-		} else {
-			if (!exclude && fit) {
-				this.map.fitBounds(this.bounds);
+		} else if (!exclude && fit) {
+			this.map.fitBounds(this.bounds);
 
-			const visibleCount = this.markers.filter(el => el.visible).length;
-				if (visibleCount === 1) { // TODO временное решение
-						setTimeout(() => {
-								this.map.setZoom(4);
-						}, 100)
-				}
+			const visibleCount = this.markers.filter((el) => el.visible).length;
+			if (visibleCount === 1) {
+				// TODO временное решение
+				setTimeout(() => {
+					this.map.setZoom(4);
+				}, 100);
 			}
 		}
 
-		if(this.clusterMarkers) {
-            this.clusterMarkers.clearMarkers();
-            this.clusterMarkers = null;
-        }
-
-		let markers = clusterArr;
-		let map = this.map;
-
-		function onClusterClickHandler(clusterIcon, event) {
-			console.log(map.getZoom());
-			map.setZoom(map.getZoom() + 3.5);
-
-			if(map.getZoom() <= 10) {
-				map.setZoom(map.getZoom() + 2);
-			}
-			
-			map.setCenter({ lat: clusterIcon.latLng.lat(), lng: clusterIcon.latLng.lng() });	
+		if (this.clusterMarkers) {
+			this.clusterMarkers.clearMarkers();
+			this.clusterMarkers = null;
 		}
-		
 
 		// Add a marker clusterer to manage the markers.
-		this.clusterMarkers = new MarkerClusterer({ markers, map,zoomOnClick: true, maxZoom: 15, gridSize: 20, onClusterClick: onClusterClickHandler, renderer: this.rendererCluster() });
-		
-
-		
+		this.clusterMarkers = new MarkerClusterer({
+			markers: clusterArr,
+			map: this.map,
+			zoomOnClick: true,
+			maxZoom: 15,
+			gridSize: 20,
+			renderer: this.rendererCluster(),
+		});
 	}
 }
