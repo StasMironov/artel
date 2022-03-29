@@ -8,6 +8,9 @@ export default {
 		state: 0,
 	},
 	init() {
+		if(document.querySelector('[data-news-field]')){
+			var inputHiddenNews = document.querySelector('[data-news-field]');
+		}
 		const slider = new Slider({
 			init: true,
 			wrap: '[data-tabs]:not([data-tabs-timeline])',
@@ -73,6 +76,11 @@ export default {
 							tabs.forEach((tab, idx) => {
 								tab.addEventListener('click', (e) => {
 									e.preventDefault();
+									if(tab.dataset.tabVal){
+										console.log(tab.dataset.tabVal);
+										inputHiddenNews.value = tab.dataset.tabVal;
+										
+									}
 									tabs.forEach((tab) => {
 										tab.classList.remove('tab--active');
 									});
@@ -235,8 +243,10 @@ export default {
 							);
 
 							tabs.forEach((tab, idx) => {
+								
 								tab.addEventListener('click', (e) => {
 									e.preventDefault();
+									
 									tabs.forEach((tab) => {
 										tab.classList.remove('tab--active');
 									});
@@ -317,9 +327,6 @@ export default {
 	// Скролл с настраиваемой областью
 
 	
-
-	
-
     // маркер у активной ссылки
     const tabs = document.querySelectorAll('.tab');
     let lastClicked = tabs[0];

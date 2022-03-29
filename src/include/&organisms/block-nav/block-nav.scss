@@ -341,6 +341,7 @@
 	&__factoid {
 		position: relative;
 		max-width: rem(216);
+		width: 100%;
 
 		@include media-breakpoint-down(md) {
 			max-width: initial;

@@ -139,6 +139,8 @@ export default class Slider {
 		if (activeVideoNode) {
 			this.videoCheck(activeVideoNode);
 		}
+
+		
 	}
 
 	calcPrevNextIndex(direction = 'next') {

@@ -1,4 +1,4 @@
-<div class="block_career_cards container">
+<div class="block_career_cards container" {% if block_career_cards.scroll_target %}id="{{block_career_cards.scroll_target}}"{% endif %}>
 	<div class="block_career_cards__wrapper ">
 		<div class="block_career_cards__left">
 			{% if block_career_cards.heading %}

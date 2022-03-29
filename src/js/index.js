@@ -129,7 +129,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	new Datepicker();
 
-	document.body.classList.add('content-loaded');
+	setTimeout(()=>{
+		document.body.classList.add('content-loaded');
+	}, 500);
+
+	
 
 	$(function() {
 		// simulate the heavy page loading

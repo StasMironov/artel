@@ -51,8 +51,6 @@ export default {
 				//console.log(element);
 				const titleEl = element.querySelector('[data-article]');
 				const qtyEl = element.querySelector('[data-qty]');
-
-				console.log(titleEl);
 		
 				const showTl = gsap.timeline({
 					paused: true,

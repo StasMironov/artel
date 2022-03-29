@@ -320,13 +320,11 @@ export default class MapService {
 					this.cardWrap.classList.add('is-active'); // показ попапа с данными метки
 
 					this.activeIndex = index;
-					// console.log(this.activeIndex)
-					// console.log(marker);
 				//	this.excludeMarker(this.activeIndex); // true - исключаем все метки, кроме текущей
 				}
 
 				this.map.setCenter(marker.getPosition());
-				this.map.setZoom(6);
+				//this.map.setZoom(6);
 			});
 		}
 		}
@@ -725,7 +723,7 @@ export default class MapService {
 
 		// Add a marker clusterer to manage the markers.
 		this.clusterMarkers = new MarkerClusterer({
-			markers, map,zoomOnClick: true, maxZoom: 15, gridSize: 20, renderer: this.rendererCluster()});
+			markers, map,zoomOnClick: true, maxZoom: 15, gridSize: 20, minimumClusterSize: 2, renderer: this.rendererCluster(),});
 	}
 
 	triggerHandler() {

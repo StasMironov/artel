@@ -289,7 +289,7 @@ export default class Map {
 				}
 
 				this.map.setCenter(marker.getPosition());
-				this.map.setZoom(12);
+				//this.map.setZoom(12);
 			});
 		}
 	}
@@ -570,6 +570,7 @@ export default class Map {
 			zoomOnClick: true,
 			maxZoom: 15,
 			gridSize: 20,
+			minimumClusterSize: 2, 
 			renderer: this.rendererCluster(),
 		});
 	}

@@ -179,7 +179,8 @@
       "layout": "3",
       "items": [
         {
-          "href": "!#",
+          "href": true,
+          "scroll_to": "#work",
           "text": "Работа в Artel",
           "title": "Работа в Artel",
           "active": "true",
@@ -310,7 +311,8 @@
           "size": "104"
         }
       }
-    ]
+    ],
+    "scroll_target": "work"
   },
   "block_training": {
     "factoids": [
