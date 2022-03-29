@@ -135,7 +135,7 @@
 		}
 	},
 	"hero_default": {
-		"layout": "2",
+		"layout": "6",
 		"breadcrumbs": {
 			"theme": "white",
 			"items": [
@@ -180,6 +180,7 @@
 					"text": "Все новости",
 					"title": "Все новости",
 					"attr": "data-attr",
+					"attr_val": "all",
 					"active": "true",
 					"shift": true
 				},
@@ -187,12 +188,14 @@
 					"text": "События",
 					"title": "События",
 					"attr": "data-attr",
+					"attr_val": "event",
 					"shift": true
 				},
 				{
 					"text": "Социальная ответственность",
 					"title": "Социальная ответственность",
 					"attr": "data-attr",
+					"attr_val": "social",
 					"shift": true
 				}
 			]
@@ -344,6 +347,15 @@
 		],
 		"fields": [
 			{
+                "type": "hidden",
+                "name": "news-hidden",
+                "input": true,
+                "id": "news-hidden",
+                "attr":"data-news-field"
+              }
+		],
+		"select": 
+			{
 				"select": true,
 				"id": "filter-form-select-1",
 				"name": "filter-form-select-1",
@@ -375,8 +387,7 @@
 						"text": "2017"
 					}
 				]
-			}
-		],
+			},
 		"action": {
 			"text": "Смотреть все",
 			"theme": "gray"
