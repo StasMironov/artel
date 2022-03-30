@@ -17,10 +17,12 @@
         max-width: rem(620);
         width: 100%;
         opacity: 0;
+        @include line-clamp(24, 1.4, 5);
 
         @include media-breakpoint-down(sm) {
             font-size: rem(20);
             line-height: rem(27);
+            @include line-clamp(20, 1.4, 7);
         }
 
         #{$root}__slide.is-active & {
@@ -122,11 +124,11 @@
         display: flex;
 
         @include media-breakpoint-up(sm) {
-            min-height: rem(792);
+            min-height: rem(832);
         }
 
         @include media-breakpoint-up(md) {
-            min-height: rem(960);
+            min-height: rem(1024);
         }
 
         @include media-breakpoint-up(lg) {
@@ -229,7 +231,7 @@
             padding-top: rem(44);
             flex-direction: column;
             justify-content: space-between;
-            padding-bottom: rem(160);
+            padding-bottom: rem(112);
 
             @include media-breakpoint-down(md) {
                 padding-top: rem(285);
