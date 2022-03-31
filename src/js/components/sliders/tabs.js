@@ -9,7 +9,17 @@ export default {
 	},
 	init() {
 		if(document.querySelector('[data-news-field]')){
+			let tabsContainer = document.querySelector('[data-tab-container]');
 			var inputHiddenNews = document.querySelector('[data-news-field]');
+			let tabs = tabsContainer.querySelectorAll(
+				'[data-tab]'
+			);
+			
+			tabs.forEach((tab, idx) => {
+				if(tab.classList.contains('tab--active')){
+					inputHiddenNews.value = tab.dataset.tabVal
+				}
+			});
 		}
 		const slider = new Slider({
 			init: true,
