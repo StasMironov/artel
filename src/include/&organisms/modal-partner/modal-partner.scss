@@ -133,7 +133,7 @@
 			background-color: $color-white;
 		}
 		@include media-breakpoint-down(sm) {
-			padding: rem(40) rem(16) 0;
+			padding: rem(40) rem(16) rem(50);
 			background-color: $color-white;
 		}
 	}
