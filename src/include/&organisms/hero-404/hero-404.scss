@@ -83,6 +83,13 @@
 		@include media-breakpoint-up(lg) {
 			margin-right: rem(16);
 		}
+
+		@media only screen 
+		and (min-device-width : 375px) 
+		and (max-device-width : 667px) 
+		and (orientation : landscape) {
+			padding-top: rem(98);
+		}
 	}
 
 	&__number {
@@ -127,6 +134,14 @@
 			transition-delay: 1.2s !important;
     }
 
+
+	@media only screen 
+	and (min-device-width : 375px) 
+	and (max-device-width : 667px) 
+	and (orientation : landscape) {
+	margin-top: rem(16);
+	}
+
 		.button {
 			align-self: flex-start;
 
@@ -134,5 +149,8 @@
 				margin-top: rem(16);
 			}
 		}
+
+
+		
   }
 }
