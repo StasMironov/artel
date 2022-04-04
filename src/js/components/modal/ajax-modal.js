@@ -98,45 +98,6 @@ const Modal = {
 						ps.update();
 					})
 				);
-
-				/*if (document.querySelector('[data-ps]')) {
-					let wrapSubNode = document.querySelector('[data-ps]');
-					let ps = new PerfectScrollbar(wrapSubNode, {
-						wheelSpeed: 2,
-						wheelPropagation: true,
-						minScrollbarLength: 20,
-					});
-
-					if (isMob()) {
-						wrapSubNode.addEventListener('ps-scroll-y', () => {
-							if ($('.modal-partner__info').offset().top <= 0) {
-								$('[data-wrap-scroll]').addClass('scroll');
-							} else {
-								$('[data-wrap-scroll]').removeClass('scroll');
-							}
-						});
-
-						function iOS() {
-							return (
-								[
-									'iPad Simulator',
-									'iPhone Simulator',
-									'iPod Simulator',
-									'iPad',
-									'iPhone',
-									'iPod',
-								].includes(navigator.platform) ||
-								// iPad on iOS 13 detection
-								(navigator.userAgent.includes('Mac') &&
-									'ontouchend' in document)
-							);
-						}
-
-						if (iOS()) {
-							$('[data-wrap-scroll]').addClass('ios-scroll');
-						}
-					}
-				}*/
 			})
 			.catch((err) => {
 				console.log(`failed to fetch url (${url}): `, err);
