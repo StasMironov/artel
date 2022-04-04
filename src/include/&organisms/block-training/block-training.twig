@@ -1,4 +1,4 @@
-<div class="block-training" data-fade-in-up>
+<div class="block-training" {% if block.scroll_target %}id="{{block.scroll_target}}"{% endif %} data-fade-in-up>
     <div class="block-training__container container">
         <div class="block-training__wrp">
             {% if block.factoids %}

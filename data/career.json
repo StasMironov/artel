@@ -206,6 +206,13 @@
           "text": "Корпоративная культура",
           "title": "Корпоративная культура",
           "theme": "white"
+        },
+        {
+          "href": true,
+          "scroll_to": "#tren",
+          "text": "Тренинг",
+          "title": "Тренинг",
+          "theme": "white"
         }
       ]
     },
@@ -334,7 +341,8 @@
         "title": "Тренинги сотрудникам отдела продаж",
         "content": "<div>Test3</div>"
       }
-    ]
+    ],
+    "scroll_target": "tren"
   },
   "slider_comment": {
     "title": "Истории успеха ",
