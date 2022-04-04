@@ -74,7 +74,7 @@
     
 	&__description {
 		position: relative;
-		height: 100%;
+		height: 100vh;
 		overflow: hidden;
 		padding: 0 rem(150) 0 rem(112);
 		@include media-breakpoint-down(md) {
