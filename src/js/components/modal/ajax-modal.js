@@ -22,6 +22,7 @@ const Modal = {
 						modal.querySelector('[data-modal-ajax-container]')
 					);
 				}
+				
 				window._disableScroll();
 				setTimeout(()=>{
 					$('.header').addClass('show-header mf-index');
@@ -91,44 +92,12 @@ const Modal = {
 						minScrollbarLength: 120,
 				});
 
-				/*if (document.querySelector('[data-ps]')) {
-					let wrapSubNode = document.querySelector('[data-ps]');
-					let ps = new PerfectScrollbar(wrapSubNode, {
-						wheelSpeed: 2,
-						wheelPropagation: true,
-						minScrollbarLength: 20,
-					});
-
-					if (isMob()) {
-						wrapSubNode.addEventListener('ps-scroll-y', () => {
-							if ($('.modal-partner__info').offset().top <= 0) {
-								$('[data-wrap-scroll]').addClass('scroll');
-							} else {
-								$('[data-wrap-scroll]').removeClass('scroll');
-							}
-						});
-
-						function iOS() {
-							return (
-								[
-									'iPad Simulator',
-									'iPhone Simulator',
-									'iPod Simulator',
-									'iPad',
-									'iPhone',
-									'iPod',
-								].includes(navigator.platform) ||
-								// iPad on iOS 13 detection
-								(navigator.userAgent.includes('Mac') &&
-									'ontouchend' in document)
-							);
-						}
-
-						if (iOS()) {
-							$('[data-wrap-scroll]').addClass('ios-scroll');
-						}
-					}
-				}*/
+				window.addEventListener(
+					'resize',
+					debounce(100, () => {
+						ps.update();
+					})
+				);
 			})
 			.catch((err) => {
 				console.log(`failed to fetch url (${url}): `, err);
