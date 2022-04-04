@@ -4,8 +4,5 @@ node_modules/
 .vscode/
 .DS_Store
 
-package-lock.json
-yarn.lock
-
 src/scss/components.scss
 TODO
