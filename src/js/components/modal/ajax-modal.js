@@ -22,6 +22,7 @@ const Modal = {
 						modal.querySelector('[data-modal-ajax-container]')
 					);
 				}
+				
 				window._disableScroll();
 				setTimeout(()=>{
 					$('.header').addClass('show-header mf-index');
@@ -90,6 +91,13 @@ const Modal = {
 						wheelPropagation: true,
 						minScrollbarLength: 120,
 				});
+
+				window.addEventListener(
+					'resize',
+					debounce(100, () => {
+						ps.update();
+					})
+				);
 
 				/*if (document.querySelector('[data-ps]')) {
 					let wrapSubNode = document.querySelector('[data-ps]');

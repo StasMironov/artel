@@ -74,7 +74,8 @@
     
 	&__description {
 		position: relative;
-		height: 100vh;
+		min-height: 100vh;
+		height: 100%;
 		overflow: hidden;
 		padding: 0 rem(150) 0 rem(112);
 		@include media-breakpoint-down(md) {
@@ -84,6 +85,13 @@
 		@include media-breakpoint-down(sm) {
 			padding: rem(250) 0 0 0;
 		}
+
+		@media screen and (max-device-width: 767px) and (orientation: landscape) { 
+			height: 100%;
+			min-height: initial;
+		}
+
+		
 
 		.ps__rail-y {
 			right: rem(8) !important;
