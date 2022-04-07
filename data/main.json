@@ -608,7 +608,6 @@
 	"map": {
 		"url": "ajax/map-companies.json",
 		"heading": "География компании",
-		"noClick": true,
 		"zoom": true,
 		"tabs": {
 			"horizontal": true,
@@ -647,6 +646,11 @@
 				{
 					"text": "Азербайджан",
 					"attr": "data-region='az'",
+					"shift": true
+				},
+				{
+					"text": "Армения",
+					"attr": "data-region='ar'",
 					"shift": true
 				}
 			]
