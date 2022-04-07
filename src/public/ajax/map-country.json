@@ -41,6 +41,12 @@
 			"coords": [40.347675, 48.147228],
 			"type": "export",
 			"region": "az"
+		},
+		{
+			"id": "8",
+			"coords": [40.177628, 44.512546],
+			"type": "export",
+			"region": "ar"
 		}
 	]
 }

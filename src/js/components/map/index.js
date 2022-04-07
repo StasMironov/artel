@@ -190,10 +190,16 @@ export default class Map {
 		this.activeIndex = null;
 
 		this.cardClose.addEventListener('click', () => {
+			// this.cardWrap.classList.remove('is-active');
+			// this.filterMarkers(); // показ всех меток текущего региона
+			// this.map.fitBounds(this.bounds);
+			// this.activeIndex = null;
+
 			this.cardWrap.classList.remove('is-active');
 			this.filterMarkers(); // показ всех меток текущего региона
-			this.map.fitBounds(this.bounds);
-			this.activeIndex = null;
+			// this.stateMarks(this.inputVal);
+			this.map.setZoom(4);
+			this.activeIndex = null; // это нужно для возможности повторного нажатия на пин при закрытии карточки
 		});
 
 		this.ps = new PerfectScrollbar(this.cardContent, {
@@ -285,7 +291,7 @@ export default class Map {
 					this.cardWrap.classList.add('is-active'); // показ попапа с данными метки
 
 					this.activeIndex = index;
-					this.filterMarkers(true); // true - исключаем все метки, кроме текущей
+					//this.filterMarkers(true); // true - исключаем все метки, кроме текущей
 				}
 
 				this.map.setCenter(marker.getPosition());
