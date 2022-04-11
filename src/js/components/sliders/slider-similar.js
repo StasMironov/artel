@@ -14,7 +14,7 @@ export default {
 				allowTouchMove: true,
 				spaceBetween: 10,
 				speed: 1300,
-				loop: true,
+				// loop: true,
 				watchSlidesVisibility: true,
 				observer: true,
 				observeParents: true,

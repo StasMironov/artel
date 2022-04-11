@@ -345,11 +345,17 @@ export default {
 	//console.log(lastClicked);
 
     let logScrollEvent = function (event) {
+		console.log(event.detail.toggle);
+
+
 		if($('[data-scroll-unique]')){
 			$('[data-scroll-unique]').removeClass("tab--active");
 		}		
       lastClicked.classList.remove('tab--active');
-      event.detail.toggle.classList.add("tab--active");     
+	  if(!event.detail.toggle.classList.contains('button')){
+		   event.detail.toggle.classList.add("tab--active");   
+	  }
+       
       lastClicked = event.detail.toggle; 
     };
     

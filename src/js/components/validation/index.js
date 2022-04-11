@@ -1,5 +1,6 @@
 import 'parsleyjs';
 import './parsley-ru';
+import './parsley-uz';
 
 export default {
 	init() {
@@ -46,6 +47,7 @@ export default {
 				});
 
 				$form.attr('data-parsley-initialized', '');
+
 				window.Parsley.setLocale(`${$lang}`);
 			});
 		});
