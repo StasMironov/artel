@@ -1,6 +1,7 @@
 <div class="block_career_cards container" {% if block_career_cards.scroll_target %}id="{{block_career_cards.scroll_target}}"{% endif %}>
 	<div class="block_career_cards__wrapper ">
-		<div class="block_career_cards__left">
+		{% if block_career_cards.items|length > 0 %}
+			<div class="block_career_cards__left">
 			{% if block_career_cards.heading %}
 				<div class="block_career_cards__top" data-fade-in-up>
 					<p class="block_career_cards__heading h2">
@@ -28,6 +29,8 @@
 				{% endfor %}
 			</div>
 		</div>
+		{% endif %}
+		
 	</div>
 
 
