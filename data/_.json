@@ -677,7 +677,7 @@
           "form": {
             "id": "form-career",
             "name": "form-career",
-            "action": "/ajax/contacts/?repo=atol-education.frontend&status=success",
+            "action": "/ajax/contacts/?repo=artel.frontend&status=success",
             "method": "POST",
             "attr": "data-ajax-form",
             "fields": [
