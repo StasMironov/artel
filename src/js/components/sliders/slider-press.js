@@ -116,11 +116,12 @@ export default {
 									$(pagSlide.swiper.$el[0]).addClass('overlay');
 								}
 							}
-							
+							showContent(this.slides[this.activeIndex]);
 							setTimeout(()=>{
-								if (typeof(this.slides[this.activeIndex]) != "undefined") {
-									showContent(this.slides[this.activeIndex]);
-								}
+								// showContent(this.slides[this.activeIndex]);
+								// if (typeof(this.slides[this.activeIndex]) != "undefined") {
+								// 	//showContent(this.slides[this.activeIndex]);
+								// }
 							}, 100);
 						},
 					},
