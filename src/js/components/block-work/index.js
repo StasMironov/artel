@@ -56,7 +56,6 @@ export default class Education {
 				el.addEventListener('change', ()=>{
 					valueFields = [];
 					searchFields.forEach((select)=>{
-						console.log(select.value);
 						if(select.value.length >= 1){
 							valueFields.push(select.value);
 						}
