@@ -20,6 +20,10 @@ export default class Education {
 		this.inputs = new Input();
 
 		this.fields = {
+			education: {
+				fields: '[data-education-select]',
+				hidden: '[data-education-field]'
+			},
 			profession: {
 				fields: '[data-profession]',
 				hidden: '[data-profession-field]'
@@ -53,18 +57,41 @@ export default class Education {
 		let valueFields = [];
 
 		searchFields.forEach((el)=>{
-				el.addEventListener('change', ()=>{
-					valueFields = [];
-					searchFields.forEach((select)=>{
-						if(select.value.length >= 1){
-							valueFields.push(select.value);
-						}
-						
-					});
-					hField.value='';
-					hField.value = valueFields;
+				if(el.tagName == 'SELECT') {
+					$(el).on('select2:select', ()=>{
+					
+						valueFields = [];
+						searchFields.forEach((select)=>{
 							
-				});
+							if(select.value.length >= 1){
+								valueFields.push(select.value);
+							}
+							
+						});
+						hField.value='';
+						hField.value = valueFields;
+								
+					});
+				} else {
+					$(el).on('change', ()=>{
+					
+						valueFields = [];
+						searchFields.forEach((select)=>{
+							
+							if(select.value.length >= 1){
+								valueFields.push(select.value);
+							}
+							
+						});
+						hField.value='';
+						hField.value = valueFields;
+								
+					});
+				}
+			
+				
+
+				
 
 				valueFields = [];
 				valueFields.push(el.value);
@@ -128,7 +155,7 @@ export default class Education {
 					let lastEl = $('[data-ed-card]').last();
 					$(lastEl).get(0).scrollIntoView(false);
 					this.resizeJquerySteps(false);
-					this.checkEdSelect(true);
+					this.checkFields(this.fields.education.fields, this.fields.education.hidden);
 					// this.checkProfField(true);
 					this.checkFields(this.fields.profession.fields, this.fields.profession.hidden);
 					this.checkFields(this.fields.certificate.fields, this.fields.certificate.hidden);
@@ -142,7 +169,7 @@ export default class Education {
 		});
 
 		$(window).trigger("custom");
-		this.checkEdSelect();
+		this.checkFields(this.fields.education.fields, this.fields.education.hidden);
 		this.checkFields(this.fields.profession.fields, this.fields.profession.hidden);
 		this.checkFields(this.fields.certificate.fields, this.fields.certificate.hidden);
 		this.checkFields(this.fields.date.fields, this.fields.date.hidden);
@@ -191,7 +218,7 @@ export default class Education {
 				delay: 0.5
 			});
 
-		this.checkEdSelect();
+		this.checkFields(this.fields.education.fields, this.fields.education.hidden);
 		this.checkFields(this.fields.profession.fields, this.fields.profession.hidden);
 		this.checkFields(this.fields.certificate.fields, this.fields.certificate.hidden);
 		this.checkFields(this.fields.date.fields, this.fields.date.hidden);
