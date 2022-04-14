@@ -20,23 +20,20 @@ export default class Preloader {
 	}
 
 	animate() {
-       
 		let els = this.progress;
 		let that = this;
         
-
 		gsap.set(els, { x: '-100%', rotation: 0, opacity: 1});
 
 		gsap.to(els, {
 			x: '0%',
 			duration: this.duration,
-			// ease: this.contentEasingIn,
-			// delay: 0.5,
+			
+			delay: 0.35,
+			//ease: 'power4.out',
 			force3D: true,
 			onStart() {
-			//	[that.progressText, that.progressTextMasked].forEach(el => el.classList.add('visible'));
 				document.body.classList.add('preloading');
-				//window.ls.stop();
 			},
 			onUpdate() {
 				that.updateText(this.progress())
@@ -55,38 +52,35 @@ export default class Preloader {
 		sessionStorage.setItem('preloader', 'initialize');
 
 		document.body.classList.remove('preloading');
-		// window.ls.start();
-		// window.ls.update();
 
 		gsap.to(this.preloader, {
-			opacity: 0,
-			//duration: 0.5,
-			//delay: 0.2,
 			onComplete() {
 				that.preloader.style.display = 'none';
-              
+				window._enableScroll();
 			},
 		});
 	}
 
 	init() {
+		//window._disableScroll();
+
 		this.preloader = document.querySelector('.preloader');
 
 		if(!this.preloader) return;
 
 		this.progress = this.preloader.querySelector('[data-preloader-progress]');
-		// this.progressMask = this.preloader.querySelector('.preloader-svg__text-mask');
 		this.progressText = this.preloader.querySelector('[data-preloader-num]');
        
-		// this.progressTextMasked = this.preloader.querySelector('.preloader-svg__num--masked');
-        
-        //this.animate();
 
+
+		
 		if (sessionStorage.getItem('preloader') !== 'initialize') {
 			this.animate();
-           // this.preloader.classList.add('hidden');
+        
 		} else {
-			window.dispatchEvent(new CustomEvent('preloader:complete'))
+			//this.preloader.classList.add('hidden');
+			//window.dispatchEvent(new CustomEvent('preloader:complete'));
+			this.preloader.classList.add('hidden');
 		}
 	}
 }

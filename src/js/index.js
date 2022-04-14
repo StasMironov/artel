@@ -64,7 +64,7 @@ const inputs = new Input();
 
 window.addEventListener('load', () => {
 
-	// new Preloader();
+	new Preloader();
 	// Init after page is loaded
 });
 
@@ -129,9 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	new Datepicker();
 
-	setTimeout(()=>{
-		document.body.classList.add('content-loaded');
-	}, 500);
+	document.body.classList.add('content-loaded');
+	
 
 	
 
@@ -144,18 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		} else {
 			$('body').addClass('loaded');
 		}
-		
 	  });
-
-	if(document.body.classList.contains('content-loaded')){
-		// if(document.querySelector('.main-hero__ov')){
-		// 	setTimeout(()=>{
-		// 		$('.main-hero__ov').animate({
-		// 			"opacity": 0
-		// 		}, 300).remove();	
-		// 	}, 200);
-		// }
-	}
 
 
 	const setVH = () => {
